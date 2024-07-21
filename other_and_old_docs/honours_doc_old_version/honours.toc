@@ -1,0 +1,14 @@
+\contentsline {section}{\tocsection {}{1}{Algebraic varieties}}{1}{}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{Affine varieties}}{1}{}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{Projective varieties}}{4}{}%
+\contentsline {section}{\tocsection {}{2}{Chevalley's restriction theorem}}{4}{}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{The Weyl group of $\mathfrak {g}$}}{4}{}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Inner automorphisms of $\mathfrak {g}$}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{The symmetric algebra}}{6}{}%
+\contentsline {subsection}{\tocsubsection {}{}{Statement of the theorem}}{6}{}%
+\contentsline {subsection}{\tocsubsection {}{2.4}{The adjoint quotient $\mathfrak {g}/\!\!/G$}}{7}{}%
+\contentsline {section}{\tocsection {}{3}{GIT quotient of a reductive Lie algebra by a maximal torus}}{8}{}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{The $G=SL_3$ case}}{8}{}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{The $G = Sp_4$ case}}{9}{}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{The general case}}{11}{}%
+\contentsline {section}{\tocsection {}{}{References}}{11}{}%

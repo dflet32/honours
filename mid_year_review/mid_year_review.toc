@@ -1,0 +1,15 @@
+\contentsline {section}{\tocsection {}{1}{Introduction}}{1}{section.1}%
+\contentsline {section}{\tocsection {}{2}{Affine varieties}}{2}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Affine space and algebraic sets}}{2}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Properties of the map $\mathbf {V}$}}{2}{subsection.2.2}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{The Zariski topology}}{3}{subsection.2.3}%
+\contentsline {subsection}{\tocsubsection {}{2.4}{The correspondence $\mathbf {I}$}}{3}{subsection.2.4}%
+\contentsline {subsection}{\tocsubsection {}{2.5}{The Nullstellensatz}}{5}{subsection.2.5}%
+\contentsline {section}{\tocsection {}{3}{Affine toric varieties}}{7}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Convex cones}}{7}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Polyhedral cones}}{10}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{The semigroup of a cone}}{11}{subsection.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{The semigroup algebra and affine toric varieties}}{12}{subsection.3.4}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{14}{subsection.3.5}%
+\contentsline {subsection}{\tocsubsection {}{3.6}{Properties of toric varieties}}{14}{subsection.3.6}%
+\contentsline {section}{\tocsection {}{}{References}}{15}{section*.6}%

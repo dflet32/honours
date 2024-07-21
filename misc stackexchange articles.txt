@@ -1,0 +1,11 @@
+https://math.stackexchange.com/questions/153062/git-quotient-for-a-certain-torus-action-on-an-affine-space
+
+https://mathoverflow.net/questions/30907/toric-varieties-as-quotients-of-affine-space
+
+https://en.wikipedia.org/wiki/Fourier%E2%80%93Motzkin_elimination
+
+https://en.wikipedia.org/wiki/Motzkin%E2%80%93Taussky_theorem
+
+https://stackoverflow.com/questions/76010252/finding-extreme-points-of-a-polytype-using-pycddlib
+
+https://stackoverflow.com/questions/71783706/polytope-python-find-extreme-points/71796142#71796142

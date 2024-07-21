@@ -1,0 +1,597 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[alphabetic]{amsrefs}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{stmaryrd} % for GIT //
+
+\newcommand{\An}{\mathbb{A}^n}
+\newcommand{\Pn}{\mathbb{P}^n}
+\renewcommand{\a}{\mathfrak{a}}
+\newcommand{\C}{\mathbb{C}}
+
+\newtheorem{theorem}{Theorem}%[subsection]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{exercise}{Exercise}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+
+\allowdisplaybreaks
+
+\title{Geometric Invariant Theory}
+\author{Declan Fletcher}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Masoud has told me about a problem he is interested in in the field of \emph{geometric invariant theory}.
+Here are some notes from our meeting: \\
+
+Let $G$ be an algebraic group acting on a vector space $V$.
+The motivating example is $G = SL_n$ acting on its Lie algebra $V = \mathfrak{sl}_n$ by conjugation.
+We have the ideas of \emph{unstable vectors, semi-stable vectors} and \emph{stable vectors}:
+\begin{itemize}
+\item[-]
+$v \in V$ is unstable if $0 \in \overline{G \cdot v}$.
+
+\item[-]
+$v \in V$ is semi-stable if it is not unstable.
+
+\item[-]
+$v \in V$ is stable if $G \cdot v$ is closed and $G_v = \mathrm{stab}_G(v)$ is finite.
+
+\end{itemize}
+
+\begin{example}
+Let $G = \mathbb{C}^\times$ act on $V = \mathbb{C} \oplus \mathbb{C}$ by $g \cdot (x, y) = (gx, g^{-1} y)$.
+The orbits are:
+\begin{itemize}
+\item[-]
+$(0, 0)$, which is closed and unstable.
+
+\item[-]
+The $x$-axis without $(0, 0)$, which is not closed and unstable.
+
+\item[-]
+The $y$-axis without $(0, 0)$, which is not closed and unstable.
+
+\item[-]
+$\mathcal{O}_u := \{(x, y) \, | \, xy = u\}$ for each $u \in \mathbb{C}^\times$, which are closed, semi-stable and stable.
+\end{itemize}
+\end{example}
+
+There's a second definition of unstable;
+$v \in V$ is unstable if for all $f \in \C[V]^G$, $f(v) = f(0)$.
+In the example above, we can consider $\mathbb{C}[V] = \mathbb{C}[x, y]$.
+
+\begin{exercise}
+Find $\mathbb{C}[V]^G$ for the above example, and check we find the same vectors are unstable.
+\end{exercise}
+
+There's also a third way to check if vectors are unstable, called the \emph{Hilbert-Mumford criterion}.
+
+\begin{exercise}
+Use the Hilbert-Mumford criterion to find the stable and semi-stable vectors for the above example.
+\end{exercise}
+
+In general, the case of $G$ acting on $V = \mathfrak{g}$ is quite well understood (exercise: find a reference).
+Masoud is interested in understanding what happens when $T$, the subgroup of diagonal elements of $G$ (i.e., a torus), acts on $V$.
+
+\begin{exercise}
+Understand the cases for $G = SL_2, SL_3$ acting on $V = \mathfrak{sl_2}, \mathfrak{sl_3}$, and \emph{also the diagonal elements}.
+The $n=2$ should reduce to the example above.
+\end{exercise}
+
+Generally, we are interested in the case of $T$ acting on $\mathfrak{sl}_n$, specifically:
+\begin{itemize}[label=-]
+\item
+What is $\mathbb{C}[V]^T$?
+
+\item
+What are the unstable/semi-stable/stable points?
+
+\item
+Using the Hilbert-Mumford criterion to solve these.
+\end{itemize}
+
+\newpage
+\subsection*{Using the second definition of stability}
+We recall the second definition of unstable vectors; that $v \in V$ is unstable if for all $f \in \C[V]^G$, $f(v) = f(0)$.
+We claim that for the above example of $G = \C^\times$ acting on $\C \oplus \C$ by $g \cdot (x, y) = (gx, g^{-1}y)$, the invariant ring is $\C[V]^G = \C[xy]$ (see the appendix for a proof of this fact).
+We now use this to again check which orbits are unstable:
+\begin{itemize}[label=-]
+\item
+The orbit $\{(0, 0)\}$ trivially satisfies the second definition of unstable.
+
+\item
+The orbit $G \cdot (x, 0)$ with $x \ne 0$ is unstable since for $p \in \C[V]^G = \C[xy]$, $p(x, 0) = p(0, 0)$.
+
+\item
+The orbit $G \cdot (0, y)$ with $y \ne 0$ is unstable is unstable for the same reason.
+
+\item 
+The orbit $\mathcal{O}_u = \{(x, y) \, | \, xy = u\}$ is semi-stable since $p(x, y) = xy \in \C[V]^G$ and $p(x, y) = u \ne p(0,0)$.
+\end{itemize}
+
+\subsection*{The Hilbert-Mumford criterion}
+We state the Hilbert-Mumford criterion\footnote{see \url{https://en.wikipedia.org/wiki/Hilbert-Mumford\_criterion}} and use this to check the unstable vectors.
+Let $G$ be a general reductive group acting linearly on a vector space $V$.
+A \emph{1-parameter subgroup} of $G$ is a non-trivial morphism (to do: what does this mean exactly) $\lambda: \mathbb{G}_m = \C^\times \to G$.
+This amounts to a finite dimensional representation of $\C^\times$, and we can decompose $V$ as $\bigoplus_i V_i$ where on each component the action is given as $\lambda(t) \cdot v = t^i v$.
+The integer $i$ is called the weight.
+The Hilbert-Mumford criterion then says:
+\begin{itemize}[label=-]
+\item
+$v$ is unstable if and only if there is a 1-parameter subgroup of $G$ for which $v$ only admits positive or negative weights,
+
+\item 
+$v$ is semi-stable if and only if every 1-parameter subgroup there are both non-positive and non-negative weights,
+
+\item
+$v$ is stable if and only if for every 1-parameter subgroup there are both positive and negative weights.
+\end{itemize}
+An alternative statement\footnote{see section 3 of \url{https://www.staff.uni-mainz.de/pommeren/MathMisc/HilbMumf.pdf}} of the Hilbert-Mumford criterion is:
+\begin{theorem}
+Let $G$ be a connected reductive algebraic group, $T \le G$ a maximal torus, $V$ a rational $G$-module, and $v \in V$.
+Then the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item
+$x$ is unstable, i.e., $0 \in \overline{G \cdot x}$.
+
+\item
+The orbit $G \cdot x$ contains an element $y$ that is unstable for $T$, i.e., $0 \in \overline{T \cdot y}$.
+
+\item
+There is a 1-parameter subgroup $\lambda: \mathbb{G}_m \to G$ with $\lim_{t \to 0} \lambda(t) \cdot v = 0$.
+\end{enumerate}
+\end{theorem}
+
+This second statement is easier to understand, the exact meaning of 1-parameter subgroup aside.
+
+\begin{example}
+In the case that $G = \C^\times$, I think a 1-parameter subgroup is just $\lambda: \C^\times \to \C^\times$, $\lambda(t) = t^{k}$ for some $k \in \mathbb{Z}$.
+\begin{itemize}[label=-]
+\item
+The orbit $\{(0, 0)\}$ has $\lim_{t \to 0} \lambda(t) \cdot (0, 0) = (0, 0)$ for any 1-parameter subgroup.
+
+\item
+Let $\lambda(t) = t$, then $\lim_{t \to 0} \lambda(t) \cdot (x, 0) = \lim_{t \to 0} (t x, 0) = (0, 0)$ shows $(x, 0)$ is unstable.
+
+\item
+Let $\lambda(t) = t^{-1}$, then $\lim_{t \to 0} \lambda(t) \cdot (0, y) = \lim_{t \to 0} (0, ty) = (0, 0)$ shows $(0, y)$ is unstable.
+
+\item 
+Let $\lambda(t) = t^k$ with $k \in \mathbb{Z}$ be any 1-parameter subgroup.
+Then for $(x, y) \in \mathcal{O}_u$, i.e., $xy = u \ne 0$, 
+$$\lim_{t \to 0} \lambda(t) \cdot (x, y) = \lim_{t \to 0} (t^k x, t^{-k} y) = (0, \infty) \ne (0, 0).$$
+So $(x, y)$ is not unstable and is semi-stable.
+\end{itemize}
+\end{example}
+
+\section*{$SL_2$ and its diagonal elements acting on $\mathfrak{sl}_2$}
+Let $G = SL_2$, $V = \mathfrak{sl}_2$ and $T \le G$ be the subgroup of diagonal elements.
+Then $T$ acts on $V$ by conjugation.
+We write elements of $T$ and $V$ as
+$$
+g = \begin{pmatrix} \lambda & 0 \\ 0 & \lambda^{-1} \end{pmatrix} \in T,
+\qquad
+v = \begin{pmatrix} x & y \\ z & -x \end{pmatrix},$$
+and we get
+$$g \cdot v = \begin{pmatrix} x & \lambda^2 y \\ \lambda^{-2} z & -x \end{pmatrix}.$$
+
+\subsection*{Checking stability with the first definition}
+There are a set of orbits for each $x \in \C$, namely
+\begin{itemize}[label=-]
+\item $\{(x, 0, 0)\}$, which is closed, and unstable if $x = 0$, and semi-stable but not stable otherwise.
+\item $\{(x, y, 0) : y \in \C^\times\}$, which is not closed and unstable if $x=0$, and semi-stable but not stable otherwise.
+\item $\{(x, 0, z) : z \in\C^\times\}$, which is not closed and unstable if $x=0$, and semi-stable but not stable otherwise.
+\item $\mathcal{O}_u = \{(x, y, z) : yz = u\}$ for each $u \in \C^\times$.
+These orbits are all closed, and also semi-stable and stable.
+\end{itemize}
+
+
+\subsection*{Checking stability with the second definition}
+In the appendix, we compute that $\C[V]^T = \C[x, yx]$.
+Let's apply the second definition of stability to check which orbits are stable ($v$ is unstable if $f(v) = f(0)$ for all $f \in \C[V]^T$);
+\begin{itemize}[label=--]
+\item with $x = 0$, we have the orbits;
+	\begin{itemize}
+	\item $\{0\}$ is clearly unstable using the second definition.
+	\item $\{(0, y, 0) : y \in \C^\times\}$ is unstable since for all $p \in \C[x, yz]$, $p(0, y, 0) = p(0, 0, 0)$.
+	\item $\{(0, 0, z) : z \in \C^\times\}$ is unstable since for all $p \in \C[x, yz]$, $p(0, 0, z) = p(0, 0, 0)$.
+	\item For each $u\in \C^\times$, $\mathcal{O}_u = \{(0, y, z) : yz = u\}$. These orbits are semi-stable since $p(x,y,z) = yz \in \C[V]^T$ and $p(0, y, z) = u \ne 0 = p(0, 0, 0)$.
+	\end{itemize}
+\item for each $x \ne 0$;
+	\begin{itemize}
+	\item $\{(x, 0, 0)\}$ is semi-stable since $p(x, y, z) = x \in \C[V]^T$ and $p(x, 0, 0) = x \ne 0 = p(0, 0, 0)$.
+	\item $\{(x, y, 0) : y \in \C^\times\}$ is semi-stable since $p(x, y, z) = x \in \C[V]^T$ and $p(x, y, 0) = x \ne 0 = p(0, 0, 0)$.
+	\item $\{(x, 0, z) : z \in \C^\times\}$ is semi-stable since $p(x, y, z) = x \in \C[V]^T$ and $p(x, y, 0) = x \ne 0 = p(0, 0, 0)$.
+	\item For each $u\in \C^\times$, $\mathcal{O}_u = \{(x, y, z) : yz = u\}$.
+	This orbit is semi-stable since $p(x, y, z) = x \in \C[V]^T$ and $p(x, y, z) = x \ne 0 = p(0, 0, 0)$.
+	\end{itemize}
+\end{itemize}
+
+\subsection*{Checking stability with the Hilbert-Mumford criterion}
+In this case, a 1-parameter subgroup of $T$ is a map $\lambda_k : \C^\times \to T$ which must be of the form
+$$\lambda_k(t) = \begin{pmatrix} t^k & 0 \\ 0 & t^{-k} \end{pmatrix}$$
+for some $k \in \mathbb{Z}\setminus \{0\}$.
+\begin{itemize}[label=--]
+\item with $x = 0$, we have the orbits;
+	\begin{itemize}
+	\item $\{0\}$ is unstable as $\lim_{t\to 0} \lambda_1(t) \cdot 0 = \lim_{t \to 0} 0 = 0$.
+	\item $\{(0, y, 0) : y \in \C^\times\}$ is unstable since $\lim_{t \to 0} \lambda_1(t) \cdot (0, y, 0) = \lim_{t \to 0} (0, t^2 y, 0) = 0$.
+	\item $\{(0, 0, z) : z \in \C^\times\}$ is unstable since $\lim_{t \to 0} \lambda_{-1}(t) \cdot (0, 0, z) = \lim_{t \to 0} (0, 0, t^2 z) = 0$.
+	\item For each $u\in \C^\times$, $\mathcal{O}_u = \{(0, y, z) : yz = u\}$. These orbits are semi-stable since for any 1-parameter subgroup $\lambda_k$, $\lim_{t \to 0} \lambda_k(t) \cdot (0, y, z) = \lim_{t \to 0} (0, t^{2k} y, t^{-2k} z) \ne 0$.
+	\end{itemize}
+\item for each $x \ne 0$;
+	\begin{itemize}
+	\item $\{(x, 0, 0)\}$ is semi-stable since for any 1-parameter subgroup $\lambda_k$, $\lim_{t \to 0} \lambda_k(t) \cdot (x, 0, 0) = \lim_{t \to 0} (x, 0, 0) \ne 0$.
+	\item $\{(x, y, 0) : y \in \C^\times\}$ is semi-stable since for any 1-parameter subgroup $\lambda_k$, $\lim_{t \to 0} \lambda_k(t) \cdot (x, y, 0) = \lim_{t \to 0} (x, t^{2k} y, 0) \ne 0$.
+	\item $\{(x, 0, z) : z \in \C^\times\}$ is semi-stable since for any 1-parameter subgroup $\lambda_k$, $\lim_{t \to 0} \lambda_k(t) \cdot (x, 0, z) = \lim_{t \to 0} (x, 0, t^{-2k} z) \ne 0$.
+	\item For each $u\in \C^\times$, $\mathcal{O}_u = \{(x, y, z) : yz = u\}$.
+	This orbit is semi-stable since for any 1-parameter subgroup $\lambda_k$, $\lim_{t \to 0} \lambda_k(t) \cdot (x, y, z) = \lim_{t \to 0} (x, t^{2k} y, t^{-2k} z) \ne 0$.
+	\end{itemize}
+\end{itemize}
+
+\subsection*{The map $\mathfrak{g}\sslash T \to \mathfrak{g}\sslash G$} 
+Masoud writes that we have a canonical map $\mathfrak{g}\sslash T \to \mathfrak{g}\sslash G$ \footnote{see \url{https://mathoverflow.net/questions/463567/git-quotient-of-a-reductive-lie-algebra-by-the-maximal-torus}}.
+How does this correspond to a map between the invariant rings $\C[V]^T = \C[x, yz]$ and $\C[V]^G=\C[x^2 + yz]$, and how can we see this explicitly in this case?
+
+
+\section*{Type $A_2$}
+Let $G = SL_3$, and $T \le G$ be the torus
+$$T = \left\{\begin{pmatrix} \lambda & & \\ & \mu & \\ & & \lambda^{-1} \mu^{-1} \end{pmatrix} : \lambda, \mu \in\C^\times \right\}.$$
+Then $T$ acts on $V = \mathfrak{sl}_3$ by conjugation, i.e., if
+$$g = \begin{pmatrix} \lambda & & \\ & \mu & \\ & & \lambda^{-1} \mu^{-1} \end{pmatrix}, \quad v = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix},$$
+then
+\begin{align*}
+g \cdot v = g v g^{-1} &= \begin{pmatrix} \lambda & & \\ & \mu & \\ & & \lambda^{-1} \mu^{-1} \end{pmatrix} \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \begin{pmatrix} \lambda^{-1} & & \\ & \mu^{-1} & \\ & & \lambda \mu \end{pmatrix} \\
+&= 
+\begin{pmatrix}
+a_{11} & \lambda \mu^{-1} a_{12} & \lambda^2 \mu a_{13} \\
+\lambda^{-1} \mu a_{21} & a_{22} & \lambda \mu^2 a_{23} \\
+\lambda^{-2} \mu^{-1} a_{31} & \lambda^{-1} \mu^{-2} a_{32} & a_{33}
+\end{pmatrix}
+\end{align*}
+
+Let
+$$R = \C[a_{11}, a_{22}, a_{12} a_{21}, a_{23} a_{32}, a_{13} a_{31}, a_{12} a_{23} a_{31}, a_{13} a_{21} a_{32}].$$
+I claim that $\C[V]^T = R$.
+The $\supseteq$ inclusion is straightforward to check by computing the action of $g \in T$ on each generator and noting they are invariant.
+To prove the other inclusion, first note that a general monomial in $R$ is of the form
+\begin{align*}
+	&\quad \,\, a_{11}^k a_{22}^l (a_{12} a_{21})^{i_1} (a_{23} a_{32})^{i_2} (a_{13} a_{31})^{i_3} (a_{12} a_{23} a_{31})^{i_4} (a_{13} a_{21} a_{32})^{i_5} \\
+	&= a_{11}^k a_{22}^l a_{12}^{i_1 + i_4} a_{13}^{i_3 + i_5} a_{21}^{i_1+i_5} a_{23}^{i_2 + i_4} a_{31}^{i_3 + i_4} a_{32}^{i_2+i_5}.
+\end{align*}
+for some $k, l, i_1, \ldots, i_5 \in \mathbb{Z}_{\ge 0}$.
+A general $q \in \C[V]$ is of the form
+$$q = \sum q_{m,n,j_1,\ldots,j_6} a_{11}^m a_{22}^n a_{12}^{j_1} a_{13}^{j_2} a_{21}^{j_3} a_{23}^{j_4} a_{31}^{j_5} a_{32}^{j_6},$$
+where the sum is over a finite number of tuples of exponents $(m, n, j_1, \ldots j_6)$.
+Now assume that $q$ is invariant, so $q(v) = q(g \cdot v)$ for all $g \in T$ and $v \in V$;
+\begin{align*}
+	&\quad \, \, \sum q_{m,n,j_1,\ldots,j_6} a_{11}^m a_{22}^n a_{12}^{j_1} a_{13}^{j_2} a_{21}^{j_3} a_{23}^{j_4} a_{31}^{j_5} a_{32}^{j_6} \\
+	&= q(g \cdot v) \\
+	&= \sum q_{m,n,j_1,\ldots,j_6} a_{11}^m a_{22}^n (\lambda \mu^{-1} a_{12})^{j_1} (\lambda^2 \mu a_{13})^{j_2} (\lambda^{-1} \mu a_{21})^{j_3} (\lambda \mu^2 a_{23})^{j_4} (\lambda^{-2} \mu^{-1} a_{31})^{j_5} (\lambda^{-1} \mu^{-2} a_{32})^{j_6} \\
+	&= \sum q_{m,n,j_1,\ldots,j_6} \lambda^{j_1 + 2j_2 - j_3 + j_4 -2 j_5 - j_6} \mu^{- j_1 +j_2 +j_3 + 2 j_4 - j_5 -2 j_6} a_{11}^m a_{22}^n a_{12}^{j_1} a_{13}^{j_2} a_{21}^{j_3} a_{23}^{j_4} a_{31}^{j_5} a_{32}^{j_6} 
+\end{align*}
+or equivalently, by equating coefficients that
+$$ (\lambda^{j_1 + 2j_2 - j_3 + j_4 -2 J_5 - j_6} \mu^{- j_1 +j_2 +j_3 + 2 j_4 - j_5 -2 j_6}  - 1) q_{m, n, j_1, \ldots, j_6} = 0$$
+for each choice of exponents $(m, n, j_1, \ldots, j_6)$ in the sum.
+
+To show our desired inclusion, we need to show that if $q$ is invariant and has a monomial with exponents $(m, n, j_1, \ldots j_6)$ which are not of the form
+\begin{align*}
+	m &= k & j_3 &= i_1 + i_5 \\
+	n &= l & j_4 &= i_2 + i_4 \\
+	j_1 &= i_1 + i_4 & j_5 &= i_3 + i_4 \\
+	j_2 &= i_3 + i_5 & j_6 &= i_2 + i_5
+\end{align*}
+for some $k, l, i_1, \ldots, i_5 \in \mathbb{Z}_{\ge 0}$ (i.e., a monomial not in $R$), then 
+$$\lambda^{j_1 + 2j_2 - j_3 + j_4 -2 j_5 - j_6} \mu^{- j_1 +j_2 +j_3 + 2 j_4 - j_5 -2 j_6}  - 1 \ne 0$$
+for some $\lambda, \mu \in \C^\times$, so that $q_{m, n, j_1, \ldots, j_6} = 0$ and in fact we have $q \in R$.
+We'll show the equivalent statement that if $j_1, \ldots, j_6 \in \mathbb{Z}_{\ge 0}$ such that
+\begin{equation}
+\begin{aligned}
+	j_1 + 2j_2 - j_3 + j_4 -2 j_5 - j_6 &= 0 \\
+	- j_1 +j_2 +j_3 + 2 j_4 - j_5 -2 j_6 &= 0
+\end{aligned}
+\label{eq1}
+\end{equation}
+then there exist $i_1, \ldots, i_5 \in \mathbb{Z}_{\ge 0}$ such that 
+\begin{equation}
+\begin{aligned}
+	j_1 &= i_1 + i_4  & \qquad & j_4 &= i_2 + i_4 \\
+	j_2 &= i_3 + i_5 & \qquad & j_5 &= i_3 + i_4 \\
+	j_3 &= i_1 + i_5 & \qquad & j_6 &= i_2 + i_5
+\end{aligned}
+\label{eq2}
+\end{equation}
+System \ref{eq1} implies the following equalities
+\begin{align*}
+	j_3 + j_4 - j_1 &= j_6 \\
+	j_1 - j_3 = j_4 - j_6 &= j_5 - j_2 \\
+	- j_1 - j_2 + j_3 + j_5 &= 0 \\
+	j_1 + j_6 - j_3 - j_4 &= 0
+\end{align*}
+After reducing system \ref{eq2} to echelon form, one can check that a solution is
+\begin{align*}
+	i_1 &= j_3 - i_5 \\
+	i_2 &= j_6 - i_5 \\
+	i_3 &= j_2 - i_5 \\
+	i_4 &= j_1 - j_3 + i_5
+\end{align*}
+where $i_5$ is arbitrary.
+However, we want to chooce $i_5 \in \mathbb{Z}_{\ge 0}$ such that $i_1, \ldots, i_4 \ge 0$ also.
+I claim that $i_5 = \mathrm{min}\{j_2, j_3, j_6\} \ge 0$ works.
+Then,
+\begin{align*}
+	i_1 &= j_3 - i_5 \ge 0 \\
+	i_2 &= j_6 - i_5 \ge 0 \\
+	i_3 &= j_2 - i_5 \ge 0 \\
+	i_4 
+	&= j_1 - j_3 + i_5
+	= \begin{cases}
+				j_1 - j_3 + j_3 = j_1 \ge 0 & \text{if } i_5 = j_3 \\
+				j_5 - j_2 + j_2 = j_5 \ge 0 & \text{if } i_5 = j_2 \\
+				j_4 - j_6 + j_6 = j_1 \ge 0 & \text{if } i_5 = j_6 \\
+		\end{cases}
+\end{align*}
+where we have used the equality $j_1 - j_3 = j_4 - j_6 = j_5 - j_2$ to check the sign of $i_4$.
+This completes the proof that $\C[V]^T = R$.
+
+A next natural question to ask is which vectors are unstable and stable, which we can now check using this invariant ring.
+(Note that there are too many orbits to systematically check all of them.)
+
+Let 
+$$v = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}.$$
+Then
+$$T \cdot v
+= \left\{
+\begin{pmatrix} 0 & a_{12} & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} : a_{12} \in \C^\times
+\right\}.$$
+This this is unstable, since $0 \in \overline{T \cdot v}$.
+This also tells us this orbit is not closed.
+We can also see that this orbit is unstable since if $p(v) = p(0)$ for all $p \in \C[V]^T$.
+
+Fix $u \in \C^\times$ and now let
+$$v = \begin{pmatrix} 0 & u & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}.$$
+Then
+$$T \cdot v 
+= \left\{
+\begin{pmatrix} 0 & a_{12} & 0 \\ a_{21} & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} : a_{12} a_{21} = u
+\right\}.$$
+Let $p(w) = a_{12} a_{21} \in \C[V]^T$.
+Then $p(v) = u \ne 0 = p(0)$, so $v$ is semi-stable.
+However,
+$$T_v = \left\{
+\begin{pmatrix} \lambda & 0 & 0 \\ 0 & \lambda & 0 \\ 0 & 0 & 1 \end{pmatrix} : \lambda \in \C^\times
+\right\},$$
+which is not finite, so $v$ is not stable.
+The orbit is closed.
+This is interesting as it gives a vector which is semi-stable but not stable, of which there were none in the $A_1$ case.
+
+Again fix $u \in \C^\times$ and let 
+$$v = \begin{pmatrix} 0 & u & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0 \end{pmatrix}.$$
+Then
+$$T \cdot v = \left\{
+\begin{pmatrix} 0 & a_{12} & 0 \\ 0 & 0 & a_{23} \\ a_{31} & 0 & 0 \end{pmatrix} : a_{12} a_{23} a_{31} = u
+\right\}.$$
+This orbit is in fact stable, as it is closed and $T_v = \{1\}$.
+
+Note that
+\begin{align*}
+	\C[V]^T &= \C[a_{11}, a_{22}, a_{12} a_{21}, a_{23} a_{32}, a_{13} a_{31}, a_{12} a_{23} a_{31}, a_{13} a_{21} a_{32}] \\
+	&= \C[x, y, z, t, u, v, w] / (z t u - v w)
+\end{align*}
+
+
+\section*{Type $C_2$}
+Let $G = Sp_4 = \{
+g \in GL_n : g^t M g = M
+\}
+$,
+where
+$$M = \begin{pmatrix} & & & 1 \\ & & -1 & \\ & 1 & & \\ -1 & & & \end{pmatrix}.$$
+Then one can show that
+$$T = \left\{
+\begin{pmatrix} \lambda & & & \\ & \mu & & & \\ & & \mu^{-1} & \\ & & & \lambda^{-1} \end{pmatrix} :
+\lambda, \mu \in \C^\times 
+\right\}$$
+is a maximal torus.
+$T$ acts on $V = \mathfrak{sp}_4$, i.e.,
+$$\mathfrak{sp}_4
+= \left\{
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13} & a_{14} \\
+a_{21} & a_{22} & a_{23} & - a_{13} \\
+a_{31} & a_{32} & - a_{22} & a_{12} \\
+a_{41} & - a_{31} & a_{21} & - a_{11}
+\end{pmatrix} : 
+a_{ij} \in \mathbb{C} \text{ for all } i, j
+\right\}.$$
+For $g \in T$ and $v \in V$, we have
+$$g \cdot v = g v g^{-1} 
+= 
+\begin{pmatrix}
+a_{11} & \lambda \mu^{-1} a_{12} & \lambda \mu a_{13} & \lambda^2 a_{14} \\
+\lambda^{-1} \mu a_{21} & a_{22} & \mu^2 a_{23} & - \lambda \mu a_{13} \\
+\lambda^{-1} \mu^{-1} a_{31} & \mu^{-2} a_{32} & - a_{22} & \lambda \mu^{-1} a_{12} \\
+\lambda^{-2} a_{41} & - \lambda^{-1} \mu^{-1} a_{31} & \lambda^{-1} \mu a_{21} & - a_{11}
+\end{pmatrix}
+$$
+I claim that
+\begin{align*}
+\C[V]^T
+= 
+\C[&a_{11}, a_{22}, a_{12} a_{21}, a_{13} a_{31}, a_{14} a_{41}, a_{23} a_{32}, \\
+	&a_{12} a_{23} a_{31}, a_{12} a_{13} a_{41}, a_{13} a_{21} a_{32}, a_{14} a_{21} a_{31}, \\
+	&a_{12}^2 a_{23} a_{41}, a_{13}^2 a_{32} a_{41}, a_{14} a_{23} a_{31}^2, a_{14} a_{21}^2 a_{32}]
+\end{align*}
+This can almost be proved in the same way as for type $A_2$, though it's tricky to prove all the resulting $i_k$s are non-negative.
+\textcolor{red}{Can we do this an easier way, e.g., by using Zariski dense?}
+
+\section*{Computing the invariant ring for general $G$}
+\textcolor{red}{To talk about: I think this is related to roots summing to zero.}
+
+\section*{Appendix: Computing invariant rings}
+\subsection*{$\C^\times$ acting on $\C \oplus \C$}
+We'll compute $\mathbb{C}[V]^G$ for the example of $G = \mathbb{C}^\times$ acting on $V = \mathbb{C} \oplus \mathbb{C}$.
+Note that 
+$$\mathbb{C}[V]^G = \{f \in \mathbb{C}[V] \, : \, g \cdot f = f \text{ for all } g \in G\}$$
+ where the action of $G$ on polynomials is given by
+$$(g \cdot f)(v) = f(g^{-1} \cdot v).$$
+We claim $\mathbb{C}[V]^G = \mathbb{C}[xy]$.
+If $p \in \mathbb{C}[xy] \subseteq \mathbb{C}[x, y]$, there's a one-variable polynomial $\tilde p$ such that $p(x, y) = \tilde p (xy)$ for all $(x, y) \in V$.
+Then for all $g \in G$,
+$$(g \cdot p)(x, y) = p(g^{-1} \cdot (x, y)) = p(g^{-1} x, g y) = \tilde p((g^{-1} x)(g y)) = \tilde p(xy) = p(x, y).$$
+Now let $p \in \C[V]^G$.
+In general, $p \in \C[x, y]$ is of the form 
+$$p(x, y) = \sum_{i, j=0}^d a_{ij} x^i y^j.$$
+We also have
+$$(g \cdot p)(x, y) = p(g^{-1} x, g y) = \sum_{i, j=0}^d a_{ij} (g^{-1} x)^i (g y)^j = \sum_{i, j=0}^d a_{ij} g^{j - i} x^i y^j.$$
+Since $p$ is invariant, it holds for all $g \in G$ that $g \cdot p - p = 0$, i.e.,
+$$\sum_{i, j=0}^d (g^{j-i} - 1)a_{ij} x^i y^j = 0.$$
+In particular, $(g^{j-i} - 1) a_{ij} = 0$ for all $g \in G$ and $0 \le i, j \le d$.
+When $i \ne j$, substituting $g \ne 1$ tells us we must have $a_{ij} = 0$.
+We conclude that in each term of $p$, $x$ and $y$ have the same degree, implying $p \in \C[xy]$.
+
+\subsection*{The natural action of $SL_2$ (\cite[Exercise 5]{KP96})}
+Let $G = SL_2$ act on $V = \C^2$ by multiplication.
+Note that this action only has two orbits, $\{0\}$ and $\C^2 \setminus \{0\}$.
+Since the invariant ring can equivalently be characterised as the polynomials on $V$ which are constant on orbits, $\C[V]^G = \C$.
+Indeed, if a polynomial is constant on $\C^2\setminus \{0\}$, it must be constant on $\C^2$ by continuity.
+
+\subsection*{$SL_n$ acting on $M_n$ (\cite[\S 1.2]{KP96})}
+Let $G = SL_n$ act on $V = M_n$ by left multiplication, i.e., if $g \in SL_n$ and $A \in M_n$, $g \cdot A = gA$.
+
+We claim that $\C[V]^G = \C[\det]$.
+It is clear that $\det$ is invariant (since $\det(gA) = \det(g) \det(A) = \det(A)$).
+Now let $f \in \C[V]^G$.
+Define $p \in \C[t]$ by
+$$p(t) = f\left( 
+\begin{psmallmatrix}
+	t & & & \\
+	   & 1 & & \\
+	   & & \ddots & \\
+	   & & & 1
+\end{psmallmatrix}
+\right).$$
+Noting that any $A \in GL_n$ can be written
+$$A = A
+\begin{psmallmatrix}
+	(\det A)^{-1} & & & \\
+	   & 1 & & \\
+	   & & \ddots & \\
+	   & & & 1
+\end{psmallmatrix}
+\begin{psmallmatrix}
+	\det A & & & \\
+	   & 1 & & \\
+	   & & \ddots & \\
+	   & & & 1
+\end{psmallmatrix}
+=
+\tilde g
+\begin{psmallmatrix}
+	\det A & & & \\
+	   & 1 & & \\
+	   & & \ddots & \\
+	   & & & 1
+\end{psmallmatrix},$$
+where $\tilde g = A 
+\begin{psmallmatrix}
+	(\det A)^{-1} & & & \\
+	   & 1 & & \\
+	   & & \ddots & \\
+	   & & & 1
+\end{psmallmatrix} \in SL_n$.
+Then since $f$ is invariant,
+$$f(A) = f \left(\tilde g \begin{psmallmatrix}
+	\det A & & & \\
+	   & 1 & & \\
+	   & & \ddots & \\
+	   & & & 1
+\end{psmallmatrix} \right)
+=f \left(\begin{psmallmatrix}
+	\det A & & & \\
+	   & 1 & & \\
+	   & & \ddots & \\
+	   & & & 1
+\end{psmallmatrix} \right)
+= p(\det A)$$
+for all $A \in GL_n$.
+Since $GL_n$ is Zariski-dense in $M_n$, this implies $f(A) = p(\det A)$ for all matrices $A$, and $f \in \C[\det]$.
+
+\subsection*{$SL_2$ acting by conjugation on $\mathfrak{sl}_2$}
+Let $G = SL_2$ act on $V = \mathfrak{sl}_2$ by conjugation, meaning if
+$$
+g=\begin{pmatrix} a & b \\ c & d \end{pmatrix} \in G, 
+\qquad
+v=\begin{pmatrix} x & y \\ z & -x \end{pmatrix} \in V,
+$$
+we have
+$$
+g \cdot v = g v g^{-1}.
+$$
+I think we should get $\C[V]^G = \C[x^2 + yz]$.
+
+\subsection*{$T \le SL_2$ acting by conjugation on $\mathfrak{sl}_2$}
+Let $T \le SL_2$ be the subgroup of diagonal matrices of $SL_2$, acting on $V = \mathfrak{sl}_2$ by conjugation.
+That is, if
+$$
+g = \begin{pmatrix} \lambda & 0 \\ 0 & \lambda^{-1} \end{pmatrix} \in T,
+\qquad
+v = \begin{pmatrix} x & y \\ z & -x \end{pmatrix} \in V,
+$$
+we have
+$$g \cdot v = g v g^{-1} =
+\begin{pmatrix} x & \lambda^2 y \\ \lambda^{-2} z & -x \end{pmatrix}.$$
+We claim that $\C[V]^T = \C[x, yz]$.
+It is clear from the action that $\C[x, yz] \subseteq \C[V]^T$, since $x$ and $yz$ are invariant.
+Let $p \in \C[V]^T$.
+Then setting $x =1$, we must have
+$$p(1, y, z) = p(g\cdot(1, y, z)) = p(1, \lambda^2 y, \lambda^{-2} z).$$
+A similar argument to the first example $\C^\times \curvearrowright \C^2$ shows that in each term of $p(1, y, z)$, $y$ and $z$ must have the same degree.
+Then since $T$ acts on the $x$ component trivially, we can see $p \in \C[x, yz]$.
+
+\subsection*{Exercise 6 of \cite{KP96}}
+Determine the invariant rings $\C[M_2(\C)]^U$ and $\C[M_2(\C)]^T$ under left multiplication by the subgroup $U$ of upper triangular unipotent matrices and the subgroup $T$ of diagonal matrices of $SL_2$.
+
+\subsection*{Exercise 7 of \cite{KP96}}
+Let $T_n \le GL_n$ be the subgroup of invertible diagonal matrices.
+If we choose the standard basis in $V = \C^n$ and the dual basis in $\C^*$ we can identify the coordinate ring $\C[\C \oplus C^*]$ with $\C[x_1, \ldots, x_n, \zeta_1, \ldots, \zeta_n]$.
+Show that $\C[\C \oplus \C^*]^{T_n} = \C[x_1 \zeta_1, x_2 \zeta_2, \ldots, x_n \zeta_n]$.
+What happens if one replaces $T_n$ by the subgroup $T_n'$ of diagonal matrices with determinant 1?
+(Hint: All monomials in $\C[x_1, \ldots, x_n, \zeta_1, \ldots, \zeta_n]$ are eigenvectors for $T_n$.)
+
+
+\begin{bibdiv}
+\begin{biblist}
+\bib{KP96}{webpage}{
+   author={Kraft, Hanspeter},
+   author={Procesi, Claudio},
+   title={Classical Invariant Theory, A Primer},
+   date={1996},
+   url={https://dmi.unibas.ch/fileadmin/user_upload/dmi/Personen/Kraft_Hanspeter/Classical_Invariant_Theory.pdf}
+}
+\end{biblist}
+\end{bibdiv}
+
+\end{document}

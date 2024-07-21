@@ -1,0 +1,6 @@
+\contentsline {section}{\tocsection {}{1}{Affine and projective varieties}}{1}{}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{Affine varieties}}{1}{}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{Projective varieties}}{4}{}%
+\contentsline {section}{\tocsection {}{2}{The Grassmannian as a projective variety}}{4}{}%
+\contentsline {section}{\tocsection {}{3}{Cluster Algebras defined by quivers}}{4}{}%
+\contentsline {section}{\tocsection {}{}{References}}{9}{}%

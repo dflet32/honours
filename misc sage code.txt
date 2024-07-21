@@ -1,0 +1,315 @@
+Ideal (k*n - d*t,
+i*n - c*q,
+h*n - f*p,
+l*m - e*t,
+j*m - f*r,
+g*m - a*q,
+j*l - c*s,
+g*l - b*p,
+i*k - b*r,
+h*k - a*s,
+g*j - d*o,
+h*i - e*o,
+a*n*s - d*h*t,
+c*m*s - e*j*t,
+b*n*r - d*i*t,
+f*l*r - e*j*t,
+b*h*r - a*i*s,
+a*l*q - e*g*t,
+c*k*q - d*i*t,
+a*j*q - f*g*r,
+b*m*p - e*g*t,
+f*k*p - d*h*t,
+b*j*p - c*g*s,
+f*i*p - c*h*q,
+e*n*o - c*h*q,
+d*m*o - f*g*r,
+d*l*o - c*g*s,
+e*k*o - a*i*s,
+b*m*n - q*t,
+a*l*n - p*t,
+e*g*n - p*q,
+b*e*n - l*q,
+a*e*n - m*p,
+a*b*n - g*t,
+c*k*m - r*t,
+d*i*m - q*r,
+c*d*m - n*r,
+b*d*m - k*q,
+b*c*m - i*t,
+f*k*l - s*t,
+d*h*l - p*s,
+d*f*l - n*s,
+a*f*l - h*t,
+a*d*l - k*p,
+e*j*k - r*s,
+e*f*k - m*s,
+c*f*k - j*t,
+c*e*k - l*r,
+a*i*j - o*r,
+b*h*j - o*s,
+b*e*j - i*s,
+a*e*j - h*r,
+a*b*j - k*o,
+f*g*i - o*q,
+d*f*i - j*q,
+a*f*i - m*o,
+a*d*i - g*r,
+c*g*h - o*p,
+c*d*h - j*p,
+b*d*h - g*s,
+b*c*h - l*o,
+e*f*g - h*q,
+c*f*g - n*o,
+c*e*g - i*p,
+a*e*f - h*m,
+c*d*f - j*n,
+b*c*e - i*l,
+a*b*d - g*k,
+d*e*j*t - n*r*s,
+d*e*i*t - l*q*r,
+d*e*h*t - m*p*s,
+d*e*g*t - k*p*q,
+d*e*f*t - m*n*s,
+c*d*e*t - l*n*r,
+b*d*e*t - k*l*q,
+a*d*e*t - k*m*p,
+c*f*r*s - e*j^2*t,
+a*c*q*s - d*e*o*t,
+a*f*p*s - d*h^2*t,
+m*n*o*s - h*j*q*t,
+a*c*i*s - l*o*r,
+a*c*g*s - k*o*p,
+a*c*f*s - h*j*t,
+a*c*e*s - h*l*r,
+a*c*d*s - j*k*p,
+a*b*c*s - k*l*o,
+h*l*q*r - i*m*p*s,
+b*c*q*r - d*i^2*t,
+b*f*p*r - d*e*o*t,
+l*n*o*r - i*j*p*t,
+b*e*o*r - a*i^2*s,
+b*f*g*r - k*o*q,
+b*e*f*r - i*m*s,
+b*d*f*r - j*k*q,
+b*c*f*r - i*j*t,
+a*b*f*r - k*m*o,
+j*k*p*q - g*n*r*s,
+a*b*p*q - e*g^2*t,
+k*l*o*q - g*i*s*t,
+a*d*o*q - f*g^2*r,
+a*c*h*q - m*o*p,
+a*c*f*q - m*n*o,
+a*c*e*q - i*m*p,
+a*c*d*q - g*n*r,
+a*b*c*q - g*i*t,
+k*m*o*p - g*h*r*t,
+e*f*o*p - c*h^2*q,
+b*d*o*p - c*g^2*s,
+b*e*f*p - h*l*q,
+b*d*f*p - g*n*s,
+b*c*f*p - l*n*o,
+a*b*f*p - g*h*t,
+d*e*f*o - h*j*q,
+c*d*e*o - i*j*p,
+b*d*e*o - g*i*s,
+a*d*e*o - g*h*r,
+b*d*e*f - q*s,
+a*b*c*f - o*t,
+a*c*d*e - p*r,
+d*e^2*o*t - i*m*p*s,
+d^2*e*o*t - g*n*r*s,
+n^2*o*r*s - j^2*p*q*t,
+f*n*o*r*s - h*j^2*q*t,
+c*n*o*r*s - i*j^2*p*t,
+g*n^2*r*s - d*j*p*q*t,
+f*g*n*r*s - d*h*j*q*t,
+c*g*n*r*s - d*i*j*p*t,
+m^2*o*p*s - h^2*q*r*t,
+f*m*o*p*s - h^2*j*q*t,
+a*m*o*p*s - g*h^2*r*t,
+i*m^2*p*s - e*h*q*r*t,
+a*i*m*p*s - e*g*h*r*t,
+l^2*o*q*r - i^2*p*s*t,
+e*l*o*q*r - i^2*m*p*s,
+c*l*o*q*r - i^2*j*p*t,
+b*l*o*q*r - g*i^2*s*t,
+k^2*o*p*q - g^2*r*s*t,
+d*k*o*p*q - g^2*n*r*s,
+b*k*o*p*q - g^2*i*s*t,
+a*k*o*p*q - g^2*h*r*t,
+c^2*o*q*r*s - i^2*j^2*p*t,
+c^2*h*q*r*s - e*i*j^2*p*t,
+c^2*g*q*r*s - d*i^2*j*p*t,
+f^2*o*p*r*s - h^2*j^2*q*t,
+f^2*g*p*r*s - d*h^2*j*q*t,
+a^2*o*p*q*s - g^2*h^2*r*t,
+a^2*i*p*q*s - e*g^2*h*r*t,
+b^2*o*p*q*r - g^2*i^2*s*t) 
+of Multivariate Polynomial Ring in a,
+b,
+c,
+d,
+e,
+f,
+g,
+h,
+i,
+j,
+k,
+l,
+m,
+n,
+o,
+p,
+q,
+r,
+s,
+t over Rational Field
+
+
+R.<X_12, X_13, X_21, X_23, X_31, X_32> = QQ[]
+monomials = [
+    X_12 * X_21,
+    X_23 * X_32, 
+    X_13 * X_31,
+    X_12 * X_23 * X_31,
+    X_21 * X_32 * X_13
+]
+S.<a, b, c, d, e> = QQ[]
+phi = S.hom(monomials, R)
+T.<f, g, h, i, j> = S.quotient(phi.kernel())
+print(f * g *h == i * j)
+T.dimension()
+
+monomials = {X_12*X_21,X_23*X_32,X_13*X_31,X_12*X_23*X_31,X_21*X_32*X_13}
+
+
+
+R.<X_12, X_13, X_14, X_21, X_23, X_24, X_31, X_32, X_34, X_41, X_42, X_43> = QQ[]
+monomials = [
+	X_12*X_21,
+	X_23*X_32,
+	X_34*X_43,
+	X_13*X_31,
+	X_24*X_42,
+	X_14*X_41,
+	X_12*X_23*X_31,
+	X_12*X_24*X_41,
+	X_23*X_34*X_42,
+	X_13*X_34*X_41,
+	X_13*X_21*X_32,
+	X_24*X_32*X_43,
+	X_14*X_21*X_42,
+	X_14*X_31*X_43,
+	X_12*X_23*X_34*X_41,
+	X_12*X_24*X_31*X_43,
+	X_14*X_23*X_31*X_42,
+	X_13*X_21*X_34*X_42,
+	X_13*X_24*X_32*X_41,
+	X_14*X_21*X_32*X_43
+]
+S.<a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t> = QQ[]
+phi = S.hom(monomials, R)
+
+my_monomials = {
+	X_12*X_21,
+	X_23*X_32,
+	X_34*X_43,
+	X_13*X_31,
+	X_24*X_42,
+	X_14*X_41,
+	X_12*X_23*X_31,
+	X_12*X_24*X_41,
+	X_23*X_34*X_42,
+	X_13*X_34*X_41,
+	X_13*X_21*X_32,
+	X_24*X_32*X_43,
+	X_14*X_21*X_42,
+	X_14*X_31*X_43,
+	X_12*X_23*X_34*X_41,
+	X_12*X_24*X_31*X_43,
+	X_14*X_23*X_31*X_42,
+	X_13*X_21*X_34*X_42,
+	X_13*X_24*X_32*X_41,
+	X_14*X_21*X_32*X_43
+}
+
+
+
+R.<X_12, X_13, X_14, X_21, X_23, X_24, X_31, X_32, X_34, X_41, X_42, X_43> = QQ[]
+monomials = [
+	X_23*X_32,
+	X_12*X_21,
+	X_13*X_31,
+	X_14*X_41,
+	X_12^2*X_23*X_41,
+	X_12*X_23*X_31,
+	X_14*X_23*X_31^2,
+	X_12*X_13*X_41,
+	X_13^2*X_32*X_41,
+	X_13*X_21*X_32,
+	X_14*X_21^2*X_32,
+	X_14*X_21*X_31
+]
+S.<a, b, c, d, e, f, g, h, i, j, k, l> = QQ[]
+phi = S.hom(monomials, R)
+I = phi.kernel()
+
+A12 = AffineSpace(12, QQ, 'a, b, c, d, e, f, g, h, i, j, k, l')
+V = A12.subscheme(I)
+V.dimension()
+Jac = A12.subscheme(V.Jacobian())
+Jac
+
+
+
+
+
+"""
+sigma = Cone([(1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, -1)])
+V = AffineToricVariety(sigma)
+V.Spec()
+"""
+sigma = Cone([
+    (1, 0, 1, 1),
+    (1, 1, 0, 1),
+    (0, 0, 0, -1),
+    (0, 0, 1, 0),
+    (0, 1, 0, 0),
+    (1, 0, 0, 0)
+])
+sigma_vee = sigma.dual()
+sigma_vee.rays()
+sigma_vee.semigroup_generators()
+V = AffineToricVariety(sigma)
+V.Spec()
+
+
+
+"""
+sigma = Cone([(1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, -1)])
+V = AffineToricVariety(sigma)
+V.Spec()
+"""
+sigma = Cone([
+    [1, 0, 1, 0, 0, 1, -1, 0, -1], 
+    [1, 1, 1, 0, 1, 0, -1, -1, -1], 
+    [1, 1, 0, 1, 0, 0, -1, -1, 0], 
+    [0, 0, 0, 0, 0, 0, 0, 0, 1], 
+    [0, 0, 0, 0, 0, 0, 0, 1, 0], 
+    [0, 0, 0, 0, 0, 0, 1, 0, 0], 
+    [0, 0, 0, 0, 0, 1, 0, 0, 0], 
+    [0, 0, 0, 0, 1, 0, 0, 0, 0], 
+    [0, 0, 0, 1, 0, 0, 0, 0, 0], 
+    [0, 0, 1, 0, 0, 0, 0, 0, 0], 
+    [0, 1, 0, 0, 0, 0, 0, 0, 0], 
+    [1, 0, 0, 0, 0, 0, 0, 0, 0]
+])
+sigma.rays()
+sigma_vee = sigma.dual()
+sigma_vee.rays()
+# V = AffineToricVariety(sigma)
+# V.Spec()
+
+

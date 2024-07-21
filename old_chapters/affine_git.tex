@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Affine geometric invariant theory
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Affine geometric invariant theory}
+Geometric invariant theory (GIT) was invented by David Mumford in the 1960s as a method of constructing moduli spaces --- spaces whose whose points represent isomorphism classes of a given algebro-geometric object. These are spaces of solutions to a geometric classification problems.Mumford's work built on ideas in Hilbert's study of classical invariant theory. Given an action of a group $G$ on an algebraic variety $X$, geometric invariant theory asks how we can construct a quotient of $X$ by $G$ with favourable properties, as in general, the set of orbits $X/G$ will not have the structure of an algebraic variety. In this section, we will study GIT to see how to construct quotients in algebraic geometry.
+
+\begin{definition}[\cite{Brion09}]
+    A $G$-variety is a variety $X$ with an action of an algebraic group $G$, such that the action
+$$G \times X \to X, \qquad (g, x) \mapsto g \cdot x$$
+    is also a morphism of varieties.
+\end{definition}
+
+\todo{examples.}
+
+\begin{definition}[\cite{Brion09}]
+    Let $G$ be an algebraic group and $X$ a $G$-variety. A \emph{geometric quotient} of $X$ by $G$ is a variety $Y$ and a morphism $\pi : X \to Y$ such that:
+    \begin{enumerate}[label=(\roman*)]
+        \item $\pi$ is surjective;
+        \item the fibers of $\pi$ are exactly the $G$-orbits in $X$;
+        \item A subset $U \subseteq Y$ is open if and only if $\pi^{-1}(U)$ is open;
+        \item For any open subset $U \subset Y$, the comorphism $\pi^*$ gives an isomorphism $\CC[U] \cong \CC[\pi^{-1}(U)]^G$.
+    \end{enumerate}
+\end{definition}
+
+In view of (i)--(iii) above, the variety $Y$ can be identified with the quotient space $X/G$ equipped with the usual quotient topology. Furthermore, (iv) uniquely  
+
+\todo{examples, particularly, cases where the geometric quotient doesn't exist.}
+
+\begin{theorem}[\cite{Brion09}]
+    Let $G$ be a reductive algebraic group, and $X$ an affine $G$-variety. Then:
+    \begin{enumerate}[label=(\roman*)]
+    \item The subalgebra $\CC[X]^G \subseteq \CC[X]$ is finitely generated.
+    \item Let $f_1, \ldots, f_n$ be generators of the algebra $\CC[X]^G$. Then the image of the morphism
+    $$X \to \CC^n, \qquad x \mapsto (f_1(x), \ldots, f_n(x))$$
+    is closed and independent of the choice of generators.
+    \item Denote by
+    $$\pi=\pi_X : X \to X \git G$$
+    the surjective morphism defined by (ii). Then every $G$-invariant morphism $f : X \to Y$, where $Y$ is an affine variety, factors through a unique morphism $\phi: X \git G \to Y$.
+    \item For any closed $G$-stable subset $Y \subseteq X$, the induced morphism $Y \git G \to X \git G$ is a closed immersion. In other words, the restriction of $\pi_X$ to $Y$ may be identified with $\phi_Y$. Moreover, given another closed $G$-stable subset $Y' \subseteq X$, we have $\pi_X(Y \cap Y') = \pi_X(Y) \cap \pi_X(Y').$
+    \item Each fiber of $\pi_X$ contains a unique closed $G$-orbit.
+    \item If $X$ is irreducible, then so is $X \git G$. If in addition $X$ is normal, then so is $X \git G$.
+    \end{enumerate}
+\end{theorem}
+
+The above map $\pi$ is uniquely determined by the universal property (iii).
+The variety $X \git G$ is called the \emph{geometric invariant theory quotient}, otherwise known as the \emph{categorical quotient}.
+In view of (v), $X \git G$ can be thought of as the closed $G$-orbits of $X$.
+
+\question{
+Why is it useful to define objects by universal properties?
+I roughly understand that in this case, the categorical quotient offers an alternative to the geometric quotient, which doesn't generally exists.
+However, what is the motivation for defining objects by universal properties in general?
+The abelianization of a group maybe be a useful example to think about. From MATH3303, we know that for a given group $G$, $G^{\text{ab}}$ is an abelian group with a surjective map homomorphism $\pi : G \to G^{\text{ab}}$ such that for any homomorphism $\varphi: G \to H$, where $H$ is an abelian group, there is a unique homomorphism $\tilde \varphi$ such that the following commutes:
+}
+\[
+\begin{tikzcd} 
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJHIl0sWzEsMSwiSCJdLFsxLDAsIkdee1xcdGV4dHthYn19Il0sWzAsMiwiXFxwaSJdLFsyLDEsIlxcdGlsZGVcXHZhcnBoaSJdLFswLDEsIlxcdmFycGhpIiwyXV0=
+	G & {G^{\text{ab}}} \\
+	& H
+	\arrow["\pi", from=1-1, to=1-2]
+	\arrow["\varphi"', from=1-1, to=2-2]
+	\arrow["\tilde\varphi", from=1-2, to=2-2]
+\end{tikzcd}
+\]
+\textcolor{red}{Then one shows that $G^\text{ab} = G/[G, G]$ is a solution to the universal problem.}

@@ -1,0 +1,358 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[alphabetic]{amsrefs}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{stmaryrd} % for GIT //
+
+\newcommand{\An}{\mathbb{A}^n}
+\newcommand{\Pn}{\mathbb{P}^n}
+\renewcommand{\a}{\mathfrak{a}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+
+\newtheorem{theorem}{Theorem}%[subsection]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{exercise}{Exercise}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+
+\theoremstyle{remark}
+\newtheorem*{moreexamples}{More examples}
+
+\allowdisplaybreaks
+
+\title{Checking Stability using the Hilbert-Mumford Criterion}
+\author{Declan Fletcher}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{The $G=SL_3$ case}
+
+Let $G = SL_3(\C)$ and consider the adjoint action of $G$ on $\mathfrak{g} = \mathfrak{sl}_3(\C)$.
+A one-parameter subgroup $\lambda$ of $T$ is of the form
+$$t \mapsto \begin{pmatrix} t^a & & \\ & t^b & \\ & & t^c \end{pmatrix}$$
+for some $a, b, \in \mathbb{Z}$ and $a + b + c = 0$.
+Composing with the adjoint action, we have
+$$t 
+\overset{\lambda}{\mapsto} \begin{pmatrix} t^a & & \\ & t^b & \\ & & t^c \end{pmatrix}
+ \overset{\mathrm{Ad}}{\mapsto} \begin{pmatrix} v_{11} & t^{a-b} v_{12} & t^{2a+b} v_{13} \\ t^{-a+b} v_{21} & v_{22} & t^{a+2b} v_{23} \\ t^{-2a-b} v_{31} & t^{-a-2b} v_{32} & v_{33} \end{pmatrix}.$$
+So the representation of $\C^\times$ given by the composition $\mathrm{Ad} \circ \lambda: \C^\times \to GL(\mathfrak{g})$ decomposes into the following weight spaces:
+\begin{align*}
+	\g &= \h \oplus \g_{\varepsilon_1} \oplus \g_{\varepsilon_2} \oplus \g_{\varepsilon_1 + \varepsilon_2} \oplus \g_{-\varepsilon_1} \oplus \g_{-\varepsilon_2} \oplus \g_{-\varepsilon_1 - \varepsilon_2}. 
+\end{align*}
+The respective weights are
+$$0, \, a-b, \, a+2b, \, 2a+b, \, -a+b, \, -a-2b, \,-2a-b.$$
+Here $\varepsilon_1(t) = t^{a-b}, \varepsilon_2(t) = t^{a+2b}$.
+
+Let us say the weights of $v \in \g$ are the weights in which $v$ has a non-zero component.
+The Hilbert-Mumford criterion gives us conditions for the stability of $v$ in terms of the weights of $v$:
+\begin{itemize}[label=-]
+\item
+$v \in \g$ is unstable if and only if there exists $\lambda \in X_*(T)\setminus\{0\}$ such that $v$ admits only positive or only negative weights.
+
+\item
+$v \in \g$ is semi-stable if and only if for all $\lambda \in X_*(T)\setminus\{0\}$, $v$ admits both non-negative and non-positive weights.
+
+\item
+$v \in \g$ is stable if and only if for all $\lambda \in X_*(T)\setminus\{0\}$, $v$ admits both positive and negative weights.
+\end{itemize}
+
+\begin{example}
+The vector 
+$$v = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} \in \g_{\varepsilon_2} \oplus \g_{\varepsilon_1 + \varepsilon_2}$$
+has weights $2a + b, a + 2b$.
+When $a = b = -1$, $v$ admits only negative weights, so $v$ is unstable.
+
+The vector 
+$$v = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} \in \g_{\varepsilon_1} \oplus \g_{-\varepsilon_1}$$
+has weights $a-b, - (a-b)$.
+For all $a, b \in \mathbb{Z}$, one of the weights is non-negative and one is non-positive, so $v$ is semistable.
+However, $v$ is not stable since $a=b=1$ gives a one-parameter subgroup where we do not have both positive and negative weights.
+
+The vector 
+$$v = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix} \in  \g_{\varepsilon_1} \oplus \g_{-\varepsilon_1} \oplus  \g_{\varepsilon_2} \oplus \g_{-\varepsilon_2}$$
+has weights $a-b, -(a-b), a+2b, -(a+2b)$.
+For all $a, b \in \mathbb{Z}$, either $a-b, -(a-b)$ is a pair of positive and negative weights, or $a+2b, -(a+2b)$ is, so $v$ always has positive and negative weights.
+Therefore, $v$ is stable.
+\end{example}
+
+\begin{moreexamples}
+We list further examples of the stability of vectors in $\mathfrak{sl}_3$, which were checked using a computer.
+The following vectors are unstable:
+$$
+\begin{pmatrix} 
+	0 & 1 & 0 \\ 
+	0 & 0 & 1 \\
+	0 & 0 & 0 
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 1 & 0 \\ 
+	0 & 0 & 0 \\
+	1 & 0 & 0 
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 1 & 1 \\ 
+	0 & 0 & 0 \\
+	0 & 1 & 0 
+\end{pmatrix}.
+$$
+It is interesting to note that these are all nilpotent matrices.
+The following vectors are semi-stable and not stable:
+$$
+\begin{pmatrix} 
+	0 & 1 & 0 \\ 
+	1 & 0 & 1 \\
+	0 & 0 & 0 
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 0 & 0 \\ 
+	0 & 0 & 1 \\
+	0 & 1 & 0 
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 1 & 1 \\ 
+	0 & 0 & 1 \\
+	0 & 1 & 0 
+\end{pmatrix}.
+$$
+The following vectors are stable:
+$$
+\begin{pmatrix} 
+	0 & 1 & 0 \\ 
+	0 & 0 & 1 \\
+	1 & 0 & 0 
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 1 & 0 \\ 
+	1 & 0 & 1 \\
+	0 & 1 & 0 
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 1 & 1 \\ 
+	1 & 0 & 0 \\
+	1 & 0 & 0 
+\end{pmatrix}.
+$$ \\
+\end{moreexamples}
+
+\section*{The $G = Sp_4$ case}
+Now let $G = Sp_4(\C)$ and $\mathfrak{g} = \mathfrak{sp}_4(\C)$.
+Composing a one-parameter subgroup of $T$ with the adjoint action gives a map
+$$t 
+\overset{\lambda}{\mapsto} 
+\begin{pmatrix} 
+	t^a & & & \\ 
+	& t^b & & \\ 
+	& & t^{-b} & \\
+	& & & t^{-a} 
+\end{pmatrix}
+\overset{\mathrm{Ad}}{\mapsto} 
+\begin{pmatrix} 
+	v_{11} & t^{a-b} v_{12} & t^{a+b} v_{13} & t^{2a} v_{14} \\ 
+	t^{-(a-b)} v_{21} & v_{22} & t^{2b} v_{23} & t^{a+b} v_{24} \\ 
+	t^{-(a+b)} v_{31} & t^{-2b} v_{32} & v_{33} & t^{a-b} v_{34} \\
+	t^{-2a} v_{41} & t^{-(a+b)} v_{42} & t^{-(a-b)} v_{43} & v_{44}
+\end{pmatrix},$$
+where $a, b \in \mathbb{Z}$.
+So the representation $\mathrm{Ad} \circ \lambda : \C^\times \to \mathfrak{sp}_4$ decomposes as
+$$
+\mathfrak{g} 
+= \h \oplus \g_{\varepsilon_1-\varepsilon_2} \oplus \g_{2 \varepsilon_2} \oplus \g_{\varepsilon_1+\varepsilon_2} \oplus \g_{2\varepsilon_1} 
+\oplus \g_{-(\varepsilon_1-\varepsilon_2)} \oplus \g_{-2 \varepsilon_2} \oplus \g_{-(\varepsilon_1+\varepsilon_2)} \oplus \g_{-2\varepsilon_1}, 
+$$
+where the respective weights are
+$$0, \,\, a-b, \,\, 2b, \,\, a+b, \,\, 2a, \,\, -(a-b), \,\, -2b, \,\, -(a+b), \,\, -2a.$$
+Here $\varepsilon_1(t) = t^{a}$, $\varepsilon_2(t) = t^{b}$.
+
+\begin{example}
+The vector 
+$$v = 
+\begin{pmatrix}
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 0 & 0 
+\end{pmatrix} \in \g_{\varepsilon_1 - \varepsilon_2} \oplus \g_{2 \varepsilon_2}
+$$
+has weights $a-b, 2b$.
+When $a = -2, b = -1$, $v$ admits only negative weights, so $v$ is unstable.
+
+The vector 
+$$v = 
+\begin{pmatrix}
+	0 & 1 & 0 & 0 \\
+	1 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 1 & 0 
+\end{pmatrix} \in \g_{\varepsilon_1 - \varepsilon_2} \oplus \g_{-(\varepsilon_1 -  \varepsilon_2)}
+$$
+has weights $a-b, -(a-b)$, which always has a non-negative and non-positive weight for all $a, b \in \mathbb{Z}$, so $v$ is semi-stable.
+When $a=b=1$, we do not have a positive and negative weight, so $v$ is not stable.
+
+The vector
+$$v = 
+\begin{pmatrix}
+	0 & 1 & 0 & 0 \\
+	1 & 0 & 1 & 0 \\
+	0 & 1 & 0 & 1 \\
+	0 & 0 & 1 & 0 
+\end{pmatrix} \in \g_{\varepsilon_1 - \varepsilon_2} \oplus \g_{2 \varepsilon_2} \oplus \g_{-(\varepsilon_1 -  \varepsilon_2)} \oplus \g_{- 2\varepsilon_2} 
+$$
+has weights $a-b, 2b, -(a-b), -2b$, which contains positive and negative weights for all $a, b \in \mathbb{Z}$.
+Therefore, $v$ is stable.
+\end{example}
+
+\begin{moreexamples}
+The following examples of stability for vectors in $\mathfrak{sp}_4$ were checked using a computer.
+The following vectors are unstable:
+$$
+\begin{pmatrix} 
+	0 & 1 & 0 & 0 \\ 
+	0 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 1 \\
+	0 & 0 & 0 & 0
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 0 & 0 & 0 \\ 
+	0 & 0 & 1 & 0 \\
+	1 & 0 & 0 & 0 \\
+	0 & -1 & 0 & 0
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 0 & 0 & 0 \\ 
+	1 & 0 & 1 & 0 \\
+	1 & 0 & 0 & 0 \\
+	0 & -1 & 1 & 0
+\end{pmatrix}.
+$$
+It is interesting to note that these are all nilpotent matrices.
+The following vectors are semi-stable and not stable:
+$$
+\begin{pmatrix} 
+	0 & 0 & 0 & 0 \\ 
+	0 & 0 & 1 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 0 & 0
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 0 & 0 & 0 \\ 
+	1 & 0 & 1 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 1 & 1 & 1 \\ 
+	0 & 0 & 0 & -1 \\
+	1 & 0 & 0 & 1 \\
+	0 & -1 & 0 & 0
+\end{pmatrix}.
+$$
+The following vectors are stable:
+$$
+\begin{pmatrix} 
+	0 & 0 & 1 & 0 \\ 
+	1 & 0 & 0 & -1 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0
+\end{pmatrix}, \,
+\textcolor{red}{\begin{pmatrix} 
+	0 & 0 & 1 & 0 \\ 
+	0 & 0 & 0 & -1 \\
+	0 & 1 & 0 & 0 \\
+	1 & 0 & 0 & 0
+\end{pmatrix}, \, 
+\begin{pmatrix} 
+	0 & 0 & 0 & 1 \\ 
+	1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0
+\end{pmatrix}.}
+$$ \\
+\end{moreexamples}
+The two red matrices are counterexamples to our upcoming claim about the general case.
+We have
+$$
+\begin{pmatrix} 
+	0 & 0 & 1 & 0 \\ 
+	0 & 0 & 0 & -1 \\
+	0 & 1 & 0 & 0 \\
+	1 & 0 & 0 & 0
+\end{pmatrix} \in \g_{\varepsilon_1+\varepsilon_2} \oplus \g_{-2\varepsilon_2} \oplus \g_{-2\varepsilon_1}$$
+with weights $a+b, -2b, -a$ and 
+$$
+\begin{pmatrix} 
+	0 & 0 & 0 & 1 \\ 
+	1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0
+\end{pmatrix} \in \g_{2\varepsilon_1} \oplus \g_{-(\varepsilon_1 - \varepsilon_2)} \oplus \g_{-2\varepsilon_2}$$
+with weights $2a, -(a-b), -2b$.
+
+\section*{The general case}
+Let $G$ be a connected complex reductive group, $\g$ the Lie algebra and $T$ a maximal torus.
+We are interested in the adjoint action of $T$ on $\g$.
+
+Choose $x_\alpha \in \g_\alpha$ for each $\alpha \in \Phi$ such that $x_\alpha$ is a basis for $\g_\alpha$.
+For any $x \in \g$, we can write
+$$x = x_0 + \sum_{\alpha \in \Phi} k_\alpha x_\alpha, \qquad k_\alpha \in \C.$$
+Denote
+$$S_x = \{\alpha \in \Phi \, | \, k_\alpha \ne 0\} \subseteq \Phi.$$
+
+The list of examples leads to the following claim:
+
+\begin{claim}
+Let $x \in \g$.
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item
+$x$ is unstable if and only if for all $Z \subseteq S_x$, 
+$$\sum_{\alpha \in Z} \alpha \ne 0;$$
+
+\item
+$x$ is semi-stable if and only if there exists $Z \subseteq S_x$ such that
+$$\sum_{\alpha \in Z} \alpha = 0;$$
+
+\item
+$x$ is stable if and only if there exists $Z \subseteq S_x$ with $|Z| > \mathrm{rank}(G) = \mathrm{rank}(Y(T))$ such that
+$$\sum_{\alpha \in Z} \alpha = 0.$$
+\end{enumerate}
+\end{claim}
+
+Clearly, (i) and (ii) are the same statement.
+Suppose $x$ is unstable and $S_x = \{\alpha_1, \ldots, \alpha_m\}$.
+The Hilbert-Mumford criterion tells us there exists $\lambda \in Y(T)$ such that 
+$$\langle \lambda, \alpha_1 \rangle, \ldots, \langle \lambda, \alpha_r \rangle > 0.$$
+Then for all $Z \subseteq S_x$,
+$$\left\langle\lambda, \sum_{\alpha \in Z} \alpha \right \rangle
+= \sum_{\alpha \in Z} \langle \lambda, \alpha \rangle > 0 \implies \sum_{\alpha \in Z} \alpha \ne 0$$
+The converse statement needed to prove (i) and (ii) would be: 
+suppose there exists $Z \subseteq S_x$ such that $\sum_{\alpha \in Z} \alpha = 0$; to see $x$ is semi-stable, by Hilbert-Mumford we need to show that for all $\lambda \in Y(T)$, there exists $\alpha_i, \alpha_j \in S_x$ such that $\langle \lambda, \alpha_i \rangle \le 0, \langle \lambda, \alpha_j \rangle \ge 0$.
+
+Statement (iii) is not true due to the red counter examples above.
+However, it may be salvageable if we allow multiples of roots to sum to zero.
+For example, although the vector in $\g_{\varepsilon_1+\varepsilon_2} \oplus \g_{-2 \varepsilon_2} \oplus \g_{-2\varepsilon_1}$ doesn't have a subset of $S_x$ that sums to zero, we do have
+$$2 (\varepsilon_1+\varepsilon_2) -2 \varepsilon_2 -2\varepsilon_1 = 0.$$
+
+\end{document}

@@ -1,0 +1,1041 @@
+\documentclass{amsart} 
+
+% Packages
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amssymb, amsfonts, amsthm, mathrsfs}
+\usepackage{textgreek, makecell, enumerate, bm, mathtools, thmtools, float, cite, wrapfig, multicol}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[pagebackref,pdfpagelabels]{hyperref}
+\hypersetup{linktoc = all, colorlinks = true, urlcolor = Blue, linkcolor = Red, citecolor = RoyalBlue}
+\usepackage[nobysame,alphabetic,msc-links]{amsrefs}
+\usepackage{tikz,tikz-cd}
+
+% Font
+\usepackage{newtxtext}
+\usepackage[vvarbb]{newtxmath}
+
+% Commands 
+\newcommand{\nc}{\newcommand}
+\newcommand{\rc}{\renewcommand}
+\nc{\on}{\operatorname}
+
+% Editing
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{purple}{rgb}{.5,.2,.8}
+\definecolor{blue}{rgb}{.2,.2,.8}
+\definecolor{green}{rgb}{.4,.6,.4}
+\nc{\mkcom}[1]{\noindent  \textcolor{red}{$[\star$ M: #1 $\star]$}}
+\nc{\gncom}[1]{\noindent  \textcolor{purple}{$[\star$ N: #1 $\star]$}}
+\nc{\bwcom}[1]{\noindent  \textcolor{blue}{$[\star$ B: #1 $\star]$}}
+
+% Blackboard bolds
+\rc{\AA}{\mathbb{A}}	
+\nc{\BB}{\mathbb{B}}	
+\nc{\CC}{\mathbb{C}}	
+\nc{\DD}{\mathbb{D}}	
+\nc{\EE}{\mathbb{E}}	
+\nc{\FF}{\mathbb{F}}	
+\nc{\GG}{\mathbb{G}}	
+\nc{\HH}{\mathbb{H}}	
+\nc{\II}{\mathbb{I}}	
+\nc{\JJ}{\mathbb{J}}	
+\nc{\KK}{\mathbb{K}}	
+\nc{\LL}{\mathbb{L}}	
+\nc{\MM}{\mathbb{M}}	
+\nc{\NN}{\mathbb{N}}	
+\nc{\OO}{\mathbb{O}}	
+\nc{\PP}{\mathbb{P}}	
+\nc{\QQ}{\mathbb{Q}}	
+\nc{\RR}{\mathbb{R}}	
+\rc{\SS}{\mathbb{S}}	
+\nc{\TT}{\mathbb{T}}	
+\nc{\UU}{\mathbb{U}}	
+\nc{\VV}{\mathbb{V}}	
+\nc{\WW}{\mathbb{W}}	
+\nc{\XX}{\mathbb{X}}	
+\nc{\YY}{\mathbb{Y}}	
+\nc{\ZZ}{\mathbb{Z}}	
+
+% Bold face
+\nc{\bA}{\mathbf{A}}	
+\nc{\bB}{\mathbf{B}}	
+\nc{\bC}{\mathbf{C}}	
+\nc{\bD}{\mathbf{D}}	
+\nc{\bE}{\mathbf{E}}	
+\nc{\bF}{\mathbf{F}}	
+\nc{\bG}{\mathbf{G}}	
+\nc{\bH}{\mathbf{H}}	
+\nc{\bI}{\mathbf{I}}	
+\nc{\bJ}{\mathbf{J}}	
+\nc{\bK}{\mathbf{K}}	
+\nc{\bL}{\mathbf{L}}	
+\nc{\bM}{\mathbf{M}}	
+\nc{\bN}{\mathbf{N}}	
+\nc{\bO}{\mathbf{O}}	
+\nc{\bP}{\mathbf{P}}	
+\nc{\bQ}{\mathbf{Q}}	
+\nc{\bR}{\mathbf{R}}	
+\nc{\bS}{\mathbf{S}}	
+\nc{\bT}{\mathbf{T}}	
+\nc{\bU}{\mathbf{U}}	
+\nc{\bV}{\mathbf{V}}	
+\nc{\bW}{\mathbf{W}}	
+\nc{\bX}{\mathbf{X}}	
+\nc{\bY}{\mathbf{Y}}	
+\nc{\bZ}{\mathbf{Z}}	
+
+% Calligraphic maths
+\nc{\calA}{\mathcal{A}}	
+\nc{\calB}{\mathcal{B}}	
+\nc{\calC}{\mathcal{C}}	
+\nc{\calD}{\mathcal{D}}	
+\nc{\calE}{\mathcal{E}}	
+\nc{\calF}{\mathcal{F}}	
+\nc{\calG}{\mathcal{G}}	
+\nc{\calH}{\mathcal{H}}	
+\nc{\calI}{\mathcal{I}}	
+\nc{\calJ}{\mathcal{J}}	
+\nc{\calK}{\mathcal{K}}	
+\nc{\calL}{\mathcal{L}}	
+\nc{\calM}{\mathcal{M}}	
+\nc{\calN}{\mathcal{N}}	
+\nc{\calO}{\mathcal{O}}	
+\nc{\calP}{\mathcal{P}}	
+\nc{\calQ}{\mathcal{Q}}	
+\nc{\calR}{\mathcal{R}}	
+\nc{\calS}{\mathcal{S}}
+\nc{\calT}{\mathcal{T}}	
+\nc{\calU}{\mathcal{U}}	
+\nc{\calV}{\mathcal{V}}	
+\nc{\calW}{\mathcal{W}}
+\nc{\calX}{\mathcal{X}}	
+\nc{\calY}{\mathcal{Y}}	
+\nc{\calZ}{\mathcal{Z}}
+
+% Lowercase fraktur
+\nc{\fraka}{\mathfrak{a}}
+\nc{\frakb}{\mathfrak{b}}
+\nc{\frakc}{\mathfrak{c}}
+\nc{\frakd}{\mathfrak{d}}
+\nc{\frake}{\mathfrak{e}}
+\nc{\frakf}{\mathfrak{f}}
+\nc{\frakg}{\mathfrak{g}}
+\nc{\frakh}{\mathfrak{h}}
+\nc{\fraki}{\mathfrak{i}}
+\nc{\frakj}{\mathfrak{j}}
+\nc{\frakk}{\mathfrak{k}}
+\nc{\frakl}{\mathfrak{l}}
+\nc{\frakm}{\mathfrak{m}}
+\nc{\frakn}{\mathfrak{n}}
+\nc{\frako}{\mathfrak{o}}
+\nc{\frakp}{\mathfrak{p}}
+\nc{\frakq}{\mathfrak{q}}
+\nc{\frakr}{\mathfrak{r}}
+\nc{\fraks}{\mathfrak{s}}
+\nc{\frakt}{\mathfrak{t}}
+\nc{\fraku}{\mathfrak{u}}
+\nc{\frakv}{\mathfrak{v}}
+\nc{\frakw}{\mathfrak{w}}
+\nc{\frakx}{\mathfrak{x}}
+\nc{\fraky}{\mathfrak{y}}
+\nc{\frakz}{\mathfrak{z}}
+
+% Uppercase fraktur
+\nc{\frakA}{\mathfrak{A}}
+\nc{\frakB}{\mathfrak{B}}
+\nc{\frakC}{\mathfrak{C}}
+\nc{\frakD}{\mathfrak{D}}
+\nc{\frakE}{\mathfrak{E}}
+\nc{\frakF}{\mathfrak{F}}
+\nc{\frakG}{\mathfrak{G}}
+\nc{\frakH}{\mathfrak{H}}
+\nc{\frakI}{\mathfrak{I}}
+\nc{\frakJ}{\mathfrak{J}}
+\nc{\frakK}{\mathfrak{K}}
+\nc{\frakL}{\mathfrak{L}}
+\nc{\frakM}{\mathfrak{M}}
+\nc{\frakN}{\mathfrak{N}}
+\nc{\frakO}{\mathfrak{O}}
+\nc{\frakP}{\mathfrak{P}}
+\nc{\frakQ}{\mathfrak{Q}}
+\nc{\frakR}{\mathfrak{R}}
+\nc{\frakS}{\mathfrak{S}}
+\nc{\frakT}{\mathfrak{T}}
+\nc{\frakU}{\mathfrak{U}}
+\nc{\frakV}{\mathfrak{V}}
+\nc{\frakW}{\mathfrak{W}}
+\nc{\frakX}{\mathfrak{X}}
+\nc{\frakY}{\mathfrak{Y}}
+\nc{\frakZ}{\mathfrak{Z}}
+
+% Operators
+\nc{\Lie}{\on{Lie}}
+\nc{\GL}{\on{GL}}
+\nc{\PGL}{\on{PGL}}
+\nc{\SL}{\on{SL}}
+\nc{\Sp}{\on{Sp}}
+\nc{\GSp}{\on{GSp}}
+\nc{\SO}{\on{SO}}
+\nc{\Or}{\on{O}}
+\nc{\gl}{\on{\mathfrak{gl}}}
+\rc{\sl}{\on{\mathfrak{sl}}}
+
+\nc{\Mat}{\on{Mat}}
+\nc{\Fun}{\on{Fun}}
+\nc{\Aut}{\on{Aut}}
+\nc{\End}{\on{End}}
+\nc{\Hom}{\on{Hom}}
+\nc{\Sym}{\on{Sym}}
+\nc{\Span}{\on{Span}}
+\nc{\Irr}{\on{Irr}}
+\nc{\Uch}{\on{Uch}}
+\nc{\Type}{\on{Type}}
+\nc{\Spec}{\on{Spec}}
+
+\nc{\Ind}{\on{Ind}}
+\nc{\Res}{\on{Res}}
+\nc{\stab}{\on{stab}}
+\nc{\orb}{\on{orb}}
+\rc{\ker}{\on{ker}}
+\nc{\im}{\on{im}}
+\nc{\tr}{\on{tr}}
+\nc{\ord}{\on{ord}}
+\nc{\Tor}{\on{Tor}}
+\nc{\Ad}{\on{Ad}}
+
+\nc{\Id}{\on{Id}}
+\nc{\Log}{\on{Log}}
+\nc{\Exp}{\on{Exp}}
+\nc{\Frac}{\on{Frac}}
+\nc{\diag}{\on{diag}}
+\nc{\D}{\on{D}}
+
+% Mathrm
+\nc{\St}{\mathrm{St}}
+\nc{\triv}{\mathrm{triv}}
+\nc{\sgn}{\mathrm{sgn}}
+\nc{\reg}{\mathrm{reg}}
+\nc{\rank}{\mathrm{rank}}
+\nc{\op}{\mathrm{op}}
+\nc{\ad}{\mathrm{ad}}
+\rc{\ss}{\mathrm{ss}}
+\nc{\HLV}{\mathrm{HLV}}
+
+% Environments
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{ntn}[thm]{Notation}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defe}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem} 
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+\newtheorem{conv}[thm]{Convention}
+
+
+
+
+
+
+
+
+
+
+
+
+%%% Front matter
+\linespread{1}
+\allowdisplaybreaks
+\begin{document}
+\pagenumbering{roman}
+\begin{center}
+\includegraphics[width=10cm]{UQLogo.jpg} \\ 
+\vspace{3cm}
+{\LARGE\textsc{Recent Progress on Representation Spaces}} \\ 
+\vspace{0.3cm}
+{\textsc{\href{https://baileywhitbread.com}{Bailey Whitbread}}} \\
+\vspace{1cm}
+{\textsc{Supervisor: \href{https://sites.google.com/site/masoudkomi/home}{Masoud Kamgarpour}}} \\
+{\textsc{Co-Supervisor: \href{https://people.smp.uq.edu.au/OleWarnaar/}{Ole Warnaar}}} \\
+\vspace{5cm}
+{\textsc{BMath (Hons)}} \\
+{\textsc{Starting date: January, 2022}} \\
+{\textsc{Submission date: August, 2023}} \\
+\vspace{1cm}
+{\textsc{\href{https://www.uq.edu.au/}{The University of Queensland}}} \\
+{\textsc{\href{https://smp.uq.edu.au/}{School of Mathematics and Physics}}}
+\end{center}
+\newpage
+\pagenumbering{arabic}
+
+
+\section{Introduction}
+\subsection*{Background}
+This project is concerned with studying a family of algebro-geometric objects called representation spaces. These are spaces associated to a finitely generated group and an algebraic group. An important class of finitely generated groups are those arising as fundamental groups of surfaces. For this class, the resulting representation spaces are related to many topics in mathematics and physics. These include the Yang-Mills equations, Hitchin's equations, the geometric Langlands correspondence, the $P=W$ conjecture and mirror symmetry \cite{Hausel13,BPGPNT14}. 
+
+In general, representation spaces are not well-understood. However, much is known when one considers representation spaces arising from fundamental groups of punctured orientable surfaces and reductive algebraic groups of type $A$. This is largely due to the seminal work of Hausel--Letellier--Rodriguez-Villegas \cite{HRV08, HLRV11} and subsequent work \cite{Letellier15, Mellit18, Ballandras23, LRV23}. In this project, we consider the same fundamental groups, but we do not restrict ourselves to reductive groups of type A. The novelty of this project is our type-independent approach which handles all types simultaneously. To our knowledge, only three papers deal with representation spaces associated to reductive groups outside of type $A$ \cite{Cambo17, BK22, KNP23}. In light of the Langlands program and the relationships with the aforementioned areas in mathematics and physics, it is crucial to understand the situation for reductive groups all types.
+
+The goal of this project is to understand the topology and geometry of these representation spaces. In particular, we investigate their cohomology, obtaining useful topological invariants such as dimension, Euler characteristic, and the number of irreducible components. We access these invariants through techniques of arithmetic geometry. In particular, we count points of representation spaces over finite fields.
+
+Our work relies on the Weil conjectures, a jewel of 20th century mathematics. Their statements are complicated, but they teach us an important philosophy: cohomological information can be obtained by counting points over finite fields. A concrete manifestation of this philosophy is a theorem of Katz \cite[Theorem 6.1.2]{HRV08}. This result tells us that, when point-counting over finite fields, it is fruitful if one can conclude a polynomial relationship between the size $q$ of the finite field and the number of points of the representation space over that finite field.
+
+A formula first revealed by Frobenius links the number of such points to the represention theory of finite reductive groups. This provides a clear strategy to analyse the topology of representation spaces: use the representation theory of finite reductive groups to show that Frobenius' formula is a polynomial in $q$, and compute features of this polymomial. 
+
+
+
+
+
+
+
+\subsection*{Representation spaces}
+Fix a surface $\Sigma$ and a reductive algebraic group $G$. Denote by $\pi_1(\Sigma)$ the fundamental group of the surface. The representation spaces in this project arise as spaces of homomorphisms $\pi_1(\Sigma)\to G$. Such a homomorphism is determined by the image of its generators, subject to the requirement that the chosen images satisfy the relations of the fundamental group. Algebraic groups carry the structure of a variety, so this space of homomorphisms does too, since we can identify a homomorphism with the images that determine it. For instance, if $\Sigma$ is the torus, then $\pi_1(\Sigma)\simeq \ZZ\times\ZZ \simeq \langle a,b\mid  ab=ba\rangle$ and a homomorphism $\pi_1(\Sigma)\to G$ amounts to a choice of images $\tilde{a},\tilde{b}\in G$ such that $\tilde{a}\tilde{b}=\tilde{b}\tilde{a}$. Therefore $\Hom(\pi_1(\Sigma),G)$ is identified with the subvariety $\{(g,h)\in G^2\mid gh=hg\}\subseteq G^2$. 
+
+Recall from representation theory that two representations are considered equivalent if they are conjugate. The identification $\Hom(\pi_1(\Sigma),G)\subseteq G\times\cdots\times G$ means that $\Hom(\pi_1(\Sigma),G)$ admits an action of $G$ given by simultaneous conjugation in each entry. This allows us to consider the collection of orbits $\Hom(\pi_1(\Sigma),G)/G$, which one may interpret as the collection of inequivalent representations. The structure of this orbit space is subtle, since it does not necessarily inherit a desirable algebro-geometric structure from $G$. The problem with the naive quotient is that singleton sets are not necessarily closed, so the quotient topology is not necessarily Hausdorff \cite[\S3.2.1]{BPGPNT14}. \newpage
+
+There are two common ways to obtain a space of orbits that admits a desirable algebro-geometric structure: 
+\begin{enumerate}[\itshape(i)]
+\item Consider the geometric-invariant-theory (GIT) quotient $\Hom(\pi_1(\Sigma),G)/\!\!/G$. Historically, this was the first solution to the orbit-space problem, due to Mumford. To solve this problem, the GIT quotient only consists of the closed orbits, which can be given desirable structure \cite[\S3.1]{CF12}. 
+\item Consider the quotient stack $[\Hom(\pi_1(\Sigma),G)/G]$. Stacks are a higher algebraic object defined in the wake of Grothendieck. These solve our quotient problem by keeping track of more data than the naive quotient does, such as the stabilisers of points. In a sense, the stacky quotient is the `correct' quotient, but its definition requires more work \cite[\S6.8]{Achar21}.
+\end{enumerate}
+
+The GIT quotient $\Hom(\pi_1(\Sigma),G)/\!\!/G$ is called the character variety and has a close relationship to the problems from other areas stated earlier. In general, its point-count is difficult. In constrast, the stacky quotient $[\Hom(\pi_1(\Sigma),G)/G]$ is called the character stack and has essentially the same point-count as $\Hom(\pi_1(\Sigma),G)$. This point-count is still difficult, but it is easier than the point-count of the character variety. For these reasons, we will focus on the character stack's point-count, with a view towards relating it to the character variety's point-count.
+
+
+
+
+
+
+
+
+\subsection*{Counting points}
+Our strategy to understand representation spaces is to compute their $E$-polynomials.\footnote{Also known as Serre polynomials.} These are polynomials that encode the geometric structure of representation spaces (specifically, the coefficients are dimensions of certain cohomology groups). From an $E$-polynomial, we can extract topological information by reading features of the polynomial. We omit the definition of $E$-polynomials \cite[Definition 2.1.4]{HRV08}, but emphasise that the following result allows us to compute $E$-polynomials without appealing to their definition.
+\begin{thm}[Theorem 6.1.2.3 of \cite{HRV08}]
+Let $X$ be a variety defined by polynomials with integer coefficients.\footnote{In other words, a scheme of finite type over $\ZZ$.} Denote by $\FF_q$ the finite field with $q$ elements. Suppose that $|X(\FF_q)|$ is given by a polynomial $P_X(q)\in\CC[q]$. Then $P_X(q)\in\ZZ[q]$ and this is the $E$-polynomial of $X$, denoted $E(X;q)$.
+\end{thm}
+This tells us that if we can conclude polynomiality of $|X(\FF_q)|$, then we immediately obtain the $E$-polynomial without appealing to its definition. Once obtained, we use this polynomial to access topological information. For example,
+\begin{enumerate}[\itshape(i)]
+\item The dimension of $X$ is the degree of $E(X;q)$, 
+\item The Euler characteristic of $X$ is given by $E(X;1)$, and
+\item The number of (maximal dimension) irreducible components of $X$ is the leading coefficient of $E(X;q)$.
+\end{enumerate} 
+
+\subsection*{Frobenius' formula}
+In general, counting points over finite fields is not an easy problem. However, we have restricted ourselves to punctured orientable surfaces and, in this case, there is a formula due to Frobenius telling us how to point-count. Suppose that $\Sigma$ is a once-punctured orientable surface with genus $g\geq1$. Through Seifert--Van Kampen's theorem, one sees that this has the fundamental group
+\[
+\pi_1(\Sigma)\simeq \langle a_1,b_1,\ldots,a_g,b_g,c\mid [a_1,b_1]\cdots[a_g,b_g] c = 1\rangle.
+\]
+Furthermore, suppose that $G$ is a reductive algebraic group over $\FF_q$. Assume that the loop $c$ around the puncture is mapped into a fixed conjugacy class $C\subseteq G$. In other words, consider the representation space 
+\[
+R := \{f\in\Hom(\pi_1(\Sigma),G)\mid f(c)\in C\}.
+\]
+We also quietly assume that the centraliser of $C$ in $G$ is connected; we will soon specialise $G$ and $C$ so that this is always the case. Since homomorphisms on $\pi_1(\Sigma)$ are determined by the images of the generators, we make the identification
+\[
+R \simeq \{ (X_1,Y_1,\ldots,X_g,Y_g,Z) \in G^{2g}\times C \mid [X_1,Y_1]\cdots[X_g,Y_g] Z = 1\}\subseteq G^{2g+1}.
+\]
+Then Frobenius' formula \cite[Proposition 3.1.4]{HLRV11} tells us that $R$ has point-count
+\[
+\frac{|R(\FF_q)|}{|G(\FF_q)|} = \sum_{\chi\in\Irr(G(\FF_q))} \bigg(\frac{|G(\FF_q)|}{\chi(1)}\bigg)^{2g-2}\frac{\chi(C(\FF_q))}{\chi(1)}|C(\FF_q)|,
+\]
+where $\Irr(G(\FF_q))$ is the set of irreducible complex characters of the finite group $G(\FF_q)$. We see that evaluating Frobenius' formula is a problem in the world of the representation theory of finite reductive groups. Note that we did not need to impose reductivity on the algebraic group $G$ to get this far. However, if we were not in the reductive setting, then the task of understanding $\Irr(G(\FF_q))$ and evaluating Frobenius' formula becomes out of our reach.
+
+
+
+\subsection*{Results}
+We concern ourselves with character stack $\frakX := [R/(G/Z)]$ when $C$ is a strongly regular, split and generic conjugacy class. Here, $C$ being strongly regular and split means that its centraliser is a split maximal torus $T$ \cite{Stein65}, and $Z$ is the centre of $G$. It is well-known that $|\frakX(\FF_q)|/|Z(\FF_q)| = |R(\FF_q)|/|G(\FF_q)|$ \cite[Lemma 2.5.1]{Behrend93}, meaning we can point-count $\frakX$ using Frobenius' formula. Our main result is the following:
+\begin{thm}\label{ThmDegree}
+The function $f(q):=|\frakX(\FF_q)|$ is a polynomial in $q$ with the following features:
+\begin{enumerate}[\itshape(i)]
+\item The degree of $f$ is $(2g-1)\dim G + 2\dim Z - \dim T$.
+\item The leading coefficient of $f$ is the number of connected components of the centre of the Langlands dual group. 
+\item If $\dim Z>0$ or $g>1$ then $f(1)=0$.
+\item The coefficients of $f$ are palindromic, in the sense that $f(1/q) = q^{-\deg f}f(q)$.
+\end{enumerate}
+\end{thm}
+\begin{cor}
+The $E$-polynomial $E(\frakX;q)$ is equal to $f(q)$. Moreover,
+\begin{enumerate}[\itshape(i)]
+\item The dimension of the character stack is $(2g-1)\dim G + 2\dim Z - \dim T$.
+\item The character stack and the centre of the Langlands dual group have the same number of connected components. 
+\item The Euler characteristic of the character stack is $0$, unless $\dim Z=0$ and $g=1$.
+\item The character stack exhibits a `curious' Poincar\'e duality, in the sense of \cite{HRV08,HLRV11}.
+\end{enumerate}
+\end{cor}
+
+
+
+
+
+
+
+
+
+\subsection*{Lusztig's Jordan decomposition} 
+Our proof of Theorem \ref{ThmDegree} is centered around a remarkable decomposition of $\Irr(G(\FF_q))$ due to Lusztig. We shall take some time to define the objects involved. We will also discuss the history of these objects, in order to highlight their conceptual advantages and the significance of the decomposition.
+
+Before the 1970s, the problem of finding irreducible $G(\FF_q)$-characters, let alone the character values themselves, was far from solved. At the time, only the general linear groups $\GL_n(\FF_q)$ and symplectic group $\Sp_{4}(\FF_q)$ had well-understood character tables \cite{Green55,Srinivasan68}. From these tables, Macdonald conjectured that there should exist a map from `general position' characters of maximal tori to $\Irr(G(\FF_q))$. Roughly, maximal tori are subgroups of $G(\FF_q)$ that are isomorphic to products of multiplicative groups of finite fields, and there are no mysteries about their representation theory. Macdonald's conjectures were solved by Deligne--Lusztig in their seminal 1976 paper \cite{DL76}. Their main idea was their Deligne--Lusztig characters which ellucidate the representation theory of finite groups to this day.  
+
+The inspiration for Deligne--Lusztig characters was a construction due to Fields medalist Drinfeld. He had explicitly constructed a mysterious family of irreducible $\SL_2(\FF_q)$-representations. At the time, only the character values of these irreducible representations were known, and Drinfeld's work explained how to construct the actual representations which realised those characters. These representations were found inside the so-called $\ell$-adic cohomology group $H_c^1(C,\QQ_\ell)$ of the curve $C\colon xy^q-yx^q=1$, now known as the Drinfeld curve \cite{Bonnafe11}. Remarkably, such cohomology groups were in their infancy at the time, having been developed only in the previous decade by Fields medalists Alexander Grothendieck in order to prove the Weil conjectures.\footnote{Even more remarkably, Drinfeld was only 19 years old at the time of this work \cite{Lusztig14}.}
+
+A Deligne--Lusztig character $R_T^G(\theta)$ is a virtual character associated to a maximal torus $T\subseteq G$ and a character $\theta\in\Irr(T(\FF_q))$. By a virtual character, we mean a $\ZZ$-linear combination of actual characters. The Deligne--Lusztig characters satisfy many important properties. One evidently helpful property is that all irreducible $G(\FF_q)$-characters appear in some Deligne-Lusztig character. That is, for any $\chi\in\Irr(G(\FF_q))$, there is some $(T,\theta)$ such that the multiplicity of $\chi$ in $R_T^G(\theta)$ is non-zero \cite[Corollary 2.2.19]{GM20}.
+
+An important subcollection of $\Irr(G(\FF_q))$ are the so-called unipotent characters, which are those irreducible characters which appear in $R_T^G(1_T)$ for some $T$. A surprising theorem of Lusztig tells us that unipotent characters are independent of the base field, in the sense that they are in bijection with a set only depending on the Weyl group of $G$ \cite[Theorem 2.4.1]{GM20}. Even more can be said when $G$ has connected centre. In this case, Lusztig tells us that semisimple conjugacy classes and unipotent characters of smaller groups can be used to parameterise the collection of irreducible $G(\FF_q)$-characters. This is Lusztig's Jordan decomposition of $\Irr(G(\FF_q))$.
+\begin{thm}[Theorem 4.23 of \cite{Lusztig84}]\label{ThmLusztigJordan}
+Suppose that $G$ has connected centre. Let $G^\vee$ be the Langlands dual of $G$ and $\Uch(G^\vee_x(\FF_q))$ be the set of unipotent characters of the centraliser of $x\in G^\vee(\FF_q)$. Then there is a bijection
+\[
+\Irr(G(\FF_q)) \longleftrightarrow \bigsqcup_{\substack{[x]\subseteq G^{\vee}(\FF_q) \\ x\ \text{semisimple}}} \Uch(G^\vee_x(\FF_q)).
+\]
+Furthermore, if $\chi\in\Irr(G(\FF_q))$ is paired with $\rho\in\Uch(G_x^\vee(\FF_q))$, then the degrees of $\chi$ and $\rho$ are related by 
+\[
+\chi(1) = \rho(1)[G^\vee(\FF_q):G^\vee_x(\FF_q)]_{p'}.
+\]
+\end{thm}
+\subsection*{$G$-types}
+We frame the point-count of representation spaces in terms of $G$-types, a new definition in the spirit of \cite{HRV08,HLRV11,Mereb15,Cambo17}. Our types generalise previously defined notions of types, the first of which being due to Green \cite{Green55}. This frame of types aids in the task of obtaining a polynomial in $q$ for two reasons: $G$-types do not depend on $q$, and each irreducible $G(\FF_q)$-character gives rise to a $G^\vee$-type. These facts allow us to carefully manipulate the dependence on $q$ in Frobenius' formula. 
+
+Our proposed definition of types is motivated by the following assignment. If $\chi$ is paired with $([x],\rho)$ via Lusztig's Jordan decomposition, then consider the centraliser $G^\vee_x$. Since $G$ has connected centre, the centraliser is a connected reductive subgroup of maximal rank. Carter tells us that this centraliser gives rise to a so-called genus $([\Psi],[w])$, where $\Psi$ is the root system of $G^\vee_x$ and $[w]$ is the conjugacy class of $N_W(W_\Psi)/W_\Psi$ which describes the centraliser's rational structure \cite{Carter78}.\footnote{For example, up to $\GL_2(\FF_q)$-conjugation, there are two maximal tori in $\GL_2(\FF_q)$ and they both have empty root systems, but they are distinguished by a choice of conjugacy class in $N_W(W_\emptyset)/W_\emptyset\simeq S_2$.} Here, $W$ is the Weyl group of $G$ and $W_\Psi$ is the Weyl group of $\Psi$. Then the aforementioned assignment is
+\[
+\chi\mapsto ([\Psi],[w],\rho).
+\]
+We propose the following definition of a $G$-type:
+\begin{defe}\label{DefinitionType}
+Suppose that $G$ has root system $\Phi$ and Weyl group $W$. A $G$-type is a triple $\tau=([\Psi],[w],\rho)$, where 
+\begin{enumerate}[\itshape(i)]
+\item $[\Psi]$ is the $W$-orbit of a closed subsystem $\Psi$ of $\Phi$, 
+\item $[w]$ is a conjugacy class in $N_{W}(W_\Psi)/W_\Psi$, and 
+\item $\rho$ is a unipotent representation of $G_{[\Psi],[w]}(\FF_q)$, the group with root system $[\Psi]$ and rational structure $[w]$.
+\end{enumerate}
+\end{defe}
+The collection of all $G$-types is denoted $\Type(G)$, which is independent of $q$.\footnote{We are omitting light assumptions on $q$. For those interested, we assume that $q$ is a power of a prime which is good for $G$, in the sense of \cite[\S1.14]{Carter93}.} The assignment $\chi\mapsto ([\Psi],[w],\rho)$ gives rise to a well-defined map $\Irr(G(\FF_q))\to\Type(G^\vee)$. The collection of irreducible $G(\FF_q)$-characters with type $\tau$ is denoted $\Irr(G(\FF_q))_\tau$. For example, the four $\GL_2$-types are
+\[
+\tau_1=([A_1],[1],\triv),\quad \tau_2=([A_1],[1],\St),\quad \tau_3=([\emptyset],[1],\triv)\quad \text{and}\quad \tau_4([\emptyset],[w],\triv), 
+\]
+where $\St$ is the Steinberg representation for $\GL_2(\FF_q)$, and $w$ is the non-trivial element of $N_W(W_\emptyset)/W_\emptyset\simeq S_2$. Noting that $\GL_2^\vee=\GL_2$, the above types arise from the following $\GL_2(\FF_q)$-characters:
+\begin{enumerate}[\itshape(i)]
+\item $\tau_1$ arises from characters of the form $U_\alpha\colon\GL_2(\FF_q)\xrightarrow{\det}\FF_q^\times\xrightarrow{\alpha}\CC^\times$ for some $\alpha\in\Irr(\FF_q^\times)$. 
+\item $\tau_2$ arises from characters of the form $\St\otimes U_\alpha$. 
+\item $\tau_3$ arises from the irreducible principle series characters.
+\item $\tau_4$ arises from the irreducible cuspidal characters.
+\end{enumerate}
+
+\subsection*{Order polynomials and degree polynomials}\label{SectionOrderDegreePolys}
+To point-count later, we need order and degree polynomials, which come from well-known order and degree formulas \cite[Theorem 1.6.7, Definition 2.3.25]{GM20}. Given $\chi\in\Irr(G(\FF_q))$, the order and degree polynomials $\|G\|$ and $\DD_\chi$ are constructed to satisfy $\|G\|(q) = |G(\FF_q)|$ and $\DD_\chi(q)=\chi(1)$, indicating their use in point-counting (cf. Frobenius' formula). For instance, if $G=\GL_{n}$, then
+\[
+\|G\|(q) = |\GL_n(\FF_q)| = q^{\binom{n}{2}}(q-1)^n\sum_{w\in S_n} q^{\mathrm{length}(w)},
+\]
+and if $\chi=\Ind_{B(\FF_q)}^{G(\FF_q)}(\theta)$ is an irreducible principle series character of $\GL_n(\FF_q)$, then
+\[
+\DD_\chi(q) = \chi(1) = \frac{|G(\FF_q)|}{|B(\FF_q)|}\dim\theta = \sum_{w\in S_n}q^{\mathrm{length}(w)}.
+\]
+Using the degree formula in Theorem \ref{ThmLusztigJordan}, we find that $\DD_\chi$ actually only depends on the type of $\chi$:
+\begin{prop}\label{PropTypeDegree}
+The degree of $\chi$ is determined by its type $\tau$, so we write $\tau(1)$ for this common degree. Furthermore, the degree polynomial of $\chi$ is determined by its type, so we write $\DD_\tau$ for this common polynomial.  
+\end{prop}
+
+This follows from observing that if $([\Psi],[w],\rho)$ is the type of $\chi$ then this completely determines the value $\rho(1)[G^\vee(\FF_q):G^{\vee}_{[\Psi],[w]}(\FF_q)]_{p'}$, which is exactly $\chi(1)$, by Theorem \ref{ThmLusztigJordan}. Therefore, if $\chi$ and $\chi'$ have the same type, then $\chi(1)=\chi'(1)$. But $\DD_\chi(q)=\chi(1)$, meaning that the polynomial $\DD_\chi - \DD_{\chi'}$ has infinitely many roots and must be zero. Therefore, so long as $\tau$ arises from some character, $\DD_\tau$ is well-defined. 
+
+
+\subsection*{Point-counting with $G$-types}\label{SectionPointCountingWithGTypes}
+Given $\tau\in\Type(G^\vee)$ and $S\in G(\FF_q)$, define the functions
+\[
+H_\tau(q) := \frac{\|G\|(q)}{\DD_\tau(q)}\quad\text{and}\quad S_\tau(q) := \sum_{\chi\in\Irr(G(\FF_q))_\tau} \chi(S).
+\]
+We call the $S_\tau$ character sums. In this notation, we have
+\[
+|\frakX(\FF_q)| = \frac{|R(\FF_q)|}{|(G/Z)(\FF_q)|} = \frac{|Z(\FF_q)|}{|T(\FF_q)|}\sum_{\chi\in\Irr(G(\FF_q))} \bigg(\frac{|G(\FF_q)|}{\chi(1)}\bigg)^{2g-1} \chi(S) = \frac{\|Z\|(q)}{\|T\|(q)}\sum_{\tau\in\Type(G^\vee)} H_\tau(q)^{2g-1}S_\tau(q).
+\]
+
+This expression yields some amount of clarity when point-counting. For instance, by \cite[Remark 2.3.27]{GM20}, we know that $\DD_\tau$ divides $\|G\|$, so $H_\tau$ is a polynomial. Therefore, the polynomiality of $S_\tau$ is the only concern when proving the above expression is a polynomial, since the sum on the right-hand side is over a set that is independent of $q$.
+
+\subsection*{Character sums are polynomial}
+When $G=\GL_n$ and $S$ is semisimple with a `generic' condition, character sums were related to Macdonald polynomials, yielding useful polynomial expressions of character sums \cite[Theorem 4.3.1]{HLRV11}. Outside of type $A$, when $G=\Sp_{2n}$ and $S$ is regular, semisimple with a similar `generic' condition, these sums were related to posets of closed root subsystems \cite[\S4.3.5]{Cambo17}. As far as we know, the first type-independent investigation to evaluate these sums was recently conducted in \cite{KNP23}, which we continue. A novelty of our current work is that, unlike \cite{KNP23}, we do not rely on the presence of a regular unipotent conjugacy class. 
+
+Using character evaluation formulas of Deligne--Lusztig, one can deduce the polynomiality of $S_\tau$ via the polynomiality of certain character sums of tori. It was shown for the first time in \cite{KNP23} that these character sums of tori are polynomial. This allows us to conclude polynomiality of $S_\tau$ when $S\in G(\FF_q)$ is strongly regular and split, so that $S$ is contained in a unique split maximal torus $T(\FF_q)$. 
+\begin{thm}\label{ThmEvalSTau}
+Let $X$ be the character lattice of $G$, let $\Phi$ be the roots corresponding to the pair $(G,T)$, and let $d(G^\vee)$ be the modulus of $G^\vee$. Then $S_\tau$ is essentially polynomial in $q$, in the sense that it is polynomial on residue classes.\footnote{This means that there are some polynomials $f_1,\ldots,f_N$ such that $S_\tau(q)=f_i(q)$ for all $q\equiv i\ \mathrm{mod}\ N$. In the language of \cite{HRV08}, this implies that the representation space is fibrewise polynomial-count.} Furthermore, if $X/\langle \Phi\rangle$ is free and $q \equiv 1\ \mathrm{mod}\ d(G^\vee)$, then $S_\tau$ is polynomial in $q$. 
+\end{thm}
+
+Explicitly computing $S_\tau(q)$ becomes tractable when one imposes a generic condition on $S$. This is a relatively light assumption; generic elements form an open dense set in $T$. We omit the expression obtained, but we note that this allows us to relate our character sums to that of \cite{HLRV11}. 
+
+
+\subsection*{Future objectives}
+We state some objectives remaining in this project.
+\begin{enumerate}[\itshape(i)]
+\item We are writing a paper \cite{KNW} containing the results above and some of the objectives below.
+\item We seek to understand the Euler characteristic when $\dim Z=0$ and $g=1$. In \cite{Cambo17}, the Euler characteristic $E_n$ of an $\Sp_{2n}$-character variety was determined by the generating function
+\[
+\sum_{n\geq 0} \frac{E_n}{|W(B_n)|} T^n = \prod_{k\geq 1} \frac{1}{(1-T^k)^3} = 1 + 3T + 9T^2 + \cdots.
+\]
+\item We will relate the point-counts of character varieties to the above point-count of character stacks. This will allow us to investigate the topological features of character varieties. Due to genericity of the puncture, we have found that character stacks and character varieties have the same point-count. 
+\item We will examine the relationship between $S_\tau$ and the character sums computed in \cite{HLRV11}. The latter were computed using combinatorial descriptions of the representation theory of $\GL_n(\FF_q)$. Thus, comparing our expressions may yield combinatorial insights into the situation. 
+\item A natural goal is to remove the regularity condition placed on $S$. In this case, $S$ can be contained in many tori, not just the unique one guarenteed by regularity. We must then appeal to another result of Deligne--Lusztig \cite[Corollary 7.6]{DL76}. This tells us that, to proceed, one should understand the irreducible constituents of $R_T^G(\theta)$. Unlike $\calB(\theta)$, these irreducible constituents are not so well-behaved. However, an analogous result \cite[Theorem 2.3.2]{GM20} gives us some handle on their behavior. In particular, we must replace $W$-conjugacy with the concept of geometric conjugacy \cite[Definition 5.5]{DL76}.
+\end{enumerate}
+
+
+
+
+
+
+
+
+%%% References
+\newpage
+\begin{bibdiv}
+\begin{biblist}[\normalsize]*{labels={alphabetic}}
+\bib{Achar21}{book}{
+author={Achar, P.N.},
+title={Perverse sheaves and applications to representation theory},
+series={Mathematical Surveys and Monographs},
+volume={258},
+publisher={American Mathematical Society, Providence, RI},
+date={2021},
+pages={xii+562},
+review={\MR{4337423}}
+}
+
+\bib{Alvis79}{article}{
+author={Alvis, D.},
+title={The duality operation in the character ring of a finite Chevalley group}
+journal={Bull. Amer. Math. Soc. (N.S.)},
+volume={1},
+date={1979},
+number={6},
+pages={907--911},
+review={\MR{0546315}}
+}
+
+\bib{AL82}{article}{
+author={Alvis, D.},
+author={Lusztig, G.},
+title={The representations and generic degrees of the Hecke algebra of type {$H\sb{4}$}},
+journal={J. Reine Angew. Math.},
+pages={201--212},
+volume={336},
+year={1982},
+review={\MR{0671329}}
+}
+
+\bib{Ballandras23}{article}{
+author = {Ballandras, M.},
+title = {Intersection cohomology of character varieties for punctured {Riemann} surfaces},
+journal = {J. \'Ec. polytech. Math.},
+pages = {141--198},
+publisher = {\'Ecole polytechnique},
+volume = {10},
+year = {2023}
+}
+
+\bib{Behrend93}{article}{ 
+author={Behrend, K. A.}, 
+title={The Lefschetz trace formula for algebraic stacks}, 
+journal={Invent. Math.}, 
+volume={112},
+number={1},
+pages={127--149},
+year={1993},
+review={\MR{1207479}}
+}
+
+\bib{Bonnafe11}{book}{
+author={Bonnaf\'{e}, C.},
+title={Representations of ${\rm SL}_2(\Bbb F_q)$},
+series={Algebra and Applications},
+volume={13},
+publisher={Springer-Verlag London, Ltd., London},
+date={2011},
+pages={xxii+186},
+review={\MR{2732651}}
+}
+
+\bib{BPGPNT14}{collection}{
+title={Moduli spaces},
+series={London Mathematical Society Lecture Note Series},
+volume={411},
+editor={Brambila-Paz, L.},
+editor={Garc\'{\i}a-Prada, O.},
+editor={Newstead, P.},
+editor={Thomas, R.P.},
+publisher={Cambridge University Press, Cambridge},
+date={2014},
+pages={xii+333},
+review={\MR{3236896}}
+}
+
+\bib{BK22}{article}{
+author={Bridger, N.},
+author={Kamgarpour, M.},
+year={2022},
+title={Character stacks are PORC count},
+pages={1--22},
+journal={J. Aust. Math. Soc.}
+}
+
+\bib{Cambo17}{thesis}{
+author={Camb\`{o}, V.},
+title={On the $E$-polynomial of parabolic $\Sp_{2n}$-character varieties},
+year={2017},
+type={Ph.D.\ thesis},
+organization={Scuola Internazionale Superiore di Studi Avanzati (SISSA)},
+note={\href{https://hdl.handle.net/20.500.11767/57152}{SISSA Digital Library}}
+}
+
+\bib{Carter78}{article}{
+author={Carter, R. W.},
+title={Centralizers of semisimple elements in finite groups of Lie type},
+journal={Proc. London Math. Soc. (3)},
+volume={37},
+date={1978},
+number={3},
+pages={491--507},
+review={\MR{0512022}}
+}
+
+\bib{Carter93}{book}{
+author={Carter, R. W.}
+title={Finite groups of Lie type},
+series={Wiley Classics Library},
+publisher={John Wiley \& Sons, Ltd., Chichester},
+date={1993},
+pages={xii+544},
+review={\MR{1266626}}
+}
+
+\bib{CF12}{article}{
+author={Casimiro, A.},
+author={Florentino, C.},
+title={Stability of affine $G$-varieties and irreducibility in reductive groups},
+journal={Internat. J. Math.},
+volume={23},
+date={2012},
+number={8},
+pages={1250082 (30 pages)},
+review={\MR{2949220}}
+}
+
+\bib{Curtis80}{article}{
+author={Curtis, C. W.},
+title={Truncation and duality in the character ring of a finite group of Lie type},
+journal={J. Algebra},
+volume={62},
+date={1980},
+number={2},
+pages={320--332},
+review={\MR{0563231}}
+}
+
+
+\bib{DL76}{article}{
+author={Deligne, P.},
+author={Lusztig, G.},
+title={Representations of reductive groups over finite fields},
+journal={Ann. of Math. (2)},
+volume={103},
+number={1},
+pages={103--161},
+year={1976},
+review={\MR{0393266}}
+}
+
+\bib{DM20}{book}{
+author={Digne, F.},
+author={Michel, J.}, 
+title={Representations of Finite Groups of Lie Type}, 
+publisher={Cambridge University Press, Cambridge}
+series={London Mathematical Society Student Texts}, 
+edition={2}, 
+year={2020}, 
+pages={vii+257},
+review={\MR{4211777}}
+}
+
+\bib{GM20}{book}{
+author={Geck, M.},
+author={Malle, G.},
+title={The character theory of finite groups of Lie type},
+series={Cambridge Studies in Advanced Mathematics},
+volume={187},
+publisher={Cambridge University Press, Cambridge},
+date={2020},
+pages={ix+394},
+review={\MR{4211779}},
+}
+
+
+\bib{GP00}{book}{
+author={Geck, M.},
+author={Pfeiffer, G.},
+title={Characters of finite Coxeter groups and Iwahori-Hecke algebras},
+series={London Mathematical Society Monographs. New Series},
+volume={21},
+publisher={The Clarendon Press, Oxford University Press, New York},
+date={2000},
+pages={xvi+446},
+review={\MR{1778802}},
+}
+
+\bib{Green55}{article}{
+author={Green, J. A.},
+title={The characters of the finite general linear groups},
+journal={Trans. Amer. Math. Soc.},
+volume={80},
+date={1955},
+pages={402--447},
+review={\MR{0072878}}
+}
+
+\bib{Hausel13}{article}{
+author={Hausel, T.},
+title={Global topology of the Hitchin system},
+conference=
+{
+title={Handbook of moduli. Vol. II},
+},
+book=
+{
+series={Adv. Lect. Math. (ALM)},
+volume={25},
+publisher={Int. Press, Somerville, MA},
+},
+date={2013},
+pages={29--69},
+review={\MR{3184173}},
+}
+
+\bib{HLRV11}{article}{
+author={Hausel, T.},
+author={Letellier, E.},
+author={Rodriguez-Villegas, F.},
+title={Arithmetic harmonic analysis on character and quiver varieties},
+journal={Duke Math. J.},
+volume={160},
+date={2011},
+number={2},
+pages={323--400},
+review={\MR{2852119}}
+}
+
+\bib{HRV08}{article}{
+author={Hausel, T.},
+author={Rodriguez-Villegas, F.},
+title={Mixed Hodge polynomials of character varieties},
+note={With an appendix by Nicholas M. Katz},
+journal={Invent. Math.},
+volume={174},
+date={2008},
+number={3},
+pages={555--624},
+review={\MR{2453601}}
+}
+
+\bib{KNP23}{article}{
+author={Kamgarpour, M.}
+author= {Nam, G.},
+author={Puskás, A.},
+title={Arithmetic geometry of character varieties with regular monodromy, I},
+year={2023},
+note={Preprint, \href{https://arxiv.org/abs/2209.02171}{arXiv:2209.02171}}
+}
+
+\bib{KNW}{article}{
+title = {Arithmetic geometry of character varieties with regular monodromy, II},
+author = {Kamgarpour, M.},
+author={Nam, G.},
+author={Whitbread, B.}, 
+journal = {In preparation}
+}
+
+\bib{Letellier15}{article}{
+author={Letellier, E.},
+title={Character varieties with Zariski closures of
+$\mathrm{GL}_n$-conjugacy classes at punctures},
+journal={Selecta Math. (N.S.)},
+volume={21},
+date={2015},
+number={1},
+pages={293--344},
+review={\MR{3300418}}
+}
+
+\bib{LRV23}{article}{
+author = {Letellier, E.},
+author = {Rodriguez-Villegas, F.},
+title = {E-series of character varieties of non-orientable surfaces},
+journal = {Ann. Inst. Fourier (Grenoble)},
+pages = {1385--1420},
+volume = {73},
+number = {4},
+year = {2023}
+}
+
+\bib{Lusztig84}{book}{
+author={Lusztig, G.},
+title={Characters of reductive groups over a finite field},
+series={Annals of Mathematics Studies},
+volume={107},
+publisher={Princeton University Press, Princeton, NJ},
+date={1984},
+pages={xxi+384},
+review={\MR{0742472}}
+}
+
+\bib{Lusztig14}{article}{
+author={Lusztig, G.},
+title={Algebraic and geometric methods in representation theory},
+year={2014},
+note={Preprint, \href{https://arxiv.org/abs/1409.8003}{arXiv:1409.8003}}
+}
+
+
+\bib{Mellit18}{article}{
+author={Mellit, A.},
+title={Integrality of Hausel-Letellier-Villegas kernels},
+journal={Duke Math. J.},
+volume={167},
+date={2018},
+number={17},
+pages={3171--3205},
+review={\MR{3874651}}
+}
+
+\bib{Mereb15}{article}{
+author={Mereb, M.},
+title={On the $E$-polynomials of a family of $\SL_n$-character varieties},
+journal={Math. Ann.},
+volume={363},
+date={2015},
+number={3-4},
+pages={857--892},
+review={\MR{3412345}}
+}
+
+\bib{Srinivasan68}{article}{
+author={Srinivasan, B.},
+title={The characters of the finite symplectic group ${\rm Sp}(4,\,q)$},
+journal={Trans. Amer. Math. Soc.},
+volume={131},
+date={1968},
+pages={488--525},
+review={\MR{0220845}}
+}
+
+\bib{Stein65}{article}{ 
+author={Steinberg, R.}, 
+title={Regular elements of semisimple algebraic groups}, 
+journal={Inst. Hautes \'{E}tudes Sci. Publ. Math.}, 
+volume={25},
+pages={49--80},
+year={1965},
+review={\MR{0180554}}
+}
+\end{biblist}
+\end{bibdiv}
+\end{document}
+
+
+
+
+
+\bib{BC72}{article}{
+author={Benson, C. T.},
+author={Curtis, C. W.},
+title={On the degrees and rationality of certain characters of finite Chevalley groups},
+journal={Trans. Amer. Math. Soc.},
+volume={165},
+date={1972},
+pages={251--273},
+review={\MR{0304473}}
+}
+
+\bib{Boalch14}{article}{
+author={Boalch, P. P.},
+title={Geometry and braiding of Stokes data; fission and wild character varieties},
+journal={Ann. of Math. (2)},
+volume={179},
+date={2014},
+number={1},
+pages={301--365},
+review={\MR{3126570}}
+}
+
+\bib{Carter72}{article}{
+author={Carter, R. W.},
+title={Conjugacy classes in the Weyl group},
+journal={Compositio Math.},
+volume={25},
+date={1972},
+pages={1--59},
+review={\MR{0318337}}
+}
+
+
+
+\bib{CFLO14}{article}{
+author={Casimiro, A.},
+author={Florentino, C.},
+author={Lawton, S.},
+author={Oliveira, A.},
+title={Topology of Moduli Spaces of Free Group Representations in Real Reductive Groups},
+year={2014},
+note={Preprint, \href{https://arxiv.org/abs/1403.3603}{arXiv:1403.3603}}
+}
+
+
+\bib{CIK71}{article}{
+author={Curtis, C. W.},
+author={Iwahori, N.},
+author={Kilmoyer, R.},
+title={Hecke algebras and characters of parabolic type of finite groups with {$(B,$} {$N)$}-pairs},
+journal={Inst. Hautes \'{E}tudes Sci. Publ. Math.},
+volume={40},
+pages={81--116},
+year={1971},
+review={\MR{0347996}}
+}
+
+
+\bib{CR81}{book}{
+author={Curtis, C. W.},
+author={Reiner, I.},
+title={Methods of representation theory. Vol. I.},
+series={Pure and Applied Mathematics},
+note={With applications to finite groups and orders},
+publisher={John Wiley \& Sons, Inc., New York},
+date={1981},
+pages={xxi+819},
+review={\MR{0632548}}
+}
+
+
+\bib{EH00}{book}{
+author={Eisenbud, D.},
+author={Harris, J.},
+title={The geometry of schemes},
+series={Graduate Texts in Mathematics},
+volume={197},
+publisher={Springer-Verlag, New York},
+date={2000},
+pages={x+294},
+review={\MR{1730819}}
+}
+
+\bib{Etingof11}{book}{
+author={Etingof, P. I.},
+author={Golberg, O.},
+author={Hensel, S.},
+author={Liu, T.},
+author={Schwendner, A.},
+author ={Vaintrob, D.},
+author={Yudovina, E.},
+title={Introduction to representation theory},
+publisher={American Mathematical Society, Providence, RI},
+year={2011},
+pages={viii+228},
+review={\MR{2808160}}
+}
+
+\bib{DeFranceschi18}{thesis}{
+author={De Franceschi, G.},
+title={Centralizers and conjugacy classes in finite classical groups}, 
+year={2018},
+type={Ph.D.\ thesis},
+organization={University of Auckland},
+note={\href{http://hdl.handle.net/2292/45197}{University of Auckland Repository}}
+}
+
+
+\bib{FH04}{book}{
+title={Representation theory},
+author={Fulton, W.},
+author={Harris, J.},
+series={Graduate Texts in Mathematics},
+volume={129},
+publisher={Springer-Verlag, New York},
+date={1991},
+pages={xvi+551},
+review={\MR{1153249}},
+}
+
+
+
+
+
+
+
+\bib{Kil78}{article}{
+author={Kilmoyer, R. W.},
+title={Principal series representations of finite Chevalley groups},
+journal={J. Algebra},
+volume={51},
+number={1},
+pages={300--319},
+year={1978},
+review={\MR{0487479}}
+}
+
+\bib{LL23}{article}{
+author={Laumon, G.},
+author={Letellier, E.},
+title={Note on a conjecture of Braverman-Kazhdan},
+journal={Adv. Math.},
+volume={419},
+date={2023},
+pages={Paper No. 108962, 48},
+issn={0001-8708},
+review={\MR{4560998}}
+}
+
+
+
+\bib{Matsumoto64}{article}{
+author={Matsumoto, H.},
+title={G\'{e}n\'{e}rateurs et relations des groupes de Weyl g\'{e}n\'{e}ralis\'{e}s},
+language={French},
+journal={C. R. Acad. Sci. Paris},
+volume={258},
+date={1964},
+pages={3419--3422},
+review={\MR{0183818}}
+}
+
+
+
+\bib{Neeman07}{book}{
+author={Neeman, A.},
+title={Algebraic and analytic geometry},
+series={London Mathematical Society Lecture Note Series},
+volume={345},
+publisher={Cambridge University Press, Cambridge},
+date={2007},
+pages={xii+420},
+review={\MR{2358675}}
+}
+	
+\bib{Serre77}{book}{
+author={Serre, J-P.},
+title={Linear representations of finite groups},
+series={Graduate Texts in Mathematics},
+publisher={Springer-Verlag, New York-Heidelberg},
+date={1977},
+pages={x+170},
+review={\MR{0450380}}
+}
+
+
+
+
+
+
+
+
+
+Our point-counting yields conclusions about the topology of representation spaces when there is one strongly regular, split and generic puncture.\footnote{One notes that strongly regular elements are semisimple \cite{Stein65}.} Specifically, we compute the dimension, number of connected components and Euler characteristic of such representation spaces. We also prove that the $E$-polynomial is a palindrome, indicating a curious Poincar\'e duality \cite[\S5.1]{Hausel13}. The proof uses Alvis--Curtis duality, an operation at the level of $G(\FF_q)$-class functions introduced in \cite{Alvis79,Curtis80}, and allows for a clear and illuminating proof. Instances of palindromicity were previously seen in \cite{HLRV11,Mereb15,Cambo17}, where Alvis--Curtis duality amounted to partition conjugation and multiplying by sign representations. 
+
+
+
