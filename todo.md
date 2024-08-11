@@ -1,10 +1,6 @@
 # TO DO
 ## ADMIN
-[ ] Make sure fire safety training appears on CAHP
-[x] Make sure deep learning course is approved for honours
-[x] Make sure Sophie brings music gear back
-[x] Email Yang for cosupervisor
-[x] Make sure ssaf fee goes through
+[ ] Make sure inclusivity training appears on CAHP
 
 ## MUSIC
 [ ] Clean instruments (double bass, all guitars)
@@ -19,8 +15,8 @@
 #### Introduction
 [ ] Honest account/tell a story
 #### Affine Varieties
-[ ] Correspondence between points and ideals
-[ ] The Zariski topology (irreducibility)
+[x] Correspondence between points and ideals
+[x] The Zariski topology (irreducibility)
 [ ] Definition of algebraic variety
 [ ] Functions on varieties (morphisms, isomorphism)
 [ ] Tangent spaces, singularities, dimension 

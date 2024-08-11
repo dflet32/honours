@@ -1,0 +1,183 @@
+\documentclass{beamer}
+\usetheme{metropolis}
+
+\usepackage{tikz}
+\usepackage{eucal}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{microtype}
+\usepackage{float}
+
+\theoremstyle{definition}
+\newtheorem{noitalicstheorem}{Theorem}
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\M}{M}
+
+\newcommand{\C}{\mathbb{C}}
+
+\definecolor{mynavy}{RGB}{35, 55, 59}
+\definecolor{myorange}{RGB}{235, 129, 27}
+\definecolor{myteal}{RGB}{92, 188, 172}
+\definecolor{mygreen}{RGB}{11, 176, 161}
+\definecolor{myblue}{RGB}{130, 158, 117}
+\metroset{block=fill}
+
+
+\title{GIT and Affine Toric Varieties}
+\subtitle{Mid-year Review}
+\author{Declan Fletcher}
+\date{2 August 2024}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Affine GIT}
+\pause
+Suppose a group $G$ acts on a complex affine variety $X = \mathrm{Spec}(R)$.
+The $G$-invariant functions on $X$ are
+$$R^G := \{f \in R : f(g \cdot P) = f(P) \text{ for all } g \in G, P \in X\}.$$
+The GIT quotient is
+$$X /\!\!/ G := \mathrm{Spec}(R^G).$$
+
+\pause
+Example: $\mathbb{C}^\times$ acting on $\mathbb{C}^2=\mathrm{Spec}(\mathbb{C}[X, Y])$ by
+$$g \cdot (x, y) = (g x, g^{-1} y), 
+\qquad g \in \mathbb{C}^\times, \, (x, y) \in \mathbb{C}^2.$$
+Then,
+$$\mathbb{C}[X, Y]^{\mathbb{C}^\times} = \mathbb{C}[XY], 
+\quad \text{and} \quad \mathbb{C}^2 /\!\!/ \mathbb{C}^\times \cong \mathbb{C}.$$
+\end{frame}
+
+\begin{frame}
+\frametitle{GIT quotient of a Lie algebra by a torus}
+\pause
+Let $G$ be a connected complex reductive group with Lie algebra $\mathfrak{g}$ and maximal torus $T$.
+The adjoint action of $G$ on $\mathfrak{g}$ induces an action of $T$ on $\mathfrak{g}$.
+The goal of this project is to study
+$$\mathfrak{g} /\!\!/ T = \mathrm{Spec}(\mathbb{C}[\mathfrak{g}]^T).$$
+
+\pause
+Example: $G = \mathrm{GL}_2(\mathbb{C})$, $T$ is the subgroup of diagonal matrices, and $\mathfrak{g}=\mathfrak{gl}_2(\mathbb{C})$.
+Then $T$ acts on $\mathfrak{g}$ by
+$$\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \cdot \begin{pmatrix} x & y \\ z & w \end{pmatrix}
+= \begin{pmatrix} x & a b^{-1} y \\ a^{-1} b z & w \end{pmatrix},$$
+and therefore
+$$\mathbb{C}[\mathfrak{g}]^T = \mathbb{C}[X, W, YZ], \quad \text{and} \quad \mathfrak{g} /\!\!/ T \cong \mathbb{C}^3.$$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Affine toric varieties}
+The quotient $\mathfrak{g} /\!\!/ T$ has the structure of an affine toric variety; \\
+these are varieties determined by a cone in a vector space.
+
+\pause
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.3]
+        % Left diagram
+        \begin{scope}[shift={(-2,0)}]
+            % Shaded area
+            \fill[gray!30] (0,0) -- (-1,2) -- (2,2) -- (2,0) -- cycle;
+            
+            % Axes
+            \draw[->] (-1.25,0) -- (2.25,0);
+            \draw[->] (0,-0.25) -- (0,2.25);
+            
+            % Lattice points
+            \foreach \x in {-1,-0.5,0,0.5,1,1.5,2}
+                \foreach \y in {0,0.5,1,1.5,2}
+                    \fill (\x,\y) circle (1pt);
+
+            % Vectors
+            \draw[->, ultra thick] (0,0) -- (0.5,0);
+            \draw[->, ultra thick] (0,0) -- (-0.5,1);
+            \node at (1.75, 1.75) {$\sigma$};
+        \end{scope}
+
+        % Right diagram
+        \begin{scope}[shift={(2,0)}]
+            % Shaded area
+            \fill[gray!30] (0,0) -- (0,2) -- (2,2) -- (2, 1) -- cycle;
+            
+            % Axes
+            \draw[->] (-1.25,0) -- (2.25,0);
+            \draw[->] (0,-0.25) -- (0,2.25);
+            
+            % Lattice points
+            \foreach \x in {-1,-0.5,0,0.5,1,1.5,2}
+                \foreach \y in {0,0.5,1,1.5,2} {
+                    \fill (\x,\y) circle (1pt);
+                }
+                
+			  % Labels
+			  \node[anchor=south west] at (0, 0) {\!\!\! \tiny \alert{$1$}};
+			  
+			  %\node[anchor=south] at (-0.5, 0) {\tiny \alert{$X^{-1}$}};
+			  %\node[anchor=south] at (-0.5, 0.5) {\tiny \alert{$X^{-1} Y$}};
+			  %\node[anchor=south] at (-0.5, 1) {\tiny \alert{$X^{-1} Y^2$}};
+			  %\node[anchor=south] at (-0.5, 1.5) {\tiny \alert{$X^{-1} Y^3$}};
+			  
+			  \node[anchor=south west] at (0, 0.5) {\!\!\! \tiny \alert{$Y$}};
+			  \node[anchor=south west] at (0, 1) {\!\!\! \tiny \alert{$Y^2$}};
+			  %\node[anchor=south] at (0, 1.5) {\tiny \alert{$Y^3$}};
+			  \node[anchor=south west] at (0.5, 0) {\!\!\!\! \tiny \alert{$X$}};
+			  \node[anchor=south west] at (0.5, 0.5) {\!\!\!\! \tiny \alert{$X Y$}};
+			  \node[anchor=south west] at (0.5, 1) {\!\!\!\!  \tiny \alert{$X Y^2$}};
+			  %\node[anchor=south] at (0.5, 1.5) {\tiny \alert{$X Y^3$}};
+			  \node[anchor=south west] at (1, 0) {\!\!\!\! \tiny \alert{$X^2$}};
+			  \node[anchor=south west] at (1, 0.5) {\!\!\!\! \tiny \alert{$X^2 Y$}};
+			  \node[anchor=south west] at (1, 1) {\!\!\!\! \tiny \alert{$X^2 Y^2$}};
+			  %\node[anchor=south] at (1, 1.5) {\tiny \alert{$X^2 Y^3$}};
+
+            % Vectors
+            %\draw[->, ultra thick] (0,0) -- (0,0.5);
+            %\draw[->, ultra thick] (0,0) -- (1,0.5);
+            \node at (1.75, 1.75) {\small{$\sigma^\vee$}};
+        \end{scope}
+    \end{tikzpicture}
+\end{figure}
+\noindent
+$$U_\sigma = \mathrm{Spec}(\mathbb{C}[Y, XY, X^2 Y]) \cong \mathrm{Spec}(\mathbb{C}[U, V, W]/(UW - V^2)).$$
+
+\pause
+Properties of the variety are informed by properties of the cone.
+\end{frame}
+
+\begin{frame}
+\frametitle{What I have done so far}
+\begin{enumerate}
+\pause \item 
+Computed examples of $\mathfrak{g} /\!\!/ T$ when $G = \mathrm{GL}_2(\mathbb{C})$ and $G = \mathrm{GL}_3(\mathbb{C})$.
+
+\pause \item 
+Computed a basis for the invariant ring $\mathbb{C}[\mathfrak{g}]^T$ for general $G$:
+$$\mathbb{C}[X^\eta Y^\mu : \eta \in \mathcal{A}, \mu \in (\mathbb{Z}_{\ge 0})^r],$$
+where
+$$\mathcal{A} := \left\{\eta \in (\mathbb{Z}_{\ge 0})^\Phi : \sum_{\alpha \in \Phi} \eta_\alpha \alpha = 0\right\}.$$
+
+\pause \item
+Proved that $\mathfrak{g} /\!\!/ T$ has the structure of a toric variety.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Goals for the remainder of the project}
+\begin{enumerate}
+\pause \item
+Compute the cone corresponding to the affine toric variety $\mathfrak{g} /\!\!/ T$, and use this to study features of the variety.
+
+\pause \item
+Investigate the concepts of stability and semi-stability in GIT, and compute the stable and semi-stable points for the action of $T$ on $\mathfrak{g}$.
+
+\pause \item
+Learn about the projective GIT quotient and projective toric varieties;
+the projective GIT quotient $\mathfrak{g} /\!\!/_\chi T$, where $\chi$ is a character of $T$, is a projective toric variety.
+\end{enumerate}
+\end{frame}
+
+\end{document}

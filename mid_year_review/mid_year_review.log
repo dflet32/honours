@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  20 JUL 2024 21:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  29 JUL 2024 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -341,6 +341,10 @@ Package microtype Info: Loading configuration file microtype.cfg.
 (c:/texlive/2020/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
 ))
+(c:/texlive/2020/texmf-dist/tex/latex/correctmathalign/correctmathalign.sty
+Package: correctmathalign 2017/04/04 v1.1 style file ``correctmathalign.sty''
+ by Yuwsuke Kieda
+)
 (c:/texlive/2020/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (c:/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (c:/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -692,20 +696,12 @@ ex
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
 orations.pathmorphing.code.tex)))
-(c:/texlive/2020/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
+\c@theorem=\count308
 
-(c:/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count308
-)
-Couldn't patch \@starttoc
-)
-\c@theorem=\count309
- (c:/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
+(c:/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count310
-\c@subtable=\count311
+\c@subfigure=\count309
+\c@subtable=\count310
 )
 (c:/texlive/2020/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -717,8 +713,8 @@ Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
 \t@pgfplots@tokb=\toks47
 \t@pgfplots@tokc=\toks48
 \pgfplots@tmpa=\dimen285
-\c@pgfplots@coordindex=\count312
-\c@pgfplots@scanlineindex=\count313
+\c@pgfplots@coordindex=\count311
+\c@pgfplots@scanlineindex=\count312
 
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
 x))
@@ -734,13 +730,13 @@ cture.code.tex)
 ctureext.code.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
 de.tex
-\c@pgfplotsarray@tmp=\count314
+\c@pgfplotsarray@tmp=\count313
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
 ode.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
 ode.tex
-\c@pgfplotstable@counta=\count315
+\c@pgfplotstable@counta=\count314
 \t@pgfplotstable@a=\toks49
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
@@ -752,7 +748,7 @@ tex))
 x)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
 ading.code.tex
-\c@pgfplotslibrarysurf@no=\count316
+\c@pgfplotslibrarysurf@no=\count315
 
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
 ding.pgfsys-pdftex.def)))
@@ -775,7 +771,7 @@ ex)
 brarydecorations.pathreplacing.code.tex
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
 orations.pathreplacing.code.tex))
-\pgfplots@numplots=\count317
+\pgfplots@numplots=\count316
 \pgfplots@xmin@reg=\dimen286
 \pgfplots@xmax@reg=\dimen287
 \pgfplots@ymin@reg=\dimen288
@@ -807,17 +803,10 @@ File: pgflibraryarrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \arrowsize=\dimen292
 ))) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count318
+\l__color_backend_stack_int=\count317
 \l__pdf_internal_box=\box65
 )
-(./mid_year_review.aux
-
-LaTeX Warning: Label `irreducibilityproposition' multiply defined.
-
-
-LaTeX Warning: Label `irreducibilityproposition' multiply defined.
-
-)
+(./mid_year_review.aux)
 \openout1 = `mid_year_review.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 271.
@@ -845,22 +834,21 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 271
 .
-
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
+\scratchcounter=\count318
 \scratchdimen=\dimen293
 \scratchbox=\box66
-\nofMPsegments=\count320
-\nofMParguments=\count321
+\nofMPsegments=\count319
+\nofMParguments=\count320
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count322
+\MPscratchCnt=\count321
 \MPscratchDim=\dimen294
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
 \everyMPtoPDFconversion=\toks51
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -882,7 +870,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count325
+\c@section@level=\count324
 )
 LaTeX Info: Redefining \ref on input line 271.
 LaTeX Info: Redefining \pageref on input line 271.
@@ -914,7 +902,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
 
-<../images/UQLogo.jpg, id=67, 1185.42876pt x 473.77pt>
+<../images/UQLogo.jpg, id=115, 1185.42876pt x 473.77pt>
 File: ../images/UQLogo.jpg Graphic file (type jpg)
 <use ../images/UQLogo.jpg>
 Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 278.
@@ -926,125 +914,205 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-))
-\tf@toc=\write5
-\openout5 = `mid_year_review.toc'.
-
- [2] [1]
-
-Package amsrefs Warning: The form \cite{...}*{...} is recommended
-(amsrefs)                instead of \cite[...]{...} on input line 334.
+)
+LaTeX Font Info:    Trying to load font information for U+euf on input line 17.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 358.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 358.
-
-[2]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 402.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 402.
-
-[3] [4]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 502
-.
- (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-) [5] [6] [7]
-[8] [9] [10]
-<../images/cox cone example 2.png, id=234, 158.09062pt x 264.23718pt>
+))
+\tf@toc=\write5
+\openout5 = `mid_year_review.toc'.
+
+ [2]
+
+Package amsrefs Warning: The form \cite{...}*{...} is recommended
+(amsrefs)                instead of \cite[...]{...} on input line 343.
+
+[1] [2] [3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 486.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 486.
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 530.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 530.
+
+[5] [6] [7] [8] [9] [10] [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 976.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 976.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -1.95872pt
+(hyperref)                removed on input line 976.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 976.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -1.95872pt
+(hyperref)                removed on input line 976.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 976.
+
+[12] [13]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1109.
+
+[14]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1166.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1166.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1166.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1166.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 1166.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1166.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1166.
+
+[15] [16] [17] [18] [19] [20]
+<../images/cox cone example 2.png, id=421, 158.09062pt x 264.23718pt>
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
-Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 9
-02.
+Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 1
+550.
 (pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
- [11 <../images/cox cone example 2.png>] [12]
+ [21 <../images/cox cone example 2.png>] [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1067.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1067.
+(hyperref)                removing `math shift' on input line 1724.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1067.
+(hyperref)                removing `superscript' on input line 1724.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -2.25047pt
-(hyperref)                removed on input line 1067.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1067.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1724.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -2.25047pt
-(hyperref)                removed on input line 1067.
+(hyperref)                removed on input line 1724.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1067.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1724.
 
-[13] [14] [15] (./mid_year_review.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -2.25047pt
+(hyperref)                removed on input line 1724.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1724.
+
+[23] [24]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [25] (./mid_year_review.aux)
 Package rerunfilecheck Info: File `mid_year_review.out' has not changed.
-(rerunfilecheck)             Checksum: 34C27A525617044757411D872C7719DB;2906.
+(rerunfilecheck)             Checksum: 10B904E6E4A5F2E26A4228EFF38B1F40;5495.
  ) 
 Here is how much of TeX's memory you used:
- 36597 strings out of 479023
- 821879 string characters out of 5863351
- 1276986 words of memory out of 5000000
- 52977 multiletter control sequences out of 15000+600000
- 425150 words of font info for 193 fonts, out of 8000000 for 9000
+ 36505 strings out of 479023
+ 820608 string characters out of 5863351
+ 1270732 words of memory out of 5000000
+ 52723 multiletter control sequences out of 15000+600000
+ 429275 words of font info for 238 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 87i,12n,97p,736b,998s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{theorem.2} has been referenced but does not exist
+ 87i,16n,97p,736b,998s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{theorem.5} has been referenced but does not exist
 , replaced by a fixed one
 
+pdfTeX warning (dest): name{theorem.4} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{theorem.2} has been referenced but does not exist, 
+replaced by a fixed one
+
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2020/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2020/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/euler/eufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsf
-onts/symbols/msam10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfr
-m1200.pfb>
-Output written on mid_year_review.pdf (17 pages, 454545 bytes).
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/e
+ufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
+0.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texl
+ive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on mid_year_review.pdf (27 pages, 559898 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
- 106 named destinations out of 1000 (max. 500000)
- 49295 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 629 PDF objects out of 1000 (max. 8388607)
+ 563 compressed objects within 6 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 51951 words of extra memory for PDF output out of 61914 (max. 10000000)
 

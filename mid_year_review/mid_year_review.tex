@@ -13,13 +13,13 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{hyperref}
-\usepackage{microtype}
+\usepackage{microtype,correctmathalign}
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{quiver}
 %\hypersetup{linktoc = all, colorlinks = true, urlcolor = Blue, linkcolor = Red, citecolor = RoyalBlue}
-\usepackage[parfill]{parskip}
+%\usepackage[parfill]{parskip}
 
 % COMMANDS 
 \newcommand{\nc}{\newcommand}
@@ -35,7 +35,7 @@
 \newcommand{\question}[1]{\noindent  \textcolor{red}{Question: #1}}
 \newcommand{\todo}[1]{\noindent  \textcolor{blue}{To do: #1}}
 % Editing line spacing
-% \linespread{1.5}
+%\linespread{1.5}
 
 % BLACKBOARD BOLD
 \rc{\AA}{\mathbb{A}}	
@@ -277,15 +277,17 @@
 \begin{center}
 \includegraphics[width=10cm]{../images/UQLogo.jpg} \\ 
 \vspace{3cm}
-{\LARGE\textsc{Mid-year Review}} \\
-{\textsc{July 2024}} \\
+{\LARGE\textsc{GIT and Affine Toric Varieties}} \\
+%\vspace{0.1cm}
+%{\LARGE\textsc{Varieties}} \\
 \vspace{0.5cm}
 {\textsc{Declan Fletcher}} \\
-\vspace{5cm}
+\vspace{8cm}
+{\textsc{Mid-year Review, July 2024}} \\
+{\textsc{ Bachelor of Mathematics (Honours)}} \\
+\vspace{1cm}
 {\textsc{Supervisor: \href{https://sites.google.com/site/masoudkomi/home}{Masoud Kamgarpour}}} \\
 {\textsc{Co-Supervisor: \href{https://sites.google.com/site/yangzhang139/home}{Yang Zhang}}} \\
-\vspace{3cm}
-{\textsc{Bachelor of Mathematics (Honours)}} \\
 \vspace{1cm}
 {\textsc{\href{https://www.uq.edu.au/}{The University of Queensland}}} \\
 {\textsc{\href{https://smp.uq.edu.au/}{School of Mathematics and Physics}}}
@@ -306,15 +308,134 @@
 \pagenumbering{arabic}
 \section{Introduction}
 
+We study the affine GIT quotient $\frakg \git T$, where $G$ is a connected complex algebraic group with Lie algebra $\frakg$ and maximal torus $T$.
+The variety $\frakg \git T$ can be explicitly computed for $G = \GL_2(\CC)$ or $G = \GL_3(\CC)$, but the problem is difficult for arbitrary $G$.
+For any torus acting on an affine space, the GIT quotient has the structure of a toric variety.
+We investigate toric varieties to use the toric variety structure of $\frakg \git T$ to elucidate its properties.
+
+
+\subsection{Classical invariant theory}
+When a group $G$ acts on a vector space $V$, there is an induced action of $G$ on the space of polynomial functions on $V$.
+Specifically, if $p \in \CC[V]$ and $g \in G$,
+$$(g \cdot p)(v) := p(g^{-1} \cdot v), \text{ for all } v \in V.$$
+The \emph{ring of invariants} is then defined by
+$$\CC[V]^G := \{p \in \CC[V] : g \cdot p = p \text{ for all } g \in G\}.$$
+
+%Equivalently, the ring of invariants can be described as
+%$$\CC[V]^G = \{p \in \CC[V] : p(g \cdot v) = p(v) \text{ for all } g \in G \text{ and } v \in V\},$$
+%so $\CC[V]^G$ are those polynomials which are constant on the orbits of the action of $G$ on $V$;
+%then $\CC[V]^G$ can be interpreted as a set of polynomial functions on the space of orbits $V/G$.
+
+%For a simple example, consider the case when $V = \CC$ and $G = \ZZ/2\ZZ = \langle \sigma \, | \, \sigma^2 = 1\rangle$, and
+%$$\sigma \cdot z = -z, \qquad z \in \CC.$$
+%Here, $\CC[V] = \CC[X]$, where $X$ is a variable.
+%Suppose $p \in \CC[X]$, where $p(X) = \sum_{k=0}^n a_k X^k$.
+%Then $p \in \CC[X]^G$ if and only if 
+%$$\sum_{k=0}^n a_k X^k = p = \sigma \cdot p = \sum_{k=0}^n a_k (-X)^k,$$
+%i.e., $a_k = 0$ for all odd $k$.
+%Then, $\CC[V]^G = \CC[X^2]$.
+
+An important problem in classical invariant theory is to determine whether an invariant ring $\CC[V]^G$ is finitely generated.
+David Hilbert showed that when $G$ is $\SL_n(\CC)$ acting on $V$ by a representation, $\CC[V]^G$ is indeed finitely generated \cite{Hilbert90}.
+In Hilbert's influential list of 23 problems posed in 1900, the $14^\text{th}$ asks whether certain polynomial algebras are finitely generated;
+a special case of the problem is whether $\CC[V]^G$ is finitely generated when $G$ is an arbitrary algebraic group.
+In 1960, Masayoshi Nagata found an example where $\CC[V]^G$ is \emph{not} finitely generated \cite{Nagata60}.
+However, when $G$ is a \emph{reductive} algebraic group, $\CC[V]^G$ is indeed finitely generated \cite[Theorem 4.51]{Mukai03}.
+
+\subsection{Geometric invariant theory}
+In the 1960s, David Mumford built on Hilbert's work and developed the theory of \emph{geometric invariant theory} (GIT) \cite{Mumford65}.
+Given an algebraic group $G$ acting on a variety $X$, the aim of GIT is to construct a quotient variety, i.e., a variety whose points are in bijection with the orbits $X/G$.
+Unfortunately, in general $X/G$ does not have the structure of a variety.
+In the case when $X$ is a complex affine variety and $G$ a complex algebraic group, Mumford defined the affine GIT quotient, or categorical quotient,
+$$X \git G := \Spec(\CC[X]^G).\footnote{In this work, $\Spec$ denotes the maximal spectrum instead of the prime spectrum, i.e., we consider affine varieties instead of affine schemes. See \S \ref{varietiessection} for further discussion of our definition of a variety.}$$
+This is a complex affine variety which has $\CC[X]^G$ as its coordinate ring---intuitively, the points of $X \git G$ are in bijection with the closed orbits of the action of $G$ on $X$.
+For a $\CC$-algebra $R$ to be the coordinate ring of an affine variety, it is necessary that $R$ is finitely generated.
+Thus Hilbert's work elucidating when $\CC[X]^G$ is finitely generated shows $X \git G$ is a variety when $G$ is reductive.\footnote{Note that $\Spec(\CC[X]^G)$ can still be studied as a scheme even if $\CC[X]^G$ is not finitely generated, however, the finitely generated case is more manageable.}
+
+Let us consider an example of a GIT quotient which is well understood.
+Let $G = \GL_n(\CC)$ and $X = \frakg = \frakg\frakl_n(\CC)$.
+We can think of $\frakg$ as the affine space $\CC^{n\times n}$ by choosing a basis and identifying $x \in \frakg$ with its coordinates.
+Then $G$ acts on $X$ by conjugation, i.e., for $g \in G$ and $x \in \frakg$,
+$$g \cdot x := g x g^{-1}.$$
+\emph{Chevalley's restriction theorem} \cite[\S 23]{Humphreys72} implies that 
+$$\CC[\frakg]^G \cong \CC[\frakh]^W,$$
+where $\frakh$ is the Cartan subalgebra of diagonal matrices and $W = S_n$ is the Weyl group of $G$.
+Here $W$ acts on $\frakh$ by permuting the diagonal entries of a matrix.
+The ring $\CC[\frakh]^W$ is well-understood;
+by the \emph{fundamental theorem of symmetric polynomials}, it is a free polynomial algebra with $n$ generators.
+Specifically, $\CC[\frakh]^W \cong \CC[Y_1, \ldots, Y_n].$
+Then, we have that
+$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[Y_1, \ldots, Y_n]) = \CC^n.$$
+Note that $\frakg \git G$ can be computed more generally when $G$ is any connected complex reductive group acting on its Lie algebra by the adjoint action.
+Chevalley's restriction theorem again implies that $\CC[\frakg]^G \cong \CC[\frakh]^W$, and the \emph{Chevalley-Shephard-Todd} theorem \cite[\S 3]{Humphreys90} says $\CC[\frakh]^W$ is a free polynomial algebra;
+we can again conclude $\frakg\git G$ is an affine space.
+The GIT quotient $\frakg \git G$ is called the \emph{adjoint quotient}.
+
+\subsection{Goals of this project}
+Given the adjoint quotient is well-understood, it is natural to ask about the quotient variety of $\frakg$ by subgroups of $G$.
+One choice of such a subgroup is a \emph{maximal torus}, which is a subgroup isomorphic to $(\CC^\times)^r$ for some $r \in \ZZ_{> 0}$.
+The goal of this project is to study the GIT quotient $\frakg \git T$.
+
+To do this, we investigate the ring of invariants $\CC[\frakg]^T$.
+For a general connected algebraic group $G$, it may be out of reach to compute $\CC[\frakg]^T$, however, we can still study features of $\frakg \git T$ such as its dimension and singularities.
+
+The first steps in this project were to compute examples.
+In the cases when $G = \GL_2(\CC)$ or $G = \GL_3(\CC)$, it is tractable to compute $\CC[\frakg]^T$ by hand.
+However, even $G = \Sp_4(\CC)$ becomes difficult.
+
+\subsection{Toric varieties}
+Studying $\frakg \git T$ can be generalised to investigating $\AA^n \git T$, where $T$ is any algebraic torus acting an affine space $\AA^n$.
+One can prove that $\AA^n \git T$ has the structure of an \emph{affine toric variety}.
+These are affine varieties which are determined by a \emph{cone} in a vector space.
+The convex geometry of the cone determines many properties of the toric variety.
+Given the difficulty of directly computing $\CC[\frakg]^T$, computing the toric variety structure and appealing to the many facts known about toric varieties may make the problem more manageable.
+
+\subsection{Directions for further research}
+We list some aims for the remainder of this project:
+\begin{enumerate}
+\item
+Write a complete introduction to affine GIT, including the related notions of stability and semi-stability;
+using this understanding, compute the stable and semi-stable points for the adjoint action of $G$ on $\frakg$.
+
+\item
+Compute the cone of the affine toric variety $\frakg \git T$.
+Use this information to determine features of $\frakg \git T$, such as its dimension and singularities.
+
+\item
+Compute the stable and semi-stable points for the action of $T$ on $\frakg$.
+
+\item
+Investigate projective toric varieties.
+The \emph{projective GIT quotient} $\AA^n \git_\chi \, T$, where $\chi$ is a character of $T$, is an example of these.
+\end{enumerate}
+
+\subsection{Contents of this document}
+This document contains our progress so far in studying $\frakg \git T$.
+
+We begin in $\S 2$ by introducing affine varieties.
+This chapter can be considered background material needed to understand the project.
+The majority of the chapter deals with algebraic subsets of affine space, and investigates the connection between these sets and ideals in polynomial rings.
+We conclude in \S \ref{varietiessection} by discussing abstract affine varieties, which are defined as the maximal spectrum of a certain kind of $k$-algebra;
+this is necessary to define the affine GIT quotient.
+
+In $\S 3$, we define the affine GIT quotient $X \git G$ and give examples.
+In particular, we investigate $\frakg \git T$ in the cases when $G = \GL_2(\CC)$ and $G = \GL_3(\CC)$; in these cases we can compute the invariant ring explicitly.
+We compute a basis for $\CC[\frakg]^T$ in the general case in \S 3.2.
+
+The final chapter is an introduction to affine toric varieties.
+The prerequisite convex geometry is discussed, and in particular, we give a self-contained proof of an important fact (Theorem \ref{dualitythm}) for the theory of toric varieties, which is stated without proof in many texts on toric varieties such as \cite{Fulton93}, \cite{CLS11}, and \cite{Oda88}.
+After defining affine toric varieties in terms of their cones, we prove $\frakg \git T$ is an affine toric variety.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Affine varieties
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Affine varieties}
-In this chapter, we introduce affine varieties, which are the central object of study in this thesis.
-Algebraic geometry establishes a connection between spaces cut out by polynomials (geometric objects), and ideals in a polynomial ring (algebraic objects).
-We will detail this connection, and explain how algebraic properties of rings and ideals inform properties of the corresponding geometric spaces.
+In this chapter, we introduce affine varieties, which are the central object of study in this project.
+Algebraic geometry establishes a connection between spaces defined by zero sets of polynomials (geometric objects), and ideals in a polynomial ring (algebraic objects).
+We detail this connection, and explain how algebraic properties of rings and ideals inform properties of the corresponding geometric spaces.
 
 \subsection{Affine space and algebraic sets}
 Let $k$ be a field.
@@ -323,7 +444,7 @@ $$\AA^n := \{(a_1, \ldots, a_n) : a_i \in k\}.$$
 Elements of $\AA^n$ are called points, and if $P = (a_1, \ldots, a_n) \in \AA^n$ is a point, then the $a_i$ are called the coordinates of $P$.
 
 Let $A := k[X_1, \ldots, X_n]$.
-We interpret $f \in A$ as a function on $\AA^n$ by evaluating $f$ at the coordinates of a point $P = (a_1, \ldots, a_n)$, i.e., $f(P) = f(a_1, \ldots, a_n).$
+We interpret a polynomial $f \in A$ as a function on $\AA^n$ by evaluating $f$ at the coordinates of a point $P = (a_1, \ldots, a_n)$, i.e., $f(P) := f(a_1, \ldots, a_n).$
 This allows us to talk about the zeros of the polynomial, which is the set
 $$\bV(f) := \{P \in \AA^n : f(P) = 0\} \subseteq \AA^n.$$
 More generally, if $T \subseteq A$ is a set of polynomials, define
@@ -338,7 +459,7 @@ We conclude that any algebraic set is the set of zeros of a \emph{finite} number
 
 \begin{example}\label{algsetex}
 We list some examples of algebraic sets:
-\begin{enumerate}[\itshape(i)]
+\begin{enumerate}
 \item
 $\AA^n$ and $\emptyset$ are algebraic, since $\AA^n = \bV(0)$ and $\emptyset = \bV(1)$.
 Here, by $0$ and $1$ we mean the constant polynomials in $A$.
@@ -351,6 +472,13 @@ The parabola $\bV(Y-X^2)$ is an algebraic set.
 
 \item
 The hyperbola $\bV(XY - 1)$ is an algebraic set.
+
+\item
+The twisted cubic $C = \{(t, t^2, t^3) \in \AA^3 : t \in k\}$ is an algebraic set.
+We see this by noting $C = \bV(\{X^2 - Y, X^3 - Z\}).$
+
+\item 
+The curve $\bV(Y^2 - X^3)$ is algebraic, and it is an example of a so-called cuspidial cubic.
 \end{enumerate}
 \end{example}
 
@@ -362,7 +490,7 @@ is our first link between algebra and geometry.
 The following result describes the behaviour of $\bV$:
 
 \begin{proposition}\label{vproperties}
-\begin{enumerate}[\itshape(i)]
+\begin{enumerate}
 \item If $I \subseteq J$ are ideals, then $\bV(I) \supseteq \bV(J)$.
 \item If $I_1, I_2$ are ideals, then $\bV(I_1) \cup \bV(I_2) = \bV(I_1 I_2).$
 \item If $\{I_\alpha\}_{\alpha \in \calA}$ is an arbitrary collection of ideals, then $\bigcap_{\alpha \in \calA} \bV(I_\alpha) = \bV\left(\sum_{\alpha \in \calA} I_\alpha\right)$.
@@ -370,238 +498,759 @@ The following result describes the behaviour of $\bV$:
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-\emph{(i)} If $P \in \bV(J)$, then we have $f(P)=0$ for all $f \in I$, and $P \in \bV(I)$.
+(1) If $P \in \bV(J)$, then we have $f(P)=0$ for all $f \in I$, and $P \in \bV(I)$.
 
-\emph{(ii)} Assume without loss of generality that $P \in \bV(I_1)$.
+(2) Assume without loss of generality that $P \in \bV(I_1)$.
 Then for all $f \in I_1$ and $g \in I_2$, we have $(fg)(P)=0$, implying all polynomials in $I_1 I_2$ vanish at $P$.
 Conversely, if $P \in \bV(I_1 I_2)$ but $P \notin \bV(I_2)$, there is $g \in I_2$ with $g(P) \ne 0$.
 But for any $f \in I_1$, there holds $(fg)(P)=0$, so $f(P)=0$.
 
-\emph{(iii)} Suppose $P \in \bigcap_{\alpha \in \calA} \bV(I_\alpha)$.
+(3) Suppose $P \in \bigcap_{\alpha \in \calA} \bV(I_\alpha)$.
 Then for all $\alpha \in \calA$ and all $f_\alpha \in I_\alpha$, we have $f_\alpha(P) = 0$, implying every element of $\sum_{\alpha} I_\alpha$ vanishes at $P$.
-Conversely, for each $\alpha$, part \emph{(i)} tells us $\bV(I_\alpha) \supseteq \bV\left(\sum_{\alpha} I_\alpha\right)$ and so 
+Conversely, for each $\alpha$, part (1) tells us $\bV(I_\alpha) \supseteq \bV\left(\sum_{\alpha} I_\alpha\right)$ and so 
 $\bigcap_{\alpha\in\calA} \bV(I_\alpha) \supseteq \bV\left(\sum_{\alpha\in\calA} I_\alpha\right).$
 \end{proof}
 
 \subsection{The Zariski topology}
-Proposition \ref{vproperties} tells us that arbitrary intersections and finite unions of algebraic sets are algebraic.
-In Example \ref{algsetex} (i), we saw $\emptyset$ and $\AA^n$ are algebraic.
-Then algebraic subsets of $\AA^n$ form the closed sets for a topology on $\AA^n$ --- this topology is called the \emph{Zariski topology}.
+Proposition \ref{vproperties} tells us arbitrary intersections and finite unions of algebraic sets are algebraic.
+In Example \ref{algsetex}, we saw $\emptyset$ and $\AA^n$ are algebraic.
+Together, these imply algebraic subsets of $\AA^n$ form the closed sets for a topology on $\AA^n$; this topology is called the \emph{Zariski topology}.
 
 \begin{example}[The Zariski topology on $\AA^1$]\label{zariskia1}
 Any nonconstant polynomial in one variable has finitely many roots.
-Then for any ideal $I \subseteq A$, $\bV(I) = \AA^1$ if $I = \{0\}$ or $\bV(I)$ is finite.
-Thus any closed set is either $\AA^1$ or finite, so the Zariski topology on $\AA^1$ is the finite complement topology.
-Note that when $k$ is an infinite field, this topology is not Hausdorff; any two nonempty open sets have finite complements, so they must necessarily intersect.
+Then for any ideal $I \subseteq A$, $\bV(I)$ is either finite or all of $\AA^1$.
+In other words, any closed set is either finite or $\AA^1$, so the Zariski topology on $\AA^1$ is the finite complement topology.
+When $k$ is an infinite field, this topology is not Hausdorff; any two nonempty open sets have finite complements, so they must necessarily intersect.
 \end{example}
 
-Example \ref{zariskia1} shows us that the Zariski topology is a very weak toplogy, in the sense that there are not many open sets.
-Nonetheless, the Zariski topology will play an important role in studying algebraic sets.
+Example \ref{zariskia1} shows us that the Zariski topology is a very coarse toplogy, in the sense that open sets are large.
+Nonetheless, the Zariski topology plays an important role in studying algebraic sets.
 
-\subsection{The correspondence $\bI$}
+\subsection{The map $\bI$}
 The map $\bV$ gave us a map from ideals to algebraic subsets; this is our first link between algebra and geometry.
-There is another map $\bI$, that takes subsets of $\AA^n$ to ideals:
+There is another map $\bI$, taking subsets of $\AA^n$ to ideals, defined as
 $$\bI: \{\text{subsets } V \subseteq \AA^n\} \to \{\text{ideals } I \subseteq A\}, \quad V\mapsto \bI(V) := \{f \in A : f(P) = 0 \text{ for all } P \in V\}.$$
-In other words, $\bI$ takes a subset to the ideal of functions vanishing on it; $\bI(V)$ is called the \emph{ideal} of $V \subseteq \AA^n$.
+In other words, $\bI(V)$ is the ideal of functions vanishing on $V$; $\bI(V)$ is called the ideal of $V \subseteq \AA^n$.
+The following result describes the behaviour of the map $\bI$;
 
 \begin{proposition}\label{iproperties}
-We have the following properties of $\bI$:
-\begin{enumerate}[\itshape(i)]
+\begin{enumerate}
 \item If $V \subseteq U \subseteq \AA^n$, then $\bI(V) \supseteq \bI(U)$.
-\item If $V \subseteq \AA^n$, $V \subseteq \bV(\bI(V))$, with equality if and only if $V$ is algebraic.
-\item If $I \subseteq A$, $I \subseteq \bI(\bV(I))$.
+\item If $V \subseteq \AA^n$, then $V \subseteq \bV(\bI(V))$, with equality if and only if $V$ is algebraic.
+\item If $I \subseteq A$, then $I \subseteq \bI(\bV(I))$.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-(i) If $f \in \bI(U)$, in particular $f(P) = 0$ for all $P \in U$, so $f \in \bI(V)$.
+(1) If $f \in \bI(U)$, then we have $f(P) = 0$ for all $P \in U$, so $f \in \bI(V)$.
 
-(ii) If $P \in V$, $f(P) = 0$ for all $f \in \bI(V)$ and so $P \in \bV(\bI(V)).$
-When $V = \bV(\bI(V))$, $V$ is algebraic by definition.
+(2) If $P \in V$, then $f(P) = 0$ for all $f \in \bI(V)$ and so $P \in \bV(\bI(V)).$
+If $V = \bV(\bI(V))$, then $V$ is algebraic by definition.
 Conversely, if $V = \bV(I)$ is algebraic, then the ideal of functions vanishing on $V$ will contain $I$.
 Then $\bV(\bI(V)) \subseteq \bV(I) = V$ and $V = \bV(\bI(V))$.
 
-(iii) If $f \in I$ then for $P \in \bV(I)$, $f(P) = 0$, and $f \in \bI(\bV(I)).$
+(3) If $f \in I$, then for $P \in \bV(I)$, we have $f(P) = 0$, and so $f \in \bI(\bV(I)).$
 \end{proof}
 
-Since $V = \bV(\bI(V))$ for algebraic sets $V$, Proposition \ref{iproperties} begs the question: do $\bV$ and $\bI$ give a bijection between algebraic sets and ideals?
-Unfortunately, the inclusion $I \subseteq \bI(\bV(I))$ may be strict, so that $\bV$ are not $\bI$ inverses of each other.
-The following examples demonstrate when this may be the case:
+Proposition \ref{iproperties} begs a question: do $\bV$ and $\bI$ give a bijection between algebraic sets and ideals?
+Unfortunately, the inclusion $I \subseteq \bI(\bV(I))$ may be strict, so $\bV$ are not $\bI$ are not always inverses of each other.
+We give two examples of when this is the case:
 
 \begin{example}\label{inclfails}
-(i)
-Let $k =\RR$ and $n=1$.
-Consider $I = (X^2+1)$ as an ideal in $k[X]$.
-Then since $X^2+1$ never vanishes on $\AA^1$, $\bV(I) = \emptyset$, and it holds vacuously that $\bI(\bV(I)) = k[X] \supsetneq I.$
+\begin{enumerate}
+\item
+Consider $I = (X^2) \subseteq k[X]$.
+Then $\bV(I) = \{0\}$ but $\bI(\bV(I)) = (X) \supsetneq I.$
 
-(ii) Let $I = (X^2) \subseteq k[X]$.
-Then $\bV(I) = \{0\}$ and $\bI(\bV(I)) = (X) \supsetneq I.$
+\item
+Consider $I = (X^2+1)$ as an ideal in $\RR[X]$.
+Then since $X^2+1$ never vanishes on $\AA^1_\RR$, $\bV(I) = \emptyset$, and it holds vacuously that $\bI(\bV(I)) = \RR[X] \supsetneq I.$
+\end{enumerate}
 \end{example}
 
 Example \ref{inclfails} indicates two reasons why $I \subseteq \bI(\bV(I))$ may be a strict inclusion:
-problems can occur when $k$ is not algebraically closed, or when the equations defining an algebraic subset have unwanted ``multiplicities''.
-In \S \ref{The Nullstellensatz}, we will resolve these problems to make the correspondences $\bV$ and $\bI$ into bijections.
+problems can occur when the equations defining an algebraic subset have ``unwanted multiplicities,'' or when $k$ is not algebraically closed.
+In \S \ref{The Nullstellensatz}, we resolve these problems and make the maps $\bV$ and $\bI$ into bijections which are inverses of each other.
 
-An algebraic set $V \subseteq \AA^n$ is called \emph{reducible} if there exist algebraic sets $V_1, V_2 \subsetneq V$ such that
-$$V = V_1 \cup V_2.$$
-In other words, $V$ is reducible if it can be written as a union of strict subsets which are algebraic.
-If $V$ is not reducible, it is \emph{irreducible}.
-Irreducibility has a completely algebraic characterisation.
+For the remainder of this section, we study the basic topological property of irreducibility, and explain how the map $\bI$ gives an algebraic characterisation of this property.
+We say a nonempty subset $Y$ of a topological space $X$ is \emph{reducible} if $Y = Y_1 \cup Y_2$, where $Y_1$ and $Y_2$ are proper closed subsets of $Y$ \cite[Chapter I]{Hartshorne77}.
+Otherwise, we say $Y$ is \emph{irreducible}.
+Then in the context of the Zariski topology, an algebraic set $V \subseteq \AA^n$ is irreducible if it is not a union of proper algebraic subsets.
 
 \begin{proposition}\label{irreducibilityproposition}
 Let $V \subseteq \AA^n$ be algebraic.
 Then $V$ is irreducible if and only if $\bI(V)$ is prime.
 \end{proposition}
 \begin{proof}
-[$\implies$] Suppose $\bI(V)$ is not prime.
+Suppose $\bI(V)$ is not prime.
 Then there exist $f_1, f_2 \notin \bI(V)$ such that $f_1 f_2 \in \bI(V)$.
-Let $I_i = (\bI(V), f_i)$ for $i=1, 2$.
-Since $I_i \supsetneq \bI(V)$, $\bV(I_i) \subsetneq \bV(\bI(V)) = V$, where the inclusion is strict since there is $P \in V$ with $f_i(P) \ne 0$.
-To see $V$ is reducible, we show $V = \bV(I_1) \cup \bV(I_2)$; we just need $V \subseteq \bV(I_1) \cup \bV(I_2)$.
-If $P \in V$, then $g(P) = 0$ for all $g \in \bI(V)$, and also $(f_1 f_2)(P) = 0$ so $f_i(P) = 0$ for some $i=1,2$, and $P \in \bV(I_i)$.
+Let $I_i := (\bI(V), f_i)$ for $i=1, 2$.
+To see $V$ is reducible, we show that $V = \bV(I_1) \cup \bV(I_2)$ and each $\bV(I_i)$ is a strict subset of $V$.
+Since $I_i \supsetneq \bI(V)$, we have $\bV(I_i) \subsetneq \bV(\bI(V)) = V$, with strict inclusion because there is $P \in V$ with $f_i(P) \ne 0$.
+Then we see $\bV(I_1) \cup \bV(I_2) \subseteq V$.
+On the other hand, if $P \in V$, then $g(P) = 0$ for all $g \in \bI(V)$, and also $(f_1 f_2)(P) = 0$.
+Thus, $f_1(P) = 0$ or $f_2(P)=0$, and $P \in \bV(I_1) \cup \bV(I_2)$.
 
-[$\impliedby$] 
-Let $V$ be reducible, so $V = V_1 \cup V_2$ for some algebraic sets $V_1, V_2 \subsetneq V$.
-Then $\bI(V_i) \supsetneq \bI(V)$, so there exists $f_i \in \bI(V_i) \setminus \bI(V)$ for $i=1, 2$.
-But $(f_1 f_2)(P) = 0$ for all $P \in V$ since if $P \in V_j$, $f_j(P) = 0$.
-Thus $f_1 f_2 \in \bI(V)$ and $\bI(V)$ is not prime.
+Conversely, let $V = V_1 \cup V_2$ be reducible.
+Since $V_1, V_2 \ne V$, $\bI(V_i) \supsetneq \bI(V)$, and there exists $f_i \in \bI(V_i) \setminus \bI(V)$ for $i=1,2$.
+But $(f_1 f_2)(P) = 0$ for all $P \in V$, since if $P \in V_j$, then $f_j(P) = 0$.
+Thus, $f_1 f_2 \in \bI(V)$ and $\bI(V)$ is not prime.
 \end{proof}
 
 \begin{example}
+\begin{enumerate}
+\item
 Let $k$ be an infinite field.
-Proposition \label{irreducibilityproposition} implies that $\AA^n$ is irreducible;
-indeed, $\bI(\AA^n) = \{0\}$, which is prime.
-We can also use Example \ref{zariskia1} to see $\AA^1$ is irreducible without appealing to Proposition \label{irreducibilityproposition}.
-Any proper closed subset of $\AA^1$ is finite, so $\AA^1$ cannot be a union of proper closed subsets.
-An example of a non-irreducible algebraic set is $V = \bV(XY) = \bV(X) \cup \bV(Y)$, the union of the $X$- and $Y$-axes.
-Algebraically, we can see this since $\bI(V) = (XY)$ is not prime;
-$X, Y \notin (XY)$ but $XY \in (XY)$.
+Proposition \ref{irreducibilityproposition} implies that $\AA^n$ is irreducible, since $\bI(\AA^n) = \{0\}$ is a prime ideal.
+We can also use Example \ref{zariskia1} to see $\AA^1$ is irreducible without appealing to Proposition \ref{irreducibilityproposition}.
+Any proper closed subset of $\AA^1$ is finite, so $\AA^1$ cannot be a union two of proper closed subsets.
+
+\item
+Let $k$ be finite.
+Since points are closed, a set is irreducible if and only if it is a singleton.
+In particular, $\AA^n$ is not irreducible in this case.
+
+\item
+An example of a reducible algebraic set is $V = \bV(XY) = \bV(X) \cup \bV(Y)$, the union of the $X$- and $Y$-axes.
+Algebraically, we can see the reducibility of $V$ since $\bI(V) = (XY)$ is not prime
+($X$ and $Y$ do not lie in $(XY)$, but $XY$ lies in $(XY)$).
+\end{enumerate}
 \end{example}
 
+%\begin{proposition}[{\cite[\S 4]{Reid88}}]
+%Let $V \subseteq \AA^n$ be an algebraic subset.
+%The following are equivalent:
+%\begin{enumerate}
+%\item $V$ is irreducible.
+%\item Any two nonempty open subsets of $V$ have nontrivial intersection.
+%\item Any nonempty empty subset $U \subseteq V$ is dense.
+%\end{enumerate}
+%\end{proposition}
+
+
 \subsection{The Nullstellensatz}\label{The Nullstellensatz}
-Our goal in this section is to modify the correspondence $\bV$ and $\bI$ to upgrade them to a bijection between algebraic sets and ideals.
-We need t
+Our goal in this section is to upgrade the maps $\bV$ and $\bI$ to a bijection between algebraic sets and a particular class of ideals.
+This is achieved by Hilbert's Nullstellensatz (Theorem \ref{null}).
+To state and prove the theorem, we need the following definition:
+
 \begin{definition}
-If $I$ is an ideal of $A$, the \emph{radical} of $I$ is
+Let $I$ be an ideal of $A$.
+The radical of $I$, denoted $\sqrt{I}$, is defined as
 $$\sqrt{I} := \{f \in A : f^n \in I \text{ for some } n \in \ZZ_{> 0}\}.$$
-An ideal is called \emph{radical} if $I = \sqrt{I}$.
+We say an ideal is radical if $I = \sqrt{I}$.
 \end{definition}
 
-\begin{remark}
-Observe that $I \subseteq \sqrt{I}$.
-\end{remark}
+Observe that $I \subseteq \sqrt{I}$ for any ideal $I$.
+We claim that prime ideals are radical.
+If $I$ is prime and $f \in \sqrt{I}$, then $f^n \in I$ for some $n \in \ZZ_{> 0}$, which implies $f \in I$ since $I$ is prime.
+
+To prove Theorem \ref{null}, we use the following fact from algebra without proof:
 
 \begin{theorem}[{\cite[\S 3.8]{Reid88}}]\label{hardfact}
 Let $k$ be an infinite field, and $B = k[a_1, \ldots, a_n]$ a finitely generated $k$-algebra.
-Then if $B$ is a field, then $B$ is algebraic over $k$.
+If $B$ is a field, then $B$ is algebraic over $k$.
 \end{theorem}
 
-\begin{theorem}[Hilbert's Nullstellensatz; {\cite[\S 3.10]{Reid88}}]
+\begin{theorem}[Hilbert's Nullstellensatz {\cite[\S 3.10]{Reid88}}]\label{null}
 Let $k$ be an algebraically closed field.
-Then:
-\begin{enumerate}[\itshape(i)]
+\begin{enumerate}
 \item Every maximal ideal of $A = k[X_1, \ldots, X_n]$ is of the form $\frakm_P = (X_1 - a_1, \ldots, X_n - a_n)$ for some $P = (a_1, \ldots, a_n) \in \AA^n$.
 \item If $I$ is a proper ideal of $A$, then $\bV(I) \ne \emptyset$.
 \item For any ideal $I$, $\bI(\bV(I)) = \sqrt{I}$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-(i) Let $\frakm \subseteq A$ be a maximal ideal.
-Denote $K := k[X_1, \ldots, X_n] / \frakm$, and let $\varphi$ be the composition of the natural inclusion and quotient maps:
-$$\varphi: k \overset{\iota}{\hookrightarrow} k[X_1, \ldots, X_n] \overset{\pi}{\twoheadrightarrow} K.$$
-Since $K$ is a field and also finitely generated as a $k$-algebra by $\pi(X_1), \ldots, \pi(X_n)$, Theorem \ref{hardfact} implies $K$ is algebraic over $k$.
-Then $\varphi$ is an algebraic field extension; since $k$ is algebraically closed, $\varphi$ is an isomorphism.
-For each $i$, let $a_i = (\varphi^{-1}\circ\pi)(X_i)$, and set $P = (a_1, \ldots, a_n)$;
-then $\pi(X_i - a_i) = 0$ and $\frakm_P = (X_1 - a_1, \ldots, X_n - a_n) \subseteq \ker \pi = \frakm$.
-But $\frakm_P$ is the kernel of the evaluation at $P$ map $k[X_1, \ldots, X_n] \to k$, which is an isomorphism.
+(1) Let $\frakm \subseteq A$ be a maximal ideal.
+Denote $K := k[X_1, \ldots, X_n] / \frakm$, and let $\varphi$ be the composition of the natural inclusion and quotient maps
+$$\varphi \colon k \overset{\iota}{\hookrightarrow} k[X_1, \ldots, X_n] \overset{\pi}{\twoheadrightarrow} K.$$
+Since $K$ is a field and finitely generated by $\pi(X_1), \ldots, \pi(X_n)$ as a $k$-algebra, Theorem \ref{hardfact} implies $K$ is algebraic over $k$.
+Then $K / k$ is an algebraic field extension and $\varphi$ is the inclusion of $k$ into $K$; 
+since $k$ is algebraically closed, $\varphi$ is an isomorphism.
+For each $i$, let $a_i = (\varphi^{-1}\circ\pi)(X_i)$, and set $P = (a_1, \ldots, a_n)$.
+Then $\pi(X_i - a_i) = 0$ and $\frakm_P = (X_1 - a_1, \ldots, X_n - a_n) \subseteq \ker \pi = \frakm$.
+But the map $k[X_1, \ldots, X_n] \to k$ defined by evaluation at $P$ induces the isomorphism $k[X_1, \ldots, X_n] / \frakm_P \cong k$.
 Therefore $\frakm_P$ is maximal and $\frakm_P = \frakm$.
 
-(ii) A proper ideal ideal is contained in a maximal ideal, so $I \subseteq \frakm_P$ for some $P \in \AA^n$.
-Then $\bV(I) \supseteq \bV(\frakm_P) = \{P\}$ so $\bV(I) \ne \emptyset$.
+(2) Proper ideals are contained in some maximal ideal, so $I \subseteq \frakm_P$ for some $P \in \AA^n$.
+Then $\bV(I) \supseteq \bV(\frakm_P) = \{P\}$ and $\bV(I) \ne \emptyset$.
 
-(iii) Let $I$ be any ideal in $A = k[X_1, \ldots, X_n]$ and let $f \in A$ be arbitary.
+(3) Let $I$ be any ideal in $A = k[X_1, \ldots, X_n]$ and let $f \in A$ be arbitary.
 We introduce a new variable $Y$ and define the new ideal
 $$\tilde I := (I, f Y - 1) \subseteq k[X_1, \ldots, X_n, Y].$$
 Intuitively, $\bV(\tilde I) \subseteq \AA^{n+1}$ is the set of points $P \in \bV(I)$ with $f(P) \ne 0$.
-Specifically, if $Q = (a_1, \ldots, a_n, b) \in \bV(\tilde I)$, we have $g(a_1, \ldots, a_n) = 0$ for all $g \in \bV(I)$, 
-and $f(a_1, \ldots, a_n) \cdot b = 1$, i.e., $f(a_1, \ldots, a_n) \ne 0$.
-Now make the assumption that $f \in \bI(\bV(I))$ so that $f(P) = 0$ for all $P \in \bV(I)$;
+Specifically, if $Q = (a_1, \ldots, a_n, b) \in \bV(\tilde I)$, then $g(a_1, \ldots, a_n) = 0$ for all $g \in \bV(I)$
+and $f(a_1, \ldots, a_n) \cdot b = 1$ (i.e., $f(a_1, \ldots, a_n) \ne 0$).
+Now assume that $f \in \bI(\bV(I))$ so that $f(P) = 0$ for all $P \in \bV(I)$;
 our previous discussion implies $\bV(\tilde I) = \emptyset$.
-Then by (ii), $\tilde I = A$.
+Then $\tilde I = A$ by part (2).
 In particular, $1 \in \tilde I$, so there exist $f_i \in I$ and $g_0, g_i \in k[X_1, \ldots, X_n, Y]$ such that
 $$1 = \sum g_i f_i + g_0 (f Y - 1)$$
 as a polynomial in $k[X_1, \ldots, X_n, Y]$.
-We can evaluate the above expression at $Y = \frac{1}{f}$ to see
+Evaluating the above expression at $Y = \frac{1}{f}$ yields
 $$1 = \sum g_i(X_1, \ldots, X_n, 1/f) f_i(X_1, \ldots, X_n).$$
-Then there is some $N \in \ZZ_{> 0 }$ such
+Each term in the sum is a rational function where the denominator is a power of $f$.
+Thus there is some $N \in \ZZ_{> 0 }$ such that 
 $$f^N = \sum f^N g_i (X_1, \ldots, X_n, 1/f) f_i(X_1,\ldots,X_n)$$
-is in $k[X_1, \ldots, X_n]$, and in particular, in $I$.
+lies in $k[X_1, \ldots, X_n]$, and in particular, lies in $I$.
 So $f \in \sqrt{I}$, proving $\sqrt{I} \supseteq \bI(\bV(I))$.
-If $f \in \sqrt{I}$, $f^N \in I \subseteq \bI(\bV(I))$ for some $N \in \ZZ_{\ge 0}$.
+If $f \in \sqrt{I}$, $f^N \in I \subseteq \bI(\bV(I))$ for some $N \in \ZZ_{> 0}$.
 But then for any $P \in \bV(I)$, we must have $f(P) = 0$, so $f \in \bI(\bV(I))$.
 \end{proof}
 
-\begin{corollary}
-The correspondences $\bV$ and $\bI$ 
-$$\{\text{ideals } I \subseteq A\} \overset{\bV, \bI}{\longleftrightarrow} \{\text{subsets } V \subseteq \AA^n\}$$
+\begin{corollary}\label{nullbijection}
+The maps
+$$\{\text{ideals } I \subseteq A\} \underset{\bI}{\overset{\bV}{\rightleftarrows}} \{\text{subsets } V \subseteq \AA^n\}$$
 induce bijections:
 $$
 \begin{array}{c}
 \{\text{radical ideals}\} \\
-\rotatebox[origin=c]{90}{$\subseteq$} \\
 \{\text{prime ideals}\} \\
-\rotatebox[origin=c]{90}{$\subseteq$} \\
 \{\text{maximal ideals}\} 
 \end{array}
 \begin{array}{c}
 \longleftrightarrow \\
-\\
 \longleftrightarrow \\
-\\
 \longleftrightarrow  
 \end{array}
 \begin{array}{c}
-\{\text{algebraic subsets}\} \\
-\rotatebox[origin=c]{90}{$\subseteq$} \\
-\{\text{irreducible subsets}\} \\
-\rotatebox[origin=c]{90}{$\subseteq$} \\
-\{\text{points}\} 
+\{\text{algebraic subsets}\}, \\
+\{\text{irreducible subsets}\}, \\
+\{\text{points}\} .
 \end{array}
 $$
 \end{corollary}
 
-%\subsection{Functions on varieties}
-%\begin{theorem}
-%Let $V \subseteq \AA^n$ and $W \subseteq \AA^m$ be algebraic sets.
-%Then:
-%\begin{enumerate}[\itshape(i)]
+\subsection{Coordinate rings and regular functions}
+Let $V \subseteq \AA^n$ be an algebraic set.
+The \emph{coordinate ring of $V$} is defined as
+$$k[V] := k[X_1, \ldots, X_n] / \bI(V).$$
+This is a finitely generated $k$-algebra.
+In view of Proposition \ref{irreducibilityproposition}, the ring $k[V]$ is an integral domain if and only if $V$ is irreducible.
+
+The coordinate ring is also a \emph{reduced} $k$-algebra, meaning it has no non-zero nilpotent elements.
+Since $\bI(V)$ is radical, this follows from the following general fact:
+
+\begin{proposition}\label{reducedradical}
+Let $I$ be an ideal in a ring $R$.
+Then $R/I$ is reduced if and only if $I$ is radical.
+\end{proposition}
+\begin{proof}
+The ring $R/I$ is reduced if and only if for all $n \in \ZZ_{> 0}$, $f^n + I = I$ implies $f + I = I$.
+As a statement about elements instead of cosets, this says that $f^n \in I$ implies $ f \in I$, which is equivalent to $I = \sqrt{I}$.
+\end{proof}
+
+We say a function $\varphi \colon V \to k$ is \emph{regular} if there exists $f \in k[X_1, \ldots, X_n]$ such that $\varphi = \left. f \right|_V$.
+Two polynomials $f, g \in k[X_1, \ldots, X_n]$ define the same regular function on $V$ if and only if $(f- g)(P) = 0$ for all $P \in V$,
+equivalently, if $f + \bI(V) = g + \bI(V)$.
+Thus, we identify the ring of regular functions on $V$ with $k[V]$.
+
+Let $\pi : k[X_1, \ldots, X_n] \twoheadrightarrow k[V]$ be the quotient map.
+The correspondence theorem from ring theory tells us that there is a bijection
+\begin{align}\label{ringidealbijection}
+\left\{
+\begin{array}{c}
+	\text{ideals of} \\
+	k[V]=k[X_1,\ldots,X_n]/\bI(V)
+\end{array}
+\right\} \longleftrightarrow 
+\left\{
+\begin{array}{c}
+	\text{ideals of } k[X_1, \ldots, X_n] \\
+	\text{ containing } \bI(V)
+\end{array}
+\right\}.
+\end{align}
+In particular, any ideal of $k[V]$ is of the form $J/\bI(V)$, where $J$ is an ideal of $k[X_1, \ldots, X_n]$ containing $\bI(V)$.
+If $J / \bI(V)$ is an ideal in $k[V]$, define
+$$\bV(J/\bI(V)) := \{P \in V : f(P) = 0 \text{ for all } f \in J/\bI(V)\}.$$
+If we think of elements of $J$ and $J/\bI(V)$ as functions on $V$, they are equal as sets (the quotient $J/\bI(V)$ identifies elements of $J$ if they define the same function).
+It then follows that
+$$\bV(J/\bI(V)) = \bV(J).$$
+The following result extends Corollary \ref{nullbijection} to a correspondence between ideals in $k[V]$ and subsets of $V$.
+
+\begin{corollary}
+There are bijections:
+$$
+\begin{array}{c}
+\{\text{radical ideals in } k[V] \} \\
+\{\text{prime ideals in } k[V] \} \\
+\{\text{maximal ideals in } k[V] \} 
+\end{array}
+\begin{array}{c}
+\longleftrightarrow \\
+\longleftrightarrow \\
+\longleftrightarrow  
+\end{array}
+\begin{array}{c}
+\{\text{algebraic subsets of } V \}, \\
+\{\text{irreducible subsets of } V\}, \\
+\{\text{points of } V\} .
+\end{array}
+$$
+\end{corollary}
+\begin{proof}
+The crux of the proof is that whether an ideal is radical, prime or maximal is preserved by the bijection in Equation \ref{ringidealbijection}.
+Algebraic subsets $W$ contained in $V$ are in bijection with radical ideals $\bI(W)$ containing $\bI(V)$.
+We have that
+$$\frac{k[X_1, \ldots, X_n]}{\bI(W)} \cong \frac{k[X_1, \ldots, X_n]/\bI(V)}{\bI(W)/\bI(V)},$$
+so in view of Proposition \ref{reducedradical}, $\bI(W)$ is radical if and only if $\bI(W)/\bI(V)$ is.
+This establishes the first bijection, and the other two are analogous.
+\end{proof}
+
+\subsection{Polynomial maps between algebraic subsets}
+Throughout this section, let $V \subseteq \AA^n$ and $W \subseteq \AA^m$ be algebraic sets.
+We write $X_1, \ldots, X_n$ for the coordinates on $\AA^n$ and $Y_1, \ldots, Y_m$ for the coordinates on $\AA^m$.
+
+\begin{definition}
+We say a map $\varphi : V \to W$ is polynomial if there exist $m$ polynomials $\varphi_1, \ldots, \varphi_m \in k[X_1, \ldots, X_n]$ such that
+$$\varphi(P) = (\varphi_1(P), \ldots, \varphi_m(P))$$
+for all $P \in V$.
+\end{definition}
+
+We claim a map $\varphi: V \to W$ is polynomial if and only if $Y_j \circ \varphi \in k[V]$ for all $j$.
+If $\varphi$ is polynomial given by the components $\varphi_1, \ldots, \varphi_m$, $Y_j \circ \varphi = \varphi_j$ is regular.
+Conversely, if $\tilde \varphi_j := Y_j \circ \varphi \in k[V]$ and $\varphi_j \in k[X_1, \ldots, X_n]$ such that $\varphi_j \equiv \tilde \varphi_j \mod \bI(V)$, $\varphi = (\varphi_1, \ldots, \varphi_m)$ and $\varphi$ is polynomial.
+
+We also claim that the composition of polynomial maps is polynomial.
+Let $U \subseteq \AA^l$ be algebraic, and let $\varphi: V \to W$ and $\psi : W \to U$ be polynomial maps.
+If $\varphi_1, \ldots, \varphi_m$ and $\psi_1, \ldots, \psi_l$ are the components of $\varphi$ and $\psi$, respectively, the components of $\psi \circ \varphi : V \to U$ are
+$$\psi_1(\varphi_1, \ldots, \varphi_m), \ldots, \psi_l(\varphi_1, \ldots, \varphi_m) \in k[X_1, \ldots, X_n].$$
+
+We say a polynomial map $\varphi : V \to W$ is an \emph{isomorphism} of algebraic sets if there exists a polynomial map $\psi: W \to V$ such that $\psi \circ \varphi = \mathrm{id}_V$ and $\varphi \circ \psi = \mathrm{id}_W$.
+
+\begin{theorem}
+Let $V \subseteq \AA^n$, $W \subseteq \AA^m$ and $U \subseteq \AA^l$ be algebraic sets.
+\begin{enumerate}
+\item
+A polynomial map $\varphi:V \to W$ induces a $k$-algebra homomorphism $\varphi^*:k[W] \to k[V]$, $f \mapsto \varphi^*f := f \circ \varphi$.
+
+\item
+Any $k$-algebra homomorphism $\Phi:k[W] \to k[V]$ is of the form $\Phi = \varphi^*$ for a unique polynomial map $\varphi : V \to W$.
+
+\item 
+If $\varphi : V \to W$ and $\psi : W \to U$ are polynomial maps, then $(g \circ f)^* = f^* \circ g^*$.
+\end{enumerate}
+\end{theorem}
+\begin{remark}
+Together, part (1) and (2) says that the map $\varphi \mapsto \varphi^*$ induces a bijection
+\begin{align*}\label{ringidealbijection}
+\left\{
+\begin{array}{c}
+	\text{polynomial maps} \\
+	V \to W
+\end{array}
+\right\} \longleftrightarrow 
+\left\{
+\begin{array}{c}
+	k\text{-algebra homomorphisms} \\
+	k[W] \to k[V]
+\end{array}
+\right\}.
+\end{align*}
+The map $\varphi^*$ is called the pullback of $\varphi$.
+\end{remark}
+\begin{proof}
+(1) Since the composition of polynomial maps is polynomial, $\varphi^* f = f \circ \varphi \in k[V]$ for all $f \in k[W]$.
+For $f, g \in k[W]$, we have
+\begin{align*}
+	\varphi^*(f + g) &= (f+g)\circ\varphi = f\circ\varphi + g\circ\varphi = \varphi^*f + \varphi^*g, \text{ and } \\
+	\varphi^*(fg) &= (fg)\circ\varphi = (f\circ\varphi)(g\circ\varphi) = (\varphi^* f)(\varphi^* g),
+\end{align*}
+so $\varphi^*$ is a $k$-algebra homomorphism.
+
+(2) We first show there exists a polynomial map $\varphi : V \to W$ with $\Phi = \varphi^*$.
+If $g \in k[Y_1, \ldots, Y_m]$, we write $\overline{g}$ for the coset of $g$ in $k[W]$, e.g., $\overline{Y_j} = Y_j + \bI(W)$.
+Let $\varphi_i := \Phi(\overline{Y_i}) \in k[V]$ for $i=1,\ldots,m$, and define the polynomial map $\varphi:V \to \AA^m$ by
+$$\varphi(P) = (\varphi_1(P), \ldots, \varphi_m(P)).$$
+We need to show $\varphi(V) \subseteq W$ and $\varphi^* = \Phi$.
+Since $\Phi$ is a homomorphism, we have for any $\overline{g} \in k[W]$ that
+$$\Phi(\overline{g}) =\Phi(g(\overline{Y}_1, \ldots, \overline{Y}_m)) = g(\Phi(\overline{Y}_1), \ldots, \Phi(\overline{Y}_m)) = g(\varphi_1, \ldots, \varphi_m).$$
+Then for any $v \in V$,
+$$\Phi(\overline{g})(v) = g(\varphi_1(v), \ldots, \varphi_m(v)) = g(\varphi(v)).$$
+When $g \in \bI(W)$, $\overline{g} = 0$ and the above equation implies that
+$$g(\varphi(v)) = 0$$
+for all $v \in V$, so $\varphi(V) \subseteq W$.
+To see $\varphi^* = \Phi$, note that $\varphi^*(\overline{Y}_i) = \overline{Y}_i \circ \varphi = \varphi_i = \Phi(\overline{Y}_i).$
+To show the uniqueness of $\varphi$, we prove the map $\varphi \mapsto \varphi^*$ is injective.
+If $\varphi, \phi:V \to W$ are polynomial maps with components $\varphi_i$ and $\phi_i$, respectively, and $\varphi^*=\phi^*$, then for each $i$, 
+$$\varphi_i = \varphi^*(\overline{Y}_i) = \phi^*(\overline{Y}_i) = \phi_i.$$
+Therefore, $\varphi$ and $\phi$ have the same components and $\varphi=\phi$.
+
+(3) Note $\psi \circ \varphi:V \to U$.
+For any $f \in k[U]$, we have
+$$(\psi \circ \varphi)^* f = f \circ (\psi \circ \varphi) = (f \circ \psi) \circ \varphi = \varphi^*(\psi^* f),$$
+so $(\psi \circ \varphi)^* = \varphi^* \circ \psi^*$.
+\end{proof}
+
+\begin{corollary}\label{isoofalgsetscoro}
+A polynomial map $\varphi:V \to W$ is an isomorphism of algebraic sets if and only if $\varphi^*:k[W]\to k[V]$ is an isomorphism of $k$-algebras.
+\end{corollary}
+
+\begin{example}We give examples of polynomial maps between algebraic sets and their pullbacks.
+\begin{enumerate}
+\item 
+Let $C = \bV(\{X^2-Y, X^3-Z\})$ be the twisted cubic.
+Consider the map $\varphi : \AA^1 \to C$ defined by $t \mapsto (t, t^2, t^3)$.
+Note that $X \in k[C] = k[X, Y, Z]/(X^2-Y, X^3-Z)$ generates $k[C]$.
+We write $k[T]$ for the coordinate ring of $\AA^1$.
+Then the pullback $\varphi^* : k[C] \to k[T]$ is given by
+$$X \mapsto X \circ \varphi = T.$$
+Then $\varphi^*$ is a $k$-algebra isomorphism, and $C$ and $\AA^1$ are isomorphic as algebraic sets.
+
+\item
+Let $V = \bV(Y^2-X^3)\subseteq\AA^2$.
+Consider $\varphi:\AA^1 \to V$ given by $t \mapsto (t^2, t^3)$.
+Note $k[V] = k[X, Y]/(Y^2 - X^3)$ is generated by $X, Y \in k[V]$.
+The pullback is $\varphi^*:k[V] \to k[T]$, given by
+$$X \mapsto T^2, \qquad Y \mapsto T^3.$$
+Then $\varphi^*(k[C]) = k[T^2, T^3] \ne k[T]$.
+%Therefore $\varphi^*$ is not an isomorphism and $V$ is not isomorphic to $\AA^1$.
+
+\item
+Consider $\varphi:\AA^2 \to \AA^2$, given by $(x, y) \mapsto (xy, y)$.
+The image is
+$$\varphi(\AA^2) = \{(x,y) \in \AA^2 : x=y=0 \text{ or } y \ne 0\}.$$
+This set is not algebraic, so the image of a polynomial map is not necessarily an algebraic set.
+\end{enumerate}
+\end{example}
+
+\subsection{Affine varieties}\label{varietiessection}
+So far, we have studied algebraic subsets embedded in some affine space.
+For any algebraic subset $V\subseteq\AA^n$, there is a corresponding reduced finitely generated $k$-algebra, $k[V]$.
+Conversely, suppose we have a reduced finitely generated $k$-algebra $A$.
+Choose generators $a_1, \ldots, a_n$ for $A$, so that $A = k[a_1, \ldots, a_n]$.
+The $k$-algebra homomorphism $\varphi : k[X_1, \ldots, X_n] \to A$ given by $X_i \mapsto a_i$ induces an isomorphism $k[X_1, \ldots, X_n] / \ker \phi \cong A$.
+Then $\ker\phi$ is radical, so that $\bV(\ker \phi)$ is an algebraic subset of $\AA^n$ with coordinate ring $A$.
+In view of Corollary \ref{isoofalgsetscoro}, isomorphic $k$-algebras correspond to isomorphic algebraic sets.
+
+An \emph{affine variety} is an algebraic subset of $\AA^n$, defined up to isomorphism.
+In particular, we don't want to have to choose a specific embedding of our algebraic set into affine space 
+(this is analogous to how a smooth manifold is defined intrinsically as a topological space, without needing to be embedded in some Euclidean space).
+Following \cite[\S 4.6]{Reid88}, an affine variety over $k$ can be defined as a set $V$ with a ring $k[V]$ of $k$-valued functions $V \to k$ such that
+\begin{enumerate}
+\item $k[V]$ is a finitely generated $k$-algebra, and
+\item for some choice $a_1, \ldots, a_n$ of generators of $k[V]$ over $k$, the map $V \to \AA^n$ given by $P \mapsto (a_1(P), \ldots, a_n(P))$ embeds $V$ as an algebraic set.
+\end{enumerate}
+A more sophisticated definition is that an affine variety is the \emph{maximal spectrum}, $\Spec(A)$, of a reduced finitely generated $k$-algebra $A$.
+The maximal spectrum $\Spec(A)$ is a topological space with a certain class of functions defined on it.
+This construction is technical so we omit it in this document, but the details can be found in \cite[Chapter 3]{Milne13}.
+
+For the remainder of the document, we will use $\Spec(A)$ to denote the affine variety which has $A$ as its coordinate ring.
+The algebra $A$ will usually be defined in terms of generators and relations so that $A \cong k[X_1, \ldots, X_n] / I$ for some radical ideal $I$; 
+then we can think of $\Spec(A)$ as $\bV(I) \subseteq \AA^n$
+
+%\begin{definition}
+%Let $V$ be a topological space and $k$ a field.
+%Suppose that for every open subset $U \subseteq V$, we have a set $\calO_V(U)$ of functions $U \to k$.
+%We say the assignment $U \mapsto \calO_V(U)$ is a sheaf of $k$-algebras if the following hold for every open subset $U \subseteq V$:
+%\begin{enumerate}
 %\item
-%A polynomial map $\phi: V \to W$ induces a $k$-algebra homomorphism 
-%$$\phi^*:k[W] \to k[V], \qquad g \mapsto \phi^* g := g \circ \phi.$$
-%
+%$\calO_V(U)$ is a $k$-subalgebra of all $k$-valued functions on $U$, i.e., $\calO_V(U)$ contains the constant functions and is closed under addition and multiplication;
 %\item
-%Any $k$-algebra homomorphism $\Phi : k[W] \to k[V]$ is of the form $\Phi = \phi^*$ for a uniquely determined polynomial $\phi : V \to W$.
-%
+%if $f \in \calO_V(U)$ and $U'\subseteq U$ is an open subset, then $\left. f \right|_{U'} \in \calO_V(U')$; and,
 %\item
-%If $f : V \to W$ and $g : W \to U$ are polynomial maps then $(g \circ f)^* = f^* \circ g^*$.
+%if $\{U_i\}$ is an open cover of $U$ and $f_i \in \calO_V(U_i)$ satisfy $\left. f_i \right|_{U_i \cap U_j} = \left. f_j \right|_{U_i \cap U_j}$ for all $i$ and $j$, then there exists a unique $f \in \calO_V(U)$ such that $\left. f\right|_{U_i} = f_i$ for each $i$.
 %\end{enumerate}
-%\end{theorem}
-%\begin{remark}
-%Together, (i) and (ii) say that the map $f \mapsto f^*$ gives a bijection
-%$$\{\text{polynomial maps } f:V \to W\} \leftrightarrow \{k\text{-algebra homomorphisms } \Phi:k[W] \to k[V]\}.$$
-%\end{remark}
-%\begin{proof}
-%(i)
-%Since the composition of polynomial maps is polynomial, $\phi^* g = g \circ \phi \in k[V]$.
-%For each $\lambda \in k$ and $f, g \in k[W]$,
-%$$\phi^*(\lambda f + g) = (\lambda f + g)\circ\phi = k (f\circ\phi) + (g\circ\phi) = k \phi^* f + \phi^* g, $$
-%$$\phi^*(fg) = (fg) \circ \phi = (f\circ\phi)(g\circ\phi) = (\phi^* f)(\phi^* g),$$
-%so $\phi^*$ is a $k$-algebra homomorphism.
+%A pair $(V, \calO_V)$ consisting of a topological space $V$ and a sheaf of $k$-algebras on $V$ is called a $k$-ringed space, or just a ringed space when $k$ is understood.
+%The $k$-algebra $\calO_V(U)$ is sometimes denoted $\Gamma(U, \calO_V)$, and its elements are called the sections of $\calO_V$ over $U$.
+%\end{definition}
 %
-%(ii) Recall that $k[W] = k[Y_1, \ldots, Y_m] / I(W)$.
-%Write $\overline{Y_i}$ for the coset of $Y_i$ in $k[W]$.
-%Given $\Phi:k[W] \to k[V]$, $\phi_i := \Phi(\overline{Y_i})\in k[V]$.
-%Then define $\phi:V \to \AA^m$ by $f(P) = (f_1(P), \ldots, f_m(P))$.
-%\end{proof}
+%\begin{definition}
+%A morphism of $k$-ringed spaces $(V, \calO_V) \to (W, \calO_W)$ is a continuous map $\varphi : V \to W$ such that for all open subsets $U \subseteq W$, if $f \in \calO_W(U)$, then $f \circ \varphi \in \calO_V(\varphi^{-1}(U))$.
+%\end{definition}
+%
+%For every pair of open subsets $U \subseteq V$ and $U' \subseteq W$ satisfying $\varphi(U) \subseteq U'$, we have a homomorphism of $k$-algebras, $\varphi^*:\calO_W(U') \to \calO_V(U)$, given by $f \mapsto \varphi^* f := f \circ \varphi.$
+%
+%Let $V \subseteq \AA^n$ be an algebraic set.
+%Let us see how to endow $V$ with the structure of a ringed space.
+%Recall that the basic open subsets of $V$ are $\{D(h) : h \in k[V]\}$, where $D(h) := \{P \in V : h(P)\ne 0\}$.
+%A pair of polynomials $g, h \in k[V]$ with $h \ne 0$ defines the function $\varphi : D(h) \to k$, given by $P \mapsto \frac{g(P)}{h(P)}.$
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Affine GIT and g // T
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Affine GIT and $\frakg \git T$}
+In this chapter, we introduce the affine GIT quotient and give examples.
+One example we give is $\frakg \git T$ for $G = \GL_2(\CC)$.
+We then compute a basis of $\CC[\frakg]^T$ for general $G$.
+Finally, we find generators for the invariant ring $\CC[\frakg]^T$ when $G = \GL_3(\CC)$.
+Throughout this chapter, many technical details may be missing;
+our focus is on understanding specific examples which can guide our investigation of $\frakg \git T$ for general $G$.
+
+\subsection{The affine GIT quotient}
+Let $G$ be an affine algebraic group over $\CC$ and $X = \Spec(A)$ a complex affine variety with coordinate ring $A$.
+Suppose that $G$ acts on $X$.
+Recall that the $G$-invariant functions on $X$ are
+$$A^G := \{f \in A : f(g \cdot P) = f(P) \text{ for all } g \in G \text{ and } P \in X\}.$$
+
+\begin{definition}
+The GIT quotient is defined as
+$$X \git G := \Spec(A^G).$$
+\end{definition}
+
+Note that points in $X \git G$ are not necessarily in bijection with the orbits $X / G$, but the GIT quotient defines a quotient variety even when $X / G$ does not have the structure of an affine variety.
+Let us see some examples of GIT quotients:
+
+\begin{example}\label{gitexamples}
+\begin{enumerate}
+\item
+Consider the group $\CC^\times$ acting on the affine space $\CC^2$ by 
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+t \cdot (x, y) = (tx, t^{-1}y), \qquad t \in \CC^\times, (x, y) \in \CC^2.
+$$
+Suppose a polynomial $p$ has coefficients $a_{ij} \in \CC$ such that
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+p(X, Y) = \sum_{i, j} a_{ij} X^i Y^j.
+$$
+Then $p$ is $\CC^\times$ invariant if and only if for all $t \in \CC^\times$,
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\sum_{i,j} a_{ij} X^i Y^j = \sum_{i,j} a_{ij} t^{i-j} X^i Y^j.
+$$
+This is equivalent to having $a_{ij} \ne 0$ if and only if $i = j$.
+Thus, we have that
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\CC[X, Y]^{\CC^\times} = \CC[XY], \qquad \text{and} \qquad \CC^2 \git \CC^\times = \Spec(\CC[XY]) \cong \CC.
+$$
+
+\item
+Let $G$ be $\GL_2(\CC)$ and $T$ the maximal torus of invertible diagonal matrices in $G$.
+The action of $G$ on its Lie algbera $\frakg = \frakg \frakl_2(\CC)$ by conjugation induces an action of $T$ on $\frakg$.
+Specifically, if $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \in T$ and $\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in \frakg$, 
+$$\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \cdot \begin{pmatrix} x & y \\ z & w \end{pmatrix} 
+= \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \begin{pmatrix} x & y \\ z & w \end{pmatrix} \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}^{-1}
+= \begin{pmatrix} x & a b^{-1} y \\ a^{-1} b z & w \end{pmatrix}.$$
+Let $X \in \CC[\frakg]$ be the coordinate function defined by $X \left(\begin{pmatrix} x & y \\ z & w \end{pmatrix}  \right) := x$, and define $Y, W, Z \in \CC[\frakg]$ analogously.
+Then $\CC[\frakg] = \CC[X, Y, Z, W]$.
+Since $T$ acts trivially on the diagonal entries of an element in $\frakg$, $X, W \in \CC[\frakg]^T$.
+The action on the off-diagonal entries is analogous to the action in part (1);
+by the same argument that we used in part (1), a polynomial $p$ is invariant if and only if for each monomial in $p$, the exponent of $Y$ is equal to the exponent of $Z$.
+Therefore,
+$$\CC[\frakg]^T = \CC[X, W, YZ], \qquad \text{and} \qquad \frakg \git T = \Spec(\CC[X, W, YZ]) \cong \CC^3.$$
+
+\item
+Let $S_2 = \langle \sigma \, | \, \sigma^2 = 1 \rangle$ act on $\CC^2$ by
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\sigma \cdot (x, y) = (y, x).
+$$
+Polynomials which are invariant under the induced action on $\CC[X, Y]$ are called symmetric polynomials.
+We compute $\CC[X, Y]^{S_2}$, i.e., the ring of symmetric polynomials in two variables;
+this computation is a special case of the fundamental theorem of symmetric polynomials, which characterises $\CC[X_1, \ldots, X_n]^{S_n}$ when $S_n$ acts on $\CC^n$ by permuting coordinates (see \cite[Chapter IV, \S 6]{Lang02} for a proof of the general theorem).
+
+We claim that $\CC[X,Y]^{S_2} = \CC[XY, X+Y]$.
+It is clear that $XY$ and $X+Y$ are symmetric, so we just need to show any symmetric polynomial lies in $\CC[XY, X+Y]$.
+A polynomial can be written uniquely as a sum of homogeneous polynomials, and the polynomial is symmetric if and only if each homogeneous part is.
+In turn, each homogeneous part is symmetric if and only if it is a $\CC$-linear combination of terms of the form $X^i Y^j + X^j Y^i$ for some $i, j \in \ZZ_{\ge 0}$.
+If $i = j$, then clearly $X^i Y^j + X^j Y^i = 2 (XY)^i \in \CC[XY, X+Y]$.
+Otherwise, we can assume without loss of generality $i < j$.
+Then $X^i Y^j + X^j Y^i = (XY)^{i} (Y^{j-i} + X^{j-i})$, and it suffices to show $X^n + Y^n \in \CC[XY, X+Y]$ for all $n \ge 1$ to prove our claim.
+We proceed by induction on $n$; clearly $X+Y$ and $X^2 + Y^2 = (X+Y)^2 - 2 XY$ lie in $\CC[XY, X+Y],$ so the $n=1$ and $n=2$ cases hold.
+Then for $n \ge 3$,
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+X^n + Y^n = (X^{n-1} + Y^{n-1})(X+Y) - XY (X^{n-2} + Y^{n-2}) \in \CC[XY, X+Y],
+$$
+which completes the induction.
+It can be shown that $XY$ and $X+Y$ are algebraically independent \cite[Chapter IV, \S 6]{Lang02}.
+We then have that
+$$\CC^2 \git S_2= \Spec(\CC[XY, X+Y]) \cong \CC^2.$$
+
+\item
+This is example is studied in \cite{Kamgarpour21}.
+Consider the group $G = \GL_2(\CC)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(\CC)$ by conjugation.
+We use the same notation as part (2) for coordinate functions so that $\CC[\frakg] = \CC[X, Y, Z, W]$.
+A polynomial is invariant if and only if it is constant on the orbits of the action.
+Then $f \in \CC[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form, we can take to be
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\begin{pmatrix}
+	\lambda & 0 \\
+	0 & \lambda 
+\end{pmatrix},
+\begin{pmatrix}
+	\lambda & 0 \\
+	0 & \mu 
+\end{pmatrix},
+\begin{pmatrix}
+	\lambda & 1 \\
+	0 & \lambda 
+\end{pmatrix}, \qquad \lambda, \mu \in \CC.
+$$
+We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in \CC[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
+\begin{align*}
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) 
+&= f\left( \lim_{t \to 0} \begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \right) 
+= \lim_{t \to 0} f\left(\begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}^{-1} \right) \\
+&= \lim_{t \to 0} f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) 
+= f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right).
+\end{align*}
+Then $f \in \CC[\frakg]^G$ is in fact determined by its restriction $\left. f \right|_{\frakh}$, where $\frakh$ is the Cartan subalgebra of diagonal matrices in $\frakg$.
+Note that since $\diag(\lambda, \mu)$ and $\diag(\mu, \lambda)$ are in the same orbit, $\left. f \right|_\frakh$ is a symmetric polynomial in the variables $X$ and $W$.
+We then have an inclusion
+$$\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2} = \CC[XW, X+W], \qquad f \mapsto \left. f \right|_\frakh.$$
+We know from linear algebra that $\mathrm{tr}, \mathrm{det} \in \CC[\frakg]^G$.
+Noting $\left. \mathrm{det} \right|_\frakh = XW$ and $\left. \mathrm{tr} \right|_\frakh = X+W$, we see the inclusion $\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2}$ is surjective.
+Thus we have an isomorphism $\CC[\frakg]^G \cong \CC[X, W]^{S_2}$.
+Therefore,
+$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2.$$
+\end{enumerate}
+\end{example}
+
+\subsection{A basis for $\CC[\frakg]^T$}
+We now determine a basis of the invariant ring $\CC[\frakg]^T$ for a general $G$.
+Specifically, let $G$ be a connected complex reductive group and $T$ a maximal torus of $G$.
+The adjoint representation of $G$ on $\frakg$ induces an action of $T$ on $\frakg$, given by $t \cdot x := \mathrm{Ad}(t)x$ for $t \in T$ and $x \in \frakg$.
+If $\alpha : T \to \CC^\times$ is a character of $T$, the eigenspace associated with $\alpha$ is
+$$\frakg_\alpha := \{x \in \frakg : \mathrm{Ad}(t) x = \alpha(t) x \text{ for all } t \in T\}.$$
+The nonzero characters $\alpha$ such that $\frakg_\alpha$ is nonzero are called the \emph{roots} of $G$ with respect to $T$.
+Let $\Phi$ denote the set of roots.
+We have the \emph{root space decomposition},
+$$\frakg = \frakt \oplus \bigoplus_{\alpha \in \Phi} \frakg_\alpha,$$
+where $\frakt$ is the Lie algebra of $T$.
+In particular, $\dim \frakg_\alpha = 1$ for all $\alpha \in \Phi$.
+See \cite[II, \S 5]{Milne13} for a detailed account of the root space decomposition;
+for this document, we take for granted that we have the above decomposition of $\frakg$.
+
+Let $\{y_i : i=1, \ldots, r\}$ be a basis for $\frakt$.
+For each $\alpha \in \Phi$, fix a nonzero element $x_\alpha$ in $\frakg_\alpha$.
+Then $\{x_\alpha : \alpha\in\Phi\}\cup\{y_i:i=1,\ldots,r\}$ is a basis for $\frakg$.
+Let $\{X_\alpha : \alpha \in \Phi\}\cup\{Y_i:i=1,\ldots,r\}$ be the dual basis.
+Then
+$$\CC[\frakg]=\CC[X_\alpha, Y_i : \alpha \in \Phi, i=1,\ldots,r].$$
+
+Let us introduce notation to represent polynomials in $\CC[\frakg]$.
+If $\eta =(\eta_\alpha)_{\alpha\in\Phi}\in(\ZZ_{\ge 0})^\Phi$ and $\mu =(\mu_i)_{i=1}^r \in (\ZZ_{\ge 0})^r$, we have the following notation for monomials:
+$$X^\eta := \prod_{\alpha\in\Phi} X_\alpha^{\eta_\alpha}, \qquad Y^\mu := \prod_{i=1}^r Y_i^{\mu_i}.$$
+Then we can write $p \in \CC[\frakg]$ as
+$$p = \sum_{(\eta, \mu)} p_{\eta, \mu} X^\eta Y^\mu, \qquad p_{\eta,\mu} \in \CC,$$
+with the understanding that the sum is over finitely many tuples $(\eta, \mu)$.
+
+For $x=\sum_{\alpha \in \Phi} X_\alpha(x) x_\alpha + \sum_{i=1}^r Y_i(x) y_i \in \frakg$, the action of $t \in T$ on $x$ is given by
+$$t \cdot x = \sum_{\alpha \in \Phi} \alpha(t) X_\alpha(x) x_\alpha + \sum_{i=1}^r Y_i(x) y_i.$$
+Then $t \in T$ acts on the generator $X_\alpha \in \CC[\frakg]$ by
+$$(t\cdot X_\alpha)(x) = X_\alpha(t^{-1} \cdot x) =\alpha(t^{-1})X_\alpha(x) = (-\alpha)(t)X_\alpha(x), \qquad x \in \frakg.$$
+The action of $t \in T$ on $Y_i \in \CC[\frakg]$ is trivial.
+It follows that
+$$t \cdot p = \sum_{(\nu, \eta)} p_{\eta, \mu} \left(\sum_{\alpha\in\Phi} (-\eta_\alpha \alpha)(t) \right) X^\eta Y^\mu,$$
+since characters are written additively, i.e., $(-\alpha(t))^{\eta_\alpha} = (-\eta_\alpha \alpha)(t)$.
+
+\begin{lemma}
+A polynomial $p \in \CC[\frakg]$ is invariant for the action of $T$ if and only if for each monomial $X^\eta Y^\mu$ in $p$, it holds that
+$$\sum_{\alpha\in\eta} \eta_\alpha \alpha = 0.$$
+\end{lemma}
+\begin{proof}
+    By definition, $p \in \CC[\frakg]$ is invariant if and only if for all $t \in T$,
+    $$ \sum_{(\eta, \mu)} p_{\eta,\mu} \left(\sum_{\alpha\in\Phi} (- \eta_\alpha \alpha)(t)\right) X^\eta Y^\mu =t\cdot p = p = \sum_{(\eta, \mu)} p_{\eta,\mu} X^\eta Y^\mu.$$
+    But since the set $\{X^\eta Y^\mu : \eta \in (\ZZ_{\ge 0})^\Phi, \mu \in (\ZZ_{\ge 0})^r\}$ is a basis for $\CC[\frakg]$, the above equality is equivalent to having 
+    $\sum_{\alpha\in\Phi} (- \eta_\alpha \alpha)(t) = 1$ for all $t \in T$. In other words, $p$ being invariant is equivalent to having $\sum_{\alpha\in\Phi} \eta_\alpha \alpha = 0$
+    for every monomial $X^\eta Y^\mu$ in $p$.
+\end{proof}
+
+The lemma implies the following theorem:
+
+\begin{theorem}\label{invringbasis}
+    The invariant ring $\CC[\frakg]^T$ has the following basis:
+    $$\left\{ X^\eta Y^\mu :\eta \in (\ZZ_{\ge0})^{\Phi}, \, \mu \in (\ZZ_{\ge0})^r \text{ and }\sum_{\alpha\in\Phi} \eta_\alpha \alpha = 0\right\}.$$
+\end{theorem}
+
+\subsection{Generators for $\CC[\frakg]^T$ when $G = \GL_3(\CC)$}
+Our goal in this section is to use Theorem \ref{invringbasis} to find a minimal set of generators for $\CC[\frakg]^T$ when $G = \GL_3(\CC)$.
+Specifically, if
+$$\calA := \left\{\eta \in (\ZZ_{\ge 0})^\Phi : \sum_{\alpha \in \Phi} \eta_\alpha \alpha = 0 \right\},$$
+we want to find $\{\eta_1, \ldots, \eta_m\} \subseteq (\ZZ_{\ge 0})^\Phi$ such that $\calA = \Span_{\ge 0}\{\eta_1, \ldots, \eta_m\}.$
+Then since $X^\eta \cdot X^\nu = X^{\eta + \nu}$, we get
+$$\CC[\frakg]^T 
+= \CC\left[X^\eta Y^\mu :\eta \in \calA, \, \mu \in (\ZZ_{\ge0})^r\right] 
+= \CC[X^{\eta_1}, \ldots , X^{\eta_m}, Y_1, \ldots, Y_r].$$
+
+With the goal of finding generators for $\CC[\frakg]^T$ in mind, let us determine the root space decomposition for $\frakg$.
+Let $T$ be the maximal torus of diagonal matrices in $\GL_3(\CC)$,
+$$T = \{\diag(t_1, t_2, t_3) : t_i \in \CC^\times\}.$$
+Then $T$ has rank $r = 3$.
+We have that $\frakg = \frakg \frakl_3(\CC) = \{(x_{ij})_{i,j=1,2,3} : x_{ij} \in \CC\}.$
+The action of $t = \diag(t_1, t_2, t_3) \in T$ on $x = (x_{ij})_{i,j=1,2,3} \in \frakg$ is given by
+$$t \cdot x = 
+\begin{pmatrix}
+	t_1 & 0 & 0 \\
+	0 & t_2 & 0 \\
+	0 & 0 & t_3 
+\end{pmatrix}
+\begin{pmatrix}
+	x_{11} & x_{12} & x_{13} \\
+	x_{21} & x_{22} & x_{23} \\
+	x_{31} & x_{32} & x_{33} 
+\end{pmatrix}
+\begin{pmatrix}
+	t_1 & 0 & 0 \\
+	0 & t_2 & 0 \\
+	0 & 0 & t_3 
+\end{pmatrix}^{-1} =
+\begin{pmatrix}
+	x_{11} & t_1 t_2^{-1} x_{12} & t_1 t_3^{-1} x_{13} \\
+	t_1^{-1} t_2 x_{21} & x_{22} & t_2 t_3^{-1} x_{23} \\
+	t_1^{-1} t_3 x_{31} & t_2^{-1} t_3 x_{32} & x_{33} 
+\end{pmatrix}.$$
+Then $\frakg = \frakt \oplus \bigoplus_{\alpha \in \Phi} \frakg_\alpha,$ where $\frakt = \{\diag(x_{11}, x_{22}, x_{33}) : x_{ii} \in \CC\}$ is the Cartan subalgebra of diagonal matrices and $\Phi = \{\varepsilon_1, \varepsilon_2, \varepsilon_1 + \varepsilon_2, -\varepsilon_1, -\varepsilon_2, -\varepsilon_1 - \varepsilon_2\}$.
+Here $\varepsilon_1$ and $\varepsilon_2$ are the roots given by 
+$$\varepsilon_1(\diag(t_1,t_2,t_2))=t_1 t_2^{-1}, \qquad \text{and} \qquad \varepsilon_2(\diag(t_1,t_2,t_2))=t_2 t_3^{-1}.$$
+We have the following basis elements for the root spaces
+$$x_{\varepsilon_1} := E_{12}, \quad x_{\varepsilon_2} := E_{23}, \quad x_{\varepsilon_1+\varepsilon_2}:=E_{13}, \quad 
+x_{-\varepsilon_1} := E_{21}, \quad x_{-\varepsilon_2} := E_{32}, \quad x_{-\varepsilon_1-\varepsilon_2}:=E_{31},$$
+where $E_{ij}$ is the standard basis matrix for $\frakg\frakl_3(\CC)$ which has a $1$ in the $i, j$ entry and zeros elsewhere.
+Then $\frakg_\alpha=\Span\{x_\alpha\}$ for each $\alpha \in \Phi$.
+Let $y_i := E_{ii}$ for $i=1, 2, 3$.
+Then $\{y_1, y_2, y_3\}\cup\{x_\alpha : \alpha \in \Phi\}$ is a basis for $\frakg$.
+If $\{Y_1, Y_2, Y_3\} \cup \{X_\alpha : \alpha\in\Phi\}$ denotes the dual basis, $\CC[\frakg] = \CC[X_\alpha, Y_i : \alpha \in \Phi, i=1,2,3]$.
+
+We claim that the set $\{\eta_1, \ldots, \eta_5\}$, where
+$$\eta_1:=(1,0,0,1,0,0), \qquad \eta_2 := (0,1,0,0,1,0), \qquad \eta_3 := (0,0,1,0,0,1),$$
+$$\eta_4 :=(1,1,0,0,0,1), \qquad \eta_5:=(0,0,1,1,1,0),$$
+generates $\calA$ over $\ZZ_{\ge 0}$.
+Here we write $\eta_i \in (\ZZ_{\ge 0})^\Phi$ as an ordered tuple 
+$$\eta_i = (\eta_{i,\varepsilon_1}, \eta_{i,\varepsilon_2}, \eta_{i,\varepsilon_1+\varepsilon_2}, \eta_{i,-\varepsilon_1}, \eta_{i,-\varepsilon_2}, \eta_{i,-\varepsilon_1-\varepsilon_2}).$$
+It is straightforward to check that $\sum_{\alpha\in\Phi} \eta_{i,\alpha}\alpha=0$ for each $i$.
+To see $\{\eta_1, \ldots, \eta_5\}$ indeed generates $\calA$, take any $\nu = (\nu_{\varepsilon_1}, \ldots, \nu_{-\varepsilon_1-\varepsilon_2}) \in \calA$.
+We want to find $k_1, \ldots, k_5 \in \ZZ_{\ge 0}$ such that $\nu = \sum_{i=1}^5 k_i \eta_i$.
+Since $\nu \in \calA$, we have
+$$0 = \sum_{\alpha \in \Phi} \nu_\alpha \alpha 
+= (\nu_{\varepsilon_1}+\nu_{\varepsilon_1+\varepsilon_2}-\nu_{-\varepsilon_1}-\nu_{-\varepsilon_1-\varepsilon_2})\varepsilon_1 + (\nu_{\varepsilon_2} + \nu_{\varepsilon_1+\varepsilon_2}-\nu_{-\varepsilon_2}-\nu_{-\varepsilon_1-\varepsilon_2})\varepsilon_2,$$
+which implies that
+\begin{equation}\label{nuequalities}
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} = \nu_{-\varepsilon_1-\varepsilon_2}-\nu_{\varepsilon_1+\varepsilon_2} = \nu_{\varepsilon_2} - \nu_{-\varepsilon_2}.
+\end{equation}
+For any $k_5 \in \ZZ$, one can use Equation \ref{nuequalities} to check that
+$$k_1 :=\nu_{-\varepsilon_1}-k_5, \quad k_2 :=\nu_{-\varepsilon_2} - k_5, \quad k_3 := \nu_{\varepsilon_1+\varepsilon_2}-k_5, \quad \text{and} \quad k_4 := \nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + k_5$$
+satisfy $\sum_{i=1}^5 k_i \eta_i = \nu.$
+Then to prove the claim, we just need to find $k_5 \in \ZZ_{\ge 0}$ such that $k_1, k_2, k_3, k_4 \ge 0.$
+We claim that $k_5:=\min\{\nu_{\varepsilon_1+\varepsilon_2},\nu_{-\varepsilon_1},\nu_{-\varepsilon_2}\}$ works.
+It is clear $k_1, k_2, k_3 \ge 0$.
+Using Equation \ref{nuequalities},
+$$k_4 = \nu_{\varepsilon_1}-\nu_{-\varepsilon_1}+k_5 =
+\begin{cases}
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + \nu_{\varepsilon_1+\varepsilon_2} = \nu_{-\varepsilon_1-\varepsilon_2} & \text{if } k_5=\nu_{\varepsilon_1+\varepsilon_2}, \\
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + \nu_{-\varepsilon_1} = \nu_{\varepsilon_1} & \text{if } k_5=\nu_{-\varepsilon_1}, \\
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + \nu_{-\varepsilon_2} = \nu_{\varepsilon_2} & \text{if } k_5=\nu_{-\varepsilon_2}, \\
+\end{cases}$$
+and $k_4 \ge 0$ in all cases, as required.
+This proves $\calA = \Span_{\ZZ_{\ge 0}} \{\eta_1, \ldots, \eta_5\}.$
+
+We now have that
+\begin{align*}
+	\CC[\frakg]^T &= \CC[X^{\eta_1}, \ldots, X^{\eta_5}, Y_1, Y_2, Y_3] \\
+	&= \CC[X_{12} X_{21}, X_{23} X_{32}, X_{13} X_{31}, X_{12} X_{23} X_{31}, X_{13} X_{21} X_{32}, Y_1, Y_2, Y_3] \\
+	&\cong \CC[A, B, C, D, E, F, G, H]/(ABC - DE).
+\end{align*}
+Therefore,
+$$\frakg \git T = \Spec(\CC[\frakg]^T) \cong \bV(ABC - DE ) \times \CC^3.$$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -639,7 +1288,7 @@ The union of rays
 $$\sigma_1 = \{(x, x/\sqrt{3}) \in \RR^2: x \in \RR_{\ge 0}\} \cup \{(x, \sqrt{3} \, x) \in \RR^2 : x \in \RR_{\ge 0} \}$$
 is cone but not convex.
 We can ``fill in'' $\sigma_1$ to get the convex cone
-$$\sigma_2 = \{(x, y) \in \RR^2 : x \ge 0, x/\sqrt{3} \le y \le \sqrt{3} \, x\}.$$
+$$\sigma_2 = \{(x, y) \in \RR^2 : x \in \RR_{\ge 0}, \, x/\sqrt{3} \le y \le \sqrt{3} \, x\}.$$
 The set
 $$\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}$$
 is a convex cone in $\RR^3$.
@@ -698,13 +1347,13 @@ $$\sigma^\vee = \{u \in M_\RR : \langle u, v \rangle \ge 0 \text{ for all } v \i
 \end{definition}
 
 \begin{example}
-In the following examples, we let $N = \ZZ^n \subseteq \RR^n \cong N_\RR$, with standard basis $e_1, \ldots, e_n$.
-Let $e_1^*, \ldots, e_n^*$ be the dual basis for $M$.
+In the following examples, we let $N = \ZZ^n \subseteq \RR^n \cong N_\RR$.
+Let $e_1, \ldots, e_n$ be the standard basis for $N$ and $e_1^*, \ldots, e_n^*$ the dual basis for $M$.
 \begin{enumerate}
 \item
-Let $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\},$ the \emph{positive orthant}.
-Observe that a functional $\sum_{i=1}^n a_i e_i^*$ is in the dual cone if and only $a_i \ge 0$ for all $i$.
-Then $\sigma^\vee = \Span_{\ge 0}\{e_1^*, \ldots, e_n^*\}$.
+Let $\sigma := \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}.$
+Observe that a functional $\sum_{i=1}^n a_i e_i^*$ is in the dual cone if and only if $a_i \ge 0$ for all $i$.
+Then $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$.
 
 \item
 Let $n = 2$ and let $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}.$
@@ -761,15 +1410,15 @@ Then we can see that $\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1 + e_2, e_2\}.$
 \end{enumerate}
 \end{example}
 
-The following theorem is a fundamental fact which relates a cone to its dual:
+The following theorem relates a cone to its dual and has many important consequences (which we will see in \S \ref{polyhedralcones}): 
 
 \begin{theorem}[{\cite[\S 1.2]{Fulton93}}]\label{dualitythm}
 Let $\sigma$ be a closed convex cone in $N_\RR$.
 If $v_0 \notin \sigma$, then there exists $u_0 \in \sigma^\vee$ such that $\langle u_0, v_0 \rangle <0.$
 \end{theorem}
 
-Despite its importance in the theory of toric varieties, most references on toric varieties such as \cite{Fulton93} and \cite{CLS11} do not prove it.
-We give a proof here for completeness.
+Theorem \ref{dualitythm} is a foundational result for the theory of toric varieties.
+References such as \cite{Fulton93}, \cite{CLS11}, and \cite{Oda88} omit a proof, but we present one for completeness.
 We begin with a lemma from analysis.
 
 \begin{lemma}\label{mindistancelemma}
@@ -791,9 +1440,9 @@ $\|a - b'\| \le \|a - a'\| + \|a' - b'\| < r_2 + r_1.$
 This implies $b' \in S$, contradicting that $\|a_0-b_0\|$ attained the minimum distance for pairs in $A \times S$.
 \end{proof}
 
-\begin{theorem}[Hyperplane Separation Theorem; {\cite[\S 2.5.1]{BV04}}]\label{hyperplaneseparation}
+\begin{theorem}[Hyperplane Separation Theorem {\cite[\S 2.5.1]{BV04}}]\label{hyperplaneseparation}
 Let $A$ and $B$ be nonempty disjoint closed convex sets in a Euclidean vector space $(V, (\cdot,\cdot))$, and assume $A$ is compact.
-Then there exists $v \in V$ and $\lambda \in \RR$ such that for all $a \in A$, $(v, a) \le \lambda$, and for all $b \in B$, $(v, b) \ge \lambda$.
+Then there exists $v \in V\setminus\{0\}$ and $\lambda \in \RR$ such that for all $a \in A$, $(v, a) \le \lambda$, and for all $b \in B$, $(v, b) \ge \lambda$.
 In other words, there is an affine hyperplane such that $A$ is contained in the negative halfspace and $B$ is contained in the positive halfspace.
 \end{theorem}
 
@@ -814,7 +1463,7 @@ Thus $(v, u - b_0) < 0$.
 Using the Leibniz rule for differentiating inner products, we see
 $$\left. \frac{d}{dt} \|v + t(u - b_0)\|^2 \right|_{t=0} = \left. 2 (v + t(u-b_0), u - b_0) \right|_{t=0} = 2 (v, u - b_0) < 0,$$
 so for small $t > 0$, we have
-$$\|v + t(u - b_0)\| = \|b_0 + t(u - b_0) - a_0\| < \|v\| = \|b_0 - a_0\|.$$
+$$ \|b_0 + t(u - b_0) - a_0\| = \|v + t(u - b_0)\| < \|v\| = \|b_0 - a_0\|.$$
 But $B$ is convex and $b_0, u \in B$, so $(b_0 + t (u - b_0)) \in B$ when $t$ is sufficiently small.
 This contradicts the minimality of $\|b_0 - a_0\|$.
 \end{proof}
@@ -826,8 +1475,8 @@ By Theorem \ref{hyperplaneseparation}, there exist $v \in N_\RR$ and $\lambda \i
 $$(v, x) \ge \lambda \qquad \text{and} \qquad (v, y) \le \lambda$$
 for all $x \in \sigma$ and all $y \in \overline{B_\varepsilon(v_0)}$.
 Since $x = 0 \in \sigma$, $\lambda \le 0$.
-In fact, we claim that $(v, x) \ge 0$ for all $x \in \sigma$ and $(v, v_0) < 0$;
-this completes the proof as then $u_0 := (x \mapsto (v, x))$ is a linear form in $\sigma^\vee$ with $\langle u_0, v_0 \rangle < 0$.
+In fact, we claim that $(v, x) \ge 0$ for all $x \in \sigma$ and $(v, v_0) < 0$,
+which completes the proof as then $u_0 := (x \mapsto (v, x))$ is a linear form in $\sigma^\vee$ with $\langle u_0, v_0 \rangle < 0$.
 Suppose there exists $x \in \sigma$ with $(v, x) = \lambda_0 < 0$.
 Then for any $s \in \RR_{\ge 0}$, $s x \in \sigma $ and $(v, s x) = s \lambda_0$, contradicting that $\{(v, x) : x \in \sigma\}$ is bounded from below.
 Assume for a contradiction $(v, v_0) = 0$.
@@ -845,11 +1494,11 @@ If $v \in \sigma$, $\langle u, v\rangle \ge 0$ for all $u \in \sigma^\vee$, so $
 If $v \notin \sigma$, Theorem \ref{dualitythm} implies there exists $u \in \sigma^\vee$ with $\langle u, v \rangle < 0$ and hence $v \notin (\sigma^\vee)^\vee$.
 \end{proof}
 
-\subsection{Polyhedral cones} 
+\subsection{Polyhedral cones}\label{polyhedralcones}
 In the study of toric varieties, we are interested in the following class of closed convex cones:
 
 \begin{definition}\label{convexpolyhedraldef}
-A subset $\sigma \subseteq N_\RR$ is a \emph{convex polyhedral cone} if
+A subset $\sigma \subseteq N_\RR$ is called a convex polyhedral cone if
 $$\sigma = \Span_{\RR_{\ge 0}} \{v_1, \ldots, v_s\}$$
 for a (finite) set of generators $v_1, \ldots, v_s \in N_\RR$.
 \end{definition}
@@ -862,11 +1511,11 @@ the name polyhedral is justified by the fact that a cone satisfies Definition \r
 Fulton \cite[\S 1.2]{Fulton93} states and proves many important consequences of Theorem \ref{dualitythm} for convex polyhedral cones.
 We explain a few of these now.
 
-Any $u \in M_\RR$ defines a hyperplane, denoted $u^\perp$, and corresponding nonnegative halfspace $u^\vee$.
+Any $u \in M_\RR$ defines a hyperplane $u^\perp$ and corresponding nonnegative halfspace $u^\vee$.
 These are defined as
 $$u^\perp := \{v \in N_\RR : \langle u, v\rangle = 0\}, \qquad u^\vee := \{v \in N_\RR : \langle u, v\rangle \ge 0\}.$$
 A face $\tau$ of $\sigma$ is the intersection of $\sigma$ with a hyperplane which is nonnegative on $\sigma$:
-$$\tau = \sigma \cap u^\perp = \{v \in \sigma : \langle u, v \rangle = 0\}, \qquad \text{for some } u \in \sigma^\vee.$$
+$$\tau = \sigma \cap u^\perp = \{v \in \sigma : \langle u, v \rangle = 0\}, \, \text{for some } u \in \sigma^\vee.$$
 A facet is a codimension one face. 
 Any proper face is the intersection of all facets containing it.
 When $\sigma$ spans $N_\RR$ and $\tau$ is a facet of $\sigma$, there exists $u \in \sigma^\vee$, which is unique up to multiplication by a positive scalar, such that
@@ -883,7 +1532,6 @@ Observe that
 $$u_{\tau_1} = e_1^*, \,\,\,\,\,\,\,\,\,\, u_{\tau_2} = e_2^*, \,\,\,\,\,\,\,\,\,\, u_{\tau_3} = e_3^*, \,\,\,\,\,\,\,\,\,\, u_{\tau_4} = e_1^* + e_2^* - e_3^*$$
 are all nonnegative on $\sigma$ and hence lie in $\sigma^\vee$. 
 For each $u_{\tau_i}$, there is the corresponding facet $\tau_i = \sigma \cap u_{\tau_i}^\perp$.
-
 These are:
 \begin{align*}
 	&\tau_1 = \Span_{\RR_{\ge 0}}\{e_2, e_2+e_3\}, & &\tau_2 = \Span_{\RR_{\ge 0}} \{e_1, e_1+e_3\}, \\
@@ -895,7 +1543,7 @@ The other faces in $\sigma$ are the rays
 	&\tau_2 \cap \tau_3 = \Span_{\RR_{\ge 0}}\{e_1\}, & &\tau_2 \cap \tau_4 = \Span_{\RR_{\ge 0}} \{e_1+e_3\},
 \end{align*}
 and the origin $\bigcap_{i=1}^4 \tau_i = \{0\}.$
-The dual cone is
+The dual cone is generated by $\{u_{\tau_i}\}_{i=1}^4$, so
 $$\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\}.$$
 
 \begin{figure}[H]
@@ -906,50 +1554,31 @@ $$\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\
 \end{example}
 
 \subsection{The semigroup of a cone}
-Recall that a monoid is a group where elements do not necessarily have inverses;
-specifically, a monoid is a set with an associative binary operation with identity.
-In the study of toric varieties, we construct a monoid $S_\sigma$ from a cone $\sigma$.
-In toric varieties literature, it is typical to refer to $S_\sigma$ as a \emph{semigroup} (a set with an assoicative binary operation) even though calling it a monoid would be more precise.
-We follow the convention of calling $S_\sigma$ a semigroup; let us now describe the construction.
+Recall that a semigroup is a set with an associative binary operation.
+For each cone $\sigma$, the points of the dual lattice which are contained in $\sigma^\vee$ form a semigroup,
+$$S_\sigma := \sigma^\vee \cap M.\footnote{We have $0 \in S_\sigma$ for any convex polyhedral cone $\sigma$. Then $S_\sigma$ is always a semigroup with identity, i.e., a monoid. In the toric varieties literature, it is conventional to call $S_\sigma$ a semigroup, even though calling it a monoid would be more precise; we follow the convention and refer to $S_\sigma$ as a semigroup.}$$
 
-A convex polyhedral cone $\sigma \subseteq N_\RR$ is called \emph{rational} it can be generated by elements in the lattice $N$.
-When $\sigma$ is rational, $\sigma^\vee$ is also rational.
-Given a rational convex polyhedral cone $\sigma$, the semigroup of $\sigma$ is
-$$S_\sigma = \sigma^\vee \cap M.$$
+A convex polyhedral cone $\sigma \subseteq N_\RR$ is called \emph{rational} if it can be generated by elements in the lattice $N$.
+When $\sigma$ is rational, $\sigma^\vee$ is also rational \cite[\S 1.2]{Fulton93}.
+Gordan's lemma tells us that the semigroup of a rational cone is finitely generated:
 
-\begin{theorem}[Gordan's lemma, {\cite[\S 1.2]{Fulton93}}]\label{gordanslemma}
-If $\sigma$ is a rational convex polyhedral cone, then $S_\sigma = \sigma^\vee \cap M$ is a finitely generated semigroup.
+\begin{theorem}[Gordan's lemma {\cite[\S 1.2]{Fulton93}}]\label{gordanslemma}
+If $\sigma$ is a rational convex polyhedral cone, then $S_\sigma$ is a finitely generated semigroup.
 \end{theorem}
 \begin{proof}
 Let $u_1, \ldots, u_s \in \sigma^\vee \cap M$ generate $\sigma^\vee$ as a cone.
 Define
 $$K = \left\{\sum t_i u_i : 0 \le t_i \le 1\right\}.$$
-Since $K$ is compact and $M$ is discrete, the intersection $K \cap M$ is finite, and we claim is a generating set for $S_\sigma$.
-Note that $u_1, \ldots, u_s \in K \cap M$.
+Since $K$ is compact and $M$ is discrete, the intersection $K \cap M$ is finite.
+We claim $K \cap M$ generates $S_\sigma$.
+%Note that $u_1, \ldots, u_s \in K \cap M$.
 Suppose that $u \in S_\sigma$.
-Then $u = \sum r_i u_i$ for some $r_i \in \RR_{\ge 0}$ since the $u_i$ generate $\sigma^\vee$.
+Then $u = \sum r_i u_i$ for some $r_i \in \RR_{\ge 0}$ since $\{u_i\}$ generates $\sigma^\vee$.
 Write each $r_i$ as $m_i + t_i$ for $m_i \in \ZZ_{\ge 0}$ and $0 \le t_i \le 1$, so $u = \sum m_i u_i + \sum t_i u_i$.
 Clearly $\sum t_i u_t \in K$.
-Also, $\sum t_i u_t = u - \sum m_i u_i \in M$ since $u, \sum m_i u_i \in M$ and $M$ is a group.
-Then $\sum t_i u_t \in K \cap M$, and $u = \sum m_i u_i + \sum t_i u_i$ shows $u \in \Span_{\ZZ_{\ge 0}} K \cap M$.
+Also, $\sum t_i u_t = u - \sum m_i u_i \in M$ since $u$ and $\sum m_i u_i$ lie in $M$ and $M$ is a group.
+Then $\sum t_i u_t \in K \cap M$, and since $u_1, \ldots, u_s \in K \cap M$, we have that $u = \sum m_i u_i + \sum t_i u_i \in \Span_{\ZZ_{\ge 0}} K \cap M$.
 \end{proof}
-
-\begin{proposition}[{\cite[\S 1.2, Proposition 3]{Fulton93}}]\label{stronglyconvexprop}
-For a convex polyhedral cone $\sigma$, the following conditions are equivalent:
-\begin{enumerate}
-\item $\sigma \cap (-\sigma) = \{0\}$;
-\item $\sigma$ contains no nonzero linear subspace;
-\item there is $u \in \sigma^\vee$ with $\sigma \cap u^\perp = \{0\}$;
-\item $\sigma^\vee$ spans $M_\RR$.
-\end{enumerate}
-\end{proposition}
-
-A cone is called \emph{strongly convex} if it satisfies the conditions of Proposition \ref{stronglyconvexprop}.
-In the study of toric varieties, one works with strongly convex cones.
-This ensures the dual cone $\sigma^\vee$ spans $M_\RR$ so that the semigroup $S_\sigma = \sigma^\vee \cap M$ is not ``too small''.
-In particular, we will see later that the strongly convex assumption is needed to prove that the toric variety defined by a cone indeed has a torus as a dense open subset.
-
-Moving forward, we will say ``$\sigma$ is a cone in $N$'' to mean $\sigma$ is a strongly convex rational polyhedral cone in $N_\RR$.
 
 \subsection{The semigroup algebra and affine toric varieties}
 Given a cone $\sigma$, we have seen how to construct a semigroup $S_\sigma = \sigma^\vee \cap M$.
@@ -964,40 +1593,46 @@ $$U_\sigma := \Spec(\CC[S_\sigma]).$$
 Let us explain the details of the construction.
 Given the semigroup $S_\sigma = \sigma^\vee \cap M$, the semigroup algebra $\CC[S_\sigma]$ is defined as having a basis of formal symbols
 $$\{\chi^u : u \in S_\sigma\},$$
-with multiplication determined by addition in $S_\sigma$:
+with multiplication determined by addition in $S_\sigma$,
 $$\chi^u \cdot \chi^{u'} = \chi^{u + u'}.$$
 Note the multiplication is commutative since $S_\sigma$ is.
-We have the unit $\chi^0 \in \CC[S_\sigma]$ corresponding to the unit $0 \in S_\sigma$.
-By Theorem \ref{gordanslemma}, $S_\sigma$ has a finite generating set $\{u_i\}$.
-Then $\{\chi^{u_i}\}$ generate $\CC[S_\sigma]$, and $\CC[S_\sigma]$ is a finitely generated $\CC$-algebra.
+We have the unit $\chi^0 \in \CC[S_\sigma]$ corresponding to $0 \in S_\sigma$.
+Since $S_\sigma$ is finitely generated, $\CC[S_\sigma]$ is a finitely generated $\CC$-algebra.
 
-We can think of $\CC[S_\sigma]$ as a subalgebra of the ring of Laurent polynomials in the following way:
-when $\sigma = \{0\}$, the dual cone is all of $M_\RR$, so $S_{\{0\}} = M$;
-if $e_1, \ldots, e_n$ is a basis for $N$ and $e_1^*, \ldots, e_n^*$ is the dual basis, denote
-$$X_i = \chi^{e_i^*} \in \CC[M].$$
+Consider the semigroup algebra corresponding to the full dual lattice, $\CC[M]$.
+If $e_1, \ldots, e_n$ is a basis for $N$ and $e_1^*, \ldots, e_n^*$ is the dual basis for $M$, denote
+$$X_i := \chi^{e_i^*} \in \CC[M].$$
 As a semigroup, $M$ is generated by $\pm e_1^*, \ldots, \pm e_n^*$, so
-$$\CC[S_{\{0\}}] = \CC[M] = \CC[X_1^\pm, \ldots, X_n^\pm].$$
-For any cone $\sigma$, $\{0\} \subseteq \sigma$, which implies $\{0\}^\vee \supseteq \sigma^\vee$ and $S_{\{0\}} = \{0\}^\vee \cap M \supseteq S_\sigma = \sigma^\vee \cap M.$
-Then we can think of $\CC[S_\sigma]$ as a subalgebra of the Laurent polynomials.
+$$\CC[M] = \CC[X_1^\pm, \ldots, X_n^\pm],$$
+and $\CC[M]$ can be identified with the ring of Laurent polynomials.
+For any cone $\sigma$, $S_\sigma$ is contained in $M$, so $\CC[S_\sigma]\subseteq\CC[M]$. 
+Then any semigroup algebra $\CC[S_\sigma]$ can be thought of as a subalgebra of the Laurent polynomials.
 
-As $\CC[S_\sigma]$ is a finitely generated $\CC$-algebra, $U_\sigma = \Spec(\CC[S_\sigma])$ is a complex affine variety.
-For example, when $\sigma = \{0\}$ so that $\CC[S_\sigma] = \CC[X_1^\pm, \ldots, X_n^\pm]$, 
-$$U_{\{0\}} = \mathrm{Specm}(\CC[X_1^\pm, \ldots, X_n^\pm]) = (\CC^\times)^n.$$
+%We can think of $\CC[S_\sigma]$ as a subalgebra of the ring of Laurent polynomials in the following way:
+%when $\sigma = \{0\}$, the dual cone is all of $M_\RR$, so $S_{\{0\}} = M$;
+%if $e_1, \ldots, e_n$ is a basis for $N$ and $e_1^*, \ldots, e_n^*$ is the dual basis, denote
+%$$X_i = \chi^{e_i^*} \in \CC[M].$$
+%As a semigroup, $M$ is generated by $\pm e_1^*, \ldots, \pm e_n^*$, so
+%$$\CC[S_{\{0\}}] = \CC[M] = \CC[X_1^\pm, \ldots, X_n^\pm].$$
+%For any cone $\sigma$, $\{0\} \subseteq \sigma$, which implies $\{0\}^\vee \supseteq \sigma^\vee$ and $S_{\{0\}} = \{0\}^\vee \cap M \supseteq S_\sigma = \sigma^\vee \cap M.$
+%Then we can think of $\CC[S_\sigma]$ as a subalgebra of the Laurent polynomials.
+
+As $\CC[S_\sigma]$ is a finitely generated and nilpotent free $\CC$-algebra, $U_\sigma = \Spec(\CC[S_\sigma])$ is a complex affine variety.
+For example, if $\sigma = \{0\}$, then $S_{\{0\}}= M$, and we have
+$$U_{\{0\}} = \Spec(\CC[X_1^\pm, \ldots, X_n^\pm]) = (\CC^\times)^n.$$
 
 \begin{example}
 Let us see more examples arising from the cones we have seen previously.
 \begin{enumerate}
 \item
-For $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\},$ 
-$$\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}.$$
-Then vectors $e_1^*, \ldots, e_n^*$ generate $S_\sigma$ as a semigroup, so
+If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}$, then $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}.$
+The vectors $e_1^*, \ldots, e_n^*$ generate $S_\sigma$ as a semigroup, so
 $$\CC[S_\sigma] = \CC[\chi^{e_1^*}, \ldots, \chi^{e_n^*}] = \CC[X_1, \ldots, X_n],$$
 and 
-$$U_\sigma = \mathrm{Specm}(\CC[X_1, \ldots, X_n]) = \CC^n.$$
+$$U_\sigma = \Spec(\CC[X_1, \ldots, X_n])= \CC^n.$$
 
 \item
-Recall that for $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$,
-$$\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1^* + e_2^*, e_2^*\}.$$
+Recall that for $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$, we have $\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1^* + e_2^*, e_2^*\}.$
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -1043,60 +1678,83 @@ $$\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1^* + e_2^*, e_2^*\}.$$
     \end{tikzpicture}
 \end{figure}
 \noindent
-Observe that while $2 e_1^* + e_2^*$ and $e_2^*$ generate $\sigma^\vee$ as a cone, they do not generate $S_\sigma$ as a semigroup.
-For example, $e_1^* + e_2^* \in S_\sigma$ but $e_1^* + e_2^* \notin \ZZ_{\ge 0} \cdot (2 e_1^* + e_2^*) + \ZZ_{\ge 0} \cdot e_2^*.$
-However, $e_2^*, e_1^* + e_2^*, 2 e_1^* + e_2^*$ do generate $S_\sigma$.
+Observe that while $\{2 e_1^* + e_2^*, e_2^*\}$ generates $\sigma^\vee$ as a cone, it does not generate $S_\sigma$ as a semigroup.
+For example, $e_1^* + e_2^* \in S_\sigma$, but $e_1^* + e_2^* \notin \Span_{\ZZ_{\ge 0}} \{2 e_1^* + e_2^*,  e_2^*\}.$
+However, $\{2 e_1^* + e_2^*,  e_2^*, e_1^* + e_2^*\}$ does generate $S_\sigma$.
 Then
 \begin{align*}
-	\qquad \CC[S_\sigma] = \CC[\chi^{e_2^*}, \chi^{e_1^* + e_2^*}, \chi^{2 e_1^* + e_2^*}] &= \CC[X_2, X_1 X_2, X_1^2 X_2] = \CC[U, V, W] / (U W - V^2)
+	\qquad \CC[S_\sigma] = \CC[\chi^{e_2^*}, \chi^{2 e_1^* + e_2^*}, \chi^{e_1^* + e_2^*}] &= \CC[X_2, X_1^2 X_2, X_1 X_2] \cong \CC[X, Y, Z] / (X Y - Z^2),
 \end{align*}
+and
+$$U_\sigma \cong \Spec(\CC[X, Y, Z] / (XY - Z^2) )= \bV(X Y - Z^2).$$
 
 \item
-For $\sigma = \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\}$, we saw
-$$\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\}.$$
-Then 
+For $\sigma = \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\}$, we saw $\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\}.$
+We have 
 \begin{align*}
 	\CC[S_\sigma] = \CC[\chi^{e_1^*}, \chi^{e_2^*}, \chi^{e_3^*}, \chi^{e_1^* +e_2^* - e_3^*}] &= \CC[X_1, X_2, X_3, X_1 X_2 X_3^{-1}] \\
-	&= \CC[X, Y, Z, W]/(XY - ZW)
+	&\cong \CC[X, Y, Z, W]/(XY - ZW),
 \end{align*}
+and so
+$$U_\sigma \cong \Spec(\CC[X, Y, Z, W] / (XY - ZW) ) = \bV(XY-ZW).$$
 
 \end{enumerate}
 \end{example}
 
+In all the examples of cones that we have seen so far, the origin is a face of the cone.
+The following proposition gives equivalent conditions for the origin to be face:
+
+\begin{proposition}[{\cite[\S 1.2, Proposition 3]{Fulton93}}]\label{stronglyconvexprop}
+For a convex polyhedral cone $\sigma$, the following conditions are equivalent:
+\begin{enumerate}
+\item $\sigma \cap (-\sigma) = \{0\}$;
+\item $\sigma$ contains no nonzero linear subspace;
+\item there is $u \in \sigma^\vee$ with $\sigma \cap u^\perp = \{0\}$;
+\item $\sigma^\vee$ spans $M_\RR$.
+\end{enumerate}
+\end{proposition}
+
+A cone is called \emph{strongly convex} if it satisfies the conditions of Proposition \ref{stronglyconvexprop}.
+We are usually interested in studying toric varieties arising from strongly convex cones.
+This assumption implies that when $N$ is a rank $n$ lattice, the dimension of the variety $U_\sigma$ is also $n$.
+Specifically, when $\sigma$ is strongly convex, $U_\sigma$ has an $n$-dimensional torus as an open subset \cite[Theorem 1.2.18]{CLS11}.
+Then the affine toric variety $U_\sigma$ defined in terms of the cone $\sigma$ satisfies the definition of a toric variety from the introduction to this chapter, i.e., $U_\sigma$ has a torus as a dense open subset.
+
 \subsection{$\AA^n \git T$ as a toric variety}
-In this section, we will study how the GIT quotient of a torus acting on affine space can be given the structure of a toric variety.
+In this section, we will study how the GIT quotient of a torus acting on affine space has the structure of a toric variety.
 We follow \cite[\S 12]{Dolgachev03}.
 
-Let $T = \mathbb{G}_m^r$ act linearly on $\AA^n$ by
+Let $T = (\CC^\times)^r$ act linearly on $\AA^n = \CC^n$ by
 $$t \cdot (z_1, \ldots, z_n) = (t^{\mathbf{a}_1} z_1, \ldots, t^{\mathbf{a}_n} z_n),$$
 where if $t = (t_1, \ldots, t_r)$ and $\mathbf{a}_j = (a_{1j}, \ldots, a_{rj}) \in \ZZ^r$,
-$$t^{\mathbf{a}_j} = t_1^{a_{1j}} \cdots t^{a_{rj}}.$$
+$$t^{\mathbf{a}_j} := t_1^{a_{1j}} \cdots t_r^{a_{rj}}.$$
 Note that any representation of $T$ can be written this way, after diagonalising the action.
-A polynomial $F \in k[Z_1, \ldots, Z_n]$ is invariant if and only if it is a linear combination of monomials $Z^\mathbf{m}$ satisfying
+For a vector $\mathbf{m} =(m_1, \ldots, m_n) \in (\ZZ_{\ge 0})^n$, let $Z^\mathbf{m}:=Z_1^{m_1} \cdots Z_n^{m_n}$.
+If $F \in \CC[Z_1, \ldots, Z_n]$ is given by a finite sum $\sum_{\mathbf{m}} a_{\mathbf{m}} Z^\mathbf{m}$, for some coefficients $a_{\mathbf{m}} \in \CC$, $F \in \CC[Z_1, \ldots, Z_n]^T$ if and only if for all $t \in T$ and all $z =(z_1,\ldots,z_n)\in\AA^n$,
+$$F(z) = \sum_{\mathbf{m}} a_{\mathbf{m}} z^\mathbf{m} = \sum_{\mathbf{m}} a_{\mathbf{m}} t^{m_1 \mathbf{a}_1 + \ldots + m_n \mathbf{a}_n} Z^\mathbf{m} = F(t \cdot z).$$
+Then we see a polynomial $F \in \CC[Z_1, \ldots, Z_n]$ is invariant under the action of $T$ if and only if it is a linear combination of monomials $Z^\mathbf{m}$ satisfying
 \begin{equation}\label{invsys}
-	A \cdot \mathbf{m} = 0.
+	m_1 \mathbf{a}_1 + \ldots + m_n \mathbf{a}_n = A \cdot \mathbf{m} = 0.
 \end{equation}
 % \todo{More explanation required, though this is shown properly when we look at $\CC[\frakg]^T$.}
-Here $A = (a_{ij})$ is the $n \times r$ matrix of the exponents of the characters that $T$ acts by.
-Let $\mathcal{M}$ be the semigroup of vectors $\mathbf{m} \in \ZZ_{\ge 0}^n$ satisfying equation \ref{invsys}.
+Here $A = (a_{ij})$ is the $r \times n$ matrix of the exponents of the characters that $T$ acts by.       % DO YOU WANT TO USE THE WORD CHARACTER?
+Let $\mathcal{M}$ be the semigroup of vectors $\mathbf{m} \in (\ZZ_{\ge 0})^n$ satisfying equation \ref{invsys}.
 Since these $\mathbf{m}$ are precisely the exponents of invariant monomials for the action of $T$ on $\AA^n$, we have the isomorphism
-$$k[Z_1, \ldots, Z_n]^T = k[Z^\mathbf{m} : A \cdot \mathbf{m} = 0] \cong k[\mathcal{M}].$$
+$$\CC[Z_1, \ldots, Z_n]^T = \CC[Z^\mathbf{m} : \mathbf{m}\in (\ZZ_{\ge 0})^n \text{ and } A \cdot \mathbf{m} = 0] \cong \CC[\mathcal{M}].$$
 
-To give $\AA^n \git T$ the structure of a toric variety, we need to find a lattice $N$ and a cone $\sigma$ in $N_\RR$ such that $\mathcal{M} \cong \sigma^\vee \cap M$.
+To see $\AA^n \git T$ has the structure of a toric variety, we need to find a lattice $N$ and a cone $\sigma$ in $N_\RR$ such that $\mathcal{M} \cong \sigma^\vee \cap M$.
 To this end, let $\ZZ^n \to \ZZ^r$ be the map given by the matrix $A$, and let $M = N^*$ be be the kernel of this map.
 Then $M$ is a free abelian group of rank $l = n - \mathrm{rank}(A)$.
 Let $(\ZZ^n)^* \to N = M^*$ be the map given by restriction of linear functions to $M$.
 Let $e_1^*, \ldots, e_n^*$ be the dual basis of the standard basis $e_1, \ldots, e_n$ for $\ZZ^n$, and let $\bar{e}_1^*, \ldots, \bar{e}_n^*$ be the image of these vectors in $M^*$.
 We define $\sigma$ to be the convex cone in $N_\RR$ generated by the vectors $\bar{e}_1^*, \ldots, \bar{e}_n^*$, i.e.,
-$$\sigma = \RR_{\ge 0} \cdot \bar{e}_1^* + \ldots +\RR_{\ge 0} \cdot \bar{e}_n^*.$$
+$$\sigma = \Span_{\RR_{\ge 0}}\{ \bar{e}_1^* , \ldots, \bar{e}_n^*\}.$$
 
 \begin{lemma}
-We have that $\sigma^\vee \cap M = \mathcal{M}$, such that
-$$k[Z_1, \ldots, Z_n]^T \cong k[\mathcal{M}] = k[\sigma^\vee \cap M].$$
-Thus $\AA^n \git T$ is isomorphic to the affine toric variety defined by the cone $\sigma$.
+We have that $\sigma^\vee \cap M = \mathcal{M}$.
 \end{lemma}
 \begin{proof}
-Note that $\mathcal{M} = M \cap \mathbb{Z}_{\ge 0}^n$.
+Note that $\mathcal{M} = M \cap (\mathbb{Z}_{\ge 0})^n$.
 Then
 \begin{align*}
 	\mathcal{M} &= \{m \in M : \bar{e}_i^*(m) \ge 0 \text{ for all } i = 1, \ldots, n\} \\
@@ -1105,7 +1763,15 @@ Then
 \end{align*}
 \end{proof}
 
-\subsection{Properties of toric varieties}
+\begin{corollary}
+The GIT quotient $\AA^n \git T$ is isomorphic to the affine toric variety $U_\sigma$.
+\end{corollary}
+\begin{proof}
+We already know $\CC[Z_1, \ldots, Z_n]^T \cong \CC[\calM]$.
+The lemma implies $\CC[\calM] = \CC[\sigma^\vee \cap M]$, so that $\AA^n \git T = \Spec(\CC[Z_1, \ldots, Z_n]^T) \cong \Spec(\CC[\sigma^\vee \cap M]) = U_\sigma.$ 
+\end{proof}
+
+%\subsection{Properties of toric varieties}
 %\textcolor{red}{
 %This section is an attempt to indicate why we might be interested in using the toric variety structure to study $\AA^n \git T$ and specifically $\frakg \git T$,
 %but these are things I'm still trying to understand.
@@ -1115,7 +1781,7 @@ Then
 %$S_\tau = \tau^\vee \cap M \hookleftarrow  \sigma^\vee \cap M = S_\sigma$ and
 %$$\CC[S_\tau] \hookleftarrow \CC[S_\sigma].$$
 %Correspondingly there is a morphism
-%$$U_\tau = \mathrm{Specm}(\CC[S_\tau]) \to U_\sigma = \mathrm{Specm}(\CC[S_\sigma]).$$
+%$$U_\tau = \Spec(\CC[S_\tau]) \to U_\sigma = \mathrm{Specm}(\CC[S_\sigma]).$$
 %In particular, this map embeds $U_\tau$ as a principal open subset of $U_\sigma$ (see \cite[\S 1.3]{Fulton93}).
 %When $\tau = \{0\}$, $U_{\{0\}} = (\CC^\times)^n$, where $n$ is the dimension of $N$.
 %This is why toric varieties (defined in terms of cones) have a torus as a dense open subset.
@@ -1159,9 +1825,6 @@ Then
 %	&\tau_3 & &\leftrightarrow &  &T_N \cdot (0, 0, 1, 0, 0) =  \{0\}^2 \times \CC^\times \times \{0\}^2 
 %\end{align*}
 %The union of these three orbits is precisely the singular locus of $U_\sigma$.
-
-
-
 
 
 
@@ -1241,6 +1904,19 @@ Then
    doi={10.1515/9781400882526},
 }
 
+\bib{Geck13}{book}{
+   author={Geck, Meinolf},
+   title={An introduction to algebraic geometry and algebraic groups},
+   series={Oxford Graduate Texts in Mathematics},
+   volume={20},
+   note={First paperback reprinting of the 2003 original},
+   publisher={Oxford University Press, Oxford},
+   date={2013},
+   pages={xii+307},
+   isbn={978-0-19-967616-3},
+   review={\MR{3086289}},
+}
+
 \bib{Hartshorne77}{book}{
    author={Hartshorne, Robin},
    title={Algebraic geometry},
@@ -1253,6 +1929,20 @@ Then
    review={\MR{0463157}},
 }
 
+\bib{Hilbert90}{article}{
+   author={Hilbert, David},
+   title={Ueber die Theorie der algebraischen Formen},
+   language={German},
+   journal={Math. Ann.},
+   volume={36},
+   date={1890},
+   number={4},
+   pages={473--534},
+   issn={0025-5831},
+   review={\MR{1510634}},
+   doi={10.1007/BF01208503},
+}
+
 \bib{Humphreys72}{book}{
    author={Humphreys, James E.},
    title={Introduction to Lie algebras and representation theory},
@@ -1262,6 +1952,111 @@ Then
    date={1972},
    pages={xii+169},
    review={\MR{0323842}},
+}
+
+\bib{Humphreys75}{book}{
+   author={Humphreys, James E.},
+   title={Linear algebraic groups},
+   series={Graduate Texts in Mathematics},
+   volume={No. 21},
+   publisher={Springer-Verlag, New York-Heidelberg},
+   date={1975},
+   pages={xiv+247},
+   review={\MR{0396773}},
+}
+
+\bib{Humphreys90}{book}{
+   author={Humphreys, James E.},
+   title={Reflection groups and Coxeter groups},
+   series={Cambridge Studies in Advanced Mathematics},
+   volume={29},
+   publisher={Cambridge University Press, Cambridge},
+   date={1990},
+   pages={xii+204},
+   isbn={0-521-37510-X},
+   review={\MR{1066460}},
+   doi={10.1017/CBO9780511623646},
+}
+
+\bib{Kamgarpour21}{webpage}{
+   author={Kamgarpour, Masoud},
+   title={UQ Maths Stradbroke Island Workshop on Character Varieties},
+   date={2021},
+   note={Available at \url{https://baileywhitbread.com/files/21_character_varieties.pdf}}
+}
+
+\bib{Lang02}{book}{
+   author={Lang, Serge},
+   title={Algebra},
+   series={Graduate Texts in Mathematics},
+   volume={211},
+   edition={3},
+   publisher={Springer-Verlag, New York},
+   date={2002},
+   pages={xvi+914},
+   isbn={0-387-95385-X},
+   review={\MR{1878556}},
+   doi={10.1007/978-1-4613-0041-0},
+}
+
+\bib{Milne13}{webpage}{
+   author={Milne, James S.},
+   title={Lie Algebras, Algebraic Groups, and Lie Groups},
+   date={2013},
+   note={Available at \url{www.jmilne.org/math/}}
+}
+
+\bib{Mukai03}{book}{
+   author={Mukai, Shigeru},
+   title={An introduction to invariants and moduli},
+   series={Cambridge Studies in Advanced Mathematics},
+   volume={81},
+   edition={Japanese edition},
+   publisher={Cambridge University Press, Cambridge},
+   date={2003},
+   pages={xx+503},
+   isbn={0-521-80906-1},
+   review={\MR{2004218}},
+}
+
+\bib{Mumford65}{book}{
+   author={Mumford, David},
+   title={Geometric invariant theory},
+   series={Ergebnisse der Mathematik und ihrer Grenzgebiete, (N.F.)},
+   volume={Band 34},
+   publisher={Springer-Verlag, Berlin-New York},
+   date={1965},
+   pages={vi+145},
+   review={\MR{0214602}},
+}
+
+\bib{Nagata60}{article}{
+   author={Nagata, Masayoshi},
+   title={On the fourteenth problem of Hilbert},
+   conference={
+      title={Proc. Internat. Congress Math. 1958},
+   },
+   book={
+      publisher={Cambridge Univ. Press, New York},
+   },
+   date={1960},
+   pages={459--462},
+   review={\MR{0116056}},
+}
+
+\bib{Oda88}{book}{
+   author={Oda, Tadao},
+   title={Convex bodies and algebraic geometry},
+   series={Ergebnisse der Mathematik und ihrer Grenzgebiete (3) [Results in
+   Mathematics and Related Areas (3)]},
+   volume={15},
+   note={An introduction to the theory of toric varieties;
+   Translated from the Japanese},
+   publisher={Springer-Verlag, Berlin},
+   date={1988},
+   pages={viii+212},
+   isbn={3-540-17600-4},
+   review={\MR{0922894}},
 }
 
 \bib{Reid88}{book}{
