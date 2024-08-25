@@ -13,17 +13,21 @@
 \contentsline {subsection}{\tocsubsection {}{2.5}{The Nullstellensatz}}{6}{subsection.2.5}%
 \contentsline {subsection}{\tocsubsection {}{2.6}{Coordinate rings and regular functions}}{8}{subsection.2.6}%
 \contentsline {subsection}{\tocsubsection {}{2.7}{Polynomial maps between algebraic subsets}}{9}{subsection.2.7}%
-\contentsline {subsection}{\tocsubsection {}{2.8}{Affine varieties}}{11}{subsection.2.8}%
-\contentsline {subsection}{\tocsubsection {}{2.9}{Sheaf of $k$-algebras}}{11}{subsection.2.9}%
-\contentsline {section}{\tocsection {}{3}{Affine GIT and $\mathfrak {g}/\!\!/T$}}{12}{section.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{The affine GIT quotient}}{12}{subsection.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{14}{subsection.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{Generators for $\mathbb {C}[\mathfrak {g}]^T$ when $G = \operatorname {GL}_3(\mathbb {C})$}}{15}{subsection.3.3}%
-\contentsline {subsection}{\tocsubsection {}{3.4}{Hilbert series for $\mathbb {C}[\mathfrak {g}]^T$}}{17}{subsection.3.4}%
-\contentsline {section}{\tocsection {}{4}{Affine toric varieties}}{18}{section.4}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{Convex cones}}{18}{subsection.4.1}%
-\contentsline {subsection}{\tocsubsection {}{4.2}{Polyhedral cones}}{21}{subsection.4.2}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{The semigroup of a cone}}{22}{subsection.4.3}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{The semigroup algebra and affine toric varieties}}{23}{subsection.4.4}%
-\contentsline {subsection}{\tocsubsection {}{4.5}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{24}{subsection.4.5}%
-\contentsline {section}{\tocsection {}{}{References}}{26}{section*.6}%
+\contentsline {subsection}{\tocsubsection {}{2.8}{Open subsets of algebraic sets}}{11}{subsection.2.8}%
+\contentsline {subsection}{\tocsubsection {}{2.9}{Regular functions}}{11}{subsection.2.9}%
+\contentsline {subsection}{\tocsubsection {}{2.10}{Sheaves and affine varieties}}{12}{subsection.2.10}%
+\contentsline {section}{\tocsection {}{3}{Affine GIT and $\mathfrak {g}/\!\!/T$}}{14}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{The affine GIT quotient}}{14}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{16}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Generators for $\mathbb {C}[\mathfrak {g}]^T$ when $G = \operatorname {GL}_3(\mathbb {C})$}}{17}{subsection.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{Hilbert series for $\mathbb {C}[\mathfrak {g}]^T$}}{19}{subsection.3.4}%
+\contentsline {section}{\tocsection {}{4}{Affine toric varieties}}{20}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{Convex cones}}{20}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{Polyhedral cones}}{23}{subsection.4.2}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{The semigroup of a cone}}{24}{subsection.4.3}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{The semigroup algebra and affine toric varieties}}{25}{subsection.4.4}%
+\contentsline {subsection}{\tocsubsection {}{4.5}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{26}{subsection.4.5}%
+\contentsline {section}{\tocsection {}{5}{Abstract toric varieties}}{29}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Glueing affine varieties}}{29}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Abstract toric varieties}}{30}{subsection.5.2}%
+\contentsline {section}{\tocsection {}{}{References}}{32}{section*.6}%
