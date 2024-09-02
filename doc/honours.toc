@@ -27,7 +27,8 @@
 \contentsline {subsection}{\tocsubsection {}{4.3}{The semigroup of a cone}}{24}{subsection.4.3}%
 \contentsline {subsection}{\tocsubsection {}{4.4}{The semigroup algebra and affine toric varieties}}{25}{subsection.4.4}%
 \contentsline {subsection}{\tocsubsection {}{4.5}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{26}{subsection.4.5}%
-\contentsline {section}{\tocsection {}{5}{Abstract toric varieties}}{29}{section.5}%
-\contentsline {subsection}{\tocsubsection {}{5.1}{Glueing affine varieties}}{29}{subsection.5.1}%
-\contentsline {subsection}{\tocsubsection {}{5.2}{Abstract toric varieties}}{30}{subsection.5.2}%
-\contentsline {section}{\tocsection {}{}{References}}{32}{section*.6}%
+\contentsline {subsection}{\tocsubsection {}{4.6}{$\mathbb {A}^n /\!\!/T$ as a toric variety, again}}{29}{subsection.4.6}%
+\contentsline {section}{\tocsection {}{5}{Abstract toric varieties}}{31}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Glueing affine varieties}}{31}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Abstract toric varieties}}{32}{subsection.5.2}%
+\contentsline {section}{\tocsection {}{}{References}}{34}{section*.6}%

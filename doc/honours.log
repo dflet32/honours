@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  22 AUG 2024 11:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  30 AUG 2024 09:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,7 +903,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
 
-<../images/UQLogo.jpg, id=139, 1185.42876pt x 473.77pt>
+<../images/UQLogo.jpg, id=143, 1185.42876pt x 473.77pt>
 File: ../images/UQLogo.jpg Graphic file (type jpg)
 <use ../images/UQLogo.jpg>
 Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 278.
@@ -1041,7 +1041,7 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                 on input line 1391.
 
 [19] [20] [21] [22] [23]
-<../images/cox cone example 2.png, id=483, 158.09062pt x 264.23718pt>
+<../images/cox cone example 2.png, id=488, 158.09062pt x 264.23718pt>
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 1
@@ -1078,29 +1078,51 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1864.
 
-[26] [27] [28] [29] [30] [31]
+[26] [27] [28]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2004.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2004.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2004.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -2.25047pt
+(hyperref)                removed on input line 2004.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2004.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -2.25047pt
+(hyperref)                removed on input line 2004.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2004.
+
+[29] [30] [31] [32] [33]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [32] (./honours.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `honours.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `honours.out':
-(rerunfilecheck)             Before: 1F885951587B1C80001554510ECDCE35;6816
-(rerunfilecheck)             After:  3C8C9647FD7393AA01D8A6221DB0A396;6816.
+ [34] (./honours.aux)
+Package rerunfilecheck Info: File `honours.out' has not changed.
+(rerunfilecheck)             Checksum: A381C429A60956C3FCA75D36F5DB9214;7080.
  ) 
 Here is how much of TeX's memory you used:
- 36579 strings out of 479023
- 821176 string characters out of 5863351
- 1272716 words of memory out of 5000000
- 52733 multiletter control sequences out of 15000+600000
+ 36587 strings out of 479023
+ 821269 string characters out of 5863351
+ 1270716 words of memory out of 5000000
+ 52736 multiletter control sequences out of 15000+600000
  430194 words of font info for 249 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  87i,16n,97p,728b,998s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1115,9 +1137,6 @@ replaced by a fixed one
 
 pdfTeX warning (dest): name{theorem.2} has been referenced but does not exist, 
 replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.5} has been referenced but does not exist,
- replaced by a fixed one
 
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texli
 ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/t
@@ -1144,10 +1163,10 @@ ufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texl
 ive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on honours.pdf (34 pages, 598830 bytes).
+Output written on honours.pdf (36 pages, 607147 bytes).
 PDF statistics:
- 738 PDF objects out of 1000 (max. 8388607)
- 664 compressed objects within 7 object streams
- 229 named destinations out of 1000 (max. 500000)
- 51999 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 757 PDF objects out of 1000 (max. 8388607)
+ 681 compressed objects within 7 object streams
+ 234 named destinations out of 1000 (max. 500000)
+ 52007 words of extra memory for PDF output out of 61914 (max. 10000000)
 
