@@ -22,16 +22,16 @@
 \contentsline {subsection}{\tocsubsection {}{3.2}{Polyhedral cones}}{18}{subsection.3.2}%
 \contentsline {subsection}{\tocsubsection {}{3.3}{The semigroup of a cone}}{19}{subsection.3.3}%
 \contentsline {subsection}{\tocsubsection {}{3.4}{The semigroup algebra and affine toric varieties}}{20}{subsection.3.4}%
-\contentsline {subsection}{\tocsubsection {}{3.5}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{21}{subsection.3.5}%
-\contentsline {subsection}{\tocsubsection {}{3.6}{$\mathbb {A}^n /\!\!/T$ as a toric variety, again}}{24}{subsection.3.6}%
-\contentsline {section}{\tocsection {}{4}{Affine GIT and $\mathfrak {g}/\!\!/T$}}{27}{section.4}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{The affine GIT quotient}}{27}{subsection.4.1}%
-\contentsline {subsection}{\tocsubsection {}{4.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{29}{subsection.4.2}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{Generators for $\mathbb {C}[\mathfrak {g}]^T$ when $G = \operatorname {GL}_3(\mathbb {C})$}}{30}{subsection.4.3}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{Hilbert series for $\mathbb {C}[\mathfrak {g}]^T$}}{32}{subsection.4.4}%
-\contentsline {part}{Part II: Abstract toric varieties}{33}{section*.7}%
-\contentsline {section}{\tocsection {}{5}{Abstract toric varieties}}{34}{section.5}%
-\contentsline {subsection}{\tocsubsection {}{5.1}{Glueing affine varieties}}{34}{subsection.5.1}%
-\contentsline {subsection}{\tocsubsection {}{5.2}{Abstract toric varieties}}{35}{subsection.5.2}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{The invariant ring for a torus acting on affine space}}{21}{subsection.3.5}%
+\contentsline {subsection}{\tocsubsection {}{3.6}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{23}{subsection.3.6}%
+\contentsline {section}{\tocsection {}{4}{Affine GIT and $\mathfrak {g}/\!\!/T$}}{26}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{The affine GIT quotient}}{26}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{28}{subsection.4.2}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{Generators for $\mathbb {C}[\mathfrak {g}]^T$ when $G = \operatorname {GL}_3(\mathbb {C})$}}{29}{subsection.4.3}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Hilbert series for $\mathbb {C}[\mathfrak {g}]^T$}}{31}{subsection.4.4}%
+\contentsline {part}{Part II: Abstract toric varieties}{32}{section*.7}%
+\contentsline {section}{\tocsection {}{5}{Abstract toric varieties}}{33}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Glueing affine varieties}}{33}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Abstract toric varieties}}{34}{subsection.5.2}%
 \vskip 1em
-\contentsline {section}{\tocsection {}{}{References}}{37}{section*.8}%
+\contentsline {section}{\tocsection {}{}{References}}{36}{section*.8}%
