@@ -302,7 +302,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Introduction
+% 1. INTRODUCTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \pagenumbering{arabic}
@@ -434,7 +434,7 @@ After defining affine toric varieties in terms of their cones, we prove $\frakg 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Affine varieties
+% 2. AFFINE VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Affine varieties}
@@ -1075,7 +1075,7 @@ The algebra $A$ will usually be defined in terms of generators and relations so 
 then we can think of $\Spec(A)$ as $\bV(I) \subseteq \AA^n$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Affine Toric Varieties
+% 3. AFFINE TORIC VARIETIES
 % SECTION TO DO:
 % Meeting 10/07:
 % - Masoud's equivalent definition of a toric variety
@@ -1692,10 +1692,10 @@ In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\v
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Affine GIT and g // T
+% 4. AFFINE GIT QUOTIENTS AS AFFINE TORIC VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Affine GIT and $\frakg \git T$}
+\section{Affine GIT quotients as affine toric varieties}
 In this chapter, we introduce the affine GIT quotient and give examples.
 One example we give is $\frakg \git T$ for $G = \GL_2(\CC)$.
 We then compute a basis of $\CC[\frakg]^T$ for general $G$.
@@ -2018,15 +2018,65 @@ $$\mathrm{Hil}(R^G, t) = \sum_{d \ge 0} {d + 2 \choose 2} t^{2d}.$$
 \vspace*{\fill} % Center vertically
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Abstract toric varieties
+% 5. ABSTRACT VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Abstract toric varieties}
-In this section, we present the general definition of an abstract toric variety.
-While affine toric varieties correspond to cones in a vector space, these abstract toric varieties correspond to a collection of cones which ``fit together'' in a nice way --- these collections of cones are called fans.
-To be able to define an abstract toric variety in terms of its fan, we first need to discuss how to glue affine varieties together.
+\section{Abstract varieties}
+In this section, we study abstract algebraic varieties --- these are spaces obtained by glueing together affine varieties.
+An algebraic variety is the analogue in algebraic geometry of a manifold in differential geometry (these are spaces obtained by glueing open subsets of Euclidean space).
+Our interest in algebraic varieties is motivated by the fact that there are toric varieties which are more general than the affine ones encountered in section \ref{affinetoricvarieties}, and these general toric varieties are in particular algebraic varieties. 
+In the next section, we will studying general toric varieties using our understanding of algebraic varieties developed here.
 
-\subsection{Glueing affine varieties}
+In order to motivate the definition of algebraic varieties, we will first study projective varieties, which are an important special cases.
+Then we will define general algebraic varieties, and see how they are determined by glueing affine varieties.
+
+\subsection{Projective varieties}
+
+
+
+\subsection{Abstract varieties}
+Recall the definitions of a sheaf of $k$-algebras and ringed spaces from section \ref{affinetoricvarieties}.
+The definition of algebraic prevariety extends the notion of an affine variety.
+We follow Milne's definition of an algebraic variety \cite{Milne13}.
+
+\begin{definition}
+A topological space $V$ is called quasicompact if every open covering of $V$ has a finite subcovering.
+\end{definition}
+
+The condition to be quasicompact is often known as being compact.
+The convention of Bourbaki is that a compact topological space is one that is quasicompact and Hausdorff \cite[\S 2 g.]{Milne13}; we follow this convention.
+
+\begin{definition}
+An algebraic prevariety over $k$ is a $k$-ringed space $(V, \calO_V)$ such that $V$ is quasicompact and every point of $V$ has an open neighbourhood $U$ for which $(U, \left. \calO_V \right|_U)$ is isomorphic to the ringed space of regular functions on an algebraic set over $k$.
+\end{definition}
+
+In other words, a ringed space $(V, \calO_V)$ is an algebraic prevariety over $k$ if there exists a finite open covering $V = \bigcup V_i$ such that $(V_i, \left. \calO_V \right|_{V_i})$ is an affine algebraic variety over $k$ for all $i$.
+
+Recall that a topological manifold is required to be Hausdorff, a condition which excludes pathological topological behaviour like non-uniqueness of limits.
+The analgous condition for prevarieties is called being separated.
+An algebraic variety will then be a separated prevariety.
+
+\begin{definition}
+An algebraic prevariety $V$ is called separated if for every pair of regular maps $\varphi_1, \varphi_2 : Z \to V$, where $Z$ is an affine algebraic variety, the set $\{z \in Z : \varphi_1(z) = \varphi_2(z)\}$ is closed in $Z$.
+\end{definition}
+
+The following lemma tells us how we can obtain a prevariety by patching together ringed spaces:
+
+\begin{proposition}
+Suppose that the set $V$ is a finite union $V = \bigcup V_i$  of subsets $V_i$ and that each $V_i$ is equipped with a ringed space structure.
+Assume that the following patching condition holds: for all $i,j$, $V_i \cap V_j$ is open in both $V_i$ and $V_j$ and $\left. \calO_{V_i} \right|_{V_i \cap V_j} = \left. \calO_{V_j} \right|_{V_i \cap V_j}$.
+Then there is a unique ringed space structure on $V$ such that
+\begin{enumerate}
+\item
+each inclusion $V_i \hookrightarrow V$ is a homeomorphism of $V_i$ onto an open set, and
+
+\item
+for each $i$, $\left. \calO_V \right|_{V_i} = \calO_{V_i}$.
+\end{enumerate}
+If every $V_i$ is an algebraic variety, then so also is $V$, and to give a regular map from $V$ to a prevariety $W$ amounts to giving a family of regular maps $\varphi_i : V_i \to W$ such that $\left. \varphi_i \right|_{V_i \cap V_j} = \left. \varphi_j \right|_{V_i \cap V_j}$.
+\end{proposition}
+
+
 Let $\{Y_i\}_{i\in I}$ be a finite set of affine varieties.
 Suppose that for all $i, j \in I$, we have isomorphic open subsets $Y_{ij} \subseteq Y_i$ and $Y_{ji} \subseteq Y_j$.
 Let $\{\phi_{ij} : Y_{ij} \to Y_{ji}\}_{i, j \in I}$ be isomorphism such that for all $i, j, k \in I$,
@@ -2057,7 +2107,7 @@ Then $X$ is locally isomorphic to an affine variety.
 
 \begin{example}
 For an example of glueing affine varieties, we consider how $\PP^1$ can be constructed by glueing together two copies of $\AA^1$.
-Let $Y_1=\AA^1$, $Y_2 = \AA^2$ and $Y_12 = k^\times \subseteq Y_1$, $Y_{21} = k^\times \subseteq Y_2$.
+Let $Y_1=\AA^1$, $Y_2 = \AA^1$ and $Y_{12} = k^\times \subseteq Y_1$, $Y_{21} = k^\times \subseteq Y_2$.
 Define the glueing isomorphisms
 $$\phi_{ij} : Y_{ij} \to Y_{ji}, \qquad t \mapsto t^{-1}.$$
 It is clear that $\phi_{12} = \phi_{21}^{-1}$ so that axiom (1) for the glueing isomorphisms holds (axioms (2) and (3) are vacuously true).
@@ -2075,7 +2125,19 @@ are homeomorphisms.
 Observe that if $(x : y) \in U_x \cap U_y$, the image of $(x : y)$ in $X$ of the above two maps are points points which are identified.
 \end{example}
 
-\subsection{Abstract toric varieties}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 6. ABSTRACT TORIC VARIETIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Abstract toric varieties}
+In this section, we present the general definition of an abstract toric variety.
+While affine toric varieties correspond to cones in a vector space, these abstract toric varieties correspond to a collection of cones which ``fit together'' in a nice way --- these collections of cones are called fans.
+
+
+\subsection{Fans}
 Given a certain collection of cones called a fan, one constructs an abstract toric variety by glueing affine toric varieties $U_\sigma$ for cones $\sigma$ in the fan.
 We now define a fan, and demonstrate how it encodes the glueing data.
 As in chapter \ref{affinetoricvarieties}, let $N$ be a lattice, $M$ the dual lattice, and $N_\RR$ and $M_\RR$ the corresponding vector spaces.
@@ -2123,6 +2185,8 @@ Then any basis element in $\CC[S_\tau]$ can be written as $\chi^{w - p u} = \chi
 Then, $\CC[S_\tau] = \CC[S_\sigma]_{\chi^u}$, which is the algebraic version of the assertion.
 \end{proof}
 
+
+\subsection{Abstract toric varieties}
 Let $\Delta$ be a fan in $N$.
 
 \begin{definition}
@@ -2132,6 +2196,29 @@ For cones $\sigma, \tau \in \Delta$, the intersection $\sigma \cap \tau$ is a fa
 
 The fact that the glueing is compatible follows from the order-preserving nature of the correspondence between cones and affine varieties.
 \todo{Understand this better. Can we give explicit glueing maps $\phi_{ij}$ as we used in the definition of glueing?}
+
+
+
+\subsection{Polytopes and projective toric varieties}
+
+
+
+\subsection{The torus action and the orbit-cone correspondence}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7. GIT QUOTIENTS AS TORIC VARIETIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{GIT quotients as toric varieties}
+
+
+\subsection{Linearisations and line bundles}
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  4 SEP 2024 20:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  5 SEP 2024 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,7 +903,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
 
-<../images/UQLogo.jpg, id=151, 1185.42876pt x 473.77pt>
+<../images/UQLogo.jpg, id=179, 1185.42876pt x 473.77pt>
 File: ../images/UQLogo.jpg Graphic file (type jpg)
 <use ../images/UQLogo.jpg>
 Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 278.
@@ -916,7 +916,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 27.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 29.
 
 
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -929,7 +929,11 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 \tf@toc=\write5
 \openout5 = `honours.toc'.
 
+
+Underfull \vbox (badness 1308) has occurred while \output is active []
+
  [2]
+[3]
 
 Package amsrefs Warning: The form \cite{...}*{...} is recommended
 (amsrefs)                instead of \cite[...]{...} on input line 329.
@@ -953,7 +957,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 535.
 
 [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
-<../images/cox cone example 2.png, id=459, 158.09062pt x 264.23718pt>
+<../images/cox cone example 2.png, id=498, 158.09062pt x 264.23718pt>
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 1
@@ -990,34 +994,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1587.
 
-[23] [24] [25]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1698.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1698.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -1.95872pt
-(hyperref)                removed on input line 1698.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1698.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -1.95872pt
-(hyperref)                removed on input line 1698.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1698.
-
-[26] [27]
+[23] [24] [25] [26] [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1831.
@@ -1078,21 +1055,21 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 1994.
 
-[31] [32] [33] [34] [35]
+[31] [32] [33] [34] [35] [36] [37] [38]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [36] (./honours.aux)
+ [39] (./honours.aux)
 Package rerunfilecheck Info: File `honours.out' has not changed.
-(rerunfilecheck)             Checksum: 52028D90F6D53510B84840B6CD7A6525;7673.
+(rerunfilecheck)             Checksum: 7E7FA0B9D4CFBA8D59732E630E0743A3;9390.
  ) 
 Here is how much of TeX's memory you used:
- 36604 strings out of 479023
- 821517 string characters out of 5863351
+ 36632 strings out of 479023
+ 821826 string characters out of 5863351
  1269716 words of memory out of 5000000
- 52743 multiletter control sequences out of 15000+600000
- 431028 words of font info for 255 fonts, out of 8000000 for 9000
+ 52750 multiletter control sequences out of 15000+600000
+ 431146 words of font info for 257 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  87i,16n,97p,728b,998s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{theorem.22} has been referenced but does not exis
@@ -1132,10 +1109,10 @@ ufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texl
 ive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on honours.pdf (38 pages, 605820 bytes).
+Output written on honours.pdf (42 pages, 613438 bytes).
 PDF statistics:
- 776 PDF objects out of 1000 (max. 8388607)
- 698 compressed objects within 7 object streams
- 236 named destinations out of 1000 (max. 500000)
- 56119 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 842 PDF objects out of 1000 (max. 8388607)
+ 759 compressed objects within 8 object streams
+ 253 named destinations out of 1000 (max. 500000)
+ 56175 words of extra memory for PDF output out of 61914 (max. 10000000)
 
