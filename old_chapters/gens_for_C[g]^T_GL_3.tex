@@ -1,0 +1,89 @@
+\subsection{Generators for $\CC[\frakg]^T$ when $G = \GL_3(\CC)$}
+Our goal in this section is to use Theorem \ref{invringbasis} to find a minimal set of generators for $\CC[\frakg]^T$ when $G = \GL_3(\CC)$.
+Specifically, if
+$$\calA := \left\{\eta \in (\ZZ_{\ge 0})^\Phi : \sum_{\alpha \in \Phi} \eta_\alpha \alpha = 0 \right\},$$
+we want to find $\{\eta_1, \ldots, \eta_m\} \subseteq (\ZZ_{\ge 0})^\Phi$ such that $\calA = \Span_{\ge 0}\{\eta_1, \ldots, \eta_m\}.$
+Then since $X^\eta \cdot X^\nu = X^{\eta + \nu}$, we get
+$$\CC[\frakg]^T 
+= \CC\left[X^\eta Y^\mu :\eta \in \calA, \, \mu \in (\ZZ_{\ge0})^r\right] 
+= \CC[X^{\eta_1}, \ldots , X^{\eta_m}, Y_1, \ldots, Y_r].$$
+
+With the goal of finding generators for $\CC[\frakg]^T$ in mind, let us determine the root space decomposition for $\frakg$.
+Let $T$ be the maximal torus of diagonal matrices in $\GL_3(\CC)$,
+$$T = \{\diag(t_1, t_2, t_3) : t_i \in \CC^\times\}.$$
+Then $T$ has rank $r = 3$.
+We have that $\frakg = \frakg \frakl_3(\CC) = \{(x_{ij})_{i,j=1,2,3} : x_{ij} \in \CC\}.$
+The action of $t = \diag(t_1, t_2, t_3) \in T$ on $x = (x_{ij})_{i,j=1,2,3} \in \frakg$ is given by
+$$t \cdot x = 
+\begin{pmatrix}
+	t_1 & 0 & 0 \\
+	0 & t_2 & 0 \\
+	0 & 0 & t_3 
+\end{pmatrix}
+\begin{pmatrix}
+	x_{11} & x_{12} & x_{13} \\
+	x_{21} & x_{22} & x_{23} \\
+	x_{31} & x_{32} & x_{33} 
+\end{pmatrix}
+\begin{pmatrix}
+	t_1 & 0 & 0 \\
+	0 & t_2 & 0 \\
+	0 & 0 & t_3 
+\end{pmatrix}^{-1} =
+\begin{pmatrix}
+	x_{11} & t_1 t_2^{-1} x_{12} & t_1 t_3^{-1} x_{13} \\
+	t_1^{-1} t_2 x_{21} & x_{22} & t_2 t_3^{-1} x_{23} \\
+	t_1^{-1} t_3 x_{31} & t_2^{-1} t_3 x_{32} & x_{33} 
+\end{pmatrix}.$$
+Then $\frakg = \frakt \oplus \bigoplus_{\alpha \in \Phi} \frakg_\alpha,$ where $\frakt = \{\diag(x_{11}, x_{22}, x_{33}) : x_{ii} \in \CC\}$ is the Cartan subalgebra of diagonal matrices and $\Phi = \{\varepsilon_1, \varepsilon_2, \varepsilon_1 + \varepsilon_2, -\varepsilon_1, -\varepsilon_2, -\varepsilon_1 - \varepsilon_2\}$.
+Here $\varepsilon_1$ and $\varepsilon_2$ are the roots given by 
+$$\varepsilon_1(\diag(t_1,t_2,t_2))=t_1 t_2^{-1}, \qquad \text{and} \qquad \varepsilon_2(\diag(t_1,t_2,t_2))=t_2 t_3^{-1}.$$
+We have the following basis elements for the root spaces
+$$x_{\varepsilon_1} := E_{12}, \quad x_{\varepsilon_2} := E_{23}, \quad x_{\varepsilon_1+\varepsilon_2}:=E_{13}, \quad 
+x_{-\varepsilon_1} := E_{21}, \quad x_{-\varepsilon_2} := E_{32}, \quad x_{-\varepsilon_1-\varepsilon_2}:=E_{31},$$
+where $E_{ij}$ is the standard basis matrix for $\frakg\frakl_3(\CC)$ which has a $1$ in the $i, j$ entry and zeros elsewhere.
+Then $\frakg_\alpha=\Span\{x_\alpha\}$ for each $\alpha \in \Phi$.
+Let $y_i := E_{ii}$ for $i=1, 2, 3$.
+Then $\{y_1, y_2, y_3\}\cup\{x_\alpha : \alpha \in \Phi\}$ is a basis for $\frakg$.
+If $\{Y_1, Y_2, Y_3\} \cup \{X_\alpha : \alpha\in\Phi\}$ denotes the dual basis, $\CC[\frakg] = \CC[X_\alpha, Y_i : \alpha \in \Phi, i=1,2,3]$.
+
+We claim that the set $\{\eta_1, \ldots, \eta_5\}$, where
+$$\eta_1:=(1,0,0,1,0,0), \qquad \eta_2 := (0,1,0,0,1,0), \qquad \eta_3 := (0,0,1,0,0,1),$$
+$$\eta_4 :=(1,1,0,0,0,1), \qquad \eta_5:=(0,0,1,1,1,0),$$
+generates $\calA$ over $\ZZ_{\ge 0}$.
+Here we write $\eta_i \in (\ZZ_{\ge 0})^\Phi$ as an ordered tuple 
+$$\eta_i = (\eta_{i,\varepsilon_1}, \eta_{i,\varepsilon_2}, \eta_{i,\varepsilon_1+\varepsilon_2}, \eta_{i,-\varepsilon_1}, \eta_{i,-\varepsilon_2}, \eta_{i,-\varepsilon_1-\varepsilon_2}).$$
+It is straightforward to check that $\sum_{\alpha\in\Phi} \eta_{i,\alpha}\alpha=0$ for each $i$.
+To see $\{\eta_1, \ldots, \eta_5\}$ indeed generates $\calA$, take any $\nu = (\nu_{\varepsilon_1}, \ldots, \nu_{-\varepsilon_1-\varepsilon_2}) \in \calA$.
+We want to find $k_1, \ldots, k_5 \in \ZZ_{\ge 0}$ such that $\nu = \sum_{i=1}^5 k_i \eta_i$.
+Since $\nu \in \calA$, we have
+$$0 = \sum_{\alpha \in \Phi} \nu_\alpha \alpha 
+= (\nu_{\varepsilon_1}+\nu_{\varepsilon_1+\varepsilon_2}-\nu_{-\varepsilon_1}-\nu_{-\varepsilon_1-\varepsilon_2})\varepsilon_1 + (\nu_{\varepsilon_2} + \nu_{\varepsilon_1+\varepsilon_2}-\nu_{-\varepsilon_2}-\nu_{-\varepsilon_1-\varepsilon_2})\varepsilon_2,$$
+which implies that
+\begin{equation}\label{nuequalities}
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} = \nu_{-\varepsilon_1-\varepsilon_2}-\nu_{\varepsilon_1+\varepsilon_2} = \nu_{\varepsilon_2} - \nu_{-\varepsilon_2}.
+\end{equation}
+For any $k_5 \in \ZZ$, one can use Equation \ref{nuequalities} to check that
+$$k_1 :=\nu_{-\varepsilon_1}-k_5, \quad k_2 :=\nu_{-\varepsilon_2} - k_5, \quad k_3 := \nu_{\varepsilon_1+\varepsilon_2}-k_5, \quad \text{and} \quad k_4 := \nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + k_5$$
+satisfy $\sum_{i=1}^5 k_i \eta_i = \nu.$
+Then to prove the claim, we just need to find $k_5 \in \ZZ_{\ge 0}$ such that $k_1, k_2, k_3, k_4 \ge 0.$
+We claim that $k_5:=\min\{\nu_{\varepsilon_1+\varepsilon_2},\nu_{-\varepsilon_1},\nu_{-\varepsilon_2}\}$ works.
+It is clear $k_1, k_2, k_3 \ge 0$.
+Using Equation \ref{nuequalities},
+$$k_4 = \nu_{\varepsilon_1}-\nu_{-\varepsilon_1}+k_5 =
+\begin{cases}
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + \nu_{\varepsilon_1+\varepsilon_2} = \nu_{-\varepsilon_1-\varepsilon_2} & \text{if } k_5=\nu_{\varepsilon_1+\varepsilon_2}, \\
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + \nu_{-\varepsilon_1} = \nu_{\varepsilon_1} & \text{if } k_5=\nu_{-\varepsilon_1}, \\
+	\nu_{\varepsilon_1} - \nu_{-\varepsilon_1} + \nu_{-\varepsilon_2} = \nu_{\varepsilon_2} & \text{if } k_5=\nu_{-\varepsilon_2}, \\
+\end{cases}$$
+and $k_4 \ge 0$ in all cases, as required.
+This proves $\calA = \Span_{\ZZ_{\ge 0}} \{\eta_1, \ldots, \eta_5\}.$
+
+We now have that
+\begin{align*}
+	\CC[\frakg]^T &= \CC[X^{\eta_1}, \ldots, X^{\eta_5}, Y_1, Y_2, Y_3] \\
+	&= \CC[X_{12} X_{21}, X_{23} X_{32}, X_{13} X_{31}, X_{12} X_{23} X_{31}, X_{13} X_{21} X_{32}, Y_1, Y_2, Y_3] \\
+	&\cong \CC[A, B, C, D, E, F, G, H]/(ABC - DE).
+\end{align*}
+Therefore,
+$$\frakg \git T = \Spec(\CC[\frakg]^T) \cong \bV(ABC - DE ) \times \CC^3.$$

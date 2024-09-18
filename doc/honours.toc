@@ -15,30 +15,30 @@
 \contentsline {subsection}{\tocsubsection {}{2.6}{Coordinate rings and regular functions}}{9}{subsection.2.6}%
 \contentsline {subsection}{\tocsubsection {}{2.7}{Polynomial maps between algebraic subsets}}{10}{subsection.2.7}%
 \contentsline {subsection}{\tocsubsection {}{2.8}{Open subsets of algebraic sets}}{12}{subsection.2.8}%
-\contentsline {subsection}{\tocsubsection {}{2.9}{Regular functions}}{12}{subsection.2.9}%
+\contentsline {subsection}{\tocsubsection {}{2.9}{Regular functions}}{13}{subsection.2.9}%
 \contentsline {subsection}{\tocsubsection {}{2.10}{Sheaves and affine varieties}}{13}{subsection.2.10}%
-\contentsline {section}{\tocsection {}{3}{Affine toric varieties}}{15}{section.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{Convex cones}}{15}{subsection.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Polyhedral cones}}{18}{subsection.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{The semigroup of a cone}}{19}{subsection.3.3}%
-\contentsline {subsection}{\tocsubsection {}{3.4}{The semigroup algebra and affine toric varieties}}{20}{subsection.3.4}%
-\contentsline {subsection}{\tocsubsection {}{3.5}{The invariant ring for a torus acting on affine space}}{21}{subsection.3.5}%
-\contentsline {subsection}{\tocsubsection {}{3.6}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{23}{subsection.3.6}%
-\contentsline {section}{\tocsection {}{4}{Affine GIT quotients as affine toric varieties}}{26}{section.4}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{The affine GIT quotient}}{26}{subsection.4.1}%
-\contentsline {subsection}{\tocsubsection {}{4.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{28}{subsection.4.2}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{Generators for $\mathbb {C}[\mathfrak {g}]^T$ when $G = \operatorname {GL}_3(\mathbb {C})$}}{29}{subsection.4.3}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{Hilbert series for $\mathbb {C}[\mathfrak {g}]^T$}}{31}{subsection.4.4}%
-\contentsline {part}{Part II: Abstract toric varieties}{32}{section*.7}%
-\contentsline {section}{\tocsection {}{5}{Abstract varieties}}{33}{section.5}%
-\contentsline {subsection}{\tocsubsection {}{5.1}{Projective varieties}}{33}{subsection.5.1}%
-\contentsline {subsection}{\tocsubsection {}{5.2}{Abstract varieties}}{33}{subsection.5.2}%
-\contentsline {section}{\tocsection {}{6}{Abstract toric varieties}}{36}{section.6}%
-\contentsline {subsection}{\tocsubsection {}{6.1}{Fans}}{36}{subsection.6.1}%
-\contentsline {subsection}{\tocsubsection {}{6.2}{Abstract toric varieties}}{36}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{Polytopes and projective toric varieties}}{37}{subsection.6.3}%
-\contentsline {subsection}{\tocsubsection {}{6.4}{The torus action and the orbit-cone correspondence}}{37}{subsection.6.4}%
-\contentsline {section}{\tocsection {}{7}{GIT quotients as toric varieties}}{38}{section.7}%
-\contentsline {subsection}{\tocsubsection {}{7.1}{Linearisations and line bundles}}{38}{subsection.7.1}%
+\contentsline {subsection}{\tocsubsection {}{2.11}{Morphisms of varieties}}{15}{subsection.2.11}%
+\contentsline {subsection}{\tocsubsection {}{2.12}{Tangent spaces}}{15}{subsection.2.12}%
+\contentsline {section}{\tocsection {}{3}{Affine toric varieties}}{18}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Convex cones}}{18}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Polyhedral cones}}{21}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{The semigroup of a cone}}{22}{subsection.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{The semigroup algebra and affine toric varieties}}{23}{subsection.3.4}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{The invariant ring for a torus acting on affine space}}{24}{subsection.3.5}%
+\contentsline {subsection}{\tocsubsection {}{3.6}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{26}{subsection.3.6}%
+\contentsline {section}{\tocsection {}{4}{Affine GIT quotients as affine toric varieties}}{29}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{The affine GIT quotient}}{29}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{31}{subsection.4.2}%
+\contentsline {part}{Part II: Abstract toric varieties}{33}{section*.8}%
+\contentsline {section}{\tocsection {}{5}{Abstract varieties}}{34}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Projective varieties}}{34}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Abstract varieties}}{34}{subsection.5.2}%
+\contentsline {section}{\tocsection {}{6}{Abstract toric varieties}}{37}{section.6}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{Fans}}{37}{subsection.6.1}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{Abstract toric varieties}}{37}{subsection.6.2}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{Polytopes and projective toric varieties}}{38}{subsection.6.3}%
+\contentsline {subsection}{\tocsubsection {}{6.4}{The torus action and the orbit-cone correspondence}}{38}{subsection.6.4}%
+\contentsline {section}{\tocsection {}{7}{GIT quotients as toric varieties}}{39}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{7.1}{Linearisations and line bundles}}{39}{subsection.7.1}%
 \vskip 1em
-\contentsline {section}{\tocsection {}{}{References}}{39}{section*.8}%
+\contentsline {section}{\tocsection {}{}{References}}{40}{section*.9}%

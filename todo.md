@@ -1,19 +1,10 @@
 # TO DO
-## ADMIN
-[ ] Make sure inclusivity training appears on CAHP
-
-## MUSIC
-[ ] Clean instruments (double bass, all guitars)
-[ ] Learn new covers for Shed Fiends
-
 ## THESIS
 ### General:
 [ ] Write GIT chapters
 [ ] Add contents of "git.tex" document to new document
 
 ### Chapters
-#### Introduction
-[ ] Honest account/tell a story
 #### Affine Varieties
 [x] Correspondence between points and ideals
 [x] The Zariski topology (irreducibility)
