@@ -277,7 +277,7 @@
 \begin{center}
 \includegraphics[width=10cm]{../images/UQLogo.jpg} \\ 
 \vspace{3cm}
-{\LARGE\textsc{GIT and Affine Toric Varieties}} \\
+{\LARGE\textsc{Toric Varieties}} \\
 %\vspace{0.1cm}
 %{\LARGE\textsc{Varieties}} \\
 \vspace{0.5cm}
@@ -302,12 +302,11 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 1. INTRODUCTION
+% INTRODUCTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \pagenumbering{arabic}
 \section{Introduction}
-
 We study the affine GIT quotient $\frakg \git T$, where $G$ is a connected complex algebraic group with Lie algebra $\frakg$ and maximal torus $T$.
 The variety $\frakg \git T$ can be explicitly computed for $G = \GL_2(\CC)$ or $G = \GL_3(\CC)$, but the problem is difficult for arbitrary $G$.
 For any torus acting on an affine space, the GIT quotient has the structure of a toric variety.
@@ -413,31 +412,32 @@ The prerequisite convex geometry is discussed, and in particular, we give a self
 After defining affine toric varieties in terms of their cones, we prove $\frakg \git T$ is an affine toric variety.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PART I: AFFINE TORIC VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PART I: AFFINE TORIC VARIETIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{center}
+%%\vspace{0.5 \textheight}
+%%{\LARGE\textsc{Part I: Affine toric varieties}} \\
+%%\vspace{8cm}
+%%\end{center}
+%% First Part
+%\newpage
+%\phantomsection
+%\addcontentsline{toc}{part}{Part I: Affine toric varieties}
+%\thispagestyle{empty} % Remove page number
+%\vspace*{\fill} % Center vertically
 %\begin{center}
-%\vspace{0.5 \textheight}
-%{\LARGE\textsc{Part I: Affine toric varieties}} \\
-%\vspace{8cm}
+%    \Huge \textsc{Part I: Affine Toric Varieties}
 %\end{center}
-% First Part
-\newpage
-\phantomsection
-\addcontentsline{toc}{part}{Part I: Affine toric varieties}
-\thispagestyle{empty} % Remove page number
-\vspace*{\fill} % Center vertically
-\begin{center}
-    \Huge \textsc{Part I: Affine Toric Varieties}
-\end{center}
-\vspace*{\fill}
+%\vspace*{\fill}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 2. AFFINE VARIETIES
+% ALGEBRAIC SUBSETS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Affine varieties}
+\section{Algebraic subsets of affine space}
 In this chapter, we introduce affine varieties, which are the central object of study in this project.
 Algebraic geometry establishes a connection between spaces defined by zero sets of polynomials (geometric objects), and ideals in a polynomial ring (algebraic objects).
 We detail this connection, and explain how algebraic properties of rings and ideals inform properties of the corresponding geometric spaces.
@@ -949,6 +949,11 @@ Then, the coordinate ring of $(k^\times)^n$ is
 $$k[X_1, \ldots, X_n]_{X_1 \cdots X_n} = k[X_1, X_1^{-1}, \ldots, X_n, X_n^{-1}],$$
 the ring of Laurent polynomials.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AFFINE VARIETIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Affine varieties}
 \subsection{Regular functions}
 Let $V$ be an algebraic subset of $\AA^n$.
 When studying some class of objects, we need an appropriate idea of the structure-preserving maps between them.
@@ -1068,7 +1073,6 @@ Then $\ker\phi$ is radical, so that $\bV(\ker \phi)$ is an algebraic subset of $
 In view of Corollary \ref{isoofalgsetscoro}, isomorphic $k$-algebras correspond to isomorphic algebraic sets.
 To construct an affine variety that 
 
-
 The answer is yes---this variety is the \emph{maximal spectrum}, $\Spec(A)$, of $A$.
 The maximal spectrum $\Spec(A)$ is a topological space with a certain sheaf that defines an affine variety.
 This construction is technical so we omit it in this document, but the details can be found in \cite[Chapter 3]{Milne13}.
@@ -1163,13 +1167,10 @@ Then each minor of $J$ is also a polynomial and so $S(r) \subseteq V$ is an alge
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 3. AFFINE TORIC VARIETIES
-% SECTION TO DO:
-% Meeting 10/07:
-% - Masoud's equivalent definition of a toric variety
+% CONVEX GEOMETRY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Affine toric varieties}\label{affinetoricvarieties}
+\section{Convex geometry}\label{sectionconvexgeometry}
 Affine toric varieties are a class of algebraic varieties which are determined by a \emph{cone} in a vector space.
 The interplay between the variety and its cone leads to a rich theory combining the algebraic geometry of the variety and the convex geometry of the cone.
 Moreover, computations with the cone can often be done explicitly, which means toric varieties are useful to study as examples.
@@ -1459,7 +1460,6 @@ $$\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\
 \includegraphics[width=0.2 \textwidth]{../images/cox cone example 2}
 \caption*{A diagram of $\sigma$ \cite[Figure 2]{CLS11}}
 \end{figure}
-
 \end{example}
 
 \subsection{The semigroup of a cone}
@@ -1488,6 +1488,24 @@ Clearly $\sum t_i u_t \in K$.
 Also, $\sum t_i u_t = u - \sum m_i u_i \in M$ since $u$ and $\sum m_i u_i$ lie in $M$ and $M$ is a group.
 Then $\sum t_i u_t \in K \cap M$, and since $u_1, \ldots, u_s \in K \cap M$, we have that $u = \sum m_i u_i + \sum t_i u_i \in \Span_{\ZZ_{\ge 0}} K \cap M$.
 \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AFFINE TORIC VARIETIES
+% SECTION TO DO:
+% Meeting 10/07:
+% - Masoud's equivalent definition of a toric variety
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Affine toric varieties}\label{affinetoricvarieties}
+Affine toric varieties are a class of algebraic varieties which are determined by a \emph{cone} in a vector space.
+The interplay between the variety and its cone leads to a rich theory combining the algebraic geometry of the variety and the convex geometry of the cone.
+Moreover, computations with the cone can often be done explicitly, which means toric varieties are useful to study as examples.
+
+The most succinct definition of a toric variety $X$ is the following:
+$X$ is a normal variety with an algebraic torus $T$ as a dense open subset, and $T$ acts on $X$ by an action which extends the natural action of $T$ on itself.
+However, this description doesn't indicate the relationship with convex geometry.
+In this chapter, we will define and study toric varieties; we will also see how the GIT quotient of an affine space by a torus has the structure of an affine toric variety.
+We start by discussing the prerequisite convex geometry.
 
 \subsection{The semigroup algebra and affine toric varieties}
 Given a cone $\sigma$, we have seen how to construct a semigroup $S_\sigma = \sigma^\vee \cap M$.
@@ -1620,167 +1638,8 @@ This assumption implies that when $N$ is a rank $n$ lattice, the dimension of th
 Specifically, when $\sigma$ is strongly convex, $U_\sigma$ has an $n$-dimensional torus as an open subset \cite[Theorem 1.2.18]{CLS11}.
 Then the affine toric variety $U_\sigma$ defined in terms of the cone $\sigma$ satisfies the definition of a toric variety from the introduction to this chapter, i.e., $U_\sigma$ has a torus as a dense open subset.
 
-\subsection{The invariant ring for a torus acting on affine space}
-The goal of the next two subsections is to prove that if a torus $T$ acts linearly on an affine space $\AA^n$, then the affine GIT quotient $\AA^n \git T$ has the structure of a toric variety.
-With this goal in mind, in this section we will compute the ring of invariants for such an action;
-in particular, we will show that there is a semigroup $\calM$ so that the ring of invariants is isomorphic to the semigroup algebra $\CC[\calM]$.
-Then in the next section, we will find a lattice $N$ and cone $\sigma$, such that $S_\sigma \cong \calM$, which will be sufficient to show that $\AA^n \git T$ is an affine toric variety.
-
-Let $T$ be an algebraic torus acting linearly on $\AA^n$, i.e., suppose there is a set of characters $S = \{\chi_1, \ldots, \chi_n\} \subseteq X^*(T)$ such that
-$$t \cdot (z_1, \ldots, z_n) = (\chi_1(t) z_1, \ldots, \chi_n(t) z_n)$$
-for all $t \in T$ and $z = (z_1, \ldots, z_n) \in \AA^n$.
-For notational convenience, we will index the coordinates of $\AA^n$ by the character that the torus acts by for that coordinate, instead of a number $i=1, \ldots, n$.
-Thus, a point $z \in \AA^n$ will be written $z = (z_\chi)_{\chi\in S}$, such that
-\begin{equation}\label{actiondef}
-t \cdot z = (\chi(t) z_\chi)_{\chi \in S}.
-\end{equation}
-We define the polynomial $Z_\chi$ for $\chi \in S$ by
-$$Z_\chi(z) = z_\chi, \qquad \text{for } z = (z_\chi)_{\chi \in S}.$$
-Then the coordinate ring of $\AA^n$ is $\CC[Z_\chi : \chi \in S]$.
-Let $(\ZZ_{\ge 0})^S = \Fun(S, \ZZ_{\ge 0})$ denote the ring of functions $S \to \ZZ_{\ge 0}$, and for $\eta \in (\ZZ_{\ge 0})^S$, write $\eta=(\eta_\chi)_{\chi\in S}$, where $\eta_\chi = \eta(\chi)$.
-An element $\eta \in (\ZZ_{\ge 0})^S$ defines a monomial in $\CC[Z_\chi : \chi \in S]$, namely
-$$Z^\eta := \prod_{\chi \in S} Z_\chi^{\eta_\chi}.$$
-A polynomial $p \in \CC[Z_\chi : \chi \in S]$ can be written
-$$p = \sum_\eta p_\eta X^\eta,$$
-where the sum is over all $\eta \in (\ZZ_{\ge 0})^S$ and all but finitely many of the coefficients $p_\eta \in \CC$ are zero.
-
-Let us now describe the invariant ring $\CC[Z_\chi : \chi \in S]^T$.
-Recall that since $T$ acts on $\AA^n$, there is an induced action of $T$ on the coordinate ring;
-if $t \in T$ and $p \in \CC[Z_\chi : \chi \in S]$, then $(t\cdot p)(z) := p(t^{-1} \cdot z)$.
-Using the definition of the action in equation \ref{actiondef}, we see that $T$ acts on a monomial $Z^\eta$ by
-$$t \cdot Z^\eta = \prod_{\chi \in S} (\chi(t^{-1}) Z_\chi)^{\eta_\chi} = \left(\sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta.$$
-It follows that $p \in \CC[Z_\chi : \chi \in S]$ is invariant for the action of $T$ if and only if
-$$\sum_\eta p_\eta Z^\eta = \sum_\eta p_\eta \left( \sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta$$
-for all $t \in T$.
-Since $Z^\eta$ and $Z^\mu$ are linearly independent for distinct $\eta$ and $\mu$, the above equality holds if and only if 
-$$Z^\eta = \left(\sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta$$
-for all $\eta$ such that $p_\eta \ne 0$.
-Equivalently, $p$ is invariant for the action of $T$ if and only if
-$$\sum_{\chi \in S} \eta_\chi \chi = 0$$
-for all $\eta$ such that $p_\eta \ne 0$.
-The following lemma summarises our discussion:
-
-\begin{lemma}
-We have that 
-$$\CC[Z_\chi : \chi \in S]^T = \CC\left[Z^\eta : \eta \in (\ZZ_{\ge 0})^S \text{ and }\sum_{\chi \in S} \eta_\chi \chi = 0\right].$$
-\end{lemma}
-\begin{corollary}\label{invariantringsemigroupalgebra}
-Let $\calM$ be the semigroup 
-$$\calM := \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\}.$$
-Denoting the semigroup algebra of $\calM$ by $\CC[\calM]$, we have that
-$$\CC[Z_\chi : \chi \in S]^T \cong \CC[\calM].$$
-\end{corollary}
-
-\subsection{$\AA^n \git T$ as a toric variety}
-We now want to find a lattice $N$ and a cone $\sigma$ such that $\AA^n \git T$ is isomorphic to the affine toric variety $U_\sigma$.
-Since Corollary \ref{invariantringsemigroupalgebra} expresses the invariant ring $\CC[Z_\chi : \chi \in S]^T$ as the semigroup algebra $\CC[\calM]$, it suffices to find $N$ and $\sigma$ such that $S_\sigma$ is isomorphic to $\calM$.
-We then have that
-$$\AA^n \git T \cong \Spec(\CC[Z_\chi : \chi \in S]^T) \cong \Spec(\CC[S_\sigma]) = U_\sigma,$$
-showing $\AA^n \git T$ has the structure of an affine toric variety.
-
-Let 
-$$\ZZ^S := \Fun(S, \ZZ)$$
-be the lattice of integer-valued functions on $S$.
-This is a lattice in $\RR^S$, the vector space of real-valued functions on $S$.
-We denote elements of $\ZZ^S$ by $\eta = (\eta_\chi)_{\chi \in S}$, where $\eta_\chi = \eta(\chi)$.
-The dual lattice is $(\ZZ^S)^\vee$, where elements are similarly denoted $\mu = (\mu_\chi)_{\chi \in S} \in (\ZZ^S)^\vee$.
-The dual pairing $(\ZZ^S)^\vee \times \ZZ^S \to \ZZ$ is given by
-$$(\mu, \eta) \mapsto \langle \mu, \eta \rangle := \sum_{\chi \in S} \mu_\chi \eta_\chi.$$
-The indicators $\{e_\chi\}_{\chi\in S}$, given by $(e_\chi)_{\chi'} = e_\chi(\chi') = \delta_{\chi, \chi'}$, are a basis for $\ZZ^S$.
-The dual basis for $(\ZZ^S)^\vee$ is $\{e_\chi^\vee\}_{\chi\in S}$, where $\langle e_\chi^\vee, e_{\chi'} \rangle = \delta_{\chi, \chi'}$.
-
-We have a map $\varphi:(\ZZ^S)^\vee \to \Span_\ZZ(S) \subseteq X^*(T)$ given by
-$$\mu \mapsto \sum_{\chi\in S} \mu_\chi \chi.$$
-The kernel of $\varphi$ is
-$$M := \ker \varphi = \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0\right\}.$$
-Since a subgroup of a finitely-generated free abelian group is again finitely-generated and free, $M$ is a finitely-generated free abelian group.
-It has rank
-$$\rank(M) = \rank((\ZZ^S)^\vee) - \rank(\Span_\ZZ(S)) = |S| - \rank(\Span_\ZZ(S)).$$
-There is a corresponding sublattice of $\ZZ^S$, 
-\begin{align*}
-	K &:= \{\eta \in \ZZ^S : \langle \mu, \eta \rangle = 0 \text{ for all } \mu \in M\} \\
-	   &= \{\eta \in \ZZ^S : \sum_{\chi \in S} \mu_\chi \eta_\chi = 0 \text{ for all } \mu \in (\ZZ^S)^\vee \text{ such that } \sum_{\chi \in S} \mu_\chi \chi = 0 \}.
-\end{align*}
-We have that $\rank(K) = \rank(\Span_\ZZ(S))$ (\textcolor{red}{You can see this must be the case once you know that $\ZZ^S/K \cong M^\vee$, but I don't know if there is a straightforward way to prove it.})
-If $\eta \in \ZZ^S$, we use $\overline{\eta}$ to denote the coset of $\eta$ in $\ZZ^S/K$, i.e., $\overline{\eta} = \eta + K \in \ZZ^S/K$.
-
-The following theorem describes the cone of the toric variety $\AA^n \git T$:
-
-\begin{theorem}\label{gitlatticetheorem}
-Let 
-$$N := \ZZ^S / K,$$
-and 
-$$\sigma := \Span_{\RR_{\ge 0}} \{\overline{e_\chi} : \chi \in S\} \subseteq N_\RR.$$
-Then $S_\sigma = \sigma^\vee \cap M \cong \calM$, so that $\AA^n \git T$ is isomorphic to $U_\sigma$.
-\end{theorem}
-
-\begin{example}
-We consider some examples of the lattices $N$ that arise for different choices of $S \subseteq X^*(T)$.
-\begin{enumerate}
-\item
-Let $T = \CC^\times$ and $S = \{\chi, -\chi\}$, where $\chi(t) = t$.
-Explicitly, the action of $T$ on $\AA^2$ is
-$$t \cdot (z_1, z_2) = (t z_1, t^{-1} z_2).$$
-Then,
-$$M = \left\{\mu\in(\ZZ^S)^\vee : \mu_\chi \chi + \mu_{-\chi}(-\chi) = 0\right\} = \left\{(\mu_{\chi}, \mu_{-\chi}) \in (\ZZ^S)^\vee : \mu_\chi = \mu_{-\chi} \right\}.$$
-Also,
-\begin{align*}
-	K &= \{\eta \in \ZZ^S : \mu_\chi \eta_\chi + \mu_{-\chi} \eta_{-\chi} = 0 \text{ whenever } \mu_\chi = \mu_{-\chi}\} \\
-	&= \{(\eta_\chi, \eta_{-\chi})\in\ZZ^S : \eta_\chi = - \eta_{-\chi}\} \\
-	&=\Span_\ZZ\{e_\chi - e_{-\chi}\}.
-\end{align*}
-Therefore, $N = \ZZ^S / K$ and $\sigma = \Span_{\RR_{\ge 0}}\{\overline{e_\chi}, \overline{e_{-\chi}}\} \subseteq N_\RR.$
-
-\item
-Let $T$ be a maximal torus in $G = \GL_3$, and let $S$ be the root system of $G$ with respect to $T$.
-Then $S = \Phi = \{\alpha, \beta, \alpha+\beta, -\alpha, -\beta, -(\alpha+\beta)\}$, where $\alpha$ and $\beta$ are simple roots.
-We have that $\rank(M) = |\Phi| - \rank(\Span_\ZZ(\Phi)) = 4$, and we see
-$$M = \Span_\ZZ\{e_\alpha+e_{-\alpha}, e_\beta + e_{-\beta}, e_\alpha + e_\beta + e_{-(\alpha+\beta)}, e_{\alpha+\beta}+e_{-\alpha}+e_{-\beta}\}.$$
-Furthermore, $\rank(K) = \rank(\Span_\ZZ(\Phi))$, and we see
-$$K = \Span_\ZZ\{e^\vee_\alpha + e^\vee_{\alpha+\beta} - e^\vee_{-\alpha} - e^\vee_{-(\alpha+\beta)}, e^\vee_\beta + e^\vee_{\alpha+\beta} - e^\vee_{-\beta} - e^\vee_{-(\alpha+\beta)}\}.$$
-We have that $N = \ZZ^\Phi/K$ and $\sigma = \Span_{\RR_{\ge 0}}\{\overline{e_\alpha} : \alpha\in\Phi\}.$
-\end{enumerate}
-\end{example}
-
-We now prove Theorem \ref{gitlatticetheorem}.
-The proof relies on the following lemma, which describes the dual lattice to a sublattice:
-
-\begin{lemma}\label{duallatticesublattice}
-Let $N_1$ and $N_2$ be lattices such that $N_2 \le N_1$.
-Letting $M_i$ denote the dual lattice to $N_i$, we have that
-$$M_2 \cong M_1 / K,$$
-where $K:= \{f \in M_1 : f(n) = 0 \text{ for all } n \in N_2\}.$
-\end{lemma}
-\begin{proof}
-Let $\phi : M_1 \to M_2$ be the restriction map $f \mapsto \left. f \right|_{N_2}$.
-Then $K = \ker \phi$, and $M_1 / K \cong \im \phi$, so we just need to show $\phi$ is surjective.
-Let $\{n_1, \ldots, n_r\}$ be a set of generators for $N_2$, which we extend to a set of generators for $N_2$, $\{n_1, \ldots, n_r, n_{r+1}, \ldots, n_s\}$.
-If $f \in M_2$, we can extend $f$ to a map $\tilde f \in \Hom(N_1, \ZZ)$ by defining $\tilde f$ on the generators of $N_1$ as
-$$\tilde f(n_i) := \begin{cases} f(n_i) & \text{if } i = 1, \ldots, r, \text{ i.e., if } n_i \in N_2, \\ 0 & \text{if } i = r+1, \ldots, s, \text{ i.e., if } n_i \notin N_2. \end{cases}$$
-Then $\phi(\tilde f) = \tilde f \big|_{N_2} = f$ and $\phi$ is surjective.
-\end{proof}
-
-\begin{proof}[{Proof of Theorem \ref{gitlatticetheorem}}]
-Recall that 
-$$M = \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \right\}, \quad K = \left\{\eta \in \ZZ^S : \langle \mu, \eta \rangle = 0 \text{ for all } \mu \in M\right\}.$$
-Then Lemma \ref{duallatticesublattice} implies that $M^\vee \cong \ZZ^S / K =: N.$
-The cone $\sigma$ in $N$ defined as 
-$$\sigma := \{\overline{e_\chi} : \chi \in \} \subseteq N_\RR.$$
-We want to show that $S_\sigma = \sigma^\vee \cap M$ is isomorphic to the semigroup
-$$\calM := \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\}.$$
-We have that
-\begin{align*}
-	\sigma^\vee \cap M &= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \langle \mu, \eta \rangle = 0 \text{ for all } \eta \in \sigma \right\}\\
-	&= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \langle \mu, \overline{e_\chi} \rangle = 0 \text{ for all } \chi \in S \right\}\\
-	&= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \mu_\chi \ge 0 \text{ for all } \chi \in S \right\}\\
-	&\cong  \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\} \\
-	&=\calM.
-\end{align*}
-In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\vee$ is nonnegative on the cone $\sigma$ is equivalent to checking $\mu$ is nonnegative on the generators of $\sigma$.
-\end{proof}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 4. AFFINE GIT QUOTIENTS AS AFFINE TORIC VARIETIES
+% AFFINE GIT QUOTIENTS AS AFFINE TORIC VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Affine GIT quotients as affine toric varieties}
@@ -1972,30 +1831,187 @@ The lemma implies the following theorem:
     $$\left\{ X^\eta Y^\mu :\eta \in (\ZZ_{\ge0})^{\Phi}, \, \mu \in (\ZZ_{\ge0})^r \text{ and }\sum_{\alpha\in\Phi} \eta_\alpha \alpha = 0\right\}.$$
 \end{theorem}
 
+\subsection{The invariant ring for a torus acting on affine space}
+The goal of the next two subsections is to prove that if a torus $T$ acts linearly on an affine space $\AA^n$, then the affine GIT quotient $\AA^n \git T$ has the structure of a toric variety.
+With this goal in mind, in this section we will compute the ring of invariants for such an action;
+in particular, we will show that there is a semigroup $\calM$ so that the ring of invariants is isomorphic to the semigroup algebra $\CC[\calM]$.
+Then in the next section, we will find a lattice $N$ and cone $\sigma$, such that $S_\sigma \cong \calM$, which will be sufficient to show that $\AA^n \git T$ is an affine toric variety.
+
+Let $T$ be an algebraic torus acting linearly on $\AA^n$, i.e., suppose there is a set of characters $S = \{\chi_1, \ldots, \chi_n\} \subseteq X^*(T)$ such that
+$$t \cdot (z_1, \ldots, z_n) = (\chi_1(t) z_1, \ldots, \chi_n(t) z_n)$$
+for all $t \in T$ and $z = (z_1, \ldots, z_n) \in \AA^n$.
+For notational convenience, we will index the coordinates of $\AA^n$ by the character that the torus acts by for that coordinate, instead of a number $i=1, \ldots, n$.
+Thus, a point $z \in \AA^n$ will be written $z = (z_\chi)_{\chi\in S}$, such that
+\begin{equation}\label{actiondef}
+t \cdot z = (\chi(t) z_\chi)_{\chi \in S}.
+\end{equation}
+We define the polynomial $Z_\chi$ for $\chi \in S$ by
+$$Z_\chi(z) = z_\chi, \qquad \text{for } z = (z_\chi)_{\chi \in S}.$$
+Then the coordinate ring of $\AA^n$ is $\CC[Z_\chi : \chi \in S]$.
+Let $(\ZZ_{\ge 0})^S = \Fun(S, \ZZ_{\ge 0})$ denote the ring of functions $S \to \ZZ_{\ge 0}$, and for $\eta \in (\ZZ_{\ge 0})^S$, write $\eta=(\eta_\chi)_{\chi\in S}$, where $\eta_\chi = \eta(\chi)$.
+An element $\eta \in (\ZZ_{\ge 0})^S$ defines a monomial in $\CC[Z_\chi : \chi \in S]$, namely
+$$Z^\eta := \prod_{\chi \in S} Z_\chi^{\eta_\chi}.$$
+A polynomial $p \in \CC[Z_\chi : \chi \in S]$ can be written
+$$p = \sum_\eta p_\eta X^\eta,$$
+where the sum is over all $\eta \in (\ZZ_{\ge 0})^S$ and all but finitely many of the coefficients $p_\eta \in \CC$ are zero.
+
+Let us now describe the invariant ring $\CC[Z_\chi : \chi \in S]^T$.
+Recall that since $T$ acts on $\AA^n$, there is an induced action of $T$ on the coordinate ring;
+if $t \in T$ and $p \in \CC[Z_\chi : \chi \in S]$, then $(t\cdot p)(z) := p(t^{-1} \cdot z)$.
+Using the definition of the action in equation \ref{actiondef}, we see that $T$ acts on a monomial $Z^\eta$ by
+$$t \cdot Z^\eta = \prod_{\chi \in S} (\chi(t^{-1}) Z_\chi)^{\eta_\chi} = \left(\sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta.$$
+It follows that $p \in \CC[Z_\chi : \chi \in S]$ is invariant for the action of $T$ if and only if
+$$\sum_\eta p_\eta Z^\eta = \sum_\eta p_\eta \left( \sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta$$
+for all $t \in T$.
+Since $Z^\eta$ and $Z^\mu$ are linearly independent for distinct $\eta$ and $\mu$, the above equality holds if and only if 
+$$Z^\eta = \left(\sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta$$
+for all $\eta$ such that $p_\eta \ne 0$.
+Equivalently, $p$ is invariant for the action of $T$ if and only if
+$$\sum_{\chi \in S} \eta_\chi \chi = 0$$
+for all $\eta$ such that $p_\eta \ne 0$.
+The following lemma summarises our discussion:
+
+\begin{lemma}
+We have that 
+$$\CC[Z_\chi : \chi \in S]^T = \CC\left[Z^\eta : \eta \in (\ZZ_{\ge 0})^S \text{ and }\sum_{\chi \in S} \eta_\chi \chi = 0\right].$$
+\end{lemma}
+\begin{corollary}\label{invariantringsemigroupalgebra}
+Let $\calM$ be the semigroup 
+$$\calM := \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\}.$$
+Denoting the semigroup algebra of $\calM$ by $\CC[\calM]$, we have that
+$$\CC[Z_\chi : \chi \in S]^T \cong \CC[\calM].$$
+\end{corollary}
+
+\subsection{$\AA^n \git T$ as a toric variety}
+We now want to find a lattice $N$ and a cone $\sigma$ such that $\AA^n \git T$ is isomorphic to the affine toric variety $U_\sigma$.
+Since Corollary \ref{invariantringsemigroupalgebra} expresses the invariant ring $\CC[Z_\chi : \chi \in S]^T$ as the semigroup algebra $\CC[\calM]$, it suffices to find $N$ and $\sigma$ such that $S_\sigma$ is isomorphic to $\calM$.
+We then have that
+$$\AA^n \git T \cong \Spec(\CC[Z_\chi : \chi \in S]^T) \cong \Spec(\CC[S_\sigma]) = U_\sigma,$$
+showing $\AA^n \git T$ has the structure of an affine toric variety.
+
+Let 
+$$\ZZ^S := \Fun(S, \ZZ)$$
+be the lattice of integer-valued functions on $S$.
+This is a lattice in $\RR^S$, the vector space of real-valued functions on $S$.
+We denote elements of $\ZZ^S$ by $\eta = (\eta_\chi)_{\chi \in S}$, where $\eta_\chi = \eta(\chi)$.
+The dual lattice is $(\ZZ^S)^\vee$, where elements are similarly denoted $\mu = (\mu_\chi)_{\chi \in S} \in (\ZZ^S)^\vee$.
+The dual pairing $(\ZZ^S)^\vee \times \ZZ^S \to \ZZ$ is given by
+$$(\mu, \eta) \mapsto \langle \mu, \eta \rangle := \sum_{\chi \in S} \mu_\chi \eta_\chi.$$
+The indicators $\{e_\chi\}_{\chi\in S}$, given by $(e_\chi)_{\chi'} = e_\chi(\chi') = \delta_{\chi, \chi'}$, are a basis for $\ZZ^S$.
+The dual basis for $(\ZZ^S)^\vee$ is $\{e_\chi^\vee\}_{\chi\in S}$, where $\langle e_\chi^\vee, e_{\chi'} \rangle = \delta_{\chi, \chi'}$.
+
+We have a map $\varphi:(\ZZ^S)^\vee \to \Span_\ZZ(S) \subseteq X^*(T)$ given by
+$$\mu \mapsto \sum_{\chi\in S} \mu_\chi \chi.$$
+The kernel of $\varphi$ is
+$$M := \ker \varphi = \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0\right\}.$$
+Since a subgroup of a finitely-generated free abelian group is again finitely-generated and free, $M$ is a finitely-generated free abelian group.
+It has rank
+$$\rank(M) = \rank((\ZZ^S)^\vee) - \rank(\Span_\ZZ(S)) = |S| - \rank(\Span_\ZZ(S)).$$
+There is a corresponding sublattice of $\ZZ^S$, 
+\begin{align*}
+	K &:= \{\eta \in \ZZ^S : \langle \mu, \eta \rangle = 0 \text{ for all } \mu \in M\} \\
+	   &= \{\eta \in \ZZ^S : \sum_{\chi \in S} \mu_\chi \eta_\chi = 0 \text{ for all } \mu \in (\ZZ^S)^\vee \text{ such that } \sum_{\chi \in S} \mu_\chi \chi = 0 \}.
+\end{align*}
+We have that $\rank(K) = \rank(\Span_\ZZ(S))$ (\textcolor{red}{You can see this must be the case once you know that $\ZZ^S/K \cong M^\vee$, but I don't know if there is a straightforward way to prove it.})
+If $\eta \in \ZZ^S$, we use $\overline{\eta}$ to denote the coset of $\eta$ in $\ZZ^S/K$, i.e., $\overline{\eta} = \eta + K \in \ZZ^S/K$.
+
+The following theorem describes the cone of the toric variety $\AA^n \git T$:
+
+\begin{theorem}\label{gitlatticetheorem}
+Let 
+$$N := \ZZ^S / K,$$
+and 
+$$\sigma := \Span_{\RR_{\ge 0}} \{\overline{e_\chi} : \chi \in S\} \subseteq N_\RR.$$
+Then $S_\sigma = \sigma^\vee \cap M \cong \calM$, so that $\AA^n \git T$ is isomorphic to $U_\sigma$.
+\end{theorem}
+
+\begin{example}
+We consider some examples of the lattices $N$ that arise for different choices of $S \subseteq X^*(T)$.
+\begin{enumerate}
+\item
+Let $T = \CC^\times$ and $S = \{\chi, -\chi\}$, where $\chi(t) = t$.
+Explicitly, the action of $T$ on $\AA^2$ is
+$$t \cdot (z_1, z_2) = (t z_1, t^{-1} z_2).$$
+Then,
+$$M = \left\{\mu\in(\ZZ^S)^\vee : \mu_\chi \chi + \mu_{-\chi}(-\chi) = 0\right\} = \left\{(\mu_{\chi}, \mu_{-\chi}) \in (\ZZ^S)^\vee : \mu_\chi = \mu_{-\chi} \right\}.$$
+Also,
+\begin{align*}
+	K &= \{\eta \in \ZZ^S : \mu_\chi \eta_\chi + \mu_{-\chi} \eta_{-\chi} = 0 \text{ whenever } \mu_\chi = \mu_{-\chi}\} \\
+	&= \{(\eta_\chi, \eta_{-\chi})\in\ZZ^S : \eta_\chi = - \eta_{-\chi}\} \\
+	&=\Span_\ZZ\{e_\chi - e_{-\chi}\}.
+\end{align*}
+Therefore, $N = \ZZ^S / K$ and $\sigma = \Span_{\RR_{\ge 0}}\{\overline{e_\chi}, \overline{e_{-\chi}}\} \subseteq N_\RR.$
+
+\item
+Let $T$ be a maximal torus in $G = \GL_3$, and let $S$ be the root system of $G$ with respect to $T$.
+Then $S = \Phi = \{\alpha, \beta, \alpha+\beta, -\alpha, -\beta, -(\alpha+\beta)\}$, where $\alpha$ and $\beta$ are simple roots.
+We have that $\rank(M) = |\Phi| - \rank(\Span_\ZZ(\Phi)) = 4$, and we see
+$$M = \Span_\ZZ\{e_\alpha+e_{-\alpha}, e_\beta + e_{-\beta}, e_\alpha + e_\beta + e_{-(\alpha+\beta)}, e_{\alpha+\beta}+e_{-\alpha}+e_{-\beta}\}.$$
+Furthermore, $\rank(K) = \rank(\Span_\ZZ(\Phi))$, and we see
+$$K = \Span_\ZZ\{e^\vee_\alpha + e^\vee_{\alpha+\beta} - e^\vee_{-\alpha} - e^\vee_{-(\alpha+\beta)}, e^\vee_\beta + e^\vee_{\alpha+\beta} - e^\vee_{-\beta} - e^\vee_{-(\alpha+\beta)}\}.$$
+We have that $N = \ZZ^\Phi/K$ and $\sigma = \Span_{\RR_{\ge 0}}\{\overline{e_\alpha} : \alpha\in\Phi\}.$
+\end{enumerate}
+\end{example}
+
+We now prove Theorem \ref{gitlatticetheorem}.
+The proof relies on the following lemma, which describes the dual lattice to a sublattice:
+
+\begin{lemma}\label{duallatticesublattice}
+Let $N_1$ and $N_2$ be lattices such that $N_2 \le N_1$.
+Letting $M_i$ denote the dual lattice to $N_i$, we have that
+$$M_2 \cong M_1 / K,$$
+where $K:= \{f \in M_1 : f(n) = 0 \text{ for all } n \in N_2\}.$
+\end{lemma}
+\begin{proof}
+Let $\phi : M_1 \to M_2$ be the restriction map $f \mapsto \left. f \right|_{N_2}$.
+Then $K = \ker \phi$, and $M_1 / K \cong \im \phi$, so we just need to show $\phi$ is surjective.
+Let $\{n_1, \ldots, n_r\}$ be a set of generators for $N_2$, which we extend to a set of generators for $N_2$, $\{n_1, \ldots, n_r, n_{r+1}, \ldots, n_s\}$.
+If $f \in M_2$, we can extend $f$ to a map $\tilde f \in \Hom(N_1, \ZZ)$ by defining $\tilde f$ on the generators of $N_1$ as
+$$\tilde f(n_i) := \begin{cases} f(n_i) & \text{if } i = 1, \ldots, r, \text{ i.e., if } n_i \in N_2, \\ 0 & \text{if } i = r+1, \ldots, s, \text{ i.e., if } n_i \notin N_2. \end{cases}$$
+Then $\phi(\tilde f) = \tilde f \big|_{N_2} = f$ and $\phi$ is surjective.
+\end{proof}
+
+\begin{proof}[{Proof of Theorem \ref{gitlatticetheorem}}]
+Recall that 
+$$M = \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \right\}, \quad K = \left\{\eta \in \ZZ^S : \langle \mu, \eta \rangle = 0 \text{ for all } \mu \in M\right\}.$$
+Then Lemma \ref{duallatticesublattice} implies that $M^\vee \cong \ZZ^S / K =: N.$
+The cone $\sigma$ in $N$ defined as 
+$$\sigma := \{\overline{e_\chi} : \chi \in \} \subseteq N_\RR.$$
+We want to show that $S_\sigma = \sigma^\vee \cap M$ is isomorphic to the semigroup
+$$\calM := \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\}.$$
+We have that
+\begin{align*}
+	\sigma^\vee \cap M &= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \langle \mu, \eta \rangle = 0 \text{ for all } \eta \in \sigma \right\}\\
+	&= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \langle \mu, \overline{e_\chi} \rangle = 0 \text{ for all } \chi \in S \right\}\\
+	&= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \mu_\chi \ge 0 \text{ for all } \chi \in S \right\}\\
+	&\cong  \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\} \\
+	&=\calM.
+\end{align*}
+In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\vee$ is nonnegative on the cone $\sigma$ is equivalent to checking $\mu$ is nonnegative on the generators of $\sigma$.
+\end{proof}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PART II: ABSTRACT TORIC VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PART II: ABSTRACT TORIC VARIETIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\begin{center}
+%%\vspace{0.5 \textheight}
+%%{\LARGE\textsc{Part I: Affine toric varieties}} \\
+%%\vspace{8cm}
+%%\end{center}
+%% First Part
+%\newpage
+%\phantomsection
+%\addcontentsline{toc}{part}{Part II: Abstract toric varieties}
+%\thispagestyle{empty} % Remove page number
+%\vspace*{\fill} % Center vertically
 %\begin{center}
-%\vspace{0.5 \textheight}
-%{\LARGE\textsc{Part I: Affine toric varieties}} \\
-%\vspace{8cm}
+%    \Huge \textsc{Part II: Abstract Toric Varieties}
 %\end{center}
-% First Part
-\newpage
-\phantomsection
-\addcontentsline{toc}{part}{Part II: Abstract toric varieties}
-\thispagestyle{empty} % Remove page number
-\vspace*{\fill} % Center vertically
-\begin{center}
-    \Huge \textsc{Part II: Abstract Toric Varieties}
-\end{center}
-\vspace*{\fill} % Center vertically
+%\vspace*{\fill} % Center vertically
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 5. ABSTRACT VARIETIES
+% ABSTRACT VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Abstract varieties}
@@ -2121,7 +2137,7 @@ Observe that if $(x : y) \in U_x \cap U_y$, the image of $(x : y)$ in $X$ of the
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 6. ABSTRACT TORIC VARIETIES
+% ABSTRACT TORIC VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Abstract toric varieties}
@@ -2199,25 +2215,14 @@ The fact that the glueing is compatible follows from the order-preserving nature
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 7. GIT QUOTIENTS AS TORIC VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{GIT quotients as toric varieties}
-
-
-\subsection{Linearisations and line bundles}
-
-
-
-
+\subsection{Classification of toric surfaces}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % REFERENCES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\addtocontents{toc}{\vskip 1em}
+%\addtocontents{toc}{\vskip 1em}
 \begin{bibdiv}
 \begin{biblist}
 \bib{BV04}{book}{
