@@ -35,7 +35,7 @@
 \newcommand{\question}[1]{\noindent  \textcolor{red}{Question: #1}}
 \newcommand{\todo}[1]{\noindent  \textcolor{blue}{To do: #1}}
 % Editing line spacing
-%\linespread{1.5}
+\linespread{1.5}
 
 % BLACKBOARD BOLD
 \rc{\AA}{\mathbb{A}}	
@@ -1091,34 +1091,82 @@ For every pair of open subsets $U \subseteq V$ and $U' \subseteq W$ satisfying $
 \subsection{Tangent spaces}
 In differential geometry, a key tool used to study a surface in $\RR^3$ is the tangent space.
 In algebraic geometry, there is also a notion of the tangent space, but this is defined without the use of calculus.
-The dimensions of the tangent spaces of an affine variety are used to define the dimension of the variety.
+The dimensions of the tangent spaces of an affine variety give one way to define the dimension of the variety.
 With dimension defined, we can also consider the non-singular and singular points on a variety;
 the singular points are the points where the tangent space does not provide a well-defined linear approximation to the variety.
 
-Let $V \subseteq \AA^n$ be a variety embedded in affine space, and $P = (a_1, \ldots, a_n)$ a point in $V$.
+We first define the tangent space for a hypersurface in $\AA^n$, i.e., an algebraic set of the form $V=\bV(f)\subseteq \AA^n$ for some non-constant irreducible $f \in k[X_1,\ldots,X_n]$.
+Let $P$ be a point $V$.
 In what follows, let $\frac{\partial f}{\partial X_i}$ denote the formal partial derivative of the polynomial $f$.
 For example, $\frac{\partial}{\partial X_i} X_i^n = n X_i^{n-1}$, and the partial derivative of an arbitrary polynomial can be computed using the Leibniz rule and linearity;
-calculus is not needed to define $\frac{\partial}{\partial X_i}$ of a polynomial, so the definition makes sense for any field $k$.
-For any $f \in k[X_1, \ldots, X_n]$, define the first-order part of $f$ at $P$ by
+calculus is not needed to define this formal partial derivative, so the definition makes sense for any field $k$.
+Define the first-order part of $f$ at $P$ by
 \begin{equation}\label{equationtangent}
 f_P^{(1)} := \sum_{i=1}^n \frac{\partial f}{\partial X_i} (P) (X_i-a_i).
 \end{equation}
-The zeros of $f_P^{(1)}$ form an affine subspace of $\AA^n$ (i.e., a translation of a vector subspace).
-Define the tangent space to $V$ at $P$ by 
-$$T_P V := \bigcap_{f \in \bI(V)} \bV(f_P^{(1)}) \subseteq \AA^n.$$
-Then $T_PV$ is the intersection of all affine subspaces tangent at $P$ to some $f$ in the ideal $\bI(V)$ defining $V$.
-This is a vector space over $k$ with $P$ as the zero vector.
-In particular, if $Q_1, Q_2 \in \AA^n$ lying in $T_PV$ can be written $Q_i = \tilde Q_i + P$, then
-$$Q_1 + Q_2 = (\tilde Q_1 + \tilde Q_2) + P, \qquad\qquad \lambda \cdot Q_i = \lambda \tilde Q_i + P_i, \,\,\, \lambda \in k.$$
+Then the tangent space of $V$ at $P$ is
+$$T_PV := \bV(f_P^{(1)}).$$
+This is an affine subspace of $\AA^n$ (i.e., a translation of a vector subspace) which passes through $P$ and is tangent to $f$, matching our usual intuition for what a tangent space is.
+The following figure gives an example to illustrate:
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.5\textwidth]{../images/V_and_TpV}
+%\caption*{$\bV(f)$ and $\bV(f_P^{(1)})$ for $f = y^2 - x^3 + x - 1$ and $P=(-1, 1)$ \textcolor{red}{replace with tikz}}
+%\end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{../images/V_and_TpV}
-\caption*{$\bV(f)$ and $\bV(f_P^{(1)})$ for $f = y^2 - x^3 + x - 1$ and $P=(-1, 1)$ \textcolor{red}{replace with tikz}}
+\begin{tikzpicture}
+  % Draw axes
+  \draw[->] (-3, 0) -- (3, 0) node[right] {$x$};
+  \draw[->] (0, -3) -- (0, 3) node[above] {$y$};
+
+  % Plot the curve y^2 = x^3 - x + 1 manually
+  \draw[thick, blue, samples=100, smooth, domain=-1.32472:2.1, variable=\x] 
+    plot ({\x}, {sqrt((\x)^3 - (\x) + 1)});
+  \draw[thick, blue, samples=100, smooth, domain=-1.32472:2.1, variable=\x] 
+    plot ({\x}, {-sqrt((\x)^3 - (\x) + 1)});
+
+  % Tangent line y = (x + 1) + 1
+  \draw[thick, red, domain=-3:1] plot(\x, {(\x+1)+1});
+
+  % Mark the point (-1, 1)
+  \filldraw[black] (-1, 1) circle (2pt) node[above left] {$P$};
+
+  % Labels for the curve and tangent line
+  \node[blue] at (2, 1.4) {$\bV(f)$};
+  \node[red] at (-2, -1) {$\bV(f_P^{(1)})$};
+\end{tikzpicture}
+\caption*{$\bV(f)$ and $\bV(f_P^{(1)})$ for $f = y^2 - x^3 + x - 1$ and $P=(-1, 1)$.}
 \end{figure}
 
-The dimension of the variety $V$ is defined by 
-$$\dim V = \min\{\dim T_PV : P \in V\}.$$
+Now let $V\subseteq\AA^n$ be a general algebraic set.
+For any $f\in\bI(V)$, the first-order part $f_P^{(1)}$ is defined as in equation \ref{equationtangent}.
+The tangent space of $V$ at $P$ is
+$$T_PV := \bigcap_{f\in\bI(V)} \bV(f_P^{(1)}).$$
+Then $T_PV$ is the intersection of all affine subspaces tangent at $P$ to some $f$ in the ideal $\bI(V)$ defining $V$.
+Suppose $f_1, \ldots, f_m$ generate $\bI(V)$.
+Then for any $g = \sum_{i=1}^m h_j f_j \in \bI(V)$ and $P \in V$,
+\begin{align*}
+	g_P^{(1)} &= \sum_{i=1}^n \frac{\partial g}{\partial X_i}(P)(X_i-a_i) \\
+		&= \sum_{i=1}^n \sum_{j=1}^m \left(\frac{\partial h_j}{\partial X_i}(P) f_j(P) + h_j(P) \frac{\partial f_j}{\partial X_i}(P)\right) (X_i-a_i) \\
+		&= \sum_{j=1}^m h_j(P) \sum_{i=1}^n \frac{\partial f_j}{\partial X_i}(P)(X_i-a_i),
+\end{align*}
+so $g_P^{(1)}$ is a linear combination of the polynomials $f_{j,P}^{(1)}$.
+This implies that 
+$$\bigcap_{i=1}^m \bV(f_P^{(1)}) \subseteq \bV(g_P^{(1)}),$$
+and the definition of $T_PV$ simplifies to
+$$T_PV = \bigcap_{i=1}^m \bV(f_{i,P}^{(1)}).$$
+
+Let us consider how $T_PV$ is a vector space over $k$.
+The zero vector is the point $P$.
+If $Q_1, Q_2 \in \AA^n$ lying in $T_PV$ can be written $Q_i = \tilde Q_i + P$, then
+$$Q_1 + Q_2 = (\tilde Q_1 + \tilde Q_2) + P, \qquad\qquad \lambda \cdot Q_i = \lambda \tilde Q_i + P_i, \,\,\, \lambda \in k.$$
+This is the usual vector space structure on $k^n$ if the origin is translated to $P$.
+
+We can now define the dimension of the algebraic set $V$ by
+$$\dim V := \min\{\dim T_PV : P \in V\}.$$
 A point $P \in V$ is called non-singular if $\dim T_PV = \dim V$ and singular if $\dim T_P V > \dim V$.
 We denote the set of non-singular and singular points by $V_{\text{non-sing}}$ and $V_{\text{sing}}$, respectively;
 we say $V$ is non-singular if it is non-singular at each $P \in V$.
@@ -1134,18 +1182,7 @@ That $S(d+1)$ is closed follows from the following proposition:
 For any integer $r$ such that $0 \le r \le n$, the subset $S(r)$ is closed.
 \end{proposition}
 \begin{proof}
-Suppose $f_1, \ldots, f_m$ generate $\bI(V)$.
-Then for any $g = \sum_{i=1}^m h_j f_j \in \bI(V)$ and $P \in V$,
-\begin{align*}
-	g_P^{(1)} &= \sum_{i=1}^n \frac{\partial g}{\partial X_i}(P)(X_i-a_i) \\
-		&= \sum_{i=1}^n \sum_{j=1}^m \left(\frac{\partial h_j}{\partial X_i}(P) f_j(P) + h_j(P) \frac{\partial f_j}{\partial X_i}(P)\right) (X_i-a_i) \\
-		&= \sum_{j=1}^m h_j(P) \sum_{i=1}^n \frac{\partial f_j}{\partial X_i}(P)(X_i-a_i),
-\end{align*}
-so $g_P^{(1)}$ is a linear combination of the polynomials $f_{j,P}^{(1)}$.
-This implies that 
-$$\bigcap_{i=1}^m \bV(f_P^{(1)}) \subseteq \bV(g_P^{(1)}),$$
-and the definition of $T_PV$ simplifies to
-$$T_PV = \bigcap_{i=1}^m \bV(f_{i,P}^{(1)}).$$
+Suppose 
 Thus, $T_PV$ is the set of $(x_1, \ldots, x_n) \in k^n$ solving
 $$\sum_{i=1}^n \frac{\partial f_j}{\partial X_i} (x_i - a_i) = 0, \qquad \qquad \text{ for all } j = 1, \ldots, m.$$
 Then $T_PV$ can be identified with the kernel of the matrix $J := \left(\frac{\partial f_i}{\partial X_j}(P)\right)_{i=1,\ldots, m, j=1, \ldots, n}.$
@@ -1156,16 +1193,64 @@ Then each minor of $J$ is also a polynomial and so $S(r) \subseteq V$ is an alge
 \end{proof}
 
 \begin{example}
+Let us give some examples of how to compute tangent spaces and dimensions of algebraic sets.
 \begin{enumerate}
-\item
-
-\item
-
-\item
-
+\item $\AA^n$
+\item $\bV(f)$ for $f$ non-constant and irreducible
+\item Singular and non-singular points of $y^2=x^3-6x^2-9x$
 \end{enumerate}
 \end{example}
 
+Although the description we have given for $T_PV$ in terms of first-order parts of polynomials is geometrically intuitive, we now prove a theorem which gives an intrinsic description of $T_PV$ in terms of ideals in the coordinate ring of $V$.
+
+For the setup, let $V$ be an algebraic subset of $\AA^n$ and suppose $P \in V$.
+Changing coordinates if necessary, we may assume without loss of generality that $P=(0, \ldots, 0)$.
+Now $T_PV$ is a vector subspace of $k^n$.
+Write $\frakm_P\subseteq k[V]$ for the maximal ideal of regular functions vanishing at $P$.
+Denote by $M_P$ the ideal $(X_1, \ldots, X_n) \subseteq k[X_1,\ldots, X_n]$.
+We have $\frakm_P=M_P/\bI(V)$.
+
+\begin{theorem}
+There is a natural isomorphism of vector spaces
+$$(T_PV)^* \cong \frakm_P/\frakm_P^2.$$
+\end{theorem}
+\begin{proof}
+We first prove the special case $V=\AA^n$, where we must show $M_P/M_P^2\cong(k^n)^*$.
+Note that $X_1, \ldots, X_n$ form a basis for $(k^n)^*$.
+As $P=(0, \ldots, 0)$,
+$$f_P^{(1)}=\sum_{i=1}^n \frac{\partial f}{\partial X_i}(P) X_i$$
+is a linear form on $k^n$, and we can define a map $d : M_P\to(k^n)^*$ by $f \mapsto f_P^{(1)}$.
+Then $d$ is surjective since the $X_i \in M_P$ map to a basis for $(k^n)^*$.
+A general $f \in M_P$ can be written
+$$f=\sum_{i=1}^n c_i X_i + \text{higher order terms},$$
+for some $c_i \in k$.
+Since $P=(0,\ldots,0)$,
+$$f_P^{(1)}=\sum_{i=1}^n\frac{\partial f}{\partial X_i}(P) X_i = \sum_{i=1}^n c_i X_i.$$
+Therefore $f \in \ker d$, i.e., $f_P^{(1)} = 0$, if and only if each $c_i=0$.
+This is equivalent to $f$ lying in $M_P^2$, as $M_P^2$ is generated by the monomials $X_i X_j$.
+Thus $d$ induces the isomorphism $M_P/M_P^2 \cong (k^n)^*$.
+
+For the general case, first observe that we have a surjective map $(k^n)^* \to (T_PV)^*$ which takes a linear form to its restriction to $T_PV$.
+Composing $d$ with this restriction map gives the map
+$$D:M_P \to (k^n)^* \to (T_PV)^*,$$
+which is surjective since each factor is.
+To complete the proof, we show the following pair of isomorphisms:
+$$(T_PV)^* \cong M_P/(M_P^2+\bI(V)) \cong \frakm_P/\frakm_P^2.$$
+The first isomorphism follows from the fact that $\ker D = M_P^2+\bI(V)$, which we prove by giving a chain of equivalent conditions for $f$ to lie in $\ker D$.
+By definition of $D$, $f \in \ker D$ means $f_P^{(1)} \big|_{T_PV} = 0$.
+If $g_i \in \bI(V)$ denote generators for $\bI(V)$, we know $T_PV = \bigcap_i \bV(g_{i,P}^{(1)}).$
+Then $f_P^{(1)} \big|_{T_PV}=0$ if and only if 
+$$f_P^{(1)} = \sum_i a_i g_{i,P}^{(1)}$$
+for some $a_i \in k$.
+The above equality is equivalent to $f$ and $\sum_i a_i g_i$ only differing by quadratic terms, i.e., 
+$$f - \sum_i a_i g_i \in M_P^2,$$
+which is the same as $f \in M_P^2 + \bI(V)$.
+To see why $M_P/(M_P^2+\bI(V)) \cong \frakm_P/\frakm_P^2$, define the map $\varphi : M_P \to \frakm_P/\frakm_P^2$ by $h \mapsto (h+\bI(V)) + \frakm_P^2$.
+This is well-defined since $\frakm_P=M_P/\bI(V)$.
+Then
+$$\ker \varphi = \{h \in M_P : h + \bI(V) \in \frakm_P^2\}=\{h \in M_P:h+\bI(V)\in M_P^2/\bI(V)\}=M_P^2+\bI(V),$$
+so $\varphi$ induces the desired isomorphism.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONVEX GEOMETRY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

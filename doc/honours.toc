@@ -1,42 +1,42 @@
 \contentsline {section}{\tocsection {}{1}{Introduction}}{1}{section.1}%
 \contentsline {subsection}{\tocsubsection {}{1.1}{Classical invariant theory}}{1}{subsection.1.1}%
 \contentsline {subsection}{\tocsubsection {}{1.2}{Geometric invariant theory}}{1}{subsection.1.2}%
-\contentsline {subsection}{\tocsubsection {}{1.3}{Goals of this project}}{2}{subsection.1.3}%
-\contentsline {subsection}{\tocsubsection {}{1.4}{Toric varieties}}{2}{subsection.1.4}%
-\contentsline {subsection}{\tocsubsection {}{1.5}{Directions for further research}}{2}{subsection.1.5}%
+\contentsline {subsection}{\tocsubsection {}{1.3}{Goals of this project}}{3}{subsection.1.3}%
+\contentsline {subsection}{\tocsubsection {}{1.4}{Toric varieties}}{3}{subsection.1.4}%
+\contentsline {subsection}{\tocsubsection {}{1.5}{Directions for further research}}{3}{subsection.1.5}%
 \contentsline {subsection}{\tocsubsection {}{1.6}{Contents of this document}}{3}{subsection.1.6}%
-\contentsline {section}{\tocsection {}{2}{Algebraic subsets of affine space}}{4}{section.2}%
-\contentsline {subsection}{\tocsubsection {}{2.1}{Affine space and algebraic sets}}{4}{subsection.2.1}%
-\contentsline {subsection}{\tocsubsection {}{2.2}{Properties of the map $\mathbf {V}$}}{4}{subsection.2.2}%
-\contentsline {subsection}{\tocsubsection {}{2.3}{The Zariski topology}}{5}{subsection.2.3}%
-\contentsline {subsection}{\tocsubsection {}{2.4}{The map $\mathbf {I}$}}{5}{subsection.2.4}%
-\contentsline {subsection}{\tocsubsection {}{2.5}{The Nullstellensatz}}{6}{subsection.2.5}%
-\contentsline {subsection}{\tocsubsection {}{2.6}{Coordinate rings and regular functions}}{8}{subsection.2.6}%
-\contentsline {subsection}{\tocsubsection {}{2.7}{Polynomial maps between algebraic subsets}}{9}{subsection.2.7}%
-\contentsline {subsection}{\tocsubsection {}{2.8}{Open subsets of algebraic sets}}{11}{subsection.2.8}%
-\contentsline {section}{\tocsection {}{3}{Affine varieties}}{12}{section.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{Regular functions}}{12}{subsection.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Sheaves and affine varieties}}{12}{subsection.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{Morphisms of varieties}}{14}{subsection.3.3}%
-\contentsline {subsection}{\tocsubsection {}{3.4}{Tangent spaces}}{14}{subsection.3.4}%
-\contentsline {section}{\tocsection {}{4}{Convex geometry}}{17}{section.4}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{Convex cones}}{17}{subsection.4.1}%
-\contentsline {subsection}{\tocsubsection {}{4.2}{Polyhedral cones}}{20}{subsection.4.2}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{The semigroup of a cone}}{21}{subsection.4.3}%
-\contentsline {section}{\tocsection {}{5}{Affine toric varieties}}{22}{section.5}%
-\contentsline {subsection}{\tocsubsection {}{5.1}{The semigroup algebra and affine toric varieties}}{22}{subsection.5.1}%
-\contentsline {section}{\tocsection {}{6}{Affine GIT quotients as affine toric varieties}}{24}{section.6}%
-\contentsline {subsection}{\tocsubsection {}{6.1}{The affine GIT quotient}}{24}{subsection.6.1}%
-\contentsline {subsection}{\tocsubsection {}{6.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{26}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{The invariant ring for a torus acting on affine space}}{27}{subsection.6.3}%
-\contentsline {subsection}{\tocsubsection {}{6.4}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{29}{subsection.6.4}%
-\contentsline {section}{\tocsection {}{7}{Abstract varieties}}{32}{section.7}%
-\contentsline {subsection}{\tocsubsection {}{7.1}{Projective varieties}}{32}{subsection.7.1}%
-\contentsline {subsection}{\tocsubsection {}{7.2}{Abstract varieties}}{32}{subsection.7.2}%
-\contentsline {section}{\tocsection {}{8}{Abstract toric varieties}}{35}{section.8}%
-\contentsline {subsection}{\tocsubsection {}{8.1}{Fans}}{35}{subsection.8.1}%
-\contentsline {subsection}{\tocsubsection {}{8.2}{Abstract toric varieties}}{35}{subsection.8.2}%
-\contentsline {subsection}{\tocsubsection {}{8.3}{Polytopes and projective toric varieties}}{36}{subsection.8.3}%
-\contentsline {subsection}{\tocsubsection {}{8.4}{The torus action and the orbit-cone correspondence}}{36}{subsection.8.4}%
-\contentsline {subsection}{\tocsubsection {}{8.5}{Classification of toric surfaces}}{36}{subsection.8.5}%
-\contentsline {section}{\tocsection {}{}{References}}{37}{section*.7}%
+\contentsline {section}{\tocsection {}{2}{Algebraic subsets of affine space}}{5}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Affine space and algebraic sets}}{5}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Properties of the map $\mathbf {V}$}}{6}{subsection.2.2}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{The Zariski topology}}{6}{subsection.2.3}%
+\contentsline {subsection}{\tocsubsection {}{2.4}{The map $\mathbf {I}$}}{7}{subsection.2.4}%
+\contentsline {subsection}{\tocsubsection {}{2.5}{The Nullstellensatz}}{9}{subsection.2.5}%
+\contentsline {subsection}{\tocsubsection {}{2.6}{Coordinate rings and regular functions}}{11}{subsection.2.6}%
+\contentsline {subsection}{\tocsubsection {}{2.7}{Polynomial maps between algebraic subsets}}{12}{subsection.2.7}%
+\contentsline {subsection}{\tocsubsection {}{2.8}{Open subsets of algebraic sets}}{15}{subsection.2.8}%
+\contentsline {section}{\tocsection {}{3}{Affine varieties}}{17}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Regular functions}}{17}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Sheaves and affine varieties}}{18}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Morphisms of varieties}}{20}{subsection.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{Tangent spaces}}{20}{subsection.3.4}%
+\contentsline {section}{\tocsection {}{4}{Convex geometry}}{25}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{Convex cones}}{25}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{Polyhedral cones}}{29}{subsection.4.2}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{The semigroup of a cone}}{31}{subsection.4.3}%
+\contentsline {section}{\tocsection {}{5}{Affine toric varieties}}{32}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{The semigroup algebra and affine toric varieties}}{32}{subsection.5.1}%
+\contentsline {section}{\tocsection {}{6}{Affine GIT quotients as affine toric varieties}}{35}{section.6}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{The affine GIT quotient}}{35}{subsection.6.1}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{A basis for $\mathbb {C}[\mathfrak {g}]^T$}}{38}{subsection.6.2}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{The invariant ring for a torus acting on affine space}}{40}{subsection.6.3}%
+\contentsline {subsection}{\tocsubsection {}{6.4}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{41}{subsection.6.4}%
+\contentsline {section}{\tocsection {}{7}{Abstract varieties}}{46}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{7.1}{Projective varieties}}{46}{subsection.7.1}%
+\contentsline {subsection}{\tocsubsection {}{7.2}{Abstract varieties}}{47}{subsection.7.2}%
+\contentsline {section}{\tocsection {}{8}{Abstract toric varieties}}{50}{section.8}%
+\contentsline {subsection}{\tocsubsection {}{8.1}{Fans}}{50}{subsection.8.1}%
+\contentsline {subsection}{\tocsubsection {}{8.2}{Abstract toric varieties}}{51}{subsection.8.2}%
+\contentsline {subsection}{\tocsubsection {}{8.3}{Polytopes and projective toric varieties}}{51}{subsection.8.3}%
+\contentsline {subsection}{\tocsubsection {}{8.4}{The torus action and the orbit-cone correspondence}}{51}{subsection.8.4}%
+\contentsline {subsection}{\tocsubsection {}{8.5}{Classification of toric surfaces}}{51}{subsection.8.5}%
+\contentsline {section}{\tocsection {}{}{References}}{52}{section*.7}%
