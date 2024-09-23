@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  23 SEP 2024 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.1)  22 SEP 2024 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**honours.tex
-(./honours.tex
+**mid_year_review_intro.tex
+(./mid_year_review_intro.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (c:/texlive/2020/texmf-dist/tex/latex/amscls/amsart.cls
@@ -651,57 +651,12 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
-(./quiver.sty
-Package: quiver 2021/01/11 quiver
- (c:/texlive/2020/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
-Package: tikz-cd 2018/11/19 v0.9f Commutative diagrams with TikZ
-
-(c:/texlive/2020/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarymatrix.code.tex
-File: tikzlibrarymatrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-braryquotes.code.tex
-File: tikzlibraryquotes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.cod
-e.tex
-File: pgflibraryarrows.meta.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfarrowinset=\dimen274
-\pgfarrowlength=\dimen275
-\pgfarrowwidth=\dimen276
-\pgfarrowlinewidth=\dimen277
-)))
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarydecorations.pathmorphing.code.tex
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarydecorations.code.tex
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
-ex
-\pgfdecoratedcompleteddistance=\dimen278
-\pgfdecoratedremainingdistance=\dimen279
-\pgfdecoratedinputsegmentcompleteddistance=\dimen280
-\pgfdecoratedinputsegmentremainingdistance=\dimen281
-\pgf@decorate@distancetomove=\dimen282
-\pgf@decorate@repeatstate=\count307
-\pgfdecorationsegmentamplitude=\dimen283
-\pgfdecorationsegmentlength=\dimen284
-)
-\tikz@lib@dec@box=\box64
-)
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
-orations.pathmorphing.code.tex)))
-\c@theorem=\count308
+\c@theorem=\count307
 
 (c:/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count309
-\c@subtable=\count310
+\c@subfigure=\count308
+\c@subtable=\count309
 )
 (c:/texlive/2020/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -712,9 +667,9 @@ Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
 \t@pgfplots@toka=\toks46
 \t@pgfplots@tokb=\toks47
 \t@pgfplots@tokc=\toks48
-\pgfplots@tmpa=\dimen285
-\c@pgfplots@coordindex=\count311
-\c@pgfplots@scanlineindex=\count312
+\pgfplots@tmpa=\dimen274
+\c@pgfplots@coordindex=\count310
+\c@pgfplots@scanlineindex=\count311
 
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
 x))
@@ -730,13 +685,13 @@ cture.code.tex)
 ctureext.code.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
 de.tex
-\c@pgfplotsarray@tmp=\count313
+\c@pgfplotsarray@tmp=\count312
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
 ode.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
 ode.tex
-\c@pgfplotstable@counta=\count314
+\c@pgfplotstable@counta=\count313
 \t@pgfplotstable@a=\toks49
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
@@ -748,7 +703,7 @@ tex))
 x)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
 ading.code.tex
-\c@pgfplotslibrarysurf@no=\count315
+\c@pgfplotslibrarysurf@no=\count314
 
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
 ding.pgfsys-pdftex.def)))
@@ -768,16 +723,35 @@ ex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.code.tex
+(c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
+ex
+\pgfdecoratedcompleteddistance=\dimen275
+\pgfdecoratedremainingdistance=\dimen276
+\pgfdecoratedinputsegmentcompleteddistance=\dimen277
+\pgfdecoratedinputsegmentremainingdistance=\dimen278
+\pgf@decorate@distancetomove=\dimen279
+\pgf@decorate@repeatstate=\count315
+\pgfdecorationsegmentamplitude=\dimen280
+\pgfdecorationsegmentlength=\dimen281
+)
+\tikz@lib@dec@box=\box64
+)
+(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathmorphing.code.tex
+(c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathmorphing.code.tex))
+(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarydecorations.pathreplacing.code.tex
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
 orations.pathreplacing.code.tex))
 \pgfplots@numplots=\count316
-\pgfplots@xmin@reg=\dimen286
-\pgfplots@xmax@reg=\dimen287
-\pgfplots@ymin@reg=\dimen288
-\pgfplots@ymax@reg=\dimen289
-\pgfplots@zmin@reg=\dimen290
-\pgfplots@zmax@reg=\dimen291
+\pgfplots@xmin@reg=\dimen282
+\pgfplots@xmax@reg=\dimen283
+\pgfplots@ymin@reg=\dimen284
+\pgfplots@ymax@reg=\dimen285
+\pgfplots@zmin@reg=\dimen286
+\pgfplots@zmax@reg=\dimen287
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryplotmarks.code.tex
@@ -791,6 +765,10 @@ File: pgflibraryplotmarks.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brary3d.code.tex
 File: tikzlibrary3d.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 )
@@ -800,14 +778,14 @@ File: tikzlibraryarrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 
 (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\arrowsize=\dimen292
+\arrowsize=\dimen288
 ))) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
 \l__pdf_internal_box=\box65
 )
-(./honours.aux)
-\openout1 = `honours.aux'.
+(./mid_year_review_intro.aux)
+\openout1 = `mid_year_review_intro.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 271.
 LaTeX Font Info:    ... okay on input line 271.
@@ -829,7 +807,8 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 271.
 LaTeX Font Info:    ... okay on input line 271.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 271
 .
- (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 271
@@ -841,13 +820,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count318
-\scratchdimen=\dimen293
+\scratchdimen=\dimen289
 \scratchbox=\box66
 \nofMPsegments=\count319
 \nofMParguments=\count320
 \everyMPshowfont=\toks50
 \MPscratchCnt=\count321
-\MPscratchDim=\dimen294
+\MPscratchDim=\dimen290
 \MPnumerator=\count322
 \makeMPintoPDFobject=\count323
 \everyMPtoPDFconversion=\toks51
@@ -877,9 +856,9 @@ LaTeX Info: Redefining \ref on input line 271.
 LaTeX Info: Redefining \pageref on input line 271.
 LaTeX Info: Redefining \nameref on input line 271.
 
-(./honours.out) (./honours.out)
+(./mid_year_review_intro.out) (./mid_year_review_intro.out)
 \@outlinefile=\write4
-\openout4 = `honours.out'.
+\openout4 = `mid_year_review_intro.out'.
 
 LaTeX Info: Redefining \microtypecontext on input line 271.
 Package microtype Info: Generating PDF output.
@@ -903,213 +882,134 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
 
-<../images/UQLogo.jpg, id=203, 1185.42876pt x 473.77pt>
-File: ../images/UQLogo.jpg Graphic file (type jpg)
-<use ../images/UQLogo.jpg>
-Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 278.
-(pdftex.def)             Requested size: 284.52756pt x 113.71434pt.
-[1{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../images/UQL
-ogo.jpg>] (./honours.toc
 (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2])
-\tf@toc=\write5
-\openout5 = `honours.toc'.
-
-
-[3] [1]
-
-Package amsrefs Warning: The form \cite{...}*{...} is recommended
-(amsrefs)                instead of \cite[...]{...} on input line 368.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 399.
-
-[2]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 443.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 443.
-
-[3] [4]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 558
+LaTeX Font Info:    Trying to load font information for U+euf on input line 312
 .
- (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
+
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 (c:/texlive/2020/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-) [5] [6] [7]
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
-<../images/cox cone example 2.png, id=523, 158.09062pt x 264.23718pt>
-File: ../images/cox cone example 2.png Graphic file (type png)
-<use ../images/cox cone example 2.png>
-Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 1
-457.
-(pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
- [20 <../images/cox cone example 2.png>]
+)
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1508.
+LaTeX Warning: Citation `Hilbert90' on page 1 undefined on input line 326.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1508.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1508.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1508.
-
-[21] [22]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1647.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1647.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1647.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1647.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1657.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1657.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1657.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1657.
-
-[23] [24] [25] [26]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1854.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1854.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1854.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -2.25047pt
-(hyperref)                removed on input line 1854.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1854.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -2.25047pt
-(hyperref)                removed on input line 1854.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1854.
-
-[27] [28] [29] [30]
-Overfull \hbox (1.2788pt too wide) in paragraph at lines 2001--2007
-\OT1/cmr/m/n/12 (-20) defines a bi-jec-tion be-tween the set of lines and $\U/m
-sb/m/n/12 P[]$\OT1/cmr/m/n/12 (-20) . The map is well-defined since $[(\OML/cmm
-/m/it/12 a[]; [] ; a[]\OT1/cmr/m/n/12 (-20) )] =
- []
-
-[31] [32] [33] [34] [35]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [36] (./honours.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: Citation `Nagata60' on page 1 undefined on input line 329.
 
-Package rerunfilecheck Info: File `honours.out' has not changed.
-(rerunfilecheck)             Checksum: AFF7007EEC6DF055FE410D1736902DB4;9582.
+
+Package amsrefs Warning: The form \cite{...}*{...} is recommended
+(amsrefs)                instead of \cite[...]{...} on input line 330.
+
+
+LaTeX Warning: Citation `Mukai03' on page 1 undefined on input line 330.
+
+
+LaTeX Warning: Citation `Mumford65' on page 1 undefined on input line 333.
+
+
+LaTeX Warning: Reference `varietiessection' on page 1 undefined on input line 3
+37.
+
+
+LaTeX Warning: Citation `Humphreys72' on page 1 undefined on input line 347.
+
+[1{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `Humphreys90' on page 2 undefined on input line 357.
+
+
+LaTeX Warning: Reference `varietiessection' on page 2 undefined on input line 4
+05.
+
+[2]
+
+LaTeX Warning: Reference `dualitythm' on page 3 undefined on input line 413.
+
+
+LaTeX Warning: Citation `Fulton93' on page 3 undefined on input line 413.
+
+
+LaTeX Warning: Citation `CLS11' on page 3 undefined on input line 413.
+
+
+LaTeX Warning: Citation `Oda88' on page 3 undefined on input line 413.
+
+[3] (./mid_year_review_intro.aux)
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `mid_year_review_intro.out' has not changed.
+(rerunfilecheck)             Checksum: 3F7BAE163F0BDD45D61C6CF04D338B03;1393.
  ) 
 Here is how much of TeX's memory you used:
- 36848 strings out of 479023
- 826536 string characters out of 5863351
- 1272716 words of memory out of 5000000
- 52982 multiletter control sequences out of 15000+600000
- 429565 words of font info for 244 fonts, out of 8000000 for 9000
+ 34714 strings out of 479023
+ 777315 string characters out of 5863351
+ 1228294 words of memory out of 5000000
+ 51318 multiletter control sequences out of 15000+600000
+ 416895 words of font info for 126 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 87i,16n,97p,728b,999s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{theorem.22} has been referenced but does not exis
+ 87i,8n,89p,742b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{cite.Oda88} has been referenced but does not exis
 t, replaced by a fixed one
 
-pdfTeX warning (dest): name{theorem.5} has been referenced but does not exist, 
-replaced by a fixed one
+pdfTeX warning (dest): name{cite.CLS11} has been referenced but does not exist,
+ replaced by a fixed one
 
-pdfTeX warning (dest): name{theorem.4} has been referenced but does not exist, 
-replaced by a fixed one
+pdfTeX warning (dest): name{cite.Fulton93} has been referenced but does not exi
+st, replaced by a fixed one
 
-pdfTeX warning (dest): name{theorem.2} has been referenced but does not exist, 
-replaced by a fixed one
+pdfTeX warning (dest): name{cite.Humphreys90} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Humphreys72} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Mumford65} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Mukai03} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Nagata60} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Hilbert90} has been referenced but does not ex
+ist, replaced by a fixed one
 
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texli
 ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2020/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:
-/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2020
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/e
-ufm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
-0.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on honours.pdf (39 pages, 604758 bytes).
+/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2020/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
+2.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/20
+20/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on mid_year_review_intro.pdf (3 pages, 176772 bytes).
 PDF statistics:
- 846 PDF objects out of 1000 (max. 8388607)
- 767 compressed objects within 8 object streams
- 258 named destinations out of 1000 (max. 500000)
- 50079 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 162 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 27205 words of extra memory for PDF output out of 29859 (max. 10000000)
 

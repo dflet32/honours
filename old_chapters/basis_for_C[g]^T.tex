@@ -1,0 +1,56 @@
+\subsection{A basis for $\CC[\frakg]^T$}
+We now determine a basis of the invariant ring $\CC[\frakg]^T$ for a general $G$.
+Specifically, let $G$ be a connected complex reductive group and $T$ a maximal torus of $G$.
+The adjoint representation of $G$ on $\frakg$ induces an action of $T$ on $\frakg$, given by $t \cdot x := \mathrm{Ad}(t)x$ for $t \in T$ and $x \in \frakg$.
+If $\alpha : T \to \CC^\times$ is a character of $T$, the eigenspace associated with $\alpha$ is
+$$\frakg_\alpha := \{x \in \frakg : \mathrm{Ad}(t) x = \alpha(t) x \text{ for all } t \in T\}.$$
+The nonzero characters $\alpha$ such that $\frakg_\alpha$ is nonzero are called the \emph{roots} of $G$ with respect to $T$.
+Let $\Phi$ denote the set of roots.
+We have the \emph{root space decomposition},
+$$\frakg = \frakt \oplus \bigoplus_{\alpha \in \Phi} \frakg_\alpha,$$
+where $\frakt$ is the Lie algebra of $T$.
+In particular, $\dim \frakg_\alpha = 1$ for all $\alpha \in \Phi$.
+See \cite[II, \S 5]{Milne13} for a detailed account of the root space decomposition;
+for this document, we take for granted that we have the above decomposition of $\frakg$.
+
+Let $\{y_i : i=1, \ldots, r\}$ be a basis for $\frakt$.
+For each $\alpha \in \Phi$, fix a nonzero element $x_\alpha$ in $\frakg_\alpha$.
+Then $\{x_\alpha : \alpha\in\Phi\}\cup\{y_i:i=1,\ldots,r\}$ is a basis for $\frakg$.
+Let $\{X_\alpha : \alpha \in \Phi\}\cup\{Y_i:i=1,\ldots,r\}$ be the dual basis.
+Then
+$$\CC[\frakg]=\CC[X_\alpha, Y_i : \alpha \in \Phi, i=1,\ldots,r].$$
+
+Let us introduce notation to represent polynomials in $\CC[\frakg]$.
+If $\eta =(\eta_\alpha)_{\alpha\in\Phi}\in(\ZZ_{\ge 0})^\Phi$ and $\mu =(\mu_i)_{i=1}^r \in (\ZZ_{\ge 0})^r$, we have the following notation for monomials:
+$$X^\eta := \prod_{\alpha\in\Phi} X_\alpha^{\eta_\alpha}, \qquad Y^\mu := \prod_{i=1}^r Y_i^{\mu_i}.$$
+Then we can write $p \in \CC[\frakg]$ as
+$$p = \sum_{(\eta, \mu)} p_{\eta, \mu} X^\eta Y^\mu, \qquad p_{\eta,\mu} \in \CC,$$
+with the understanding that the sum is over finitely many tuples $(\eta, \mu)$.
+
+For $x=\sum_{\alpha \in \Phi} X_\alpha(x) x_\alpha + \sum_{i=1}^r Y_i(x) y_i \in \frakg$, the action of $t \in T$ on $x$ is given by
+$$t \cdot x = \sum_{\alpha \in \Phi} \alpha(t) X_\alpha(x) x_\alpha + \sum_{i=1}^r Y_i(x) y_i.$$
+Then $t \in T$ acts on the generator $X_\alpha \in \CC[\frakg]$ by
+$$(t\cdot X_\alpha)(x) = X_\alpha(t^{-1} \cdot x) =\alpha(t^{-1})X_\alpha(x) = (-\alpha)(t)X_\alpha(x), \qquad x \in \frakg.$$
+The action of $t \in T$ on $Y_i \in \CC[\frakg]$ is trivial.
+It follows that
+$$t \cdot p = \sum_{(\nu, \eta)} p_{\eta, \mu} \left(\sum_{\alpha\in\Phi} (-\eta_\alpha \alpha)(t) \right) X^\eta Y^\mu,$$
+since characters are written additively, i.e., $(-\alpha(t))^{\eta_\alpha} = (-\eta_\alpha \alpha)(t)$.
+
+\begin{lemma}
+A polynomial $p \in \CC[\frakg]$ is invariant for the action of $T$ if and only if for each monomial $X^\eta Y^\mu$ in $p$, it holds that
+$$\sum_{\alpha\in\eta} \eta_\alpha \alpha = 0.$$
+\end{lemma}
+\begin{proof}
+    By definition, $p \in \CC[\frakg]$ is invariant if and only if for all $t \in T$,
+    $$ \sum_{(\eta, \mu)} p_{\eta,\mu} \left(\sum_{\alpha\in\Phi} (- \eta_\alpha \alpha)(t)\right) X^\eta Y^\mu =t\cdot p = p = \sum_{(\eta, \mu)} p_{\eta,\mu} X^\eta Y^\mu.$$
+    But since the set $\{X^\eta Y^\mu : \eta \in (\ZZ_{\ge 0})^\Phi, \mu \in (\ZZ_{\ge 0})^r\}$ is a basis for $\CC[\frakg]$, the above equality is equivalent to having 
+    $\sum_{\alpha\in\Phi} (- \eta_\alpha \alpha)(t) = 1$ for all $t \in T$. In other words, $p$ being invariant is equivalent to having $\sum_{\alpha\in\Phi} \eta_\alpha \alpha = 0$
+    for every monomial $X^\eta Y^\mu$ in $p$.
+\end{proof}
+
+The lemma implies the following theorem:
+
+\begin{theorem}\label{invringbasis}
+    The invariant ring $\CC[\frakg]^T$ has the following basis:
+    $$\left\{ X^\eta Y^\mu :\eta \in (\ZZ_{\ge0})^{\Phi}, \, \mu \in (\ZZ_{\ge0})^r \text{ and }\sum_{\alpha\in\Phi} \eta_\alpha \alpha = 0\right\}.$$
+\end{theorem}

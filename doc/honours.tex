@@ -35,7 +35,7 @@
 \newcommand{\question}[1]{\noindent  \textcolor{red}{Question: #1}}
 \newcommand{\todo}[1]{\noindent  \textcolor{blue}{To do: #1}}
 % Editing line spacing
-\linespread{1.5}
+%\linespread{1.5}
 
 % BLACKBOARD BOLD
 \rc{\AA}{\mathbb{A}}	
@@ -307,111 +307,19 @@
 \newpage
 \pagenumbering{arabic}
 \section{Introduction}
-We study the affine GIT quotient $\frakg \git T$, where $G$ is a connected complex algebraic group with Lie algebra $\frakg$ and maximal torus $T$.
-The variety $\frakg \git T$ can be explicitly computed for $G = \GL_2(\CC)$ or $G = \GL_3(\CC)$, but the problem is difficult for arbitrary $G$.
-For any torus acting on an affine space, the GIT quotient has the structure of a toric variety.
-We investigate toric varieties to use the toric variety structure of $\frakg \git T$ to elucidate its properties.
+\subsection{Algebraic geometry}
 
 
-\subsection{Classical invariant theory}
-When a group $G$ acts on a vector space $V$, there is an induced action of $G$ on the space of polynomial functions on $V$.
-Specifically, if $p \in \CC[V]$ and $g \in G$,
-$$(g \cdot p)(v) := p(g^{-1} \cdot v), \text{ for all } v \in V.$$
-The \emph{ring of invariants} is then defined by
-$$\CC[V]^G := \{p \in \CC[V] : g \cdot p = p \text{ for all } g \in G\}.$$
-
-An important problem in classical invariant theory is to determine whether an invariant ring $\CC[V]^G$ is finitely generated.
-David Hilbert showed that when $G$ is $\SL_n(\CC)$ acting on $V$ by a representation, $\CC[V]^G$ is indeed finitely generated \cite{Hilbert90}.
-In Hilbert's influential list of 23 problems posed in 1900, the $14^\text{th}$ asks whether certain polynomial algebras are finitely generated;
-a special case of the problem is whether $\CC[V]^G$ is finitely generated when $G$ is an arbitrary algebraic group.
-In 1960, Masayoshi Nagata found an example where $\CC[V]^G$ is \emph{not} finitely generated \cite{Nagata60}.
-However, when $G$ is a \emph{reductive} algebraic group, $\CC[V]^G$ is indeed finitely generated \cite[Theorem 4.51]{Mukai03}.
-
-\subsection{Geometric invariant theory}
-In the 1960s, David Mumford built on Hilbert's work and developed the theory of \emph{geometric invariant theory} (GIT) \cite{Mumford65}.
-Given an algebraic group $G$ acting on a variety $X$, the aim of GIT is to construct a quotient variety, i.e., a variety whose points are in bijection with the orbits $X/G$.
-Unfortunately, in general $X/G$ does not have the structure of a variety.
-In the case when $X$ is a complex affine variety and $G$ a complex algebraic group, Mumford defined the affine GIT quotient, or categorical quotient,
-$$X \git G := \Spec(\CC[X]^G).\footnote{In this work, $\Spec$ denotes the maximal spectrum instead of the prime spectrum, i.e., we consider affine varieties instead of affine schemes. See \S \ref{varietiessection} for further discussion of our definition of a variety.}$$
-This is a complex affine variety which has $\CC[X]^G$ as its coordinate ring---intuitively, the points of $X \git G$ are in bijection with the closed orbits of the action of $G$ on $X$.
-For a $\CC$-algebra $R$ to be the coordinate ring of an affine variety, it is necessary that $R$ is finitely generated.
-Thus Hilbert's work elucidating when $\CC[X]^G$ is finitely generated shows $X \git G$ is a variety when $G$ is reductive.\footnote{Note that $\Spec(\CC[X]^G)$ can still be studied as a scheme even if $\CC[X]^G$ is not finitely generated, however, the finitely generated case is more manageable.}
-
-Let us consider an example of a GIT quotient which is well understood.
-Let $G = \GL_n(\CC)$ and $X = \frakg = \frakg\frakl_n(\CC)$.
-We can think of $\frakg$ as the affine space $\CC^{n\times n}$ by choosing a basis and identifying $x \in \frakg$ with its coordinates.
-Then $G$ acts on $X$ by conjugation, i.e., for $g \in G$ and $x \in \frakg$,
-$$g \cdot x := g x g^{-1}.$$
-\emph{Chevalley's restriction theorem} \cite[\S 23]{Humphreys72} implies that 
-$$\CC[\frakg]^G \cong \CC[\frakh]^W,$$
-where $\frakh$ is the Cartan subalgebra of diagonal matrices and $W = S_n$ is the Weyl group of $G$.
-Here $W$ acts on $\frakh$ by permuting the diagonal entries of a matrix.
-The ring $\CC[\frakh]^W$ is well-understood;
-by the \emph{fundamental theorem of symmetric polynomials}, it is a free polynomial algebra with $n$ generators.
-Specifically, $\CC[\frakh]^W \cong \CC[Y_1, \ldots, Y_n].$
-Then, we have that
-$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[Y_1, \ldots, Y_n]) = \CC^n.$$
-Note that $\frakg \git G$ can be computed more generally when $G$ is any connected complex reductive group acting on its Lie algebra by the adjoint action.
-Chevalley's restriction theorem again implies that $\CC[\frakg]^G \cong \CC[\frakh]^W$, and the \emph{Chevalley-Shephard-Todd} theorem \cite[\S 3]{Humphreys90} says $\CC[\frakh]^W$ is a free polynomial algebra;
-we can again conclude $\frakg\git G$ is an affine space.
-The GIT quotient $\frakg \git G$ is called the \emph{adjoint quotient}.
-
-\subsection{Goals of this project}
-Given the adjoint quotient is well-understood, it is natural to ask about the quotient variety of $\frakg$ by subgroups of $G$.
-One choice of such a subgroup is a \emph{maximal torus}, which is a subgroup isomorphic to $(\CC^\times)^r$ for some $r \in \ZZ_{> 0}$.
-The goal of this project is to study the GIT quotient $\frakg \git T$.
-
-To do this, we investigate the ring of invariants $\CC[\frakg]^T$.
-For a general connected algebraic group $G$, it may be out of reach to compute $\CC[\frakg]^T$, however, we can still study features of $\frakg \git T$ such as its dimension and singularities.
-
-The first steps in this project were to compute examples.
-In the cases when $G = \GL_2(\CC)$ or $G = \GL_3(\CC)$, it is tractable to compute $\CC[\frakg]^T$ by hand.
-However, even $G = \Sp_4(\CC)$ becomes difficult.
 
 \subsection{Toric varieties}
-Studying $\frakg \git T$ can be generalised to investigating $\AA^n \git T$, where $T$ is any algebraic torus acting an affine space $\AA^n$.
-One can prove that $\AA^n \git T$ has the structure of an \emph{affine toric variety}.
-These are affine varieties which are determined by a \emph{cone} in a vector space.
-The convex geometry of the cone determines many properties of the toric variety.
-Given the difficulty of directly computing $\CC[\frakg]^T$, computing the toric variety structure and appealing to the many facts known about toric varieties may make the problem more manageable.
-
-\subsection{Directions for further research}
-We list some aims for the remainder of this project:
-\begin{enumerate}
-\item
-Write a complete introduction to affine GIT, including the related notions of stability and semi-stability;
-using this understanding, compute the stable and semi-stable points for the adjoint action of $G$ on $\frakg$.
-
-\item
-Compute the cone of the affine toric variety $\frakg \git T$.
-Use this information to determine features of $\frakg \git T$, such as its dimension and singularities.
-
-\item
-Compute the stable and semi-stable points for the action of $T$ on $\frakg$.
-
-\item
-Investigate projective toric varieties.
-The \emph{projective GIT quotient} $\AA^n \git_\chi \, T$, where $\chi$ is a character of $T$, is an example of these.
-\end{enumerate}
-
-\subsection{Contents of this document}
-This document contains our progress so far in studying $\frakg \git T$.
-
-We begin in $\S 2$ by introducing affine varieties.
-This chapter can be considered background material needed to understand the project.
-The majority of the chapter deals with algebraic subsets of affine space, and investigates the connection between these sets and ideals in polynomial rings.
-We conclude in \S \ref{varietiessection} by discussing abstract affine varieties, which are defined as the maximal spectrum of a certain kind of $k$-algebra;
-this is necessary to define the affine GIT quotient.
-
-In $\S 3$, we define the affine GIT quotient $X \git G$ and give examples.
-In particular, we investigate $\frakg \git T$ in the cases when $G = \GL_2(\CC)$ and $G = \GL_3(\CC)$; in these cases we can compute the invariant ring explicitly.
-We compute a basis for $\CC[\frakg]^T$ in the general case in \S 3.2.
-
-The final chapter is an introduction to affine toric varieties.
-The prerequisite convex geometry is discussed, and in particular, we give a self-contained proof of an important fact (Theorem \ref{dualitythm}) for the theory of toric varieties, which is stated without proof in many texts on toric varieties such as \cite{Fulton93}, \cite{CLS11}, and \cite{Oda88}.
-After defining affine toric varieties in terms of their cones, we prove $\frakg \git T$ is an affine toric variety.
 
 
+
+\subsection{Geometric invariant theory}
+
+
+
+\subsection{Contents of this thesis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PART I: AFFINE TORIC VARIETIES
@@ -487,7 +395,7 @@ The curve $\bV(Y^2 - X^3)$ is algebraic, and it is an example of a so-called cus
 \end{enumerate}
 \end{example}
 
-\subsection{Properties of the map $\bV$}
+\subsection{The map $\bV$}
 Our discussion above tells us that to study zero sets of polynomials, it suffices to study zero sets of ideals in $A$.
 The map
 $$\bV : \{\text{ideals } I \subseteq A\} \to \{\text{algebraic subsets } V \subseteq \AA^n\}, \qquad I \mapsto \bV(I),$$
@@ -790,6 +698,10 @@ so in view of Proposition \ref{reducedradical}, $\bI(W)$ is radical if and only 
 This establishes the first bijection, and the other two are analogous.
 \end{proof}
 
+\subsection{Products of algebraic sets}
+
+
+
 \subsection{Polynomial maps between algebraic subsets}\label{polymaps}
 Throughout this section, let $V \subseteq \AA^n$ and $W \subseteq \AA^m$ be algebraic sets.
 We write $X_1, \ldots, X_n$ for the coordinates on $\AA^n$ and $Y_1, \ldots, Y_m$ for the coordinates on $\AA^m$.
@@ -949,11 +861,6 @@ Then, the coordinate ring of $(k^\times)^n$ is
 $$k[X_1, \ldots, X_n]_{X_1 \cdots X_n} = k[X_1, X_1^{-1}, \ldots, X_n, X_n^{-1}],$$
 the ring of Laurent polynomials.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AFFINE VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{Affine varieties}
 \subsection{Regular functions}
 Let $V$ be an algebraic subset of $\AA^n$.
 When studying some class of objects, we need an appropriate idea of the structure-preserving maps between them.
@@ -1015,7 +922,12 @@ To see $f \in \calO_V(U)$, note that if $P \in U$, then $P\in U_i$ for some $i$,
 \end{enumerate}
 \end{proof}
 
-\subsection{Sheaves and affine varieties}\label{varietiessection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AFFINE VARIETIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Affine varieties}
+\subsection{Sheaves and their morphisms}\label{varietiessection}
 Proposition \ref{sheafprop} alludes to an important object appearing in many areas of mathematics, called a sheaf.
 We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (c.f. {\cite[Chapter II, \S 1]{Hartshorne77}}).
 
@@ -1081,7 +993,7 @@ For the remainder of the document, we will use $\Spec(A)$ to denote the affine v
 The algebra $A$ will usually be defined in terms of generators and relations so that $A \cong k[X_1, \ldots, X_n] / I$ for some radical ideal $I$; 
 then we can think of $\Spec(A)$ as $\bV(I) \subseteq \AA^n$
 
-\subsection{Morphisms of varieties}
+\subsection{Affine varieties}
 \begin{definition}
 A morphism of $k$-ringed spaces $(V, \calO_V) \to (W, \calO_W)$ is a continuous map $\varphi : V \to W$ such that for all open subsets $U \subseteq W$, if $f \in \calO_W(U)$, then $f \circ \varphi \in \calO_V(\varphi^{-1}(U))$.
 \end{definition}
@@ -1592,7 +1504,7 @@ However, this description doesn't indicate the relationship with convex geometry
 In this chapter, we will define and study toric varieties; we will also see how the GIT quotient of an affine space by a torus has the structure of an affine toric variety.
 We start by discussing the prerequisite convex geometry.
 
-\subsection{The semigroup algebra and affine toric varieties}
+\subsection{The semigroup algebra $S_\sigma$}
 Given a cone $\sigma$, we have seen how to construct a semigroup $S_\sigma = \sigma^\vee \cap M$.
 There is a corresponding semigroup algebra $\CC[S_\sigma]$, which is a finitely generated commutative $\CC$-algebra.
 
@@ -1723,6 +1635,22 @@ This assumption implies that when $N$ is a rank $n$ lattice, the dimension of th
 Specifically, when $\sigma$ is strongly convex, $U_\sigma$ has an $n$-dimensional torus as an open subset \cite[Theorem 1.2.18]{CLS11}.
 Then the affine toric variety $U_\sigma$ defined in terms of the cone $\sigma$ satisfies the definition of a toric variety from the introduction to this chapter, i.e., $U_\sigma$ has a torus as a dense open subset.
 
+\subsection{Affine toric varieties}
+
+Note: defined by monomial equations
+
+
+\subsection{Points of $U_\sigma$}
+
+
+
+\subsection{The torus action}
+Discuss distinguished points
+
+
+\subsection{Singularities of $U_\sigma$}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % AFFINE GIT QUOTIENTS AS AFFINE TORIC VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1734,6 +1662,14 @@ We then compute a basis of $\CC[\frakg]^T$ for general $G$.
 Finally, we find generators for the invariant ring $\CC[\frakg]^T$ when $G = \GL_3(\CC)$.
 Throughout this chapter, many technical details may be missing;
 our focus is on understanding specific examples which can guide our investigation of $\frakg \git T$ for general $G$.
+
+\subsection{Algebraic groups}
+
+
+
+\subsection{Reductive groups}
+
+
 
 \subsection{The affine GIT quotient}
 Let $G$ be an affine algebraic group over $\CC$ and $X = \Spec(A)$ a complex affine variety with coordinate ring $A$.
@@ -1859,62 +1795,9 @@ $$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2
 \end{enumerate}
 \end{example}
 
-\subsection{A basis for $\CC[\frakg]^T$}
-We now determine a basis of the invariant ring $\CC[\frakg]^T$ for a general $G$.
-Specifically, let $G$ be a connected complex reductive group and $T$ a maximal torus of $G$.
-The adjoint representation of $G$ on $\frakg$ induces an action of $T$ on $\frakg$, given by $t \cdot x := \mathrm{Ad}(t)x$ for $t \in T$ and $x \in \frakg$.
-If $\alpha : T \to \CC^\times$ is a character of $T$, the eigenspace associated with $\alpha$ is
-$$\frakg_\alpha := \{x \in \frakg : \mathrm{Ad}(t) x = \alpha(t) x \text{ for all } t \in T\}.$$
-The nonzero characters $\alpha$ such that $\frakg_\alpha$ is nonzero are called the \emph{roots} of $G$ with respect to $T$.
-Let $\Phi$ denote the set of roots.
-We have the \emph{root space decomposition},
-$$\frakg = \frakt \oplus \bigoplus_{\alpha \in \Phi} \frakg_\alpha,$$
-where $\frakt$ is the Lie algebra of $T$.
-In particular, $\dim \frakg_\alpha = 1$ for all $\alpha \in \Phi$.
-See \cite[II, \S 5]{Milne13} for a detailed account of the root space decomposition;
-for this document, we take for granted that we have the above decomposition of $\frakg$.
+\subsection{Algebraic tori}
 
-Let $\{y_i : i=1, \ldots, r\}$ be a basis for $\frakt$.
-For each $\alpha \in \Phi$, fix a nonzero element $x_\alpha$ in $\frakg_\alpha$.
-Then $\{x_\alpha : \alpha\in\Phi\}\cup\{y_i:i=1,\ldots,r\}$ is a basis for $\frakg$.
-Let $\{X_\alpha : \alpha \in \Phi\}\cup\{Y_i:i=1,\ldots,r\}$ be the dual basis.
-Then
-$$\CC[\frakg]=\CC[X_\alpha, Y_i : \alpha \in \Phi, i=1,\ldots,r].$$
 
-Let us introduce notation to represent polynomials in $\CC[\frakg]$.
-If $\eta =(\eta_\alpha)_{\alpha\in\Phi}\in(\ZZ_{\ge 0})^\Phi$ and $\mu =(\mu_i)_{i=1}^r \in (\ZZ_{\ge 0})^r$, we have the following notation for monomials:
-$$X^\eta := \prod_{\alpha\in\Phi} X_\alpha^{\eta_\alpha}, \qquad Y^\mu := \prod_{i=1}^r Y_i^{\mu_i}.$$
-Then we can write $p \in \CC[\frakg]$ as
-$$p = \sum_{(\eta, \mu)} p_{\eta, \mu} X^\eta Y^\mu, \qquad p_{\eta,\mu} \in \CC,$$
-with the understanding that the sum is over finitely many tuples $(\eta, \mu)$.
-
-For $x=\sum_{\alpha \in \Phi} X_\alpha(x) x_\alpha + \sum_{i=1}^r Y_i(x) y_i \in \frakg$, the action of $t \in T$ on $x$ is given by
-$$t \cdot x = \sum_{\alpha \in \Phi} \alpha(t) X_\alpha(x) x_\alpha + \sum_{i=1}^r Y_i(x) y_i.$$
-Then $t \in T$ acts on the generator $X_\alpha \in \CC[\frakg]$ by
-$$(t\cdot X_\alpha)(x) = X_\alpha(t^{-1} \cdot x) =\alpha(t^{-1})X_\alpha(x) = (-\alpha)(t)X_\alpha(x), \qquad x \in \frakg.$$
-The action of $t \in T$ on $Y_i \in \CC[\frakg]$ is trivial.
-It follows that
-$$t \cdot p = \sum_{(\nu, \eta)} p_{\eta, \mu} \left(\sum_{\alpha\in\Phi} (-\eta_\alpha \alpha)(t) \right) X^\eta Y^\mu,$$
-since characters are written additively, i.e., $(-\alpha(t))^{\eta_\alpha} = (-\eta_\alpha \alpha)(t)$.
-
-\begin{lemma}
-A polynomial $p \in \CC[\frakg]$ is invariant for the action of $T$ if and only if for each monomial $X^\eta Y^\mu$ in $p$, it holds that
-$$\sum_{\alpha\in\eta} \eta_\alpha \alpha = 0.$$
-\end{lemma}
-\begin{proof}
-    By definition, $p \in \CC[\frakg]$ is invariant if and only if for all $t \in T$,
-    $$ \sum_{(\eta, \mu)} p_{\eta,\mu} \left(\sum_{\alpha\in\Phi} (- \eta_\alpha \alpha)(t)\right) X^\eta Y^\mu =t\cdot p = p = \sum_{(\eta, \mu)} p_{\eta,\mu} X^\eta Y^\mu.$$
-    But since the set $\{X^\eta Y^\mu : \eta \in (\ZZ_{\ge 0})^\Phi, \mu \in (\ZZ_{\ge 0})^r\}$ is a basis for $\CC[\frakg]$, the above equality is equivalent to having 
-    $\sum_{\alpha\in\Phi} (- \eta_\alpha \alpha)(t) = 1$ for all $t \in T$. In other words, $p$ being invariant is equivalent to having $\sum_{\alpha\in\Phi} \eta_\alpha \alpha = 0$
-    for every monomial $X^\eta Y^\mu$ in $p$.
-\end{proof}
-
-The lemma implies the following theorem:
-
-\begin{theorem}\label{invringbasis}
-    The invariant ring $\CC[\frakg]^T$ has the following basis:
-    $$\left\{ X^\eta Y^\mu :\eta \in (\ZZ_{\ge0})^{\Phi}, \, \mu \in (\ZZ_{\ge0})^r \text{ and }\sum_{\alpha\in\Phi} \eta_\alpha \alpha = 0\right\}.$$
-\end{theorem}
 
 \subsection{The invariant ring for a torus acting on affine space}
 The goal of the next two subsections is to prove that if a torus $T$ acts linearly on an affine space $\AA^n$, then the affine GIT quotient $\AA^n \git T$ has the structure of a toric variety.
@@ -2108,7 +1991,7 @@ In the next section, we will studying general toric varieties using our understa
 In order to motivate the definition of algebraic varieties, we will first study projective varieties, which are an important special cases.
 Then we will define general algebraic varieties, and see how they are determined by glueing affine varieties.
 
-\subsection{Projective varieties}
+\subsection{Motivation: projective varieties}
 Let $k$ be a field.
 Projective $n$-space over $k$, denoted $\PP^n_k$ or $\PP^n$, is the quotient space
 $$\PP^n_k := (k^{n+1} \setminus \{0\}) / \sim,$$
@@ -2126,6 +2009,8 @@ In analogy with the affine theory, after defining projective space, we should de
 However, the na\''ive approach of defining polynomials on $\PP^n$ to be polynomials in the homogeneous coordinates is not well-defined, since the homoegeneous coordinates are not unique;
 we could then have that a polynomial takes different values on different homoegeneous coordinates for the same point.
 The solution for defining algebraic subsets of $\PP^n$ is to use \emph{homogeneous} polynomials.
+
+Example: elliptic curves.
 
 \subsection{Abstract varieties}
 Recall the definitions of a sheaf of $k$-algebras and ringed spaces from section \ref{affinetoricvarieties}.
@@ -2169,7 +2054,9 @@ for each $i$, $\left. \calO_V \right|_{V_i} = \calO_{V_i}$.
 If every $V_i$ is an algebraic variety, then so also is $V$, and to give a regular map from $V$ to a prevariety $W$ amounts to giving a family of regular maps $\varphi_i : V_i \to W$ such that $\left. \varphi_i \right|_{V_i \cap V_j} = \left. \varphi_j \right|_{V_i \cap V_j}$.
 \end{proposition}
 
+Example: line with two origins
 
+\subsection{The glueing construction}
 Let $\{Y_i\}_{i\in I}$ be a finite set of affine varieties.
 Suppose that for all $i, j \in I$, we have isomorphic open subsets $Y_{ij} \subseteq Y_i$ and $Y_{ji} \subseteq Y_j$.
 Let $\{\phi_{ij} : Y_{ij} \to Y_{ji}\}_{i, j \in I}$ be isomorphism such that for all $i, j, k \in I$,
@@ -2218,7 +2105,7 @@ are homeomorphisms.
 Observe that if $(x : y) \in U_x \cap U_y$, the image of $(x : y)$ in $X$ of the above two maps are points points which are identified.
 \end{example}
 
-
+Example: line with two origins
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2290,18 +2177,21 @@ For cones $\sigma, \tau \in \Delta$, the intersection $\sigma \cap \tau$ is a fa
 The fact that the glueing is compatible follows from the order-preserving nature of the correspondence between cones and affine varieties.
 \todo{Understand this better. Can we give explicit glueing maps $\phi_{ij}$ as we used in the definition of glueing?}
 
+Example: one-dim toric varieties
+
+\subsection{The dense torus}
 
 
-\subsection{Polytopes and projective toric varieties}
 
-
-
-\subsection{The torus action and the orbit-cone correspondence}
+\subsection{The orbit-cone correspondence}
 
 
 
 \subsection{Classification of toric surfaces}
 
+
+
+\subsection{Toric morphisms}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % REFERENCES

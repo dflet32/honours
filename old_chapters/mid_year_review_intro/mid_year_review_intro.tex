@@ -1,3 +1,314 @@
+\documentclass[12pt]{amsart}
+
+% PACKAGES
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[alphabetic]{amsrefs}
+\usepackage{amsthm}
+% \usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{microtype,correctmathalign}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+%\usepackage{quiver}
+%\hypersetup{linktoc = all, colorlinks = true, urlcolor = Blue, linkcolor = Red, citecolor = RoyalBlue}
+%\usepackage[parfill]{parskip}
+
+% COMMANDS 
+\newcommand{\nc}{\newcommand}
+\newcommand{\rc}{\renewcommand}
+\nc{\on}{\operatorname}
+
+% EDITING
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{purple}{rgb}{.5,.2,.8}
+\definecolor{blue}{rgb}{.2,.2,.8}
+\definecolor{green}{rgb}{.4,.6,.4}
+\newcommand{\question}[1]{\noindent  \textcolor{red}{Question: #1}}
+\newcommand{\todo}[1]{\noindent  \textcolor{blue}{To do: #1}}
+% Editing line spacing
+%\linespread{1.5}
+
+% BLACKBOARD BOLD
+\rc{\AA}{\mathbb{A}}	
+\nc{\BB}{\mathbb{B}}	
+\nc{\CC}{\mathbb{C}}	
+\nc{\DD}{\mathbb{D}}	
+\nc{\EE}{\mathbb{E}}	
+\nc{\FF}{\mathbb{F}}	
+\nc{\GG}{\mathbb{G}}	
+\nc{\HH}{\mathbb{H}}	
+\nc{\II}{\mathbb{I}}	
+\nc{\JJ}{\mathbb{J}}	
+\nc{\KK}{\mathbb{K}}	
+\nc{\LL}{\mathbb{L}}	
+\nc{\MM}{\mathbb{M}}	
+\nc{\NN}{\mathbb{N}}	
+\nc{\OO}{\mathbb{O}}	
+\nc{\PP}{\mathbb{P}}	
+\nc{\QQ}{\mathbb{Q}}	
+\nc{\RR}{\mathbb{R}}	
+\rc{\SS}{\mathbb{S}}	
+\nc{\TT}{\mathbb{T}}	
+\nc{\UU}{\mathbb{U}}	
+\nc{\VV}{\mathbb{V}}	
+\nc{\WW}{\mathbb{W}}	
+\nc{\XX}{\mathbb{X}}	
+\nc{\YY}{\mathbb{Y}}	
+\nc{\ZZ}{\mathbb{Z}}	
+
+% BOLD FACE
+\nc{\bA}{\mathbf{A}}	
+\nc{\bB}{\mathbf{B}}	
+\nc{\bC}{\mathbf{C}}	
+\nc{\bD}{\mathbf{D}}	
+\nc{\bE}{\mathbf{E}}	
+\nc{\bF}{\mathbf{F}}	
+\nc{\bG}{\mathbf{G}}	
+\nc{\bH}{\mathbf{H}}	
+\nc{\bI}{\mathbf{I}}	
+\nc{\bJ}{\mathbf{J}}	
+\nc{\bK}{\mathbf{K}}	
+\nc{\bL}{\mathbf{L}}	
+\nc{\bM}{\mathbf{M}}	
+\nc{\bN}{\mathbf{N}}	
+\nc{\bO}{\mathbf{O}}	
+\nc{\bP}{\mathbf{P}}	
+\nc{\bQ}{\mathbf{Q}}	
+\nc{\bR}{\mathbf{R}}	
+\nc{\bS}{\mathbf{S}}	
+\nc{\bT}{\mathbf{T}}	
+\nc{\bU}{\mathbf{U}}	
+\nc{\bV}{\mathbf{V}}	
+\nc{\bW}{\mathbf{W}}	
+\nc{\bX}{\mathbf{X}}	
+\nc{\bY}{\mathbf{Y}}	
+\nc{\bZ}{\mathbf{Z}}	
+
+% CALLIGRAPHIC
+\nc{\calA}{\mathcal{A}}	
+\nc{\calB}{\mathcal{B}}	
+\nc{\calC}{\mathcal{C}}	
+\nc{\calD}{\mathcal{D}}	
+\nc{\calE}{\mathcal{E}}	
+\nc{\calF}{\mathcal{F}}	
+\nc{\calG}{\mathcal{G}}	
+\nc{\calH}{\mathcal{H}}	
+\nc{\calI}{\mathcal{I}}	
+\nc{\calJ}{\mathcal{J}}	
+\nc{\calK}{\mathcal{K}}	
+\nc{\calL}{\mathcal{L}}	
+\nc{\calM}{\mathcal{M}}	
+\nc{\calN}{\mathcal{N}}	
+\nc{\calO}{\mathcal{O}}	
+\nc{\calP}{\mathcal{P}}	
+\nc{\calQ}{\mathcal{Q}}	
+\nc{\calR}{\mathcal{R}}	
+\nc{\calS}{\mathcal{S}}
+\nc{\calT}{\mathcal{T}}	
+\nc{\calU}{\mathcal{U}}	
+\nc{\calV}{\mathcal{V}}	
+\nc{\calW}{\mathcal{W}}
+\nc{\calX}{\mathcal{X}}	
+\nc{\calY}{\mathcal{Y}}	
+\nc{\calZ}{\mathcal{Z}}
+
+% LOWERCASE FRAK
+\nc{\fraka}{\mathfrak{a}}
+\nc{\frakb}{\mathfrak{b}}
+\nc{\frakc}{\mathfrak{c}}
+\nc{\frakd}{\mathfrak{d}}
+\nc{\frake}{\mathfrak{e}}
+\nc{\frakf}{\mathfrak{f}}
+\nc{\frakg}{\mathfrak{g}}
+\nc{\frakh}{\mathfrak{h}}
+\nc{\fraki}{\mathfrak{i}}
+\nc{\frakj}{\mathfrak{j}}
+\nc{\frakk}{\mathfrak{k}}
+\nc{\frakl}{\mathfrak{l}}
+\nc{\frakm}{\mathfrak{m}}
+\nc{\frakn}{\mathfrak{n}}
+\nc{\frako}{\mathfrak{o}}
+\nc{\frakp}{\mathfrak{p}}
+\nc{\frakq}{\mathfrak{q}}
+\nc{\frakr}{\mathfrak{r}}
+\nc{\fraks}{\mathfrak{s}}
+\nc{\frakt}{\mathfrak{t}}
+\nc{\fraku}{\mathfrak{u}}
+\nc{\frakv}{\mathfrak{v}}
+\nc{\frakw}{\mathfrak{w}}
+\nc{\frakx}{\mathfrak{x}}
+\nc{\fraky}{\mathfrak{y}}
+\nc{\frakz}{\mathfrak{z}}
+
+% UPPERCASE FRAK
+\nc{\frakA}{\mathfrak{A}}
+\nc{\frakB}{\mathfrak{B}}
+\nc{\frakC}{\mathfrak{C}}
+\nc{\frakD}{\mathfrak{D}}
+\nc{\frakE}{\mathfrak{E}}
+\nc{\frakF}{\mathfrak{F}}
+\nc{\frakG}{\mathfrak{G}}
+\nc{\frakH}{\mathfrak{H}}
+\nc{\frakI}{\mathfrak{I}}
+\nc{\frakJ}{\mathfrak{J}}
+\nc{\frakK}{\mathfrak{K}}
+\nc{\frakL}{\mathfrak{L}}
+\nc{\frakM}{\mathfrak{M}}
+\nc{\frakN}{\mathfrak{N}}
+\nc{\frakO}{\mathfrak{O}}
+\nc{\frakP}{\mathfrak{P}}
+\nc{\frakQ}{\mathfrak{Q}}
+\nc{\frakR}{\mathfrak{R}}
+\nc{\frakS}{\mathfrak{S}}
+\nc{\frakT}{\mathfrak{T}}
+\nc{\frakU}{\mathfrak{U}}
+\nc{\frakV}{\mathfrak{V}}
+\nc{\frakW}{\mathfrak{W}}
+\nc{\frakX}{\mathfrak{X}}
+\nc{\frakY}{\mathfrak{Y}}
+\nc{\frakZ}{\mathfrak{Z}}
+
+% OPERATORS
+\nc{\Lie}{\on{Lie}}
+\nc{\GL}{\on{GL}}
+\nc{\PGL}{\on{PGL}}
+\nc{\SL}{\on{SL}}
+\nc{\Sp}{\on{Sp}}
+\nc{\GSp}{\on{GSp}}
+\nc{\SO}{\on{SO}}
+\nc{\Or}{\on{O}}
+\nc{\gl}{\on{\mathfrak{gl}}}
+\rc{\sl}{\on{\mathfrak{sl}}}
+\nc{\git}{/\!\!/}
+
+\nc{\Mat}{\on{Mat}}
+\nc{\Fun}{\on{Fun}}
+\nc{\Aut}{\on{Aut}}
+\nc{\End}{\on{End}}
+\nc{\Hom}{\on{Hom}}
+\nc{\Sym}{\on{Sym}}
+\nc{\Span}{\on{span}}
+\nc{\Irr}{\on{Irr}}
+\nc{\Uch}{\on{Uch}}
+\nc{\Type}{\on{Type}}
+\nc{\Spec}{\on{Spec}}
+
+\nc{\Ind}{\on{Ind}}
+\nc{\Res}{\on{Res}}
+\nc{\stab}{\on{stab}}
+\nc{\orb}{\on{orb}}
+\rc{\ker}{\on{ker}}
+\nc{\im}{\on{im}}
+\nc{\tr}{\on{tr}}
+\nc{\ord}{\on{ord}}
+\nc{\Tor}{\on{Tor}}
+\nc{\Ad}{\on{Ad}}
+
+\nc{\Id}{\on{Id}}
+\nc{\Log}{\on{Log}}
+\nc{\Exp}{\on{Exp}}
+\nc{\Frac}{\on{Frac}}
+\nc{\diag}{\on{diag}}
+\nc{\D}{\on{D}}
+
+% MATHRM
+\nc{\St}{\mathrm{St}}
+\nc{\triv}{\mathrm{triv}}
+\nc{\sgn}{\mathrm{sgn}}
+\nc{\reg}{\mathrm{reg}}
+\nc{\rank}{\mathrm{rank}}
+\nc{\op}{\mathrm{op}}
+\nc{\ad}{\mathrm{ad}}
+\rc{\ss}{\mathrm{ss}}
+\nc{\HLV}{\mathrm{HLV}}
+
+% ENVIRONMENTS
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}%[subsection]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% CONE PLOTTING
+\usepackage{graphicx} % For including graphics
+\usepackage{subcaption} % For subfigures
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tikz,tikz-3dplot}
+\tdplotsetmaincoords{80}{45}
+\tdplotsetrotatedcoords{-90}{180}{-90}
+
+%% style for surfaces
+\tikzset{surface/.style={draw=gray!70!black, fill=gray!40!white, fill opacity=.6}}
+
+%% macros to draw back and front of cones
+%% optional first argument is styling; others are z, radius, side offset (in degrees)
+\newcommand{\coneback}[4][]{
+  %% start at the correct point on the circle, draw the arc, then draw to the origin of the diagram, then close the path
+  \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:225+#4:#3) -- (O) --cycle;
+}
+\newcommand{\conefront}[4][]{
+  \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:-135+#4:#3) -- (O) --cycle;
+}
+
+\allowdisplaybreaks
+
+\begin{document}
+%\pagenumbering{roman}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{center}
+%\includegraphics[width=10cm]{../images/UQLogo.jpg} \\ 
+%\vspace{3cm}
+%{\LARGE\textsc{Toric Varieties}} \\
+%%\vspace{0.1cm}
+%%{\LARGE\textsc{Varieties}} \\
+%\vspace{0.5cm}
+%{\textsc{Declan Fletcher}} \\
+%\vspace{8cm}
+%%{\textsc{Mid-year Review, July 2024}} \\
+%{\textsc{ Bachelor of Mathematics (Honours)}} \\
+%\vspace{1cm}
+%{\textsc{Supervisor: \href{https://sites.google.com/site/masoudkomi/home}{Masoud Kamgarpour}}} \\
+%{\textsc{Co-Supervisor: \href{https://sites.google.com/site/yangzhang139/home}{Yang Zhang}}} \\
+%\vspace{1cm}
+%{\textsc{\href{https://www.uq.edu.au/}{The University of Queensland}}} \\
+%{\textsc{\href{https://smp.uq.edu.au/}{School of Mathematics and Physics}}}
+%\end{center}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagenumbering{arabic}
+\section{Introduction}
+
+
 We study the affine GIT quotient $\frakg \git T$, where $G$ is a connected complex algebraic group with Lie algebra $\frakg$ and maximal torus $T$.
 The variety $\frakg \git T$ can be explicitly computed for $G = \GL_2(\CC)$ or $G = \GL_3(\CC)$, but the problem is difficult for arbitrary $G$.
 For any torus acting on an affine space, the GIT quotient has the structure of a toric variety.
@@ -101,3 +412,4 @@ We compute a basis for $\CC[\frakg]^T$ in the general case in \S 3.2.
 The final chapter is an introduction to affine toric varieties.
 The prerequisite convex geometry is discussed, and in particular, we give a self-contained proof of an important fact (Theorem \ref{dualitythm}) for the theory of toric varieties, which is stated without proof in many texts on toric varieties such as \cite{Fulton93}, \cite{CLS11}, and \cite{Oda88}.
 After defining affine toric varieties in terms of their cones, we prove $\frakg \git T$ is an affine toric variety.
+\end{document}
