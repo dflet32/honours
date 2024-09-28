@@ -6,8 +6,9 @@
 \usepackage{amsfonts}
 \usepackage[alphabetic]{amsrefs}
 \usepackage{amsthm}
-% \usepackage{enumitem}
-\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate,1]{left=0pt,label=(\arabic*)}
+%\usepackage{enumerate}
 \usepackage{fullpage}
 \usepackage{color}
 \usepackage{graphicx}
@@ -17,9 +18,10 @@
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{caption}
-\usepackage{quiver}
+%\usepackage{quiver}
 %\hypersetup{linktoc = all, colorlinks = true, urlcolor = Blue, linkcolor = Red, citecolor = RoyalBlue}
 %\usepackage[parfill]{parskip}
+
 
 % COMMANDS 
 \newcommand{\nc}{\newcommand}
@@ -345,7 +347,7 @@
 % ALGEBRAIC SUBSETS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Algebraic subsets of affine space}
+\section{Algebraic subsets of affine space}\label{chapter:algebraicsets}
 In this chapter, we introduce affine varieties, which are the central object of study in this project.
 Algebraic geometry establishes a connection between spaces defined by zero sets of polynomials (geometric objects), and ideals in a polynomial ring (algebraic objects).
 We detail this connection, and explain how algebraic properties of rings and ideals inform properties of the corresponding geometric spaces.
@@ -669,7 +671,7 @@ It then follows that
 $$\bV(J/\bI(V)) = \bV(J).$$
 The following result extends Corollary \ref{nullbijection} to a correspondence between ideals in $k[V]$ and subsets of $V$.
 
-\begin{corollary}
+\begin{corollary}\label{corollary:coordinateringbijections}
 There are bijections:
 $$
 \begin{array}{c}
@@ -738,7 +740,7 @@ If $\varphi : V \to W$ and $\psi : W \to U$ are polynomial maps, then $(g \circ 
 \end{theorem}
 \begin{remark}
 Together, part (1) and (2) says that the map $\varphi \mapsto \varphi^*$ induces a bijection
-\begin{align*}\label{ringidealbijection}
+\begin{align*}\label{polynomialmapkalghombijection}
 \left\{
 \begin{array}{c}
 	\text{polynomial maps} \\
@@ -844,7 +846,67 @@ $$W:=\bV(f_1, \ldots, f_m, g Y - 1).$$
 A point $(x_1, \ldots, x_n, y) \in W$ satisfies $f_i(x_1, \ldots, x_n) = 0$ for all $i$, and  $g(x_1, \ldots, x_n) = \frac{1}{y} \ne 0$.
 It follows that the projection $k^n \times k \to k^n$ identifies $V_f$ with the algebraic set $W$.
 
-It is natural to ask what the coordinate ring of $V_f$ is; we will explain what it is when $V$ is irreducible.
+It is natural to ask what the coordinate ring of $V_f$ is.
+The coordinate ring of algebraic set $W$ described above is $(k[X_1,\ldots, X_n,Y]/(f_1, \ldots, f_m, gY-1).$
+This is one description  of $k[V_f]$, but it can be constructed in a way without needing to choose the generators $f_1, \ldots, f_m$.
+We will see that $k[V_f]$ is a certain ring of fractions; we know define this concept.
+
+Recall that when $A$ is an integral domain, the field of fractions $\Frac(A)$ is the equivalence classes of pairs of elements in $A$, for the relation $(a, s) \sim (b, t)$ if $at-bs=0$.
+The equivalence class of $(a,s)$ is denoted $\frac{a}{s}$, and the addition and multiplication is defined by the usual formulas for fractions.
+We can think of $\Frac(A)$ as the ring $A$ where all non-zero elements have been inverted.
+The construction of a ring of fractions is a generalisation where $A$ is not required to be an integral domain and only a certain set of elements of $A$ are inverted.
+Let us formally define it now.
+
+Let $A$ be any ring.
+Let $S$ be a multiplicatively closed subset of $A$, meaning a subset containing the identity of $A$ which is closed under multiplication.
+We define a relation on $A \times S$ by declaring $(a, s) \sim (b, t)$ if there exists $u \in S$ such that $u(at - bs)=0$.
+It is clear that $\sim$ is reflexive and symmetric, and it is straightforward to show it is transitive (see \cite[\S 3]{AM}).
+The equivalence class of $(a,s)$ is denoted $\frac{a}{s}$, and the set of equivalence classes is denoted $S^{-1}A$.
+Addition and multiplication in $S^{-1}A$ is defined in the usual way for fractions:
+$$\frac{a}{s}+\frac{b}{t} = \frac{at+bs}{st}, \qquad \frac{a}{s}\cdot\frac{b}{t} = \frac{ab}{st}.$$
+A routine verification shows that these operations are well-defined and make $S^{-1}A$ into a commutative ring with identity.
+
+There is a ring homomorphism $A\to S^{-1}A$ given by $a \mapsto \frac{a}{1}$.
+Then $a\in A$ is in the kernel of this map if $\frac{a}{1}=\frac{0}{1}$ in $S^{-1}A$, which is equivalent to the existence of $u\in S$ such that $u a = 0$.
+
+We consider two examples which relate the ring of fractions to the field of fractions of an integral domain, and the main example we are interested in to define $k[V_f]$.
+
+\begin{example}
+\begin{enumerate}
+\item
+Let $A$ be an integral domain and $S = A \setminus \{0\}$.
+Then $S^{-1}A$ can be identified with the field of fractions $\Frac(A)$.
+More generally, if $T$ is any multiplicatively closed subset of $A$, $T^{-1}A$ can be identified with the subring $\{\frac{a}{t} : a\in A, t \in T\}$ of $\Frac(A)$.
+
+\item
+The following example is the most important for the remainder of this thesis, in particular, to describe the coordinate ring of $V_f$.
+Let $h \in A$ and choose $S = \{1, h, h^2, \ldots\}$.
+In this case, $S^{-1}A$ is denoted $A_h$.
+Every element of $A_h$ can be written $\frac{a}{h^m}$ for some $a \in A$ and $m \in \ZZ_{\ge 0}$.
+We have that $\frac{a}{h^m} = \frac{b}{h^n}$ if and only if $h^N (ah^n - b h^m)=0$ for some $N \in \ZZ_{\ge 0}$.
+This implies that if $h$ is nilpotent, then there is one equivalence class and $A_h = \{0\}$.
+If $A$ is an integral domain and $h \ne 0$, the previous example tells us $A_h$ can be identified with the subring $\{\frac{a}{h^n} : a \in A, n \in \ZZ_{\ge 0}\}$ of $\Frac(A)$.
+\end{enumerate}
+\end{example}
+
+Milne proves the following lemma, which explains our interest in $A_h$ for describing the ring of fractions:
+
+\begin{lemma}[{\cite[Lemma 1.13]{Milne13}}]
+For every ring $A$ and $h \in A$,
+$$A[X]/(1-hX) \cong A_h.$$
+\end{lemma}
+
+\textcolor{red}{Explain how this means $k[V_f] = k[V]_f$.}
+
+\begin{proposition}[{\cite[Proposition 1.14]{Milne13}}]
+Let $S$ be a multiplicatively closed subset of a ring $A$.
+The map
+$$\frakp \mapsto (S^{-1}A) \frakp$$
+is a bijection between the set of prime ideals of $A$ disjoint from $S$, and the set of prime ideals of $S^{-1}A$.
+\end{proposition}
+
+In particular, the map $\frakp \mapsto (S^{-1}A) \frakp$ preserves inclusion, so it is a bijection between maximal ideals of $A$ disjoint from $S$ and maximal ideals of $S^{-1}A$.
+
 In this case, $k[V]$ is an integral domain.
 We write $k(V)$ for the fraction field $k(V):=\Frac(k[V])$, and call $k(V)$ the field of rational functions on $V$.
 For any $f \in k[V]$, consider the subring
@@ -852,7 +914,8 @@ $$k[V]_f := \left\{\frac{g}{f^r} : g \in k[V], \, r \ge 0\right\} \subseteq k(V)
 The ring $k[V]_f$ is called the localisation of $k[V]$ at $f$.\footnote{We emphasise that $V$ is irreducible. This assumption is not necessary but it simplifies the discussion.}
 One can prove 
 $$k[V]_f \cong (k[V])[Y] / (f Y -1),$$
-so that $k[V]_f \cong k[X_1, \ldots X_n]/(f_1, \ldots, f_m, gY - 1)$, and therefore $k[V]_f$ is the coordinate ring of $V_f$ \cite[Lemma 1.13]{Milne13}.
+so that $k[V]_f \cong k[V]/(fY-1)$ \cite[Lemma 1.13]{Milne13}).
+Therefore, $k[V]_f$ is the coordinate ring of $V_f$.
 
 An important example of an algebraic set which arises as a principal open subset of $\AA^n$ is the algebraic torus,
 $$(k^\times)^n := \{(x_1, \ldots, x_n) \in k^n : x_i \ne 0\}.$$
@@ -891,7 +954,7 @@ It is well-defined since $\frac{x_1}{x_2} = \frac{x_3}{x_4}$ if $x_2 \ne 0$ and 
 \end{example}
 
 We write $\calO_V(U)$ for the ring of regular functions $U \to k$.
-The assignment of an open set $U \mapsto \calO_V(U)$ satisfies the following properties:
+The assignment $U \mapsto \calO_V(U)$ satisfies the following properties:
 
 \begin{proposition}\label{sheafprop}
 \begin{enumerate}
@@ -922,11 +985,22 @@ To see $f \in \calO_V(U)$, note that if $P \in U$, then $P\in U_i$ for some $i$,
 \end{enumerate}
 \end{proof}
 
+\textcolor{red}{How does this reduce to our previous definition when $U=V$?}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % AFFINE VARIETIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Affine varieties}
+In this chapter, we define and study affine varieties---these are spaces which `look like' algebraic sets, defined without needing to be embedded in an affine space.
+This definition is needed because we often want to study spaces without an ambient space.
+In particular, when we study toric varieties and GIT quotients in later chapters, we will need to define a space by prescribing its coordinate ring.
+This is easily achieved in the context of affine varieties by the taking the maximal spectrum of the desired coordinate ring.
+
+We start by defining sheaves, which is an open assignment of a $k$-algebra of functions to open sets in a topological space---this is an abstraction of looking at the regular functions defined on an open subset of an algebraic set.
+Affine varieties can then be defined as a topological space with a sheaf that looks like an algebraic set.
+For the remainder of the chapter, we define the tangent space of a variety, and also look at certain properties of morphisms between affine varieties.
+
 \subsection{Sheaves and their morphisms}\label{varietiessection}
 Proposition \ref{sheafprop} alludes to an important object appearing in many areas of mathematics, called a sheaf.
 We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (c.f. {\cite[Chapter II, \S 1]{Hartshorne77}}).
@@ -950,6 +1024,7 @@ The $k$-algebra $\calO_V(U)$ is sometimes denoted $\Gamma(U, \calO_V)$, and its 
 Proposition \ref{sheafprop} says that for an algebraic set $V$, the assignment of an open subset $U \subseteq V$ to its ring of regular functions $\calO_V(U)$ is a sheaf of $k$-algebras.
 This sheaf is called the structure sheaf of $V$.
 As we will see, structure sheaves are one of the main tools we use to define and study varieties.
+\textcolor{red}{Note that $k[V] = \Gamma(V, \calO_V)$.}
 To further illustrate the definition of a sheaf, we give another example as well as a counter-example:
 
 \begin{example}
@@ -960,74 +1035,183 @@ For any open set $U$, let $\calO_V(U)$ be the set of continuous functions $U \to
 It is clear $\calO_V$ satisfies condition (1) in Definition \ref{sheafdef}, and conditions (2) and (3) hold since continuity is a local property. Thus $\calO_V$ is a sheaf of $\RR$-algebras.
 
 \item
+Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of differentiable functions $U \to \RR$.
+Since differentiability is a local property, $\calO_V$ is a sheaf of $\RR$-algebras.
+
+\item
+If $(V, \calO_V)$ is a ringed space and $U$ is an open subset of $V$, then $\left. \calO_V \right|_U$, the restriction of $\calO_V$ to open subsets of $U$, is a sheaf on $U$.
+
+\item
 Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of bounded functions $U \to \RR$.
 This does not define a sheaf since condition (3) of Definition \ref{sheafdef} does not hold;
-let $\{U_i\}$ be the open cover of $\RR$ given by $U_i:=(-i, i)$ and observe that $f_i(x):=x$ lies in $\calO_V(U_i)$ for each $i$;
-however, $f(x) = x$ does not lie in $\calO_V(\RR)$.
-This fails to be a sheaf because boundedness is not determined locally.
+let $\{U_i\}$ be the open cover of $\RR$ given by $U_i:=(-i, i)$ and observe that $f_i(x):=x$ lies in $\calO_V(U_i)$ for each $i$ but $f(x) = x$ does not lie in $\calO_V(\RR)$.
+This fails to be a sheaf because boundedness is not a local property.
 \end{enumerate}
 \end{example}
 
-So far, we have studied algebraic subsets embedded in an ambient affine space.
-Roughly speaking, an \emph{affine variety} is an algebraic subset of $\AA^n$, defined without choosing a specific embedding of our algebraic set into affine space;
-this is analogous to how a smooth manifold is defined intrinsically as a topological space, without needing to be embedded in some Euclidean space.
-The following definition uses ringed spaces to make this precise:
+Having defined sheaves and ringed spaces, we need to define the structure-preserving maps between ringed spaces;
+such a map is called a morphism of ringed spaces:
 
-\begin{definition}
-An affine variety over $k$ is a $k$-ringed space isomorphic to one of the form $(V, \calO_V)$ for some algebraic set $V \subseteq \AA^n$.
+\begin{definition}\label{definition:morphismringedspace}
+Let $(V, \calO_V)$ and $(W, \calO_W)$ be ringed spaces.
+A morphism of ringed spaces $\varphi : V \to W$ is a map such that
+\begin{enumerate}
+\item 
+$\varphi$ is continuous, and
+\item
+for all open subsets $U \subseteq W$, if $f \in \calO_W(U)$, then $f\circ\varphi \in \calO_V(\varphi^{-1}(U))$.
+\end{enumerate}
 \end{definition}
 
-We have seen that any algebraic set $V$ gives a reduced finitely generated $k$-algebra, $k[V]$.
-Conversely, we can ask, given a reduced finitely generated $k$-algebra $A$, whether there is an associated affine variety.
-Choose generators $a_1, \ldots, a_n$ for $A$, so that $A = k[a_1, \ldots, a_n]$.
-The $k$-algebra homomorphism $\varphi : k[X_1, \ldots, X_n] \to A$ given by $X_i \mapsto a_i$ induces an isomorphism $k[X_1, \ldots, X_n] / \ker \phi \cong A$.
-Then $\ker\phi$ is radical, so that $\bV(\ker \phi)$ is an algebraic subset of $\AA^n$ with coordinate ring $A$.
-In view of Corollary \ref{isoofalgsetscoro}, isomorphic $k$-algebras correspond to isomorphic algebraic sets.
-To construct an affine variety that 
+It is natural that morphisms should be continuous maps, to preserve topological structure.
+The motivation for the second condition is less clear.
+Observe that if we have open subsets $U \subseteq W$ and $U' \subseteq V$ such that $\varphi(U')\subseteq U$, then the map
+$$\calO_W(U) \to \calO_V(U'), \qquad f \mapsto f\circ\varphi$$
+is a homomorphism of $k$-algebras;
+we denote $f \circ \varphi$ by $\varphi^*(f)$ and call this function the pullback of $f$ by $\varphi$.
+Then the second condition in the definition says that $\varphi$ allows us to convert a function on $U$ to a function on $U'$, which gives the homomorphism $\calO_W(U) \to \calO_V(U')$.
 
-The answer is yes---this variety is the \emph{maximal spectrum}, $\Spec(A)$, of $A$.
-The maximal spectrum $\Spec(A)$ is a topological space with a certain sheaf that defines an affine variety.
-This construction is technical so we omit it in this document, but the details can be found in \cite[Chapter 3]{Milne13}.
+\begin{example}
+\begin{enumerate}
+\item
+Consider any topological spaces $V$ and $W$ with their sheaves of continuous real-valued functions.
+Any continuous map $V \to W$ is a morphism. The second condition in Definition \ref{definition:morphismringedspace} holds as composition preserves continuity.
 
-For the remainder of the document, we will use $\Spec(A)$ to denote the affine variety which has $A$ as its coordinate ring.
-The algebra $A$ will usually be defined in terms of generators and relations so that $A \cong k[X_1, \ldots, X_n] / I$ for some radical ideal $I$; 
-then we can think of $\Spec(A)$ as $\bV(I) \subseteq \AA^n$
+\item
+If $(V, \calO_V)$ is a ringed space and $U$ is an open subset of $V$, the inclusion $U \hookrightarrow V$ is a morphism between the ringed spaces $(U, \left. \calO_V\right|_U)$ and $(V, \calO_V)$.
+\end{enumerate}
+\end{example}
+
+We say that a morphism of ringed spaces is an isomorphism if it is bijective and its inverse is also a morphism.
+Then isomorphisms are in particular homeomorphisms.
 
 \subsection{Affine varieties}
+Having defined ringed spaces, we can now define affine algebraic varieties.
+In Chapter \ref{chapter:algebraicsets}, we studied algebraic sets embedded in an ambient affine space.
+Roughly speaking, an affine algebraic variety is an algebraic set, defined without choosing an embedding into affine space.
+This is analogous to how a smooth manifold is defined intrinsically as a topological space, without reference to an ambient Euclidean space.
+The following definition makes this precise using ringed spaces:
+
 \begin{definition}
-A morphism of $k$-ringed spaces $(V, \calO_V) \to (W, \calO_W)$ is a continuous map $\varphi : V \to W$ such that for all open subsets $U \subseteq W$, if $f \in \calO_W(U)$, then $f \circ \varphi \in \calO_V(\varphi^{-1}(U))$.
+An affine algebraic variety over $k$ is a $k$-ringed space isomorphic to one of the form $(V, \calO_V)$ for some algebraic set $V \subseteq \AA^n$.
 \end{definition}
 
-For every pair of open subsets $U \subseteq V$ and $U' \subseteq W$ satisfying $\varphi(U) \subseteq U'$, we have a homomorphism of $k$-algebras, $\varphi^*:\calO_W(U') \to \calO_V(U)$, given by $f \mapsto \varphi^* f := f \circ \varphi.$
+Affine algebraic varieties are usually referred to as affine varieties.
+The affine variety $(V, \calO_V)$ is denoted $V$ when the structure sheaf is clear.
+
+We have seen how an algebraic set $V \subseteq \AA^n$ gives rise to its structure sheaf, and this defines an affine variety.
+In particular, associated to $V$ is the coordinate ring $k[V] = \Gamma(V, \calO_V)$, which is a reduced finitely generated $k$-algebra.
+Conversely, given a reduced finitely generated $k$-algebra $A$, we can ask whether there is an affine variety $V$ with coordinate ring $A$.
+In fact, there is such a $V$, and we now construct it.
+First, choose generators $a_1, \ldots, a_n$ for $A$.
+The $k$-algebra homomorphism $\varphi : k[X_1, \ldots, X_n] \to A=k[a_1,\ldots,a_n]$ given by $X_i \mapsto a_i$ induces the isomorphism $k[X_1, \ldots, X_n] / \ker \varphi \cong A$.
+Since $A$ is reduced, $\ker\varphi$ is radical, and $\bV(\ker \varphi)$ is an algebraic subset of $\AA^n$ with coordinate ring $A$.
+In view of Corollary \ref{isoofalgsetscoro}, isomorphic $k$-algebras correspond to isomorphic algebraic sets.
+
+In later chapters of this work, we need to construct an affine variety by prescribing its coordinate ring.
+The above construction tells us this is possible, but it relies on choosing generators for $A$.
+We would like to be able to construct an affine variety with a given coordinate ring in a canonical way, i.e., without choosing generators.
+This is achieved by taking the \emph{maximal spectrum} of $A$.
+
+\subsection{The maximal spectrum}
+Let $A$ be a reduced finitely generated $k$-algebra, i.e., a $k$-algebra arising as the coordinate ring of some algebraic set.
+In this section, we will define the maximal spectrum $\Spec(A)$ and show that it is an affine variety.
+To do this, we need to define $\Spec(A)$ as a set, as a topological space and as a ringed space.
+With the definition in hand, we can then show it is an affine variety.
+To illustrate the theory, we will investigate the case $A=k[X]$ as an example throughout.
+
+\emph{$\Spec(A)$ as a set:}
+the set $\Spec(A)$ is defined to be the set of maximal ideals of $A$.
+This definition is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (c.f. Corollary \ref{corollary:coordinateringbijections}).
+
+\begin{example}
+The maximal ideals in $A=k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for some $a\in k$.
+Then $\Spec(A) = \{(X-a) : a \in k\}.$
+\end{example}
+
+To define the topology and sheaf on $\Spec(A)$, we think of elements of $A$ as functions $\Spec(A) \to k$.
+To do this, we first identify $A/\frakm$ with $k$ for any $\frakm \in \Spec(A)$.
+If $\iota$ is the inclusion of $k$ into $A$ and $\pi$ is the projection $A \to A/\frakm$, we have the composition
+$$\varphi \colon k \overset{\iota}{\hookrightarrow} A \overset{\pi}{\twoheadrightarrow} A/\frakm.$$
+We claim that $\varphi$ is an isomorphism, providing our desired identification $k \cong A/\frakm$.
+The kernel of $\varphi$ are the elements of $k$ lying in $\frakm$, which is just $0$ since $\frakm$ does not contain units.
+To see $\varphi$ is surjective, note $A/\frakm$ is finitely generated over $k$ since $A$ is;
+we then see by applying Theorem \ref{hardfact} that $(A/\frakm)/k$ is an algebraic field extension.
+Since $k$ is algebraically closed, the inclusion $k \overset{\varphi}{\hookrightarrow} A/\frakm$ is surjective.
+We can now view elements of $A$ as functions $\Spec(A) \to k \cong A/\frakm$ by evaluating $f\in A$ at $\frakm\in\Spec(A)$ as $f(\frakm):=f \mod \frakm$.
+
+\begin{example}
+When $A=k[X]$ and $\frakm \in \Spec(A)$, the identification of $k$ with $A/\frakm$ is the quotient map
+$$k \hookrightarrow A \to A/\frakm, \qquad 1 \mapsto 1 \mapsto 1+\frakm.$$
+Consider $f = X^2 +3X +2 \in A$.
+To evaluate $f$ at the maximal ideal $\frakm = (X-1)$, we reduce $\mod \frakm$, i.e.,
+$$f(\frakm) = X^2 + 3X +2 = 1^2 + 3\cdot 1 +2 = 6.$$
+Here we have used our identification of $A/\frakm$ with $k$ to suppress that we are working in the quotient $A/\frakm$.
+More generally, if $\frakm_a = (X_a)$ is a general element of $\Spec(A)$ and $f$ lies in $A$, we evaluate $f(\frakm_a) = f(a)$.
+\end{example}
+
+\emph{$\Spec(A)$ as a topological space:}
+To define the topology on $\Spec(A)$, we define a topological basis, and endow $\Spec(A)$ with the generated topology.
+We recall the definition of a topological basis for the reader's convenience now.
+If $X$ is a set and $\calB$ is a collection of subsets of $X$, then $\calB$ is a topological basis if
+\begin{enumerate}
+\item $\calB$ covers $X$, i.e., $X = \bigcup_{B \in \calB} B$, and
+\item if $B_1$ and $B_2$ are sets in $\calB$ and $x \in B_1 \cap B_2$, then there exists a basis set $B_3$ such that $x \in B_3 \subseteq B_1 \cap B_2$.
+\end{enumerate}
+Such a $\calB$ induces a topology on $X$ by declaring a subset open if it is a union of elements of $\calB$.
+
+We claim that the sets 
+$$D(f) = \{\frakm : f(\frakm) \ne 0\}, \qquad f \in A,$$
+form a topological basis.
+Observe that $\frakm$ lying in $D(f)$ is equivalent to $f + \frakm \ne \frakm$, i.e., $f \notin \frakm$.
+To see that these sets cover $\Spec(A)$, note that for any $\frakm \in \Spec(A)$, there exists $f \in A$ lying outside $\frakm$, since $\frakm$ is not $A$.
+Then we have $\frakm \in D(f)$.
+To see $\{D(f) : f \in A\}$ satsfies the second axiom of a topological basis, note that it suffices to show $D(f) \cap D(g) = D(fg)$.
+We have that $\frakm \in D(fg)$ if and only if $fg +\frakm \ne 0$ in $A/\frakm$.
+Since $A/\frakm$ has no zero-divisors, this is the same as $f+\frakm \ne 0$ and $g+\frakm \ne 0$, i.e., $\frakm \in D(f) \cap D(g)$.
+We thus have $D(fg)=D(f)\cap D(g)$ and $\{D(f) : f \in A\}$ is a topological basis.
+
+\begin{example}
+Evaluating $f \in A=k[X]$ at $\frakm_a=(X-a)$ yields $f(a)$, so 
+$$D(f) = \{\frakm_a : f(a) \ne 0\}.$$
+\end{example}
+
+\emph{The sheaf on $\Spec(A)$:}
+Let us define the sheaf $\calO_{\Spec(A)}$.
+Note that if $g, h\in A$ and $h \ne 0$, we can define a function
+$$D(h) \to k, \qquad \frakm \mapsto \frac{g(\frakm)}{h(\frakm)}.$$
+For an open subset $U$ of $\Spec(A)$, $\calO_{\Spec(A)}(U)$ is defined as the set of functions such that for each point in $U$, there is a neighbourhood of the point such that the function is of the above form.
+Since this definition is local, $\calO_{\Spec(A)}$ is in fact a sheaf.
+
+\begin{example}
+Considering $h = X \in A=k[X]$ and $g=1\in A$, we have the function 
+$$D(h) =\{\frakm_a : a \ne 0\} \to k, \qquad \frakm_a \mapsto \frac{g(\frakm_a)}{h(\frakm_a)} = \frac{1}{a}.$$
+\end{example}
+
+Hello this is a test. Try again. Try again.
 
 \subsection{Tangent spaces}
-In differential geometry, a key tool used to study a surface in $\RR^3$ is the tangent space.
-In algebraic geometry, there is also a notion of the tangent space, but this is defined without the use of calculus.
-The dimensions of the tangent spaces of an affine variety give one way to define the dimension of the variety.
-With dimension defined, we can also consider the non-singular and singular points on a variety;
-the singular points are the points where the tangent space does not provide a well-defined linear approximation to the variety.
+In differential geometry, a key tool used to study surfaces in $\RR^3$ is the tangent space.
+Tangent spaces are also studied in algebraic geometry, but without using calculus.
+We will use the dimensions of tangent spaces to define the dimension of an affine variety.
+We use tangent spaces to define the singular and non-singular points of a variety, concepts which are not present in differential geometry.
+For instance, singular points are those which have a tangent space which is `too large.'
+We make these ideas precise now.
 
 We first define the tangent space for a hypersurface in $\AA^n$, i.e., an algebraic set of the form $V=\bV(f)\subseteq \AA^n$ for some non-constant irreducible $f \in k[X_1,\ldots,X_n]$.
-Let $P$ be a point $V$.
+Let $P=(a_1,\ldots,a_n)$ be a point in $V$.
 In what follows, let $\frac{\partial f}{\partial X_i}$ denote the formal partial derivative of the polynomial $f$.
-For example, $\frac{\partial}{\partial X_i} X_i^n = n X_i^{n-1}$, and the partial derivative of an arbitrary polynomial can be computed using the Leibniz rule and linearity;
-calculus is not needed to define this formal partial derivative, so the definition makes sense for any field $k$.
+For example, $\frac{\partial}{\partial X_i} X_j$ is $1$ if $i=j$ and $0$ otherwise, and the partial derivative of an arbitrary polynomial is computed using the Leibniz rule and linearity.
 Define the first-order part of $f$ at $P$ by
 \begin{equation}\label{equationtangent}
 f_P^{(1)} := \sum_{i=1}^n \frac{\partial f}{\partial X_i} (P) (X_i-a_i).
 \end{equation}
 Then the tangent space of $V$ at $P$ is
 $$T_PV := \bV(f_P^{(1)}).$$
-This is an affine subspace of $\AA^n$ (i.e., a translation of a vector subspace) which passes through $P$ and is tangent to $f$, matching our usual intuition for what a tangent space is.
-The following figure gives an example to illustrate:
+This is an affine subspace of $\AA^n$ containg $P$ and to $f$, matching the idea of tangent spaces in differential geometry.
+We give an example in Figure \ref{figure:tangentspace}.
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=0.5\textwidth]{../images/V_and_TpV}
-%\caption*{$\bV(f)$ and $\bV(f_P^{(1)})$ for $f = y^2 - x^3 + x - 1$ and $P=(-1, 1)$ \textcolor{red}{replace with tikz}}
-%\end{figure}
-
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \begin{tikzpicture}
   % Draw axes
@@ -1047,10 +1231,11 @@ The following figure gives an example to illustrate:
   \filldraw[black] (-1, 1) circle (2pt) node[above left] {$P$};
 
   % Labels for the curve and tangent line
-  \node[blue] at (2, 1.4) {$\bV(f)$};
-  \node[red] at (-2, -1) {$\bV(f_P^{(1)})$};
+  \node[blue] at (2, 1.4) {$V$};
+  \node[red] at (-2, -1) {$T_PV$};
 \end{tikzpicture}
-\caption*{$\bV(f)$ and $\bV(f_P^{(1)})$ for $f = y^2 - x^3 + x - 1$ and $P=(-1, 1)$.}
+\caption{The tangent space of $V = \bV(y^2 - x^3 + x - 1)$ at $P=(-1, 1)$.}
+\label{figure:tangentspace}
 \end{figure}
 
 Now let $V\subseteq\AA^n$ be a general algebraic set.
@@ -1163,11 +1348,15 @@ Then
 $$\ker \varphi = \{h \in M_P : h + \bI(V) \in \frakm_P^2\}=\{h \in M_P:h+\bI(V)\in M_P^2/\bI(V)\}=M_P^2+\bI(V),$$
 so $\varphi$ induces the desired isomorphism.
 \end{proof}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONVEX GEOMETRY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Convex geometry}\label{sectionconvexgeometry}
+\todo{Fix this introduction to match the chapter.}
 Affine toric varieties are a class of algebraic varieties which are determined by a \emph{cone} in a vector space.
 The interplay between the variety and its cone leads to a rich theory combining the algebraic geometry of the variety and the convex geometry of the cone.
 Moreover, computations with the cone can often be done explicitly, which means toric varieties are useful to study as examples.
@@ -1179,26 +1368,33 @@ In this chapter, we will define and study toric varieties; we will also see how 
 We start by discussing the prerequisite convex geometry.
 
 \subsection{Convex cones}
+\todo{Start with vector space instead of lattice.}
 Let $N$ be a lattice, i.e., a free abelian group of finite rank $n$.
-Let $M = \mathrm{Hom}(N, \ZZ)$ denote the dual lattice, with dual pairing $\langle \cdot, \cdot \rangle : M \times N \to \ZZ$.
-We can consider consider $N$ and $M$ as a subsets of the $n$-dimensional vector spaces
+Let $M = \mathrm{Hom}_\ZZ(N, \ZZ)$ denote the dual lattice, with dual pairing $\langle \cdot, \cdot \rangle : M \times N \to \ZZ$.
+We consider $N$ and $M$ as subsets of the $n$-dimensional vector spaces
 $N_\RR = N \otimes_\ZZ \RR$ and $M_\RR = M \otimes_\ZZ \RR$, respectively.
 Note that $N_\RR$ and $M_\RR$ are dual vector spaces, and we retain the notation $\langle \cdot, \cdot \rangle$ for the dual pairing $M_\RR \times N_\RR \to \RR$.
 
+\todo{Introduce/motivate cone.}
 A subset $\sigma \subseteq N_\RR$ is a \emph{cone} if it is closed under nonnegative scalar multiplication, i.e., $\lambda x \in \sigma$ for all $x \in \sigma$ and all $\lambda \in \RR_{\ge 0}$.
 A set $\sigma \subseteq N_\RR$ is \emph{convex} if for any two points in $\sigma$, the line segment joining them is contained in $\sigma$,
 i.e., $x, y \in \sigma$ implies $\lambda x + (1 - \lambda) y \in \sigma$ for all $\lambda \in [0, 1]$.
-Since cones are closed under positive scalar multiplication by assumption, a cone $C$ is convex if and only if it is closed under addition.
+Since cones are closed under positive scalar multiplication, a cone is convex if and only if it is closed under addition.
 
-\begin{example}\label{coneexamples}
-The union of rays
-$$\sigma_1 = \{(x, x/\sqrt{3}) \in \RR^2: x \in \RR_{\ge 0}\} \cup \{(x, \sqrt{3} \, x) \in \RR^2 : x \in \RR_{\ge 0} \}$$
-is cone but not convex.
+\begin{example}\label{example:cones}
+\begin{enumerate}
+\item
+The two rays
+$$\sigma_1 = \{(x, x), \, (x, 2x) : x \in \RR_{\ge 0}\}$$
+is a cone but not convex.
 We can ``fill in'' $\sigma_1$ to get the convex cone
-$$\sigma_2 = \{(x, y) \in \RR^2 : x \in \RR_{\ge 0}, \, x/\sqrt{3} \le y \le \sqrt{3} \, x\}.$$
-The set
-$$\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}$$
-is a convex cone in $\RR^3$.
+$$\sigma_2 = \{(x, y) \in \RR_{\ge 0}^2 : x \le y \le 2 x\}.$$
+
+\item
+An example of a convex cone in $\RR^3$ is
+$$\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}.$$
+\end{enumerate}
+\end{example}
 
 \begin{figure}[H]
      \begin{subfigure}[b]{0.325\textwidth}
@@ -1207,8 +1403,8 @@ is a convex cone in $\RR^3$.
               \begin{tikzpicture}
       		\draw[->,thick] (-0.5,0) -- (4,0);
       		\draw[->,thick] (0,-0.5) -- (0,4);
-      		\draw[gray,thick,->,domain=0:4] plot (\x,{\x/sqrt(3)});
-      		\draw[gray,thick,->,domain=0:2.2] plot (\x,{sqrt(3)*\x});
+      		\draw[gray,thick,->,domain=0:3.9] plot (\x,\x);
+      		\draw[gray,thick,->,domain=0:2] plot (\x,{2*\x});
     	    \end{tikzpicture}         
           }  
           \caption*{$\sigma_1$}
@@ -1220,9 +1416,9 @@ is a convex cone in $\RR^3$.
               \begin{tikzpicture}
       		\draw[->,thick] (-0.5,0) -- (4,0);
       		\draw[->,thick] (0,-0.5) -- (0,4);
-		    \fill[gray!30] (0,0) -- plot[domain=0:3.8] (\x,{\x/sqrt(3)}) -- plot[domain=2.2:0] (\x,{sqrt(3)*\x}) -- cycle;
-      		\draw[gray,thick,->,domain=0:4] plot (\x,{\x/sqrt(3)});
-      		\draw[gray,thick,->,domain=0:2.32] plot (\x,{sqrt(3)*\x});
+		    \fill[gray!30] (0,0) -- plot[domain=0:3.7] (\x,{\x}) -- plot[domain=1.85:0] (\x,{2*\x}) -- cycle;
+      		\draw[gray,thick,->,domain=0:3.9] plot (\x,{\x});
+      		\draw[gray,thick,->,domain=0:2] plot (\x,{2*\x});
     	\end{tikzpicture}          
           }  
           \caption*{$\sigma_2$}
@@ -1244,8 +1440,11 @@ is a convex cone in $\RR^3$.
           \caption*{$\sigma_3$}
           \label{fig:C}
      \end{subfigure}
- \end{figure}
-\end{example}
+     \caption{The three cones in Example \ref{example:cones}.}
+     \label{figure:cones}
+\end{figure}
+
+\todo{Motivate the definition of the dual cone/have better flow. Example of motivation: the dual cone controls the faces.}
 
 \begin{definition}
 Let $\sigma$ be a cone.
@@ -1254,20 +1453,23 @@ $$\sigma^\vee = \{u \in M_\RR : \langle u, v \rangle \ge 0 \text{ for all } v \i
 \end{definition}
 
 \begin{example}
-In the following examples, we let $N = \ZZ^n \subseteq \RR^n \cong N_\RR$.
+Consider the lattice $N = \ZZ^n$ inside $N_\RR = \RR^n$.
 Let $e_1, \ldots, e_n$ be the standard basis for $N$ and $e_1^*, \ldots, e_n^*$ the dual basis for $M$.
 \begin{enumerate}
 \item
-Let $\sigma := \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}.$
+Consider the cone $\sigma := \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}.$
 Observe that a functional $\sum_{i=1}^n a_i e_i^*$ is in the dual cone if and only if $a_i \ge 0$ for all $i$.
 Then $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$.
 
 \item
-Let $n = 2$ and let $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}.$
-If $u \in M_\RR$, checking $\langle u, v \rangle \ge 0$ for all $v \in \sigma$ is equivalent to checking for the generators $v = e_1$ and $v = -e_1 + 2 e_2$.
-So then $u = a e_1^* + b e_2^* \in M_\RR$ is in $\sigma^\vee$ exactly when the following two inequalities hold:
+Let $n = 2$ and consider the cone $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}.$
+To determine the elements $u\in\sigma^\vee$, we only need to check when $\langle u, v \rangle \ge 0$ for the generators $v = e_1$ and $v = -e_1 + 2 e_2$.
+Then $u = a e_1^* + b e_2^* \in M_\RR$ lies in $\sigma^\vee$ precisely when the following two inequalities hold:
 $$\langle u, e_1 \rangle = a \ge 0, \quad \langle u, -e_1 + 2e_2 \rangle = -a + 2b \ge 0.$$
-Below we have a sketch of $\sigma$ and $\sigma^\vee$:
+In view of Figure \ref{figureconeanddual}, we see  $\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1 + e_2, e_2\}.$
+\end{enumerate}
+\end{example}
+
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -1311,94 +1513,93 @@ Below we have a sketch of $\sigma$ and $\sigma^\vee$:
             \node at (1.75, 1.75) {\small{$\sigma^\vee$}};
         \end{scope}
     \end{tikzpicture}
+    \caption{The cone $\sigma=\Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$ and its dual.}
+     \label{figureconeanddual}
 \end{figure}
-\noindent
-Then we can see that $\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1 + e_2, e_2\}.$
-\end{enumerate}
-\end{example}
 
-The following theorem relates a cone to its dual and has many important consequences (which we will see in \S \ref{polyhedralcones}): 
+The following theorem relates a cone to its dual and has many important consequences;
+for example, it is not obvious that dualising a cone twice yields the original cone, but the theorem establishes this fact (c.f. Corollary \ref{corollary:doubledual}).
+We will see other consequences of the result in \S \ref{polyhedralcones}.
 
-\begin{theorem}[{\cite[\S 1.2]{Fulton93}}]\label{dualitythm}
-Let $\sigma$ be a closed convex cone in $N_\RR$.
-If $v_0 \notin \sigma$, then there exists $u_0 \in \sigma^\vee$ such that $\langle u_0, v_0 \rangle <0.$
+\begin{theorem}[{\cite[\S 1.2]{Fulton93}}]\label{theorem:dualcone}
+Let $\sigma$ be a topologically closed convex cone in $N_\RR$.
+If $v \notin \sigma$, then there exists $u \in \sigma^\vee$ such that $\langle u, v \rangle <0.$
 \end{theorem}
 
-Theorem \ref{dualitythm} is a foundational result for the theory of toric varieties.
-References such as \cite{Fulton93}, \cite{CLS11}, and \cite{Oda88} omit a proof, but we present one for completeness.
-We begin with a lemma from analysis.
+References such as \cite{Fulton93}, \cite{CLS11}, and \cite{Oda88} omit a proof of Theorem \ref{theorem:dualcone}, but we present one for completeness.
+We begin with a lemma from analysis:
 
-\begin{lemma}\label{mindistancelemma}
-Let $A$ and $B$ be disjoint closed subsets of a finite-dimensional normed vector space $(V, \|\cdot\|)$, and assume $A$ is compact.
-Then there exist $a_0 \in A$ and $b_0 \in B$ which minimise the distance $\|a-b\|$ over all $a \in A$ and $b \in B$.
+\begin{lemma}\label{lemma:mindistance}
+Let $A$ and $B$ be disjoint, topologically closed subsets of a Euclidean vector space $(V, (\cdot,\cdot))$, and assume $A$ is compact.
+Then there exist $a_{\text{min}} \in A$ and $b_{\text{min}} \in B$ which minimise the distance $\|a-b\|$ over all $a \in A$ and $b \in B$.
+(Here $\|\cdot\|$ is the norm induced by $(\cdot,\cdot)$.)
 \end{lemma}
 %%%% THIS IS A WIKIPEDIA PROOF; FIND A REFERENCE %%%
 \begin{proof}
-Take arbitrary $a \in A$ and $b \in B$ and set $r_1 = \|a-b\| > 0$.
-Since $A$ is compact, there exists $r_2 > 0$ such that $A \subseteq \overline{B_{r_2}(a)}$.
-Let
-$S = B \cap \overline{B_{r_1+r_2}(a)},$
-which is nonempty since $b \in S$.
-Since the distance function is continuous and $A \times S$ is compact, there exist $(a_0, b_0) \in A \times S$ minimising the distance $\|a_0 - b_0\|$ for all pairs of points in $A \times S$.
-We claim that this is in fact the minimum for all pairs of points in $A \times B$; 
-suppose to the contrary that there is $(a', b') \in A \times B$ with $\|a' - b'\| < \|a_0 - b_0\|$. 
-In particular, since $\|a_0 - b_0\|\le r_1$, $\|a' - b'\| < r_1$ and so
-$\|a - b'\| \le \|a - a'\| + \|a' - b'\| < r_2 + r_1.$
-This implies $b' \in S$, contradicting that $\|a_0-b_0\|$ attained the minimum distance for pairs in $A \times S$.
+Take arbitrary $x \in A$ and $y \in B$ and set $r_1 := \|x-y\| > 0$.
+Since $A$ is compact, it is bounded by a closed ball of some radius $r_2 > 0$.
+Let $S := B \cap \overline{B_{r_1+r_2}(x)},$ which is nonempty since $y \in S$.
+Since the distance function is continuous and $A \times S$ is compact, there exists $(a_{\text{min}}, b_{\text{min}}) \in A \times S$ minimising the distance $\|a - b\|$ for all pairs of points in $A \times S$.
+We claim that this is in fact the minimum for all pairs of points in $A \times B$.
+Suppose to the contrary that there is $(\alpha,\beta) \in A \times B$ with $\|\alpha - \beta\| < \|a_{\text{min}} - b_{\text{min}}\|$. 
+In particular, since $\|a_{\text{min}} - b_{\text{min}}\|\le r_1$, $\|\alpha - \beta\| < r_1$ and so
+$\|x - \beta\| \le \|x- \alpha\| + \|\alpha - \beta\| < r_2 + r_1.$
+This implies $\beta$ lies in $S$, contradicting that $\|a_{\text{min}} - b_{\text{min}}\|$ attained the minimum distance for pairs in $A \times S$.
 \end{proof}
 
-\begin{theorem}[Hyperplane Separation Theorem {\cite[\S 2.5.1]{BV04}}]\label{hyperplaneseparation}
-Let $A$ and $B$ be nonempty disjoint closed convex sets in a Euclidean vector space $(V, (\cdot,\cdot))$, and assume $A$ is compact.
-Then there exists $v \in V\setminus\{0\}$ and $\lambda \in \RR$ such that for all $a \in A$, $(v, a) \le \lambda$, and for all $b \in B$, $(v, b) \ge \lambda$.
-In other words, there is an affine hyperplane such that $A$ is contained in the negative halfspace and $B$ is contained in the positive halfspace.
+The proof of Theorem \ref{theorem:dualcone} follows from the following hyperplane separation theorem, which says that for certain sets, we can find a hyperplane so that each set lies in a different halfspace.
+
+\begin{theorem}[Hyperplane separation theorem {\cite[\S 2.5.1]{BV04}}]\label{hyperplaneseparation}
+Under the assumptions of Lemma \ref{lemma:mindistance}, there exists $w \in V\setminus\{0\}$ and $\lambda \in \RR$ such that for all $a \in A$, $(w, a) \le \lambda$, and for all $b \in B$, $(w, b) \ge \lambda$.
 \end{theorem}
 
 \begin{proof}
-Lemma \ref{mindistancelemma} yields $a_0 \in A$ and $b_0 \in B$ minimising the distance between points in $A$ and points in $B$.
-Define
-$$v := b_0 - a_0, \qquad \lambda := \frac{\|b_0\|^2 - \|a_0\|^2}{2} = \frac{1}{2}(b_0 - a_0, b_0 + a_0).$$
-The set of $x \in V$ satisfying $(v, x) = \lambda$ is the hyperplane orthogonal to the line segment joining $a_0$ and $b_0$, and passing through its midpoint.
-Let us prove that $(v, b) \ge \lambda$ for all $b \in B$ (a similar argument shows $(v, a) \le \lambda$ for all $a \in A$).
-Assume for a contradiction that there exists $u \in B$ with $(v, u) < \lambda$.
-Then,
-\begin{align*}
-	(v, u) - \frac{1}{2}(v, b_0 + a_0) < 0
-							 \implies (v, u - b_0 + \frac{1}{2} (b_0 - a_0)) < 0
-							 \implies (v, u - b_0) + \frac{1}{2} \|v\|^2 < 0.
-\end{align*}
-Thus $(v, u - b_0) < 0$.
-Using the Leibniz rule for differentiating inner products, we see
-$$\left. \frac{d}{dt} \|v + t(u - b_0)\|^2 \right|_{t=0} = \left. 2 (v + t(u-b_0), u - b_0) \right|_{t=0} = 2 (v, u - b_0) < 0,$$
-so for small $t > 0$, we have
-$$ \|b_0 + t(u - b_0) - a_0\| = \|v + t(u - b_0)\| < \|v\| = \|b_0 - a_0\|.$$
-But $B$ is convex and $b_0, u \in B$, so $(b_0 + t (u - b_0)) \in B$ when $t$ is sufficiently small.
-This contradicts the minimality of $\|b_0 - a_0\|$.
+Lemma \ref{lemma:mindistance} yields $a_{\text{min}} \in A$ and $b_{\text{min}} \in B$ minimising the distance between points in $A$ and points in $B$.
+Then the desired $w$ and $\lambda$ are
+$$w := b_{\text{min}} - a_{\text{min}}, \qquad\text{and}\qquad \lambda := \frac{1}{2}(b_{\text{min}} - a_{\text{min}}, b_{\text{min}} + a_{\text{min}}).$$
+The hyperplane defined by $(w, \cdot) = \lambda$ is orthogonal to the line segment joining $a_{\text{min}}$ and $b_{\text{min}}$ and passing through the midpoint.
+Let us prove that $(w, b) \ge \lambda$ for all $b \in B$ (a similar argument shows $(w, a) \le \lambda$ for all $a \in A$).
+Proceeding by contradiction, assume that there exists $u \in B$ with $(w, u) < \lambda$.
+Then by definition of $w$ and $\lambda$, this means 
+$$0 > (w, u) -\frac{1}{2}(w, b_{\text{min}}+a_{\text{min}}) = (w, u-b_{\text{min}}+\frac{1}{2} (b_{\text{min}}-a_{\text{min}})) =(w, u-b_{\text{min}})+\frac{1}{2}\|w\|^2,$$
+so in particular, $(w, u-b_{\text{min}})<0$.
+Consider the function
+$$g(t):=\|w+t(u-b_{\text{min}})\|^2.$$
+Note that $g(0)=\|w\|$, and using the Leibniz rule for differentiating inner products, we see
+$$g'(0) = 2 (w+t(u-b_{\text{min}}), u-b_{\text{min}}) \big|_{t=0} = 2 (w, u-b_{\text{min}}) < 0.$$
+This implies that for small $t > 0$, $g(0) > g(t)$.
+In other words,
+$$\|b_{\text{min}} - a_{\text{min}}\| > \|b_{\text{min}} + t(u - b_{\text{min}}) - a_{\text{min}}\|.$$
+But $B$ is convex and contains $b_{\text{min}}$ and $u$, so $B$ also contains $(b_{\text{min}} + t (u - b_{\text{min}}))$.
+This contradicts the minimality of $\|b_{\text{min}} - a_{\text{min}}\|$.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{dualitythm} \textup{(\cite[Example 2.20]{BV04})}]
-Fix a basis $e_1, \ldots, e_n$ for $N_\RR$ and endow $N_\RR$ with the Euclidean inner product which makes the basis orthonormal (i.e., $(e_i, e_j) = \delta_{ij}$).
-Since $\sigma$ is closed and $v_0 \notin \sigma$, there exists $\varepsilon > 0$ such that $\overline{B_\varepsilon(v_0)}$ does not intersect $\sigma$.
-By Theorem \ref{hyperplaneseparation}, there exist $v \in N_\RR$ and $\lambda \in \RR$ such that 
-$$(v, x) \ge \lambda \qquad \text{and} \qquad (v, y) \le \lambda$$
-for all $x \in \sigma$ and all $y \in \overline{B_\varepsilon(v_0)}$.
-Since $x = 0 \in \sigma$, $\lambda \le 0$.
-In fact, we claim that $(v, x) \ge 0$ for all $x \in \sigma$ and $(v, v_0) < 0$,
-which completes the proof as then $u_0 := (x \mapsto (v, x))$ is a linear form in $\sigma^\vee$ with $\langle u_0, v_0 \rangle < 0$.
-Suppose there exists $x \in \sigma$ with $(v, x) = \lambda_0 < 0$.
-Then for any $s \in \RR_{\ge 0}$, $s x \in \sigma $ and $(v, s x) = s \lambda_0$, contradicting that $\{(v, x) : x \in \sigma\}$ is bounded from below.
-Assume for a contradiction $(v, v_0) = 0$.
-We have $y = v_0 + \frac{\varepsilon v}{\|v\|} \in \overline{B_\varepsilon(v_0)}$ and
-$$0 \ge \lambda \ge (v, y) = (v, v_0 + \frac{\varepsilon v}{\|v\|}) = \varepsilon \|v\| > 0,$$
-a contradiction.
+To prove Theorem \ref{theorem:dualcone}, we use the hyperplane separation theorem to find a certain hyperplane containing zero, which gives rise to the desired functional $u\in\sigma^\vee$.
+
+\begin{proof}[Proof of Theorem \ref{theorem:dualcone} \textup{(\cite[Example 2.20]{BV04})}]
+Fix a basis $e_1, \ldots, e_n$ for $N_\RR$ and endow $N_\RR$ with the inner product which makes the basis orthonormal.
+Since $\sigma$ is topologically closed and $v \notin \sigma$, there exists $\varepsilon > 0$ such that $\overline{B_\varepsilon(v)}$ does not intersect $\sigma$.
+By Theorem \ref{hyperplaneseparation}, there exist $w \in N_\RR$ and $\lambda \in \RR$ such that $(w, x) \ge \lambda$ for all $x \in \sigma$ and $(w, y) \le \lambda$ for all $y \in \overline{B_\varepsilon(v)}$.
+In fact, we must have $\lambda \le 0$ since $0$ lies in $\sigma$.
+
+We claim that $(w, x) \ge 0$ for all $x \in \sigma$ and $(w, v) < 0$.
+This completes the proof as then $u := (x \mapsto (w, x))$ is a linear form in $\sigma^\vee$ with $\langle u, v \rangle < 0$.
+To see the first claim, suppose there exists $x \in \sigma$ with $(w, x) =: \lambda' < 0$.
+Then for any $s \in \RR_{\ge 0}$, $s x \in \sigma $ and $(w, s x) = s \lambda'$, contradicting that $\{(w, x) : x \in \sigma\}$ is bounded from below.
+To see the second claim, we just need to show $(w, v) \ne 0$.
+Suppose we had $(w, v) = 0$.
+As $y := v + \frac{\varepsilon w}{\|w\|}$ lies in $\overline{B_\varepsilon(v)}$, we get
+$$\lambda \ge (w, y) = (w, v + \varepsilon w/\|w\|) = \varepsilon \|w\| > 0,$$
+contradicting that $\lambda \le 0$.
 \end{proof}
 
-\begin{corollary}
-Let $\sigma$ be a closed cone in $N_\RR$.
+\begin{corollary}\label{corollary:doubledual}
+Let $\sigma$ be a topologically closed cone in $N_\RR$.
 Then $(\sigma^\vee)^\vee = \sigma$.
 \end{corollary}
 \begin{proof}
-If $v \in \sigma$, $\langle u, v\rangle \ge 0$ for all $u \in \sigma^\vee$, so $v \in (\sigma^\vee)^\vee$.
-If $v \notin \sigma$, Theorem \ref{dualitythm} implies there exists $u \in \sigma^\vee$ with $\langle u, v \rangle < 0$ and hence $v \notin (\sigma^\vee)^\vee$.
+If $v \in \sigma$, then $\langle u, v\rangle \ge 0$ for all $u \in \sigma^\vee$, so $v \in (\sigma^\vee)^\vee$.
+If $v \notin \sigma$, then Theorem \ref{theorem:dualcone} implies there exists $u \in \sigma^\vee$ with $\langle u, v \rangle < 0$ so that $v \notin (\sigma^\vee)^\vee$.
 \end{proof}
 
 \subsection{Polyhedral cones}\label{polyhedralcones}
@@ -1415,7 +1616,7 @@ Every example of a cone we have seen so far has been polyhedral, except for $\si
 As given, a more apt name for this definition would be ``finitely-generated cone'';
 the name polyhedral is justified by the fact that a cone satisfies Definition \ref{convexpolyhedraldef} if and only if it is a finite intersection of closed halfspaces with $0$ on their boundary (i.e., is polyhedral)---see \cite[\S 1.3]{DLHK13} for a proof.
 
-Fulton \cite[\S 1.2]{Fulton93} states and proves many important consequences of Theorem \ref{dualitythm} for convex polyhedral cones.
+Fulton \cite[\S 1.2]{Fulton93} states and proves many important consequences of Theorem \ref{theorem:dualcone} for convex polyhedral cones.
 We explain a few of these now.
 
 Any $u \in M_\RR$ defines a hyperplane $u^\perp$ and corresponding nonnegative halfspace $u^\vee$.
