@@ -14,11 +14,12 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{hyperref}
-\usepackage{microtype,correctmathalign}
+\usepackage{microtype}
+\usepackage{correctmathalign}
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{caption}
-%\usepackage{quiver}
+\usepackage{quiver}
 %\hypersetup{linktoc = all, colorlinks = true, urlcolor = Blue, linkcolor = Red, citecolor = RoyalBlue}
 %\usepackage[parfill]{parskip}
 
@@ -36,6 +37,7 @@
 \definecolor{green}{rgb}{.4,.6,.4}
 \newcommand{\question}[1]{\noindent  \textcolor{red}{Question: #1}}
 \newcommand{\todo}[1]{\noindent  \textcolor{blue}{To do: #1}}
+
 % Editing line spacing
 %\linespread{1.5}
 
@@ -271,11 +273,9 @@
 \allowdisplaybreaks
 
 \begin{document}
+
 \pagenumbering{roman}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Title Page
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
 \includegraphics[width=10cm]{../images/UQLogo.jpg} \\ 
 \vspace{3cm}
@@ -295,21 +295,15 @@
 {\textsc{\href{https://smp.uq.edu.au/}{School of Mathematics and Physics}}}
 \end{center}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Table of contents
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \tableofcontents
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTRODUCTION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \pagenumbering{arabic}
-\section{Introduction}
+\section{Introduction}\label{chapter:introduction}
 \subsection{Algebraic geometry}
+
+
 
 
 
@@ -317,40 +311,35 @@
 
 
 
+
+
 \subsection{Geometric invariant theory}
+
+
 
 
 
 \subsection{Contents of this thesis}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PART I: AFFINE TORIC VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\begin{center}
-%%\vspace{0.5 \textheight}
-%%{\LARGE\textsc{Part I: Affine toric varieties}} \\
-%%\vspace{8cm}
-%%\end{center}
-%% First Part
-%\newpage
-%\phantomsection
-%\addcontentsline{toc}{part}{Part I: Affine toric varieties}
-%\thispagestyle{empty} % Remove page number
-%\vspace*{\fill} % Center vertically
-%\begin{center}
-%    \Huge \textsc{Part I: Affine Toric Varieties}
-%\end{center}
-%\vspace*{\fill}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ALGEBRAIC SUBSETS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
 \newpage
-\section{Algebraic subsets of affine space}\label{chapter:algebraicsets}
+\addtocontents{toc}{\vskip 1em}
+\section{Algebraic subsets of affine space}\label{chapter:algebraicsubsets}
 In this chapter, we introduce affine varieties, which are the central object of study in this project.
 Algebraic geometry establishes a connection between spaces defined by zero sets of polynomials (geometric objects), and ideals in a polynomial ring (algebraic objects).
 We detail this connection, and explain how algebraic properties of rings and ideals inform properties of the corresponding geometric spaces.
+
+
+
+
 
 \subsection{Affine space and algebraic sets}
 Let $k$ be a field.
@@ -397,6 +386,10 @@ The curve $\bV(Y^2 - X^3)$ is algebraic, and it is an example of a so-called cus
 \end{enumerate}
 \end{example}
 
+
+
+
+
 \subsection{The map $\bV$}
 Our discussion above tells us that to study zero sets of polynomials, it suffices to study zero sets of ideals in $A$.
 The map
@@ -426,6 +419,10 @@ Conversely, for each $\alpha$, part (1) tells us $\bV(I_\alpha) \supseteq \bV\le
 $\bigcap_{\alpha\in\calA} \bV(I_\alpha) \supseteq \bV\left(\sum_{\alpha\in\calA} I_\alpha\right).$
 \end{proof}
 
+
+
+
+
 \subsection{The Zariski topology}
 Proposition \ref{vproperties} tells us arbitrary intersections and finite unions of algebraic sets are algebraic.
 In Example \ref{algsetex}, we saw $\emptyset$ and $\AA^n$ are algebraic.
@@ -440,6 +437,10 @@ When $k$ is an infinite field, this topology is not Hausdorff; any two nonempty 
 
 Example \ref{zariskia1} shows us that the Zariski topology is a very coarse toplogy, in the sense that open sets are large.
 Nonetheless, the Zariski topology plays an important role in studying algebraic sets.
+
+
+
+
 
 \subsection{The map $\bI$}
 The map $\bV$ gave us a map from ideals to algebraic subsets; this is our first link between algebra and geometry.
@@ -530,6 +531,10 @@ Algebraically, we can see the reducibility of $V$ since $\bI(V) = (XY)$ is not p
 ($X$ and $Y$ do not lie in $(XY)$, but $XY$ lies in $(XY)$).
 \end{enumerate}
 \end{example}
+
+
+
+
 
 \subsection{The Nullstellensatz}\label{The Nullstellensatz}
 Our goal in this section is to upgrade the maps $\bV$ and $\bI$ to a bijection between algebraic sets and a particular class of ideals.
@@ -623,6 +628,10 @@ $$
 $$
 \end{corollary}
 
+
+
+
+
 \subsection{Coordinate rings and regular functions}
 Let $V \subseteq \AA^n$ be an algebraic set.
 The \emph{coordinate ring of $V$} is defined as
@@ -700,11 +709,17 @@ so in view of Proposition \ref{reducedradical}, $\bI(W)$ is radical if and only 
 This establishes the first bijection, and the other two are analogous.
 \end{proof}
 
+
+
+
+
 \subsection{Products of algebraic sets}
 
 
 
-\subsection{Polynomial maps between algebraic subsets}\label{polymaps}
+
+
+\subsection{Polynomial maps between algebraic sets}\label{section:polynomialmaps}
 Throughout this section, let $V \subseteq \AA^n$ and $W \subseteq \AA^m$ be algebraic sets.
 We write $X_1, \ldots, X_n$ for the coordinates on $\AA^n$ and $Y_1, \ldots, Y_m$ for the coordinates on $\AA^m$.
 
@@ -820,6 +835,10 @@ This set is not algebraic, so the image of a polynomial map is not necessarily a
 \end{enumerate}
 \end{example}
 
+
+
+
+
 \subsection{Open subsets of algebraic sets}
 Let $V \subseteq \AA^n$ be an algebraic set and $f \in k[V]$ a polynomial function on $V$.
 Then the set
@@ -898,7 +917,7 @@ $$A[X]/(1-hX) \cong A_h.$$
 
 \textcolor{red}{Explain how this means $k[V_f] = k[V]_f$.}
 
-\begin{proposition}[{\cite[Proposition 1.14]{Milne13}}]
+\begin{proposition}[{\cite[Proposition 1.14]{Milne13}}]\label{proposition:localizationideals}
 Let $S$ be a multiplicatively closed subset of a ring $A$.
 The map
 $$\frakp \mapsto (S^{-1}A) \frakp$$
@@ -924,10 +943,14 @@ Then, the coordinate ring of $(k^\times)^n$ is
 $$k[X_1, \ldots, X_n]_{X_1 \cdots X_n} = k[X_1, X_1^{-1}, \ldots, X_n, X_n^{-1}],$$
 the ring of Laurent polynomials.
 
+
+
+
+
 \subsection{Regular functions}
 Let $V$ be an algebraic subset of $\AA^n$.
 When studying some class of objects, we need an appropriate idea of the structure-preserving maps between them.
-One such kind of a map for algebraic sets are the polynomial maps, which we saw in \S \ref{polymaps}.
+One such kind of a map for algebraic sets are the polynomial maps, which we saw in \S \ref{section:polynomialmaps}.
 A function $V \to k$ being polynomial is a global property, as the function must be defined by a single polynomial for all points of $V$.
 This global property is often too restrictive, so we must develop a local structure-preserving property.
 For example, in real analysis, differentiability is a local property: a function is differentiable if it is differentiable at each point, and this can be checked on an arbitrary neighbourhood of a point.
@@ -987,10 +1010,17 @@ To see $f \in \calO_V(U)$, note that if $P \in U$, then $P\in U_i$ for some $i$,
 
 \textcolor{red}{How does this reduce to our previous definition when $U=V$?}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AFFINE VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 \newpage
+\addtocontents{toc}{\vskip 1em}
 \section{Affine varieties}
 In this chapter, we define and study affine varieties---these are spaces which `look like' algebraic sets, defined without needing to be embedded in an affine space.
 This definition is needed because we often want to study spaces without an ambient space.
@@ -1000,6 +1030,11 @@ This is easily achieved in the context of affine varieties by the taking the max
 We start by defining sheaves, which is an open assignment of a $k$-algebra of functions to open sets in a topological space---this is an abstraction of looking at the regular functions defined on an open subset of an algebraic set.
 Affine varieties can then be defined as a topological space with a sheaf that looks like an algebraic set.
 For the remainder of the chapter, we define the tangent space of a variety, and also look at certain properties of morphisms between affine varieties.
+
+
+
+
+
 
 \subsection{Sheaves and their morphisms}\label{varietiessection}
 Proposition \ref{sheafprop} alludes to an important object appearing in many areas of mathematics, called a sheaf.
@@ -1029,20 +1064,13 @@ To further illustrate the definition of a sheaf, we give another example as well
 
 \begin{example}
 \begin{enumerate}
-\item
-Let $V$ be any topological space.
+\item Let $V$ be any topological space.
 For any open set $U$, let $\calO_V(U)$ be the set of continuous functions $U \to \RR$.
 It is clear $\calO_V$ satisfies condition (1) in Definition \ref{sheafdef}, and conditions (2) and (3) hold since continuity is a local property. Thus $\calO_V$ is a sheaf of $\RR$-algebras.
-
-\item
-Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of differentiable functions $U \to \RR$.
+\item Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of differentiable functions $U \to \RR$.
 Since differentiability is a local property, $\calO_V$ is a sheaf of $\RR$-algebras.
-
-\item
-If $(V, \calO_V)$ is a ringed space and $U$ is an open subset of $V$, then $\left. \calO_V \right|_U$, the restriction of $\calO_V$ to open subsets of $U$, is a sheaf on $U$.
-
-\item
-Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of bounded functions $U \to \RR$.
+\item If $(V, \calO_V)$ is a ringed space and $U$ is an open subset of $V$, then $\left. \calO_V \right|_U$, the restriction of $\calO_V$ to open subsets of $U$, is a sheaf on $U$.
+\item Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of bounded functions $U \to \RR$.
 This does not define a sheaf since condition (3) of Definition \ref{sheafdef} does not hold;
 let $\{U_i\}$ be the open cover of $\RR$ given by $U_i:=(-i, i)$ and observe that $f_i(x):=x$ lies in $\calO_V(U_i)$ for each $i$ but $f(x) = x$ does not lie in $\calO_V(\RR)$.
 This fails to be a sheaf because boundedness is not a local property.
@@ -1085,33 +1113,40 @@ If $(V, \calO_V)$ is a ringed space and $U$ is an open subset of $V$, the inclus
 We say that a morphism of ringed spaces is an isomorphism if it is bijective and its inverse is also a morphism.
 Then isomorphisms are in particular homeomorphisms.
 
+
+
+
+
 \subsection{Affine varieties}
 Having defined ringed spaces, we can now define affine algebraic varieties.
-In Chapter \ref{chapter:algebraicsets}, we studied algebraic sets embedded in an ambient affine space.
+In Chapter \ref{chapter:algebraicsubsets}, we studied algebraic sets embedded in an ambient affine space.
 Roughly speaking, an affine algebraic variety is an algebraic set, defined without choosing an embedding into affine space.
 This is analogous to how a smooth manifold is defined intrinsically as a topological space, without reference to an ambient Euclidean space.
 The following definition makes this precise using ringed spaces:
 
 \begin{definition}
-An affine algebraic variety over $k$ is a $k$-ringed space isomorphic to one of the form $(V, \calO_V)$ for some algebraic set $V \subseteq \AA^n$.
+An affine (algebraic) variety over $k$ is a $k$-ringed space isomorphic to one of the form $(V, \calO_V)$ for some algebraic set $V \subseteq \AA^n$.
 \end{definition}
 
-Affine algebraic varieties are usually referred to as affine varieties.
-The affine variety $(V, \calO_V)$ is denoted $V$ when the structure sheaf is clear.
 
 We have seen how an algebraic set $V \subseteq \AA^n$ gives rise to its structure sheaf, and this defines an affine variety.
 In particular, associated to $V$ is the coordinate ring $k[V] = \Gamma(V, \calO_V)$, which is a reduced finitely generated $k$-algebra.
 Conversely, given a reduced finitely generated $k$-algebra $A$, we can ask whether there is an affine variety $V$ with coordinate ring $A$.
-In fact, there is such a $V$, and we now construct it.
+In fact, there is such a $V$, and we construct it now.
+
 First, choose generators $a_1, \ldots, a_n$ for $A$.
 The $k$-algebra homomorphism $\varphi : k[X_1, \ldots, X_n] \to A=k[a_1,\ldots,a_n]$ given by $X_i \mapsto a_i$ induces the isomorphism $k[X_1, \ldots, X_n] / \ker \varphi \cong A$.
 Since $A$ is reduced, $\ker\varphi$ is radical, and $\bV(\ker \varphi)$ is an algebraic subset of $\AA^n$ with coordinate ring $A$.
 In view of Corollary \ref{isoofalgsetscoro}, isomorphic $k$-algebras correspond to isomorphic algebraic sets.
 
-In later chapters of this work, we need to construct an affine variety by prescribing its coordinate ring.
-The above construction tells us this is possible, but it relies on choosing generators for $A$.
-We would like to be able to construct an affine variety with a given coordinate ring in a canonical way, i.e., without choosing generators.
-This is achieved by taking the \emph{maximal spectrum} of $A$.
+In later chapters of this thesis, we construct affine varieties by prescribing its coordinate ring.
+The above tells us this is possible, but it relies on choosing generators.
+We would like to construct affine varieties in a canonical way, i.e., without choosing generators.
+This is achieved using the \emph{maximal spectrum}.
+
+
+
+
 
 \subsection{The maximal spectrum}
 Let $A$ be a reduced finitely generated $k$-algebra, i.e., a $k$-algebra arising as the coordinate ring of some algebraic set.
@@ -1188,7 +1223,129 @@ Considering $h = X \in A=k[X]$ and $g=1\in A$, we have the function
 $$D(h) =\{\frakm_a : a \ne 0\} \to k, \qquad \frakm_a \mapsto \frac{g(\frakm_a)}{h(\frakm_a)} = \frac{1}{a}.$$
 \end{example}
 
-Hello this is a test. Try again. Try again.
+
+
+
+
+\subsection{Morphisms}
+In section \ref{section:polynomialmaps}, we proved that polynomial maps $V \to W$ between algebraic sets are in bijection with $k$-algebra homomorphisms $k[W] \to k[V]$.
+The main result of this section is the analogous fact for affine varieties; 
+namely, that $k$-algebra homomorphisms $A \to B$ are in bijection with morphisms $\Spec(B) \to \Spec(A)$.
+
+Let $A$ and $B$ be reduced finitely generated $k$-algebras and $\alpha : A \to B$ a homomorphism.
+We define a map $\varphi : \Spec(B) \to \Spec(A)$ using $\alpha$, and then show it is a morphism.
+
+The function $\varphi : \Spec(B) \to \Spec(A)$ is defined by $\varphi(\frakn):=\alpha^{-1}(\frakn)$.
+We need to check $\alpha^{-1}(\frakn)$ is a maximal ideal of $A$ to see $\varphi$ is well-defined.
+We have that $\varphi(\frakn)$ is an ideal of $A$ since it is the kernel of the composition
+$$A \overset{\alpha}{\to} B \to B / \frakn.$$ 
+The composition then induces an injective map
+$$A/\varphi(\frakn) \to B/\frakn = k,$$
+which is surjective since $1 + \varphi(\frakn) \mapsto 1 + \frakn$.
+Thus $A/\varphi(\frakn) \cong k$, so $\varphi(\frakn)$ is maximal.
+
+Our goal now is to show $\varphi$ is a morphism.
+To check $\varphi$ is continuous and pulls back regular functions to regular functions, we need to compute $f \circ \varphi$ for $f \in A$.
+We claim that $f \circ \varphi = \alpha(f)$.
+To establish this, let $\frakn \in \Spec(B)$ so that $\frakm =\varphi(\frakn) \in \Spec(A)$.
+Recall that $(f\circ\varphi)(\frakn) = f(\frakm)$ is the image of $f$ in $A/\frakm$.
+On the other hand, $\alpha(f)$ lies in $B$, so $\alpha(f)(\frakn)$ lies in $B/\frakn$.
+To prove $f \circ \varphi = \alpha(f)$, we identify $A/\frakm$ and $B/\frakn$ via the isomorphism we found above, which is given explicitly by $f + \frakm \mapsto \alpha(f) + \frakn.$
+We then have the commutative diagram
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkEvXFxtYXRoZnJha3ttfSJdLFsxLDEsIkIvXFxtYXRoZnJha3tufSJdLFswLDJdLFsxLDNdLFsyLDMsIlxcc2ltZXEiXSxbMCwxLCJcXGFscGhhIl1d
+\[\begin{tikzcd}
+	A & B \\
+	{A/\mathfrak{m}} & {B/\mathfrak{n}}
+	\arrow["\alpha", from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow["\simeq", from=2-1, to=2-2]
+\end{tikzcd}\]
+which shows $f\circ\varphi=\alpha(f)$.
+
+Since $f\circ\varphi = \alpha(f)$, we see
+$$\varphi^{-1}(D(f)) = \{\frakn \in \Spec(B) : f(\varphi(\frakn)) \ne 0\} = D(\alpha(f)).$$
+Then the preimage of open sets are open, and $\varphi$ is continuous.
+
+Let $h \in A$.
+To check $\varphi$ is a morphism, we show that regular functions on $D(h) \subseteq \Spec(A)$ pull back to regular functions on $\varphi^{-1}(D(h)) = D(\alpha(h))$.
+Take the regular function $f : D(h) \to k$ defined by $f = \frac{g}{h^m}$ for some $g \in A$ and $m \in \ZZ_{\ge 0}$.
+Since $\alpha(h)$ is invertible in $B_{\alpha(h)}$, the map $A \to B \to B_{\alpha(h)}$ extends to a homomorphism
+$$A_h \to B_{\alpha(h)}, \qquad \frac{g}{h^m} \mapsto \frac{\alpha(g)}{\alpha(h)^m}.$$
+Then $f \circ \varphi : D(\alpha(h)) \to k$ is equal to $\alpha(f) = \frac{\alpha(g)}{\alpha(h)^m}$, which is regular on $D(\alpha(h))$.
+Thus, $\varphi$ is a morphism.
+
+The above tells us that a homomorphism $A \to B$ gives us a morphism $\Spec(B)\to\Spec(A)$.
+Conversely, by definition a morphism $\Spec(B) \to \Spec(A)$ determines a homomorphism $A \to B$ given by $f \mapsto f \circ \varphi$.
+These associations are mutually inverse (\textcolor{red}{Milne states this with no explanation. How do we see it?});
+thus we have the following:
+
+\begin{proposition}
+For all affine algebras $A$ and $B$,
+$$\Hom_{k\text{-alg}}(A, B) \cong \mathrm{Mor}(\Spec(B), \Spec(A)).$$
+\end{proposition}
+
+\subsection{Open affine subsets}
+
+\begin{proposition}[{\cite[Proposition 3.32]{Milne13}}]
+Let $V = \Spec(A)$ be an affine variety and $h$ a nonzero element of $A$.
+Then the homomorphism $A \to A_h$ defined by $a \mapsto \frac{a}{1}$ defines the isomorphism of ringed spaces
+$$(D(h), \left. \calO_V \right|_{D(h)}) \cong \Spec(A_h).$$
+In particular, $D(h)$ is an affine variety.
+\end{proposition}
+\begin{proof}
+Let $\varphi : \Spec(A_h) \to \Spec(A)$ be the morphism corresponding to $\iota$, and recall this is defined by $\varphi(\frakn) = \iota^{-1}(\frakn)$.
+Let us consider the relationship between maximal ideals in $A_h$ and $A$.
+Invoking Lemma \ref{proposition:localizationideals}, there is a bijection
+\begin{align*}
+\left\{
+\begin{array}{c}
+	\text{maximal ideals of } A \\
+	\text{disjoint from } \{1, h, h^2, \ldots\}
+\end{array}
+\right\} \longleftrightarrow 
+\left\{
+\begin{array}{c}
+	\text{maximal ideals} \\
+	\text{of } A_h 
+\end{array}
+\right\},
+\end{align*}
+given by $\frakm \mapsto A_h \frakm$.
+Since maximal ideals are radical, this can be refined to the bijection
+\begin{align*}
+\left\{
+\begin{array}{c}
+	\text{maximal ideals of } A \\
+	\text{not containing } h
+\end{array}
+\right\} \longleftrightarrow 
+\left\{
+\begin{array}{c}
+	\text{maximal ideals} \\
+	\text{of } A_h 
+\end{array}
+\right\}.
+\end{align*}
+Thus, if $\frakn = A_h \frakm \in \Spec(A_h)$ for some $\frakm \in \Spec(A)$ not containing $h$, we have
+$$\varphi(\frakn) = \iota^{-1}(A_h \frakm).$$
+Using the fact that $h$ is not in $\frakm$, one can check that $\iota^{-1}(A_h \frakm) = \frakm$.
+We then see that $\varphi$ is the inverse map to the bijection given above.
+In particular, $\varphi$ is a bijection, with image
+$$\varphi(\Spec(A_h)) = \{\frakm : h \notin \frakm\} = D(h).$$
+To complete the proof, we just need to check that $\varphi^{-1}$ is a morphism.
+\textcolor{red}{complete this.}
+\end{proof}
+
+
+
+
+\subsection{Dominant morphisms}
+
+
+
+
 
 \subsection{Tangent spaces}
 In differential geometry, a key tool used to study surfaces in $\RR^3$ is the tangent space.
@@ -1238,123 +1395,213 @@ We give an example in Figure \ref{figure:tangentspace}.
 \label{figure:tangentspace}
 \end{figure}
 
-Now let $V\subseteq\AA^n$ be a general algebraic set.
-For any $f\in\bI(V)$, the first-order part $f_P^{(1)}$ is defined as in equation \ref{equationtangent}.
+Now let $V\subseteq\AA^n$ be any algebraic set.
+Given $f\in\bI(V)$, we compute $f_P^{(1)}$ using Equation \ref{equationtangent}.
 The tangent space of $V$ at $P$ is
 $$T_PV := \bigcap_{f\in\bI(V)} \bV(f_P^{(1)}).$$
-Then $T_PV$ is the intersection of all affine subspaces tangent at $P$ to some $f$ in the ideal $\bI(V)$ defining $V$.
-Suppose $f_1, \ldots, f_m$ generate $\bI(V)$.
-Then for any $g = \sum_{i=1}^m h_j f_j \in \bI(V)$ and $P \in V$,
-\begin{align*}
-	g_P^{(1)} &= \sum_{i=1}^n \frac{\partial g}{\partial X_i}(P)(X_i-a_i) \\
-		&= \sum_{i=1}^n \sum_{j=1}^m \left(\frac{\partial h_j}{\partial X_i}(P) f_j(P) + h_j(P) \frac{\partial f_j}{\partial X_i}(P)\right) (X_i-a_i) \\
-		&= \sum_{j=1}^m h_j(P) \sum_{i=1}^n \frac{\partial f_j}{\partial X_i}(P)(X_i-a_i),
-\end{align*}
-so $g_P^{(1)}$ is a linear combination of the polynomials $f_{j,P}^{(1)}$.
-This implies that 
-$$\bigcap_{i=1}^m \bV(f_P^{(1)}) \subseteq \bV(g_P^{(1)}),$$
-and the definition of $T_PV$ simplifies to
-$$T_PV = \bigcap_{i=1}^m \bV(f_{i,P}^{(1)}).$$
+In other words, $T_PV$ is the intersection of all affine subspaces tangent at $P$ to some $f$ in the ideal $\bI(V)$ defining $V$.
 
-Let us consider how $T_PV$ is a vector space over $k$.
-The zero vector is the point $P$.
-If $Q_1, Q_2 \in \AA^n$ lying in $T_PV$ can be written $Q_i = \tilde Q_i + P$, then
-$$Q_1 + Q_2 = (\tilde Q_1 + \tilde Q_2) + P, \qquad\qquad \lambda \cdot Q_i = \lambda \tilde Q_i + P_i, \,\,\, \lambda \in k.$$
+We now explain how the intersection defining $T_PV$ may be replaced with a finite intersection.
+Suppose $f_1, \ldots, f_m$ generate $\bI(V)$.
+Then for any $f = \sum_{j=1}^m h_j f_j \in \bI(V)$ and $P \in V$, one readily computes that
+\begin{align*}
+	f_P^{(1)} &= \sum_{j=1}^m h_j(P) \sum_{i=1}^n \frac{\partial f_j}{\partial X_i}(P)(X_i-a_i).
+\end{align*}
+Thus $f_P^{(1)}$ is a linear combination of the polynomials $f_{j,P}^{(1)}$.
+It follows that $f_P^{(1)}$ vanishes whenever all the $f_{j,P}^{(1)}$ do, so
+$$\bigcap_{j=1}^m \bV(f_{j,P}^{(1)}) \subseteq \bigcap_{f \in \bI(V)} \bV(f_P^{(1)}).$$
+The opposite inclusion is clear, and therefore
+$$T_PV=\bigcap_{j=1}^m \bV(f_{j,P}^{(1)}).$$
+
+We now explain why $T_PV$ is a vector space over $k$ and therefore has a dimension.
+It is clear that that zero vector is the point $P$.
+The addition and scalar multiplication is defined as follows: if $Q_1, Q_2 \in \AA^n$ lying in $T_PV$ are written $Q_i = \tilde Q_i + P$, then
+$$Q_1 + Q_2 = (\tilde Q_1 + \tilde Q_2) + P, \qquad\qquad \lambda \cdot Q_i = \lambda \tilde Q_i + P, \,\,\, \lambda \in k.$$
 This is the usual vector space structure on $k^n$ if the origin is translated to $P$.
 
-We can now define the dimension of the algebraic set $V$ by
+We now define the dimension of the algebraic set $V$ by
 $$\dim V := \min\{\dim T_PV : P \in V\}.$$
 A point $P \in V$ is called non-singular if $\dim T_PV = \dim V$ and singular if $\dim T_P V > \dim V$.
 We denote the set of non-singular and singular points by $V_{\text{non-sing}}$ and $V_{\text{sing}}$, respectively;
-we say $V$ is non-singular if it is non-singular at each $P \in V$.
-For an integer $r$ such that $0 \le r \le n$, define the subset
-$$S(r) := \{P \in V : \dim T_P V \ge r\}\subseteq V.$$
-If $d := \dim V$, we have that $V = S(d)$ and $V_{\text{sing}} = S(d+1)$.
-We claim that the set of non-singular points $V_{\text{non-sing}}$ is an open subset of $V$, because
-$$V_{\text{non-sing}} = V \setminus V_{\text{sing}} = V \setminus S(d+1),$$
-and $S(d+1)$ is closed. 
-That $S(d+1)$ is closed follows from the following proposition:
+$V$ is called non-singular if it is non-singular at every point.
 
-\begin{proposition}[{\cite[\S 6.5]{Reid88}}]
-For any integer $r$ such that $0 \le r \le n$, the subset $S(r)$ is closed.
-\end{proposition}
-\begin{proof}
-Suppose 
-Thus, $T_PV$ is the set of $(x_1, \ldots, x_n) \in k^n$ solving
-$$\sum_{i=1}^n \frac{\partial f_j}{\partial X_i} (x_i - a_i) = 0, \qquad \qquad \text{ for all } j = 1, \ldots, m.$$
-Then $T_PV$ can be identified with the kernel of the matrix $J := \left(\frac{\partial f_i}{\partial X_j}(P)\right)_{i=1,\ldots, m, j=1, \ldots, n}.$
-Checking $P \in S(r)$ is equivalent to checking $\rank J \le n-r$.
-In turn, this is equivalent to ensuring every $(n-r+1)\times(n-r+1)$ minor of $J$ vanishes.
-The entries of $J$ are polynomials in $P=(a_1, \ldots, a_n)$.
-Then each minor of $J$ is also a polynomial and so $S(r) \subseteq V$ is an algebraic set.
-\end{proof}
+We now give examples computing tangent spaces and dimensions of algebraic sets.
 
 \begin{example}
-Let us give some examples of how to compute tangent spaces and dimensions of algebraic sets.
 \begin{enumerate}
-\item $\AA^n$
-\item $\bV(f)$ for $f$ non-constant and irreducible
-\item Singular and non-singular points of $y^2=x^3-6x^2-9x$
+\item
+Consider the trivial example $V = \AA^n$.
+The ideal $\bI(V)$ is generated by $f = 1$, which for any $P$ has first-order part $f_P^{(1)} = 0$.
+Then $T_PV = \bV(f_P^{(1)}) = \AA^n$, i.e., $T_PV$ is the vector space $k^n$ with the origin translated to $P$.
+As expected, $\dim V = n$, and $\AA^n$ is non-singular.
+
+\item
+Consider $V = \bV(f) \subseteq \AA^2$, where $f = Y^2 - X^3 - 2X^2$.
+For $P = (a, b)$, one computes
+$$f_P^{(1)} = \frac{\partial f}{\partial X}(P)(X-a) + \frac{\partial f}{\partial Y}(P)(Y-b) = a(-3a-4)(X - a) + 2b(Y-b).$$ 
+The tangent space $\bV(f_P^{(1)})$ is a line if at least one of the coefficients $a(-3a-4)$ and $2b$ does not vanish, and all of $\AA^2$ otherwise.
+Of the points $(0, 0)$ and $(-\frac{4}{3}, 0)$ which make the coefficients vanish, only $(0, 0)$ lies in $V$.
+Then $T_PV$ is a line for all points in $V\setminus\{(0, 0)\}$, and $T_{(0,0)}V = \AA^2$.
+Thus, $\dim V = 1$ and $P = (0, 0)$ is a singular point of $V$.
 \end{enumerate}
 \end{example}
 
-Although the description we have given for $T_PV$ in terms of first-order parts of polynomials is geometrically intuitive, we now prove a theorem which gives an intrinsic description of $T_PV$ in terms of ideals in the coordinate ring of $V$.
+\begin{figure}[H]
+     \begin{subfigure}[b]{0.49\textwidth}
+          \centering
+          \resizebox{\linewidth}{!}{
+		\begin{tikzpicture}
+		  % Draw axes
+		  \draw[->] (-3, 0) -- (3, 0) node[right] {$x$};
+		  \draw[->] (0, -2.5) -- (0, 2.5) node[above] {$y$};
+		
+		  % Plot the curve y^2 = x^3 + 2x^2 manually
+		  \draw[thick, blue, samples=100, smooth, domain=-2:1.32, variable=\x] 
+		    plot ({\x}, {sqrt((\x)^3 + 2*(\x)^2)});
+		  \draw[thick, blue, samples=100, smooth, domain=-2:1.32, variable=\x] 
+		    plot ({\x}, {-sqrt((\x)^3 + 2*(\x)^2)});
+		
+		  % Tangent line y = 2 + (9/4)(X-1)
+		  \draw[thick, red, domain=-2.8:2.8] plot(\x, {(1/2)*(\x+1)-1});
+		
+		  % Mark the point (-1, -1)
+		  \filldraw[black] (-1, -1) circle (2pt) node[below right] {$P$};
+		
+		  % Labels for the curve and tangent line
+		  \node[blue] at (0.5, 1.5) {$V$};
+		  \node[red] at (-2, -2) {$T_PV$};
+		\end{tikzpicture}
+          }  
+          \caption*{$P=(-1, -1)$}
+          \label{fig:A}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.49\textwidth}
+          \centering
+          \resizebox{\linewidth}{!}{
+		\begin{tikzpicture}
+		  % Shading the background to represent T_PV being all of A^2
+		  \fill[red!20] (-2.8, -2.3) rectangle (2.8, 2.3);
+		
+		  % Draw axes
+		  \draw[->] (-3, 0) -- (3, 0) node[right] {$x$};
+		  \draw[->] (0, -2.5) -- (0, 2.5) node[above] {$y$};
+		
+		  % Plot the curve y^2 = x^3 - x + 1 manually
+		  \draw[thick, blue, samples=100, smooth, domain=-2:1.32, variable=\x] 
+		    plot ({\x}, {sqrt((\x)^3 + 2*(\x)^2)});
+		  \draw[thick, blue, samples=100, smooth, domain=-2:1.32, variable=\x] 
+		    plot ({\x}, {-sqrt((\x)^3 + 2*(\x)^2)});
+		
+		  % Mark the point (0, 0)
+		  \filldraw[black] (0, 0) circle (2pt) node[above right] {\,\,\,$P$};
 
-For the setup, let $V$ be an algebraic subset of $\AA^n$ and suppose $P \in V$.
-Changing coordinates if necessary, we may assume without loss of generality that $P=(0, \ldots, 0)$.
+		  % Labels for the curve and tangent line
+		  \node[blue] at (0.5, 1.5) {$V$};
+		  \node[red] at (-2, -2) {$T_PV$};
+		\end{tikzpicture}
+          }  
+          \caption*{$P=(0,0)$}
+          \label{fig:B}
+     \end{subfigure}
+     \caption{Two tangent spaces of $V = \bV(Y^2-X^3-2X^2)$.}
+     \label{figure:}
+\end{figure}
+
+In the singular example above, $V_{\text{non-sing}}$ is the complement of a single point, in particular, it is an open subset of $V$.
+This gives an example of the general fact that the set of non-singular points is an open subset of $V$.
+To prove this fact, for an integer $r$ such that $0 \le r \le n$, define the subset
+$$S(r) := \{P \in V : \dim T_P V \ge r\}\subseteq V.$$
+If $d := \dim V$, then $V = S(d)$ and $V_{\text{sing}} = S(d+1)$.
+Thus,
+$$V_{\text{non-sing}} = V \setminus V_{\text{sing}} = V \setminus S(d+1).$$
+To see $V_{\text{non-sing}}$ is open, it remains to show $S(d+1)$ is closed; this is the content of the following proposition:
+
+\begin{proposition}[{\cite[\S 6.5]{Reid88}}]
+The subset $S(r)$ is closed for all $r=0, \ldots, n$.
+\end{proposition}
+\begin{proof}
+Let $f_1, \ldots, f_m$ generate $\bI(V)$.
+From our previous discussion , we know $T_PV$ is the set of $(x_1, \ldots, x_n) \in \AA^n$ solving
+$$\sum_{i=1}^n \frac{\partial f_j}{\partial X_i} (x_i - a_i) = 0$$
+for all $j = 1, \ldots, m.$
+Then $T_PV$ is identified with the kernel of the matrix 
+$$J(P) := \left(\frac{\partial f_i}{\partial X_j}(P)\right)_{\substack{1 \le i \le m \\ 1 \le j \le n}}.$$
+Checking $P$ lies in $S(r)$ is equivalent to checking $\rank (J(P)) \le n-r$.
+In turn, this is equivalent to ensuring every $(n-r+1)\times(n-r+1)$ minor of $J(P)$ vanishes.
+The entries of $J(P)$ are polynomials in $P=(a_1, \ldots, a_n)$.
+Then each minor of $J(P)$ is also a polynomial, and so $S(r)$ is an algebraic set.
+\end{proof}
+
+Although the description we have given for $T_PV$ in terms of first-order parts of polynomials is geometrically intuitive, it depends on the embedding of $V$ into affine space.
+We now prove a theorem which gives an intrinsic description of $T_PV$ in terms of ideals in the coordinate ring of $V$.
+
+Suppose $V$ is an algebraic set in $\AA^n$ with $P \in V$.
+Changing coordinates if necessary, we assume without loss of generality that $P=(0, \ldots, 0)$.
 Now $T_PV$ is a vector subspace of $k^n$.
-Write $\frakm_P\subseteq k[V]$ for the maximal ideal of regular functions vanishing at $P$.
-Denote by $M_P$ the ideal $(X_1, \ldots, X_n) \subseteq k[X_1,\ldots, X_n]$.
-We have $\frakm_P=M_P/\bI(V)$.
+Write $\frakm_P\subseteq k[V]$ for the maximal ideal of regular functions vanishing at $P$, and denote by $M_P$ the ideal $(X_1, \ldots, X_n) \subseteq k[X_1,\ldots, X_n]$.
+Note that we have $\frakm_P=M_P/\bI(V)$.
+We are now ready to prove the theorem.
 
 \begin{theorem}
 There is a natural isomorphism of vector spaces
-$$(T_PV)^* \cong \frakm_P/\frakm_P^2.$$
+$$(T_PV)^* \cong \frakm_P/\frakm_P^2,$$
+where $(T_PV)^*$ is the algebraic dual vector space of $T_PV$.
 \end{theorem}
 \begin{proof}
 We first prove the special case $V=\AA^n$, where we must show $M_P/M_P^2\cong(k^n)^*$.
-Note that $X_1, \ldots, X_n$ form a basis for $(k^n)^*$.
-As $P=(0, \ldots, 0)$,
+Note that $\{X_1, \ldots, X_n\}$ is a basis for $(k^n)^*$.
+As $P=(0, \ldots, 0)$, the first-order part
 $$f_P^{(1)}=\sum_{i=1}^n \frac{\partial f}{\partial X_i}(P) X_i$$
-is a linear form on $k^n$, and we can define a map $d : M_P\to(k^n)^*$ by $f \mapsto f_P^{(1)}$.
-Then $d$ is surjective since the $X_i \in M_P$ map to a basis for $(k^n)^*$.
-A general $f \in M_P$ can be written
+is a linear form on $k^n$.
+This gives rise to the map $d : M_P\to(k^n)^*$ defined by $f \mapsto f_P^{(1)}$.
+It suffices to show $d$ is surjective with kernel $M_P^2$.
+Note $d$ is surjective since the images of $X_i$ form to a basis for $(k^n)^*$.
+Next, a general $f \in M_P$ can be written
 $$f=\sum_{i=1}^n c_i X_i + \text{higher order terms},$$
 for some $c_i \in k$.
-Since $P=(0,\ldots,0)$,
-$$f_P^{(1)}=\sum_{i=1}^n\frac{\partial f}{\partial X_i}(P) X_i = \sum_{i=1}^n c_i X_i.$$
-Therefore $f \in \ker d$, i.e., $f_P^{(1)} = 0$, if and only if each $c_i=0$.
+Since $P=(0,\ldots,0)$, the first-order part equals
+$$f_P^{(1)} = \sum_{i=1}^n c_i X_i.$$
+Therefore $f \in \ker d$ if and only if each $c_i$ equals zero.
 This is equivalent to $f$ lying in $M_P^2$, as $M_P^2$ is generated by the monomials $X_i X_j$.
-Thus $d$ induces the isomorphism $M_P/M_P^2 \cong (k^n)^*$.
 
-For the general case, first observe that we have a surjective map $(k^n)^* \to (T_PV)^*$ which takes a linear form to its restriction to $T_PV$.
-Composing $d$ with this restriction map gives the map
+For the general case, we show $(T_PV)^*$ and $\frakm_P/\frakm_P^2$ are both isomorphic to
+$$M_P/(M_P^2+\bI(V)).$$
+
+We now show $(T_PV)^* \cong M_P/(M_P^2+\bI(V))$.
+Observe that we have the surjective restriction map $(k^n)^* \to (T_PV)^*$.
+Composing $d$ with this restriction map yields another map
 $$D:M_P \to (k^n)^* \to (T_PV)^*,$$
-which is surjective since each factor is.
-To complete the proof, we show the following pair of isomorphisms:
-$$(T_PV)^* \cong M_P/(M_P^2+\bI(V)) \cong \frakm_P/\frakm_P^2.$$
-The first isomorphism follows from the fact that $\ker D = M_P^2+\bI(V)$, which we prove by giving a chain of equivalent conditions for $f$ to lie in $\ker D$.
-By definition of $D$, $f \in \ker D$ means $f_P^{(1)} \big|_{T_PV} = 0$.
-If $g_i \in \bI(V)$ denote generators for $\bI(V)$, we know $T_PV = \bigcap_i \bV(g_{i,P}^{(1)}).$
+which is clearly surjective.
+To prove the desired isomorphism, it suffices to show $\ker D = M_P^2+\bI(V)$.
+We give equivalent conditions for $f$ to lie in $\ker D$.
+By definition of $D$, the map $f$ lies in $\ker D$ if and only if $f_P^{(1)} \big|_{T_PV} = 0$.
+If $g_j \in \bI(V)$ denote generators for $\bI(V)$, we know $T_PV = \bigcap_j \bV(g_{j,P}^{(1)}).$
 Then $f_P^{(1)} \big|_{T_PV}=0$ if and only if 
-$$f_P^{(1)} = \sum_i a_i g_{i,P}^{(1)}$$
-for some $a_i \in k$.
-The above equality is equivalent to $f$ and $\sum_i a_i g_i$ only differing by quadratic terms, i.e., 
-$$f - \sum_i a_i g_i \in M_P^2,$$
-which is the same as $f \in M_P^2 + \bI(V)$.
-To see why $M_P/(M_P^2+\bI(V)) \cong \frakm_P/\frakm_P^2$, define the map $\varphi : M_P \to \frakm_P/\frakm_P^2$ by $h \mapsto (h+\bI(V)) + \frakm_P^2$.
-This is well-defined since $\frakm_P=M_P/\bI(V)$.
-Then
-$$\ker \varphi = \{h \in M_P : h + \bI(V) \in \frakm_P^2\}=\{h \in M_P:h+\bI(V)\in M_P^2/\bI(V)\}=M_P^2+\bI(V),$$
-so $\varphi$ induces the desired isomorphism.
+$$f_P^{(1)} = \sum_j a_j g_{j,P}^{(1)}$$
+for some $a_j \in k$.
+The above equality is equivalent to $f$ and $\sum_j a_j g_j$ only differing by quadratic terms.
+In other words, it is equivalent to the inclusion
+$$f - \sum_j a_j g_j \in M_P^2,$$
+which is the same as the inclusion $f \in M_P^2 + \bI(V)$.
+
+To see $\frakm_P/\frakm_P^2 \cong M_P/(M_P^2+\bI(V))$, we find a surjective homomorphism $\varphi : M_P \to \frakm_P/\frakm_P^2$ with kernel $M_P^2+\bI(V)$. 
+To this end, define $\varphi$ by $h \mapsto (h+\bI(V)) + \frakm_P^2$.
+This is well-defined and surjective since $\frakm_P=M_P/\bI(V)$.
+Also,
+$$\ker \varphi = \{h \in M_P : h + \bI(V) \in \frakm_P^2\}=\{h \in M_P:h+\bI(V)\in M_P^2/\bI(V)\}=M_P^2+\bI(V).$$
 \end{proof}
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONVEX GEOMETRY
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
 \newpage
+\addtocontents{toc}{\vskip 1em}
 \section{Convex geometry}\label{sectionconvexgeometry}
 \todo{Fix this introduction to match the chapter.}
 Affine toric varieties are a class of algebraic varieties which are determined by a \emph{cone} in a vector space.
@@ -1366,6 +1613,10 @@ $X$ is a normal variety with an algebraic torus $T$ as a dense open subset, and 
 However, this description doesn't indicate the relationship with convex geometry.
 In this chapter, we will define and study toric varieties; we will also see how the GIT quotient of an affine space by a torus has the structure of an affine toric variety.
 We start by discussing the prerequisite convex geometry.
+
+
+
+
 
 \subsection{Convex cones}
 \todo{Start with vector space instead of lattice.}
@@ -1660,6 +1911,10 @@ $$\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\
 \end{figure}
 \end{example}
 
+
+
+
+
 \subsection{The semigroup of a cone}
 Recall that a semigroup is a set with an associative binary operation.
 For each cone $\sigma$, the points of the dual lattice which are contained in $\sigma^\vee$ form a semigroup,
@@ -1687,13 +1942,17 @@ Also, $\sum t_i u_t = u - \sum m_i u_i \in M$ since $u$ and $\sum m_i u_i$ lie i
 Then $\sum t_i u_t \in K \cap M$, and since $u_1, \ldots, u_s \in K \cap M$, we have that $u = \sum m_i u_i + \sum t_i u_i \in \Span_{\ZZ_{\ge 0}} K \cap M$.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AFFINE TORIC VARIETIES
-% SECTION TO DO:
-% Meeting 10/07:
-% - Masoud's equivalent definition of a toric variety
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 \newpage
+\addtocontents{toc}{\vskip 1em}
 \section{Affine toric varieties}\label{affinetoricvarieties}
 Affine toric varieties are a class of algebraic varieties which are determined by a \emph{cone} in a vector space.
 The interplay between the variety and its cone leads to a rich theory combining the algebraic geometry of the variety and the convex geometry of the cone.
@@ -1704,6 +1963,10 @@ $X$ is a normal variety with an algebraic torus $T$ as a dense open subset, and 
 However, this description doesn't indicate the relationship with convex geometry.
 In this chapter, we will define and study toric varieties; we will also see how the GIT quotient of an affine space by a torus has the structure of an affine toric variety.
 We start by discussing the prerequisite convex geometry.
+
+
+
+
 
 \subsection{The semigroup algebra $S_\sigma$}
 Given a cone $\sigma$, we have seen how to construct a semigroup $S_\sigma = \sigma^\vee \cap M$.
@@ -1813,7 +2076,6 @@ We have
 \end{align*}
 and so
 $$U_\sigma \cong \Spec(\CC[X, Y, Z, W] / (XY - ZW) ) = \bV(XY-ZW).$$
-
 \end{enumerate}
 \end{example}
 
@@ -1836,12 +2098,22 @@ This assumption implies that when $N$ is a rank $n$ lattice, the dimension of th
 Specifically, when $\sigma$ is strongly convex, $U_\sigma$ has an $n$-dimensional torus as an open subset \cite[Theorem 1.2.18]{CLS11}.
 Then the affine toric variety $U_\sigma$ defined in terms of the cone $\sigma$ satisfies the definition of a toric variety from the introduction to this chapter, i.e., $U_\sigma$ has a torus as a dense open subset.
 
+
+
+
+
+
 \subsection{Affine toric varieties}
 
 Note: defined by monomial equations
 
 
+
+
+
 \subsection{Points of $U_\sigma$}
+
+
 
 
 
@@ -1849,13 +2121,22 @@ Note: defined by monomial equations
 Discuss distinguished points
 
 
+
+
+
 \subsection{Singularities of $U_\sigma$}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AFFINE GIT QUOTIENTS AS AFFINE TORIC VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
 \newpage
+\addtocontents{toc}{\vskip 1em}
 \section{Affine GIT quotients as affine toric varieties}
 In this chapter, we introduce the affine GIT quotient and give examples.
 One example we give is $\frakg \git T$ for $G = \GL_2(\CC)$.
@@ -1864,11 +2145,19 @@ Finally, we find generators for the invariant ring $\CC[\frakg]^T$ when $G = \GL
 Throughout this chapter, many technical details may be missing;
 our focus is on understanding specific examples which can guide our investigation of $\frakg \git T$ for general $G$.
 
+
+
+
+
 \subsection{Algebraic groups}
 
 
 
+
+
 \subsection{Reductive groups}
+
+
 
 
 
@@ -1996,7 +2285,13 @@ $$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2
 \end{enumerate}
 \end{example}
 
+
+
+
+
 \subsection{Algebraic tori}
+
+
 
 
 
@@ -2050,6 +2345,10 @@ $$\calM := \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi =
 Denoting the semigroup algebra of $\calM$ by $\CC[\calM]$, we have that
 $$\CC[Z_\chi : \chi \in S]^T \cong \CC[\calM].$$
 \end{corollary}
+
+
+
+
 
 \subsection{$\AA^n \git T$ as a toric variety}
 We now want to find a lattice $N$ and a cone $\sigma$ such that $\AA^n \git T$ is isomorphic to the affine toric variety $U_\sigma$.
@@ -2160,29 +2459,16 @@ In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\v
 \end{proof}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PART II: ABSTRACT TORIC VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\begin{center}
-%%\vspace{0.5 \textheight}
-%%{\LARGE\textsc{Part I: Affine toric varieties}} \\
-%%\vspace{8cm}
-%%\end{center}
-%% First Part
-%\newpage
-%\phantomsection
-%\addcontentsline{toc}{part}{Part II: Abstract toric varieties}
-%\thispagestyle{empty} % Remove page number
-%\vspace*{\fill} % Center vertically
-%\begin{center}
-%    \Huge \textsc{Part II: Abstract Toric Varieties}
-%\end{center}
-%\vspace*{\fill} % Center vertically
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ABSTRACT VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
 \newpage
+\addtocontents{toc}{\vskip 1em}
 \section{Abstract varieties}
 In this section, we study abstract algebraic varieties --- these are spaces obtained by glueing together affine varieties.
 An algebraic variety is the analogue in algebraic geometry of a manifold in differential geometry (these are spaces obtained by glueing open subsets of Euclidean space).
@@ -2191,6 +2477,10 @@ In the next section, we will studying general toric varieties using our understa
 
 In order to motivate the definition of algebraic varieties, we will first study projective varieties, which are an important special cases.
 Then we will define general algebraic varieties, and see how they are determined by glueing affine varieties.
+
+
+
+
 
 \subsection{Motivation: projective varieties}
 Let $k$ be a field.
@@ -2212,6 +2502,10 @@ we could then have that a polynomial takes different values on different homoege
 The solution for defining algebraic subsets of $\PP^n$ is to use \emph{homogeneous} polynomials.
 
 Example: elliptic curves.
+
+
+
+
 
 \subsection{Abstract varieties}
 Recall the definitions of a sheaf of $k$-algebras and ringed spaces from section \ref{affinetoricvarieties}.
@@ -2309,13 +2603,22 @@ Observe that if $(x : y) \in U_x \cap U_y$, the image of $(x : y)$ in $X$ of the
 Example: line with two origins
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ABSTRACT TORIC VARIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
 \newpage
+\addtocontents{toc}{\vskip 1em}
 \section{Abstract toric varieties}
 In this section, we present the general definition of an abstract toric variety.
 While affine toric varieties correspond to cones in a vector space, these abstract toric varieties correspond to a collection of cones which ``fit together'' in a nice way --- these collections of cones are called fans.
+
+
+
 
 
 \subsection{Fans}
@@ -2367,6 +2670,9 @@ Then, $\CC[S_\tau] = \CC[S_\sigma]_{\chi^u}$, which is the algebraic version of 
 \end{proof}
 
 
+
+
+
 \subsection{Abstract toric varieties}
 Let $\Delta$ be a fan in $N$.
 
@@ -2380,7 +2686,13 @@ The fact that the glueing is compatible follows from the order-preserving nature
 
 Example: one-dim toric varieties
 
+
+
+
+
 \subsection{The dense torus}
+
+
 
 
 
@@ -2388,17 +2700,27 @@ Example: one-dim toric varieties
 
 
 
+
+
 \subsection{Classification of toric surfaces}
+
+
 
 
 
 \subsection{Toric morphisms}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% REFERENCES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 \newpage
-%\addtocontents{toc}{\vskip 1em}
+\addtocontents{toc}{\vskip 1em}
 \begin{bibdiv}
 \begin{biblist}
 \bib{BV04}{book}{
