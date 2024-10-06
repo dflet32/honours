@@ -1022,12 +1022,12 @@ To see $f \in \calO_V(U)$, note that if $P \in U$, then $P\in U_i$ for some $i$,
 \newpage
 \addtocontents{toc}{\vskip 1em}
 \section{Affine varieties}
-In this chapter, we define and study affine varieties---these are spaces which `look like' algebraic sets, defined without needing to be embedded in an affine space.
-This definition is needed because we often want to study spaces without an ambient space.
+In this chapter, we define and study affine varieties---these are spaces which `look like' algebraic sets, but defined without needing to be embedded in an affine space.
+This definition is necessary because we usually want to study spaces without an ambient space.
 In particular, when we study toric varieties and GIT quotients in later chapters, we will need to define a space by prescribing its coordinate ring.
 This is easily achieved in the context of affine varieties by the taking the maximal spectrum of the desired coordinate ring.
 
-We start by defining sheaves, which is an open assignment of a $k$-algebra of functions to open sets in a topological space---this is an abstraction of looking at the regular functions defined on an open subset of an algebraic set.
+We start by defining sheaves, which is an assignment of a set of functions to open sets in a topological space---this is an abstraction of looking at the regular functions defined on an open subset of an algebraic set.
 Affine varieties can then be defined as a topological space with a sheaf that looks like an algebraic set.
 For the remainder of the chapter, we define the tangent space of a variety, and also look at certain properties of morphisms between affine varieties.
 
@@ -1059,8 +1059,7 @@ The $k$-algebra $\calO_V(U)$ is sometimes denoted $\Gamma(U, \calO_V)$, and its 
 Proposition \ref{sheafprop} says that for an algebraic set $V$, the assignment of an open subset $U \subseteq V$ to its ring of regular functions $\calO_V(U)$ is a sheaf of $k$-algebras.
 This sheaf is called the structure sheaf of $V$.
 As we will see, structure sheaves are one of the main tools we use to define and study varieties.
-\textcolor{red}{Note that $k[V] = \Gamma(V, \calO_V)$.}
-To further illustrate the definition of a sheaf, we give another example as well as a counter-example:
+To further illustrate the definition of a sheaf, we give further examples as well as a counter-example:
 
 \begin{example}
 \begin{enumerate}
@@ -1093,11 +1092,11 @@ for all open subsets $U \subseteq W$, if $f \in \calO_W(U)$, then $f\circ\varphi
 
 It is natural that morphisms should be continuous maps, to preserve topological structure.
 The motivation for the second condition is less clear.
-Observe that if we have open subsets $U \subseteq W$ and $U' \subseteq V$ such that $\varphi(U')\subseteq U$, then the map
-$$\calO_W(U) \to \calO_V(U'), \qquad f \mapsto f\circ\varphi$$
+Observe that if we have open subsets $U \subseteq V$ and $U' \subseteq W$ such that $\varphi(U)\subseteq U'$, then the map
+$$\calO_W(U') \to \calO_V(U), \qquad f \mapsto f\circ\varphi$$
 is a homomorphism of $k$-algebras;
 we denote $f \circ \varphi$ by $\varphi^*(f)$ and call this function the pullback of $f$ by $\varphi$.
-Then the second condition in the definition says that $\varphi$ allows us to convert a function on $U$ to a function on $U'$, which gives the homomorphism $\calO_W(U) \to \calO_V(U')$.
+Then the second condition in the definition says that $\varphi$ allows us to convert a function in $\calO_W(U')$ to a function in $\calO_V(U)$.
 
 \begin{example}
 \begin{enumerate}
@@ -1157,11 +1156,11 @@ To illustrate the theory, we will investigate the case $A=k[X]$ as an example th
 
 \emph{$\Spec(A)$ as a set:}
 the set $\Spec(A)$ is defined to be the set of maximal ideals of $A$.
-This definition is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (c.f. Corollary \ref{corollary:coordinateringbijections}).
+This is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (c.f. Corollary \ref{corollary:coordinateringbijections}).
 
 \begin{example}
-The maximal ideals in $A=k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for some $a\in k$.
-Then $\Spec(A) = \{(X-a) : a \in k\}.$
+The maximal ideals in $k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for some $a\in k$.
+Then $\Spec(k[X]) = \{\frakm_a : a \in k\}.$
 \end{example}
 
 To define the topology and sheaf on $\Spec(A)$, we think of elements of $A$ as functions $\Spec(A) \to k$.
@@ -1173,16 +1172,17 @@ The kernel of $\varphi$ are the elements of $k$ lying in $\frakm$, which is just
 To see $\varphi$ is surjective, note $A/\frakm$ is finitely generated over $k$ since $A$ is;
 we then see by applying Theorem \ref{hardfact} that $(A/\frakm)/k$ is an algebraic field extension.
 Since $k$ is algebraically closed, the inclusion $k \overset{\varphi}{\hookrightarrow} A/\frakm$ is surjective.
+
 We can now view elements of $A$ as functions $\Spec(A) \to k \cong A/\frakm$ by evaluating $f\in A$ at $\frakm\in\Spec(A)$ as $f(\frakm):=f \mod \frakm$.
 
 \begin{example}
-When $A=k[X]$ and $\frakm \in \Spec(A)$, the identification of $k$ with $A/\frakm$ is the quotient map
-$$k \hookrightarrow A \to A/\frakm, \qquad 1 \mapsto 1 \mapsto 1+\frakm.$$
-Consider $f = X^2 +3X +2 \in A$.
+For $\frakm \in \Spec(k[X])$, the identification of $k$ with $k[X]/\frakm$ is the quotient map
+$$k \hookrightarrow k[X] \to k[X]/\frakm, \qquad 1 \mapsto 1 \mapsto 1+\frakm.$$
+Consider $f = X^2 +3X +2 \in k[X]$.
 To evaluate $f$ at the maximal ideal $\frakm = (X-1)$, we reduce $\mod \frakm$, i.e.,
 $$f(\frakm) = X^2 + 3X +2 = 1^2 + 3\cdot 1 +2 = 6.$$
-Here we have used our identification of $A/\frakm$ with $k$ to suppress that we are working in the quotient $A/\frakm$.
-More generally, if $\frakm_a = (X_a)$ is a general element of $\Spec(A)$ and $f$ lies in $A$, we evaluate $f(\frakm_a) = f(a)$.
+Here we have used our identification of $k[X]/\frakm$ with $k$ to suppress that we are working in the quotient $k[X]/\frakm$.
+More generally, if $\frakm_a = (X-a)$ is a general element of $\Spec(k[X])$ and $f \in k[X]$, we evaluate $f(\frakm_a) = f(a)$.
 \end{example}
 
 \emph{$\Spec(A)$ as a topological space:}
@@ -1199,16 +1199,18 @@ We claim that the sets
 $$D(f) = \{\frakm : f(\frakm) \ne 0\}, \qquad f \in A,$$
 form a topological basis.
 Observe that $\frakm$ lying in $D(f)$ is equivalent to $f + \frakm \ne \frakm$, i.e., $f \notin \frakm$.
-To see that these sets cover $\Spec(A)$, note that for any $\frakm \in \Spec(A)$, there exists $f \in A$ lying outside $\frakm$, since $\frakm$ is not $A$.
+To see that these sets cover $\Spec(A)$, note that for any $\frakm \in \Spec(A)$, there exists $f \in A$ lying outside $\frakm$.
 Then we have $\frakm \in D(f)$.
 To see $\{D(f) : f \in A\}$ satsfies the second axiom of a topological basis, note that it suffices to show $D(f) \cap D(g) = D(fg)$.
 We have that $\frakm \in D(fg)$ if and only if $fg +\frakm \ne 0$ in $A/\frakm$.
-Since $A/\frakm$ has no zero-divisors, this is the same as $f+\frakm \ne 0$ and $g+\frakm \ne 0$, i.e., $\frakm \in D(f) \cap D(g)$.
-We thus have $D(fg)=D(f)\cap D(g)$ and $\{D(f) : f \in A\}$ is a topological basis.
+Since $A/\frakm$ is a field, this is the same as $f+\frakm \ne 0$ and $g+\frakm \ne 0$, i.e., $\frakm \in D(f) \cap D(g)$.
+Then $D(fg)=D(f)\cap D(g)$, and we conclude that $\{D(f) : f \in A\}$ is a topological basis.
 
 \begin{example}
-Evaluating $f \in A=k[X]$ at $\frakm_a=(X-a)$ yields $f(a)$, so 
+Evaluating $f \in k[X]$ at $\frakm_a=(X-a)$ yields $f(a)$, so 
 $$D(f) = \{\frakm_a : f(a) \ne 0\}.$$
+Since an element of $k[X]$ has finitely many roots, the basis sets $D(f)$ generate the finite-complement topology.
+We see $\Spec(k[X])$ is homeomorphic to $\AA^1$ with its Zariski topology.
 \end{example}
 
 \emph{The sheaf on $\Spec(A)$:}
@@ -1219,9 +1221,32 @@ For an open subset $U$ of $\Spec(A)$, $\calO_{\Spec(A)}(U)$ is defined as the se
 Since this definition is local, $\calO_{\Spec(A)}$ is in fact a sheaf.
 
 \begin{example}
-Considering $h = X \in A=k[X]$ and $g=1\in A$, we have the function 
+Considering $h = X \in k[X]$ and $g=1\in k[X]$, we have the function 
 $$D(h) =\{\frakm_a : a \ne 0\} \to k, \qquad \frakm_a \mapsto \frac{g(\frakm_a)}{h(\frakm_a)} = \frac{1}{a}.$$
 \end{example}
+
+We have thus constructed a ringed space $(\Spec(A), \calO_{\Spec(A)})$.
+To see that this is an affine variety, we need to find an algebraic set which it is isomorphic to.
+Milne gives the following theorem:
+
+\begin{theorem}[{\cite[Proposition 3.22]{Milne13}}]
+The pair $(\Spec(A), \calO_{\Spec(A)})$ is an affine algebraic variety with $\Gamma(D(h), \calO_V) \cong A_h$ for each $h \in A\setminus\{0\}$.
+\end{theorem}
+\begin{proof}
+\textcolor{red}{Milne's proof:}
+Represent $A$ as a quotient $k[X_1,\ldots,X_n]/\fraka$.
+Then $(\Spec(A), \calO_{\Spec(A)})$ is isomorphic to the $k$-ringed space attached to the algebraic set $\bV(\fraka)$ (see \cite[3.15]{Milne13}).
+
+\textcolor{red}{My understand:}
+Say $A \cong k[X_1,\ldots,X_n]/\fraka$.
+Then the algebraic set $\bV(\fraka) \subseteq \AA^n$ has coordinate ring $A$.
+The ringed space structure is determined by $A$.
+The topology is generated by the open sets $D(h)$, $h \in A$.
+The sheaf is determined by the sections over principal open subsets---for the algebraic set and the spectrum, these are both $A_h$ (need to note this earlier for algebraic sets).
+\end{proof}
+
+For the remainder of this thesis, we will work with affine varieties of the form $\Spec(A)$ instead of algebraic sets in affine space.
+The rest of this chapter is dedicated to studying some important features of these spaces, such as their morphisms and tangent spaces.
 
 
 
@@ -1286,34 +1311,25 @@ For all affine algebras $A$ and $B$,
 $$\Hom_{k\text{-alg}}(A, B) \cong \mathrm{Mor}(\Spec(B), \Spec(A)).$$
 \end{proposition}
 
+
+
+
+
 \subsection{Open affine subsets}
+In this section, we study open affine subsets of affine varieties.
+These are the analogues of principal oen subsets of an algebraic set.
+Our discussion here will be important when we study toric varieties, as it will allow us to identify the open subset isomorphic to an algebraic torus.
 
 \begin{proposition}[{\cite[Proposition 3.32]{Milne13}}]
 Let $V = \Spec(A)$ be an affine variety and $h$ a nonzero element of $A$.
-Then the homomorphism $A \to A_h$ defined by $a \mapsto \frac{a}{1}$ defines the isomorphism of ringed spaces
+Then the homomorphism $\iota : A \to A_h$ defined by $a \mapsto \frac{a}{1}$ defines the isomorphism of ringed spaces
 $$(D(h), \left. \calO_V \right|_{D(h)}) \cong \Spec(A_h).$$
 In particular, $D(h)$ is an affine variety.
 \end{proposition}
 \begin{proof}
 Let $\varphi : \Spec(A_h) \to \Spec(A)$ be the morphism corresponding to $\iota$, and recall this is defined by $\varphi(\frakn) = \iota^{-1}(\frakn)$.
 Let us consider the relationship between maximal ideals in $A_h$ and $A$.
-Invoking Lemma \ref{proposition:localizationideals}, there is a bijection
-\begin{align*}
-\left\{
-\begin{array}{c}
-	\text{maximal ideals of } A \\
-	\text{disjoint from } \{1, h, h^2, \ldots\}
-\end{array}
-\right\} \longleftrightarrow 
-\left\{
-\begin{array}{c}
-	\text{maximal ideals} \\
-	\text{of } A_h 
-\end{array}
-\right\},
-\end{align*}
-given by $\frakm \mapsto A_h \frakm$.
-Since maximal ideals are radical, this can be refined to the bijection
+Invoking Lemma \ref{proposition:localizationideals} and noting that maximal ideals are radical, we get a bijection
 \begin{align*}
 \left\{
 \begin{array}{c}
@@ -1323,15 +1339,15 @@ Since maximal ideals are radical, this can be refined to the bijection
 \right\} \longleftrightarrow 
 \left\{
 \begin{array}{c}
-	\text{maximal ideals} \\
-	\text{of } A_h 
+	\text{maximal} \\
+	\text{ideals of } A_h 
 \end{array}
-\right\}.
+\right\},
 \end{align*}
-Thus, if $\frakn = A_h \frakm \in \Spec(A_h)$ for some $\frakm \in \Spec(A)$ not containing $h$, we have
-$$\varphi(\frakn) = \iota^{-1}(A_h \frakm).$$
+given by $\frakm \mapsto A_h \frakm$.
+Thus, if $\frakn = A_h \frakm \in \Spec(A_h)$ for some $\frakm \in \Spec(A)$ not containing $h$, then $\varphi(\frakn) = \iota^{-1}(A_h \frakm).$
 Using the fact that $h$ is not in $\frakm$, one can check that $\iota^{-1}(A_h \frakm) = \frakm$.
-We then see that $\varphi$ is the inverse map to the bijection given above.
+Then $\varphi(A_h \frakm) = \frakm$, and we see that $\varphi$ is the inverse map to the bijection given above.
 In particular, $\varphi$ is a bijection, with image
 $$\varphi(\Spec(A_h)) = \{\frakm : h \notin \frakm\} = D(h).$$
 To complete the proof, we just need to check that $\varphi^{-1}$ is a morphism.
@@ -1342,6 +1358,19 @@ To complete the proof, we just need to check that $\varphi^{-1}$ is a morphism.
 
 
 \subsection{Dominant morphisms}
+Given the correspondence between morphisms and algebra homomorphisms, it is natural to ask if properties of the homomorphism inform properties of the morphism, and vice versa.
+One property of morphisms which is determined algebraically is called \emph{dominant}.
+A morphism is dominant if it has dense image in its codomain.
+The following proposition relates this to an algebraic property:
+
+\begin{proposition}
+Let $\alpha : A \to B$ be a homomorphism of affine $k$-algebras, and let 
+$$\varphi: \Spec(B) \to \Spec(A)$$
+be the corresponding morphism of affine varieties.
+Then $\varphi$ is dominant if and only if $\alpha$ is injective.
+\end{proposition}
+
+This result will be important when studying toric varieties, as it will tell us the open subset isomorphic to a torus is in fact dense in the toric variety.
 
 
 
@@ -1930,13 +1959,13 @@ If $\sigma$ is a rational convex polyhedral cone, then $S_\sigma$ is a finitely 
 \begin{proof}
 Let $u_1, \ldots, u_s \in \sigma^\vee \cap M$ generate $\sigma^\vee$ as a cone.
 Define
-$$K = \left\{\sum t_i u_i : 0 \le t_i \le 1\right\}.$$
+$$K = \left\{\sum t_i u_i : 0 \le t_i \le 1\right\} \subseteq M_\RR.$$
 Since $K$ is compact and $M$ is discrete, the intersection $K \cap M$ is finite.
 We claim $K \cap M$ generates $S_\sigma$.
 %Note that $u_1, \ldots, u_s \in K \cap M$.
 Suppose that $u \in S_\sigma$.
 Then $u = \sum r_i u_i$ for some $r_i \in \RR_{\ge 0}$ since $\{u_i\}$ generates $\sigma^\vee$.
-Write each $r_i$ as $m_i + t_i$ for $m_i \in \ZZ_{\ge 0}$ and $0 \le t_i \le 1$, so $u = \sum m_i u_i + \sum t_i u_i$.
+Write each $r_i$ as $m_i + t_i$ for $m_i \in \ZZ_{\ge 0}$ and $0 \le t_i < 1$, so $u = \sum m_i u_i + \sum t_i u_i$.
 Clearly $\sum t_i u_t \in K$.
 Also, $\sum t_i u_t = u - \sum m_i u_i \in M$ since $u$ and $\sum m_i u_i$ lie in $M$ and $M$ is a group.
 Then $\sum t_i u_t \in K \cap M$, and since $u_1, \ldots, u_s \in K \cap M$, we have that $u = \sum m_i u_i + \sum t_i u_i \in \Span_{\ZZ_{\ge 0}} K \cap M$.
