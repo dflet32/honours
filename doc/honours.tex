@@ -429,10 +429,10 @@ In Example \ref{algsetex}, we saw $\emptyset$ and $\AA^n$ are algebraic.
 Together, these imply algebraic subsets of $\AA^n$ form the closed sets for a topology on $\AA^n$; this topology is called the \emph{Zariski topology}.
 
 \begin{example}[The Zariski topology on $\AA^1$]\label{zariskia1}
-Any nonconstant polynomial in one variable has finitely many roots.
+Any non-constant polynomial in one variable has finitely many roots.
 Then for any ideal $I \subseteq A$, $\bV(I)$ is either finite or all of $\AA^1$.
 In other words, any closed set is either finite or $\AA^1$, so the Zariski topology on $\AA^1$ is the finite complement topology.
-When $k$ is an infinite field, this topology is not Hausdorff; any two nonempty open sets have finite complements, so they must necessarily intersect.
+When $k$ is an infinite field, this topology is not Hausdorff; any two non-empty open sets have finite complements, so they must necessarily intersect.
 \end{example}
 
 Example \ref{zariskia1} shows us that the Zariski topology is a very coarse toplogy, in the sense that open sets are large.
@@ -488,7 +488,7 @@ problems can occur when the equations defining an algebraic subset have ``unwant
 In \S \ref{The Nullstellensatz}, we resolve these problems and make the maps $\bV$ and $\bI$ into bijections which are inverses of each other.
 
 For the remainder of this section, we study the basic topological property of irreducibility, and explain how the map $\bI$ gives an algebraic characterisation of this property.
-We say a nonempty subset $Y$ of a topological space $X$ is \emph{reducible} if $Y = Y_1 \cup Y_2$, where $Y_1$ and $Y_2$ are proper closed subsets of $Y$ \cite[Chapter I]{Hartshorne77}.
+We say a non-empty subset $Y$ of a topological space $X$ is \emph{reducible} if $Y = Y_1 \cup Y_2$, where $Y_1$ and $Y_2$ are proper closed subsets of $Y$ \cite[Chapter I]{Hartshorne77}.
 Otherwise, we say $Y$ is \emph{irreducible}.
 Then in the context of the Zariski topology, an algebraic set $V \subseteq \AA^n$ is irreducible if it is not a union of proper algebraic subsets.
 
@@ -1147,7 +1147,7 @@ This is achieved using the \emph{maximal spectrum}.
 
 
 
-\subsection{The maximal spectrum}
+\subsection{The maximal spectrum}\label{section:themaximalspectrum}
 Let $A$ be a reduced finitely generated $k$-algebra, i.e., a $k$-algebra arising as the coordinate ring of some algebraic set.
 In this section, we will define the maximal spectrum $\Spec(A)$ and show that it is an affine variety.
 To do this, we need to define $\Spec(A)$ as a set, as a topological space and as a ringed space.
@@ -1321,7 +1321,7 @@ These are the analogues of principal oen subsets of an algebraic set.
 Our discussion here will be important when we study toric varieties, as it will allow us to identify the open subset isomorphic to an algebraic torus.
 
 \begin{proposition}[{\cite[Proposition 3.32]{Milne13}}]
-Let $V = \Spec(A)$ be an affine variety and $h$ a nonzero element of $A$.
+Let $V = \Spec(A)$ be an affine variety and $h$ a non-zero element of $A$.
 Then the homomorphism $\iota : A \to A_h$ defined by $a \mapsto \frac{a}{1}$ defines the isomorphism of ringed spaces
 $$(D(h), \left. \calO_V \right|_{D(h)}) \cong \Spec(A_h).$$
 In particular, $D(h)$ is an affine variety.
@@ -1632,31 +1632,35 @@ $$\ker \varphi = \{h \in M_P : h + \bI(V) \in \frakm_P^2\}=\{h \in M_P:h+\bI(V)\
 \newpage
 \addtocontents{toc}{\vskip 1em}
 \section{Convex geometry}\label{sectionconvexgeometry}
-\todo{Fix this introduction to match the chapter.}
-Affine toric varieties are a class of algebraic varieties which are determined by a \emph{cone} in a vector space.
-The interplay between the variety and its cone leads to a rich theory combining the algebraic geometry of the variety and the convex geometry of the cone.
-Moreover, computations with the cone can often be done explicitly, which means toric varieties are useful to study as examples.
+An affine toric variety is an affine variety defined using a cone in a vector space.
+Many properties of the variety are determined by properties of the cone.
+Thus, to study toric varieties, it is important to understand the convex geometry of cones.
+The goal of this chapter is to study the basic convex geometry we will need to study toric varieties.
 
-The most succinct definition of a toric variety $X$ is the following:
-$X$ is a normal variety with an algebraic torus $T$ as a dense open subset, and $T$ acts on $X$ by an action which extends the natural action of $T$ on itself.
-However, this description doesn't indicate the relationship with convex geometry.
-In this chapter, we will define and study toric varieties; we will also see how the GIT quotient of an affine space by a torus has the structure of an affine toric variety.
-We start by discussing the prerequisite convex geometry.
+We begin by defining convex cones and giving examples.
+Analogous to how vector spaces have dual spaces, cones have dual cones.
+One of the main results we prove in this chapter is that dualising a convex cone twice yields the same cone---this is a fundamental fact, but the proof is non-trivial.
+
+In the context of toric varieties, the cones we are interested in have certain properties like being rational, polyhedral or strongly convex.
+An important part of this chapter is clearly defining these properties.
+In later chapters, we will see how these properties have consequences for toric varieties.
+
+Since we are interested in applying convex geometry to the study of toric varieties, the reader is invited to skim this chapter on their first reading.
+Subsequent chapters should be readable with just a basic understanding of the definitions in this chapter.
+The reader can return to this chapter for the results herein as they are needed.
 
 
 
 
 
-\subsection{Convex cones}
-\todo{Start with vector space instead of lattice.}
-Let $N$ be a lattice, i.e., a free abelian group of finite rank $n$.
-Let $M = \mathrm{Hom}_\ZZ(N, \ZZ)$ denote the dual lattice, with dual pairing $\langle \cdot, \cdot \rangle : M \times N \to \ZZ$.
-We consider $N$ and $M$ as subsets of the $n$-dimensional vector spaces
-$N_\RR = N \otimes_\ZZ \RR$ and $M_\RR = M \otimes_\ZZ \RR$, respectively.
-Note that $N_\RR$ and $M_\RR$ are dual vector spaces, and we retain the notation $\langle \cdot, \cdot \rangle$ for the dual pairing $M_\RR \times N_\RR \to \RR$.
+\subsection{Convex cones}\label{section:convexcones}
+In this section, we define convex cones and their duals.
+We also prove Corollary \ref{corollary:doubledual}, which says that dualising twice yields the original cone.
 
-\todo{Introduce/motivate cone.}
-A subset $\sigma \subseteq N_\RR$ is a \emph{cone} if it is closed under nonnegative scalar multiplication, i.e., $\lambda x \in \sigma$ for all $x \in \sigma$ and all $\lambda \in \RR_{\ge 0}$.
+Throughout this chapter, $N_\RR$ denotes a real vector space of finite dimension $n$, with algebraic dual space $M_\RR = N_\RR^*$.
+We have the dual pairing $\langle \cdot, \cdot \rangle : M_\RR \times N_\RR \to \RR$ given by $\langle u, v \rangle := u(v)$.
+
+A subset $\sigma \subseteq N_\RR$ is a \emph{cone} if it is closed under non-negative scalar multiplication, i.e., $\lambda x \in \sigma$ for all $x \in \sigma$ and all $\lambda \in \RR_{\ge 0}$.
 A set $\sigma \subseteq N_\RR$ is \emph{convex} if for any two points in $\sigma$, the line segment joining them is contained in $\sigma$,
 i.e., $x, y \in \sigma$ implies $\lambda x + (1 - \lambda) y \in \sigma$ for all $\lambda \in [0, 1]$.
 Since cones are closed under positive scalar multiplication, a cone is convex if and only if it is closed under addition.
@@ -1674,9 +1678,10 @@ $$\sigma_2 = \{(x, y) \in \RR_{\ge 0}^2 : x \le y \le 2 x\}.$$
 An example of a convex cone in $\RR^3$ is
 $$\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}.$$
 \end{enumerate}
+See Figure \ref{figure:cones} for plots of these cones.
 \end{example}
 
-\begin{figure}[H]
+\begin{figure}[h]
      \begin{subfigure}[b]{0.325\textwidth}
           \centering
           \resizebox{0.8 \linewidth}{!}{
@@ -1724,15 +1729,20 @@ $$\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}.$$
      \label{figure:cones}
 \end{figure}
 
-\todo{Motivate the definition of the dual cone/have better flow. Example of motivation: the dual cone controls the faces.}
+In linear algebra, dualising is an important operation which helps us to study a vector space.
+In convex geometry, there is an analogous notion for a cone, called the dual cone.
+We will explore relationship between a cone and its dual throughout this chapter.
+We now give the definition:
 
 \begin{definition}
-Let $\sigma$ be a cone.
-The \emph{dual cone} $\sigma^\vee$ is
-$$\sigma^\vee = \{u \in M_\RR : \langle u, v \rangle \ge 0 \text{ for all } v \in \sigma\}.$$
+Let $\sigma$ be a cone in $N_\RR$.
+The dual cone $\sigma^\vee$ is
+$$\sigma^\vee := \{u \in M_\RR : \langle u, v \rangle \ge 0 \text{ for all } v \in \sigma\}.$$
 \end{definition}
 
-\begin{example}
+We now give examples of cones and their duals.
+
+\begin{example}\label{example:conesandduals}
 Consider the lattice $N = \ZZ^n$ inside $N_\RR = \RR^n$.
 Let $e_1, \ldots, e_n$ be the standard basis for $N$ and $e_1^*, \ldots, e_n^*$ the dual basis for $M$.
 \begin{enumerate}
@@ -1818,7 +1828,7 @@ Then there exist $a_{\text{min}} \in A$ and $b_{\text{min}} \in B$ which minimis
 \begin{proof}
 Take arbitrary $x \in A$ and $y \in B$ and set $r_1 := \|x-y\| > 0$.
 Since $A$ is compact, it is bounded by a closed ball of some radius $r_2 > 0$.
-Let $S := B \cap \overline{B_{r_1+r_2}(x)},$ which is nonempty since $y \in S$.
+Let $S := B \cap \overline{B_{r_1+r_2}(x)},$ which is non-empty since $y \in S$.
 Since the distance function is continuous and $A \times S$ is compact, there exists $(a_{\text{min}}, b_{\text{min}}) \in A \times S$ minimising the distance $\|a - b\|$ for all pairs of points in $A \times S$.
 We claim that this is in fact the minimum for all pairs of points in $A \times B$.
 Suppose to the contrary that there is $(\alpha,\beta) \in A \times B$ with $\|\alpha - \beta\| < \|a_{\text{min}} - b_{\text{min}}\|$. 
@@ -1827,7 +1837,7 @@ $\|x - \beta\| \le \|x- \alpha\| + \|\alpha - \beta\| < r_2 + r_1.$
 This implies $\beta$ lies in $S$, contradicting that $\|a_{\text{min}} - b_{\text{min}}\|$ attained the minimum distance for pairs in $A \times S$.
 \end{proof}
 
-The proof of Theorem \ref{theorem:dualcone} follows from the following hyperplane separation theorem, which says that for certain sets, we can find a hyperplane so that each set lies in a different halfspace.
+The proof of Theorem \ref{theorem:dualcone} follows from the following hyperplane separation theorem, which says that for certain sets, we can find a hyperplane so that each set lies in a different half-space.
 
 \begin{theorem}[Hyperplane separation theorem {\cite[\S 2.5.1]{BV04}}]\label{hyperplaneseparation}
 Under the assumptions of Lemma \ref{lemma:mindistance}, there exists $w \in V\setminus\{0\}$ and $\lambda \in \RR$ such that for all $a \in A$, $(w, a) \le \lambda$, and for all $b \in B$, $(w, b) \ge \lambda$.
@@ -1882,94 +1892,410 @@ If $v \in \sigma$, then $\langle u, v\rangle \ge 0$ for all $u \in \sigma^\vee$,
 If $v \notin \sigma$, then Theorem \ref{theorem:dualcone} implies there exists $u \in \sigma^\vee$ with $\langle u, v \rangle < 0$ so that $v \notin (\sigma^\vee)^\vee$.
 \end{proof}
 
-\subsection{Polyhedral cones}\label{polyhedralcones}
-In the study of toric varieties, we are interested in the following class of closed convex cones:
 
-\begin{definition}\label{convexpolyhedraldef}
-A subset $\sigma \subseteq N_\RR$ is called a convex polyhedral cone if
-$$\sigma = \Span_{\RR_{\ge 0}} \{v_1, \ldots, v_s\}$$
-for a (finite) set of generators $v_1, \ldots, v_s \in N_\RR$.
+
+
+
+\subsection{Polyhedral cones}\label{polyhedralcones}
+In this section, we define a class of convex cones called polyhedral cones---these are cones with a finite set of generators.
+The cones associated to toric varieties are always polyhedral.
+We also define and study faces of polyhedral cones, which are important subsets of the cone.
+
+Recall $N_\RR$ and $M_\RR$ are dual vector spaces with dual pairing $\langle \cdot , \cdot \rangle : M_\RR \times N_\RR \to \RR$.
+Now, let $N$ be a lattice in $N_\RR$.
+This means $N$ is a free abelian subgroup of $N_\RR$ with rank $n = \dim N_\RR$ such that $\Span_\RR N = N_\RR$.
+Concretely, $N$ is a lattice in $N_\RR$ if and only if there exists an $\RR$-basis for $N_\RR$ which is also a $\ZZ$-basis for $N$ \cite[\S 2.2]{Serre73}.
+The relationship between $N$ and $N_\RR$ generalises the relationship between $\ZZ^n$ and $\RR^n$, and most of our examples will have $N = \ZZ^n$ and $N_\RR = \RR^n$ for simplicity.
+We also let $M$ denote the dual lattice $\mathrm{Hom}_{\ZZ\text{-linear}}(N, \ZZ)$, which are the elements of $M_\RR$ taking integer values on $N$.
+
+We are now ready to define convex polyhedral cones.
+
+\begin{definition}\label{definition:convexpolyhedral}
+A subset $\sigma \subseteq N_\RR$ is called a (convex) polyhedral cone if
+$$\sigma = \Span_{\RR_{\ge 0}} \{v_1, \ldots, v_r\}$$
+for a finite set of generators $v_1, \ldots, v_r \in N_\RR$.
 \end{definition}
 
-It follows from the definition that convex polyhedral cones are indeed convex cones.
-Every example of a cone we have seen so far has been polyhedral, except for $\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}$ in Example \ref{coneexamples}.
-As given, a more apt name for this definition would be ``finitely-generated cone'';
-the name polyhedral is justified by the fact that a cone satisfies Definition \ref{convexpolyhedraldef} if and only if it is a finite intersection of closed halfspaces with $0$ on their boundary (i.e., is polyhedral)---see \cite[\S 1.3]{DLHK13} for a proof.
+It follows from the definition that convex polyhedral cones are indeed convex cones in the sense defined in \S \ref{section:convexcones}.
+Every example of convex cones we have seen so far has been polyhedral, except for $\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}$ in Example \ref{example:cones}.
+As given, a more apt name for this definition would be ``finitely-generated cone.''
+The name polyhedral is justified by the fact that a cone satisfies Definition \ref{definition:convexpolyhedral} if and only if it is a finite intersection of closed half-spaces (i.e., is polyhedral);
+in Proposition \ref{proposition:dualdescription}, we give a dual description of a polyhedral cone, showing it is a finite intersection of closed half-spaces, and the converse is proven in \cite[1.3.13]{DLHK13}.
 
-Fulton \cite[\S 1.2]{Fulton93} states and proves many important consequences of Theorem \ref{theorem:dualcone} for convex polyhedral cones.
-We explain a few of these now.
+Let $\sigma$ be a polyhedral cone; we explain some basic properties of $\sigma$.
+The dimension of $\sigma$ is
+$$\dim(\sigma) := \dim(\RR \cdot \sigma),$$
+where $\RR\cdot\sigma = \sigma + (-\sigma)$ is the smallest vector subspace of $N_\RR$ containing $\sigma$.
+We say $\sigma$ is non-degenerate if $\dim(\sigma) = \dim N_\RR$.
+The cone $\sigma$ is called rational if its generators can be chosen from the lattice $N$.
+The consequences of $\sigma$ being non-degnerate and rational will be developed in the rest of this chapter.
+Recall that the dual cone $\sigma^\vee$ is the set of functionals which are non-negative on $\sigma$.
+When $\sigma$ is polyhedral, a functional lies in $\sigma^\vee$ if and only if it is non-negative on the generators of $\sigma$.
 
-Any $u \in M_\RR$ defines a hyperplane $u^\perp$ and corresponding nonnegative halfspace $u^\vee$.
-These are defined as
-$$u^\perp := \{v \in N_\RR : \langle u, v\rangle = 0\}, \qquad u^\vee := \{v \in N_\RR : \langle u, v\rangle \ge 0\}.$$
-A face $\tau$ of $\sigma$ is the intersection of $\sigma$ with a hyperplane which is nonnegative on $\sigma$:
-$$\tau = \sigma \cap u^\perp = \{v \in \sigma : \langle u, v \rangle = 0\}, \, \text{for some } u \in \sigma^\vee.$$
-A facet is a codimension one face. 
-Any proper face is the intersection of all facets containing it.
-When $\sigma$ spans $N_\RR$ and $\tau$ is a facet of $\sigma$, there exists $u \in \sigma^\vee$, which is unique up to multiplication by a positive scalar, such that
-$$\tau = \sigma \cap u^\perp.$$
-We denote such a vector by $u_\tau$, which gives the equation for the hyperplane spanned by $\tau$.
-The face $\sigma \cap u^\perp$ is generated by the vectors $v_i$ in the generating set for $\sigma$ such that $\langle u, v_i\rangle = 0$.
-If $\sigma$ spans $N_\RR$, the dual cone is generated by $\{u_\tau : \tau \text{ is a facet }\}$.
-This implies the dual of a convex polyhedral cone is also a convex polyhedral cone (this result is true without assuming $\sigma$ spans $N_\RR$).
-Example \ref{coneanddualexample} below gives an example of computing facets and dual cone generators.
+We now define the faces of a polyhedral cone.
+Any $u \in M_\RR$ defines a subspace of $N_\RR$ in the following manner:
+$$u^\perp = \{v \in N_\RR : \langle u, v \rangle = 0\}.$$
+The notation suggests we can intuitively think of $u^\perp$ as the orthogonal complement of $u$, though this interpretation is not accurate since $\langle \cdot, \cdot \rangle$ is not an inner product.
+A face $\tau$ of $\sigma$ is a set of the form 
+$$\tau = \sigma \cap u^\perp,$$
+for some $u \in \sigma^\vee$.
+When $u = 0 \in \sigma^\vee$, we have $\sigma \cap u^\perp = \sigma$, so $\sigma$ is a face of itself.
+A face of codimension 1 is called a facet.
+Let us give a basic example to illustrate these definitions.
 
-\begin{example}\label{coneanddualexample}
-Let $N = \ZZ^3$ and let $\sigma = \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\} \subseteq N_\RR \cong \RR^3$.
-Observe that 
-$$u_{\tau_1} = e_1^*, \,\,\,\,\,\,\,\,\,\, u_{\tau_2} = e_2^*, \,\,\,\,\,\,\,\,\,\, u_{\tau_3} = e_3^*, \,\,\,\,\,\,\,\,\,\, u_{\tau_4} = e_1^* + e_2^* - e_3^*$$
-are all nonnegative on $\sigma$ and hence lie in $\sigma^\vee$. 
-For each $u_{\tau_i}$, there is the corresponding facet $\tau_i = \sigma \cap u_{\tau_i}^\perp$.
-These are:
-\begin{align*}
-	&\tau_1 = \Span_{\RR_{\ge 0}}\{e_2, e_2+e_3\}, & &\tau_2 = \Span_{\RR_{\ge 0}} \{e_1, e_1+e_3\}, \\
-	&\tau_3 = \Span_{\RR_{\ge 0}}\{e_1, e_2\},  & &\tau_4 = \Span_{\RR_{\ge 0}} \{e_1+e_3, e_2+e_3\}.
-\end{align*}
-The other faces in $\sigma$ are the rays 
-\begin{align*}
-	&\tau_1 \cap \tau_3 = \Span_{\RR_{\ge 0}}\{e_2\}, & &\tau_1 \cap \tau_4 = \Span_{\RR_{\ge 0}} \{e_2+e_3\}, \\
-	&\tau_2 \cap \tau_3 = \Span_{\RR_{\ge 0}}\{e_1\}, & &\tau_2 \cap \tau_4 = \Span_{\RR_{\ge 0}} \{e_1+e_3\},
-\end{align*}
-and the origin $\bigcap_{i=1}^4 \tau_i = \{0\}.$
-The dual cone is generated by $\{u_{\tau_i}\}_{i=1}^4$, so
-$$\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\}.$$
-
-\begin{figure}[H]
-\includegraphics[width=0.2 \textwidth]{../images/cox cone example 2}
-\caption*{A diagram of $\sigma$ \cite[Figure 2]{CLS11}}
-\end{figure}
+\begin{example}
+Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, e_2\}$ in $N_\RR = \RR^2$.
+We saw in Example \ref{example:conesandduals} that $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, e_2^*\}$.
+Suppose $u = b_1 e_1^* + b_2 e_2^*$ lies in $\sigma^\vee$.
+If $b_1$ and $b_2$ are both non-zero, then
+$$\sigma \cap u^\perp = \{(a_1, a_2) \in \RR_{\ge 0}^2 : a_1 b_1 + a_2 b_2 = 0\} = \{0\}.$$
+If $b_1 \ne 0$ but $b_2 = 0$, then
+$$\sigma \cap u^\perp = \{(a_1, a_2) \in \RR_{\ge 0}^2 : a_1 b_1 = 0\} = \Span_{\RR_{\ge 0}}\{e_2\}.$$
+Similarly, if $b_1 = 0$ but $b_2 \ne 0$, then $\sigma \cap u^\perp = \Span_{\RR_{\ge 0}} \{e_1\}.$
+Figure \ref{figure:facesandnormals} shows the faces of $\sigma$ and functionals which define the faces.
 \end{example}
 
+%\begin{figure}[H]
+%    \centering
+%    \begin{tikzpicture}
+%        % Left diagram
+%        \begin{scope}[shift={(-3,0)}]
+%            % Shaded area
+%            \fill[gray!30] (0,0) -- (0,2) -- (2,2) -- (2,0) -- cycle;
+%            
+%            % Axes
+%            \draw[-] (-.75,0) -- (2.25,0);
+%            \draw[-] (0,-0.75) -- (0,2.25);
+%            
+%            % Lattice points
+%            \foreach \x in {0.5,1,1.5,2}
+%                \foreach \y in {0.5,1,1.5,2}
+%                    \fill (\x,\y) circle (1pt);
+%
+%            % Vectors
+%            \draw[->, ultra thick, red] (0,0) -- (0,2.25);
+%            \draw[->, ultra thick, blue] (0,0) -- (2.25,0);
+%	  \filldraw[black] (0, 0) circle (2.5pt);
+%
+%	   % Labels
+%            \node at (1.5, 2.5) {\small{$\sigma = \sigma \cap 0^\perp$}};
+%            \node[red] at (-1.25, 1.5) {\small{$\tau_2 = \sigma \cap u_2^\perp$}};
+%            \node[blue] at (1.5, -0.5) {\small{$\tau_3 = \sigma \cap u_3^\perp$}};
+%            \node at (-1.25, -0.5) {\small{$\tau_1 = \sigma \cap u_1^\perp$}};
+%        \end{scope}
+%        
+%        % Right diagram
+%        \begin{scope}[shift={(4,0)}]
+%            % Shaded area
+%            \fill[gray!30] (0,0) -- (0,2) -- (2,2) -- (2, 0) -- cycle;
+%            
+%            % Axes
+%            \draw[->] (-.75,0) -- (2.25,0);
+%            \draw[->] (0,-0.75) -- (0,2.25);
+%            
+%            % Lattice points
+%            \foreach \x in {0,0.5,1,1.5,2}
+%                \foreach \y in {0,0.5,1,1.5,2}
+%                    \fill (\x,\y) circle (1pt);
+%
+%            % Vectors
+%            \draw[->, ultra thick, blue] (0,0) -- (0,0.5);
+%            \draw[->, ultra thick] (0,0) -- (0.5,0.5);
+%	   \draw[->, ultra thick, red] (0,0) -- (0.5,0);
+%            \node at (1.5, 2.5) {\small{$\sigma^\vee$}};
+%
+%	   % Labels
+%            \node[red, below right] at (0.5,0) {\small{$u_2$}};
+%            \node[blue, above left] at (0, 0.5) {\small{$u_3$}};
+%            \node[above right] at (0.5, 0.5) {\small{$u_1$}};
+%        \end{scope}
+%    \end{tikzpicture}
+%    \caption{}
+%     \label{}
+%\end{figure}
 
+\begin{figure}[H]
+    \centering
+    % Left subfigure
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            % Shaded area
+            \fill[gray!30] (0,0) -- (0,2) -- (2,2) -- (2,0) -- cycle;
+            
+            % Axes
+            \draw[-] (-.75,0) -- (2.25,0);
+            \draw[-] (0,-0.75) -- (0,2.25);
+            
+            % Lattice points
+            \foreach \x in {0.5,1,1.5,2}
+                \foreach \y in {0.5,1,1.5,2}
+                    \fill (\x,\y) circle (1pt);
 
+            % Vectors
+            \draw[->, ultra thick, red] (0,0) -- (0,2.25);
+            \draw[->, ultra thick, blue] (0,0) -- (2.25,0);
+            \filldraw[black] (0, 0) circle (2.5pt);
 
+            % Labels
+            \node at (1.5, 2.5) {\small{$\sigma = \sigma \cap 0^\perp$}};
+            \node[red] at (-1.25, 1.5) {\small{$\tau_2 = \sigma \cap u_2^\perp$}};
+            \node[blue] at (1.5, -0.5) {\small{$\tau_3 = \sigma \cap u_3^\perp$}};
+            \node at (-1.25, -0.5) {\small{$\tau_1 = \sigma \cap u_1^\perp$}};
+        \end{tikzpicture}
+        %\caption{Left diagram}
+        %\label{fig:left_diagram}
+    \end{subfigure}
+    \hspace{-0.05\textwidth} % Creates equal spacing between the subfigures
+    % Right subfigure
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            % Shaded area
+            \fill[gray!30] (0,0) -- (0,2) -- (2,2) -- (2, 0) -- cycle;
+            
+            % Axes
+            \draw[->] (-.75,0) -- (2.25,0);
+            \draw[->] (0,-0.75) -- (0,2.25);
+            
+            % Lattice points
+            \foreach \x in {0,0.5,1,1.5,2}
+                \foreach \y in {0,0.5,1,1.5,2}
+                    \fill (\x,\y) circle (1pt);
 
-\subsection{The semigroup of a cone}
-Recall that a semigroup is a set with an associative binary operation.
-For each cone $\sigma$, the points of the dual lattice which are contained in $\sigma^\vee$ form a semigroup,
-$$S_\sigma := \sigma^\vee \cap M.\footnote{We have $0 \in S_\sigma$ for any convex polyhedral cone $\sigma$. Then $S_\sigma$ is always a semigroup with identity, i.e., a monoid. In the toric varieties literature, it is conventional to call $S_\sigma$ a semigroup, even though calling it a monoid would be more precise; we follow the convention and refer to $S_\sigma$ as a semigroup.}$$
+            % Vectors
+            \draw[->, ultra thick, blue] (0,0) -- (0,0.5);
+            \draw[->, ultra thick] (0,0) -- (0.5,0.5);
+            \draw[->, ultra thick, red] (0,0) -- (0.5,0);
+            \node at (1.5, 2.5) {\small{$\sigma^\vee$}};
 
-A convex polyhedral cone $\sigma \subseteq N_\RR$ is called \emph{rational} if it can be generated by elements in the lattice $N$.
-When $\sigma$ is rational, $\sigma^\vee$ is also rational \cite[\S 1.2]{Fulton93}.
-Gordan's lemma tells us that the semigroup of a rational cone is finitely generated:
+            % Labels
+            \node[red, below right] at (0.5,0) {\small{$u_2$}};
+            \node[blue, above left] at (0, 0.5) {\small{$u_3$}};
+            \node[above right] at (0.5, 0.5) {\small{$u_1$}};
+        \end{tikzpicture}
+        %\caption{Right diagram}
+        %\label{fig:right_diagram}
+    \end{subfigure}
+    \caption{The faces of $\sigma = \Span_{\RR_{\ge 0}}\{e_1, e_2\}$ and functionals defining them.}
+    \label{figure:facesandnormals}
+\end{figure}
 
-\begin{theorem}[Gordan's lemma {\cite[\S 1.2]{Fulton93}}]\label{gordanslemma}
-If $\sigma$ is a rational convex polyhedral cone, then $S_\sigma$ is a finitely generated semigroup.
-\end{theorem}
+We collect some basic properties of faces in the following proposition.
+
+\begin{proposition}
+Let $\sigma$ be a convex polyhedral cone.
+\begin{enumerate}
+\item A face of $\sigma$ is also a convex polyhedral cone.
+If $\sigma$ is a rational cone, then its faces are too.
+\item There are only finitely many faces of $\sigma$.
+\item Any intersection of faces is a face.
+\item If $\tau$ is a face of $\sigma$, then a face of $\tau$ is also a face of $\sigma$.
+\item Any proper face is contained in a facet.
+Any proper face is the intersection of all the facets containing it, and a face with codimension two is the intersection of exactly two facets.
+\end{enumerate}
+\end{proposition}
 \begin{proof}
-Let $u_1, \ldots, u_s \in \sigma^\vee \cap M$ generate $\sigma^\vee$ as a cone.
-Define
-$$K = \left\{\sum t_i u_i : 0 \le t_i \le 1\right\} \subseteq M_\RR.$$
-Since $K$ is compact and $M$ is discrete, the intersection $K \cap M$ is finite.
-We claim $K \cap M$ generates $S_\sigma$.
-%Note that $u_1, \ldots, u_s \in K \cap M$.
-Suppose that $u \in S_\sigma$.
-Then $u = \sum r_i u_i$ for some $r_i \in \RR_{\ge 0}$ since $\{u_i\}$ generates $\sigma^\vee$.
-Write each $r_i$ as $m_i + t_i$ for $m_i \in \ZZ_{\ge 0}$ and $0 \le t_i < 1$, so $u = \sum m_i u_i + \sum t_i u_i$.
-Clearly $\sum t_i u_t \in K$.
-Also, $\sum t_i u_t = u - \sum m_i u_i \in M$ since $u$ and $\sum m_i u_i$ lie in $M$ and $M$ is a group.
-Then $\sum t_i u_t \in K \cap M$, and since $u_1, \ldots, u_s \in K \cap M$, we have that $u = \sum m_i u_i + \sum t_i u_i \in \Span_{\ZZ_{\ge 0}} K \cap M$.
+See \cite[\S 1.2]{Fulton93} or \cite[\S 1]{Zaman13}.
 \end{proof}
+
+
+
+
+
+\subsection{Dual description of cones}\label{section:dualdescription}
+We have seen some basic objects of convex geometry---cones and their duals---as well as some properties cones may have, like being polyhedral.
+It is natural to ask whether the dual of a polyhedral cone is also polyhedral.
+It turns out that this is the case, and this result is the main goal of this section:
+
+\begin{theorem}[Farkas's lemma]\label{theorem:farkas}
+The dual of a convex polyhedral cone is a convex polyhedral cone.
+\end{theorem}
+
+The proof relies on giving a dual description of a polyhedral cone as an intersection of closed half-spaces.
+To prepare for this, we discuss some basic topology of polyhedral cones.
+
+Recall the interior of a subset $S$ of a topological space is the set of points admitting an open neighbourhood contained in $S$.
+The boundary of $S$ is the set of points in the closure of $S$ which do not lie in the interior.
+The following proposition characterises the boundary of a non-degenerate polyhedral cone.
+
+\begin{proposition}\label{proposition:boundary}
+The boundary of a non-degenerate polyhedral cone is the union of its proper faces.
+\end{proposition}
+\begin{proof}
+See \cite[\S 1.2]{Fulton93} or \cite[\S 1]{Zaman13}.
+\end{proof}
+
+When $\sigma$ is a cone which does not span $N_\RR$ (i.e., it is degenerate), its interior will be empty.
+For example, consider $\sigma = \Span_{\RR_{\ge 0}}\{e_1\}$ in $N_\RR = \RR^2$.
+Any open neighbourhood of a point in $\sigma$ contains a point outside $\sigma$, so its interior is empty.
+The fact that degenerate cones have empty interiors motivates the definition of the \emph{relative interior}.
+The relative interior of $\sigma$ is defined as the interior of $\sigma$ in the vector space $\RR \cdot \sigma$.
+For example, when $\sigma = \Span_{\RR_{\ge 0}}\{e_1\}$, the relative interior of $\sigma$ is $\sigma \setminus\{0\}$.
+The following proposition characterises when a vector lies in the relative interior of a cone:
+
+\begin{proposition}
+Suppose that $\sigma$ is a polyhedral cone and $v \in \sigma$.
+The following are equivalent:
+\begin{enumerate}
+\item $v$ is in the relative interior of $\sigma$.
+\item $\langle u, v\rangle > 0$ for all $u \in \sigma^\vee \setminus \sigma^\perp.$
+\item $\sigma^\vee \cap v^\perp = \sigma^\perp$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+See \cite[\S 1.2]{Fulton93} and \cite[\S 1]{Zaman13}.
+\end{proof}
+
+We are ready to describe a polyhedral cone as an intersection of closed half-spaces.
+We will need the following observation:
+if $\sigma$ is non-degenerate and $\tau$ is a facet, then the functional $u_\tau \in \sigma^\vee$ such that $\tau = \sigma \cap u_\tau^\perp$ is unique up to positive scalar multiplication.
+Indeed, any two such $u_\tau$ both vanish on the $(n-1)$-dimensional subspace $\RR \cdot \tau$, and their values on a point outside this subspace determine them, but these only differ by a scalar.
+We now prove the result:
+
+\begin{proposition}\label{proposition:dualdescription}
+Let $\sigma$ be a non-degenerate cone in $N_\RR$ such that $\sigma \ne N_\RR$.
+Then, $\sigma$ equals the intersection of half-spaces
+$$H_\tau = \{v \in N_\RR : \langle u_\tau, v\rangle \ge 0\},$$
+as $\tau$ ranges over the facets of $\sigma$.
+\end{proposition}
+\begin{proof}
+The half-space $H_\tau$ does not depend on the choice of $u_\tau \in \sigma^\vee$ such that $\tau = \sigma \cap u_\tau^\perp$, since the functional $u_\tau$ is unique up to positive scalar multiplication.
+
+If $v$ lies in $\sigma$, then $\langle u_\tau, v \rangle \ge 0$ for any facet $\tau$, since $u_\tau \in \sigma^\vee$.
+Then $v$ lies in the intersection of half-spaces.
+
+Conversely, suppose for the sake of contradiction that $v'$ is in the intersection of half-spaces but not in $\sigma$.
+Since $\sigma$ is non-degenerate, Proposition \ref{proposition:boundary} implies there exists $v$ in the interior of $\sigma$.
+There is a point $w$ on the line segment joining $v$ and $v'$ which also lies on the boundary of $\sigma$.
+By Proposition \ref{proposition:boundary}, $w$ lies on a facet, say $\tau$.
+Since $\langle u_\tau, v \rangle > 0$ and $\langle u_\tau, w \rangle = 0$, we have $\langle u_\tau, v' \rangle < 0$.
+This contradicts that $v'$ lies in the intersection of the half-spaces.
+\end{proof}
+
+Proposition \ref{proposition:dualdescription} allows us to prove that the dual of a polyhedral cone is a polyhedral cone:
+
+\begin{proof}[Proof of Theorem \ref{theorem:farkas}]
+Suppose first that $\sigma$ is non-degenerate.
+We show the $u_\tau$, where $\tau$ runs over the facets of $\sigma$, generate $\sigma^\vee$.
+Suppose for the sake of contradiction there is $u \in \sigma^\vee$ which does not lie in the cone generated by the $u_\tau$.
+Applying Theorem \ref{theorem:dualcone} to the cone generated by the $u_\tau$ tells us there exists $v \in N_\RR$ such that $\langle u_\tau, v\rangle \ge 0$ for all $\tau$, but $\langle u, v \rangle < 0$.
+By Proposition \ref{proposition:dualdescription}, $v$ lies in $\sigma$, so $\langle u, v \rangle < 0$ contradicts that $u$ lies in $\sigma^\vee$.
+
+Now suppose $\sigma$ spans $V$, a subspace strictly smaller than $N_\RR$.
+Let $\tilde \sigma$ denote the cone $\sigma$ thought of as a cone in $V = \RR \cdot \sigma$.
+Then $\tilde \sigma$ is non-degenerate so that $\tilde \sigma^\vee$ is a convex polyhedral cone in $V^* = N_\RR / V^\perp$.
+Then $\sigma^\vee$ will be generated by lifts of generators of $\tilde \sigma^\vee$, along with vectors $u$ and $-u$, as $u$ ranges over a basis for $V^\perp$.
+\end{proof}
+
+Given generators for a polyhedral cone $\sigma$, it would be nice to find generators for the dual cone.
+The proof we just saw tells us it is sufficient to find the functional $u_\tau$ for each facet $\tau$.
+
+We describe an algorithm for finding the functionals $u_\tau$ when $\sigma$ is non-degenerate.
+For each set of $n-1$ $\RR$-independent vectors in the generating set of $\sigma$, solve for $u \in M_\RR$ vanishing on them.
+If $u$ changes sign on the rest of the generators, it does not lie in $\sigma^\vee$ and may be discarded.
+Now suppose that one of $u$ and $-u$ is non-negative on the rest of the generators; without loss of generality we assume $u$ is.
+In this case, $u$ lies in $\sigma^\vee$, the $n-1$ vectors generate a face $\tau$, and $u = u_\tau$ is the equation of the face.
+We then take $u$ as one of the generators of $\sigma^\vee$.
+
+Note when the generators of $\sigma$ lie in the lattice $N$, this algorithm can be used to find generators of $\sigma^\vee$ in the dual lattice $M$.
+This means the dual cone of a rational polyhedral cone is also rational.
+
+
+
+
+
+\subsection{Strongly convex cones}
+In this section, we define a class of polyhedral cones called strongly convex cones.
+These are the cones we need to study toric varieties.
+We prove a useful proposition giving equivalent conditions for a cone to be strongly convex.
+This involves a lemma providing a bijection between the faces of a cone and the faces of its dual.
+
+We say a convex polyhedral cone is \emph{strongly convex} if the origin of $N_\RR$ is a face.
+Most of the cones we have seen in this chapter have been strongly convex.
+An example of a polyhedral cone which is not strongly convex is the upper half-plane $\sigma = \Span_{\RR_{\ge 0}}\{e_1, -e_1, e_2\}$ in $N_\RR=\RR^2$.
+The dual cone $\sigma^\vee$ is generated by $e_2^*$ and the only proper face is the $x$-axis.
+Figure \ref{figure:strongconvexity} contains diagrams of two more cones: one which is strongly convex, and one which is not.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{../images/fultons_cones}
+\caption{A strongly convex cone (left) and a non-strongly convex cone (right) \cite{Fulton93}.}
+\label{figure:strongconvexity}
+\end{figure}
+
+Our goal is to give equivalent conditions for a cone to be strongly convex---the next lemma will help us do that.
+
+For each face $\tau$ of $\sigma$, we define
+$$\tau^\perp = \{u \in M_\RR : \langle u, v \rangle = 0 \text{ for all } v \in \tau\}.$$
+
+\begin{lemma}\label{lemma:dualfaces}
+If $\tau$ is a face of $\sigma$, then $\sigma^\vee \cap \tau^\perp$ is a face of $\sigma^\vee$, and
+$$\dim(\tau) + \dim(\sigma^\vee \cap \tau^\perp) = \dim N_\RR.$$
+Moreover, the map $\tau \mapsto \sigma^\vee \cap \tau^\perp$ is an inclusion-reversing bijection between the faces of $\sigma$ and the faces of $\sigma^\vee$.
+In particular, the smallest face of $\sigma$ is $\sigma \cap (-\sigma) = (\sigma^\vee)^\vee \cap (\sigma^\vee)^\perp$.
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+We can now give equivalent conditions for a cone to be strongly convex.
+
+\begin{proposition}[{\cite[\S 1.2, Proposition 3]{Fulton93}}]\label{stronglyconvexprop}
+For a convex polyhedral cone $\sigma$, the following conditions are equivalent:
+\begin{enumerate}
+\item $\sigma$ is strongly convex;
+\item $\sigma \cap (-\sigma) = \{0\}$;
+\item $\sigma$ contains no non-zero vector subspace of $N_\RR$;
+\item $\sigma^\vee$ spans $M_\RR$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The largest vector subspace of $\sigma$ is $\sigma \cap (-\sigma)$, and this observation proves (2) and (3) are equivalent.
+Lemma \ref{lemma:dualfaces} tells us $\sigma \cap(-\sigma)$ is also the smallest face of $\sigma$, so (1) and (2) are equivalent.
+The dimension formula in Lemma \ref{lemma:dualfaces} applied to $\tau = \sigma \cap (-\sigma)$ says $\dim(\sigma \cap (-\sigma)) + \dim(\sigma^\vee) = \dim N_\RR$.
+This gives the equivalence of (2) and (4).
+\end{proof}
+
+
+
+
+
+\subsection{The separation lemma}
+To conclude this chapter, we state and prove the so-called separation lemma, which we will need to define abstract toric varieties.
+This lemma extends the hyperplane separation theorem, which says we can separate a closed set from a compact set using a hyperplane.
+The separation lemma says we can do the same for two cones sharing a common face.
+
+\begin{lemma}
+Let $\sigma$ and $\sigma'$ be convex polyhedral cones such that $\tau = \sigma \cap \sigma'$ is a face of both.
+Then there exists $u \in \sigma^\vee \cap (-\sigma')^\vee$ such that $\tau = \sigma \cap u^\perp = \sigma' \cap u^\perp$.
+\end{lemma}
+\begin{proof}
+We construct the desired $u$.
+To this end, consider the polyhedral cone 
+$$\gamma := \sigma + (-\sigma').$$
+Let $u_i$ denote generators for $\gamma^\vee$, and define $u := \sum_i u_i \in \gamma^\vee$.
+Since $\sigma$ and $-\sigma'$ are subsets of $\gamma$, we have $u \in \sigma^\vee \cap (-\sigma')^\vee$.
+We now prove the following key formula:
+$$\gamma \cap u^\perp = \gamma \cap (-\gamma).$$
+If $v \in \gamma \cap u^\perp$, then $\langle u, v \rangle = \sum_i \langle u_i, v\rangle = 0$, so since each summand is non-negative, they all vanish.
+Thus $\langle u_i, -v \rangle = 0$ for all $i$ and $-v \in \gamma$.
+Conversely, if $v \in \gamma \cap (-\gamma)$, then $\langle u, v \rangle \ge 0$ and $\langle u, -v \rangle \ge 0$, so that $v \in \gamma \cap u^\perp$.
+
+We now show $\tau = \sigma \cap u^\perp$.
+Since $\tau$ is contained in $\sigma$ and $\sigma'$, we have $\tau \subseteq \gamma \cap (-\gamma)$.
+Thus,
+$$\tau \subseteq \sigma \cap (\gamma \cap (-\gamma)) = \sigma \cap (\gamma \cap u^\perp) = \sigma \cap u^\perp.$$
+Conversely, suppose $v \in \sigma \cap u^\perp$.
+We have
+$$\sigma \cap u^\perp \subseteq \gamma \cap u^\perp = \gamma \cap (-\gamma) \subseteq \sigma' + (-\sigma),$$
+so $v = w' - w$ for some $w' \in \sigma'$ and $w \in \sigma$.
+Then $w' = v + w$ lies in $\sigma \cap \sigma' = \tau$.
+But $\tau = \sigma \cap y^\perp$ for some $y \in \sigma^\vee$.
+There holds $\langle y, v + w \rangle = \langle y, v \rangle + \langle y, w \rangle = 0$, so that $\langle y, v \rangle = 0$ and $v \in \tau$.
+This proves $\tau = \sigma \cap u^\perp$, and we see $\tau = \sigma' \cap u^\perp$ by applying the same argument to $-u$.
+\end{proof}
+
 
 
 
@@ -1983,64 +2309,129 @@ Then $\sum t_i u_t \in K \cap M$, and since $u_1, \ldots, u_s \in K \cap M$, we 
 \newpage
 \addtocontents{toc}{\vskip 1em}
 \section{Affine toric varieties}\label{affinetoricvarieties}
-Affine toric varieties are a class of algebraic varieties which are determined by a \emph{cone} in a vector space.
-The interplay between the variety and its cone leads to a rich theory combining the algebraic geometry of the variety and the convex geometry of the cone.
+Affine toric varieties are a class of algebraic varieties which are determined by a cone in a vector space.
+There is a rich interplay between the algebraic geometry of the variety and the convex geometry of the cone.
 Moreover, computations with the cone can often be done explicitly, which means toric varieties are useful to study as examples.
 
-The most succinct definition of a toric variety $X$ is the following:
-$X$ is a normal variety with an algebraic torus $T$ as a dense open subset, and $T$ acts on $X$ by an action which extends the natural action of $T$ on itself.
-However, this description doesn't indicate the relationship with convex geometry.
-In this chapter, we will define and study toric varieties; we will also see how the GIT quotient of an affine space by a torus has the structure of an affine toric variety.
-We start by discussing the prerequisite convex geometry.
+A toric variety $X$ is a normal variety containing an algebraic torus $T$ as a dense open subset, such that $T$ acts on $X$ by an action which extends the natural action of $T$ on itself.
+This definition is straightforward to state, but makes no reference to a cone in a vector space, so the relationship with convex geometry is unclear.
+
+In this chapter, we use the convex geometry from the previous chapter to define affine toric varieties using cones.
+Afterwards, we prove some fundamental properties, such as the existence of a dense torus which acts on the variety, and computing singularities.
+
+%To define an affine toric variety, we first associate a semigroup and semigroup algebra with a cone.
+%An affine toric variety can then be defined as the spectrum of the semigroup algebra.
+%The connections between a cone, its semigroup algebra, and the spectrum of the semigroup algebra give rise to the interplay between the geometries of the variety and the cone.
 
 
 
 
 
-\subsection{The semigroup algebra $S_\sigma$}
-Given a cone $\sigma$, we have seen how to construct a semigroup $S_\sigma = \sigma^\vee \cap M$.
-There is a corresponding semigroup algebra $\CC[S_\sigma]$, which is a finitely generated commutative $\CC$-algebra.
+\subsection{Semigroups and semigroup algebras}
+In this section, we associate two algebraic objects with a cone: a semigroup and its semigroup algebra.
+We also explain when these objects are finitely generated.
+We will use semigroup algebras to define affine toric varieties in \S \ref{section:affinetoricvarieties}.
+
+Recall a semigroup is a set with an associative binary operation.
+All the semigroups we consider are commutative, so we will write the operation additively.
+If $S$ is a semigroup and $T$ is a finite subset of $S$, we say $T$ generates $S$ if every element in $S$ can be written as a sum of elements of $T$.
+A map between semigroups with identity $\varphi : S \to T$ is a homomorphism if it preserves the identity and $\varphi(x + y) = \varphi(x) + \varphi(y)$ for all $x$ and $y$ in $S$.
+
+Now let $N$ be a lattice in $N_\RR$, with dual lattice $M$ in $M_\RR = N_\RR^*$.
+Let $\sigma$ be a convex polyhedral cone in $N_\RR$.
+The semigroup of $\sigma$ is defined as
+$$S_\sigma := \sigma^\vee \cap M.$$
+In other words, $S_\sigma$ is the set of lattice points in the dual cone of $\sigma$.
+Since $S_\sigma$ is a subsemigroup of the lattice $M$, it is abelian.
+Also, $S_\sigma$ contains $0$, meaning it is a semigroup with identity.\footnote{In the literature, it is conventional to call $S_\sigma$ a semigroup, even though it is in fact a monoid.}
+
+Recall that $\sigma$ is rational if it can be generated by elements in the lattice $N$.
+In \S \ref{section:dualdescription}, we saw that $\sigma^\vee$ is rational if $\sigma$ is.
+The following result tells us that the semigroup of a rational cone is finitely generated.
+
+\begin{theorem}[Gordan's lemma {\cite[\S 1.2]{Fulton93}}]\label{gordanslemma}
+If $\sigma$ is a rational convex polyhedral cone, then $S_\sigma$ is a finitely generated semigroup.
+\end{theorem}
+\begin{proof}
+Let $u_1, \ldots, u_s \in \sigma^\vee \cap M$ generate $\sigma^\vee$ as a cone.
+Define
+$$K = \left\{\sum_{i=1}^s t_i u_i : 0 \le t_i \le 1\right\} \subseteq M_\RR.$$
+Since $K$ is compact and $M$ is discrete, the intersection $K \cap M$ is finite.
+We claim $K \cap M$ generates $S_\sigma$.
+%Note that $u_1, \ldots, u_s \in K \cap M$.
+Suppose that $u \in S_\sigma$.
+Then $u =\sum_{i=1}^s r_i u_i$ for some $r_i \in \RR_{\ge 0}$ since $u_1, \ldots, u_s$ generate $\sigma^\vee$.
+Write each $r_i$ as $m_i + t_i$ for $m_i \in \ZZ_{\ge 0}$ and $0 \le t_i < 1$, so $u = \sum_{i=1}^s m_i u_i + \sum_{i=1}^s t_i u_i$.
+Clearly $\sum_{i=1}^s t_i u_i$ lies in $K$.
+Also, $\sum_{i=1}^s t_i u_i = u - \sum_{i=1}^s m_i u_i \in M$ since $u$ and $\sum_{i=1}^s m_i u_i$ lie in $M$ and $M$ is a group.
+Then $\sum_{i=1}^s t_i u_i$ lies in $K \cap M$, and since $u_1, \ldots, u_s \in K \cap M$, we have $u = \sum_{i=1}^s m_i u_i + \sum_{i=1}^s t_i u_i \in \Span_{\ZZ_{\ge 0}} K \cap M$.
+\end{proof}
+
+Using the semigroup $S_\sigma = \sigma^\vee \cap M$, we can also construct the semigroup algebra $k[S_\sigma]$.
+This construction is analogous to the construction of the group algebra using a group.
+We now explain the details.
+
+Given $S_\sigma$, the semigroup algebra $k[S_\sigma]$ is the algebra with basis of formal symbols
+$$\{\chi^u : u \in S_\sigma\}.$$
+The multiplication in $k[S_\sigma]$ is determined by addition in $S_\sigma$, in the following way:
+$$\chi^u \chi^{u'} := \chi^{u + u'}.$$
+The algebra $k[S_\sigma]$ is commutative and unital since $S_\sigma$ is.
+Also, when $\sigma$ is rational, Gordan's lemma implies $S_\sigma$ and hence $k[S_\sigma]$ are finitely generated.
+Specifically, if $u_1, \ldots, u_s$ generate $S_\sigma$, then $\chi^{u_1}, \ldots, \chi^{u_s}$ generate $k[S_\sigma]$.
+
+As an example, let us consider the semigroup algebra corresponding to the trivial cone $\sigma = \{0\}$.
+The dual cone $\sigma^\vee$ is all of $M_\RR$, so $S_\sigma = M_\RR \cap M = M$ and $k[S_\sigma]=k[M]$. 
+Given a basis $\{e_1^*, \ldots, e_n^*\}$ for $M$, denote
+$$X_i := \chi^{e_i^*} \in k[M].$$
+As a semigroup, $M$ is generated by $\pm e_1^*, \ldots, \pm e_n^*$, so
+$$k[M] = k[X_1, X_1^{-1}, \ldots, X_n, X_n^{-1}],$$
+and $k[M]$ is the ring of Laurent polynomials in $X_1, \ldots, X_n$.
+For any cone $\sigma$, the semigroup $S_\sigma$ is contained in $M$, so that $k[S_\sigma]$ is a subalgebra of $k[M]$. 
+Then any semigroup algebra $k[S_\sigma]$ can be thought of as a subalgebra of the Laurent polynomials.
+
+
+
+
+
+\subsection{Affine toric varieties}\label{section:affinetoricvarieties}
+With the semigroup algebra defined, we are ready to define the affine toric variety corresponding to a cone.
+After giving the definition, we provide some examples.
 
 \begin{definition}
 Let $\sigma$ be a rational cone in $N$.
-We define the affine toric variety corresponding to $\sigma$ to be
-$$U_\sigma := \Spec(\CC[S_\sigma]).$$
+The affine toric variety corresponding to $\sigma$ is
+$$U_\sigma := \Spec(k[S_\sigma]).$$
 \end{definition}
 
-Let us explain the details of the construction.
-Given the semigroup $S_\sigma = \sigma^\vee \cap M$, the semigroup algebra $\CC[S_\sigma]$ is defined as having a basis of formal symbols
-$$\{\chi^u : u \in S_\sigma\},$$
-with multiplication determined by addition in $S_\sigma$,
-$$\chi^u \cdot \chi^{u'} = \chi^{u + u'}.$$
-Note the multiplication is commutative since $S_\sigma$ is.
-We have the unit $\chi^0 \in \CC[S_\sigma]$ corresponding to $0 \in S_\sigma$.
-Since $S_\sigma$ is finitely generated, $\CC[S_\sigma]$ is a finitely generated $\CC$-algebra.
+As $k[S_\sigma]$ is a finitely generated reduced $k$-algebra, $U_\sigma$ is an affine variety (c.f. \S \ref{section:themaximalspectrum}).
+For example, if $\sigma = \{0\}$, then $S_{\{0\}}= M$, and
+$$U_{\{0\}} = \Spec(k[X_1^\pm, \ldots, X_n^\pm]) = (k^\times)^n$$
+is a torus.
 
-Consider the semigroup algebra corresponding to the full dual lattice, $\CC[M]$.
-If $e_1, \ldots, e_n$ is a basis for $N$ and $e_1^*, \ldots, e_n^*$ is the dual basis for $M$, denote
-$$X_i := \chi^{e_i^*} \in \CC[M].$$
-As a semigroup, $M$ is generated by $\pm e_1^*, \ldots, \pm e_n^*$, so
-$$\CC[M] = \CC[X_1^\pm, \ldots, X_n^\pm],$$
-and $\CC[M]$ can be identified with the ring of Laurent polynomials.
-For any cone $\sigma$, $S_\sigma$ is contained in $M$, so $\CC[S_\sigma]\subseteq\CC[M]$. 
-Then any semigroup algebra $\CC[S_\sigma]$ can be thought of as a subalgebra of the Laurent polynomials.
+To clarify the construction of the affine toric variety $U_\sigma$, we summarise the key steps, as some of the necessary definitions were introduced in the previous chapter.
+\begin{enumerate}
+\item Fix a pair of dual lattices $N$ and $M$ in the vector spaces $N_\RR$ and $M_\RR$.
+Choose a rational cone in $N_\RR$, i.e., a polyhedral cone generated by elements of the lattice $N$.
+\item Construct the semigroup $S_\sigma = \sigma^\vee \cap M$ and semigroup algebra $k[S_\sigma]$.
+Since $\sigma$ is rational, Gordan's lemma ensures $k[S_\sigma]$ is finitely generated.
+\item Set $U_\sigma := \Spec(k[S_\sigma])$.
+\end{enumerate}
+Given these steps, it is natural to ask why the semigroup is defined as the set of lattice points in the dual cone, rather than just the cone itself.
+In \S \ref{} and \S \ref{}, we explore how defining the semigroup in this way yields useful properties.
 
-As $\CC[S_\sigma]$ is a finitely generated and nilpotent free $\CC$-algebra, $U_\sigma = \Spec(\CC[S_\sigma])$ is a complex affine variety.
-For example, if $\sigma = \{0\}$, then $S_{\{0\}}= M$, and we have
-$$U_{\{0\}} = \Spec(\CC[X_1^\pm, \ldots, X_n^\pm]) = (\CC^\times)^n.$$
+We now investigate the affine toric varieties arising from cones we saw in Example \ref{example:conesandduals} and Example \ref{}.
 
 \begin{example}
-Let us see more examples arising from the cones we have seen previously.
 \begin{enumerate}
 \item
-If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}$, then $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}.$
+Consider $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}$ and $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}.$
 The vectors $e_1^*, \ldots, e_n^*$ generate $S_\sigma$ as a semigroup, so
-$$\CC[S_\sigma] = \CC[\chi^{e_1^*}, \ldots, \chi^{e_n^*}] = \CC[X_1, \ldots, X_n],$$
+$$k[S_\sigma] = k[\chi^{e_1^*}, \ldots, \chi^{e_n^*}] = k[X_1, \ldots, X_n],$$
 and 
-$$U_\sigma = \Spec(\CC[X_1, \ldots, X_n])= \CC^n.$$
+$$U_\sigma = \Spec(k[X_1, \ldots, X_n])= k^n.$$
 
 \item
-Recall that for $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$, we have $\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1^* + e_2^*, e_2^*\}.$
+Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$ and $\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1^* + e_2^*, e_2^*\}$, pictured below.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -2086,55 +2477,28 @@ Recall that for $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$, we have $
     \end{tikzpicture}
 \end{figure}
 \noindent
-Observe that while $\{2 e_1^* + e_2^*, e_2^*\}$ generates $\sigma^\vee$ as a cone, it does not generate $S_\sigma$ as a semigroup.
+While $\{2 e_1^* + e_2^*, e_2^*\}$ generates $\sigma^\vee$ as a cone, it does not generate $S_\sigma$ as a semigroup, since not every element in $S_\sigma$ lies in $\Span_{\ZZ_{\ge 0}} \{2 e_1^* + e_2^*,  e_2^*\}$.
 For example, $e_1^* + e_2^* \in S_\sigma$, but $e_1^* + e_2^* \notin \Span_{\ZZ_{\ge 0}} \{2 e_1^* + e_2^*,  e_2^*\}.$
 However, $\{2 e_1^* + e_2^*,  e_2^*, e_1^* + e_2^*\}$ does generate $S_\sigma$.
-Then
+Then,
 \begin{align*}
-	\qquad \CC[S_\sigma] = \CC[\chi^{e_2^*}, \chi^{2 e_1^* + e_2^*}, \chi^{e_1^* + e_2^*}] &= \CC[X_2, X_1^2 X_2, X_1 X_2] \cong \CC[X, Y, Z] / (X Y - Z^2),
+	\qquad k[S_\sigma] = k[\chi^{e_2^*}, \chi^{2 e_1^* + e_2^*}, \chi^{e_1^* + e_2^*}] &= k[X_2, X_1^2 X_2, X_1 X_2] \cong k[X, Y, Z] / (X Y - Z^2),
 \end{align*}
 and
-$$U_\sigma \cong \Spec(\CC[X, Y, Z] / (XY - Z^2) )= \bV(X Y - Z^2).$$
+$$U_\sigma = \Spec(k[X, Y, Z] / (XY - Z^2) )= \bV(X Y - Z^2).$$
 
 \item
-For $\sigma = \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\}$, we saw $\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\}.$
+Consider $\sigma = \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\}$ and $\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\}.$
 We have 
 \begin{align*}
-	\CC[S_\sigma] = \CC[\chi^{e_1^*}, \chi^{e_2^*}, \chi^{e_3^*}, \chi^{e_1^* +e_2^* - e_3^*}] &= \CC[X_1, X_2, X_3, X_1 X_2 X_3^{-1}] \\
-	&\cong \CC[X, Y, Z, W]/(XY - ZW),
+	k[S_\sigma] &= k[\chi^{e_1^*}, \chi^{e_2^*}, \chi^{e_3^*}, \chi^{e_1^* +e_2^* - e_3^*}] \\
+	&= k[X_1, X_2, X_3, X_1 X_2 X_3^{-1}] \\
+	&\cong k[X, Y, Z, W]/(XY - ZW),
 \end{align*}
 and so
-$$U_\sigma \cong \Spec(\CC[X, Y, Z, W] / (XY - ZW) ) = \bV(XY-ZW).$$
+$$U_\sigma = \Spec(k[X, Y, Z, W] / (XY - ZW) ) = \bV(XY-ZW).$$
 \end{enumerate}
 \end{example}
-
-In all the examples of cones that we have seen so far, the origin is a face of the cone.
-The following proposition gives equivalent conditions for the origin to be face:
-
-\begin{proposition}[{\cite[\S 1.2, Proposition 3]{Fulton93}}]\label{stronglyconvexprop}
-For a convex polyhedral cone $\sigma$, the following conditions are equivalent:
-\begin{enumerate}
-\item $\sigma \cap (-\sigma) = \{0\}$;
-\item $\sigma$ contains no nonzero linear subspace;
-\item there is $u \in \sigma^\vee$ with $\sigma \cap u^\perp = \{0\}$;
-\item $\sigma^\vee$ spans $M_\RR$.
-\end{enumerate}
-\end{proposition}
-
-A cone is called \emph{strongly convex} if it satisfies the conditions of Proposition \ref{stronglyconvexprop}.
-We are usually interested in studying toric varieties arising from strongly convex cones.
-This assumption implies that when $N$ is a rank $n$ lattice, the dimension of the variety $U_\sigma$ is also $n$.
-Specifically, when $\sigma$ is strongly convex, $U_\sigma$ has an $n$-dimensional torus as an open subset \cite[Theorem 1.2.18]{CLS11}.
-Then the affine toric variety $U_\sigma$ defined in terms of the cone $\sigma$ satisfies the definition of a toric variety from the introduction to this chapter, i.e., $U_\sigma$ has a torus as a dense open subset.
-
-
-
-
-
-
-\subsection{Affine toric varieties}
-
-Note: defined by monomial equations
 
 
 
@@ -2142,6 +2506,18 @@ Note: defined by monomial equations
 
 \subsection{Points of $U_\sigma$}
 
+
+
+
+
+\subsection{Faces and morphisms}
+
+
+
+
+
+\subsection{The dense torus}
+Can mention: irreducibility, dimension.
 
 
 
@@ -2484,7 +2860,7 @@ We have that
 	&\cong  \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\} \\
 	&=\calM.
 \end{align*}
-In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\vee$ is nonnegative on the cone $\sigma$ is equivalent to checking $\mu$ is nonnegative on the generators of $\sigma$.
+In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\vee$ is non-negative on the cone $\sigma$ is equivalent to checking $\mu$ is non-negative on the generators of $\sigma$.
 \end{proof}
 
 
@@ -2517,13 +2893,13 @@ Projective $n$-space over $k$, denoted $\PP^n_k$ or $\PP^n$, is the quotient spa
 $$\PP^n_k := (k^{n+1} \setminus \{0\}) / \sim,$$
 where $(a_0, \ldots, a_{n}) \sim (b_0, \ldots, b_{n})$ if $(a_0, \ldots, a_n) = \lambda (b_0, \ldots, b_n)$ for some $\lambda \in k \setminus \{0\}$.
 This space can be viewed as the set of lines in $k^{n+1}$ which pass through $0$ in the following way:
-if $\ell$ is a line in $k^{n+1}$ passing through the origin and $(a_0, \ldots, a_n)$ is any nonzero point in $\ell$, then the map
+if $\ell$ is a line in $k^{n+1}$ passing through the origin and $(a_0, \ldots, a_n)$ is any non-zero point in $\ell$, then the map
 $$\ell \mapsto [(a_0, \ldots, a_n)]$$
 defines a bijection between the set of lines and $\PP^n$.
-The map is well-defined since $[(a_0, \ldots, a_n)] = [(b_0, \ldots, b_n)]$ if and only if $(a_0, \ldots, a_n) = \lambda (b_0, \ldots, b_n)$ for some $\lambda \in k \setminus \{0\}$, and it is a bijection since for any nonzero point in $k^{n+1}$, there is a unique line passing through the point and the origin.
+The map is well-defined since $[(a_0, \ldots, a_n)] = [(b_0, \ldots, b_n)]$ if and only if $(a_0, \ldots, a_n) = \lambda (b_0, \ldots, b_n)$ for some $\lambda \in k \setminus \{0\}$, and it is a bijection since for any non-zero point in $k^{n+1}$, there is a unique line passing through the point and the origin.
 The equivalence class $[(a_0, \ldots, a_n)]$ is usually denoted $(a_0 : \ldots : a_n)$.
 If $P$ is the point $(a_0 : \ldots : a_n)$, the coordinates $(a_0 : \ldots : a_n)$ are called the homogeneous coordinates of $P$. 
-Note that for any $P$, at least one homogeneous coordinate $a_i$ is nonzero.
+Note that for any $P$, at least one homogeneous coordinate $a_i$ is non-zero.
 
 In analogy with the affine theory, after defining projective space, we should define polynomials on the space so that algebraic subsets can be defined as the zero sets of polynomials.
 However, the na\''ive approach of defining polynomials on $\PP^n$ to be polynomials in the homogeneous coordinates is not well-defined, since the homoegeneous coordinates are not unique;
@@ -2715,7 +3091,17 @@ The fact that the glueing is compatible follows from the order-preserving nature
 
 Example: one-dim toric varieties
 
-
+\begin{proposition}
+Let $\sigma$ and $\sigma'$ be cones such that $\tau = \sigma \cap \sigma'$ is a face of both.
+Then,
+$$S_\tau = S_\sigma + S_{\sigma'}.$$
+\end{proposition}
+\begin{proof}
+It follows from the definitions that $S_\tau \supseteq S_\sigma + S_{\sigma'}$.
+By Lemma \ref{}, there exists $u \in \sigma^\vee \cap (-\sigma')^\vee$ such that $\tau = \sigma \cap u^\perp = \sigma' \cap u^\perp$.
+By Lemma \ref{}, we have $S_\tau = S_\sigma + \ZZ_{\ge 0} \cdot (-u)$.
+Since $-u \in S_{\sigma'}$, we see $S_\tau \subseteq S_\sigma + S_{\sigma'}.$
+\end{proof}
 
 
 
@@ -3002,6 +3388,25 @@ Example: one-dim toric varieties
    isbn={0-521-45255-4},
    review={\MR{1458066}},
    doi={10.1017/CBO9781139172721},
+}
+
+\bib{Serre73}{book}{
+   author={Serre, J.-P.},
+   title={A course in arithmetic},
+   series={Graduate Texts in Mathematics},
+   volume={No. 7},
+   note={Translated from the French},
+   publisher={Springer-Verlag, New York-Heidelberg},
+   date={1973},
+   pages={viii+115},
+   review={\MR{0344216}},
+}
+
+\bib{Zaman13}{webpage}{
+   author={Zaman, Ragib},
+   title={Geometry and Topology of Toric Varieties},
+   date={2013},
+   note={Available at \url{https://github.com/RagibZaman/Toric-Varieties}}
 }
 \end{biblist}
 \end{bibdiv}
