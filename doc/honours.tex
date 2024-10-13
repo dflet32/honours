@@ -332,7 +332,7 @@
 
 \newpage
 \addtocontents{toc}{\vskip 1em}
-\section{Algebraic subsets of affine space}\label{chapter:algebraicsubsets}
+\section{Algebraic sets}\label{chapter:algebraicsubsets}
 In this chapter, we introduce affine varieties, which are the central object of study in this project.
 Algebraic geometry establishes a connection between spaces defined by zero sets of polynomials (geometric objects), and ideals in a polynomial ring (algebraic objects).
 We detail this connection, and explain how algebraic properties of rings and ideals inform properties of the corresponding geometric spaces.
@@ -1357,20 +1357,20 @@ To complete the proof, we just need to check that $\varphi^{-1}$ is a morphism.
 
 
 
-\subsection{Dominant morphisms}
-Given the correspondence between morphisms and algebra homomorphisms, it is natural to ask if properties of the homomorphism inform properties of the morphism, and vice versa.
-One property of morphisms which is determined algebraically is called \emph{dominant}.
-A morphism is dominant if it has dense image in its codomain.
-The following proposition relates this to an algebraic property:
-
-\begin{proposition}
-Let $\alpha : A \to B$ be a homomorphism of affine $k$-algebras, and let 
-$$\varphi: \Spec(B) \to \Spec(A)$$
-be the corresponding morphism of affine varieties.
-Then $\varphi$ is dominant if and only if $\alpha$ is injective.
-\end{proposition}
-
-This result will be important when studying toric varieties, as it will tell us the open subset isomorphic to a torus is in fact dense in the toric variety.
+%\subsection{Dominant morphisms}
+%Given the correspondence between morphisms and algebra homomorphisms, it is natural to ask if properties of the homomorphism inform properties of the morphism, and vice versa.
+%One property of morphisms which is determined algebraically is called \emph{dominant}.
+%A morphism is dominant if it has dense image in its codomain.
+%The following proposition relates this to an algebraic property:
+%
+%\begin{proposition}
+%Let $\alpha : A \to B$ be a homomorphism of affine $k$-algebras, and let 
+%$$\varphi: \Spec(B) \to \Spec(A)$$
+%be the corresponding morphism of affine varieties.
+%Then $\varphi$ is dominant if and only if $\alpha$ is injective.
+%\end{proposition}
+%
+%This result will be important when studying toric varieties, as it will tell us the open subset isomorphic to a torus is in fact dense in the toric variety.
 
 
 
@@ -1637,17 +1637,19 @@ Many properties of the variety are determined by properties of the cone.
 Thus, to study toric varieties, it is important to understand the convex geometry of cones.
 The goal of this chapter is to study the basic convex geometry we will need to study toric varieties.
 
-We begin by defining convex cones and giving examples.
+We begin by defining convex cones and providing examples.
 Analogous to how vector spaces have dual spaces, cones have dual cones.
 One of the main results we prove in this chapter is that dualising a convex cone twice yields the same cone---this is a fundamental fact, but the proof is non-trivial.
+Studying cones is more subtle than studying vector spaces because cones are not linear objects.
+For example, a cone may have different dimension to its dual (c.f. Example \ref{example:conesandduals}), unlike finite-dimensional vector spaces, where the dimension remains the same.
 
 In the context of toric varieties, the cones we are interested in have certain properties like being rational, polyhedral or strongly convex.
 An important part of this chapter is clearly defining these properties.
 In later chapters, we will see how these properties have consequences for toric varieties.
 
-Since we are interested in applying convex geometry to the study of toric varieties, the reader is invited to skim this chapter on their first reading.
-Subsequent chapters should be readable with just a basic understanding of the definitions in this chapter.
-The reader can return to this chapter for the results herein as they are needed.
+%Since we are interested in applying convex geometry to the study of toric varieties, the reader is invited to skim this chapter on their first reading.
+%Subsequent chapters should be readable with just a basic understanding of the definitions in this chapter.
+%The reader can return to this chapter for the results herein as they are needed.
 
 
 
@@ -1665,6 +1667,11 @@ A set $\sigma \subseteq N_\RR$ is \emph{convex} if for any two points in $\sigma
 i.e., $x, y \in \sigma$ implies $\lambda x + (1 - \lambda) y \in \sigma$ for all $\lambda \in [0, 1]$.
 Since cones are closed under positive scalar multiplication, a cone is convex if and only if it is closed under addition.
 
+The dimension of a cone $\sigma$ is
+$$\dim(\sigma) := \dim(\RR \cdot \sigma),$$
+where $\RR\cdot\sigma = \sigma + (-\sigma)$ is the smallest vector subspace of $N_\RR$ containing $\sigma$.
+We say $\sigma$ is non-degenerate if $\dim(\sigma) = \dim N_\RR$.
+
 \begin{example}\label{example:cones}
 \begin{enumerate}
 \item
@@ -1673,11 +1680,14 @@ $$\sigma_1 = \{(x, x), \, (x, 2x) : x \in \RR_{\ge 0}\}$$
 is a cone but not convex.
 We can ``fill in'' $\sigma_1$ to get the convex cone
 $$\sigma_2 = \{(x, y) \in \RR_{\ge 0}^2 : x \le y \le 2 x\}.$$
+We have $\dim (\sigma_1) = \dim(\sigma_2)=2$.
 
 \item
 An example of a convex cone in $\RR^3$ is
 $$\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}.$$
+We have $\dim(\sigma_3)=3$.
 \end{enumerate}
+\noindent
 See Figure \ref{figure:cones} for plots of these cones.
 \end{example}
 
@@ -1750,6 +1760,12 @@ Let $e_1, \ldots, e_n$ be the standard basis for $N$ and $e_1^*, \ldots, e_n^*$ 
 Consider the cone $\sigma := \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}.$
 Observe that a functional $\sum_{i=1}^n a_i e_i^*$ is in the dual cone if and only if $a_i \ge 0$ for all $i$.
 Then $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$.
+
+\item
+Now consider the cone $\sigma := \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_r^*\}$, where $1 \le r \le n$.
+The functional $\sum_{i=1}^n a_i e_i^*$ is in the dual cone if and only if $a_i \ge 0$ for all $1 \le i \le r$.
+Thus, $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_r^*, \pm e_{r+1}^*, \ldots, \pm e_n^*\}.$
+Notice $\dim(\sigma)=r$ while $\dim(\sigma^\vee) = n$, showing $\sigma$ and $\sigma^\vee$ may have different dimensions.
 
 \item
 Let $n = 2$ and consider the cone $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}.$
@@ -1931,10 +1947,6 @@ The converse is proven in \cite[1.3.13]{DLHK13}.
 \end{proof}
 
 We explain some basic properties of the polyhedral cone $\sigma$.
-The dimension of $\sigma$ is
-$$\dim(\sigma) := \dim(\RR \cdot \sigma),$$
-where $\RR\cdot\sigma = \sigma + (-\sigma)$ is the smallest vector subspace of $N_\RR$ containing $\sigma$.
-We say $\sigma$ is non-degenerate if $\dim(\sigma) = \dim N_\RR$.
 The cone $\sigma$ is called rational if its generators can be chosen from the lattice $N$.
 The consequences of $\sigma$ being non-degnerate and rational will be developed in the rest of this chapter.
 Recall that the dual cone $\sigma^\vee$ is the set of functionals which are non-negative on $\sigma$.
@@ -1948,6 +1960,7 @@ The notation suggests we can intuitively think of $u^\perp$ as the orthogonal co
 A face $\tau$ of $\sigma$ is a set of the form 
 $$\tau = \sigma \cap u^\perp,$$
 for some $u \in \sigma^\vee$.
+In other words, a face is the intersection of $\sigma$ with a hyperplane, such that $\sigma$ lies in the positive half-space of the hyperplane.
 When $u = 0 \in \sigma^\vee$, we have $\sigma \cap u^\perp = \sigma$, so $\sigma$ is a face of itself.
 A face of codimension 1 is called a facet.
 Let us give a basic example to illustrate these definitions.
@@ -2124,6 +2137,10 @@ The dual of a convex polyhedral cone is a convex polyhedral cone.
 The proof relies on giving a dual description of a polyhedral cone as an intersection of closed half-spaces.
 To prepare for this, we discuss some basic topology of polyhedral cones.
 
+We first endow $N_\RR$ with a topology.
+Choose any vector space isomorphism $N_\RR \to \RR^n$, and define the topology on $N_\RR$ by declaring this isomorphism to also be a homeomorphism.
+Since linear transformations $\RR^n \to \RR^n$ are continuous, the topology we have defined doesn't depend on the choice of isomorphism.
+
 Recall the interior of a subset $S$ of a topological space is the set of points admitting an open neighbourhood contained in $S$.
 The boundary of $S$ is the set of points in the closure of $S$ which do not lie in the interior.
 The following proposition characterises the boundary of a non-degenerate polyhedral cone.
@@ -2205,12 +2222,39 @@ For each set of $n-1$ $\RR$-independent vectors in the generating set of $\sigma
 If $u$ changes sign on the rest of the generators, it does not lie in $\sigma^\vee$ and may be discarded.
 Now suppose that one of $u$ and $-u$ is non-negative on the rest of the generators; without loss of generality we assume $u$ is.
 In this case, $u$ lies in $\sigma^\vee$, the $n-1$ vectors generate a face $\tau$, and $u = u_\tau$ is the equation of the face.
-We then take $u$ as one of the generators of $\sigma^\vee$.
+%We then take $u$ as one of the generators of $\sigma^\vee$.
 
 Note when the generators of $\sigma$ lie in the lattice $N$, this algorithm can be used to find generators of $\sigma^\vee$ in the dual lattice $M$.
 This means the dual cone of a rational polyhedral cone is also rational.
 
-
+\begin{example}\label{example:3dconeanddual}
+Let $N = \ZZ^3$ and $N_\RR = \RR^3$.
+Consider $\sigma = \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\}$.
+Observe that $e_1^*$ vanishes on $e_2$ and $e_2+e_3$, and is non-negative on all generators of $\sigma$.
+Similarly, $e_1^*+e_2^*-e_3^*$ vanishes on $e_1+e_3$ and $e_2+e_3$ and is non-negative on $\sigma$.
+Continuing the algorithm for finding the functionals $u_\tau$ which define facets, we see they are
+$$u_{\tau_1} = e_1^*, \qquad u_{\tau_2} = e_2^*, \qquad u_{\tau_3} = e_3^*, \qquad u_{\tau_4} = e_1^* + e_2^* - e_3^*.$$
+%For each $u_{\tau_i}$, there is the corresponding facet $\tau_i = \sigma \cap u_{\tau_i}^\perp$.
+%These are:
+%\begin{align*}
+%	&\tau_1 = \Span_{\RR_{\ge 0}}\{e_2, e_2+e_3\}, & &\tau_2 = \Span_{\RR_{\ge 0}} \{e_1, e_1+e_3\}, \\
+%	&\tau_3 = \Span_{\RR_{\ge 0}}\{e_1, e_2\},  & &\tau_4 = \Span_{\RR_{\ge 0}} \{e_1+e_3, e_2+e_3\}.
+%\end{align*}
+%The other faces in $\sigma$ are the rays 
+%\begin{align*}
+%	&\tau_1 \cap \tau_3 = \Span_{\RR_{\ge 0}}\{e_2\}, & &\tau_1 \cap \tau_4 = \Span_{\RR_{\ge 0}} \{e_2+e_3\}, \\
+%	&\tau_2 \cap \tau_3 = \Span_{\RR_{\ge 0}}\{e_1\}, & &\tau_2 \cap \tau_4 = \Span_{\RR_{\ge 0}} \{e_1+e_3\},
+%\end{align*}
+%and the origin $\bigcap_{i=1}^4 \tau_i = \{0\}.$
+The dual cone is generated by $u_{\tau_1}, \ldots, u_{\tau_4}$, so
+$$\sigma^\vee = \Span_{\RR_{\ge 0}} \{e_1^*, e_2^*, e_3^*, e_1^* +e_2^* - e_3^*\}.$$
+Figure \ref{figure:3dcone} contains a diagram of $\sigma$.
+\begin{figure}[h]
+\includegraphics[width=0.2 \textwidth]{../images/cox cone example 2}
+\caption{The cone $\sigma= \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\}$ \cite[Figure 2]{CLS11}.}
+\label{figure:3dcone}
+\end{figure}
+\end{example}
 
 
 
@@ -2397,7 +2441,7 @@ $$k[M] = k[X_1, X_1^{-1}, \ldots, X_n, X_n^{-1}],$$
 and $k[M]$ is the ring of Laurent polynomials in $X_1, \ldots, X_n$.
 For any cone $\sigma$, the semigroup $S_\sigma$ is contained in $M$, so that $k[S_\sigma]$ is a subalgebra of $k[M]$. 
 Then any semigroup algebra $k[S_\sigma]$ can be thought of as a subalgebra of the Laurent polynomials.
-
+It follows that the semigroup algebra $k[S_\sigma]$ is always an integral domain.
 
 
 
@@ -2413,6 +2457,7 @@ $$U_\sigma := \Spec(k[S_\sigma]).$$
 \end{definition}
 
 As $k[S_\sigma]$ is a finitely generated reduced $k$-algebra, $U_\sigma$ is an affine variety (c.f. \S \ref{section:themaximalspectrum}).
+Furthermore, since $k[S_\sigma]$ is an integral domain, $U_\sigma$ is irreducible.
 For example, if $\sigma = \{0\}$, then $S_{\{0\}}= M$, and
 $$U_{\{0\}} = \Spec(k[X_1^\pm, \ldots, X_n^\pm]) = (k^\times)^n$$
 is a torus.
@@ -2426,18 +2471,19 @@ Since $\sigma$ is rational, Gordan's lemma ensures $k[S_\sigma]$ is finitely gen
 \item Set $U_\sigma := \Spec(k[S_\sigma])$.
 \end{enumerate}
 Given these steps, it is natural to ask why the semigroup is defined as the set of lattice points in the dual cone, rather than just the cone itself.
-In \S \ref{} and \S \ref{}, we explore how defining the semigroup in this way yields useful properties.
+In \S \ref{section:facesandopenaffinesubsets}, we see why defining the semigroup in this way yields is a natural choice to make.
 
-We now investigate the affine toric varieties arising from cones we saw in Example \ref{example:conesandduals} and Example \ref{}.
+We now investigate the affine toric varieties arising from cones we saw in Example \ref{example:conesandduals} and Example \ref{example:3dconeanddual}.
 
-\begin{example}
+\begin{example}\label{example:affinetoricvarieties}
 \begin{enumerate}
 \item
-Consider $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}$ and $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}.$
-The vectors $e_1^*, \ldots, e_n^*$ generate $S_\sigma$ as a semigroup, so
-$$k[S_\sigma] = k[\chi^{e_1^*}, \ldots, \chi^{e_n^*}] = k[X_1, \ldots, X_n],$$
+Suppose $1 \le r \le n$.
+Consider $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_r\}$ and its dual $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_r^*, \pm e_{r+1}^*, \ldots, \pm e_n^*\}$.
+The vectors $e_1^*, \ldots, e_r^*, \pm e_{r+1}^*, \ldots, \pm e_n^*$ generate $S_\sigma$ as a semigroup, so
+$$k[S_\sigma] = k[\chi^{e_1^*}, \ldots, \chi^{e_r^*}, \chi^{\pm e_{r+1}^*}, \ldots, \chi^{\pm e_{n}^*}] = k[X_1, \ldots, X_r, X_{r+1}^\pm, \ldots, X_n^\pm],$$
 and 
-$$U_\sigma = \Spec(k[X_1, \ldots, X_n])= k^n.$$
+$$U_\sigma = \Spec(k[X_1, \ldots, X_r, X_{r+1}^\pm, \ldots, X_n^\pm])= k^r \times (k^\times)^{n-r}.$$
 
 \item
 Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$ and $\sigma^\vee = \Span_{\RR_{\ge 0}} \{2 e_1^* + e_2^*, e_2^*\}$, pictured below.
@@ -2526,7 +2572,7 @@ The following sets are in bijection:
 \begin{enumerate}
 \item The set of points of $U_\sigma$.
 \item The set of maximal ideals of $k[S_\sigma]$.
-\item The set of homomorphism of $k$-algebras $k[S_\sigma] \to k$.
+\item The set of $k$-algebra homomorphisms $k[S_\sigma] \to k$.
 \item The set of semigroup homomorphisms $S_\sigma \to k$.
 \end{enumerate}
 \end{proposition}
@@ -2538,7 +2584,7 @@ recall also that semigroup homomorphisms preserve the identity.
 The bijection between (1) and (2) holds by definition of the maximal spectrum.
 The bijection between (1) and (3) is explained in \cite[3.28]{Milne13}.
 
-To the the correspondence between (3) and (4), given a $k$-algebra homomorphism $\varphi : k[S_\sigma] \to k$, we can define a semigroup homomorphism $x : S_\sigma \to k$ by $x(u) := \varphi(\chi^u)$.
+To see the correspondence between (3) and (4), given a $k$-algebra homomorphism $\varphi : k[S_\sigma] \to k$, we define a semigroup homomorphism $x : S_\sigma \to k$ by $x(u) := \varphi(\chi^u)$.
 Conversely, a semigroup homomorphism $x : S_\sigma \to k$ determines a $k$-algebra homomorphism $\varphi : k[S_\sigma] \to k$, defined on the basis by $\varphi(\chi^u) := x(u)$.
 These associations are mutually inverse and are hence bijections.
 \end{proof}
@@ -2546,17 +2592,17 @@ These associations are mutually inverse and are hence bijections.
 Let us consider the bijections given in the previous proposition explicitly for $U_{\{0\}} = (k^\times)^n$.
 
 \begin{example}
-Recall that when $\sigma = \{0\}$, the semigroup $S_\sigma$ is generated by $\chi^{\pm e_1^*}, \ldots, \chi^{\pm e_n^*}$, where $e_1^*, \ldots, e_n^*$ form a basis of $M$.
-The variable $\chi^{e_i^*}$ is denoted $X_i$ so that $k[S_\sigma]$ is identified with the Laurent polynomials $k[X_1^{\pm}, \ldots, X_n^{\pm}]$.
+Recall that when $\sigma = \{0\}$, the semigroup $S_\sigma$ is generated by $\chi^{\pm e_1^*}, \ldots, \chi^{\pm e_n^*}$, where $\{e_1^*, \ldots, e_n^*\}$ is a basis of $M$.
+We denote $\chi^{e_i^*}$ by $X_i$, so that $k[S_\sigma]$ is identified with the Laurent polynomials $k[X_1^{\pm}, \ldots, X_n^{\pm}]$.
 \begin{enumerate}
-\item When we consider $(k^\times)^n$ embedded in affine space, its points are of the form $(a_1, \ldots, a_n)$ with $a_i \ne 0$.
+\item When we consider $(k^\times)^n$ embedded in affine space, its points are of the form $(a_1, \ldots, a_n)$ with each $a_i \ne 0$.
 \item For brevity, let $A$ denote the polynomial ring $k[X_1, \ldots, X_n]$ and $h$ the element $X_1 \cdots X_n$.
-We know $k[S_\sigma]$ is the localisation $A_h$ from \S\ref{section:opensubsetsofalgebraicsets}.
+We know $k[S_\sigma]$ is the localisation $A_h$ (c.f. \S\ref{section:opensubsetsofalgebraicsets}).
 Maximal ideals in $A_h$ are all of the form $\frakm A_h$, where $\frakm$ is a maximal ideal of $A$ not containing $h$ (c.f. Proposition \ref{proposition:localizationideals}).
 The Nullstellensatz tells us every maximal ideal of $A$ is of the form $\frakm_a = (X_1 - a_1, \ldots, X_n - a_n)$ for some $a = (a_1, \ldots, a_n) \in \AA^n$.
-One readily checks $\frakm_a$ does not contain $h = X_1 \cdots X_n$ if and only if each $a_i \ne 0$.
+One readily checks $\frakm_a$ does not contain $h$ if and only if each $a_i \ne 0$.
 Then the maximal ideals in $k[S_\sigma]$ are $\frakm_a A_h$, where $a = (a_1, \ldots, a_n) \in (k^\times)^n$.
-\item The $k$-algebra homomorphism $k[X_1^\pm, \ldots, X_n^\pm] \to k$ corresponding to the maximal ideal $\frakm_a$ is the one with $\frakm_a$ as its kernel.
+\item The $k$-algebra homomorphism $k[S_\sigma] \to k$ corresponding to the maximal ideal $\frakm_a$ is the one with $\frakm_a$ as its kernel.
 This is the map given on the basis by $X_i^\pm \mapsto a_i^\pm$.
 \item The semigroup homomorphism corresponding to the $k$-algebra homomorphism
 $$k[S_\sigma]=k[M] \to k, \qquad X_i^\pm = \chi^{\pm e_i^*} \mapsto a_i^\pm,$$
@@ -2564,30 +2610,44 @@ is simply
 $$S_\sigma = M \to k, \qquad e_i^* \mapsto a_i.$$
 Note since $M$ is a group, every element in the image of a semigroup homomorphism $M \to k$ is invertible, and such a map is in fact a homomorphism of groups $M \to k^\times$.
 We then see
-$$(k^\times)^n = \Hom_{k\text{-algebra}}(k[X_1^\pm, \ldots, X_n^\pm], k) = \Hom_{\ZZ\text{-linear}}(M, k^\times).$$
+$$(k^\times)^n = \Hom_{k\text{-algebra}}(k[S_\sigma], k) = \Hom_{\ZZ\text{-linear}}(M, k^\times).$$
 \end{enumerate}
 
-We consider how multiplication of points in $(k^\times)^n$ looks from the perspective of semigroup homomorphisms---this will be useful when defining the torus action in \ref{section:thetorusaction}.
-Suppose $x : M \to k^\times$ and $y : M \to k^\times$ are (semi-)group homomorphisms given by $x(e_i^*) = a_i$ and $y(e_i^*) = b_i$.
-Then $x$ and $y$ correspond to the points $(a_1, \ldots, a_n)$ and $(b_1, \ldots, b_n)$.
-As we would expect, the product $(a_1 b_1, \ldots, a_n b_n)$ corresponds to the product of homomorphisms
+We consider how multiplication of points in $(k^\times)^n$ looks from the perspective of semigroup homomorphisms---this will be useful when defining the torus action in \S \ref{section:thetorusaction}.
+Suppose $x : M \to k^\times$ and $y : M \to k^\times$ are homomorphisms given by $x(e_i^*) = a_i$ and $y(e_i^*) = b_i$.
+Then $x$ and $y$ correspond to the points $(a_1, \ldots, a_n)$ and $(b_1, \ldots, b_n)$, respectively.
+The product $(a_1 b_1, \ldots, a_n b_n)$ corresponds to the product of homomorphisms
 $$xy : M \to k^\times, \qquad (xy)(e_i^*) := a_i b_i.$$
 \end{example}
 
 
 
 \subsection{Faces and open affine subsets}\label{section:facesandopenaffinesubsets}
-\todo{Write intro to section.}
+In this section, we show how faces of a cone correspond to open affine subsets in an affine toric variety.
+In particular, we see how every affine toric variety has a torus as a dense open subset.
 
 If $\tau$ is a face of $\sigma$, then, since dualising reverses inclusion, we have $\tau^\vee \supseteq \sigma^\vee$ and $S_\tau \supseteq S_\sigma$.
-The inclusion $S_\sigma \hookrightarrow S_\tau$ of semigroups induces the inclusion $k[S_\sigma] \hookrightarrow k[S_\tau]$ of $k$-algebras and hence a morphism $U_\tau \to U_\sigma$ (c.f. \S \ref{section:morphisms}).
-The following proposition tells us that this morphism embeds $U_\tau$ as a principal open subset of $U_\sigma$.
+The inclusion of semigroups $S_\sigma \hookrightarrow S_\tau$ induces the inclusion of $k$-algebras $k[S_\sigma] \hookrightarrow k[S_\tau]$, and hence a morphism $U_\tau \to U_\sigma$ (c.f. \S \ref{section:morphisms}).
+The following proposition tells us this morphism embeds $U_\tau$ as a principal open subset of $U_\sigma$.
 
 \begin{proposition}\label{proposition:facesopensubsets}
 If $\tau$ is a face of $\sigma$, then the map $U_\tau \to U_\sigma$ embeds $U_\tau$ as a principal open subset of $U_\sigma$.
 \end{proposition}
 
-We start with a lemma that describes the relationship between the semigroups $S_\tau$ and $S_\sigma$.
+This proposition gives insight into why dual cones are used to define toric varieties: smaller faces in a cone correspond to smaller open subsets in the variety.
+In other words, dualising leads to a more natural inclusion-preserving correspondence between faces and open subsets.
+Without dualising, $\tau$ being a face of $\sigma$ would mean $U_\sigma$ is an open subset of $U_\tau$.
+
+Recall that $\sigma$ is strongly convex so $\{0\}$ is a face.
+The proposition then says that $U_\sigma$ has the torus $U_{\{0\}} = (k^\times)^n$ as a principal open subset.
+In particular, since $U_\sigma$ is irreducible, $(k^\times)^n$ is dense in $U_\sigma$ (c.f. \ref{}).
+As a consequence, we see $\dim U_\sigma= \dim (k^\times)^n = n$, since the dimension of a principal open subset equals the dimension of the variety (c.f. \ref{}).
+The strongly convex assumption on our cones is then useful for two reasons: it ensures the variety has a torus as a dense open subset, and it means the dimension of the variety agrees with the dimension of the lattice.
+
+In the rest of this thesis, we will use $T_N$ to denote the torus $U_{\{0\}}$, which is embedded in every affine toric variety.
+We will see explicit examples of how $T_N$ embeds in $U_\sigma$ after developing the theory of how $T_N$ acts on $U_\sigma$ in \S \ref{section:thetorusaction}.
+
+To prove Proposition \ref{proposition:facesopensubsets}, we start with a lemma that describes the relationship between the semigroups $S_\tau$ and $S_\sigma$.
 This helps prove the proposition by elucidating the relationship between $k[S_\tau]$ and $k[S_\sigma]$.
 
 \begin{lemma}
@@ -2596,12 +2656,12 @@ Moreover, we have $S_\tau =S_\sigma + \ZZ_{\ge 0} \cdot (-u).$
 \end{lemma}
 \begin{proof}
 By definition, $\tau = \sigma \cap u^\perp$ for some $u \in \sigma^\vee$, but we need to construct such a $u$ in the lattice $M$ to ensure $u \in S_\sigma$.
-Notice $\sigma^\vee \cap \tau^\perp$ is a face in the rational cone $\sigma^\vee$, so there are $U_1, \ldots, u_s$ lying in the lattice which generate $\sigma^\vee \cap \tau^\perp$.
+Notice $\sigma^\vee \cap \tau^\perp$ is a face in the rational cone $\sigma^\vee$, so there are $u_1, \ldots, u_s$ lying in the lattice which generate $\sigma^\vee \cap \tau^\perp$.
 We define $u := \sum_{i=1}^s u_i \in S_\sigma$.
-To see $\tau \subset \sigma \cap u^\perp$, observe that if $v \in \tau$, then $\langle u, v\rangle = 0$, since $u$ lies in $\sigma^\vee \cap \tau^\perp$.
+To see $\tau \subseteq \sigma \cap u^\perp$, observe that if $v$ lies in $\tau$, then $\langle u, v\rangle = 0$, since $u$ lies in $\sigma^\vee \cap \tau^\perp$.
 Conversely, suppose $v$ lies in $\sigma \cap u^\perp$.
 It follows $\langle u_i, v \rangle = 0$ for each $i$, and hence $v \in (\sigma^\vee \cap \tau^\perp)^\perp$.
-We see $v$ lies in $\sigma \cap (\sigma^\vee \cap \tau^\perp)^\perp$, and Lemma \ref{lemma:dualfaces} implies  $\tau = \sigma \cap (\sigma^\vee \cap \tau^\perp)^\perp$.
+Then $v$ lies in $\sigma \cap (\sigma^\vee \cap \tau^\perp)^\perp$, and Lemma \ref{lemma:dualfaces} implies  $\tau = \sigma \cap (\sigma^\vee \cap \tau^\perp)^\perp$.
 
 To see $S_\tau \subseteq S_\sigma + \ZZ_{\ge 0} \cdot (-u)$, let $w \in S_\tau$.
 Suppose $v_1, \ldots, v_r$ lie in the lattice and generate $\sigma$ as a cone.
@@ -2609,9 +2669,9 @@ For any $v = \sum_{i=1}^r t_i v_i$ in $\sigma$, where each $t_i \ge 0$, and any 
 $$\langle w + pu, v\rangle = \sum_{i=1}^r t_i \left( \langle w, v_i \rangle + p \langle u, v_i \rangle \right).$$
 We want to choose $p$ so that each summand is non-negative to ensure $\langle w+pu, v \rangle \ge 0$.
 For all $i$, there holds $\langle u, v_i \rangle \ge 0$.
-Thus, when $\langle w, v_i \rangle \ge 0$, the $i^\text{th}$ summand is positive.
+Thus, when $\langle w, v_i \rangle \ge 0$, the $i^\text{th}$ summand is non-negative.
 If $\langle w, v_i\rangle < 0$, then $v_i$ does not lie in $\tau$.
-In this case, we must have $\langle u, v_i\rangle \ge 1$, because $v_i \notin \tau$ means $\langle u, v_i \rangle \ne 0$, and $\langle u, v_i \rangle$ lies in $\ZZ$ since $u$ and $v_i$ are lattice points.
+In this case, we must have $\langle u, v_i\rangle \ge 1$, because $v_i \notin \tau$ means $\langle u, v_i \rangle \ne 0$, and $\langle u, v_i \rangle$ lies in $\ZZ$ since $u$ and $v_i$ are both lattice points.
 It follows that if $p := \max_i |\langle u, v_i\rangle|$, then each summand is non-negative, independent of the $t_i$.
 Thus, $w + pu \in S_\sigma$ and $w \in S_\sigma + \ZZ_{\ge 0} \cdot (-u).$
 
@@ -2647,7 +2707,7 @@ Then $\varphi^* : k[S_\sigma] \to k[M] \otimes k[S_\sigma]$ is given by $\chi^u 
 
 The semigroup homomorphism corresponding to the identity in $T_N$ is the trivial homomorphism $1_{T_N} : M \to k^\times$, where $u \mapsto 1$.
 Using this, and the fact that the product in $T_N$ is given by the product of semigroup homomorphisms (c.f. \S \ref{section:points}), it is straightforward to check $1 \cdot x = x$ and $t_1\cdot(t_2\cdot x) = (t_1t_2)\cdot x$.
-We can conclude $\varphi$ is a group action.
+Then $\varphi$ is a group action.
 
 We also need to check this action extends the natural action of $T_N$ on itself.
 From \S\ref{section:facesandopenaffinesubsets}, we have a map $\iota : T_N \hookrightarrow U_\sigma$ embedding $T_N$ as an open subset of $U_\sigma$.
@@ -2660,12 +2720,30 @@ $$\chi^u(\left. t \right|_{S_\sigma}) = \left. t \right|_{S_\sigma}(u) = t(u) = 
 This agrees with $\iota^*(\chi^u)(t)$, so our guess is correct.
 Then $t_1 \cdot \iota(t_2)$ and $\iota(t_1 t_2)$ are both $\left. t_1 t_2 \right|_{S_\sigma}$.
 
-Let us consider some examples of this torus action.
+We now consider examples of this torus action for toric varieties we saw in Example \ref{example:affinetoricvarieties}.
 
 \begin{example}
 \begin{enumerate}
-\item
-\item
+\item Consider $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}$, so that $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$ and $S_\sigma = \Span_{\ZZ_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$.
+Then a semigroup homomorphism $x : S_\sigma \to k$ is given by $e_i^* \mapsto a_i$ for some $(a_1, \ldots, a_n) \in \AA^n$.
+Points in the torus $t : M \to k^\times$ are given by $e_i^* \mapsto b_i$ for some $(b_1, \ldots, b_n)\in(k^\times)^n$.
+We then see the embedding of $T_N$ into $\AA^n$ is the usual one.
+The torus action is given by $t\cdot x : S_\sigma \to k$, $e_i^* \mapsto a_i b_i$, so $T_N$ acts on $\AA^n$ by usual component-wise multiplication.
+\item Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, -e_1 + 2 e_2\}$, so that $\sigma^\vee = \Span_{\RR_{\ge 0}}\{2e_1^* + e_2^*, e_2^*\}$ and $S_\sigma = \Span_{\ZZ_{\ge 0}}\{e_2^*, 2e_1^*+e_2^*, e_1^*+e_2^*\}$.
+Any point in $U_\sigma = \bV(XY- Z^2)$ corresponds to a map $p : S_\sigma \to k$, given on the generators as
+$$e_2^* \mapsto x, \qquad 2e_1^*+e_2^* \mapsto y, \qquad e_1^*+e_2^* \mapsto z,$$
+provided $xy=z^2$ so the map is a semigroup homomorphism.
+A point in the torus $T_N = (k^\times)^2$ is a map $t : M \to k^\times$ given by
+$$e_1^* \mapsto a, \qquad e_2^* \mapsto b.$$
+The restriction $\left. t \right|_{S_\sigma}$ gives the embedding $T_N \hookrightarrow U_\sigma$.
+This is the homomorphism $\left. t \right|_{S_\sigma} : S_\sigma \to k$ given by
+$$e_2^* \mapsto b, \qquad 2e_1^*+e_2^* \mapsto a^2 b, \qquad e_1^*+e_2^* \mapsto ab.$$
+We see the embedding $T_N \hookrightarrow U_\sigma$ is given by $(a, b) \mapsto (b, a^2 b, ab)$.
+Note that $T_N$ is all the points in $U_\sigma$ with non-zero coordinates.
+Also, $t\cdot p = tp : S_\sigma \to k$ is given by
+$$e_2^* \mapsto bx, \qquad 2e_1^*+e_2^* \mapsto a^2 by, \qquad e_1^*+e_2^* \mapsto abz.$$
+In other words, the action can be written explicitly as
+$$(b, a^2b, ab) \cdot (x, y, z) = (bx, a^2by, abz).$$
 \end{enumerate}
 \end{example}
 
@@ -2680,13 +2758,13 @@ $$U_\sigma \cong k^r \times (k^\times)^{n-r},$$
 where $r = \dim(\sigma)$.
 \end{theorem}
 
-We have already seen that $U_\sigma$ is isomorphic to $k^r \times (k^\times)^{n-r}$, and hence non-singular, when $\sigma$ is generated by $r$ basis vectors of $N$ (c.f. Example \ref{}).
+We have already seen $U_\sigma$ is isomorphic to $k^r \times (k^\times)^{n-r}$, and hence non-singular, when $\sigma$ is generated by $r$ basis vectors of $N$ (c.f. Example \ref{example:affinetoricvarieties}).
 
-To prove the converse, we consider the so-called distinguished point $x_\sigma$ in $U_\sigma$.
+To prove the converse, we need to consider the so-called distinguished point $x_\sigma$ in $U_\sigma$.
 This point is given by the map of semigroups
 $$x_\sigma : S_\sigma \to k, \qquad x_\sigma(u) := \begin{cases} 1 & \text{if } u \in \sigma^\perp, \\ 0 & \text{otherwise.} \end{cases}$$
 This is a homomorphism since $\sigma^\perp$ is a face of $\sigma^\vee$, so a sum of two elements in $S_\sigma$ lies in $\sigma^\perp$ only if each element lies in $\sigma^\perp$ \cite[\S 2.1]{Fulton93}.
-In the proof, we show that if $U_\sigma$ is non-singular at $x_\sigma$, then $\sigma$ is generated by a basis for $N$.
+The strategy of the proof is to show that if $U_\sigma$ is non-singular at $x_\sigma$, then $\sigma$ is generated by a basis for $N$.
 
 \begin{proof}
 We consider the case when $\sigma$ is non-degenerate. For the extension to the degenerate case, see \cite[\S 2.1]{Fulton93}.
@@ -2700,19 +2778,37 @@ We see $\frakm / \frakm^2$ has the basis
 $$\{\chi^u + \frakm^2 : u \in (S_\sigma)_{\text{irred}}\},$$
 where $(S_\sigma)_{\text{irred}}$ is the set
 $$(S_\sigma)_{\text{irred}} = \{u \in S_\sigma \setminus \{0\} : u \text{ is not a sum of two elements in } S_\sigma\setminus\{0\}\}.$$
-
 Since $U_\sigma$ is non-singular, the Zariski tangent space $(\frakm/\frakm^2)^*$ has dimension $n = \dim(U_\sigma)$, and thus $|(S_\sigma)_{\text{irred}}| = n$.
 
 We now consider which elements lie in $(S_\sigma)_{\text{irred}}$.
-Any edge, i.e., a one-dimensional face, of $\sigma^\vee$can be generated by a single lattice element, since $\sigma^\vee$ is rational.
+Any edge (one-dimensional face) of $\sigma^\vee$ can be generated by a single lattice element.
 If $p$ is a positive integer, $u$ lies in $M$ and $p u$ lies in $S_\sigma$, then $u$ lies in $S_\sigma$ (this holds since $S_\sigma$ is the intersection of $M$ with a cone).
-It follows that an edge of $\sigma$ is generated by a unique $u \in S_\sigma$ which is not the sum of two non-zero elements lying in the edge---we call such a $u$ an edge generator.
+It follows that an edge of $\sigma$ is generated by a unique $u$ lying in $S_\sigma$ which is not the sum of two non-zero elements lying in the edge---we call such a $u$ an edge generator.
 The edge generators lie in $(S_\sigma)_{\text{irred}}$ \cite[Proposition 1.2.23]{CLS11}.
 Moreover, the edge generators generate the cone \cite[Lemma 1.2.15]{CLS11}.
 Since $\sigma$ is strongly convex, $\sigma^\vee$ spans $M_\RR$ and there must be $n$ edge generators, so $(S_\sigma)_{\text{irred}}$ is the set of edge generators.
-To complete the proof, it suffices to see $(S_\sigma)_{\text{irred}}$ generates $M$ as a group.
-But $\sigma^\vee$ spanning $M_\RR$ implies $S_\sigma + (-S_\sigma) = M$, and $(S_\sigma)_{\text{irred}}$ generates $S_\sigma$ \cite[Proposition 1.2.23]{CLS11}.
+
+Then $(S_\sigma)_{\text{irred}}$ is a set of $n$ linearly independent lattice points which generate the cone.
+To complete the proof, we just need to show $(S_\sigma)_{\text{irred}}$ generates $M$ as a group.
+But since $\sigma^\vee$ spans $M_\RR$ we have $S_\sigma + (-S_\sigma) = M$, and $(S_\sigma)_{\text{irred}}$ generates $S_\sigma$ \cite[Proposition 1.2.23]{CLS11}.
 \end{proof}
+
+We revisit the singular affine toric varieties we saw in Example \ref{example:affinetoricvarieties} to see how the cone generators detect that the variety is singular.
+
+\begin{example}
+\begin{enumerate}
+\item If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, e_2, e_1+e_3, e_2+e_3\}$, then
+$$U_\sigma = \bV(XY - ZW).$$
+Note $U_\sigma$ is singular since all partial derivatives of $XY-ZW$ vanish at the origin.
+The generating set $\{e_1, e_2, e_1+e_3, e_2+e_3\}$ is not a basis for $\ZZ^3$ as it contains four vectors.
+\item If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, -e_1+2e_2\}$, then
+$$U_\sigma = \bV(XY - Z^2).$$
+Again, $U_\sigma$ is singular since all partial derivatives of $XY-Z^2$ vanish at the origin.
+Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\}$ has even $y$-component; thus, the generating set is not a basis for $\ZZ^2$.
+\end{enumerate}
+\end{example}
+
+
 
 
 
