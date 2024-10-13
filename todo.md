@@ -1,12 +1,19 @@
 # TO DO
 Random:
+[ ] Get rid of dominant morphisms section
+[ ] Get rid of relative interior stuff
+
+3. Affine varieties
+[ ] Fix proof that homs A to B are the same as morphisms Spec(B) to Spec(A)
+[ ] Explain how points in Spec(A) are homs A to k
+[ ] Add 29/09 Explicit description of morphisms of affine varieties section to document
+[ ] Fix proof that the localisation homomorphism corresponds to the principal open subset X_f
 
 4. Convex geometry
-[ ] Better explain intuition that equations of hyperplanes are normals.
-[ ] Link normals to intuition for separation lemma.
+[ ] Fix Masoud's feedback, in particular, adding rational cones as its own section.
 [ ] Decide where 3D cone example is most appropriate and add. (Diagram code at bottom.)
-[ ] See if it is possible to remove reference to relative interior. Remove prop 54 etc if possible. Need to be able to prove prop 1.30.
 [ ] Explain convention of sigma is a cone in N.
+[ ] Check all results have references
 
 5. Affine toric varieties
 5.1. Semigroups and semigroup algebras
@@ -16,21 +23,25 @@ Random:
 
 5.2. Affine toric varieties
 [ ] Irreducible variety
+[ ] Juice up examples. In particular, if cone is gen by part of a basis then nonsingular.
 
 5.3. Points of U_sigma
+[x] Prove result about bijections involving points
+[x] Do example for the torus, explaining how the multiplication works
 
+5.4. Faces and open affine subsets
+[x] Prove semigroup lemma
+[x] Proves lemma on page 18 of Fulton
+[ ] Emphasise that there is a dense torus
+[ ] Discuss how this informs the dimension
 
-5.4. Faces and morphisms
+5.5. The torus action
+[ ] Define the action
+[ ] Explain why it is an action extending the natural action of T on itself
+[ ] Examples
 
-
-5.5. The dense torus
-
-
-5.6. The torus action
-
-
-5.7. Singularities of U_sigma
-
+5.6. Singularities of U_sigma
+[ ] Prove the result characterising singularities
 
 
 

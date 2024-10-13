@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  11 OCT 2024 18:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  13 OCT 2024 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -942,7 +942,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 
-<../images/UQLogo.jpg, id=236, 1185.42876pt x 473.77pt>
+<../images/UQLogo.jpg, id=232, 1185.42876pt x 473.77pt>
 File: ../images/UQLogo.jpg Graphic file (type jpg)
 <use ../images/UQLogo.jpg>
 Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 280.
@@ -996,6 +996,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [3]
+
+LaTeX Warning: Reference `The Nullstellensatz' on page 4 undefined on input lin
+e 488.
+
+
 
 [4]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 565
@@ -1076,67 +1081,47 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [27]
 
 [28]
-<../images/fultons_cones.png, id=684, 782.925pt x 206.27063pt>
+<../images/fultons_cones.png, id=673, 782.925pt x 206.27063pt>
 File: ../images/fultons_cones.png Graphic file (type png)
 <use ../images/fultons_cones.png>
-Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2222.
+Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2231.
 (pdftex.def)             Requested size: 375.80544pt x 99.01192pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+[29 <../images/fultons_cones.png>]
 
-
-
-[29]
-
-[30 <../images/fultons_cones.png>]
+[30]
 
 [31]
 
 [32]
 
-LaTeX Warning: Reference `' on page 33 undefined on input line 2420.
+LaTeX Warning: Reference `' on page 33 undefined on input line 2429.
 
 
-LaTeX Warning: Reference `' on page 33 undefined on input line 2420.
+LaTeX Warning: Reference `' on page 33 undefined on input line 2429.
 
 
-LaTeX Warning: Reference `' on page 33 undefined on input line 2422.
+LaTeX Warning: Reference `' on page 33 undefined on input line 2431.
 
 
 
 [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2513.
+(hyperref)                removing `math shift' on input line 2517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2513.
+(hyperref)                removing `subscript' on input line 2517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 2513.
+(hyperref)                removing `\sigma' on input line 2517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2513.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2543.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2543.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 2543.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2543.
+(hyperref)                removing `math shift' on input line 2517.
 
 
 
@@ -1146,38 +1131,27 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [36]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2674.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2674.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 2674.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2674.
+
+
+LaTeX Warning: Reference `' on page 37 undefined on input line 2683.
+
+
+
 [37]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2759.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2759.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2759.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -2.25047pt
-(hyperref)                removed on input line 2759.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2759.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -2.25047pt
-(hyperref)                removed on input line 2759.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2759.
-
-
 
 [38]
 
@@ -1186,11 +1160,35 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [40]
 
 [41]
-Overfull \hbox (1.2788pt too wide) in paragraph at lines 2897--2903
-\OT1/cmr/m/n/12 (-20) defines a bi-jec-tion be-tween the set of lines and $\U/m
-sb/m/n/12 P[]$\OT1/cmr/m/n/12 (-20) . The map is well-defined since $[(\OML/cmm
-/m/it/12 a[]; [] ; a[]\OT1/cmr/m/n/12 (-20) )] =
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2938.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2938.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2938.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -2.25047pt
+(hyperref)                removed on input line 2938.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2938.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern -2.25047pt
+(hyperref)                removed on input line 2938.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2938.
 
 
 
@@ -1201,17 +1199,32 @@ sb/m/n/12 P[]$\OT1/cmr/m/n/12 (-20) . The map is well-defined since $[(\OML/cmm
 [44]
 
 [45]
-
-LaTeX Warning: Reference `' on page 46 undefined on input line 3101.
-
-
-LaTeX Warning: Reference `' on page 46 undefined on input line 3102.
+Overfull \hbox (1.2788pt too wide) in paragraph at lines 3076--3082
+\OT1/cmr/m/n/12 (-20) defines a bi-jec-tion be-tween the set of lines and $\U/m
+sb/m/n/12 P[]$\OT1/cmr/m/n/12 (-20) . The map is well-defined since $[(\OML/cmm
+/m/it/12 a[]; [] ; a[]\OT1/cmr/m/n/12 (-20) )] =
+ []
 
 
 
 [46]
 
-[47] (./honours.aux)
+[47]
+
+[48]
+
+[49]
+
+LaTeX Warning: Reference `' on page 50 undefined on input line 3280.
+
+
+LaTeX Warning: Reference `' on page 50 undefined on input line 3281.
+
+
+
+[50]
+
+[51] (./honours.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
@@ -1224,14 +1237,14 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `honours.out' has not changed.
-(rerunfilecheck)             Checksum: 0C4465DF97DD8431F6B1F90F18A07879;11056.
+(rerunfilecheck)             Checksum: B2289820FDA72E890A7007F7A5C0594F;10945.
  ) 
 Here is how much of TeX's memory you used:
- 39263 strings out of 473579
- 879279 string characters out of 5732263
- 1400785 words of memory out of 5000000
- 60732 multiletter control sequences out of 15000+600000
- 585464 words of font info for 267 fonts, out of 8000000 for 9000
+ 39297 strings out of 473579
+ 880056 string characters out of 5732263
+ 1402851 words of memory out of 5000000
+ 60743 multiletter control sequences out of 15000+600000
+ 585873 words of font info for 271 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,16n,111p,1004b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1262,11 +1275,12 @@ c/amsfonts/cm/cmti8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
 2.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/
 texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texl
-ive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on honours.pdf (50 pages, 791939 bytes).
+ive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/t
+exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on honours.pdf (54 pages, 818830 bytes).
 PDF statistics:
- 1077 PDF objects out of 1200 (max. 8388607)
- 954 compressed objects within 10 object streams
- 329 named destinations out of 1000 (max. 500000)
- 50655 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1129 PDF objects out of 1200 (max. 8388607)
+ 1000 compressed objects within 10 object streams
+ 345 named destinations out of 1000 (max. 500000)
+ 52695 words of extra memory for PDF output out of 61914 (max. 10000000)
 

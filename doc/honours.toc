@@ -36,30 +36,29 @@
 \contentsline {subsection}{\tocsubsection {}{5.1}{Semigroups and semigroup algebras}}{32}{subsection.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.2}{Affine toric varieties}}{33}{subsection.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.3}{Points of $U_\sigma $}}{34}{subsection.5.3}%
-\contentsline {subsection}{\tocsubsection {}{5.4}{Faces and morphisms}}{34}{subsection.5.4}%
-\contentsline {subsection}{\tocsubsection {}{5.5}{The dense torus}}{34}{subsection.5.5}%
-\contentsline {subsection}{\tocsubsection {}{5.6}{The torus action}}{34}{subsection.5.6}%
-\contentsline {subsection}{\tocsubsection {}{5.7}{Singularities of $U_\sigma $}}{34}{subsection.5.7}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{Faces and open affine subsets}}{36}{subsection.5.4}%
+\contentsline {subsection}{\tocsubsection {}{5.5}{The torus action}}{36}{subsection.5.5}%
+\contentsline {subsection}{\tocsubsection {}{5.6}{Singularities of $U_\sigma $}}{37}{subsection.5.6}%
 \vskip 1em
-\contentsline {section}{\tocsection {}{6}{Affine GIT quotients as affine toric varieties}}{35}{section.6}%
-\contentsline {subsection}{\tocsubsection {}{6.1}{Algebraic groups}}{35}{subsection.6.1}%
-\contentsline {subsection}{\tocsubsection {}{6.2}{Reductive groups}}{35}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{The affine GIT quotient}}{35}{subsection.6.3}%
-\contentsline {subsection}{\tocsubsection {}{6.4}{Algebraic tori}}{37}{subsection.6.4}%
-\contentsline {subsection}{\tocsubsection {}{6.5}{The invariant ring for a torus acting on affine space}}{37}{subsection.6.5}%
-\contentsline {subsection}{\tocsubsection {}{6.6}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{38}{subsection.6.6}%
+\contentsline {section}{\tocsection {}{6}{Affine GIT quotients as affine toric varieties}}{39}{section.6}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{Algebraic groups}}{39}{subsection.6.1}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{Reductive groups}}{39}{subsection.6.2}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{The affine GIT quotient}}{39}{subsection.6.3}%
+\contentsline {subsection}{\tocsubsection {}{6.4}{Algebraic tori}}{41}{subsection.6.4}%
+\contentsline {subsection}{\tocsubsection {}{6.5}{The invariant ring for a torus acting on affine space}}{41}{subsection.6.5}%
+\contentsline {subsection}{\tocsubsection {}{6.6}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{42}{subsection.6.6}%
 \vskip 1em
-\contentsline {section}{\tocsection {}{7}{Abstract varieties}}{42}{section.7}%
-\contentsline {subsection}{\tocsubsection {}{7.1}{Motivation: projective varieties}}{42}{subsection.7.1}%
-\contentsline {subsection}{\tocsubsection {}{7.2}{Abstract varieties}}{42}{subsection.7.2}%
-\contentsline {subsection}{\tocsubsection {}{7.3}{The glueing construction}}{43}{subsection.7.3}%
+\contentsline {section}{\tocsection {}{7}{Abstract varieties}}{46}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{7.1}{Motivation: projective varieties}}{46}{subsection.7.1}%
+\contentsline {subsection}{\tocsubsection {}{7.2}{Abstract varieties}}{46}{subsection.7.2}%
+\contentsline {subsection}{\tocsubsection {}{7.3}{The glueing construction}}{47}{subsection.7.3}%
 \vskip 1em
-\contentsline {section}{\tocsection {}{8}{Abstract toric varieties}}{45}{section.8}%
-\contentsline {subsection}{\tocsubsection {}{8.1}{Fans}}{45}{subsection.8.1}%
-\contentsline {subsection}{\tocsubsection {}{8.2}{Abstract toric varieties}}{45}{subsection.8.2}%
-\contentsline {subsection}{\tocsubsection {}{8.3}{The dense torus}}{46}{subsection.8.3}%
-\contentsline {subsection}{\tocsubsection {}{8.4}{The orbit-cone correspondence}}{46}{subsection.8.4}%
-\contentsline {subsection}{\tocsubsection {}{8.5}{Classification of toric surfaces}}{46}{subsection.8.5}%
-\contentsline {subsection}{\tocsubsection {}{8.6}{Toric morphisms}}{46}{subsection.8.6}%
+\contentsline {section}{\tocsection {}{8}{Abstract toric varieties}}{49}{section.8}%
+\contentsline {subsection}{\tocsubsection {}{8.1}{Fans}}{49}{subsection.8.1}%
+\contentsline {subsection}{\tocsubsection {}{8.2}{Abstract toric varieties}}{49}{subsection.8.2}%
+\contentsline {subsection}{\tocsubsection {}{8.3}{The dense torus}}{50}{subsection.8.3}%
+\contentsline {subsection}{\tocsubsection {}{8.4}{The orbit-cone correspondence}}{50}{subsection.8.4}%
+\contentsline {subsection}{\tocsubsection {}{8.5}{Classification of toric surfaces}}{50}{subsection.8.5}%
+\contentsline {subsection}{\tocsubsection {}{8.6}{Toric morphisms}}{50}{subsection.8.6}%
 \vskip 1em
-\contentsline {section}{\tocsection {}{}{References}}{47}{section*.9}%
+\contentsline {section}{\tocsection {}{}{References}}{51}{section*.9}%
