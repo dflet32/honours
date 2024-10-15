@@ -1,0 +1,34 @@
+\subsection{The separation lemma}
+To conclude this chapter, we state and prove the so-called separation lemma, which we will need to define abstract toric varieties.
+This lemma extends the hyperplane separation theorem, which says we can separate a closed set from a compact set using a hyperplane.
+The separation lemma says we can do the same for two cones sharing a common face.
+
+\begin{lemma}
+Let $\sigma$ and $\sigma'$ be convex polyhedral cones such that $\tau = \sigma \cap \sigma'$ is a face of both.
+Then there exists $u \in \sigma^\vee \cap (-\sigma')^\vee$ such that $\tau = \sigma \cap u^\perp = \sigma' \cap u^\perp$.
+\end{lemma}
+\begin{proof}
+We construct the desired $u$.
+To this end, consider the polyhedral cone 
+$$\gamma := \sigma + (-\sigma').$$
+Let $u_i$ denote generators for $\gamma^\vee$, and define $u := \sum_i u_i \in \gamma^\vee$.
+Since $\sigma$ and $-\sigma'$ are subsets of $\gamma$, we have $u \in \sigma^\vee \cap (-\sigma')^\vee$.
+We now prove the following key formula:
+$$\gamma \cap u^\perp = \gamma \cap (-\gamma).$$
+If $v \in \gamma \cap u^\perp$, then $\langle u, v \rangle = \sum_i \langle u_i, v\rangle = 0$, so since each summand is non-negative, they all vanish.
+Thus $\langle u_i, -v \rangle = 0$ for all $i$ and $-v \in \gamma$.
+Conversely, if $v \in \gamma \cap (-\gamma)$, then $\langle u, v \rangle \ge 0$ and $\langle u, -v \rangle \ge 0$, so that $v \in \gamma \cap u^\perp$.
+
+We now show $\tau = \sigma \cap u^\perp$.
+Since $\tau$ is contained in $\sigma$ and $\sigma'$, we have $\tau \subseteq \gamma \cap (-\gamma)$.
+Thus,
+$$\tau \subseteq \sigma \cap (\gamma \cap (-\gamma)) = \sigma \cap (\gamma \cap u^\perp) = \sigma \cap u^\perp.$$
+Conversely, suppose $v \in \sigma \cap u^\perp$.
+We have
+$$\sigma \cap u^\perp \subseteq \gamma \cap u^\perp = \gamma \cap (-\gamma) \subseteq \sigma' + (-\sigma),$$
+so $v = w' - w$ for some $w' \in \sigma'$ and $w \in \sigma$.
+Then $w' = v + w$ lies in $\sigma \cap \sigma' = \tau$.
+But $\tau = \sigma \cap y^\perp$ for some $y \in \sigma^\vee$.
+There holds $\langle y, v + w \rangle = \langle y, v \rangle + \langle y, w \rangle = 0$, so that $\langle y, v \rangle = 0$ and $v \in \tau$.
+This proves $\tau = \sigma \cap u^\perp$, and we see $\tau = \sigma' \cap u^\perp$ by applying the same argument to $-u$.
+\end{proof}

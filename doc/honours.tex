@@ -331,7 +331,7 @@
 
 
 \newpage
-\addtocontents{toc}{\vskip 1em}
+%\addtocontents{toc}{\vskip 1em}
 \section{Algebraic sets}\label{chapter:algebraicsubsets}
 In this chapter, we introduce affine varieties, which are the central object of study in this project.
 Algebraic geometry establishes a connection between spaces defined by zero sets of polynomials (geometric objects), and ideals in a polynomial ring (algebraic objects).
@@ -1020,7 +1020,7 @@ To see $f \in \calO_V(U)$, note that if $P \in U$, then $P\in U_i$ for some $i$,
 
 
 \newpage
-\addtocontents{toc}{\vskip 1em}
+%\addtocontents{toc}{\vskip 1em}
 \section{Affine varieties}
 In this chapter, we define and study affine varieties---these are spaces which `look like' algebraic sets, but defined without needing to be embedded in an affine space.
 This definition is necessary because we usually want to study spaces without an ambient space.
@@ -1038,7 +1038,7 @@ For the remainder of the chapter, we define the tangent space of a variety, and 
 
 \subsection{Sheaves and their morphisms}\label{varietiessection}
 Proposition \ref{sheafprop} alludes to an important object appearing in many areas of mathematics, called a sheaf.
-We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (c.f. {\cite[Chapter II, \S 1]{Hartshorne77}}).
+We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (c.f.\ {\cite[Chapter II, \S 1]{Hartshorne77}}).
 
 \begin{definition}[{\cite[Chapter 3, a.]{Milne13}}]\label{sheafdef}
 Let $V$ be a topological space and $k$ a field.
@@ -1116,7 +1116,7 @@ Then isomorphisms are in particular homeomorphisms.
 
 
 
-\subsection{Affine varieties}
+\subsection{The definition of varieties}
 Having defined ringed spaces, we can now define affine algebraic varieties.
 In Chapter \ref{chapter:algebraicsubsets}, we studied algebraic sets embedded in an ambient affine space.
 Roughly speaking, an affine algebraic variety is an algebraic set, defined without choosing an embedding into affine space.
@@ -1156,7 +1156,7 @@ To illustrate the theory, we will investigate the case $A=k[X]$ as an example th
 
 \emph{$\Spec(A)$ as a set:}
 the set $\Spec(A)$ is defined to be the set of maximal ideals of $A$.
-This is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (c.f. Corollary \ref{corollary:coordinateringbijections}).
+This is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (c.f.\ Corollary \ref{corollary:coordinateringbijections}).
 
 \begin{example}
 The maximal ideals in $k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for some $a\in k$.
@@ -1353,24 +1353,6 @@ $$\varphi(\Spec(A_h)) = \{\frakm : h \notin \frakm\} = D(h).$$
 To complete the proof, we just need to check that $\varphi^{-1}$ is a morphism.
 \textcolor{red}{complete this.}
 \end{proof}
-
-
-
-
-%\subsection{Dominant morphisms}
-%Given the correspondence between morphisms and algebra homomorphisms, it is natural to ask if properties of the homomorphism inform properties of the morphism, and vice versa.
-%One property of morphisms which is determined algebraically is called \emph{dominant}.
-%A morphism is dominant if it has dense image in its codomain.
-%The following proposition relates this to an algebraic property:
-%
-%\begin{proposition}
-%Let $\alpha : A \to B$ be a homomorphism of affine $k$-algebras, and let 
-%$$\varphi: \Spec(B) \to \Spec(A)$$
-%be the corresponding morphism of affine varieties.
-%Then $\varphi$ is dominant if and only if $\alpha$ is injective.
-%\end{proposition}
-%
-%This result will be important when studying toric varieties, as it will tell us the open subset isomorphic to a torus is in fact dense in the toric variety.
 
 
 
@@ -1630,7 +1612,7 @@ $$\ker \varphi = \{h \in M_P : h + \bI(V) \in \frakm_P^2\}=\{h \in M_P:h+\bI(V)\
 
 
 \newpage
-\addtocontents{toc}{\vskip 1em}
+%\addtocontents{toc}{\vskip 1em}
 \section{Convex geometry}\label{sectionconvexgeometry}
 An affine toric variety is an affine variety defined using a cone in a vector space.
 Many properties of the variety are determined by properties of the cone.
@@ -1641,7 +1623,7 @@ We begin by defining convex cones and providing examples.
 Analogous to how vector spaces have dual spaces, cones have dual cones.
 One of the main results we prove in this chapter is that dualising a convex cone twice yields the same cone---this is a fundamental fact, but the proof is non-trivial.
 Studying cones is more subtle than studying vector spaces because cones are not linear objects.
-For example, a cone may have different dimension to its dual (c.f. Example \ref{example:conesandduals}), unlike finite-dimensional vector spaces, where the dimension remains the same.
+For example, a cone may have different dimension to its dual (c.f.\ Example \ref{example:conesandduals}), unlike finite-dimensional vector spaces, where the dimension remains the same.
 
 In the context of toric varieties, the cones we are interested in have certain properties like being rational, polyhedral or strongly convex.
 An important part of this chapter is clearly defining these properties.
@@ -1824,7 +1806,7 @@ In view of Figure \ref{figureconeanddual}, we see  $\sigma^\vee = \Span_{\RR_{\g
 \end{figure}
 
 The following theorem relates a cone to its dual and has many important consequences;
-for example, it is not obvious that dualising a cone twice yields the original cone, but the theorem establishes this fact (c.f. Corollary \ref{corollary:doubledual}).
+for example, it is not obvious that dualising a cone twice yields the original cone, but the theorem establishes this fact (c.f.\ Corollary \ref{corollary:doubledual}).
 We will see other consequences of the result in \S \ref{polyhedralcones}.
 
 \begin{theorem}[{\cite[\S 1.2]{Fulton93}}]\label{theorem:dualcone}
@@ -1917,15 +1899,6 @@ In this section, we define a class of convex cones called polyhedral cones---the
 The cones associated to toric varieties are always polyhedral.
 We also define and study faces of polyhedral cones, which are important subsets of the cone.
 
-Recall $N_\RR$ and $M_\RR$ are dual vector spaces with dual pairing $\langle \cdot , \cdot \rangle : M_\RR \times N_\RR \to \RR$.
-Now, let $N$ be a lattice in $N_\RR$.
-This means $N$ is a free abelian subgroup of $N_\RR$ with rank $n = \dim N_\RR$ such that $\Span_\RR N = N_\RR$.
-Concretely, $N$ is a lattice in $N_\RR$ if and only if there exists an $\RR$-basis for $N_\RR$ which is also a $\ZZ$-basis for $N$ \cite[\S 2.2]{Serre73}.
-The relationship between $N$ and $N_\RR$ generalises the relationship between $\ZZ^n$ and $\RR^n$, and most of our examples will have $N = \ZZ^n$ and $N_\RR = \RR^n$ for simplicity.
-We also let $M$ denote the dual lattice $\mathrm{Hom}_{\ZZ\text{-linear}}(N, \ZZ)$, which are the elements of $M_\RR$ taking integer values on $N$.
-
-We are now ready to define convex polyhedral cones.
-
 \begin{definition}\label{definition:convexpolyhedral}
 A subset $\sigma \subseteq N_\RR$ is called a (convex) polyhedral cone if
 $$\sigma = \Span_{\RR_{\ge 0}} \{v_1, \ldots, v_r\}$$
@@ -1934,6 +1907,8 @@ for a finite set of generators $v_1, \ldots, v_r \in N_\RR$.
 
 It follows from the definition that convex polyhedral cones are indeed convex cones in the sense defined in \S \ref{section:convexcones}.
 Every example of convex cones we have seen so far has been polyhedral, except for $\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}$ in Example \ref{example:cones}.
+%Recall that the dual cone $\sigma^\vee$ is the set of functionals which are non-negative on $\sigma$.
+%When $\sigma$ is polyhedral, a functional lies in $\sigma^\vee$ if and only if it is non-negative on the generators of $\sigma$.
 
 One definition of a convex polyhedron is a finite intersection of closed half-spaces in $\RR^3$.
 The name polyhedral is justified by the following result:
@@ -1945,12 +1920,6 @@ A cone satisfies Definition \ref{definition:convexpolyhedral} if and only if it 
 Later, in Proposition \ref{proposition:dualdescription}, we give a dual description of polyhedral cones, showing they are finite intersections of closed half-spaces.
 The converse is proven in \cite[1.3.13]{DLHK13}.
 \end{proof}
-
-We explain some basic properties of the polyhedral cone $\sigma$.
-The cone $\sigma$ is called rational if its generators can be chosen from the lattice $N$.
-The consequences of $\sigma$ being non-degnerate and rational will be developed in the rest of this chapter.
-Recall that the dual cone $\sigma^\vee$ is the set of functionals which are non-negative on $\sigma$.
-When $\sigma$ is polyhedral, a functional lies in $\sigma^\vee$ if and only if it is non-negative on the generators of $\sigma$.
 
 We now define the faces of a polyhedral cone.
 Any $u \in M_\RR$ defines a subspace of $N_\RR$ in the following manner:
@@ -2109,7 +2078,6 @@ We collect some basic properties of faces in the following proposition.
 Let $\sigma$ be a convex polyhedral cone.
 \begin{enumerate}
 \item A face of $\sigma$ is also a convex polyhedral cone.
-If $\sigma$ is a rational cone, then its faces are too.
 \item There are only finitely many faces of $\sigma$.
 \item Any intersection of faces is a face.
 \item If $\tau$ is a face of $\sigma$, then a face of $\tau$ is also a face of $\sigma$.
@@ -2224,9 +2192,6 @@ Now suppose that one of $u$ and $-u$ is non-negative on the rest of the generato
 In this case, $u$ lies in $\sigma^\vee$, the $n-1$ vectors generate a face $\tau$, and $u = u_\tau$ is the equation of the face.
 %We then take $u$ as one of the generators of $\sigma^\vee$.
 
-Note when the generators of $\sigma$ lie in the lattice $N$, this algorithm can be used to find generators of $\sigma^\vee$ in the dual lattice $M$.
-This means the dual cone of a rational polyhedral cone is also rational.
-
 \begin{example}\label{example:3dconeanddual}
 Let $N = \ZZ^3$ and $N_\RR = \RR^3$.
 Consider $\sigma = \Span_{\RR_{\ge 0}}\{ e_1, e_2, e_1+e_3, e_2 + e_3\}$.
@@ -2314,40 +2279,24 @@ This gives the equivalence of (2) and (4).
 
 
 
-\subsection{The separation lemma}
-To conclude this chapter, we state and prove the so-called separation lemma, which we will need to define abstract toric varieties.
-This lemma extends the hyperplane separation theorem, which says we can separate a closed set from a compact set using a hyperplane.
-The separation lemma says we can do the same for two cones sharing a common face.
+\subsection{Rational cones}
+\todo{introduction to section.}
 
-\begin{lemma}
-Let $\sigma$ and $\sigma'$ be convex polyhedral cones such that $\tau = \sigma \cap \sigma'$ is a face of both.
-Then there exists $u \in \sigma^\vee \cap (-\sigma')^\vee$ such that $\tau = \sigma \cap u^\perp = \sigma' \cap u^\perp$.
-\end{lemma}
-\begin{proof}
-We construct the desired $u$.
-To this end, consider the polyhedral cone 
-$$\gamma := \sigma + (-\sigma').$$
-Let $u_i$ denote generators for $\gamma^\vee$, and define $u := \sum_i u_i \in \gamma^\vee$.
-Since $\sigma$ and $-\sigma'$ are subsets of $\gamma$, we have $u \in \sigma^\vee \cap (-\sigma')^\vee$.
-We now prove the following key formula:
-$$\gamma \cap u^\perp = \gamma \cap (-\gamma).$$
-If $v \in \gamma \cap u^\perp$, then $\langle u, v \rangle = \sum_i \langle u_i, v\rangle = 0$, so since each summand is non-negative, they all vanish.
-Thus $\langle u_i, -v \rangle = 0$ for all $i$ and $-v \in \gamma$.
-Conversely, if $v \in \gamma \cap (-\gamma)$, then $\langle u, v \rangle \ge 0$ and $\langle u, -v \rangle \ge 0$, so that $v \in \gamma \cap u^\perp$.
+Recall $N_\RR$ and $M_\RR$ are dual vector spaces with dual pairing $\langle \cdot , \cdot \rangle : M_\RR \times N_\RR \to \RR$.
+Now, let $N$ be a lattice in $N_\RR$.
+This means $N$ is a free abelian subgroup of $N_\RR$ with rank $n = \dim N_\RR$ such that $\Span_\RR N = N_\RR$.
+Concretely, $N$ is a lattice in $N_\RR$ if and only if there exists an $\RR$-basis for $N_\RR$ which is also a $\ZZ$-basis for $N$ \cite[\S 2.2]{Serre73}.
+The relationship between $N$ and $N_\RR$ generalises the relationship between $\ZZ^n$ and $\RR^n$, and most of our examples will have $N = \ZZ^n$ and $N_\RR = \RR^n$ for simplicity.
+We also let $M$ denote the dual lattice $\mathrm{Hom}_{\ZZ\text{-linear}}(N, \ZZ)$, which are the elements of $M_\RR$ taking integer values on $N$.
 
-We now show $\tau = \sigma \cap u^\perp$.
-Since $\tau$ is contained in $\sigma$ and $\sigma'$, we have $\tau \subseteq \gamma \cap (-\gamma)$.
-Thus,
-$$\tau \subseteq \sigma \cap (\gamma \cap (-\gamma)) = \sigma \cap (\gamma \cap u^\perp) = \sigma \cap u^\perp.$$
-Conversely, suppose $v \in \sigma \cap u^\perp$.
-We have
-$$\sigma \cap u^\perp \subseteq \gamma \cap u^\perp = \gamma \cap (-\gamma) \subseteq \sigma' + (-\sigma),$$
-so $v = w' - w$ for some $w' \in \sigma'$ and $w \in \sigma$.
-Then $w' = v + w$ lies in $\sigma \cap \sigma' = \tau$.
-But $\tau = \sigma \cap y^\perp$ for some $y \in \sigma^\vee$.
-There holds $\langle y, v + w \rangle = \langle y, v \rangle + \langle y, w \rangle = 0$, so that $\langle y, v \rangle = 0$ and $v \in \tau$.
-This proves $\tau = \sigma \cap u^\perp$, and we see $\tau = \sigma' \cap u^\perp$ by applying the same argument to $-u$.
-\end{proof}
+The cone $\sigma$ is called rational if its generators can be chosen from the lattice $N$.
+
+If $\sigma$ is a rational cone, then its faces are too.
+
+Note when the generators of $\sigma$ lie in the lattice $N$, this algorithm can be used to find generators of $\sigma^\vee$ in the dual lattice $M$.
+This means the dual cone of a rational polyhedral cone is also rational.
+
+
 
 
 
@@ -2360,7 +2309,7 @@ This proves $\tau = \sigma \cap u^\perp$, and we see $\tau = \sigma' \cap u^\per
 
 
 \newpage
-\addtocontents{toc}{\vskip 1em}
+%\addtocontents{toc}{\vskip 1em}
 \section{Affine toric varieties}\label{affinetoricvarieties}
 Affine toric varieties are a class of algebraic varieties which are determined by a cone in a vector space.
 There is a rich interplay between the algebraic geometry of the variety and the convex geometry of the cone.
@@ -2446,7 +2395,7 @@ It follows that the semigroup algebra $k[S_\sigma]$ is always an integral domain
 
 
 
-\subsection{Affine toric varieties}\label{section:affinetoricvarieties}
+\subsection{The definition of toric varieties}\label{section:affinetoricvarieties}
 With the semigroup algebra defined, we are ready to define the affine toric variety corresponding to a cone.
 After giving the definition, we provide some examples.
 
@@ -2456,7 +2405,7 @@ The affine toric variety corresponding to $\sigma$ is
 $$U_\sigma := \Spec(k[S_\sigma]).$$
 \end{definition}
 
-As $k[S_\sigma]$ is a finitely generated reduced $k$-algebra, $U_\sigma$ is an affine variety (c.f. \S \ref{section:themaximalspectrum}).
+As $k[S_\sigma]$ is a finitely generated reduced $k$-algebra, $U_\sigma$ is an affine variety (c.f.\ \S \ref{section:themaximalspectrum}).
 Furthermore, since $k[S_\sigma]$ is an integral domain, $U_\sigma$ is irreducible.
 For example, if $\sigma = \{0\}$, then $S_{\{0\}}= M$, and
 $$U_{\{0\}} = \Spec(k[X_1^\pm, \ldots, X_n^\pm]) = (k^\times)^n$$
@@ -2471,7 +2420,7 @@ Since $\sigma$ is rational, Gordan's lemma ensures $k[S_\sigma]$ is finitely gen
 \item Set $U_\sigma := \Spec(k[S_\sigma])$.
 \end{enumerate}
 Given these steps, it is natural to ask why the semigroup is defined as the set of lattice points in the dual cone, rather than just the cone itself.
-In \S \ref{section:facesandopenaffinesubsets}, we see why defining the semigroup in this way yields is a natural choice to make.
+In \S \ref{section:facesandopenaffinesubsets}, we see why defining the semigroup in this way is a natural choice to make.
 
 We now investigate the affine toric varieties arising from cones we saw in Example \ref{example:conesandduals} and Example \ref{example:3dconeanddual}.
 
@@ -2534,7 +2483,7 @@ Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$ and $\sigma^\vee 
 \noindent
 While $\{2 e_1^* + e_2^*, e_2^*\}$ generates $\sigma^\vee$ as a cone, it does not generate $S_\sigma$ as a semigroup, since not every element in $S_\sigma$ lies in $\Span_{\ZZ_{\ge 0}} \{2 e_1^* + e_2^*,  e_2^*\}$.
 For example, $e_1^* + e_2^* \in S_\sigma$, but $e_1^* + e_2^* \notin \Span_{\ZZ_{\ge 0}} \{2 e_1^* + e_2^*,  e_2^*\}.$
-However, $\{2 e_1^* + e_2^*,  e_2^*, e_1^* + e_2^*\}$ does generate $S_\sigma$.
+However, $\{e_2^*, 2 e_1^* + e_2^*,  e_1^* + e_2^*\}$ generates $S_\sigma$.
 Then,
 \begin{align*}
 	\qquad k[S_\sigma] = k[\chi^{e_2^*}, \chi^{2 e_1^* + e_2^*}, \chi^{e_1^* + e_2^*}] &= k[X_2, X_1^2 X_2, X_1 X_2] \cong k[X, Y, Z] / (X Y - Z^2),
@@ -2560,102 +2509,102 @@ $$U_\sigma = \Spec(k[X, Y, Z, W] / (XY - ZW) ) = \bV(XY-ZW).$$
 
 
 \subsection{Points of $U_\sigma$}\label{section:points}
-We have seen how points in affine varieties can be viewed as maximal ideals in the coordinate ring (c.f. \S \ref{section:thenullstellensatz} and \S \ref{section:themaximalspectrum}).
-The semigroup algebra structure of the coordinate ring of an affine toric variety affords us another perspective of points, namely as semigroup homomorphisms.
-This semigroup homomorphism point of view is useful in \S\ref{section:thetorusaction} to define a torus action on an affine toric variety.
+We have seen how points in affine varieties correspond to maximal ideals in the coordinate ring (c.f.\ \S \ref{section:thenullstellensatz} and \S \ref{section:themaximalspectrum}).
 Our goal in this section is to explain the different ways of viewing points in affine toric varieties.
-As an example, we consider points in the torus $(k^\times)^n = U_{\{0\}}$.
+The fact that the coordinate ring of an affine toric variety arises as a semigroup algebra affords us another perspective of points, namely as semigroup homomorphisms.
+Later, in \S\ref{section:thetorusaction}, we will use the semigroup homomorphism point of view to define a torus action on an affine toric variety.
 
-\begin{proposition}[{\cite[Proposition 1.3.1]{CLS11}}]
-Let $\sigma$ be a cone in $N$ and $U_\sigma = \Spec(k[S_\sigma])$ the corresponding affine toric variety.
+\begin{proposition}[{\cite[Proposition 1.3.1]{CLS11}}]\label{proposition:pointbijections}
+Let $\sigma$ be a cone in $N$ and $U_\sigma = \Spec(k[S_\sigma])$ the associated affine toric variety.
 The following sets are in bijection:
 \begin{enumerate}
 \item The set of points of $U_\sigma$.
 \item The set of maximal ideals of $k[S_\sigma]$.
 \item The set of $k$-algebra homomorphisms $k[S_\sigma] \to k$.
-\item The set of semigroup homomorphisms $S_\sigma \to k$.
+\item The set of semigroup homomorphisms $S_\sigma \to k$.\footnote{Here, $k$ is considered as a semigroup under multiplication.}
 \end{enumerate}
 \end{proposition}
 
-Note that in (4), we consider $k$ as a semigroup under multiplication;
-recall also that semigroup homomorphisms preserve the identity.
-
 \begin{proof}
-The bijection between (1) and (2) holds by definition of the maximal spectrum.
+The bijection between (1) and (2) from the definition of the maximal spectrum.
 The bijection between (1) and (3) is explained in \cite[3.28]{Milne13}.
 
-To see the correspondence between (3) and (4), given a $k$-algebra homomorphism $\varphi : k[S_\sigma] \to k$, we define a semigroup homomorphism $x : S_\sigma \to k$ by $x(u) := \varphi(\chi^u)$.
-Conversely, a semigroup homomorphism $x : S_\sigma \to k$ determines a $k$-algebra homomorphism $\varphi : k[S_\sigma] \to k$, defined on the basis by $\varphi(\chi^u) := x(u)$.
-These associations are mutually inverse and are hence bijections.
+We explain the bijection between (3) and (4) now.
+Given a $k$-algebra homomorphism $\varphi : k[S_\sigma] \to k$, define a semigroup homomorphism $x : S_\sigma \to k$ by $x(u) := \varphi(\chi^u)$.
+Conversely, a semigroup homomorphism $x : S_\sigma \to k$ determines a $k$-algebra homomorphism $\varphi : k[S_\sigma] \to k$, defined on basis elements by $\varphi(\chi^u) := x(u)$.
+These maps are mutually inverse and are hence bijections.
 \end{proof}
 
-Let us consider the bijections given in the previous proposition explicitly for $U_{\{0\}} = (k^\times)^n$.
+Let us take a closer look at the above bijections when $U_\sigma = U_{\{0\}} = (k^\times)^n$.
 
 \begin{example}
-Recall that when $\sigma = \{0\}$, the semigroup $S_\sigma$ is generated by $\chi^{\pm e_1^*}, \ldots, \chi^{\pm e_n^*}$, where $\{e_1^*, \ldots, e_n^*\}$ is a basis of $M$.
-We denote $\chi^{e_i^*}$ by $X_i$, so that $k[S_\sigma]$ is identified with the Laurent polynomials $k[X_1^{\pm}, \ldots, X_n^{\pm}]$.
+We saw in \S \ref{section:affinetoricvarieties} that when $\sigma = \{0\}$, the semigroup $S_\sigma$ is generated by $\pm e_1^*, \ldots, \pm e_n^*$, where $\{e_1^*, \ldots, e_n^*\}$ is a basis of $M$.
+We write $X_i := \chi^{e_i^*}$ so that $k[S_\sigma] = k[X_1^{\pm}, \ldots, X_n^\pm]$.
+We now detail the sets named in Proposition \ref{proposition:pointbijections}.
 \begin{enumerate}
-\item When we consider $(k^\times)^n$ embedded in affine space, its points are of the form $(a_1, \ldots, a_n)$ with each $a_i \ne 0$.
+\item The set of points of $U_\sigma = (k^\times)^n$ is $\{(a_1, \ldots, a_n) : a_i \ne 0\}$ (when considering $(k^\times)^n$ embedded in $\AA^n$).
 \item For brevity, let $A$ denote the polynomial ring $k[X_1, \ldots, X_n]$ and $h$ the element $X_1 \cdots X_n$.
-We know $k[S_\sigma]$ is the localisation $A_h$ (c.f. \S\ref{section:opensubsetsofalgebraicsets}).
-Maximal ideals in $A_h$ are all of the form $\frakm A_h$, where $\frakm$ is a maximal ideal of $A$ not containing $h$ (c.f. Proposition \ref{proposition:localizationideals}).
+We know $k[S_\sigma]$ is the localisation $A_h$ (c.f.\ \S\ref{section:opensubsetsofalgebraicsets}).
+Maximal ideals in $A_h$ are all of the form $\frakm A_h$, where $\frakm$ is a maximal ideal of $A$ not containing $h$ (c.f.\ Proposition \ref{proposition:localizationideals}).
 The Nullstellensatz tells us every maximal ideal of $A$ is of the form $\frakm_a = (X_1 - a_1, \ldots, X_n - a_n)$ for some $a = (a_1, \ldots, a_n) \in \AA^n$.
-One readily checks $\frakm_a$ does not contain $h$ if and only if each $a_i \ne 0$.
-Then the maximal ideals in $k[S_\sigma]$ are $\frakm_a A_h$, where $a = (a_1, \ldots, a_n) \in (k^\times)^n$.
-\item The $k$-algebra homomorphism $k[S_\sigma] \to k$ corresponding to the maximal ideal $\frakm_a$ is the one with $\frakm_a$ as its kernel.
-This is the map given on the basis by $X_i^\pm \mapsto a_i^\pm$.
-\item The semigroup homomorphism corresponding to the $k$-algebra homomorphism
-$$k[S_\sigma]=k[M] \to k, \qquad X_i^\pm = \chi^{\pm e_i^*} \mapsto a_i^\pm,$$
-is simply
-$$S_\sigma = M \to k, \qquad e_i^* \mapsto a_i.$$
+One readily checks $\frakm_a$ does not contain $h$ if and only if each $a_i$ is non-zero.
+Then the set of maximal ideals in $k[S_\sigma]$ is $$\{\frakm_a A_h : a = (a_1, \ldots, a_n) \in (k^\times)^n\}.$$
+\item The $k$-algebra homomorphism $k[S_\sigma] \to k$ corresponding to the maximal ideal $\frakm_a$ is the unique map with kernel $\frakm_a$.
+This map is defined on generators by $X_i^\pm \mapsto a_i^\pm$.
+\item The semigroup homomorphism corresponding to the $k$-algebra homomorphism in (3) is
+$$S_\sigma = M \to k, \qquad \pm e_i^* \mapsto a_i^\pm.$$
 Note since $M$ is a group, every element in the image of a semigroup homomorphism $M \to k$ is invertible, and such a map is in fact a homomorphism of groups $M \to k^\times$.
-We then see
-$$(k^\times)^n = \Hom_{k\text{-algebra}}(k[S_\sigma], k) = \Hom_{\ZZ\text{-linear}}(M, k^\times).$$
 \end{enumerate}
+\end{example}
 
-We consider how multiplication of points in $(k^\times)^n$ looks from the perspective of semigroup homomorphisms---this will be useful when defining the torus action in \S \ref{section:thetorusaction}.
+Let us consider how multiplication of points in $(k^\times)^n$ looks from the perspective of homomorphisms---this will be useful when defining the torus action in \S \ref{section:thetorusaction}.
 Suppose $x : M \to k^\times$ and $y : M \to k^\times$ are homomorphisms given by $x(e_i^*) = a_i$ and $y(e_i^*) = b_i$.
 Then $x$ and $y$ correspond to the points $(a_1, \ldots, a_n)$ and $(b_1, \ldots, b_n)$, respectively.
 The product $(a_1 b_1, \ldots, a_n b_n)$ corresponds to the product of homomorphisms
 $$xy : M \to k^\times, \qquad (xy)(e_i^*) := a_i b_i.$$
-\end{example}
+
 
 
 
 \subsection{Faces and open affine subsets}\label{section:facesandopenaffinesubsets}
 In this section, we show how faces of a cone correspond to open affine subsets in an affine toric variety.
-In particular, we see how every affine toric variety has a torus as a dense open subset.
+In particular, we will see that every affine toric variety contains a torus as a dense open subset.
 
-If $\tau$ is a face of $\sigma$, then, since dualising reverses inclusion, we have $\tau^\vee \supseteq \sigma^\vee$ and $S_\tau \supseteq S_\sigma$.
-The inclusion of semigroups $S_\sigma \hookrightarrow S_\tau$ induces the inclusion of $k$-algebras $k[S_\sigma] \hookrightarrow k[S_\tau]$, and hence a morphism $U_\tau \to U_\sigma$ (c.f. \S \ref{section:morphisms}).
-The following proposition tells us this morphism embeds $U_\tau$ as a principal open subset of $U_\sigma$.
+If $\tau$ is a face of $\sigma$, then $\tau^\vee \supseteq \sigma^\vee$ and $S_\tau \supseteq S_\sigma$, since dualising reverses inclusion.
+The inclusion of semigroups $S_\sigma \hookrightarrow S_\tau$ induces the inclusion of $k$-algebras $k[S_\sigma] \hookrightarrow k[S_\tau]$, and hence a morphism $U_\tau \to U_\sigma$ (c.f.\ \S \ref{section:morphisms}).
+The main result of this section is to show this morphism embeds $U_\tau$ as a principal open subset of $U_\sigma$.
 
 \begin{proposition}\label{proposition:facesopensubsets}
 If $\tau$ is a face of $\sigma$, then the map $U_\tau \to U_\sigma$ embeds $U_\tau$ as a principal open subset of $U_\sigma$.
 \end{proposition}
 
-This proposition gives insight into why dual cones are used to define toric varieties: smaller faces in a cone correspond to smaller open subsets in the variety.
-In other words, dualising leads to a more natural inclusion-preserving correspondence between faces and open subsets.
-Without dualising, $\tau$ being a face of $\sigma$ would mean $U_\sigma$ is an open subset of $U_\tau$.
+The above proposition is one reason why we use dual cones to define toric varieties: smaller faces in a cone correspond to smaller open subsets in the variety.
+In other words, using the dual gives an inclusion-preserving correspondence between faces and open subsets.
 
-Recall that $\sigma$ is strongly convex so $\{0\}$ is a face.
-The proposition then says that $U_\sigma$ has the torus $U_{\{0\}} = (k^\times)^n$ as a principal open subset.
-In particular, since $U_\sigma$ is irreducible, $(k^\times)^n$ is dense in $U_\sigma$ (c.f. \ref{}).
-As a consequence, we see $\dim U_\sigma= \dim (k^\times)^n = n$, since the dimension of a principal open subset equals the dimension of the variety (c.f. \ref{}).
-The strongly convex assumption on our cones is then useful for two reasons: it ensures the variety has a torus as a dense open subset, and it means the dimension of the variety agrees with the dimension of the lattice.
+Before proving Proposition \ref{proposition:facesopensubsets}, we consider some of its consequences:
+\begin{enumerate}
+\item The torus $U_{\{0\}} = (k^\times)^n$ is a dense open subset of $U_\sigma$. The cone $\sigma$ is strongly convex so $\{0\}$ is a face. Then the proposition says $U_{\{0\}}$ is a principal open subset of $U_\sigma$, and open subsets of an irreducible affine variety are dense (c.f.\ \ref{}).
+\item The dimension of $U_\sigma$ is $\dim N_\RR = n$. We have $\dim U_\sigma = \dim (k^\times)^n = n$ because the dimension of a principal open subset equals the dimension of the variety (c.f.\ \ref{}).
+\end{enumerate}
+\noindent These important consequences rely on $\sigma$ being strongly convex, justifying why we make this assumption about our cones.
 
-In the rest of this thesis, we will use $T_N$ to denote the torus $U_{\{0\}}$, which is embedded in every affine toric variety.
-We will see explicit examples of how $T_N$ embeds in $U_\sigma$ after developing the theory of how $T_N$ acts on $U_\sigma$ in \S \ref{section:thetorusaction}.
+%Recall that $\sigma$ is strongly convex so $\{0\}$ is a face.
+%The proposition then says that $U_\sigma$ has the torus $U_{\{0\}} = (k^\times)^n$ as a principal open subset.
+%In particular, since $U_\sigma$ is irreducible, $(k^\times)^n$ is dense in $U_\sigma$ (c.f.\ \ref{}).
+%As a consequence, we see $\dim U_\sigma= \dim (k^\times)^n = n$, since the dimension of a principal open subset equals the dimension of the variety (c.f.\ \ref{}).
+%The strongly convex assumption on our cones is then useful for two reasons: it ensures the variety has a torus as a dense open subset, and it means the dimension of the variety agrees with the dimension of the lattice.
 
-To prove Proposition \ref{proposition:facesopensubsets}, we start with a lemma that describes the relationship between the semigroups $S_\tau$ and $S_\sigma$.
-This helps prove the proposition by elucidating the relationship between $k[S_\tau]$ and $k[S_\sigma]$.
+For the rest of this thesis, we use $T_N$ to denote the torus $U_{\{0\}}$, which is embedded in every affine toric variety associated with a cone in $N$.
+In \S \ref{section:thetorusaction}, we will see explicit embeddings of $T_N$ in $U_\sigma$, after developing the theory of how $T_N$ acts on $U_\sigma$.
+
+To prove Proposition \ref{proposition:facesopensubsets}, we start with a lemma that describes the relationship between the semigroups $S_\tau$ and $S_\sigma$, which elucidates the relationship between $k[S_\tau]$ and $k[S_\sigma]$.
 
 \begin{lemma}
 If $\tau$ is a face of $\sigma$, then $\tau = \sigma \cap u^\perp$ for some $u \in S_\sigma$.
 Moreover, we have $S_\tau =S_\sigma + \ZZ_{\ge 0} \cdot (-u).$
 \end{lemma}
 \begin{proof}
-By definition, $\tau = \sigma \cap u^\perp$ for some $u \in \sigma^\vee$, but we need to construct such a $u$ in the lattice $M$ to ensure $u \in S_\sigma$.
+By definition, $\tau = \sigma \cap u^\perp$ for some $u \in \sigma^\vee$, but we need to construct such a $u$ in the lattice to conclude $u \in S_\sigma$.
 Notice $\sigma^\vee \cap \tau^\perp$ is a face in the rational cone $\sigma^\vee$, so there are $u_1, \ldots, u_s$ lying in the lattice which generate $\sigma^\vee \cap \tau^\perp$.
 We define $u := \sum_{i=1}^s u_i \in S_\sigma$.
 To see $\tau \subseteq \sigma \cap u^\perp$, observe that if $v$ lies in $\tau$, then $\langle u, v\rangle = 0$, since $u$ lies in $\sigma^\vee \cap \tau^\perp$.
@@ -2663,20 +2612,21 @@ Conversely, suppose $v$ lies in $\sigma \cap u^\perp$.
 It follows $\langle u_i, v \rangle = 0$ for each $i$, and hence $v \in (\sigma^\vee \cap \tau^\perp)^\perp$.
 Then $v$ lies in $\sigma \cap (\sigma^\vee \cap \tau^\perp)^\perp$, and Lemma \ref{lemma:dualfaces} implies  $\tau = \sigma \cap (\sigma^\vee \cap \tau^\perp)^\perp$.
 
-To see $S_\tau \subseteq S_\sigma + \ZZ_{\ge 0} \cdot (-u)$, let $w \in S_\tau$.
-Suppose $v_1, \ldots, v_r$ lie in the lattice and generate $\sigma$ as a cone.
-For any $v = \sum_{i=1}^r t_i v_i$ in $\sigma$, where each $t_i \ge 0$, and any positive integer $p$, we have
+To see $S_\tau \subseteq S_\sigma + \ZZ_{\ge 0} \cdot (-u)$, let $w \in S_\tau$, and suppose $v_1, \ldots, v_r$ lie in the lattice and generate $\sigma$ as a cone.
+For any $v = \sum_{i=1}^r t_i v_i$ in $\sigma$ (where each $t_i \ge 0$) and any positive integer $p$, we have
 $$\langle w + pu, v\rangle = \sum_{i=1}^r t_i \left( \langle w, v_i \rangle + p \langle u, v_i \rangle \right).$$
 We want to choose $p$ so that each summand is non-negative to ensure $\langle w+pu, v \rangle \ge 0$.
 For all $i$, there holds $\langle u, v_i \rangle \ge 0$.
 Thus, when $\langle w, v_i \rangle \ge 0$, the $i^\text{th}$ summand is non-negative.
 If $\langle w, v_i\rangle < 0$, then $v_i$ does not lie in $\tau$.
 In this case, we must have $\langle u, v_i\rangle \ge 1$, because $v_i \notin \tau$ means $\langle u, v_i \rangle \ne 0$, and $\langle u, v_i \rangle$ lies in $\ZZ$ since $u$ and $v_i$ are both lattice points.
-It follows that if $p := \max_i |\langle u, v_i\rangle|$, then each summand is non-negative, independent of the $t_i$.
+It follows that if $p := \max_i |\langle u, v_i\rangle|$, then each summand is non-negative.
 Thus, $w + pu \in S_\sigma$ and $w \in S_\sigma + \ZZ_{\ge 0} \cdot (-u).$
 
-Conversely, if $w - pu \in S_\sigma + \ZZ_{\ge 0} \cdot (-u)$, then for any $v \in \tau$, $\langle w - pu, v\rangle = \langle w, v \rangle \ge 0$, and $w - pu \in S_\tau$.
+Conversely, if $w - pu \in S_\sigma + \ZZ_{\ge 0} \cdot (-u)$, then for any $v \in \tau$, we have $\langle w - pu, v\rangle = \langle w, v \rangle \ge 0$, and so $w - pu \in S_\tau$.
 \end{proof}
+
+We are now ready to prove Proposition \ref{proposition:facesopensubsets}.
 
 \begin{proof}[{Proof of Proposition \ref{proposition:facesopensubsets}}]
 The lemma yields $u$ in $S_\sigma$ such that $\tau = \sigma \cap u^\perp$ and $S_\tau = S_\sigma + \ZZ_{\ge 0} \cdot (-u)$.
@@ -2687,17 +2637,20 @@ Proposition \ref{proposition:localisationembedding} tells us that the correspond
 
 \subsection{The torus action}\label{section:thetorusaction}
 In this section, we define an action of the dense torus on an affine toric variety.
-This allows us to see how the affine toric varieties we defined in terms of cones are varieties with a dense open torus that acts on the variety.
-The map defining the torus action is given using the semigroup homomorphism perspective of points;
-we then check this defines a group action which extends the natural action of a torus on itself.
+This means the affine toric varieties we have defined in terms of cones are toric varieties in the sense mentioned in the introduction to this chapter.
+The torus action is defined using the semigroup homomorphism perspective of points.
+Afterwards, we check this defines a group action which extends the natural action of a torus on itself.
 We conclude the section with examples.
 
 Let $\sigma$ be a cone in $N$.
 We refer to semigroup homomorphisms as points, using the identification established in \S\ref{section:points}.
 Let $t : M \to k^\times$ and $x : S_\sigma \to k$ be points in $T_N$ and $U_\sigma$, respectively.
-The map $\varphi : T_N \times U_\sigma \to U_\sigma$ is defined by 
-$$(t, x) \mapsto t \cdot x := (u \mapsto (tx)(u)).$$
-In other words, $t \cdot x$ is the product of semigroup homomorphisms.
+The action map $\varphi : T_N \times U_\sigma \to U_\sigma$ is defined by 
+$$(t, x) \mapsto (u \mapsto t(u)x(u)).$$
+We write $t \cdot x$ for the image of $(t, x)$.
+Then $t \cdot x$ is simply the product of semigroup homomorphisms.
+
+To prove $\varphi$ is an action of the algebraic group $T_N$, we must show $\varphi$ an action of the group and also a morphism.
 
 To see $\varphi$ is a morphism, we check its pullback is a $k$-algebra homomorphism.
 Recall that to evaluate the regular function $\chi^u \in k[S_\sigma]$ at $x : S_\sigma \to k$, we compute $\chi^u(x) = x(u)$.
@@ -2705,42 +2658,43 @@ We see
 $$\varphi^*(\chi^u)(t, x) = \chi^u(t\cdot x) = (tx)(u) = (\chi^u \otimes \chi^u)(t,x).$$
 Then $\varphi^* : k[S_\sigma] \to k[M] \otimes k[S_\sigma]$ is given by $\chi^u \mapsto \chi^u \otimes \chi^u$, which is clearly a homomorphism.
 
-The semigroup homomorphism corresponding to the identity in $T_N$ is the trivial homomorphism $1_{T_N} : M \to k^\times$, where $u \mapsto 1$.
-Using this, and the fact that the product in $T_N$ is given by the product of semigroup homomorphisms (c.f. \S \ref{section:points}), it is straightforward to check $1 \cdot x = x$ and $t_1\cdot(t_2\cdot x) = (t_1t_2)\cdot x$.
+The semigroup homomorphism corresponding to the identity in $T_N$ is the trivial homomorphism $1_{T_N} : M \to k^\times$.
+Using this, and the fact that the product in $T_N$ is given by the product of semigroup homomorphisms (c.f.\ \S \ref{section:points}), it is straightforward to check $1 \cdot x = x$ and $t_1\cdot(t_2\cdot x) = (t_1t_2)\cdot x$.
 Then $\varphi$ is a group action.
 
 We also need to check this action extends the natural action of $T_N$ on itself.
 From \S\ref{section:facesandopenaffinesubsets}, we have a map $\iota : T_N \hookrightarrow U_\sigma$ embedding $T_N$ as an open subset of $U_\sigma$.
 We need to check $t_1 \cdot \iota(t_2) = \iota(t_1 t_2)$ for any two points $t_1$ and $t_2$ in $T_N$.
-Since the action is defined on the semigroup homomorphism representation of points, we need to understand $\iota$ at the level of semigroup homomorphisms.
+Since the action is defined using semigroup homomorphisms, we need to understand $\iota$ at the level of semigroup homomorphisms.
 If $t : M \to k^\times$ is a point in $T_N$, then $\left. t \right|_{S_\sigma} : S_\sigma \to k$ is a point in $U_\sigma$.
 This is a natural guess for how $\iota$ is evaluated on semigroup homomorphisms.
-This restriction of semigroup homomorphism map composed with a regular function $\chi^u \in k[S_\sigma]$, evaluated at $t : M \to k^\times$, is
+Evaluating this restriction map at $t : M \to k^\times$, then applying a regular function $\chi^u \in k[S_\sigma]$, gives
+% This restriction of semigroup homomorphism map composed with a regular function $\chi^u \in k[S_\sigma]$, evaluated at $t : M \to k^\times$, is
 $$\chi^u(\left. t \right|_{S_\sigma}) = \left. t \right|_{S_\sigma}(u) = t(u) = \chi^u(t).$$
 This agrees with $\iota^*(\chi^u)(t)$, so our guess is correct.
-Then $t_1 \cdot \iota(t_2)$ and $\iota(t_1 t_2)$ are both $\left. t_1 t_2 \right|_{S_\sigma}$.
+Then $t_1 \cdot \iota(t_2)$ and $\iota(t_1 t_2)$ both equal $\left. t_1 t_2 \right|_{S_\sigma}$.
 
-We now consider examples of this torus action for toric varieties we saw in Example \ref{example:affinetoricvarieties}.
+We now examine this torus action for the toric varieties we saw in Example \ref{example:affinetoricvarieties}.
 
 \begin{example}
 \begin{enumerate}
-\item Consider $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}$, so that $\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$ and $S_\sigma = \Span_{\ZZ_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$.
+\item Consider $\sigma = \Span_{\RR_{\ge 0}}\{e_1, \ldots, e_n\}$ and $S_\sigma = \Span_{\ZZ_{\ge 0}}\{e_1^*, \ldots, e_n^*\}$.
 Then a semigroup homomorphism $x : S_\sigma \to k$ is given by $e_i^* \mapsto a_i$ for some $(a_1, \ldots, a_n) \in \AA^n$.
 Points in the torus $t : M \to k^\times$ are given by $e_i^* \mapsto b_i$ for some $(b_1, \ldots, b_n)\in(k^\times)^n$.
 We then see the embedding of $T_N$ into $\AA^n$ is the usual one.
-The torus action is given by $t\cdot x : S_\sigma \to k$, $e_i^* \mapsto a_i b_i$, so $T_N$ acts on $\AA^n$ by usual component-wise multiplication.
-\item Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, -e_1 + 2 e_2\}$, so that $\sigma^\vee = \Span_{\RR_{\ge 0}}\{2e_1^* + e_2^*, e_2^*\}$ and $S_\sigma = \Span_{\ZZ_{\ge 0}}\{e_2^*, 2e_1^*+e_2^*, e_1^*+e_2^*\}$.
-Any point in $U_\sigma = \bV(XY- Z^2)$ corresponds to a map $p : S_\sigma \to k$, given on the generators as
+The torus action is given by $t\cdot x : S_\sigma \to k$, where $e_i^* \mapsto a_i b_i$, so $T_N$ acts on $\AA^n$ by component-wise multiplication.
+\item Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, -e_1 + 2 e_2\}$ and $S_\sigma = \Span_{\ZZ_{\ge 0}}\{e_2^*, 2e_1^*+e_2^*, e_1^*+e_2^*\}$.
+Any point in $U_\sigma = \bV(XY- Z^2)$ is a map $p : S_\sigma \to k$, given on the generators by
 $$e_2^* \mapsto x, \qquad 2e_1^*+e_2^* \mapsto y, \qquad e_1^*+e_2^* \mapsto z,$$
-provided $xy=z^2$ so the map is a semigroup homomorphism.
+subject to the restraint $xy=z^2$ so that the map is a homomorphism.
 A point in the torus $T_N = (k^\times)^2$ is a map $t : M \to k^\times$ given by
 $$e_1^* \mapsto a, \qquad e_2^* \mapsto b.$$
 The restriction $\left. t \right|_{S_\sigma}$ gives the embedding $T_N \hookrightarrow U_\sigma$.
 This is the homomorphism $\left. t \right|_{S_\sigma} : S_\sigma \to k$ given by
 $$e_2^* \mapsto b, \qquad 2e_1^*+e_2^* \mapsto a^2 b, \qquad e_1^*+e_2^* \mapsto ab.$$
 We see the embedding $T_N \hookrightarrow U_\sigma$ is given by $(a, b) \mapsto (b, a^2 b, ab)$.
-Note that $T_N$ is all the points in $U_\sigma$ with non-zero coordinates.
-Also, $t\cdot p = tp : S_\sigma \to k$ is given by
+This means $T_N$ is all the points in $U_\sigma$ with non-zero coordinates.
+Furthermore, $t\cdot p = tp : S_\sigma \to k$ is given by
 $$e_2^* \mapsto bx, \qquad 2e_1^*+e_2^* \mapsto a^2 by, \qquad e_1^*+e_2^* \mapsto abz.$$
 In other words, the action can be written explicitly as
 $$(b, a^2b, ab) \cdot (x, y, z) = (bx, a^2by, abz).$$
@@ -2749,25 +2703,25 @@ $$(b, a^2b, ab) \cdot (x, y, z) = (bx, a^2by, abz).$$
 
 
 \subsection{Singularities of $U_\sigma$}
-In this section, we characterise when an affine toric variety is non-singular using its cone.
+In this section, we characterise when affine toric varieties are non-singular using their cones.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:singularities}
 An affine toric variety $U_\sigma$ is non-singular if and only if $\sigma$ is generated by a subset of a basis for the lattice $N$.
 In this case,
 $$U_\sigma \cong k^r \times (k^\times)^{n-r},$$
 where $r = \dim(\sigma)$.
 \end{theorem}
 
-We have already seen $U_\sigma$ is isomorphic to $k^r \times (k^\times)^{n-r}$, and hence non-singular, when $\sigma$ is generated by $r$ basis vectors of $N$ (c.f. Example \ref{example:affinetoricvarieties}).
-
-To prove the converse, we need to consider the so-called distinguished point $x_\sigma$ in $U_\sigma$.
+We have already seen that $U_\sigma$ is isomorphic to $k^r \times (k^\times)^{n-r}$ when $\sigma$ is generated by $r$ basis vectors of $N$ (c.f.\ Example \ref{example:affinetoricvarieties}).
+Therefore, it remains to prove the converse.
+To do so, we need to consider the so-called distinguished point $x_\sigma$ in $U_\sigma$.
 This point is given by the map of semigroups
 $$x_\sigma : S_\sigma \to k, \qquad x_\sigma(u) := \begin{cases} 1 & \text{if } u \in \sigma^\perp, \\ 0 & \text{otherwise.} \end{cases}$$
-This is a homomorphism since $\sigma^\perp$ is a face of $\sigma^\vee$, so a sum of two elements in $S_\sigma$ lies in $\sigma^\perp$ only if each element lies in $\sigma^\perp$ \cite[\S 2.1]{Fulton93}.
-The strategy of the proof is to show that if $U_\sigma$ is non-singular at $x_\sigma$, then $\sigma$ is generated by a basis for $N$.
+This is a homomorphism since $\sigma^\perp$ is a face of $\sigma^\vee$, so a sum of two elements in $S_\sigma$ lies in $\sigma^\perp$ if and only if each element lies in $\sigma^\perp$ \cite[\S 2.1]{Fulton93}.
+The strategy of the proof of Theorem \ref{theorem:singularities} is to show that if $U_\sigma$ is non-singular at $x_\sigma$, then $\sigma$ is generated by a subset of a basis for $N$.
 
 \begin{proof}
-We consider the case when $\sigma$ is non-degenerate. For the extension to the degenerate case, see \cite[\S 2.1]{Fulton93}.
+We consider the case when $\sigma$ is non-degenerate. For a proof of the degenerate case, see \cite[\S 2.1]{Fulton93}.
 
 As $\sigma$ spans $N_\RR$, we have $\sigma^\perp = \{0\}$.
 Thus, $x_\sigma(u)$ equals 1 if $u=0$ and equals 0 if $u \ne 0$.
@@ -2781,19 +2735,22 @@ $$(S_\sigma)_{\text{irred}} = \{u \in S_\sigma \setminus \{0\} : u \text{ is not
 Since $U_\sigma$ is non-singular, the Zariski tangent space $(\frakm/\frakm^2)^*$ has dimension $n = \dim(U_\sigma)$, and thus $|(S_\sigma)_{\text{irred}}| = n$.
 
 We now consider which elements lie in $(S_\sigma)_{\text{irred}}$.
-Any edge (one-dimensional face) of $\sigma^\vee$ can be generated by a single lattice element.
-If $p$ is a positive integer, $u$ lies in $M$ and $p u$ lies in $S_\sigma$, then $u$ lies in $S_\sigma$ (this holds since $S_\sigma$ is the intersection of $M$ with a cone).
-It follows that an edge of $\sigma$ is generated by a unique $u$ lying in $S_\sigma$ which is not the sum of two non-zero elements lying in the edge---we call such a $u$ an edge generator.
-The edge generators lie in $(S_\sigma)_{\text{irred}}$ \cite[Proposition 1.2.23]{CLS11}.
-Moreover, the edge generators generate the cone \cite[Lemma 1.2.15]{CLS11}.
-Since $\sigma$ is strongly convex, $\sigma^\vee$ spans $M_\RR$ and there must be $n$ edge generators, so $(S_\sigma)_{\text{irred}}$ is the set of edge generators.
+Any edge (i.e., a one-dimensional face) of $\sigma^\vee$ can be generated by a single lattice element.
+If $p u$ lies in $S_\sigma$ for some $p \in \ZZ_{> 0}$ and $u \in M$, then $u$ lies in $S_\sigma$, since $S_\sigma$ is the intersection of $M$ with a cone.
+Then for any edge, there exists a unique $u \in S_\sigma$ generating the edge which is not the sum of two non-zero elements in the edge.
+Such a $u$ is called a minimal edge generator.
+%It follows that an edge of $\sigma$ is generated by a unique $u$ lying in $S_\sigma$ which is not the sum of two non-zero elements lying in the edge---we call such a $u$ an edge generator.
+The minimal edge generators lie in $(S_\sigma)_{\text{irred}}$ \cite[Proposition 1.2.23]{CLS11} and generate the cone \cite[Lemma 1.2.15]{CLS11}.
+Since $\sigma$ is strongly convex, $\sigma^\vee$ spans $M_\RR$ and there must be $n$ minimal edge generators.
+We conclude $(S_\sigma)_{\text{irred}}$ is the set of minimal edge generators.
 
-Then $(S_\sigma)_{\text{irred}}$ is a set of $n$ linearly independent lattice points which generate the cone.
+Then $(S_\sigma)_{\text{irred}}$ is a set of $n$ linearly independent lattice points that generate the cone.
 To complete the proof, we just need to show $(S_\sigma)_{\text{irred}}$ generates $M$ as a group.
-But since $\sigma^\vee$ spans $M_\RR$ we have $S_\sigma + (-S_\sigma) = M$, and $(S_\sigma)_{\text{irred}}$ generates $S_\sigma$ \cite[Proposition 1.2.23]{CLS11}.
+This follows from two facts: $(S_\sigma)_{\text{irred}}$ generates $S_\sigma$ \cite[Proposition 1.2.23]{CLS11}, and $S_\sigma + (-S_\sigma) = M$.
+The latter is true because $\sigma^\vee$ spans $M_\RR$.
 \end{proof}
 
-We revisit the singular affine toric varieties we saw in Example \ref{example:affinetoricvarieties} to see how the cone generators detect that the variety is singular.
+We revisit the singular affine toric varieties we saw in Example \ref{example:affinetoricvarieties} to see how the cone generators detect when the variety is singular.
 
 \begin{example}
 \begin{enumerate}
@@ -2816,7 +2773,7 @@ Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\
 
 
 \newpage
-\addtocontents{toc}{\vskip 1em}
+%\addtocontents{toc}{\vskip 1em}
 \section{Affine GIT quotients as affine toric varieties}
 In this chapter, we introduce the affine GIT quotient and give examples.
 One example we give is $\frakg \git T$ for $G = \GL_2(\CC)$.
@@ -2829,13 +2786,8 @@ our focus is on understanding specific examples which can guide our investigatio
 
 
 
-\subsection{Algebraic groups}
-
-
-
-
-
-\subsection{Reductive groups}
+\subsection{Algebraic groups and their actions}
+%\subsection{Reductive groups}
 
 
 
@@ -2975,7 +2927,7 @@ $$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2
 
 
 
-\subsection{The invariant ring for a torus acting on affine space}
+\subsection{The invariant ring}
 The goal of the next two subsections is to prove that if a torus $T$ acts linearly on an affine space $\AA^n$, then the affine GIT quotient $\AA^n \git T$ has the structure of a toric variety.
 With this goal in mind, in this section we will compute the ring of invariants for such an action;
 in particular, we will show that there is a semigroup $\calM$ so that the ring of invariants is isomorphic to the semigroup algebra $\CC[\calM]$.
@@ -3148,269 +3100,7 @@ In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\v
 
 
 \newpage
-\addtocontents{toc}{\vskip 1em}
-\section{Abstract varieties}
-In this section, we study abstract algebraic varieties --- these are spaces obtained by glueing together affine varieties.
-An algebraic variety is the analogue in algebraic geometry of a manifold in differential geometry (these are spaces obtained by glueing open subsets of Euclidean space).
-Our interest in algebraic varieties is motivated by the fact that there are toric varieties which are more general than the affine ones encountered in section \ref{affinetoricvarieties}, and these general toric varieties are in particular algebraic varieties. 
-In the next section, we will studying general toric varieties using our understanding of algebraic varieties developed here.
-
-In order to motivate the definition of algebraic varieties, we will first study projective varieties, which are an important special cases.
-Then we will define general algebraic varieties, and see how they are determined by glueing affine varieties.
-
-
-
-
-
-\subsection{Motivation: projective varieties}
-Let $k$ be a field.
-Projective $n$-space over $k$, denoted $\PP^n_k$ or $\PP^n$, is the quotient space
-$$\PP^n_k := (k^{n+1} \setminus \{0\}) / \sim,$$
-where $(a_0, \ldots, a_{n}) \sim (b_0, \ldots, b_{n})$ if $(a_0, \ldots, a_n) = \lambda (b_0, \ldots, b_n)$ for some $\lambda \in k \setminus \{0\}$.
-This space can be viewed as the set of lines in $k^{n+1}$ which pass through $0$ in the following way:
-if $\ell$ is a line in $k^{n+1}$ passing through the origin and $(a_0, \ldots, a_n)$ is any non-zero point in $\ell$, then the map
-$$\ell \mapsto [(a_0, \ldots, a_n)]$$
-defines a bijection between the set of lines and $\PP^n$.
-The map is well-defined since $[(a_0, \ldots, a_n)] = [(b_0, \ldots, b_n)]$ if and only if $(a_0, \ldots, a_n) = \lambda (b_0, \ldots, b_n)$ for some $\lambda \in k \setminus \{0\}$, and it is a bijection since for any non-zero point in $k^{n+1}$, there is a unique line passing through the point and the origin.
-The equivalence class $[(a_0, \ldots, a_n)]$ is usually denoted $(a_0 : \ldots : a_n)$.
-If $P$ is the point $(a_0 : \ldots : a_n)$, the coordinates $(a_0 : \ldots : a_n)$ are called the homogeneous coordinates of $P$. 
-Note that for any $P$, at least one homogeneous coordinate $a_i$ is non-zero.
-
-In analogy with the affine theory, after defining projective space, we should define polynomials on the space so that algebraic subsets can be defined as the zero sets of polynomials.
-However, the na\''ive approach of defining polynomials on $\PP^n$ to be polynomials in the homogeneous coordinates is not well-defined, since the homoegeneous coordinates are not unique;
-we could then have that a polynomial takes different values on different homoegeneous coordinates for the same point.
-The solution for defining algebraic subsets of $\PP^n$ is to use \emph{homogeneous} polynomials.
-
-Example: elliptic curves.
-
-
-
-
-
-\subsection{Abstract varieties}
-Recall the definitions of a sheaf of $k$-algebras and ringed spaces from section \ref{affinetoricvarieties}.
-The definition of algebraic prevariety extends the notion of an affine variety.
-We follow Milne's definition of an algebraic variety \cite{Milne13}.
-
-\begin{definition}
-A topological space $V$ is called quasicompact if every open covering of $V$ has a finite subcovering.
-\end{definition}
-
-The condition to be quasicompact is often known as being compact.
-The convention of Bourbaki is that a compact topological space is one that is quasicompact and Hausdorff \cite[\S 2 g.]{Milne13}; we follow this convention.
-
-\begin{definition}
-An algebraic prevariety over $k$ is a $k$-ringed space $(V, \calO_V)$ such that $V$ is quasicompact and every point of $V$ has an open neighbourhood $U$ for which $(U, \left. \calO_V \right|_U)$ is isomorphic to the ringed space of regular functions on an algebraic set over $k$.
-\end{definition}
-
-In other words, a ringed space $(V, \calO_V)$ is an algebraic prevariety over $k$ if there exists a finite open covering $V = \bigcup V_i$ such that $(V_i, \left. \calO_V \right|_{V_i})$ is an affine algebraic variety over $k$ for all $i$.
-
-Recall that a topological manifold is required to be Hausdorff, a condition which excludes pathological topological behaviour like non-uniqueness of limits.
-The analgous condition for prevarieties is called being separated.
-An algebraic variety will then be a separated prevariety.
-
-\begin{definition}
-An algebraic prevariety $V$ is called separated if for every pair of regular maps $\varphi_1, \varphi_2 : Z \to V$, where $Z$ is an affine algebraic variety, the set $\{z \in Z : \varphi_1(z) = \varphi_2(z)\}$ is closed in $Z$.
-\end{definition}
-
-The following lemma tells us how we can obtain a prevariety by patching together ringed spaces:
-
-\begin{proposition}
-Suppose that the set $V$ is a finite union $V = \bigcup V_i$  of subsets $V_i$ and that each $V_i$ is equipped with a ringed space structure.
-Assume that the following patching condition holds: for all $i,j$, $V_i \cap V_j$ is open in both $V_i$ and $V_j$ and $\left. \calO_{V_i} \right|_{V_i \cap V_j} = \left. \calO_{V_j} \right|_{V_i \cap V_j}$.
-Then there is a unique ringed space structure on $V$ such that
-\begin{enumerate}
-\item
-each inclusion $V_i \hookrightarrow V$ is a homeomorphism of $V_i$ onto an open set, and
-
-\item
-for each $i$, $\left. \calO_V \right|_{V_i} = \calO_{V_i}$.
-\end{enumerate}
-If every $V_i$ is an algebraic variety, then so also is $V$, and to give a regular map from $V$ to a prevariety $W$ amounts to giving a family of regular maps $\varphi_i : V_i \to W$ such that $\left. \varphi_i \right|_{V_i \cap V_j} = \left. \varphi_j \right|_{V_i \cap V_j}$.
-\end{proposition}
-
-Example: line with two origins
-
-\subsection{The glueing construction}
-Let $\{Y_i\}_{i\in I}$ be a finite set of affine varieties.
-Suppose that for all $i, j \in I$, we have isomorphic open subsets $Y_{ij} \subseteq Y_i$ and $Y_{ji} \subseteq Y_j$.
-Let $\{\phi_{ij} : Y_{ij} \to Y_{ji}\}_{i, j \in I}$ be isomorphism such that for all $i, j, k \in I$,
-\begin{enumerate}
-\item
-$\phi_{ij} = \phi_{ji}^{-1}$
-
-\item
-$\phi_{ij}(Y_{ij} \cap Y_{ik}) = Y_{ji} \cap Y_jk$, and
-
-\item
-$\phi_{ik} = \phi_{jk} \circ \phi_{ij}$ on $Y_{ij} \cap Y_{ik}$.
-\end{enumerate}
-The data of the affine varieties $\{Y_i\}_{i\in I}$ and isomorphisms $\{\phi_{ij}\}_{i,j\in I}$ is called \emph{glueing data}.
-The abstract variety $X$ which glues together the $\{Y_i\}_{i\in I}$ varieties is a certain topological space.
-First, we construct the disjoint union of the varieties, $\hat X$, which is given by
-$$\hat X := \bigsqcup_{i \in I} Y_i = \{(x, Y_i) : i \in I, x \in Y_i\}.$$
-The set $\hat X$ is endowed with the disjoint union topology, where by definition, a set in $\hat X$ is open if it is a disjoint union of open subsets of the $Y_i$.
-To construct $X$, we want to identify points in $\hat X$ if they belong to two isomorphic open subsets.
-Specifically, define an equivalence relation on $\hat X$, $\sim$, by declaring $(x, Y_i) \sim (y, Y_j)$ if $x \in Y_{ij}$, $y\in Y_{ji}$ and $\phi_{ij}(x) = y$.
-Condition (1) on the glueing isomorphisms ensures that $\equiv$ is reflexive and symmetric, and conditions (2) and (3) ensures it is transitive.
-Now define the abstract variety $X$ to be $\hat X / \sim$ with the quotient topology;
-this topology is called the Zariski topology on $X$.
-For each $i \in I$, denote
-$$U_i := \{[(x, Y_i)] \in X : x \in Y_i\}.$$
-This is an open set of $X$, and the map $h_i : Y_i \to U_i$, $y \mapsto [(y, Y_i)]$ is a homeomorphism.
-Then $X$ is locally isomorphic to an affine variety.
-
-\begin{example}
-For an example of glueing affine varieties, we consider how $\PP^1$ can be constructed by glueing together two copies of $\AA^1$.
-Let $Y_1=\AA^1$, $Y_2 = \AA^1$ and $Y_{12} = k^\times \subseteq Y_1$, $Y_{21} = k^\times \subseteq Y_2$.
-Define the glueing isomorphisms
-$$\phi_{ij} : Y_{ij} \to Y_{ji}, \qquad t \mapsto t^{-1}.$$
-It is clear that $\phi_{12} = \phi_{21}^{-1}$ so that axiom (1) for the glueing isomorphisms holds (axioms (2) and (3) are vacuously true).
-Then, the variety obtained by glueing $Y_1$ and $Y_2$ is
-$$X = Y_1 \sqcup Y_2 / \sim,$$
-where $(x, Y_1) \sim (y, Y_2)$ if $x \ne 0$ and $y = x^{-1}$.
-To see that $X$ is $\PP^1$, we can  think of the open sets
-$$U_1 = \{[(a, Y_1)] : x \in Y_1\}, \qquad U_2 = \{[(b, Y_2)] : b \in Y_2\}$$
-as the usual affine charts for $\PP^1$;
-these are
-$$U_x := \{(x:y) : x \ne 0\}, \qquad U_y := \{(x, y) : y \ne 0\},$$
-and the maps
-$$U_x \to U_1, \, (x : y)\mapsto [(x/y, Y_1)], \qquad \qquad U_y \to U_2, \, (x : y)\mapsto [(y/x, Y_2)]$$
-are homeomorphisms.
-Observe that if $(x : y) \in U_x \cap U_y$, the image of $(x : y)$ in $X$ of the above two maps are points points which are identified.
-\end{example}
-
-Example: line with two origins
-
-
-
-
-
-
-
-
-
-
-\newpage
-\addtocontents{toc}{\vskip 1em}
-\section{Abstract toric varieties}
-In this section, we present the general definition of an abstract toric variety.
-While affine toric varieties correspond to cones in a vector space, these abstract toric varieties correspond to a collection of cones which ``fit together'' in a nice way --- these collections of cones are called fans.
-
-
-
-
-
-\subsection{Fans}
-Given a certain collection of cones called a fan, one constructs an abstract toric variety by glueing affine toric varieties $U_\sigma$ for cones $\sigma$ in the fan.
-We now define a fan, and demonstrate how it encodes the glueing data.
-As in chapter \ref{affinetoricvarieties}, let $N$ be a lattice, $M$ the dual lattice, and $N_\RR$ and $M_\RR$ the corresponding vector spaces.
-
-\begin{definition}[{\cite[\S 1.4]{Fulton93}}]
-A fan $\Delta$ in $N$ is a set of rational strongly convex polyhedral cones $\sigma$ in $N_\RR$ such that
-\begin{enumerate}
-\item
-each face of a cone in $\Delta$ is also a cone in $\Delta$, and
-\item
-the intersection of two cones in $\Delta$ is a face of each.
-\end{enumerate}
-\end{definition}
-
-For simplicity, we will assume that fans only contain a finite number of cones.
-The idea of constructing the toric variety corresponding to $\Delta$ is that we consider each cone $\sigma$, and glue together the affine toric varieties $U_\sigma$.
-The following lemma shows us that if $\tau$ is a face of a cone $\sigma$, then $U_\tau$ is an open subset of $U_\sigma$;
-this will allow us to glue the affine toric varieties corresponding to cones in a fan.
-
-Recall that a homomorphism of semigroups $S \to S'$ induces an algebra homomorphism $\CC[S] \to \CC[S']$ and hence a morphism $\Spec(\CC[S]) \to \Spec(\CC[S'])$.
-In particular, if $\tau$ is contained in $\sigma$, there is an inclusion $\sigma^\vee \hookrightarrow \tau^\vee$ which determines a morphism $U_\tau \to U_\sigma$.
-
-\begin{proposition}[{\cite[\S 1.3]{Fulton93}}]\label{faceembedding}
-If $\tau$ is a face of $\sigma$, then the map $U_\tau \to U_\sigma$ embeds $U_\tau$ as a principal open subset of $U_\sigma$.
-\end{proposition}
-
-We need the following lemma from convex geometry:
-
-\begin{lemma}[{\cite[\S 1.2]{Fulton93}}]
-Let $\sigma$ be a rational convex polyhedral cone, and suppose $u \in S_\sigma$.
-Then $\tau = \sigma \cap u^\perp$ is rational convex polyhedral cone. 
-All faces of $\sigma$ have this form, and
-$$S_\tau = S_\sigma + \ZZ_{\ge 0} \cdot (-u).$$
-\end{lemma}
-\begin{proof}
-\todo{This is Fulton's proof, which is sparse on details. It would be good to write this clearer.}
-If $\tau$ is a face, then $\tau = \sigma \cap u^\perp$ for any $u$ in the relative interior of $\sigma^\vee \cap \tau^\perp$, and $u$ can be taken to be in $M$ since $\sigma^\vee \cap \tau^\perp$ is rational.
-Given $w\in S_\tau$, then $w + p \cdot u \in \sigma^\vee$ for large positive $p$, and taking $p$ to be an integer shows that $w \in S_\sigma + \ZZ_{\ge 0} \cdot (-u).$
-\end{proof}
-
-\begin{proof}[Proof of Proposition \ref{faceembedding}]
-The lemma yields $u \in S_\sigma$ such that $\tau=\sigma\cap u^\perp$ and
-$$S_\tau = S_\sigma + \ZZ_{\ge 0} \cdot (-u).$$
-Then any basis element in $\CC[S_\tau]$ can be written as $\chi^{w - p u} = \chi^w / (\chi^u)^p$ for some $w \in S_\sigma$ and $p \in \ZZ_{\ge 0}$.
-Then, $\CC[S_\tau] = \CC[S_\sigma]_{\chi^u}$, which is the algebraic version of the assertion.
-\end{proof}
-
-
-
-
-
-\subsection{Abstract toric varieties}
-Let $\Delta$ be a fan in $N$.
-
-\begin{definition}
-The toric variety $X(\Delta)$ is constructed by glueing the affine toric varieties $U_\sigma$, as $\sigma$ ranges over all elements of $\Delta$.
-For cones $\sigma, \tau \in \Delta$, the intersection $\sigma \cap \tau$ is a face of each and hence $U_{\sigma \cap \tau}$ is isomorphic to a principal open subset of each $U_\sigma$ and $U_\tau$, and these varieties can be glued along this open subvariety.
-\end{definition}
-
-The fact that the glueing is compatible follows from the order-preserving nature of the correspondence between cones and affine varieties.
-\todo{Understand this better. Can we give explicit glueing maps $\phi_{ij}$ as we used in the definition of glueing?}
-
-Example: one-dim toric varieties
-
-\begin{proposition}
-Let $\sigma$ and $\sigma'$ be cones such that $\tau = \sigma \cap \sigma'$ is a face of both.
-Then,
-$$S_\tau = S_\sigma + S_{\sigma'}.$$
-\end{proposition}
-\begin{proof}
-It follows from the definitions that $S_\tau \supseteq S_\sigma + S_{\sigma'}$.
-By Lemma \ref{}, there exists $u \in \sigma^\vee \cap (-\sigma')^\vee$ such that $\tau = \sigma \cap u^\perp = \sigma' \cap u^\perp$.
-By Lemma \ref{}, we have $S_\tau = S_\sigma + \ZZ_{\ge 0} \cdot (-u)$.
-Since $-u \in S_{\sigma'}$, we see $S_\tau \subseteq S_\sigma + S_{\sigma'}.$
-\end{proof}
-
-
-
-\subsection{The dense torus}
-
-
-
-
-
-\subsection{The orbit-cone correspondence}
-
-
-
-
-
-\subsection{Classification of toric surfaces}
-
-
-
-
-
-\subsection{Toric morphisms}
-
-
-
-
-
-
-
-
-
-
-\newpage
-\addtocontents{toc}{\vskip 1em}
+%\addtocontents{toc}{\vskip -1em}
 \begin{bibdiv}
 \begin{biblist}
 \bib{BV04}{book}{
