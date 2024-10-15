@@ -26,18 +26,17 @@
 \contentsline {subsection}{\tocsubsection {}{4.2}{Polyhedral cones}}{25}{subsection.4.2}%
 \contentsline {subsection}{\tocsubsection {}{4.3}{Dual description of cones}}{27}{subsection.4.3}%
 \contentsline {subsection}{\tocsubsection {}{4.4}{Strongly convex cones}}{28}{subsection.4.4}%
-\contentsline {subsection}{\tocsubsection {}{4.5}{Rational cones}}{30}{subsection.4.5}%
+\contentsline {subsection}{\tocsubsection {}{4.5}{Rational cones}}{29}{subsection.4.5}%
 \contentsline {section}{\tocsection {}{5}{Affine toric varieties}}{31}{section.5}%
 \contentsline {subsection}{\tocsubsection {}{5.1}{Semigroups and semigroup algebras}}{31}{subsection.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.2}{The definition of toric varieties}}{32}{subsection.5.2}%
-\contentsline {subsection}{\tocsubsection {}{5.3}{Points of $U_\sigma $}}{33}{subsection.5.3}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{Points of toric varieties}}{33}{subsection.5.3}%
 \contentsline {subsection}{\tocsubsection {}{5.4}{Faces and open affine subsets}}{35}{subsection.5.4}%
 \contentsline {subsection}{\tocsubsection {}{5.5}{The torus action}}{36}{subsection.5.5}%
-\contentsline {subsection}{\tocsubsection {}{5.6}{Singularities of $U_\sigma $}}{37}{subsection.5.6}%
-\contentsline {section}{\tocsection {}{6}{Affine GIT quotients as affine toric varieties}}{39}{section.6}%
+\contentsline {subsection}{\tocsubsection {}{5.6}{Singularities}}{37}{subsection.5.6}%
+\contentsline {section}{\tocsection {}{6}{GIT quotients as toric varieties}}{39}{section.6}%
 \contentsline {subsection}{\tocsubsection {}{6.1}{Algebraic groups and their actions}}{39}{subsection.6.1}%
 \contentsline {subsection}{\tocsubsection {}{6.2}{The affine GIT quotient}}{39}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{Algebraic tori}}{41}{subsection.6.3}%
-\contentsline {subsection}{\tocsubsection {}{6.4}{The invariant ring}}{41}{subsection.6.4}%
-\contentsline {subsection}{\tocsubsection {}{6.5}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{42}{subsection.6.5}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{Invariants of a torus acting on a vector space}}{41}{subsection.6.3}%
+\contentsline {subsection}{\tocsubsection {}{6.4}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{42}{subsection.6.4}%
 \contentsline {section}{\tocsection {}{}{References}}{46}{section*.10}%

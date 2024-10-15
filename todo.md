@@ -1,19 +1,26 @@
 # TO DO
-Random:
-[x] Get rid of dominant morphisms section
-[x] Get rid of relative interior stuff
-
 1. Introduction (~4 pages~)
 1.1. Algebraic geometry
+[ ] Write
 1.2. Toric varieties
+[ ] Write
 1.3. Geometric invariant theory
+[ ] Write
 1.4. Contents of this thesis
+[ ] Write
 
 2. Algebraic sets (~10 pages~)
 2.1.
 2.2.
 2.3. The Zariski topology
 [ ] Expand this section 
+2.4.
+2.5.
+2.6.
+2.7.
+2.8.
+2.9.
+2.10
 
 3. Affine varieties (~10 pages~)
 [ ] Fix proof that homs A to B are the same as morphisms Spec(B) to Spec(A)
@@ -22,28 +29,38 @@ Random:
 [ ] Fix proof that the localisation homomorphism corresponds to the principal open subset X_f
 
 4. Convex geometry (~10 pages~)
-[ ] Fix Masoud's feedback, in particular, adding rational cones as its own section.
-[x] Decide where 3D cone example is most appropriate and add. (Diagram code at bottom.)
-[ ] Explain convention of sigma is a cone in N.
-[ ] Check all results have references
+[x] Fix Masoud's feedback, in particular, adding rational cones as its own section:
+	[x] Move lattice discussion later.
+	[x] Remove all earlier references to rational cones.
+	[x] Give a non-example.
+[x] Explain convention of sigma is a cone in N.
+[x] Check all results have references
 
 5. Affine toric varieties (~10 pages~)
 [ ] Decide whether to mention 'normal variety' in intro/move to footnote.
-
 5.1. Semigroups and semigroup algebras
-[ ] Fix the reference to when we show the dual is rational if a cone is, after fixing cone chapter.
-
+[x] Fix the reference to when we show the dual is rational if a cone is, after fixing cone chapter.
 5.2. Affine toric varieties
-[ ] Big plot of a singular example.
-
+[ ] Define the torus T_N in an environment. Remove definition of T_N from faces and open affines section.
 5.3. Points of U_sigma
 [ ] Fix preamble in proof of Prop 5.3.1 (once it is explained how points in Spec(A) are hom A to k.)
 [ ] Explain how to evaluate regular functions at semigroup homs (once it is explained how to evaluate regular functions at homomorphisms).
-
 5.4. Faces and open affine subsets
 5.5. The torus action
 [ ] Make sure reference makes sense ("Recall that to evaluate the regular function ... we compute ")
-
-5.6. Singularities of U_sigma
+5.6. Singularities
 
 6. Affine GIT quotients as affine toric varieties (~10 pages~)
+6.1. Algebraic groups and their actions
+6.2. The affine GIT quotient
+6.3. Invariants of a torus acting on a vector space
+6.4. A^n//T as a toric variety
+
+
+Aesthetic/etc. things to do later:
+[ ] Fix table of contents
+[ ] Acknowledgements
+[ ] Fix \emph usage
+
+[ ] Big plot of a singular example.
+[ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).
