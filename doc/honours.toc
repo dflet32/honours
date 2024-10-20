@@ -37,6 +37,6 @@
 \contentsline {section}{\tocsection {}{6}{GIT quotients as toric varieties}}{39}{section.6}%
 \contentsline {subsection}{\tocsubsection {}{6.1}{Algebraic groups and their actions}}{39}{subsection.6.1}%
 \contentsline {subsection}{\tocsubsection {}{6.2}{The affine GIT quotient}}{39}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{Invariants of a torus acting on a vector space}}{41}{subsection.6.3}%
-\contentsline {subsection}{\tocsubsection {}{6.4}{$\mathbb {A}^n /\!\!/T$ as a toric variety}}{42}{subsection.6.4}%
-\contentsline {section}{\tocsection {}{}{References}}{46}{section*.10}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{Invariants of a linear torus action}}{41}{subsection.6.3}%
+\contentsline {subsection}{\tocsubsection {}{6.4}{Torus quotients as toric varieties}}{41}{subsection.6.4}%
+\contentsline {section}{\tocsection {}{}{References}}{42}{section*.10}%

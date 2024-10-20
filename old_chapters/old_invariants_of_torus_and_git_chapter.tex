@@ -1,0 +1,162 @@
+\subsection{Invariants of a torus acting on a vector space}
+The goal of the next two subsections is to prove that if a torus $T$ acts linearly on an affine space $\AA^n$, then the affine GIT quotient $\AA^n \git T$ has the structure of a toric variety.
+With this goal in mind, in this section we will compute the ring of invariants for such an action;
+in particular, we will show that there is a semigroup $\calM$ so that the ring of invariants is isomorphic to the semigroup algebra $\CC[\calM]$.
+Then in the next section, we will find a lattice $N$ and cone $\sigma$, such that $S_\sigma \cong \calM$, which will be sufficient to show that $\AA^n \git T$ is an affine toric variety.
+
+Let $T$ be an algebraic torus acting linearly on $\AA^n$, i.e., suppose there is a set of characters $S = \{\chi_1, \ldots, \chi_n\} \subseteq X^*(T)$ such that
+$$t \cdot (z_1, \ldots, z_n) = (\chi_1(t) z_1, \ldots, \chi_n(t) z_n)$$
+for all $t \in T$ and $z = (z_1, \ldots, z_n) \in \AA^n$.
+For notational convenience, we will index the coordinates of $\AA^n$ by the character that the torus acts by for that coordinate, instead of a number $i=1, \ldots, n$.
+Thus, a point $z \in \AA^n$ will be written $z = (z_\chi)_{\chi\in S}$, such that
+\begin{equation}\label{actiondef}
+t \cdot z = (\chi(t) z_\chi)_{\chi \in S}.
+\end{equation}
+We define the polynomial $Z_\chi$ for $\chi \in S$ by
+$$Z_\chi(z) = z_\chi, \qquad \text{for } z = (z_\chi)_{\chi \in S}.$$
+Then the coordinate ring of $\AA^n$ is $\CC[Z_\chi : \chi \in S]$.
+Let $(\ZZ_{\ge 0})^S = \Fun(S, \ZZ_{\ge 0})$ denote the ring of functions $S \to \ZZ_{\ge 0}$, and for $\eta \in (\ZZ_{\ge 0})^S$, write $\eta=(\eta_\chi)_{\chi\in S}$, where $\eta_\chi = \eta(\chi)$.
+An element $\eta \in (\ZZ_{\ge 0})^S$ defines a monomial in $\CC[Z_\chi : \chi \in S]$, namely
+$$Z^\eta := \prod_{\chi \in S} Z_\chi^{\eta_\chi}.$$
+A polynomial $p \in \CC[Z_\chi : \chi \in S]$ can be written
+$$p = \sum_\eta p_\eta X^\eta,$$
+where the sum is over all $\eta \in (\ZZ_{\ge 0})^S$ and all but finitely many of the coefficients $p_\eta \in \CC$ are zero.
+
+Let us now describe the invariant ring $\CC[Z_\chi : \chi \in S]^T$.
+Recall that since $T$ acts on $\AA^n$, there is an induced action of $T$ on the coordinate ring;
+if $t \in T$ and $p \in \CC[Z_\chi : \chi \in S]$, then $(t\cdot p)(z) := p(t^{-1} \cdot z)$.
+Using the definition of the action in equation \ref{actiondef}, we see that $T$ acts on a monomial $Z^\eta$ by
+$$t \cdot Z^\eta = \prod_{\chi \in S} (\chi(t^{-1}) Z_\chi)^{\eta_\chi} = \left(\sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta.$$
+It follows that $p \in \CC[Z_\chi : \chi \in S]$ is invariant for the action of $T$ if and only if
+$$\sum_\eta p_\eta Z^\eta = \sum_\eta p_\eta \left( \sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta$$
+for all $t \in T$.
+Since $Z^\eta$ and $Z^\mu$ are linearly independent for distinct $\eta$ and $\mu$, the above equality holds if and only if 
+$$Z^\eta = \left(\sum_{\chi \in S} - \eta_\chi \chi(t)\right) Z^\eta$$
+for all $\eta$ such that $p_\eta \ne 0$.
+Equivalently, $p$ is invariant for the action of $T$ if and only if
+$$\sum_{\chi \in S} \eta_\chi \chi = 0$$
+for all $\eta$ such that $p_\eta \ne 0$.
+The following lemma summarises our discussion:
+
+\begin{lemma}
+We have that 
+$$\CC[Z_\chi : \chi \in S]^T = \CC\left[Z^\eta : \eta \in (\ZZ_{\ge 0})^S \text{ and }\sum_{\chi \in S} \eta_\chi \chi = 0\right].$$
+\end{lemma}
+\begin{corollary}\label{invariantringsemigroupalgebra}
+Let $\calM$ be the semigroup 
+$$\calM := \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\}.$$
+Denoting the semigroup algebra of $\calM$ by $\CC[\calM]$, we have that
+$$\CC[Z_\chi : \chi \in S]^T \cong \CC[\calM].$$
+\end{corollary}
+
+
+
+
+
+\subsection{$\AA^n \git T$ as a toric variety}
+We now want to find a lattice $N$ and a cone $\sigma$ such that $\AA^n \git T$ is isomorphic to the affine toric variety $U_\sigma$.
+Since Corollary \ref{invariantringsemigroupalgebra} expresses the invariant ring $\CC[Z_\chi : \chi \in S]^T$ as the semigroup algebra $\CC[\calM]$, it suffices to find $N$ and $\sigma$ such that $S_\sigma$ is isomorphic to $\calM$.
+We then have that
+$$\AA^n \git T \cong \Spec(\CC[Z_\chi : \chi \in S]^T) \cong \Spec(\CC[S_\sigma]) = U_\sigma,$$
+showing $\AA^n \git T$ has the structure of an affine toric variety.
+
+Let 
+$$\ZZ^S := \Fun(S, \ZZ)$$
+be the lattice of integer-valued functions on $S$.
+This is a lattice in $\RR^S$, the vector space of real-valued functions on $S$.
+We denote elements of $\ZZ^S$ by $\eta = (\eta_\chi)_{\chi \in S}$, where $\eta_\chi = \eta(\chi)$.
+The dual lattice is $(\ZZ^S)^\vee$, where elements are similarly denoted $\mu = (\mu_\chi)_{\chi \in S} \in (\ZZ^S)^\vee$.
+The dual pairing $(\ZZ^S)^\vee \times \ZZ^S \to \ZZ$ is given by
+$$(\mu, \eta) \mapsto \langle \mu, \eta \rangle := \sum_{\chi \in S} \mu_\chi \eta_\chi.$$
+The indicators $\{e_\chi\}_{\chi\in S}$, given by $(e_\chi)_{\chi'} = e_\chi(\chi') = \delta_{\chi, \chi'}$, are a basis for $\ZZ^S$.
+The dual basis for $(\ZZ^S)^\vee$ is $\{e_\chi^\vee\}_{\chi\in S}$, where $\langle e_\chi^\vee, e_{\chi'} \rangle = \delta_{\chi, \chi'}$.
+
+We have a map $\varphi:(\ZZ^S)^\vee \to \Span_\ZZ(S) \subseteq X^*(T)$ given by
+$$\mu \mapsto \sum_{\chi\in S} \mu_\chi \chi.$$
+The kernel of $\varphi$ is
+$$M := \ker \varphi = \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0\right\}.$$
+Since a subgroup of a finitely-generated free abelian group is again finitely-generated and free, $M$ is a finitely-generated free abelian group.
+It has rank
+$$\rank(M) = \rank((\ZZ^S)^\vee) - \rank(\Span_\ZZ(S)) = |S| - \rank(\Span_\ZZ(S)).$$
+There is a corresponding sublattice of $\ZZ^S$, 
+\begin{align*}
+	K &:= \{\eta \in \ZZ^S : \langle \mu, \eta \rangle = 0 \text{ for all } \mu \in M\} \\
+	   &= \{\eta \in \ZZ^S : \sum_{\chi \in S} \mu_\chi \eta_\chi = 0 \text{ for all } \mu \in (\ZZ^S)^\vee \text{ such that } \sum_{\chi \in S} \mu_\chi \chi = 0 \}.
+\end{align*}
+We have that $\rank(K) = \rank(\Span_\ZZ(S))$ (\textcolor{red}{You can see this must be the case once you know that $\ZZ^S/K \cong M^\vee$, but I don't know if there is a straightforward way to prove it.})
+If $\eta \in \ZZ^S$, we use $\overline{\eta}$ to denote the coset of $\eta$ in $\ZZ^S/K$, i.e., $\overline{\eta} = \eta + K \in \ZZ^S/K$.
+
+The following theorem describes the cone of the toric variety $\AA^n \git T$:
+
+\begin{theorem}\label{gitlatticetheorem}
+Let 
+$$N := \ZZ^S / K,$$
+and 
+$$\sigma := \Span_{\RR_{\ge 0}} \{\overline{e_\chi} : \chi \in S\} \subseteq N_\RR.$$
+Then $S_\sigma = \sigma^\vee \cap M \cong \calM$, so that $\AA^n \git T$ is isomorphic to $U_\sigma$.
+\end{theorem}
+
+\begin{example}
+We consider some examples of the lattices $N$ that arise for different choices of $S \subseteq X^*(T)$.
+\begin{enumerate}
+\item
+Let $T = \CC^\times$ and $S = \{\chi, -\chi\}$, where $\chi(t) = t$.
+Explicitly, the action of $T$ on $\AA^2$ is
+$$t \cdot (z_1, z_2) = (t z_1, t^{-1} z_2).$$
+Then,
+$$M = \left\{\mu\in(\ZZ^S)^\vee : \mu_\chi \chi + \mu_{-\chi}(-\chi) = 0\right\} = \left\{(\mu_{\chi}, \mu_{-\chi}) \in (\ZZ^S)^\vee : \mu_\chi = \mu_{-\chi} \right\}.$$
+Also,
+\begin{align*}
+	K &= \{\eta \in \ZZ^S : \mu_\chi \eta_\chi + \mu_{-\chi} \eta_{-\chi} = 0 \text{ whenever } \mu_\chi = \mu_{-\chi}\} \\
+	&= \{(\eta_\chi, \eta_{-\chi})\in\ZZ^S : \eta_\chi = - \eta_{-\chi}\} \\
+	&=\Span_\ZZ\{e_\chi - e_{-\chi}\}.
+\end{align*}
+Therefore, $N = \ZZ^S / K$ and $\sigma = \Span_{\RR_{\ge 0}}\{\overline{e_\chi}, \overline{e_{-\chi}}\} \subseteq N_\RR.$
+
+\item
+Let $T$ be a maximal torus in $G = \GL_3$, and let $S$ be the root system of $G$ with respect to $T$.
+Then $S = \Phi = \{\alpha, \beta, \alpha+\beta, -\alpha, -\beta, -(\alpha+\beta)\}$, where $\alpha$ and $\beta$ are simple roots.
+We have that $\rank(M) = |\Phi| - \rank(\Span_\ZZ(\Phi)) = 4$, and we see
+$$M = \Span_\ZZ\{e_\alpha+e_{-\alpha}, e_\beta + e_{-\beta}, e_\alpha + e_\beta + e_{-(\alpha+\beta)}, e_{\alpha+\beta}+e_{-\alpha}+e_{-\beta}\}.$$
+Furthermore, $\rank(K) = \rank(\Span_\ZZ(\Phi))$, and we see
+$$K = \Span_\ZZ\{e^\vee_\alpha + e^\vee_{\alpha+\beta} - e^\vee_{-\alpha} - e^\vee_{-(\alpha+\beta)}, e^\vee_\beta + e^\vee_{\alpha+\beta} - e^\vee_{-\beta} - e^\vee_{-(\alpha+\beta)}\}.$$
+We have that $N = \ZZ^\Phi/K$ and $\sigma = \Span_{\RR_{\ge 0}}\{\overline{e_\alpha} : \alpha\in\Phi\}.$
+\end{enumerate}
+\end{example}
+
+We now prove Theorem \ref{gitlatticetheorem}.
+The proof relies on the following lemma, which describes the dual lattice to a sublattice:
+
+\begin{lemma}\label{duallatticesublattice}
+Let $N_1$ and $N_2$ be lattices such that $N_2 \le N_1$.
+Letting $M_i$ denote the dual lattice to $N_i$, we have that
+$$M_2 \cong M_1 / K,$$
+where $K:= \{f \in M_1 : f(n) = 0 \text{ for all } n \in N_2\}.$
+\end{lemma}
+\begin{proof}
+Let $\phi : M_1 \to M_2$ be the restriction map $f \mapsto \left. f \right|_{N_2}$.
+Then $K = \ker \phi$, and $M_1 / K \cong \im \phi$, so we just need to show $\phi$ is surjective.
+Let $\{n_1, \ldots, n_r\}$ be a set of generators for $N_2$, which we extend to a set of generators for $N_2$, $\{n_1, \ldots, n_r, n_{r+1}, \ldots, n_s\}$.
+If $f \in M_2$, we can extend $f$ to a map $\tilde f \in \Hom(N_1, \ZZ)$ by defining $\tilde f$ on the generators of $N_1$ as
+$$\tilde f(n_i) := \begin{cases} f(n_i) & \text{if } i = 1, \ldots, r, \text{ i.e., if } n_i \in N_2, \\ 0 & \text{if } i = r+1, \ldots, s, \text{ i.e., if } n_i \notin N_2. \end{cases}$$
+Then $\phi(\tilde f) = \tilde f \big|_{N_2} = f$ and $\phi$ is surjective.
+\end{proof}
+
+\begin{proof}[{Proof of Theorem \ref{gitlatticetheorem}}]
+Recall that 
+$$M = \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \right\}, \quad K = \left\{\eta \in \ZZ^S : \langle \mu, \eta \rangle = 0 \text{ for all } \mu \in M\right\}.$$
+Then Lemma \ref{duallatticesublattice} implies that $M^\vee \cong \ZZ^S / K =: N.$
+The cone $\sigma$ in $N$ defined as 
+$$\sigma := \{\overline{e_\chi} : \chi \in \} \subseteq N_\RR.$$
+We want to show that $S_\sigma = \sigma^\vee \cap M$ is isomorphic to the semigroup
+$$\calM := \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\}.$$
+We have that
+\begin{align*}
+	\sigma^\vee \cap M &= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \langle \mu, \eta \rangle = 0 \text{ for all } \eta \in \sigma \right\}\\
+	&= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \langle \mu, \overline{e_\chi} \rangle = 0 \text{ for all } \chi \in S \right\}\\
+	&= \left\{\mu \in (\ZZ^S)^\vee : \sum_{\chi \in S} \mu_\chi \chi = 0 \text{ and } \mu_\chi \ge 0 \text{ for all } \chi \in S \right\}\\
+	&\cong  \left\{ \eta \in (\ZZ_{\ge 0})^S : \sum_{\chi \in S} \eta_\chi \chi = 0\right\} \\
+	&=\calM.
+\end{align*}
+In the second equality above, we used the fact that checking $\mu \in (\ZZ^S)^\vee$ is non-negative on the cone $\sigma$ is equivalent to checking $\mu$ is non-negative on the generators of $\sigma$.
+\end{proof}

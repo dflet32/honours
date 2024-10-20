@@ -29,17 +29,10 @@
 [ ] Fix proof that the localisation homomorphism corresponds to the principal open subset X_f
 
 4. Convex geometry (~10 pages~)
-[x] Fix Masoud's feedback, in particular, adding rational cones as its own section:
-	[x] Move lattice discussion later.
-	[x] Remove all earlier references to rational cones.
-	[x] Give a non-example.
-[x] Explain convention of sigma is a cone in N.
-[x] Check all results have references
 
 5. Affine toric varieties (~10 pages~)
 [ ] Decide whether to mention 'normal variety' in intro/move to footnote.
 5.1. Semigroups and semigroup algebras
-[x] Fix the reference to when we show the dual is rational if a cone is, after fixing cone chapter.
 5.2. Affine toric varieties
 [ ] Define the torus T_N in an environment. Remove definition of T_N from faces and open affines section.
 5.3. Points of U_sigma
@@ -61,6 +54,7 @@ Aesthetic/etc. things to do later:
 [ ] Fix table of contents
 [ ] Acknowledgements
 [ ] Fix \emph usage
+[ ] Fix James Milne Reference
 
 [ ] Big plot of a singular example.
 [ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).
