@@ -54,7 +54,7 @@ Aesthetic/etc. things to do later:
 [ ] Fix table of contents
 [ ] Acknowledgements
 [ ] Fix \emph usage
-[ ] Fix James Milne Reference
+[ ] Fix James Milne Reference (Lie algebras vs alg geo)
 
 [ ] Big plot of a singular example.
 [ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).

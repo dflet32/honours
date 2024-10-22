@@ -1,7 +1,7 @@
-\documentclass[handout]{beamer}
+\documentclass{beamer}
 \usetheme{metropolis}
 
-\usepackage{microtype}
+%\usepackage{microtype}
 \usepackage{changepage}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -49,22 +49,11 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{What are toric varieties, and why study them?}
-\pause
-Algebraic varieties are geometric spaces defined by solutions to \alert{polynomial equations}.
-
-\pause
-In general, these are complicated and difficult to study.
-
-\pause
-\alert{Toric varieties} are a special class of varieties determined by a \alert{convex cone}.
-\end{frame}
-
-\begin{frame}
 \frametitle{Algebraic varieties}
 \centering
 \begin{minipage}[t]{0.49\textwidth}
 \centering
+\pause
 \begin{figure}
 \begin{tikzpicture}
   \draw[ultra thick, myorange, samples=100, smooth] 
@@ -78,6 +67,7 @@ In general, these are complicated and difficult to study.
 \begin{minipage}[t]{0.49\textwidth}
     \centering
 \vspace{-1cm}
+\pause
 \begin{figure}
     \includegraphics[width=0.75\linewidth]{orange_sphere}
 	\vspace{-1.2cm}
@@ -88,6 +78,7 @@ In general, these are complicated and difficult to study.
 \begin{minipage}[t]{0.49\textwidth}
     \centering
 \vspace{-0cm}
+\pause
 \begin{figure}
 \begin{tikzpicture}
   \draw[ultra thick, myorange, samples=100, smooth, domain=-2:0.95, variable=\x] 
@@ -102,12 +93,32 @@ In general, these are complicated and difficult to study.
 \begin{minipage}[t]{0.49\textwidth}
     \centering
 \vspace{-0.2cm}
+\pause
 \begin{figure}
     \includegraphics[width=0.7\linewidth]{orange_cone}
 	\vspace{-.25cm}
     \caption*{$xy=z^2$}
 \end{figure}
 \end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{What are toric varieties, and why study them?}
+%\pause
+%In general, varieties these are complicated and difficult to study.
+
+\pause
+\alert{Toric varieties} are a special class of varieties determined by elementary \alert{convex} geometry.
+
+\pause
+They serve as testing grounds for conjectures and theorems in algebraic geometry.
+
+\pause
+For example, the \alert{Hodge conjecture}---a Millennium Prize Problem---is proven for toric varieties but unresolved in general.
+
+\pause
+\textbf{Goal of the talk}: introduce toric varieties and explain some of their properties.
+
 \end{frame}
 
 \begin{frame}[t]
@@ -145,24 +156,25 @@ $$\rightsquigarrow \{(t, t^{-1}) : t \in \mathbb{C}^\times\} \cong \mathbb{C}^\t
 }
 \end{minipage}
 
-\onslide<4->{
-$\mathbb{C}^\times$ is called an algebraic \alert{torus}. The $d$-dimensional torus is $(\mathbb{C}^\times)^d$.
+\onslide<5->{
+$\mathbb{C}^\times$ is called the algebraic \alert{torus}. The $d$-dimensional torus is $(\mathbb{C}^\times)^d$.
 }
 \end{frame}
 
 \begin{frame}
 \frametitle{Convex cones}
-To understand toric varieties, we need to understand convex cones.
+To study toric varieties, we need to understand convex cones.
 
-\pause
-We consider \alert{polyhedral cones}. These are sets in $\mathbb{R}^n$ of the form
+\onslide<2->{We consider \alert{polyhedral cones}. These are sets in $\mathbb{R}^n$ of the form
 $$\sigma = \mathrm{span}_{\mathbb{R}_{\ge 0}}\{v_1, \ldots, v_r\},$$
-for some $v_1, \ldots, v_r \in \mathbb{R}^n$.
-$\sigma$ is \alert{rational} if we can take each $v_i \in \mathbb{Z}^n$.
+for some $v_1, \ldots, v_r \in \mathbb{R}^n$.}
+
+\onslide<4->{We call $\sigma$ \alert{rational} if we can take each $v_i \in \mathbb{Z}^n$.}
 
 \pause
 \begin{minipage}[t]{0.49\textwidth}
 \centering
+\onslide<3->{
 \begin{figure}
 \begin{tikzpicture}
             \fill[gray!30] (0,0) -- (-1.1,1.1) -- (-1.1,1.6) -- (1.1,1.6) -- (1.1, 1.1) -- cycle;
@@ -181,12 +193,12 @@ $\sigma$ is \alert{rational} if we can take each $v_i \in \mathbb{Z}^n$.
             \draw[->, ultra thick] (0,0) -- (0.5,0.5);
             \node at (0.75, 1.25) {$\sigma$};
 \end{tikzpicture}
-\end{figure}
+\end{figure}}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.49\textwidth}
     \centering
-\begin{figure}
+\onslide<3->{\begin{figure}
 \begin{tikzpicture}
             \fill[gray!30] (0,0) -- (-0.8,1.6) -- (1.1,1.6) -- (1.1,0) -- cycle;
             
@@ -204,7 +216,7 @@ $\sigma$ is \alert{rational} if we can take each $v_i \in \mathbb{Z}^n$.
             \draw[->, ultra thick] (0,0) -- (-0.5,1);
             \node at (0.75, 1.25) {$\sigma$};
 \end{tikzpicture}
-\end{figure}
+\end{figure}}
 \end{minipage}
 
 \end{frame}
@@ -218,7 +230,7 @@ The \alert{dual cone} is the set of linear functionals which are non-negative on
 $$\sigma^\vee := \{u \in (\mathbb{R}^n)^* : u(v) \ge 0 \text{ for all } v \in \sigma\}.$$
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[scale=1.2]
+    \pause \begin{tikzpicture}[scale=1.2]
         % Left diagram
         \begin{scope}[shift={(-2,0)}]
             % Shaded area
@@ -285,7 +297,7 @@ $$\sigma^\vee := \{u \in (\mathbb{R}^n)^* : u(v) \ge 0 \text{ for all } v \in \s
 
 \begin{frame}
 \frametitle{An example of a toric variety}
-\textbf{Fix}: cone $\sigma$, dual $\sigma^\vee$. Monomials live on integer points in $(\mathbb{R}^n)^*$:
+\textbf{Fix}: cone $\sigma$, dual $\sigma^\vee$. \pause Monomials live on integer points in $(\mathbb{R}^n)^*$:
 % \centerline{\includegraphics[width=0.8\textwidth]{cone_and_dual_with_monomials}}
 \vspace{-0.2cm}
 \begin{figure}[H]
@@ -365,7 +377,7 @@ $$\sigma^\vee := \{u \in (\mathbb{R}^n)^* : u(v) \ge 0 \text{ for all } v \in \s
 \vspace{-0.3cm}
 
 \pause
-We create an algebra using the monomials in $\sigma^\vee$:
+We create a ring using the monomials in $\sigma^\vee$:
 \begin{align*}
 	\mathbb{C}[1, s, r^2 s, r s, s^2, rs^2, \ldots] &= \mathbb{C}[s, r^2 s, r s] \\
 	&\cong \mathbb{C}[x, y, z]/(xy - z^2).
@@ -385,11 +397,11 @@ The previous construction generalises.
 We associate monomials $x_1^{i_1} \cdots x_n^{i_n}$ to integer points in $(\mathbb{R}^n)^*$.
 
 \pause
-We create an algebra using the monomials lying in $\sigma^\vee$, called $\mathbb{C}[S_\sigma]$.
+We create a ring using the monomials lying in $\sigma^\vee$, called $R_\sigma$.
 
 \pause
-$\mathbb{C}[S_\sigma]$ is finitely generated, so it's given by generators and relations:
-$$\mathbb{C}[S_\sigma] = \mathbb{C}[y_1, \ldots, y_m]/(f_1, \ldots, f_s).$$
+$R_\sigma$ is finitely generated, so it's given by generators and relations:
+$$R_\sigma = \mathbb{C}[y_1, \ldots, y_m]/(f_1, \ldots, f_s).$$
 
 \pause
 The \alert{toric variety} $U_\sigma$ is the subset of $\mathbb{C}^m$ defined by the equations
@@ -454,15 +466,173 @@ The toric variety $U_\sigma$ is non-singular if and only if $\sigma$ is generate
 		\draw[-, myorange] (-1.15, 1) -- (2.15, 1);
 		\draw[-, myorange] (-1.15, 2) -- (2.15, 2);
 		}
+
+%		\node[anchor=south ] at (-0.5, 0) {\scriptsize \alert{$r^{-1}$}};
+%		\node[anchor=south ] at (-0.5, 0.5) { \scriptsize \alert{$r^{-1} s$}};
+%		\node[anchor=south ] at (-0.5, 1) {\scriptsize \alert{$r^{-1} s^2$}};
         \end{tikzpicture}
 \end{figure}
 \end{minipage}}
 \end{frame}
 
+%\begin{frame}
+%\frametitle{Torus quotients}
+%Suppose $T = (\mathbb{C}^\times)^d$ acts linearly on $\mathbb{C}^n$.
+%\textbf{Goal}: understand $\mathbb{C}^n / T$. 
+%
+%\vspace{0.4cm}
+%
+%\begin{minipage}{0.5\textwidth}
+%%\linespread{1}\selectfont  % Adjust the line spacing inside the minipage
+%\onslide<2->{
+%\textbf{Example}: $\mathbb{C}^\times \curvearrowright \mathbb{C}^2$:
+%$$t \cdot (x, y) = (t x, t^{-1} y).$$
+%}
+%\onslide<3->{
+%\hspace{-0.26cm}\textbf{Problem}: determine invariant polynomials
+%\begin{align*}
+%	&\,\,\,\,\,\,\,\,\, \mathbb{C}[x, y]^T \\ &= \{\text{polys } f : f(p) = f(T \cdot p)\}.
+%\end{align*}
+%}
+%\end{minipage}
+%\hfill
+%\begin{minipage}{0.45\textwidth}
+%\onslide<2->{\begin{tikzpicture}
+%  % Draw axes
+%  \draw[->] (-2.5, 0) -- (2.5, 0); % node[right] {$x$};
+%  \draw[->] (0, -2) -- (0, 2); % node[above] {$y$};
+%
+%  % Plot the curve y^2 = x^3 - x + 1 manually
+%  \draw[thick, myorange, samples=100, smooth, domain=0.5:2.4, variable=\x, <->] 
+%    plot ({\x}, {1 / \x});
+%  \draw[thick, myorange, samples=100, smooth, domain=-2.4:-0.5, variable=\x, <->] 
+%    plot ({\x}, {1 / \x});
+%  \draw[thick, myteal, samples=100, smooth, domain=0.1:2.4, variable=\x, <->] 
+%    plot ({\x}, {1 / (5 *\x)});
+%  \draw[thick, myteal, samples=100, smooth, domain=-2.4:-0.1, variable=\x, <->] 
+%    plot ({\x}, {1 / (5 *\x)});
+%  \draw[thick, myblue, samples=100, smooth, domain=0.5:2.4, variable=\x, <->] 
+%    plot ({\x}, {- 1 / \x});
+%  \draw[thick, myblue, samples=100, smooth, domain=-2.4:-0.5, variable=\x, <->] 
+%    plot ({\x}, {- 1 / \x});
+%  \draw[thick, blue, samples=100, smooth, domain=0.1:2.4, variable=\x, <->] 
+%    plot ({\x}, {- 1 / (5 *\x)});
+%  \draw[thick, blue, samples=100, smooth, domain=-2.4:-0.1, variable=\x, <->] 
+%    plot ({\x}, {- 1 / (5 *\x)});
+%
+%   \filldraw[myorange] (2, 0.5) circle (2pt) node[above ] {\,\,\,$p$};
+%   \node[myorange] at (1.3, 1.5) {$T \cdot p$};
+%\end{tikzpicture}}
+%\end{minipage}
+%\end{frame}
+
 \begin{frame}
 \frametitle{Torus quotients}
+\pause
+Suppose $T = (\mathbb{C}^\times)^d$ acts linearly on $\mathbb{C}^n$.
+\textbf{Goal}: understand $\mathbb{C}^n / T$. 
+
+\pause
+\textbf{Example}: $\mathbb{C}^\times \curvearrowright \mathbb{C}^2$ by $t \cdot (x, y) = (t x, t^{-1} y).$ 
+
+\vspace{0.4cm}
+
+\centerline{\begin{tikzpicture}[scale=1]
+  % Draw axes
+  \draw[->] (-2.5, 0) -- (2.5, 0); % node[right] {$x$};
+  \draw[->] (0, -2) -- (0, 2); % node[above] {$y$};
+
+  % Plot the curve y^2 = x^3 - x + 1 manually
+  \draw[thick, myorange, samples=100, smooth, domain=0.5:2.4, variable=\x, <->] 
+    plot ({\x}, {1 / \x});
+  \draw[thick, myorange, samples=100, smooth, domain=-2.4:-0.5, variable=\x, <->] 
+    plot ({\x}, {1 / \x});
+  \draw[thick, myteal, samples=100, smooth, domain=0.1:2.4, variable=\x, <->] 
+    plot ({\x}, {1 / (5 *\x)});
+  \draw[thick, myteal, samples=100, smooth, domain=-2.4:-0.1, variable=\x, <->] 
+    plot ({\x}, {1 / (5 *\x)});
+  \draw[thick, myblue, samples=100, smooth, domain=0.5:2.4, variable=\x, <->] 
+    plot ({\x}, {- 1 / \x});
+  \draw[thick, myblue, samples=100, smooth, domain=-2.4:-0.5, variable=\x, <->] 
+    plot ({\x}, {- 1 / \x});
+  \draw[thick, blue, samples=100, smooth, domain=0.1:2.4, variable=\x, <->] 
+    plot ({\x}, {- 1 / (5 *\x)});
+  \draw[thick, blue, samples=100, smooth, domain=-2.4:-0.1, variable=\x, <->] 
+    plot ({\x}, {- 1 / (5 *\x)});
+
+   \filldraw[myorange] (2, 0.5) circle (2pt) node[above ] {\,\,\,$p$};
+   \node[myorange] at (1.3, 1.5) {$T \cdot p$};
+\end{tikzpicture}}
+
+\pause
+\hspace{-0.26cm}\textbf{Problem}: determine invariant polynomials
+\begin{align*}
+	&\mathbb{C}[x, y]^T = \{\text{polys } f : f(p) = f(T \cdot p)\}.
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Torus quotients as toric varieties}
+\onslide<2->{\begin{theorem}
+$\mathbb{C}^n / T$ is a toric variety whose cone can be explicitly computed.
+\end{theorem}
+\textbf{Idea}:}
+\onslide<3->{Invariant monomials are parametrised by points in $\mathbb{Z}^n$ satisfying linear equations.}
+\onslide<4->{For $\mathbb{C}^\times \curvearrowright \mathbb{C}^2$:
+$$x^k y^\ell = t^{k-\ell} x^k y^\ell \qquad \iff \qquad \textcolor{myorange}{k =\ell}.$$}
+\onslide<5->{Choose $\sigma$ so $\sigma^\vee$ only sees points with non-negative coordinates.} %$(k, l) \in \mathbb{Z}^2_{\ge 0}.$}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        % Left diagram
+        \onslide<5->{\begin{scope}[shift={(-2,0)}]
+            % Shaded area
+            \fill[gray!30] (0,0) -- (0, 1.6) -- (1.6,1.6) -- (1.6,0) -- cycle;
+            
+            % Axes
+            \draw[->] (-1.75,0) -- (1.75,0);
+            \draw[->] (0,-1.75) -- (0,1.75);
+            
+            % Lattice points
+            \foreach \x in {-1.5,-1,-0.5,0,0.5,1,1.5}
+                \foreach \y in {-1.5,-1,-0.5,0,0.5,1,1.5}
+                    \fill (\x,\y) circle (1pt);
+
+            % Vectors
+	  \draw[<->, thick, blue] (-1.75,-1.75) -- (1.75,1.75);
+            %\draw[->, ultra thick] (0,0) -- (-0.5,1);
+            \node at (.25, 1.25) {\small{$\sigma$}};
+        \end{scope}}
+
+        % Right diagram
+        \onslide<4->{\begin{scope}[shift={(2,0)}]
+            % Shaded area
+            \onslide<5->{\fill[gray!30] (0,0) -- (0, 1.6) -- (1.6,1.6) -- (1.6,0) -- cycle;}
+            
+            % Axes
+            \draw[->] (-1.75,0) -- (1.75,0);
+            \draw[->] (0,-1.75) -- (0,1.75);
+            
+            % Lattice points
+            \foreach \x in {-1.5,-1,-0.5,0,0.5,1,1.5}
+                \foreach \y in {-1.5,-1,-0.5,0,0.5,1,1.5}
+                    \fill (\x,\y) circle (1pt);
+
+            % Vectors
+	  \draw[<->, thick, myorange] (-1.75,-1.75) -- (1.75,1.75);
+	  \foreach \x in {-1.5,-1,-0.5,0,0.5,1,1.5}
+		\fill[myorange] (\x, \x) circle (2pt);
+            %\draw[->, ultra thick] (0,0) -- (0.5,0);
+            %\draw[->, ultra thick] (0,0) -- (-0.5,1);
 
 
+            \onslide<5->{\node at (.25, 1.25) {\, \small{$\sigma^\vee$}};
+	   \node[anchor= north west] at (0.5, 0.5) { \scriptsize \alert{$xy$}};
+	   \node[anchor=north west] at (1, 1) {\!\!\!\! \scriptsize \alert{$x^2 y^2$}};}
+	   %\node[anchor=north west] at (1.5, 1.5) {\!\!\!\! \scriptsize \alert{$x^3 y^3$}};}
+        \end{scope}}
+    \end{tikzpicture}
+\end{figure}
 \end{frame}
 
 

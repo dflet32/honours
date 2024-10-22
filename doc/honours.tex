@@ -2799,13 +2799,13 @@ Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\
 \newpage
 %\addtocontents{toc}{\vskip 1em}
 \section{GIT quotients as toric varieties}
-In this chapter, we introduce the affine GIT quotient and give examples.
-One example we give is $\frakg \git T$ for $G = \GL_2(\CC)$.
-We then compute a basis of $\CC[\frakg]^T$ for general $G$.
-Finally, we find generators for the invariant ring $\CC[\frakg]^T$ when $G = \GL_3(\CC)$.
-Throughout this chapter, many technical details may be missing;
-our focus is on understanding specific examples which can guide our investigation of $\frakg \git T$ for general $G$.
-
+%In this chapter, we introduce the affine GIT quotient and give examples.
+%One example we give is $\frakg \git T$ for $G = \GL_2(\CC)$.
+%We then compute a basis of $\CC[\frakg]^T$ for general $G$.
+%Finally, we find generators for the invariant ring $\CC[\frakg]^T$ when $G = \GL_3(\CC)$.
+%Throughout this chapter, many technical details may be missing;
+%our focus is on understanding specific examples which can guide our investigation of $\frakg \git T$ for general $G$.
+%
 
 
 
@@ -2946,9 +2946,17 @@ $$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2
 
 
 \subsection{Invariants of a linear torus action}
+Suppose that $V$ is a rational representation of a torus $T$.
+We can fix a basis for $V$, and identify vectors with their coordinates.
+Then $V$ is identified with $\AA^n$, and we can think of the representation as an algebraic group action of $T$ on the variety $\AA^n$.
+The goal of the next two sections is to prove that the GIT quotient $V \git T$ is an affine toric variety.
 
-
-
+With this goal in mind, in this section we compute the ring of invariants $k[V]^T$ for the action.
+In particular, we will show that there is a semigroup $\calM$ so that $k[V]^T$ is isomorphic to the semigroup algebra $k[\calM]$.
+In the next section, we can use this to show $V \git T$ is a toric variety by finding a vector space $N_\RR$ and a cone $\sigma$ such that $\calM \cong S_\sigma$.
+This implies
+$$V \git T = \Spec(k[\calM]) = \Spec(k[S_\sigma]) = U_\sigma,$$
+showing the quotient is a toric variety.
 
 
 \subsection{Torus quotients as toric varieties}
