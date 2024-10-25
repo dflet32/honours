@@ -41,5 +41,5 @@
 \contentsline {subsection}{\tocsubsection {}{5.1}{Algebraic groups and their actions}}{43}{subsection.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.2}{The affine GIT quotient}}{43}{subsection.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.3}{Invariants of a linear torus action}}{45}{subsection.5.3}%
-\contentsline {subsection}{\tocsubsection {}{5.4}{Torus quotients as toric varieties}}{45}{subsection.5.4}%
-\contentsline {section}{\tocsection {}{}{References}}{46}{section*.18}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{Torus quotients as toric varieties}}{47}{subsection.5.4}%
+\contentsline {section}{\tocsection {}{}{References}}{48}{section*.18}%

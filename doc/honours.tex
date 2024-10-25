@@ -310,7 +310,7 @@ Mathematicians have studied geometry since ancient times.
 Around 300 BC, the Ancient Greek mathematician Euclid wrote his textbook the Elements.
 The axiomatisation of geometry in the Elements was groundbreaking, and it remained the most important textbook on geometry for hundreds of years.
 Euclid often employed straight-edge and compass arguments to construct geometric shapes.
-In these arguments, one is allowed to draw circles of fixed radii with a compass, and straight lines using the straight-edge, but distances and angles cannot be measured.
+In these arguments, one can draw circles of fixed radii with a compass, and straight lines using the straight-edge, but distances and angles cannot be measured.
 
 \begin{figure}[H]
 \begin{center}
@@ -3175,13 +3175,9 @@ $$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2
 \end{enumerate}
 \end{example}
 
-
-
-
-
 \subsection{Invariants of a linear torus action}
-Suppose that $V$ is a rational representation of a torus $T$.
-We can fix a basis for $V$, and identify vectors with their coordinates.
+Suppose that $V$ is an $n$-dimensional rational representation of a torus $T$.
+We can fix a basis for $V$, and identify vectors with their coordinates as a point in $\AA^n$.
 Then $V$ is identified with $\AA^n$, and we can think of the representation as an algebraic group action of $T$ on the variety $\AA^n$.
 The goal of the next two sections is to prove that the GIT quotient $V \git T$ is an affine toric variety.
 
@@ -3192,6 +3188,88 @@ This implies
 $$V \git T = \Spec(k[\calM]) = \Spec(k[S_\sigma]) = U_\sigma,$$
 showing the quotient is a toric variety.
 
+To compute $k[V]^T$, we first choose a basis for $V$ to use to identify $V$ and $\AA^n$.
+Rational representations of tori are well-understood; 
+the following lemma describes $V$ as a direct sum of one-dimensional representations, and this decomposition suggests a natural choice of basis for $V$.
+
+\begin{lemma}
+The representation $V$ is a direct sum of one-dimensional rational representations.
+In each one-dimensional subspace, $t \in T$ acts by multiplication by $\chi(t)$, where $\chi$ is some character of $T$.
+\end{lemma}
+\begin{proof}
+See \cite[3.2.3]{Springer98}.
+\end{proof}
+
+If the subspace
+$$V_\chi = \{v \in V : t \cdot v = \chi(t) v \text{ for all } t \in T\}$$
+is non-zero, we call $\chi$ a weight of the representation $V$ (c.f.\ \cite[7.1.1]{Springer98}).
+If $\chi$ is weight of $V$, then the subspace $V_\chi$ is called a weight space.
+Note weight spaces may have dimension greater than one; we call the dimension of $V_\chi$ the multiplicity of the weight $\chi$.
+
+Suppose $\chi_1, \ldots, \chi_n$ are the weights of $V$, counted with multiplicity.
+Combining bases of each weight space gives a basis for $V$.
+Then there exists a basis $\{v_1, \ldots, v_n\}$ for $V$ such that each $v_i$ lies in $V_{\chi_i}$, i.e.,
+$$t \cdot v_i = \chi_i(t) v_i$$
+for all $t \in T$.
+Any element of $V$ can thus be written $\sum_{i=1}^n z_i v_i$ for some $z_i \in k$.
+Since action of $T$ is linear, we see
+$$t \cdot v = \sum_{i=1}^n  \chi_i(t) z_i v_i.$$
+We identify $V$ with the affine variety $\AA^n$ by the map 
+$$\sum_{i=1}^n z_i v_i \mapsto (z_1, \ldots, z_n).$$
+Then the action of $T$ on $\AA^n$ is an algebraic group action.
+
+Before we can compute $k[V]^T$, we must establish notation for polynomials in $k[V]$.
+Suppose $v = \sum_{i=1}^n z_i v_i$ lies in $V$.
+For each $i=1, \ldots, n$, we define the function $Z_i : V \to k$ by
+$$Z_i(v) = z_i.$$
+In other words, $\{Z_1, \ldots, Z_n\}$ is the dual basis to $\{v_1, \ldots, v_n\}$.
+Then the coordinate ring of $V$ under its identification with $\AA^n$ is $k[V] = k[Z_1, \ldots, Z_n]$.
+A tuple of non-negative integers, $\eta = (\eta_1, \ldots, \eta_n) \in \ZZ_{\ge 0}^n$, defines a monomial in $k[V]$, namely
+$$Z^\eta := \prod_{i=1}^n Z_i^{\eta_i}.$$
+We write a polynomial $f \in k[V]$ as
+$$f = \sum_\eta f_\eta Z^\eta,$$
+with the understanding that the sum is over all $\eta \in \ZZ_{\ge 0}^n$, and all but finitely many coefficients $f_\eta \in k$ are zero.
+
+We are now ready to compute the invariant ring $k[V]^T$.
+Recall that the action of $T$ on $V$ induces an action of $T$ on $k[V]$, given by
+$$(t \cdot f)(v) := f(t^{-1} \cdot v)$$
+for $t \in T$, $f \in k[V]$ and $v \in V$.
+If $v$ equals $\sum_{i=1}^n z_i v_i$ and $\eta \in \ZZ_{\ge 0}^n$ defines the monomial $Z^\eta$, then, for any $t \in T$,
+\begin{align*}
+	(t \cdot Z^\eta)(v) = Z^\eta \left( \sum_{i=1}^n \chi_i(t^{-1}) z_i v_i\right) 
+	= \prod_{i=1}^n Z_i^{\eta_i}\left( \sum_{i=1}^n \chi_i(t^{-1}) z_i v_i\right) 
+	&= \prod_{i=1}^n \left(- \chi_i(t)\right)^{\eta_i} z_i^{\eta_i} \\
+	&= \left(-\sum_{i=1}^n \eta_i \chi_i \right)(t) Z^\eta(v).
+\end{align*}
+In other words,
+$$t \cdot Z^\eta = \left(-\sum_{i=1}^n \eta_i \chi_i \right)(t) Z^\eta.$$
+The sum $-\sum_{i=1}^n \eta_i \chi_i$ is computed in the character lattice.
+We see that $f \in k[V]$ is invariant for the action of $T$, meaning $t\cdot f =f$ for all $t \in T$, if and only if
+$$\sum_\eta f_\eta Z^\eta = \sum_\eta f_\eta \left(-\sum_{i=1}^n \eta_i \chi_i \right)(t) Z^\eta$$
+for all $t \in T$.
+Since the monomials $Z^\eta$ and $Z^\mu$ are linearly independent for distinct $\eta$ and $\mu$, the above equality holds if and only if
+$$Z^\eta = \left(-\sum_{i=1}^n \eta_i \chi_i \right)(t) Z^\eta$$
+for all $t \in T$ and all $\eta$ such that $f_\eta \ne 0$.
+Equivalently, $f$ lies in $k[V]^T$ if and only if 
+$$\sum_{i=1}^n \eta_i \chi_i = 0$$
+for all $\eta$ such that $f_\eta \ne 0$.
+The following lemma summarises our discussion:
+
+\begin{lemma}
+We have that
+$$k[V]^T = k \left[Z^\eta : \eta \in \ZZ_{\ge 0}^n \text{ and } \sum_{i=1}^n \eta_i \chi_i = 0 \right].$$
+\end{lemma}
+
+This lemma can be restated to show $k[V]^T$ is a semigroup algebra.
+
+\begin{corollary}
+Let $\calM$ be the semigroup
+$$\calM := \left\{\eta \in \ZZ_{\ge 0}^n : \sum_{i=1}^n \eta_i \chi_i = 0 \right\},$$
+and $k[\calM]$ the corresponding semigroup algebra.
+Then algebra homomorphism determined by $Z^\eta \mapsto \eta$ is an isomorphism:
+$$k[V]^T \cong k[\calM].$$
+
+\end{corollary}
 
 \subsection{Torus quotients as toric varieties}
 
@@ -3476,6 +3554,20 @@ showing the quotient is a toric variety.
    date={1973},
    pages={viii+115},
    review={\MR{0344216}},
+}
+
+\bib{Springer98}{book}{
+   author={Springer, T. A.},
+   title={Linear algebraic groups},
+   series={Progress in Mathematics},
+   volume={9},
+   edition={2},
+   publisher={Birkh\"auser Boston, Inc., Boston, MA},
+   date={1998},
+   pages={xiv+334},
+   isbn={0-8176-4021-5},
+   review={\MR{1642713}},
+   doi={10.1007/978-0-8176-4840-4},
 }
 
 \bib{Zaman13}{webpage}{
