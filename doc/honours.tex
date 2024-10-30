@@ -280,39 +280,51 @@
 \pagenumbering{roman}
 
 \begin{center}
+\thispagestyle{empty}
 \includegraphics[width=10cm]{../images/UQLogo.jpg} \\ 
 \vspace{3cm}
-{\LARGE\textsc{Toric Varieties}} \\
-%\vspace{0.1cm}
-%{\LARGE\textsc{Varieties}} \\
+{\LARGE\textsc{Affine Toric Varieties and}} \\
+\vspace{0.1cm}
+{\LARGE\textsc{Geometric Invariant Theory}} \\
 \vspace{0.5cm}
 {\textsc{Declan Fletcher}} \\
-\vspace{8cm}
-%{\textsc{Mid-year Review, July 2024}} \\
-{\textsc{ Bachelor of Mathematics (Honours)}} \\
-\vspace{1cm}
+\vspace{7cm}
 {\textsc{Supervisor: \href{https://sites.google.com/site/masoudkomi/home}{Masoud Kamgarpour}}} \\
 {\textsc{Co-Supervisor: \href{https://sites.google.com/site/yangzhang139/home}{Yang Zhang}}} \\
+\vspace{1cm}
+{\textsc{ Bachelor of Mathematics (Honours)}} \\
+\vspace{0.1cm}
+{\textsc{November 2024}} \\
 \vspace{1cm}
 {\textsc{\href{https://www.uq.edu.au/}{The University of Queensland}}} \\
 {\textsc{\href{https://smp.uq.edu.au/}{School of Mathematics and Physics}}}
 \end{center}
 
 \newpage
+\hfill
+
+\newpage
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\section*{Acknowledgements}
+Masoud, Yang, Bailey, Stefano, honours students, parents.
+
+\newpage
 \tableofcontents
+
+\newpage
+\hfill
 
 \newpage
 \pagenumbering{arabic}
 \section*{Introduction}\label{chapter:introduction}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \subsection*{Revolutions in geometry}
-Geometry has been studied by mathematicians since ancient times.
+Mathematicians have studied geometry since ancient times.
 Around 300 BC, the Greek mathematician Euclid wrote his textbook The Elements.
-Euclid's axiomatisation of geometry in The Elements was groundbreaking, and it remained the most important textbook on geometry for hundreds of years.
+Euclid's axiomatisation of geometry in The Elements established a rigorous foundation for mathematical proof.
 Euclid often used straight-edge and compass arguments to construct geometric shapes.
 In these arguments, one can draw circles of fixed radii with a compass, and straight lines using the straight-edge, but distances and angles cannot be measured.
-To illustrate this approach, we show the steps in a straight-edge and compass proof demonstrating the existence of equilateral triangles belows:
-
+To illustrate this approach, we show the steps in a straight-edge and compass proof demonstrating the existence of equilateral triangles below:
 \begin{figure}[H]
 \begin{center}
 \begin{minipage}{0.22\textwidth} % First diagram
@@ -367,54 +379,46 @@ To illustrate this approach, we show the steps in a straight-edge and compass pr
 \caption{Constructing an equilateral triangle by straight-edge and compass.}
 \end{figure}
 \noindent
-Although Euclid's work was groundbreaking, geometry progressed immensely over the centuries.
+The Elements set the foundations for the study of geometry and remained the most important text on the subject for around 2000 years.
 
-In the $17^\text{th}$ century, French mathematicians Descartes and Fermat independently discovered coordinate geometry.
-They realised that geometric points could be described by $(x, y)$ coordinates.
-Further, shapes such as curves and lines could be described by algebraic equations.
-This meant that instead of using concrete constructive arguments like Euclid, Descartes and Fermat could reason about geometry using algebra.
+In the $17^\text{th}$ century, French mathematicians Ren\'{e} Descartes and Pierre de Fermat independently discovered coordinate geometry.
+They realised that geometric points could be represented by $(x, y)$ coordinates.
+Further, they described geometric shapes like lines and curves using algebraic equations.
+This breakthrough meant that instead of relying on Euclid's constructive arguments, Descartes and Fermat could reason about geometry using algebra.
 
-At the start of the $20^\text{th}$ century, abstract algebra was beginning to be developed by mathematicians such as David Hilbert and Emmy Noether---this would prove to have an important role in geometry also.
-One kind of object studied in abstract algebra is a ring---these are spaces where addition and multiplication are defined.
-Familiar examples of rings include the integers $\ZZ$ and the ring of polynomials with real coefficients, $\RR[X]$.
+At the start of the $20^\text{th}$ century, mathematicians such as David Hilbert and Emmy Noether began developing the field of abstract algebra---this would prove to have important implications in geometry.
+One class of objects studied in abstract algebra are rings: structures where addition and multiplication are defined.
+Familiar examples of rings include the integers $\ZZ$ and the ring of polynomials with real coefficients $\RR[X]$.
 
-Hilbert understood that rings could be used to understand geometry.
+Hilbert realised rings could be used to study geometry.
 The idea is that given a geometric space, one can associate a ring of functions on the space:
 \begin{align*}
-%\left\{
 \begin{array}{c}
-	\text{Geometric space} \\
+	\text{Geometric spaces} \\
 	V
 \end{array}
-%\right\} 
 \rightsquigarrow
-%\left\{
 \begin{array}{c}
-	\text{Function ring} \\
+	\text{Rings} \\
 	\Fun(V, \CC)
 \end{array}
-%\right\}.
 \end{align*}
-In other words, geometry determines algebra.
-The algebraic properties of $\Fun(V, \CC)$ tell us geometric properties of the space $V$.
-The more surprising insight is that given a ring $R$, we can determine the space $V$ that has this ring of functions:
+Thus, geometry determines algebra.
+The algebraic properties of $\Fun(V, \CC)$ encode geometric properties of the space $V$.
+More remarkably, given a suitable ring $R$, one can determine a space $V_R$ that has $R$ as its ring of functions:
 \begin{align*}
-%\left\{
 \begin{array}{c}
-	\text{Geometric space} \\
-	 V
+	\text{Geometric spaces} \\
+	 V_R
 \end{array}
-%\right\} 
 \scalebox{-1}[1]{$\rightsquigarrow$}
-%\left\{
 \begin{array}{c}
-	\text{Function ring} \\
+	\text{Rings} \\
 	R
 \end{array}
-%\right\}.
 \end{align*}
 Thus, algebra determines geometry.
-Hilbert's great insight, epitimised by his famous theorem the Nullstellensatz, was that studying geometry and algebra are equivalent.
+Hilbert's great insight, formalised by his famous theorem the Nullstellensatz, was that studying geometry and algebra are equivalent.
 The study of geometry using techniques of abstract algebra is called algebraic geometry.
 
 \subsection*{Algebraic geometry}
@@ -422,8 +426,8 @@ Algebraic geometry studies spaces called algebraic varieties.
 These are sets of solutions $(a_1, \ldots, a_n)$ in $\CC^n$ to polynomial equations
 $$f_1(a_1, \ldots, a_n) = 0, \qquad \ldots, \qquad f_s(a_1, \ldots, a_n) = 0,$$
 where $f_1, \ldots, f_s$ are  $n$-variable polynomials in $\CC[X_1, \ldots, X_n]$.
-Familiar examples include the circle and sphere (see examples (1) and (2) in Figure \ref{figure:fourvarieties}).
-Cubic curves and cones provide other examples (see examples (3) and (4) in Figure \ref{figure:fourvarieties}).
+Familiar examples include the circle and sphere.
+Cubic curves and cones provide other examples.
 
 \begin{figure}[H]
     \centering
@@ -463,63 +467,226 @@ Cubic curves and cones provide other examples (see examples (3) and (4) in Figur
         \centering
         \vspace{-0.5cm} % Adjust vertical space for this subfigure
         \includegraphics[width=0.8 \linewidth]{../images/orange_cone}
-        \vspace{-0.3cm} % Adjust space below the image
+        \vspace{-0.2cm} % Adjust space below the image
         \caption{$xy = z^2$}
     \end{subfigure}
     \caption{Four examples of varieties.}
 	\label{figure:fourvarieties}
 \end{figure}
 
-Examples (3) and (4) in Figure \ref{figure:fourvarieties} demonstrate that varieties may have singularities;
-these are points where a variety ``crosses itself" or is ``pinched."
-The presence of singularities in varieties is one of the key differences between algebraic geometry and differential geometry; indeed, in differential geometry, one studies smooth manifolds which by assumption have no singularities.
+Examples (3) and (4) in Figure \ref{figure:fourvarieties} demonstrate that varieties may have singularities: these are points where a variety ``crosses itself" or is ``pinched."
+The presence of singularities in varieties is one of the key differences between algebraic geometry and differential geometry.
+In differential geometry, one studies smooth manifolds which have no singularities by definition.
 Singularities are related to tangent spaces of varieties, and singularities arise when the dimension of the tangent space is ``too large."
 
-To study affine varieties using abstract algebra, we associate algebraic objects to varieties.
+To study varieties using abstract algebra, we associate algebraic objects to varieties.
 To begin with, we study algebraic varieties using polynomial function $\CC[X_1, \ldots, X_n]$.
 Associated to a variety $V$ is the ideal of functions vanishing on $V$, which is denoted $\bI(V)$.
 Using this, we can define the coordinate ring of $V$, 
-$$\CC[V] := \CC[X_1, \ldots, X_n] / \bI(V),$$
-which can be considered the ring of polynomial functions on $V$.
+$$\CC[V] := \CC[X_1, \ldots, X_n] / \bI(V).$$
+The ring $\CC[V]$ can be thought of as the ring of polynomial functions on $V$.
 Thus, we have associated an algebraic object with the variety $V$.
-It turns out that the relationship between algebra and geometry is very tight;
+The relationship between algebra and geometry is very tight;
 in fact, the ring $\CC[V]$ determines the variety $V$ up to isomorphism.
 In this sense, the coordinate ring $\CC[V]$ is not just an algebraic shadow of $V$, but in fact, an equivalent object.
 
-Given the equivalence of geometry and algebra, any geometric property we may be interested in should be able to be understood using algebra.
-In Chapter \ref{chapter:algebraicsets} and Chapter \ref{chapter:affinevarieties}, we study some geometric properties of varieties and the algebraic counterparts.
-Key considerations of this kind include:
-\begin{enumerate}
-\item Irreducibility of algebraic sets corresponding to coordinate rings being integral domains.
-\item The correspondence between maps between algebraic sets and algebra homomorphisms of coordinate rings.
-\item The relationship between open sets of algebraic sets and localisation of coordinate rings.
-\item Formalising the bijection between points in varieties and maximal ideals in coordinate rings by defining the maximal spectrum.
-\item Characterising the tangent space of a variety using maximal ideals in the coordinate ring.
-\end{enumerate}
+The equivalence between geometry and algebra means geometric properties correspond to algebraic properties;
+this correspondence is examined in Chapters \ref{chapter:algebraicsets} and \ref{chapter:affinevarieties}.
+Below are key examples we will explore from the geometry--algebra dictionary:
+\begin{center}
+\begin{tabular}{c | c}
+	Geometry & Algebra \\
+	\hline
+	Points in $V$ & Maximal ideals of $\CC[V]$ \\
+	Maps $V \to W$ & Homomorphisms $\CC[W] \to \CC[V]$ \\
+	Irreducible varieties $V$ & Integral domains $\CC[V]$ \\
+	Open subsets of $V$ & Localisation of $\CC[V]$ \\
+	Tangent spaces $T_PV$ &  Zariski tangent space $(\frakm_P / \frakm_P^2)^*$
+\end{tabular}
+\end{center}
 
+%Given the equivalence of geometry and algebra, any geometric property should have an algebraic interpretation.
+%In Chapter \ref{chapter:algebraicsets} and Chapter \ref{chapter:affinevarieties}, we explore geometric properties of varieties and their algebraic counterparts.
+%Some key concepts in this geometry--algebra dictionary are listed below:
+%\begin{center}
+%\begin{tabular}{c | c}
+%	Geometry & Algebra \\
+%	\hline
+%	Points & Maximal ideals \\
+%	Maps $V \to W$ & Homomorphisms $\CC[W] \to \CC[V]$ \\
+%	Irreducible varieties $V$ & Integral domains $\CC[V]$ \\
+%	Open subsets of $V$ & Localisation of $\CC[V]$ \\
+%	Tangent spaces $T_PV$ &  Zariski tangent space $(\frakm_P / \frakm_P^2)^*$
+%\end{tabular}
+%\end{center}
+%
+%\begin{enumerate}
+%\item Irreducibility of algebraic sets corresponding to coordinate rings being integral domains.
+%\item The correspondence between maps between algebraic sets and algebra homomorphisms of coordinate rings.
+%\item The relationship between open sets of algebraic sets and localisation of coordinate rings.
+%\item Formalising the bijection between points in varieties and maximal ideals in coordinate rings by defining the maximal spectrum.
+%\item Characterising the tangent space of a variety using maximal ideals in the coordinate ring.
+%\end{enumerate}
+
+\newpage
 \subsection*{Toric varieties}
+In the $20^\text{th}$ century, algebraic geometers developed powerful tools for studying algebraic varieties, such as cohomology and homological algebra.
+While these tools are abstract, they led to remarkable advances in the field.
+Nevertheless, concrete examples of varieties, where computations can be done explicitly, remain essential to understand the subject.
 
+Toric varieties are a special class of varieties defined using elementary convex geometry, specifically using objects called convex cones.
+The cone defining a variety determines many properties its properties but can also often be computed with explicitly.
+The explicit calculations possible with toric varieties make them particularly valuable as examples in algebraic geometry.
 
+In light of their computation tractability, toric varieties serve as important testing grounds for theories and conjectures in algebraic geometry.
+For example, the Hodge conjecture---one of the million-dollar Millennium Prize Problems---has been proven for toric varieties, but is unresolved in general \cite{BM21}.
 
+Properties of the cone defining a toric variety have interesting interpretations for the variety.
+For example, there are important subsets of cones called faces, which are themselves cones and thus define their own toric variety.
+When $\tau$ is a face of $\sigma$, the toric variety defined by $\tau$ embeds into the toric variety defined by $\sigma$.
+An interesting result which we will prove is that whether a toric variety is singular is completely determined by its cone.
 
+To illustrate the link between convex geometry and algebraic geometry in the theory of toric varieties, we present a simplified construction of a toric variety from a cone.
+(Precise definitions will be given in Chapters \ref{chapter:convexgeometry} and \ref{chapter:affinetoricvarieties}.)
+Consider the cone
+$$\sigma = \Span_{\RR_{\ge 0}}\{e_1, -e_1+2e_2\},$$
+where $\{e_1, e_2\}$ is the standard basis for $\RR^2$.
+Using $\sigma$, we compute the dual cone
+$$\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_2, 2e_1+ e_2\}.$$
+To define a variety using $\sigma$ and $\sigma^\vee$, we must associate an algebraic object.
+To do this, we assign monomials $r^i s^j$ to integer coordinate points $(i, j)$ in the vector space containing the dual cone:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.2]
+        % Left diagram
+        \begin{scope}[shift={(-2,0)}]
+            % Shaded area
+            \fill[gray!30] (0,0) -- (-1.05, 2.1) -- (2.1,2.1) -- (2.1,0) -- cycle;
+            
+            % Axes
+            \draw[->] (-1.25,0) -- (2.25,0);
+            \draw[->] (0,-0.25) -- (0,2.25);
+            
+            % Lattice points
+            \foreach \x in {-1,-0.5,0,0.5,1,1.5,2}
+                \foreach \y in {0,0.5,1,1.5,2}
+                    \fill (\x,\y) circle (1pt);
 
+            % Vectors
+            \draw[->, ultra thick] (0,0) -- (0.5,0);
+            \draw[->, ultra thick] (0,0) -- (-0.5,1);
+            \node at (1.75, 1.75) {$\sigma$};
+        \end{scope}
 
+        % Right diagram
+        \begin{scope}[shift={(2,0)}]
+            % Shaded area
+            \fill[gray!30] (0,0) -- (0,2.1) -- (2.1,2.1) -- (2.1, 1.05) -- cycle;
+            
+            % Axes
+            \draw[->] (-1.25,0) -- (2.25,0);
+            \draw[->] (0,-0.25) -- (0,2.25);
+            
+            % Lattice points
+            \foreach \x in {-1,-0.5,0,0.5,1,1.5,2}
+                \foreach \y in {0,0.5,1,1.5,2} {
+                    \fill (\x,\y) circle (1pt);
+                }
+                
+			  % Labels
+			  \node[anchor=south west] at (0, 0) {\!\!\! \scriptsize {$1$}};
+			  
+			  %\node[anchor=south] at (-0.5, 0) {\tiny \alert{$X^{-1}$}};
+			  %\node[anchor=south] at (-0.5, 0.5) {\tiny \alert{$X^{-1} Y$}};
+			  %\node[anchor=south] at (-0.5, 1) {\tiny \alert{$X^{-1} Y^2$}};
+			  %\node[anchor=south] at (-0.5, 1.5) {\tiny \alert{$X^{-1} Y^3$}};
+			
+			  %\node[anchor=south ] at (-1, 0) {\, \scriptsize \alert{$r^{-2}$}};
+			  %\node[anchor=south ] at (-1, 0.5) { \scriptsize \alert{$r^{-2} s$}};
+			  %\node[anchor=south ] at (-1, 1) { \scriptsize \alert{$r^{-2} s^2$}};
+  
+			  \node[anchor=south ] at (-0.5, 0) {\scriptsize {$r^{-1}$}};
+			  \node[anchor=south ] at (-0.5, 0.5) { \scriptsize {$r^{-1} s$}};
+			  \node[anchor=south ] at (-0.5, 1) {\scriptsize {$r^{-1} s^2$}};
+
+			  \node[anchor=south west] at (0, 0.5) {\!\!\! \scriptsize {$s$}};
+			  \node[anchor=south west] at (0, 1) {\!\!\! \scriptsize {$s^2$}};
+			  %\node[anchor=south] at (0, 1.5) {\tiny \alert{$Y^3$}};
+			  \node[anchor=south west] at (0.5, 0) {\!\!\!\! \scriptsize {$r$}};
+			  \node[anchor=south west] at (0.5, 0.5) {\!\!\!\! \scriptsize {$r s$}};
+			  \node[anchor=south west] at (0.5, 1) {\!\!\!\!  \scriptsize {$r s^2$}};
+			  %\node[anchor=south] at (0.5, 1.5) {\tiny \alert{$X Y^3$}};
+			  \node[anchor=south west] at (1, 0) {\!\!\!\! \scriptsize {$r^2$}};
+			  \node[anchor=south west] at (1, 0.5) {\!\!\!\! \scriptsize {$r^2 s$}};
+			  \node[anchor=south west] at (1, 1) {\!\!\!\! \scriptsize {$r^2 s^2$}};
+			  %\node[anchor=south] at (1, 1.5) {\tiny \alert{$X^2 Y^3$}};
+
+            % Vectors
+            %\draw[->, ultra thick] (0,0) -- (0,0.5);
+            %\draw[->, ultra thick] (0,0) -- (1,0.5);
+            \node at (1.75, 1.75) {\small{$\sigma^\vee$}};
+        \end{scope}
+    \end{tikzpicture}
+\end{figure}
+\noindent
+We create a ring, denoted $\CC[S_\sigma]$, using the monomials lying in the dual cone:
+$$\CC[S_\sigma] = \CC[1, s, rs, r^2s, s^2,  rs^2, r^2s^2, \ldots] = \CC[s, r^2s, rs] \cong \CC[X, Y, Z]/(XY - Z^2).$$
+Then $U_\sigma$, the toric variety determined by the cone $\sigma$, is then defined to be the zero set of the polynomial relation in the ring:
+$$XY = Z^2.$$
+
+\newpage
 \subsection*{Geometric invariant theory}
+Quotients are a key idea in all areas of mathematics.
+In group theory, we can identify integers differing by a multiple of $n$ in the group $\ZZ$, to get quotient group $\ZZ/n \ZZ$.
+In topology, we can identify points in $\RR$ that differ by integers and use the quotient topology.
+The resulting quotient $\RR/\ZZ$ is homeomorphic to the circle.
+
+In general, it is a difficult problem to construct quotient spaces in geometry and topology with nice properties.
+For example, consider $\GL_2(\CC)$ acting on $\CC^2$ by matrix multiplication.
+There are two orbits for this action: the origin $\{0\}$ and $\CC^2\setminus\{0\}$.
+Using the quotient topology, the set of orbits is not Hausdorff, even though $\CC^2$ is.
+
+Geometric invariant theory (henceforth abbreviated GIT) studies the problem of constructing quotients in algebraic geometry.
+This theory was developed by David Mumford in the 1960s, though his work built on Hilbert's study of (classical) invariant theory.
+
+To illustrate the relationship between Mumford and Hilbert's work, we outline the main goals of classical invariant theory.
+Suppose a group $G$ acts on a vector space $V$, and write $\CC[V]$ for the ring of polynomial functions on $G$.
+The ring of invariants for this action is defined as
+$$\CC[V]^G := \{f \in \CC[V] : f(g \cdot v) = f(v) \text{ for all } v \in V \text{ and all } g \in G\}.$$
+Hilbert was interested in determining when the ring $\CC[V]^G$ is finitely generated.
+He proved that when $G$ is $\SL_n(\CC)$ acting on $V$ by a representation, $\CC[V]^G$ is finitely generated \cite{Hilbert90}.
+However, the invariant ring is not always finitely generated; in 1960, Masayoshi Nagata found an example where $\CC[V]^G$ fails to be finitely generated.
+
+Mumford reformulated invariant theory in a geometric manner.
+He considered the case where a group $G$ acts on a general variety $V$.
+Here, $\CC[V]$ is the coordinate ring of $V$, but the invariants are defined as before.
+Because invariant functions are constant on the orbits of the group action, we can think of $\CC[V]^G$ as the ring of polynomial functions on the set of $G$-orbits.
+Mumford defined the affine GIT quotient $V \git G$ as the variety with $\CC[V]^G$ as its coordinate ring, written
+$$V \git G := \Spec(\CC[V]^G).$$
+
+The question of when $\CC[V]^G$ is finitely generated remains important for GIT.
+If $\CC[V]^G$ is finitely generated by $m$ polynomial $f_1, \ldots, f_m$, then the GIT quotient $V \git G$ can be embedded in $\CC^m$.
+When the ring is not finitely generated, however, the quotient $V \git G$ is not well-defined as a variety, as it would be ``infinite-dimensional".\footnote{Note $\Spec(\CC[V]^G)$ can still be studied as a scheme when $\CC[V]^G$ is not finitely generated, though we will not consider that case in this thesis. See \S \ref{section:themaximalspectrum} for the assumptions we make about coordinate rings of varieties.}
+
+Today, Mumford's theory is the primary framework for constructing quotients in algebraic geometry.
+However, this approach is not without drawbacks.
+Firstly, points in $V \git G$ are not always in bijection with the orbits $V / G$, rather, points in the GIT quotient correspond to closed orbits.
+Also, it possible that the GIT quotient $V \git G$ is singular, even when $V$ is non-singular.
 
 
-
-
-
+\newpage
 \subsection*{Goals and structure of this thesis}
-The main goal of this thesis is to prove that when $V$ is a rational representation of a torus $T$, the GIT quotient $V \git T$ is an affine toric variety whose cone can be computed.
-To achieve this, we build up the preqrequisite theory of affine varieties and toric varieties.
+In this thesis, we establish a connection between toric varieties and GIT quotients.
+Specifically, the main goal of this thesis is to prove that when $V$ is a rational representation of a torus $T$, the GIT quotient $V \git T$ is an affine toric variety.
+
+To achieve our goal, we build up the preqrequisite theory of affine varieties and toric varieties.
 We first explore the basic theory of algebraic sets and affine varieties in Chapter \ref{chapter:algebraicsets} and Chapter \ref{chapter:affinevarieties}, respectively.
 Next, we delve into the convex geometry of cones in Chapter \ref{chapter:convexgeometry}.
-Our understanding of affine varieties and convex geometry is applied in Chapter \ref{chapter:affinetoricvarieties} to study affine toric varieties.
+Our understanding of varieties and convex geometry is applied in Chapter \ref{chapter:affinetoricvarieties} to study toric varieties.
 Finally, in Chapter \ref{chapter:gitquotientsastoricvarieties}, we show $V \git T$ is a toric variety.
 
 Each chapter in this thesis is shown with its main object of study in the diagram below.
-We note the dependency of chapters by writing an arrow Chapter $i$ $\to$ Chapter $j$ if Chapter $i$ should be read before Chapter $j$.
+An arrow from Chapter $i$ $\to$ Chapter $j$ indicates Chapter $i$ should be read before Chapter $j$.
 %% https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXHRleHR7Q2hhcHRlciAyfSJdLFswLDEsIlxcdGV4dHtDaGFwdGVyIDN9Il0sWzEsMCwiXFx0ZXh0e0NoYXB0ZXIgNH0iXSxbMSwxLCJcXHRleHR7Q2hhcHRlciA1fSJdLFsxLDIsIlxcdGV4dHtDaGFwdGVyIDZ9Il0sWzAsMV0sWzIsM10sWzEsM10sWzMsNF1d
 %\[\begin{tikzcd}
 %	{\text{Chapter \ref{chapter:algebraicsets}}} & {\text{Chapter \ref{chapter:convexgeometry}}} \\
@@ -553,9 +720,9 @@ We note the dependency of chapters by writing an arrow Chapter $i$ $\to$ Chapter
 We now detail the contents of each chapter.
 
 In Chapter \ref{chapter:algebraicsets}, we introduce algebraic sets and develop the relationship between algebra and geometry.
-We see how to associate ideals to algebraic sets, and conversely how to associate algebraic sets with ideals.
-The relationship between ideals and algebraic sets is turned into a bijection when we prove the Nullstellensatz.
-We then consider maps on and functions between algebraic sets, and see how these correspond to $k$-algebra homomorphisms.
+We see how to associate ideals with algebraic sets, and conversely how to associate algebraic sets with ideals.
+The relationship between ideals and algebraic sets becomes a bijection when we prove the Nullstellensatz.
+We then consider maps on and functions between algebraic sets, and see how these correspond to ring homomorphisms.
 We relate products of algebraic sets to the algebraic operation of taking tensor products of coordinate rings.
 We conclude the chapter by considering open subsets of algebraic sets, and regular functions defined on these.
 
@@ -565,20 +732,32 @@ We also define tangent spaces and singular points of varieties, and characterise
 
 In Chapter \ref{chapter:convexgeometry}, we study the convex geometry we need to investigate toric varieties.
 An important result we prove is that dualising a cone twice yields the original cone.
-We focus on the types of cones used when defining toric varieties: these are cones which are polyhedral, rational and strongly convex.
+We focus on the types of cones used when defining toric varieties: these are polyhedral, rational, and strongly convex cones.
 After defining these properties of convex geometry, we see how they have consequences for toric varieties in Chapter \ref{chapter:affinetoricvarieties}.
 
 In Chapter \ref{chapter:affinetoricvarieties}, we develop the basic theory of toric varieties.
 We define the semigroup algebra of a cone, then take the maximal spectrum to define a toric variety.
-See investigate the different ways of viewing points in toric varieties from an algebraic perspective.
+We investigate the different ways of viewing points in toric varieties from an algebraic perspective.
 We prove that toric varieties arising from cones admit an action of a torus which is a dense open subset---this gives an alternative way to define toric varieties.
-We also see some ways how the convex geometry of the cone informs the geometry of the toric variety.
-For example, there is a correspondence between faces of the cone and certain subsets of the variety. 
-Also, the cone determines whether the corresponging variety is singular.
+We also see some ways how the convex geometry of the cone affects the geometry of the toric variety.
+For example, there is a correspondence between faces of cones and certain subsets of varieties. 
+Also, the cone determines whether the corresponding variety is singular.
 
-In Chapter \ref{chapter:gitquotientsastoricvarieties}, we...
+In Chapter \ref{chapter:gitquotientsastoricvarieties}, we introduce algebraic groups and their actions.
+This allows us to define the GIT quotient and state its main properties.
+We will then be ready to show that $V \git T$ is a toric variety.
+We compute the ring of invariants and then show this ring arises as the coordinate ring of a toric variety.
+To conclude the thesis, we compute examples of the cones corresponding to $V \git T$.
 
 \subsection*{Future directions}
+This thesis only considers the affine theory of toric varieties and GIT quotients.
+There are more general varieties than affine varieties, which are obtained by glueing affine varieties together.
+The theory of toric varieties and GIT is more naturally studied in this general framework of algebraic varieties.
+The result of this thesis, that $V \git T$ is a toric variety, is also true in the general case.
+Further, under the correct assumptions the converse is also true, i.e., any toric variety can be understood as a quotient variety.
+These results provide interesting future directions for study.
+
+
 
 \newpage
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
@@ -3065,118 +3244,118 @@ Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\
 \subsection{Algebraic groups and their actions}
 %\subsection{Reductive groups}
 
-%\begin{example}\label{gitexamples}
-%\begin{enumerate}
+\begin{example}\label{gitexamples}
+Add an example that will give a singular GIT quotient.
+\begin{enumerate}
+\item
+Consider the group $\CC^\times$ acting on the affine space $\CC^2$ by 
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+t \cdot (x, y) = (tx, t^{-1}y), \qquad t \in \CC^\times, (x, y) \in \CC^2.
+$$
+Suppose a polynomial $p$ has coefficients $a_{ij} \in \CC$ such that
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+p(X, Y) = \sum_{i, j} a_{ij} X^i Y^j.
+$$
+Then $p$ is $\CC^\times$ invariant if and only if for all $t \in \CC^\times$,
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\sum_{i,j} a_{ij} X^i Y^j = \sum_{i,j} a_{ij} t^{i-j} X^i Y^j.
+$$
+This is equivalent to having $a_{ij} \ne 0$ if and only if $i = j$.
+Thus, we have that
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\CC[X, Y]^{\CC^\times} = \CC[XY], \qquad \text{and} \qquad \CC^2 \git \CC^\times = \Spec(\CC[XY]) \cong \CC.
+$$
+
 %\item
-%Consider the group $\CC^\times$ acting on the affine space $\CC^2$ by 
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%t \cdot (x, y) = (tx, t^{-1}y), \qquad t \in \CC^\times, (x, y) \in \CC^2.
-%$$
-%Suppose a polynomial $p$ has coefficients $a_{ij} \in \CC$ such that
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%p(X, Y) = \sum_{i, j} a_{ij} X^i Y^j.
-%$$
-%Then $p$ is $\CC^\times$ invariant if and only if for all $t \in \CC^\times$,
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\sum_{i,j} a_{ij} X^i Y^j = \sum_{i,j} a_{ij} t^{i-j} X^i Y^j.
-%$$
-%This is equivalent to having $a_{ij} \ne 0$ if and only if $i = j$.
-%Thus, we have that
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\CC[X, Y]^{\CC^\times} = \CC[XY], \qquad \text{and} \qquad \CC^2 \git \CC^\times = \Spec(\CC[XY]) \cong \CC.
-%$$
-%
-%%\item
-%%Let $G$ be $\GL_2(\CC)$ and $T$ the maximal torus of invertible diagonal matrices in $G$.
-%%The action of $G$ on its Lie algbera $\frakg = \frakg \frakl_2(\CC)$ by conjugation induces an action of $T$ on $\frakg$.
-%%Specifically, if $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \in T$ and $\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in \frakg$, 
-%%$$\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \cdot \begin{pmatrix} x & y \\ z & w \end{pmatrix} 
-%%= \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \begin{pmatrix} x & y \\ z & w \end{pmatrix} \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}^{-1}
-%%= \begin{pmatrix} x & a b^{-1} y \\ a^{-1} b z & w \end{pmatrix}.$$
-%%Let $X \in \CC[\frakg]$ be the coordinate function defined by $X \left(\begin{pmatrix} x & y \\ z & w \end{pmatrix}  \right) := x$, and define $Y, W, Z \in \CC[\frakg]$ analogously.
-%%Then $\CC[\frakg] = \CC[X, Y, Z, W]$.
-%%Since $T$ acts trivially on the diagonal entries of an element in $\frakg$, $X, W \in \CC[\frakg]^T$.
-%%The action on the off-diagonal entries is analogous to the action in part (1);
-%%by the same argument that we used in part (1), a polynomial $p$ is invariant if and only if for each monomial in $p$, the exponent of $Y$ is equal to the exponent of $Z$.
-%%Therefore,
-%%$$\CC[\frakg]^T = \CC[X, W, YZ], \qquad \text{and} \qquad \frakg \git T = \Spec(\CC[X, W, YZ]) \cong \CC^3.$$
-%
-%\item
-%Let $S_2 = \langle \sigma \, | \, \sigma^2 = 1 \rangle$ act on $\CC^2$ by
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\sigma \cdot (x, y) = (y, x).
-%$$
-%Polynomials which are invariant under the induced action on $\CC[X, Y]$ are called symmetric polynomials.
-%We compute $\CC[X, Y]^{S_2}$, i.e., the ring of symmetric polynomials in two variables;
-%this computation is a special case of the fundamental theorem of symmetric polynomials, which characterises $\CC[X_1, \ldots, X_n]^{S_n}$ when $S_n$ acts on $\CC^n$ by permuting coordinates (see \cite[Chapter IV, \S 6]{Lang02} for a proof of the general theorem).
-%
-%We claim that $\CC[X,Y]^{S_2} = \CC[XY, X+Y]$.
-%It is clear that $XY$ and $X+Y$ are symmetric, so we just need to show any symmetric polynomial lies in $\CC[XY, X+Y]$.
-%A polynomial can be written uniquely as a sum of homogeneous polynomials, and the polynomial is symmetric if and only if each homogeneous part is.
-%In turn, each homogeneous part is symmetric if and only if it is a $\CC$-linear combination of terms of the form $X^i Y^j + X^j Y^i$ for some $i, j \in \ZZ_{\ge 0}$.
-%If $i = j$, then clearly $X^i Y^j + X^j Y^i = 2 (XY)^i \in \CC[XY, X+Y]$.
-%Otherwise, we can assume without loss of generality $i < j$.
-%Then $X^i Y^j + X^j Y^i = (XY)^{i} (Y^{j-i} + X^{j-i})$, and it suffices to show $X^n + Y^n \in \CC[XY, X+Y]$ for all $n \ge 1$ to prove our claim.
-%We proceed by induction on $n$; clearly $X+Y$ and $X^2 + Y^2 = (X+Y)^2 - 2 XY$ lie in $\CC[XY, X+Y],$ so the $n=1$ and $n=2$ cases hold.
-%Then for $n \ge 3$,
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%X^n + Y^n = (X^{n-1} + Y^{n-1})(X+Y) - XY (X^{n-2} + Y^{n-2}) \in \CC[XY, X+Y],
-%$$
-%which completes the induction.
-%It can be shown that $XY$ and $X+Y$ are algebraically independent \cite[Chapter IV, \S 6]{Lang02}.
-%We then have that
-%$$\CC^2 \git S_2= \Spec(\CC[XY, X+Y]) \cong \CC^2.$$
-%
-%\item
-%This is example is studied in \cite{Kamgarpour21}.
-%Consider the group $G = \GL_2(\CC)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(\CC)$ by conjugation.
-%We use the same notation as part (2) for coordinate functions so that $\CC[\frakg] = \CC[X, Y, Z, W]$.
-%A polynomial is invariant if and only if it is constant on the orbits of the action.
-%Then $f \in \CC[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form, we can take to be
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\begin{pmatrix}
-%	\lambda & 0 \\
-%	0 & \lambda 
-%\end{pmatrix},
-%\begin{pmatrix}
-%	\lambda & 0 \\
-%	0 & \mu 
-%\end{pmatrix},
-%\begin{pmatrix}
-%	\lambda & 1 \\
-%	0 & \lambda 
-%\end{pmatrix}, \qquad \lambda, \mu \in \CC.
-%$$
-%We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in \CC[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
-%\begin{align*}
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) 
-%&= f\left( \lim_{t \to 0} \begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \right) 
-%= \lim_{t \to 0} f\left(\begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}^{-1} \right) \\
-%&= \lim_{t \to 0} f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) 
-%= f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right).
-%\end{align*}
-%Then $f \in \CC[\frakg]^G$ is in fact determined by its restriction $\left. f \right|_{\frakh}$, where $\frakh$ is the Cartan subalgebra of diagonal matrices in $\frakg$.
-%Note that since $\diag(\lambda, \mu)$ and $\diag(\mu, \lambda)$ are in the same orbit, $\left. f \right|_\frakh$ is a symmetric polynomial in the variables $X$ and $W$.
-%We then have an inclusion
-%$$\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2} = \CC[XW, X+W], \qquad f \mapsto \left. f \right|_\frakh.$$
-%We know from linear algebra that $\mathrm{tr}, \mathrm{det} \in \CC[\frakg]^G$.
-%Noting $\left. \mathrm{det} \right|_\frakh = XW$ and $\left. \mathrm{tr} \right|_\frakh = X+W$, we see the inclusion $\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2}$ is surjective.
-%Thus we have an isomorphism $\CC[\frakg]^G \cong \CC[X, W]^{S_2}$.
+%Let $G$ be $\GL_2(\CC)$ and $T$ the maximal torus of invertible diagonal matrices in $G$.
+%The action of $G$ on its Lie algbera $\frakg = \frakg \frakl_2(\CC)$ by conjugation induces an action of $T$ on $\frakg$.
+%Specifically, if $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \in T$ and $\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in \frakg$, 
+%$$\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \cdot \begin{pmatrix} x & y \\ z & w \end{pmatrix} 
+%= \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \begin{pmatrix} x & y \\ z & w \end{pmatrix} \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}^{-1}
+%= \begin{pmatrix} x & a b^{-1} y \\ a^{-1} b z & w \end{pmatrix}.$$
+%Let $X \in \CC[\frakg]$ be the coordinate function defined by $X \left(\begin{pmatrix} x & y \\ z & w \end{pmatrix}  \right) := x$, and define $Y, W, Z \in \CC[\frakg]$ analogously.
+%Then $\CC[\frakg] = \CC[X, Y, Z, W]$.
+%Since $T$ acts trivially on the diagonal entries of an element in $\frakg$, $X, W \in \CC[\frakg]^T$.
+%The action on the off-diagonal entries is analogous to the action in part (1);
+%by the same argument that we used in part (1), a polynomial $p$ is invariant if and only if for each monomial in $p$, the exponent of $Y$ is equal to the exponent of $Z$.
 %Therefore,
-%$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2.$$
-%\end{enumerate}
-%\end{example}
+%$$\CC[\frakg]^T = \CC[X, W, YZ], \qquad \text{and} \qquad \frakg \git T = \Spec(\CC[X, W, YZ]) \cong \CC^3.$$
+
+\item
+Let $S_2 = \langle \sigma \, | \, \sigma^2 = 1 \rangle$ act on $\CC^2$ by
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\sigma \cdot (x, y) = (y, x).
+$$
+Polynomials which are invariant under the induced action on $\CC[X, Y]$ are called symmetric polynomials.
+We compute $\CC[X, Y]^{S_2}$, i.e., the ring of symmetric polynomials in two variables;
+this computation is a special case of the fundamental theorem of symmetric polynomials, which characterises $\CC[X_1, \ldots, X_n]^{S_n}$ when $S_n$ acts on $\CC^n$ by permuting coordinates (see \cite[Chapter IV, \S 6]{Lang02} for a proof of the general theorem).
+
+We claim that $\CC[X,Y]^{S_2} = \CC[XY, X+Y]$.
+It is clear that $XY$ and $X+Y$ are symmetric, so we just need to show any symmetric polynomial lies in $\CC[XY, X+Y]$.
+A polynomial can be written uniquely as a sum of homogeneous polynomials, and the polynomial is symmetric if and only if each homogeneous part is.
+In turn, each homogeneous part is symmetric if and only if it is a $\CC$-linear combination of terms of the form $X^i Y^j + X^j Y^i$ for some $i, j \in \ZZ_{\ge 0}$.
+If $i = j$, then clearly $X^i Y^j + X^j Y^i = 2 (XY)^i \in \CC[XY, X+Y]$.
+Otherwise, we can assume without loss of generality $i < j$.
+Then $X^i Y^j + X^j Y^i = (XY)^{i} (Y^{j-i} + X^{j-i})$, and it suffices to show $X^n + Y^n \in \CC[XY, X+Y]$ for all $n \ge 1$ to prove our claim.
+We proceed by induction on $n$; clearly $X+Y$ and $X^2 + Y^2 = (X+Y)^2 - 2 XY$ lie in $\CC[XY, X+Y],$ so the $n=1$ and $n=2$ cases hold.
+Then for $n \ge 3$,
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+X^n + Y^n = (X^{n-1} + Y^{n-1})(X+Y) - XY (X^{n-2} + Y^{n-2}) \in \CC[XY, X+Y],
+$$
+which completes the induction.
+It can be shown that $XY$ and $X+Y$ are algebraically independent \cite[Chapter IV, \S 6]{Lang02}.
+We then have that
+$$\CC^2 \git S_2= \Spec(\CC[XY, X+Y]) \cong \CC^2.$$
+
+\item
+This is example is studied in \cite{Kamgarpour21}.
+Consider the group $G = \GL_2(\CC)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(\CC)$ by conjugation.
+We use the same notation as part (2) for coordinate functions so that $\CC[\frakg] = \CC[X, Y, Z, W]$.
+A polynomial is invariant if and only if it is constant on the orbits of the action.
+Then $f \in \CC[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form, we can take to be
+$$
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+\begin{pmatrix}
+	\lambda & 0 \\
+	0 & \lambda 
+\end{pmatrix},
+\begin{pmatrix}
+	\lambda & 0 \\
+	0 & \mu 
+\end{pmatrix},
+\begin{pmatrix}
+	\lambda & 1 \\
+	0 & \lambda 
+\end{pmatrix}, \qquad \lambda, \mu \in \CC.
+$$
+We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in \CC[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
+\begin{align*}
+\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) 
+&= f\left( \lim_{t \to 0} \begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \right) 
+= \lim_{t \to 0} f\left(\begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}^{-1} \right) \\
+&= \lim_{t \to 0} f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) 
+= f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right).
+\end{align*}
+Then $f \in \CC[\frakg]^G$ is in fact determined by its restriction $\left. f \right|_{\frakh}$, where $\frakh$ is the Cartan subalgebra of diagonal matrices in $\frakg$.
+Note that since $\diag(\lambda, \mu)$ and $\diag(\mu, \lambda)$ are in the same orbit, $\left. f \right|_\frakh$ is a symmetric polynomial in the variables $X$ and $W$.
+We then have an inclusion
+$$\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2} = \CC[XW, X+W], \qquad f \mapsto \left. f \right|_\frakh.$$
+We know from linear algebra that $\mathrm{tr}, \mathrm{det} \in \CC[\frakg]^G$.
+Noting $\left. \mathrm{det} \right|_\frakh = XW$ and $\left. \mathrm{tr} \right|_\frakh = X+W$, we see the inclusion $\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2}$ is surjective.
+Thus we have an isomorphism $\CC[\frakg]^G \cong \CC[X, W]^{S_2}$.
+Therefore,
+$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2.$$
+\end{enumerate}
+\end{example}
 
 
-\newpage
 \subsection{The affine GIT quotient}
 In this section, we define the affine GIT quotient and explain some of its properties.
 We first outline the goal of constructing a quotient variety.
@@ -3233,9 +3412,9 @@ We see $\pi$ is surjective and in particular has the variety $\AA^1$ as its imag
 %\{(0, 0)\} \cup k^\times \times \{0\} \cup \{0\} \times k^\times & \text{if } c = 0.\\
 %\end{cases}
 %$$
-We have for $c \ne 0$ that
+The fibre over $c \ne 0$ is the orbit
 $$\pi^{-1}(c) = \{(x, y) \in \AA^2 : xy = c\},$$
-but
+while the fibre over $0$ is the union of orbits
 $$\pi^{-1}(0) = \{(0, 0)\} \cup k^\times \times \{0\} \cup \{0\} \times k^\times.$$
 % for $c \in k^\times$,
 %$$\pi^{-1}(c) = \{(x, y) \in \AA^2 : xy = c\}$$
@@ -3316,7 +3495,7 @@ We conclude by considering examples of GIT quotients and their quotient maps.
 
 
 
-\newpage
+
 \subsection{Invariants of a linear torus action}\label{section:invariantsoftorus}
 Suppose that $V$ is an $n$-dimensional rational representation of a torus $T$.
 We can fix a basis for $V$, and identify vectors with their coordinates.
@@ -3414,7 +3593,6 @@ The algebra homomorphism determined by $Z^\mu \mapsto \mu$ is an isomorphism:
 $$k[V]^T \cong k[\calM].$$
 \end{corollary}
 
-\newpage
 \subsection{Torus quotients as toric varieties}\label{section:torusquotientsastoricvarieties}
 Let $V$ be an $n$-dimensional rational representation of a torus $T$.
 Let $\chi_1, \ldots, \chi_n$ be the weights of $V$ listed with multiplicity.
@@ -3578,31 +3756,40 @@ By taking each $k_j$ to be large enough, each vector $u_j + k_j w$ will have pos
 %Moreover, the generators $\bar e_i$ take integer values on the lattice $M = \ZZ^n \cap M_\RR$, so $\sigma$ is rational.
 %It remains to check $\sigma$ is strongly convex.
 
-\newpage
 \subsection{Examples}\label{section:examples}
 To conclude this thesis, we give examples of computing the cone described in \S \ref{section:torusquotientsastoricvarieties} for different torus quotients $V \git T$.
-To describe each representation $V$, we give the weights.
+To describe each representation $V$, we give the weights $\chi_1, \ldots, \chi_n$ listed with multiplicity. \\
 
-\begin{enumerate}
-\item
-Consider the torus $T = k^\times$ acting on the two-dimensional representation $V$ by the weights $\chi_1 = \chi$ and $\chi_2 = - \chi$, where $\chi(t) := t$.
-Then,
-$$M_\RR = \{(a_1, a_2) \in \RR^2 : \sum_{i=1}^2 a_i \chi_i = 0\} = \Span_{\RR}\{v_1 := (e_1+e_2)/2\}.$$
-The orthogonal complement $M_\RR^\perp$ is one-dimensional and spanned by $v_2 := \frac{1}{2}(e_1-e_2)$.
-Then,
+(1) 
+Consider $T = k^\times$ acting on the two-dimensional representation $V$ by the weights $\chi_1 = \chi$ and $\chi_2 = - \chi$, where $\chi(t) := t$.
+Then
+$$M_\RR = \left\{(a_1, a_2) \in \RR^2 : \sum_{i=1}^2 a_i \chi_i = 0\right\} = \Span_{\RR}\left\{v_1 := \frac{1}{2}(e_1+e_2)\right\}.$$
+We see $M_\RR^\perp$ is one-dimensional and spanned by $v_2 := \frac{1}{2}(e_1-e_2)$.
+We have
 $$\RR^2 = \Span_\RR\{v_1\} \oplus M_\RR^\perp = \Span_\RR \{v_1\} \oplus \Span_\RR\{v_2\},$$
-we so identify $N_\RR / M_\RR^\perp$ with $\Span_\RR\{v_1\}$.
+we so identify $N_\RR = \RR^2 / M_\RR^\perp$ with $\Span_\RR\{v_1\}$.
 The image of an element in $N_\RR$ is identifed with its projection onto $\Span_\RR\{v_1\}$ under the above decomposition of $\RR^2$.
 Since
 $$e_1 = v_1 + v_2, \qquad e_2 = v_1 - v_2,$$
 we have
 $$\bar e_1 = \bar e_2 = v_1 \in N_\RR.$$
-The cone is $\sigma = \Span_{\RR_{\ge 0}}\{v_1\}$ in the vector space $N_\RR = \Span_{\RR}\{v_1\}$.
-This is a ray in a one dimensional vector space, so the variety $U_\sigma = V \git T$ is the affine line $\AA^1$.
+The cone is $\sigma = \Span_{\RR_{\ge 0}}\{\bar e_1, \bar e_2\} = \Span_{\RR_{\ge 0}}\{v_1\}$ in $N_\RR = \Span_{\RR}\{v_1\}$.
+This is a ray in a one dimensional vector space, so the variety $U_\sigma = V \git T$ is the affine line $\AA^1$. \\
 
-\item
+(2) Consider $T = (k^\times)^2$ acting on $V$ by the weights $\chi_1 = \varepsilon_1, \chi_2 = - \varepsilon_1, \chi_3 = \varepsilon_2$, where $\{\varepsilon_1, \varepsilon_2\}$ is a basis for $X^*(T)$. 
+Lemma \ref{lemma:invariantring} tells us that invariant monomials $Z^\mu$ correspond to tuples $\mu \in \ZZ_{\ge 0}^2$ such that 
+$$\sum_{i=1}^3 \mu_i \chi_i = (\mu_1 - \mu_2) \varepsilon_1 + \mu_3 \varepsilon_2 = 0.$$
+We see $\mu_1 = \mu_2$ and $\mu_3 = 0$.
+Then any invariant monomial is a power of $Z_1 Z_2$, and the coordinate function $Z_3$ does not appear in any invariant monomial.
+Therefore, this representation does not satisfy the assumption about the existence of non-trivial invariants we made in \S \ref{section:torusquotientsastoricvarieties}.
+If we instead consider the representation $\tilde V$ with weights $\chi_1, \chi_2$, the assumption holds.
+We have
+$$k[V]^T \cong k[\tilde V]^T = k[Z_1 Z_2],$$
+so the quotients $V \git T$ and $\tilde V \git T$ are isomorphic.
+We have $\tilde V \git T \cong \AA^1$, and the computation of the cone for $\tilde V \git T$ is essentially the same as the first example above.
+\\
 
-\item
+(3)
 Consider $T = (k^\times)^3$ acting on $V$ by the following weights:
 \begin{center}
 \begin{tikzpicture}
@@ -3612,61 +3799,69 @@ Consider $T = (k^\times)^3$ acting on $V$ by the following weights:
     % Draw the positive roots
     \draw[->, thick] (0, 0) -- (\l, 0) node[anchor=west] {$\chi_1 := \varepsilon_1 - \varepsilon_2 $};
     \draw[->, thick] (0, 0) -- (-\l/2, \l*0.866) node[anchor=south east] {$\chi_2 := \varepsilon_2 - \varepsilon_3$};
-    \draw[->, thick] (0, 0) -- (-\l/2, -\l*0.866) node[anchor=north east] {$\chi_3 := \varepsilon_3 - \varepsilon_1$};
+    \draw[->, thick] (0, 0) -- (-\l/2, -\l*0.866) node[anchor=north east] {$\chi_6 := - \varepsilon_3$};
     
     % Draw the negative roots
     \draw[->, thick] (0, 0) -- (-\l, 0) node[anchor=east] {$\chi_4:=-\chi_1$};
     \draw[->, thick] (0, 0) -- (\l/2, -\l*0.866) node[anchor=north west] {$\chi_5 := - \chi_2$};
-    \draw[->, thick] (0, 0) -- (\l/2, \l*0.866) node[anchor=south west] {$\chi_6 := -\chi_3$};
+    \draw[->, thick] (0, 0) -- (\l/2, \l*0.866) node[anchor=south west] {$\chi_3 := \varepsilon_1 - \varepsilon_3$};
     
     % Draw the origin
     \fill (0, 0) circle (0.05);
 \end{tikzpicture}
 \end{center}
-Here $\{\varepsilon_1, \varepsilon_2, \varepsilon_3\}$ is a basis for $X^*(T)$.
-In other words, if we consider $T$ to be a maximal torus in $\GL_3$, these weights are the weights of the adjoint action of $T$ on the Lie algebra $\frakg$.
+Here, $\{\varepsilon_1, \varepsilon_2, \varepsilon_3\}$ is a basis for $X^*(T)$.
+If we consider $T$ to be a maximal torus in $\GL_3$, these weights arise as the weights of the adjoint action of $T$ on the Lie algebra $\frakg$.
 The condition $\sum_{i=1}^6 a_i \chi_i = 0$ imposes that $(a_1, \ldots, a_6)$ lies in the kernel of the matrix
 $$
 \begin{pmatrix}
-	1 & 0 & -1 & -1 & 0 & 1 \\
+	1 & 0 & 1 & -1 & 0 & -1 \\
 	-1 & 1 & 0 & 1 & -1 & 0 \\
-	0 & -1 & 1 & 0 & 1 & -1
+	0 & -1 & -1 & 0 & 1 & 1
 \end{pmatrix}.
 $$
-This matrix can be reduced to
-$$
-\begin{pmatrix}
-	1 & 0 & -1 & -1 & 0 & 1 \\
-	0 & 1 & -1 & 0 & -1 & 1 \\
-	0 & 0 & 0 & 0 & 0 & 0
-\end{pmatrix}.
-$$
-Then $M_\RR$, which is the kernel of this matrix, has dimension $6-2=4$.
-A basis for $M_\RR$ is:
+%This matrix can be reduced to
+%$$
+%\begin{pmatrix}
+%	1 & 0 & -1 & -1 & 0 & 1 \\
+%	0 & 1 & -1 & 0 & -1 & 1 \\
+%	0 & 0 & 0 & 0 & 0 & 0
+%\end{pmatrix}.
+%$$
+It can be checked that $M_\RR$, which is the kernel of the matrix, has dimension $4$, and that a basis for $M_\RR$ is
 \begin{align*}
-	v_1 &:= \frac{1}{6}(e_1+e_2+e_3), & v_2 &:= \frac{1}{6}(e_4+e_5+e_6), \\
-	v_3 &:= \frac{1}{6} (e_1+e_4), & v_4 &:= \frac{1}{6}(e_2+e_5).
+	v_1 &:= \frac{1}{6} (e_1+e_4), & v_2 &:= \frac{1}{6}(e_2+e_5), \\
+	v_3 &:= \frac{1}{6}(e_1+e_2+e_6), & v_4 &:= \frac{1}{6}(e_3+e_4+e_5).
 \end{align*}
-Then $M_\RR^\perp$ is two-dimensional.
-It has the basis:
-$$v_5 :=\frac{1}{6}(e_1-e_2-e_4+e_5), \qquad v_6 := \frac{1}{6} (e_2 -e_3 -e_5+e_6).$$
+The orthogonal complement $M_\RR^\perp$ is two-dimensional.
+It has the basis
+$$v_5 :=\frac{1}{6}(e_1-e_2-e_4+e_5), \qquad v_6 := \frac{1}{6} (e_1 + e_3 -e_4 - e_6).$$
+We have
+$$\RR^6 = \Span_\RR\{v_1, v_2, v_3, v_4\} \oplus M_\RR^\perp,$$
+we so identify $N_\RR = \RR^6 / M_\RR^\perp$ with $\Span_\RR\{v_1, v_2, v_3, v_4\}$.
 One can check that
 \begin{align*}
-	e_1 &= v_1 - v_2 + 3 v_3 + 2 v_5 + v_6 & e_2 &= v_1 - v_2 + 3 v_4 - v_5 + v_6  \\
-	e_3 &= 4 v_1 + 2 v_2 - 3 v_3 - 3v_4 - v_5 - 2v_6  & e_4 &= - v_1 + v_2 + 3 v_3 - 2 v_5 - v_6 \\
-	e_5 &= - v_1 + v_2 + 3 v_4 + v_5 - v_6 & e_6 &= 2 v_1 + 4 v_2 -3 v_3 - 3v_4 + v_5 + 2 v_6 \\
+	e_1 &= 3v_1 + v_3 - v_4 +v_5+v_6, & e_2 &= 3v_2+v_3-v_4-2v_5+v_6,  \\
+	e_3 &= -3v_1-3v_2+2v_3+4v_4-v_5+2v_6,  & e_4 &= 3v_1-v_3+v_4-v_5-v_6, \\
+	e_5 &= 3v_2-v_3+v_4+2v_5-v_6, & e_6 &= -3v_1-3v_2+4v_3+2v_4+v_5-2v_6.
 \end{align*}
-Then the vector space $N_\RR$ is
-$$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\},$$
-and the cone $\sigma$ is
+The image of an element in $N_\RR$ is identifed with its projection onto $\Span_\RR\{v_1, v_2, v_3, v_4\}$ under the above decomposition of $\RR^6$.
+Thus, the cone $\sigma$ is
 \begin{align*}
-	\sigma &= \Span_{\RR_{\ge 0}}\{v_1 - v_2 + 3 v_3, \, v_1 - v_2 + 3 v_4, \, 4 v_1 + 2 v_2 - 3 v_3 - 3v_4, \\
-			&\qquad\qquad\qquad - v_1 + v_2 + 3 v_3, \, - v_1 + v_2 + 3 v_4, \, 2 v_1 + 4 v_2 -3 v_3 - 3v_4\}.
+	\sigma &= \Span_{\RR_{\ge 0}}\{ \bar e_1, \bar e_2, \bar e_3, \bar e_4, \bar e_5, \bar e_6 \} \\
+		&= \Span_{\RR_{\ge 0}} \{3v_1 + v_3 - v_4,\,  3v_2+v_3-v_4,\,  -3v_1-3v_2+2v_3+4v_4, \\
+		&\qquad\qquad\qquad\qquad  3v_1-v_3+v_4,\,   3v_2-v_3+v_4, \, -3v_1-3v_2+4v_3+2v_4 \}
 \end{align*}
+in the vector space
+$$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
 
-\item
 
-\end{enumerate}
+
+
+
+
+
+
 
 
 \newpage
@@ -3684,6 +3879,22 @@ and the cone $\sigma$ is
    review={\MR{2061575}},
    doi={10.1017/CBO9780511804441},
 }
+
+\bib{BM21}{article}{
+   author={Bruzzo, Ugo},
+   author={Montoya, William},
+   title={On the Hodge conjecture for quasi-smooth intersections in toric
+   varieties},
+   journal={S\~ao Paulo J. Math. Sci.},
+   volume={15},
+   date={2021},
+   number={2},
+   pages={682--694},
+   issn={1982-6907},
+   review={\MR{4341124}},
+   doi={10.1007/s40863-021-00247-y},
+}
+
 
 \bib{Cassels97}{book}{
    author={Cassels, J. W. S.},

@@ -1,15 +1,21 @@
 # TO DO
+[x] Finish intro
+[x] Finish last section in GIT chapter
+[ ] Write prerequisites section in GIT chapter
+[ ] Edit Chapter 1
+
+
 0. Introduction (4--5 pages)
 0.1. Algebraic geometry
 [x] Write
 0.2. Toric varieties
-[ ] Write
+[x] Write
 0.3. Geometric invariant theory
-[ ] Write
+[x] Write
 0.4. Contents of this thesis
-[ ] Write
+[x] Write
 0.5. Future directions
-[ ] Write
+[x] Write
 
 1. Algebraic sets (12 pages)
 1.1.
@@ -53,7 +59,7 @@
 5.3. Invariants of a torus acting on a vector space
 5.4. A^n//T as a toric variety
 5.5. Examples
-[ ] Finish writing these up
+[x] Finish writing these up
 
 Aesthetic/etc. things to do later:
 [ ] Fix table of contents
@@ -63,12 +69,6 @@ Aesthetic/etc. things to do later:
 [ ] Big plot of a singular example.
 [ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).
 
-References for writing intro:
-[x] https://en.wikipedia.org/wiki/Algebraic_geometry#History
-[x] https://www.dam.brown.edu/people/mumford/blog/2014/Grothendieck.html
-[x] https://math.stackexchange.com/questions/255063/why-study-algebraic-geometry
-[x] https://www.maths.ox.ac.uk/about-us/departmental-art/theory/algebraic-geometry
-
 Intro plan:
 [x] Algebraic geometry:
 	- Geomtry in ancient times
@@ -76,12 +76,18 @@ Intro plan:
 	- Relationship to abstract algebra/Hilbert's work
 	- Maximal spectrum/reference Grothendieck and schemes
 	- Mention some things we will study like dimension and tangent spaces
-[ ] Toric varieties:
+[x] Toric varieties:
 	- Motivation of easy case of varieties to study
 	- Outline definition
 	- Properties that relate to the cone
-[ ] GIT
+[x] GIT
 	- The idea of quotients
 	- Classical invariant theory
 	- Geometric invariant theory
-[ ] Outline of the thesis section
+[x] Outline of the thesis section
+
+References for writing intro:
+[x] https://en.wikipedia.org/wiki/Algebraic_geometry#History
+[x] https://www.dam.brown.edu/people/mumford/blog/2014/Grothendieck.html
+[x] https://math.stackexchange.com/questions/255063/why-study-algebraic-geometry
+[x] https://www.maths.ox.ac.uk/about-us/departmental-art/theory/algebraic-geometry
