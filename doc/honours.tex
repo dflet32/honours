@@ -283,9 +283,9 @@
 \thispagestyle{empty}
 \includegraphics[width=10cm]{../images/UQLogo.jpg} \\ 
 \vspace{3cm}
-{\LARGE\textsc{Affine Toric Varieties and}} \\
+{\LARGE\textsc{Affine Toric Varieties}} \\
 \vspace{0.1cm}
-{\LARGE\textsc{Geometric Invariant Theory}} \\
+{\LARGE\textsc{and Torus Quotients}} \\
 \vspace{0.5cm}
 {\textsc{Declan Fletcher}} \\
 \vspace{7cm}
@@ -304,12 +304,15 @@
 \hfill
 
 \newpage
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-\section*{Acknowledgements}
-Masoud, Yang, Bailey, Stefano, honours students, parents.
+\tableofcontents
 
 \newpage
-\tableofcontents
+\hfill
+
+\newpage
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\section*{Acknowledgements}
+Masoud, Yang, Bailey, Stefano, honours students, parents.
 
 \newpage
 \hfill
@@ -317,7 +320,7 @@ Masoud, Yang, Bailey, Stefano, honours students, parents.
 \newpage
 \pagenumbering{arabic}
 \section*{Introduction}\label{chapter:introduction}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \subsection*{Revolutions in geometry}
 Mathematicians have studied geometry since ancient times.
 Around 300 BC, the Greek mathematician Euclid wrote his textbook The Elements.
@@ -647,7 +650,7 @@ There are two orbits for this action: the origin $\{0\}$ and $\CC^2\setminus\{0\
 Using the quotient topology, the set of orbits is not Hausdorff, even though $\CC^2$ is.
 
 Geometric invariant theory (henceforth abbreviated GIT) studies the problem of constructing quotients in algebraic geometry.
-This theory was developed by David Mumford in the 1960s, though his work built on Hilbert's study of (classical) invariant theory.
+This theory was developed by David Mumford in the 1960s \cite{Mumford65}, though his work built on Hilbert's study of (classical) invariant theory.
 
 To illustrate the relationship between Mumford and Hilbert's work, we outline the main goals of classical invariant theory.
 Suppose a group $G$ acts on a vector space $V$, and write $\CC[V]$ for the ring of polynomial functions on $G$.
@@ -1737,7 +1740,7 @@ Conversely, by definition a morphism $\Spec(B) \to \Spec(A)$ determines a homomo
 These associations are mutually inverse (\textcolor{red}{Milne states this with no explanation. How do we see it?});
 thus we have the following:
 
-\begin{proposition}
+\begin{proposition}\label{proposition:morphismsandhomomorphism}
 For all affine algebras $A$ and $B$,
 $$\Hom_{k\text{-alg}}(A, B) \cong \mathrm{Mor}(\Spec(B), \Spec(A)).$$
 \end{proposition}
@@ -3242,153 +3245,178 @@ Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\
 
 
 \subsection{Algebraic groups and their actions}
-%\subsection{Reductive groups}
+In this section, we introduces the theory of algebraic groups necessary for defining the GIT quotient in \S \ref{section:gitquotient}.
+We first define algebraic groups, their actions, and representations.
+Following this, we discuss classic invariant theory and the problem of finite generation of invariants.
+Useful references for this material include: \cite{Humphreys75}, \cite{Geck13}, \cite{Springer98}, \cite{Mukai03}.
 
-\begin{example}\label{gitexamples}
-Add an example that will give a singular GIT quotient.
+Let $G$ be an (affine) variety endowed with the structure of a group.
+Consider the multiplication map $\mu : G \times G \to G$ defined by $(x, y) \mapsto xy$, and the inversion map $\iota : G \to G$ defined by $x \mapsto x^{-1}$.
+If $\mu$ and $\iota$ are morphisms of varieties, we say $G$ is an \emph{(affine) algebraic group}.
+A map between algebraic groups $\varphi : G \to G'$ is called a \emph{homomorphism of algebraic groups} if it is a group homomorphism and a morphism of varieties.
+A homomorphism $\varphi:G\to G'$ is an \emph{isomorphism} if it an isomorphism of groups and an isomorphism of varieties.
+We say $H$ is a \emph{closed subgroup} of $G$ if it is a subgroup of $G$ and closed in the Zariski topology.
+Closed subgroups are algebraic groups in their own right, and the inclusion $H \hookrightarrow G$ is a homomorphism of algebraic groups.
+
+We now detail examples of algebraic groups and closed subgroups.
+
+\begin{example}
 \begin{enumerate}
-\item
-Consider the group $\CC^\times$ acting on the affine space $\CC^2$ by 
-$$
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-t \cdot (x, y) = (tx, t^{-1}y), \qquad t \in \CC^\times, (x, y) \in \CC^2.
-$$
-Suppose a polynomial $p$ has coefficients $a_{ij} \in \CC$ such that
-$$
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-p(X, Y) = \sum_{i, j} a_{ij} X^i Y^j.
-$$
-Then $p$ is $\CC^\times$ invariant if and only if for all $t \in \CC^\times$,
-$$
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-\sum_{i,j} a_{ij} X^i Y^j = \sum_{i,j} a_{ij} t^{i-j} X^i Y^j.
-$$
-This is equivalent to having $a_{ij} \ne 0$ if and only if $i = j$.
-Thus, we have that
-$$
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-\CC[X, Y]^{\CC^\times} = \CC[XY], \qquad \text{and} \qquad \CC^2 \git \CC^\times = \Spec(\CC[XY]) \cong \CC.
-$$
-
-%\item
-%Let $G$ be $\GL_2(\CC)$ and $T$ the maximal torus of invertible diagonal matrices in $G$.
-%The action of $G$ on its Lie algbera $\frakg = \frakg \frakl_2(\CC)$ by conjugation induces an action of $T$ on $\frakg$.
-%Specifically, if $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \in T$ and $\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in \frakg$, 
-%$$\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \cdot \begin{pmatrix} x & y \\ z & w \end{pmatrix} 
-%= \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \begin{pmatrix} x & y \\ z & w \end{pmatrix} \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}^{-1}
-%= \begin{pmatrix} x & a b^{-1} y \\ a^{-1} b z & w \end{pmatrix}.$$
-%Let $X \in \CC[\frakg]$ be the coordinate function defined by $X \left(\begin{pmatrix} x & y \\ z & w \end{pmatrix}  \right) := x$, and define $Y, W, Z \in \CC[\frakg]$ analogously.
-%Then $\CC[\frakg] = \CC[X, Y, Z, W]$.
-%Since $T$ acts trivially on the diagonal entries of an element in $\frakg$, $X, W \in \CC[\frakg]^T$.
-%The action on the off-diagonal entries is analogous to the action in part (1);
-%by the same argument that we used in part (1), a polynomial $p$ is invariant if and only if for each monomial in $p$, the exponent of $Y$ is equal to the exponent of $Z$.
-%Therefore,
-%$$\CC[\frakg]^T = \CC[X, W, YZ], \qquad \text{and} \qquad \frakg \git T = \Spec(\CC[X, W, YZ]) \cong \CC^3.$$
-
-\item
-Let $S_2 = \langle \sigma \, | \, \sigma^2 = 1 \rangle$ act on $\CC^2$ by
-$$
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-\sigma \cdot (x, y) = (y, x).
-$$
-Polynomials which are invariant under the induced action on $\CC[X, Y]$ are called symmetric polynomials.
-We compute $\CC[X, Y]^{S_2}$, i.e., the ring of symmetric polynomials in two variables;
-this computation is a special case of the fundamental theorem of symmetric polynomials, which characterises $\CC[X_1, \ldots, X_n]^{S_n}$ when $S_n$ acts on $\CC^n$ by permuting coordinates (see \cite[Chapter IV, \S 6]{Lang02} for a proof of the general theorem).
-
-We claim that $\CC[X,Y]^{S_2} = \CC[XY, X+Y]$.
-It is clear that $XY$ and $X+Y$ are symmetric, so we just need to show any symmetric polynomial lies in $\CC[XY, X+Y]$.
-A polynomial can be written uniquely as a sum of homogeneous polynomials, and the polynomial is symmetric if and only if each homogeneous part is.
-In turn, each homogeneous part is symmetric if and only if it is a $\CC$-linear combination of terms of the form $X^i Y^j + X^j Y^i$ for some $i, j \in \ZZ_{\ge 0}$.
-If $i = j$, then clearly $X^i Y^j + X^j Y^i = 2 (XY)^i \in \CC[XY, X+Y]$.
-Otherwise, we can assume without loss of generality $i < j$.
-Then $X^i Y^j + X^j Y^i = (XY)^{i} (Y^{j-i} + X^{j-i})$, and it suffices to show $X^n + Y^n \in \CC[XY, X+Y]$ for all $n \ge 1$ to prove our claim.
-We proceed by induction on $n$; clearly $X+Y$ and $X^2 + Y^2 = (X+Y)^2 - 2 XY$ lie in $\CC[XY, X+Y],$ so the $n=1$ and $n=2$ cases hold.
-Then for $n \ge 3$,
-$$
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-X^n + Y^n = (X^{n-1} + Y^{n-1})(X+Y) - XY (X^{n-2} + Y^{n-2}) \in \CC[XY, X+Y],
-$$
-which completes the induction.
-It can be shown that $XY$ and $X+Y$ are algebraically independent \cite[Chapter IV, \S 6]{Lang02}.
-We then have that
-$$\CC^2 \git S_2= \Spec(\CC[XY, X+Y]) \cong \CC^2.$$
-
-\item
-This is example is studied in \cite{Kamgarpour21}.
-Consider the group $G = \GL_2(\CC)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(\CC)$ by conjugation.
-We use the same notation as part (2) for coordinate functions so that $\CC[\frakg] = \CC[X, Y, Z, W]$.
-A polynomial is invariant if and only if it is constant on the orbits of the action.
-Then $f \in \CC[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form, we can take to be
-$$
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-\begin{pmatrix}
-	\lambda & 0 \\
-	0 & \lambda 
-\end{pmatrix},
-\begin{pmatrix}
-	\lambda & 0 \\
-	0 & \mu 
-\end{pmatrix},
-\begin{pmatrix}
-	\lambda & 1 \\
-	0 & \lambda 
-\end{pmatrix}, \qquad \lambda, \mu \in \CC.
-$$
-We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in \CC[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
-\begin{align*}
-\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) 
-&= f\left( \lim_{t \to 0} \begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \right) 
-= \lim_{t \to 0} f\left(\begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}^{-1} \right) \\
-&= \lim_{t \to 0} f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) 
-= f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right).
-\end{align*}
-Then $f \in \CC[\frakg]^G$ is in fact determined by its restriction $\left. f \right|_{\frakh}$, where $\frakh$ is the Cartan subalgebra of diagonal matrices in $\frakg$.
-Note that since $\diag(\lambda, \mu)$ and $\diag(\mu, \lambda)$ are in the same orbit, $\left. f \right|_\frakh$ is a symmetric polynomial in the variables $X$ and $W$.
-We then have an inclusion
-$$\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2} = \CC[XW, X+W], \qquad f \mapsto \left. f \right|_\frakh.$$
-We know from linear algebra that $\mathrm{tr}, \mathrm{det} \in \CC[\frakg]^G$.
-Noting $\left. \mathrm{det} \right|_\frakh = XW$ and $\left. \mathrm{tr} \right|_\frakh = X+W$, we see the inclusion $\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2}$ is surjective.
-Thus we have an isomorphism $\CC[\frakg]^G \cong \CC[X, W]^{S_2}$.
-Therefore,
-$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2.$$
+\item The additive group $\GG_a$ is the algebraic group with underlying variety $\AA^1$, multiplication map $\mu(x, y) = x + y$ and inversion map $\iota(x) = - x$. 
+\item The multiplicative group $\GG_m$ is the algebraic group with underlying variety $k^\times$, multiplication map $\mu(x, y) = xy$ and inversion map $\iota(x) = x^{-1}$.
+\item Recall that the general linear group $\GL_n(k)$ is the group of $n \times n$ invertibles matrices with entries in $k$.
+If we identify the set of all $n \times n$ matrices with entries in $k$ with $\AA^{n^2}$, then $\GL_n(k)$ is the principal open subset defined by the non-vanishing of polynomial $\det$.
+Thus, $\GL_n(k)$ is an affine variety.
+Its coordinate ring is the localisation of $k[\AA^{n^2}]$ at $\det$.
+If $A, B \in \GL_n(k)$, then the entries of $AB$ are polynomials in the entries of $A$ and $B$, so $\mu$ is a morphism. 
+If $A \in \GL_n(k)$, then 
 \end{enumerate}
 \end{example}
 
+\begin{example}
+In this example, we classify algebraic group morphisms $\varphi : \GG_m \to \GG_m$.
+These correspond to algebra endomorphisms $\varphi^* : k[T, T^{-1}] \to k[T, T^{-1}]$ (c.f.\ Proposition \ref{proposition:morphismsandhomomorphism}).
+It is a straightforward exercise to show the units in $k[T,T^{-1}]$ are $\{u T^n : u \in k^\times, n \in \ZZ\}$, so since $\varphi^*(T)\varphi^*(T^{-1}) = 1$, we have $\varphi^*(T) = u T^n$ for some $u \in k^\times$ and $n \in \ZZ$.
+The endomorphism $\varphi^*(T) = u T^n$ corresponds to the morphism $\varphi(t) = u t^n$.
+Since $\varphi$ is a group homomorphism, we must have $u =1$.
+We conclude $\Hom(\GG_m, \GG_m) = \{t \mapsto t^n : n \in \ZZ\}.$
+\end{example}
+%\subsection{Reductive groups}
 
-\subsection{The affine GIT quotient}
-In this section, we define the affine GIT quotient and explain some of its properties.
-We first outline the goal of constructing a quotient variety.
-Next, we provide an example of constructing a quotient for a specific group action.
+%\begin{example}\label{gitexamples}
+%Add an example that will give a singular GIT quotient.
+%\begin{enumerate}
+%\item
+%Consider the group $\CC^\times$ acting on the affine space $\CC^2$ by 
+%$$
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%t \cdot (x, y) = (tx, t^{-1}y), \qquad t \in \CC^\times, (x, y) \in \CC^2.
+%$$
+%Suppose a polynomial $p$ has coefficients $a_{ij} \in \CC$ such that
+%$$
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%p(X, Y) = \sum_{i, j} a_{ij} X^i Y^j.
+%$$
+%Then $p$ is $\CC^\times$ invariant if and only if for all $t \in \CC^\times$,
+%$$
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%\sum_{i,j} a_{ij} X^i Y^j = \sum_{i,j} a_{ij} t^{i-j} X^i Y^j.
+%$$
+%This is equivalent to having $a_{ij} \ne 0$ if and only if $i = j$.
+%Thus, we have that
+%$$
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%\CC[X, Y]^{\CC^\times} = \CC[XY], \qquad \text{and} \qquad \CC^2 \git \CC^\times = \Spec(\CC[XY]) \cong \CC.
+%$$
+%
+%%\item
+%%Let $G$ be $\GL_2(\CC)$ and $T$ the maximal torus of invertible diagonal matrices in $G$.
+%%The action of $G$ on its Lie algbera $\frakg = \frakg \frakl_2(\CC)$ by conjugation induces an action of $T$ on $\frakg$.
+%%Specifically, if $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \in T$ and $\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in \frakg$, 
+%%$$\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \cdot \begin{pmatrix} x & y \\ z & w \end{pmatrix} 
+%%= \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \begin{pmatrix} x & y \\ z & w \end{pmatrix} \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}^{-1}
+%%= \begin{pmatrix} x & a b^{-1} y \\ a^{-1} b z & w \end{pmatrix}.$$
+%%Let $X \in \CC[\frakg]$ be the coordinate function defined by $X \left(\begin{pmatrix} x & y \\ z & w \end{pmatrix}  \right) := x$, and define $Y, W, Z \in \CC[\frakg]$ analogously.
+%%Then $\CC[\frakg] = \CC[X, Y, Z, W]$.
+%%Since $T$ acts trivially on the diagonal entries of an element in $\frakg$, $X, W \in \CC[\frakg]^T$.
+%%The action on the off-diagonal entries is analogous to the action in part (1);
+%%by the same argument that we used in part (1), a polynomial $p$ is invariant if and only if for each monomial in $p$, the exponent of $Y$ is equal to the exponent of $Z$.
+%%Therefore,
+%%$$\CC[\frakg]^T = \CC[X, W, YZ], \qquad \text{and} \qquad \frakg \git T = \Spec(\CC[X, W, YZ]) \cong \CC^3.$$
+%
+%\item
+%Let $S_2 = \langle \sigma \, | \, \sigma^2 = 1 \rangle$ act on $\CC^2$ by
+%$$
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%\sigma \cdot (x, y) = (y, x).
+%$$
+%Polynomials which are invariant under the induced action on $\CC[X, Y]$ are called symmetric polynomials.
+%We compute $\CC[X, Y]^{S_2}$, i.e., the ring of symmetric polynomials in two variables;
+%this computation is a special case of the fundamental theorem of symmetric polynomials, which characterises $\CC[X_1, \ldots, X_n]^{S_n}$ when $S_n$ acts on $\CC^n$ by permuting coordinates (see \cite[Chapter IV, \S 6]{Lang02} for a proof of the general theorem).
+%
+%We claim that $\CC[X,Y]^{S_2} = \CC[XY, X+Y]$.
+%It is clear that $XY$ and $X+Y$ are symmetric, so we just need to show any symmetric polynomial lies in $\CC[XY, X+Y]$.
+%A polynomial can be written uniquely as a sum of homogeneous polynomials, and the polynomial is symmetric if and only if each homogeneous part is.
+%In turn, each homogeneous part is symmetric if and only if it is a $\CC$-linear combination of terms of the form $X^i Y^j + X^j Y^i$ for some $i, j \in \ZZ_{\ge 0}$.
+%If $i = j$, then clearly $X^i Y^j + X^j Y^i = 2 (XY)^i \in \CC[XY, X+Y]$.
+%Otherwise, we can assume without loss of generality $i < j$.
+%Then $X^i Y^j + X^j Y^i = (XY)^{i} (Y^{j-i} + X^{j-i})$, and it suffices to show $X^n + Y^n \in \CC[XY, X+Y]$ for all $n \ge 1$ to prove our claim.
+%We proceed by induction on $n$; clearly $X+Y$ and $X^2 + Y^2 = (X+Y)^2 - 2 XY$ lie in $\CC[XY, X+Y],$ so the $n=1$ and $n=2$ cases hold.
+%Then for $n \ge 3$,
+%$$
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%X^n + Y^n = (X^{n-1} + Y^{n-1})(X+Y) - XY (X^{n-2} + Y^{n-2}) \in \CC[XY, X+Y],
+%$$
+%which completes the induction.
+%It can be shown that $XY$ and $X+Y$ are algebraically independent \cite[Chapter IV, \S 6]{Lang02}.
+%We then have that
+%$$\CC^2 \git S_2= \Spec(\CC[XY, X+Y]) \cong \CC^2.$$
+%
+%\item
+%This is example is studied in \cite{Kamgarpour21}.
+%Consider the group $G = \GL_2(\CC)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(\CC)$ by conjugation.
+%We use the same notation as part (2) for coordinate functions so that $\CC[\frakg] = \CC[X, Y, Z, W]$.
+%A polynomial is invariant if and only if it is constant on the orbits of the action.
+%Then $f \in \CC[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form, we can take to be
+%$$
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%\begin{pmatrix}
+%	\lambda & 0 \\
+%	0 & \lambda 
+%\end{pmatrix},
+%\begin{pmatrix}
+%	\lambda & 0 \\
+%	0 & \mu 
+%\end{pmatrix},
+%\begin{pmatrix}
+%	\lambda & 1 \\
+%	0 & \lambda 
+%\end{pmatrix}, \qquad \lambda, \mu \in \CC.
+%$$
+%We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in \CC[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
+%\begin{align*}
+%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
+%f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) 
+%&= f\left( \lim_{t \to 0} \begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \right) 
+%= \lim_{t \to 0} f\left(\begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}^{-1} \right) \\
+%&= \lim_{t \to 0} f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) 
+%= f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right).
+%\end{align*}
+%Then $f \in \CC[\frakg]^G$ is in fact determined by its restriction $\left. f \right|_{\frakh}$, where $\frakh$ is the Cartan subalgebra of diagonal matrices in $\frakg$.
+%Note that since $\diag(\lambda, \mu)$ and $\diag(\mu, \lambda)$ are in the same orbit, $\left. f \right|_\frakh$ is a symmetric polynomial in the variables $X$ and $W$.
+%We then have an inclusion
+%$$\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2} = \CC[XW, X+W], \qquad f \mapsto \left. f \right|_\frakh.$$
+%We know from linear algebra that $\mathrm{tr}, \mathrm{det} \in \CC[\frakg]^G$.
+%Noting $\left. \mathrm{det} \right|_\frakh = XW$ and $\left. \mathrm{tr} \right|_\frakh = X+W$, we see the inclusion $\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2}$ is surjective.
+%Thus we have an isomorphism $\CC[\frakg]^G \cong \CC[X, W]^{S_2}$.
+%Therefore,
+%$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2.$$
+%\end{enumerate}
+%\end{example}
+
+\newpage
+\subsection{The affine GIT quotient}\label{section:gitquotient}
+In this section, we define affine GIT quotients and explain some of their properties.
+We first explain the problem of constructing quotient varieties.
+Next, we provide an example of a specific quotient.
 The example motivates the definition of the GIT quotient that follows.
+Our exposition in this section follows \cite[\S 5.1]{Mukai03}.
 
-Suppose $G$ is an algebraic group acting on an affine variety $V = \Spec(A)$.
-A quotient variety is a variety $Y$ along with a quotient morphism $\pi : V \to Y$.
-So that $Y$ is identified with the orbits $X / G$, we want each fibre of $\pi$ to be a unique $G$-orbit.
-We will see that such a quotient may not exist.
+Suppose $G$ is an algebraic group acting on an affine variety $V$.
+A quotient variety is a variety $W$ with a quotient morphism $\pi : V \to W$.
+In order to identify $W$ with the set of orbits $X / G$, we want each fibre of $\pi$ to be a unique $G$-orbit.
 
-We now outline an approach for constructing $Y$ and $\pi$.
-The morphism $\pi$ must be constant on $G$-orbits, i.e., $G$-invariant.
-One way to define $G$-invariant maps is to use invariant functions;
+It is not always possible to construct a quotient $(W, \pi)$.
+Nonetheless, we now explain one approach to do so.
+First, the morphism $\pi$ must be constant on $G$-orbits, i.e., $G$-invariant.
+One way to construct $G$-invariant maps is as follows:
 if $f_1, \ldots, f_m$ are invariant functions in $k[V]^G$, then the map $\pi : V \to \AA^m$ defined by
 $$x \mapsto (f_1(x), \ldots, f_m(x))$$
 is $G$-invariant.
-We can choose $f_1, \ldots, f_m$ to be generators for $k[V]^G$, then define $Y$ to be the image $\pi(V)$.
-There are two potential problems to keep in mind: it is not clear distinct orbits map to distinct points, and the image $\pi(V)$ is not necessarily a variety since the image of a morphism need not be a variety (c.f.\ Example \ref{example:polynomialmaps}).
+We can choose $f_1, \ldots, f_m$ to be generators for $k[V]^G$ and define $W$ to be the image $\pi(V)$.
+There are two potential problems to keep in mind: it is not clear distinct orbits in $V$ map to distinct points in $W$, and the image $\pi(V)$ is not necessarily a variety since the image of a morphism need not be a variety (c.f.\ Example \ref{example:polynomialmaps}).
 
-
-%Ideally, we want the set of orbits $V / G$ to admit the structure of a variety.
-%Moreover, the map quotient map sending a point in $V$ to its orbit should be a morphism.
-%A quotient variety is then a variety $Y$ and a morphism $\pi : X \to Y$, where each fibre of $\pi$ is a distinct orbit of the action.
-%In particular, the morphism $\pi$ must be constant on $G$-orbits.
-%We will see that in general, such a quotient may not exist.
-%To try to construct a quotient variety, let us consider how we may construct the $G$-invariant quotient morphism $\pi$.
-%One way to define $G$-invariant maps is to use invariant functions;
-%
-%This suggests a method for constructing a quotient variety: choose sufficiently many invariants $f_1, \ldots, f_m$ so distinct orbits map to distinct points, then define the quotient variety as the image of the above map.
-%Note the image of a morphism is not necessarily a variety, so care must be taken.
-
-We now consider an example of constructing a quotient using the method described above.
+We now detail an example of constructing a quotient using the method described above.
 Let $G = \GG_m $ act on $V = \AA^2$ by
 $$t \cdot (x, y) := (tx, t^{-1}y)$$
 for $t \in G$ and $(x, y) \in V$.
@@ -3397,7 +3425,7 @@ We have the following orbits:
 \item the origin $\{(0, 0)\}$;
 \item the $x$-axis without the origin $k^\times \times \{0\}$;
 \item the $y$-axis without the origin $\{0\} \times k^\times$;
-\item the hyperbola $\{(x, y) \in \AA^2 : xy = c\}$, for each $c \in k^\times$. 
+\item hyperbolas $\{(x, y) \in \AA^2 : xy = c\}$, one orbit for each $c \in k^\times$. 
 \end{enumerate}	
 We have seen the ring of invariants for this action is
 $$k[X,Y]^{\GG_m} = k[XY].$$
@@ -3405,50 +3433,37 @@ We define the map $\pi : \AA^2 \to \AA^1$ by
 $$(x, y) \mapsto xy.$$
 If we think of $\AA^2$ as $\Spec(k[X, Y])$ and $\AA^1$ as $\Spec(k[XY])$, then the above morphism arises from the inclusion of the invariant ring $k[XY]$ into $k[X, Y]$.
 We see $\pi$ is surjective and in particular has the variety $\AA^1$ as its image.
-%The fibres of $\pi$ are
-%$$
-%\pi^{-1}(c) = \begin{cases}
-%\{(x, y) \in \AA^2 : xy = c\} & \text{if } c \ne 0, \\
-%\{(0, 0)\} \cup k^\times \times \{0\} \cup \{0\} \times k^\times & \text{if } c = 0.\\
-%\end{cases}
-%$$
 The fibre over $c \ne 0$ is the orbit
 $$\pi^{-1}(c) = \{(x, y) \in \AA^2 : xy = c\},$$
 while the fibre over $0$ is the union of orbits
 $$\pi^{-1}(0) = \{(0, 0)\} \cup k^\times \times \{0\} \cup \{0\} \times k^\times.$$
-% for $c \in k^\times$,
-%$$\pi^{-1}(c) = \{(x, y) \in \AA^2 : xy = c\}$$
-%is the hyperbola orbit, however,
-%$$\pi^{-1}(0) = \{(0, 0)\} \cup k^\times \times \{0\} \cup \{0\} \times k^\times$$
-%is the union of three orbits.
 Then different orbits map to the same point in the quotient.
-However, each fibre contains a unique closed orbit: $\pi^{-1}(c)$ is closed for $c \ne 0$, and $\{(0, 0)\}$ is the only closed orbit contained in $\pi^{-1}(0)$.
+It is important to note, however, each fibre contains a unique closed orbit: $\pi^{-1}(c)$ is closed for $c \ne 0$, and $\{(0, 0)\}$ is the only closed orbit contained in $\pi^{-1}(0)$.
 
 Although we would like fibres of the quotient morphism to be unique $G$-orbits, the above example demonstrates this may not be possible.
 The map $\pi$ is continuous, so each fibre is a closed set.
-Any orbit of the action which is not closed cannot be a fibre of the quotient map.
-
+Therefore, any orbit of the action which is not closed cannot be a fibre of the quotient map.
 Then we cannot construct a quotient with the properties we described at the start of the section.
-The affine GIT quotient is the standard way to construct quotients;
-the example we gave above is a special case of the GIT quotient.
-We now give the general definition:
+
+The affine GIT quotient provides one way to construct quotients with desirable properties.
+We now give the definition:
 
 \begin{definition}
-Let $G$ be an algebraic group acting on the affine variety $V = \Spec(A)$, where $A$ is finitely generated reduced $k$-algebra which is also an integral domain.
+Let $G$ be an algebraic group acting on an irreducible affine variety $V = \Spec(A)$.
 The affine GIT quotient is the affine variety
 $$V \git G := \Spec(A^G).$$
+\end{definition}
+
 The inclusion $A^G \hookrightarrow A$ determines a morphism of affine varieties
 $$\pi : V \to V \git G,$$
 which we call the affine quotient map.
-\end{definition}
-
 The key properties of the quotient $V \git G$ are summarised in the following theorem.
 To state the theorem, we need the following definition:
-two $G$-orbits $\calO$ and $\calO'$ are called closure-equivalent if there exists a sequence of orbits $\calO = \calO_1, \calO_2, \ldots, \calO_{n-1}, \calO_n = \calO'$ such that the intersection of closures $\overline{\calO_i} \cap \overline{\calO_{i+1}}$ is non-empty for each $i=1, \ldots, n$.
+two $G$-orbits $\calO$ and $\calO'$ are called closure-equivalent if there exists a sequence of orbits $\calO = \calO_1, \calO_2, \ldots, \calO_{n-1}, \calO_n = \calO'$ such that the intersection of closures $\overline{\calO_i} \cap \overline{\calO_{i+1}}$ is non-empty for each $i=1, \ldots, n-1$.
 Since the affine quotient map is continuous it takes the same value on closure-equivalent orbits.
 
 \begin{theorem}
-If $G$ is a linearly reductive group acting on an affine variety $X$, then the affine quotient map
+If $G$ is a reductive group acting on an affine variety $X$, then the affine quotient map
 $$\pi : V \to V \git G$$
 is surjective and gives a one-to-one correspondence between points of $V \git G$ and closure-equivalence classes of $G$-orbits in $V$.
 Each closure-equivalence class contains exactly one closed orbit, so points in $V \git G$ are in bijection with closed $G$-orbits.
@@ -3457,7 +3472,7 @@ Each closure-equivalence class contains exactly one closed orbit, so points in $
 See \cite[\S 5.1]{Mukai03}, in particular, Theorem 5.9 and Corollary 5.5.
 \end{proof}
 
-We conclude by considering examples of GIT quotients and their quotient maps.
+We conclude by giving examples of GIT quotients and their quotient maps.
 
 \begin{example}
 
@@ -3495,7 +3510,7 @@ We conclude by considering examples of GIT quotients and their quotient maps.
 
 
 
-
+\newpage
 \subsection{Invariants of a linear torus action}\label{section:invariantsoftorus}
 Suppose that $V$ is an $n$-dimensional rational representation of a torus $T$.
 We can fix a basis for $V$, and identify vectors with their coordinates.
@@ -3593,6 +3608,7 @@ The algebra homomorphism determined by $Z^\mu \mapsto \mu$ is an isomorphism:
 $$k[V]^T \cong k[\calM].$$
 \end{corollary}
 
+\newpage
 \subsection{Torus quotients as toric varieties}\label{section:torusquotientsastoricvarieties}
 Let $V$ be an $n$-dimensional rational representation of a torus $T$.
 Let $\chi_1, \ldots, \chi_n$ be the weights of $V$ listed with multiplicity.
@@ -3756,63 +3772,72 @@ By taking each $k_j$ to be large enough, each vector $u_j + k_j w$ will have pos
 %Moreover, the generators $\bar e_i$ take integer values on the lattice $M = \ZZ^n \cap M_\RR$, so $\sigma$ is rational.
 %It remains to check $\sigma$ is strongly convex.
 
+\newpage
 \subsection{Examples}\label{section:examples}
-To conclude this thesis, we give examples of computing the cone described in \S \ref{section:torusquotientsastoricvarieties} for different torus quotients $V \git T$.
-To describe each representation $V$, we give the weights $\chi_1, \ldots, \chi_n$ listed with multiplicity. \\
+To conclude this thesis, we give examples of computing the cone described in \S \ref{section:torusquotientsastoricvarieties} for different torus quotients $V \git T$. \\
 
 (1) 
-Consider $T = k^\times$ acting on the two-dimensional representation $V$ by the weights $\chi_1 = \chi$ and $\chi_2 = - \chi$, where $\chi(t) := t$.
-Then
-$$M_\RR = \left\{(a_1, a_2) \in \RR^2 : \sum_{i=1}^2 a_i \chi_i = 0\right\} = \Span_{\RR}\left\{v_1 := \frac{1}{2}(e_1+e_2)\right\}.$$
-We see $M_\RR^\perp$ is one-dimensional and spanned by $v_2 := \frac{1}{2}(e_1-e_2)$.
+Consider $T = k^\times$ acting on the two-dimensional representation $V$ by weights $\chi_1 = \chi$ and $\chi_2 = - \chi$, where $\chi(t) := t$.
+Then,
+$$M_\RR = \left\{(a_1, a_2) \in \RR^2 : a_1 \chi_1 + a_2 \chi_2 = 0\right\} = \left\{(a_1, a_2) \in \RR^2 : a_1 = a_2 \right\} .$$
+The orthogonal complement is $M_\RR^\perp = \{(a_1, a_2) \in \RR^2 : a_1 = - a_2\}.$
+The cone of $V \git T$ is $\sigma = \Span_{\RR_{\ge 0}}\{\bar e_1, \bar e_2\}$ in $N_\RR = \RR^2 / M_\RR^\perp.$
+To understand $\sigma$ concretely, we choose bases for $M_\RR$ and $M_\RR^\perp$.
+Observe $\frac{1}{2}(e_1+e_2)$ spans $M_\RR$ and $\frac{1}{2}(e_1-e_2)$ spans $M_\RR^\perp$.
 We have
-$$\RR^2 = \Span_\RR\{v_1\} \oplus M_\RR^\perp = \Span_\RR \{v_1\} \oplus \Span_\RR\{v_2\},$$
-we so identify $N_\RR = \RR^2 / M_\RR^\perp$ with $\Span_\RR\{v_1\}$.
+$$\RR^2 = M_\RR \oplus M_\RR^\perp = \Span_\RR \{v_1\} \oplus \Span_\RR\{v_2\},$$
+so we identify $N_\RR = \RR^2 / M_\RR^\perp$ with $\Span_\RR\{v_1\}$.
 The image of an element in $N_\RR$ is identifed with its projection onto $\Span_\RR\{v_1\}$ under the above decomposition of $\RR^2$.
 Since
-$$e_1 = v_1 + v_2, \qquad e_2 = v_1 - v_2,$$
+$$e_1 = v_1 + v_2 \qquad\text{and}\qquad e_2 = v_1 - v_2,$$
 we have
 $$\bar e_1 = \bar e_2 = v_1 \in N_\RR.$$
-The cone is $\sigma = \Span_{\RR_{\ge 0}}\{\bar e_1, \bar e_2\} = \Span_{\RR_{\ge 0}}\{v_1\}$ in $N_\RR = \Span_{\RR}\{v_1\}$.
+Therefore, the cone is $\sigma = \Span_{\RR_{\ge 0}}\{v_1\}$ in $N_\RR = \Span_{\RR}\{v_1\}$.
 This is a ray in a one dimensional vector space, so the variety $U_\sigma = V \git T$ is the affine line $\AA^1$. \\
 
-(2) Consider $T = (k^\times)^2$ acting on $V$ by the weights $\chi_1 = \varepsilon_1, \chi_2 = - \varepsilon_1, \chi_3 = \varepsilon_2$, where $\{\varepsilon_1, \varepsilon_2\}$ is a basis for $X^*(T)$. 
+(2) Consider $T = (k^\times)^2$ acting on $V$ by the weights $\chi_1 = \varepsilon_1, \chi_2 = - \varepsilon_1,$ and $\chi_3 = \varepsilon_2$, where $\{\varepsilon_1, \varepsilon_2\}$ is a basis for $X^*(T)$. 
 Lemma \ref{lemma:invariantring} tells us that invariant monomials $Z^\mu$ correspond to tuples $\mu \in \ZZ_{\ge 0}^2$ such that 
 $$\sum_{i=1}^3 \mu_i \chi_i = (\mu_1 - \mu_2) \varepsilon_1 + \mu_3 \varepsilon_2 = 0.$$
 We see $\mu_1 = \mu_2$ and $\mu_3 = 0$.
 Then any invariant monomial is a power of $Z_1 Z_2$, and the coordinate function $Z_3$ does not appear in any invariant monomial.
-Therefore, this representation does not satisfy the assumption about the existence of non-trivial invariants we made in \S \ref{section:torusquotientsastoricvarieties}.
+Therefore, this representation does not satisfy the assumption we made in \S \ref{section:torusquotientsastoricvarieties}.
 If we instead consider the representation $\tilde V$ with weights $\chi_1, \chi_2$, the assumption holds.
-We have
-$$k[V]^T \cong k[\tilde V]^T = k[Z_1 Z_2],$$
-so the quotients $V \git T$ and $\tilde V \git T$ are isomorphic.
+There holds
+$$k[V]^T = k[Z_1 Z_2] \cong k[\tilde V]^T,$$
+and the quotients $V \git T$ and $\tilde V \git T$ are isomorphic.
 We have $\tilde V \git T \cong \AA^1$, and the computation of the cone for $\tilde V \git T$ is essentially the same as the first example above.
 \\
 
 (3)
-Consider $T = (k^\times)^3$ acting on $V$ by the following weights:
+Consider the subgroup of diagonal matrices $T \cong (k^\times)^3$ in $\GL_3(k)$.
+The adjoint action of $T$ on $\frakg\frakl_3(k) =: V$ has the following weights:
+\begin{align*}
+	\chi_1 &:= \varepsilon_1 - \varepsilon_2, & \chi_2 &:= \varepsilon_2 - \varepsilon_3, & \chi_3 &:= \varepsilon_1 - \varepsilon_3, \\
+	\chi_4 &:= \varepsilon_2 - \varepsilon_1, & \chi_5 &:= \varepsilon_3 - \varepsilon_2, & \chi_6 &:= \varepsilon_3 - \varepsilon_1.
+\end{align*}
+Here, $\{\varepsilon_1, \varepsilon_2, \varepsilon_3\}$ is a basis for the character lattice $X^*(T)$.
+We visualise the weights as follows:
 \begin{center}
 \begin{tikzpicture}
     % Define the root vectors
     \def\l{2} % length of the vectors
     
     % Draw the positive roots
-    \draw[->, thick] (0, 0) -- (\l, 0) node[anchor=west] {$\chi_1 := \varepsilon_1 - \varepsilon_2 $};
-    \draw[->, thick] (0, 0) -- (-\l/2, \l*0.866) node[anchor=south east] {$\chi_2 := \varepsilon_2 - \varepsilon_3$};
-    \draw[->, thick] (0, 0) -- (-\l/2, -\l*0.866) node[anchor=north east] {$\chi_6 := - \varepsilon_3$};
+    \draw[->, thick] (0, 0) -- (\l, 0) node[anchor=west] {$\chi_1$};
+    \draw[->, thick] (0, 0) -- (-\l/2, \l*0.866) node[anchor=south east] {$\chi_2$};
+    \draw[->, thick] (0, 0) -- (-\l/2, -\l*0.866) node[anchor=north east] {$\chi_6$};
     
     % Draw the negative roots
-    \draw[->, thick] (0, 0) -- (-\l, 0) node[anchor=east] {$\chi_4:=-\chi_1$};
-    \draw[->, thick] (0, 0) -- (\l/2, -\l*0.866) node[anchor=north west] {$\chi_5 := - \chi_2$};
-    \draw[->, thick] (0, 0) -- (\l/2, \l*0.866) node[anchor=south west] {$\chi_3 := \varepsilon_1 - \varepsilon_3$};
+    \draw[->, thick] (0, 0) -- (-\l, 0) node[anchor=east] {$\chi_4$};
+    \draw[->, thick] (0, 0) -- (\l/2, -\l*0.866) node[anchor=north west] {$\chi_5$};
+    \draw[->, thick] (0, 0) -- (\l/2, \l*0.866) node[anchor=south west] {$\chi_3$};
     
     % Draw the origin
     \fill (0, 0) circle (0.05);
 \end{tikzpicture}
 \end{center}
-Here, $\{\varepsilon_1, \varepsilon_2, \varepsilon_3\}$ is a basis for $X^*(T)$.
-If we consider $T$ to be a maximal torus in $\GL_3$, these weights arise as the weights of the adjoint action of $T$ on the Lie algebra $\frakg$.
-The condition $\sum_{i=1}^6 a_i \chi_i = 0$ imposes that $(a_1, \ldots, a_6)$ lies in the kernel of the matrix
+\noindent
+The condition $\sum_{i=1}^6 a_i \chi_i = 0$ forces $(a_1, \ldots, a_6)$ to lie in the kernel of the matrix
 $$
 \begin{pmatrix}
 	1 & 0 & 1 & -1 & 0 & -1 \\
@@ -3820,26 +3845,21 @@ $$
 	0 & -1 & -1 & 0 & 1 & 1
 \end{pmatrix}.
 $$
-%This matrix can be reduced to
-%$$
-%\begin{pmatrix}
-%	1 & 0 & -1 & -1 & 0 & 1 \\
-%	0 & 1 & -1 & 0 & -1 & 1 \\
-%	0 & 0 & 0 & 0 & 0 & 0
-%\end{pmatrix}.
-%$$
-It can be checked that $M_\RR$, which is the kernel of the matrix, has dimension $4$, and that a basis for $M_\RR$ is
+The vector space $M_\RR$ is defined as the kernel of this matrix.
+The cone corresponding to $V \git T$ is $\sigma = \Span_{\RR_{\ge 0}}\{\bar e_1, \ldots, \bar e_6\}$ in $N_\RR = \RR^6 / M_\RR^\perp.$
+We find bases for $M_\RR$ and $M_\RR^\perp$ to understand $\sigma$ concretely.
+One verifies $M_\RR$ has dimension 4, and has the following basis:
 \begin{align*}
 	v_1 &:= \frac{1}{6} (e_1+e_4), & v_2 &:= \frac{1}{6}(e_2+e_5), \\
 	v_3 &:= \frac{1}{6}(e_1+e_2+e_6), & v_4 &:= \frac{1}{6}(e_3+e_4+e_5).
 \end{align*}
 The orthogonal complement $M_\RR^\perp$ is two-dimensional.
-It has the basis
+It has the following basis:
 $$v_5 :=\frac{1}{6}(e_1-e_2-e_4+e_5), \qquad v_6 := \frac{1}{6} (e_1 + e_3 -e_4 - e_6).$$
 We have
-$$\RR^6 = \Span_\RR\{v_1, v_2, v_3, v_4\} \oplus M_\RR^\perp,$$
-we so identify $N_\RR = \RR^6 / M_\RR^\perp$ with $\Span_\RR\{v_1, v_2, v_3, v_4\}$.
-One can check that
+$$\RR^6 = M_\RR \oplus M_\RR^\perp = \Span_\RR\{v_1, v_2, v_3, v_4\} \oplus \Span_{\RR}\{v_5, v_6\},$$
+so we identify $N_\RR = \RR^6 / M_\RR^\perp$ with $\Span_\RR\{v_1, v_2, v_3, v_4\}$.
+One can check:
 \begin{align*}
 	e_1 &= 3v_1 + v_3 - v_4 +v_5+v_6, & e_2 &= 3v_2+v_3-v_4-2v_5+v_6,  \\
 	e_3 &= -3v_1-3v_2+2v_3+4v_4-v_5+2v_6,  & e_4 &= 3v_1-v_3+v_4-v_5-v_6, \\

@@ -1,21 +1,11 @@
 # TO DO
-[x] Finish intro
-[x] Finish last section in GIT chapter
 [ ] Write prerequisites section in GIT chapter
 [ ] Edit Chapter 1
 
 
 0. Introduction (4--5 pages)
-0.1. Algebraic geometry
-[x] Write
-0.2. Toric varieties
-[x] Write
-0.3. Geometric invariant theory
-[x] Write
-0.4. Contents of this thesis
-[x] Write
-0.5. Future directions
-[x] Write
+[ ] Try to expand descarte/fermat section
+[ ] Decide when to first mention "affine" varieties. Make a disclaimer about only affine varieties considered.
 
 1. Algebraic sets (12 pages)
 1.1.
@@ -54,40 +44,20 @@
 5. Affine GIT quotients as affine toric varieties (10 pages)
 5.1. Algebraic groups and their actions
 [ ] Write
+[ ] Mention all reductive stuff
 5.2. The affine GIT quotient
 [ ] Consider which examples to add, and write these up
 5.3. Invariants of a torus acting on a vector space
 5.4. A^n//T as a toric variety
+[ ] Make sure assumption is clear; in particular, that it doesn't change the quotient
 5.5. Examples
 [x] Finish writing these up
 
 Aesthetic/etc. things to do later:
+[ ] Put examples in non-italics
 [ ] Fix table of contents
 [ ] Acknowledgements
 [ ] Fix \emph usage
 [ ] Fix James Milne Reference (Lie algebras vs alg geo)
 [ ] Big plot of a singular example.
 [ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).
-
-Intro plan:
-[x] Algebraic geometry:
-	- Geomtry in ancient times
-	- Introduction of coordinates
-	- Relationship to abstract algebra/Hilbert's work
-	- Maximal spectrum/reference Grothendieck and schemes
-	- Mention some things we will study like dimension and tangent spaces
-[x] Toric varieties:
-	- Motivation of easy case of varieties to study
-	- Outline definition
-	- Properties that relate to the cone
-[x] GIT
-	- The idea of quotients
-	- Classical invariant theory
-	- Geometric invariant theory
-[x] Outline of the thesis section
-
-References for writing intro:
-[x] https://en.wikipedia.org/wiki/Algebraic_geometry#History
-[x] https://www.dam.brown.edu/people/mumford/blog/2014/Grothendieck.html
-[x] https://math.stackexchange.com/questions/255063/why-study-algebraic-geometry
-[x] https://www.maths.ox.ac.uk/about-us/departmental-art/theory/algebraic-geometry

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  31 OCT 2024 08:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  1 NOV 2024 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -952,9 +952,7 @@ Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 284.
 [1{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../images/UQL
 ogo.jpg>]
 
-[2]
-
-[3] (./honours.toc (c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
+[2] (./honours.toc (c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -965,22 +963,26 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 
+[3]
+
 [4]
 
 [5]
 
+[6]
+
 [1]
-<../images/orange_sphere.pdf, id=271, 260.975pt x 283.0575pt>
+<../images/orange_sphere.pdf, id=278, 260.975pt x 283.0575pt>
 File: ../images/orange_sphere.pdf Graphic file (type pdf)
 <use ../images/orange_sphere.pdf>
-Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 448.
+Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 451.
 (pdftex.def)             Requested size: 108.04164pt x 117.18591pt.
-<../images/orange_cone.pdf, id=272, 260.975pt x 260.975pt>
+<../images/orange_cone.pdf, id=279, 260.975pt x 260.975pt>
 File: ../images/orange_cone.pdf Graphic file (type pdf)
 <use ../images/orange_cone.pdf>
-Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 469.
+Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 472.
 (pdftex.def)             Requested size: 86.43364pt x 86.43262pt.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 504
+LaTeX Font Info:    Trying to load font information for U+euf on input line 507
 .
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1008,33 +1010,33 @@ Underfull \vbox (badness 1014) has occurred while \output is active []
 [6]
 
 Package amsrefs Warning: The form \cite{...}*{...} is recommended
-(amsrefs)                instead of \cite[...]{...} on input line 789.
+(amsrefs)                instead of \cite[...]{...} on input line 792.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 824.
+(hyperref)                removing `math shift' on input line 827.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 824.
+(hyperref)                removing `math shift' on input line 827.
 
 
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 876.
+(hyperref)                removing `math shift' on input line 879.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 876.
+(hyperref)                removing `math shift' on input line 879.
 
 
 
 [8]
 
 LaTeX Warning: Reference `The Nullstellensatz' on page 9 undefined on input lin
-e 918.
+e 921.
 
 
 
@@ -1048,7 +1050,7 @@ e 918.
 
 [13]
 
-LaTeX Warning: Citation `AM' on page 14 undefined on input line 1313.
+LaTeX Warning: Citation `AM' on page 14 undefined on input line 1316.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
@@ -1065,10 +1067,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 [17]
 
 LaTeX Warning: Reference `chapter:algebraicsubsets' on page 18 undefined on inp
-ut line 1552.
+ut line 1555.
 
 
-Overfull \hbox (1.13847pt too wide) in paragraph at lines 1567--1571
+Overfull \hbox (1.13847pt too wide) in paragraph at lines 1570--1574
 []\OT1/cmr/m/n/12 (-20) First, choose gen-er-a-tors $\OML/cmm/m/it/12 a[]; [] ;
  a[]$ \OT1/cmr/m/n/12 (-20) for $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 (-20) . The
  $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 (-20) -algebra ho-mo-mor-phism $\OML/cmm/m
@@ -1097,7 +1099,7 @@ cmm/m/it/12 X[]; [] ; X[]\OT1/cmr/m/n/12 (-20) ] \OMS/cmsy/m/n/12 !
 [26]
 
 LaTeX Warning: Reference `affinetoricvarieties' on page 27 undefined on input l
-ine 2061.
+ine 2064.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1115,19 +1117,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [31]
 
 [32]
-<../images/cox cone example 2.png, id=699, 158.09062pt x 264.23718pt>
+<../images/cox cone example 2.png, id=707, 158.09062pt x 264.23718pt>
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
-649.
+652.
 (pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
 
 
 [33 <../images/cox cone example 2.png>]
-<../images/fultons_cones.png, id=711, 782.925pt x 206.27063pt>
+<../images/fultons_cones.png, id=719, 782.925pt x 206.27063pt>
 File: ../images/fultons_cones.png Graphic file (type png)
 <use ../images/fultons_cones.png>
-Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2671.
+Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2674.
 (pdftex.def)             Requested size: 375.80544pt x 99.01192pt.
 
 
@@ -1143,10 +1145,10 @@ Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2671.
 
 [39]
 
-LaTeX Warning: Reference `' on page 40 undefined on input line 3034.
+LaTeX Warning: Reference `' on page 40 undefined on input line 3037.
 
 
-LaTeX Warning: Reference `' on page 40 undefined on input line 3035.
+LaTeX Warning: Reference `' on page 40 undefined on input line 3038.
 
 
 
@@ -1171,34 +1173,36 @@ LaTeX Warning: Reference `' on page 40 undefined on input line 3035.
 [49]
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 3760--3762
-
- []
-
-
 
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 3775--3778
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3787--3791
-
- []
-
-
 
 [52]
+Underfull \hbox (badness 10000) in paragraph at lines 3777--3778
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3794--3797
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3806--3810
+
+ []
+
+
 
 [53]
+
+[54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[54]
+[55]
 
-[55] (./honours.aux)
+[56] (./honours.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
@@ -1211,14 +1215,14 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `honours.out' has not changed.
-(rerunfilecheck)             Checksum: B6622C6FB27BB7252C0B6757977E84EF;8795.
+(rerunfilecheck)             Checksum: 9077C8C7DE2110A61D02941125663AD8;8795.
  ) 
 Here is how much of TeX's memory you used:
- 39748 strings out of 473579
- 889765 string characters out of 5732263
+ 39750 strings out of 473579
+ 889824 string characters out of 5732263
  1403935 words of memory out of 5000000
- 61159 multiletter control sequences out of 15000+600000
- 589262 words of font info for 294 fonts, out of 8000000 for 9000
+ 61160 multiletter control sequences out of 15000+600000
+ 589088 words of font info for 293 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,21n,111p,1004b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1253,10 +1257,10 @@ e/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/20
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/
 fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/cm-super/sfti1200.pfb>
-Output written on honours.pdf (60 pages, 1208568 bytes).
+Output written on honours.pdf (62 pages, 1206837 bytes).
 PDF statistics:
- 1188 PDF objects out of 1200 (max. 8388607)
- 1024 compressed objects within 11 object streams
- 347 named destinations out of 1000 (max. 500000)
+ 1206 PDF objects out of 1440 (max. 8388607)
+ 1040 compressed objects within 11 object streams
+ 350 named destinations out of 1000 (max. 500000)
  58774 words of extra memory for PDF output out of 61914 (max. 10000000)
 
