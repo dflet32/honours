@@ -245,6 +245,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
 
@@ -3231,57 +3232,95 @@ Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\
 
 
 \newpage
-%\addtocontents{toc}{\vskip 1em}
 \section{GIT quotients as toric varieties}\label{chapter:gitquotientsastoricvarieties}
-%In this chapter, we introduce the affine GIT quotient and give examples.
-%One example we give is $\frakg \git T$ for $G = \GL_2(\CC)$.
-%We then compute a basis of $\CC[\frakg]^T$ for general $G$.
-%Finally, we find generators for the invariant ring $\CC[\frakg]^T$ when $G = \GL_3(\CC)$.
-%Throughout this chapter, many technical details may be missing;
-%our focus is on understanding specific examples which can guide our investigation of $\frakg \git T$ for general $G$.
-%
-
-
-
 
 \subsection{Algebraic groups and their actions}
-In this section, we introduces the theory of algebraic groups necessary for defining the GIT quotient in \S \ref{section:gitquotient}.
+In this section, we introduce the theory of algebraic groups necessary for defining the GIT quotient in \S \ref{section:gitquotient}.
 We first define algebraic groups, their actions, and representations.
 Following this, we discuss classic invariant theory and the problem of finite generation of invariants.
-Useful references for this material include: \cite{Humphreys75}, \cite{Geck13}, \cite{Springer98}, \cite{Mukai03}.
+Useful references for this material include \cite{Humphreys75}, \cite{Geck13}, \cite{Springer98}, and \cite{Mukai03}.
 
-Let $G$ be an (affine) variety endowed with the structure of a group.
+Let $G$ be an (affine) variety which is also a group.
 Consider the multiplication map $\mu : G \times G \to G$ defined by $(x, y) \mapsto xy$, and the inversion map $\iota : G \to G$ defined by $x \mapsto x^{-1}$.
 If $\mu$ and $\iota$ are morphisms of varieties, we say $G$ is an \emph{(affine) algebraic group}.
 A map between algebraic groups $\varphi : G \to G'$ is called a \emph{homomorphism of algebraic groups} if it is a group homomorphism and a morphism of varieties.
-A homomorphism $\varphi:G\to G'$ is an \emph{isomorphism} if it an isomorphism of groups and an isomorphism of varieties.
-We say $H$ is a \emph{closed subgroup} of $G$ if it is a subgroup of $G$ and closed in the Zariski topology.
-Closed subgroups are algebraic groups in their own right, and the inclusion $H \hookrightarrow G$ is a homomorphism of algebraic groups.
+An \emph{isomorphism} is a homomorphism which is an isomorphism of groups and varieties.
+We say $H$ is a \emph{closed subgroup} of $G$ if it is a subgroup of $G$ and closed in the Zariski topology;
+closed subgroups are algebraic groups in their own right, and the inclusion $H \hookrightarrow G$ is a homomorphism of algebraic groups.
 
 We now detail examples of algebraic groups and closed subgroups.
 
 \begin{example}
 \begin{enumerate}
-\item The additive group $\GG_a$ is the algebraic group with underlying variety $\AA^1$, multiplication map $\mu(x, y) = x + y$ and inversion map $\iota(x) = - x$. 
-\item The multiplicative group $\GG_m$ is the algebraic group with underlying variety $k^\times$, multiplication map $\mu(x, y) = xy$ and inversion map $\iota(x) = x^{-1}$.
-\item Recall that the general linear group $\GL_n(k)$ is the group of $n \times n$ invertibles matrices with entries in $k$.
-If we identify the set of all $n \times n$ matrices with entries in $k$ with $\AA^{n^2}$, then $\GL_n(k)$ is the principal open subset defined by the non-vanishing of polynomial $\det$.
+\item The additive group $\GG_a$ is the algebraic group with underlying variety $\AA^1$, multiplication map $\mu(x, y) = x + y$, and inversion map $\iota(x) = - x$. 
+\item The multiplicative group $\GG_m$ is the algebraic group with underlying variety $k^\times$, multiplication map $\mu(x, y) = xy$, and inversion map $\iota(x) = x^{-1}$.
+\item Recall the general linear group $\GL_n(k)$ is the group of $n \times n$ invertible matrices with entries in $k$.
+When $\AA^{n \times n}$ is identified with the set of all $n \times n$ matrices, $\GL_n(k)$ is the principal open subset where $\det \ne 0$.
 Thus, $\GL_n(k)$ is an affine variety.
-Its coordinate ring is the localisation of $k[\AA^{n^2}]$ at $\det$.
+Its coordinate ring is the localisation $k[\AA^{n \times n}]_{\det}$.
 If $A, B \in \GL_n(k)$, then the entries of $AB$ are polynomials in the entries of $A$ and $B$, so $\mu$ is a morphism. 
-If $A \in \GL_n(k)$, then 
+The inversion map $\iota$ is a morphism by Cramer's rule, as entries of $A^{-1}$ are polynomials in the entries of $A$ and $\frac{1}{\det(A)}$.
+\item An algebraic group we saw in Chapter \ref{chapter:affinetoricvarieties} is the $n$-dimensional algebraic torus $T = (k^\times)^n$.
+This is isomorphic to the closed subgroup of diagonal matrices in $\GL_n(k)$, which is denoted $D_n(k)$.
+If $X_{ij}$ denote the coordinate functions on $\GL_n(k)$, then $D_n(k)$ is the closed subset defined by the equations $X_{ij} = 0$ for all $i \ne j$.
+The map $T \to D_n(k)$ given by $(t_1, \ldots, t_n) \mapsto \diag(t_1, \ldots, t_n)$ is an isomorphism of algebraic groups.
+\item Important algebraic groups arising as closed subgroups of $\GL_n(k)$ include the special linear group $\SL_n(k)$, the special orthogonal group $\SO_n(k)$ and the symplectic group $\Sp_{2n}(k)$ (c.f.\ \cite[\S 1.3]{Geck13}).
 \end{enumerate}
 \end{example}
 
-\begin{example}
-In this example, we classify algebraic group morphisms $\varphi : \GG_m \to \GG_m$.
+We now detail examples of morphisms of algebraic groups.
+
+\begin{example}\label{example:algebraicgroupmorphisms}
+\begin{enumerate}
+\item The determinant map $\det : \GL_n(k) \to \GG_m$ is a morphism of algebraic groups:
+it is a morphism since $\det(A)$ is a polynomial in the entries of $A$, and a homomorphism since $\det(AB)=\det(A)\det(B)$.
+\item We now classify algebraic group morphisms $\varphi : \GG_m \to \GG_m$.
 These correspond to algebra endomorphisms $\varphi^* : k[T, T^{-1}] \to k[T, T^{-1}]$ (c.f.\ Proposition \ref{proposition:morphismsandhomomorphism}).
 It is a straightforward exercise to show the units in $k[T,T^{-1}]$ are $\{u T^n : u \in k^\times, n \in \ZZ\}$, so since $\varphi^*(T)\varphi^*(T^{-1}) = 1$, we have $\varphi^*(T) = u T^n$ for some $u \in k^\times$ and $n \in \ZZ$.
 The endomorphism $\varphi^*(T) = u T^n$ corresponds to the morphism $\varphi(t) = u t^n$.
 Since $\varphi$ is a group homomorphism, we must have $u =1$.
-We conclude $\Hom(\GG_m, \GG_m) = \{t \mapsto t^n : n \in \ZZ\}.$
+Therefore, $\Hom(\GG_m, \GG_m) = \{t \mapsto t^n : n \in \ZZ\}\cong\ZZ.$
+\end{enumerate}
 \end{example}
-%\subsection{Reductive groups}
+
+We can now define actions and representations of algebraic groups.
+Before doing so, we recall the definitions of group actions and group representations for a general group $G$.
+An action of $G$ on a set $S$ is a map $\cdot : G \times S \to S$, $(g, s) \mapsto g \cdot s$, such that $1 \cdot s = s$ and $g \cdot (h \cdot s) = (g\cdot h) \cdot s$ for all $g$ and $h$ in $G$.
+A representation is a linear action of $G$ on a vector space $V$, or equivalently, a homomorphism $G \to \GL(V)$.
+
+Now suppose $G$ is an algebraic group and $V$ is an affine variety.
+An \emph{algebraic group action} of $G$ on $V$ is morphism $\varphi : G \times V \to V$ that is also a group action.
+
+Suppose that $V$ is a finite dimensional $k$-vector space.
+Let $\rho : G \to \GL(V)$ be a homomorphism of abstract groups.
+After choosing a basis for $V$, the map $\rho$ can be viewed as a homomorphism $G \to \GL_n(k)$.
+We say $\rho$ is a \emph{rational representation} of $G$ if the entries of $\rho(g) \in \GL_n(k)$ are functions lying in $k[G]$.
+Different bases differ by linear transformations, so the definition is independent of the choice of basis.
+
+Examples of algebraic group actions will follow our discussion of invariant theory (c.f.\ Example \ref{}).
+
+We now define the characters of an algebraic group $G$.
+These can be viewed as the one-dimensional rational representations, and play an important role in \S \ref{section:invariantsoftorus} and \S \ref{section:torusquotientsastoricvarieties}.
+A \emph{character} of $G$ is an algebraic group homomorphism $G \to \GG_m \cong \GL_1(k)$.
+The set of all characters of $G$ defines a group under pointwise multiplication. 
+This group is called the \emph{character group} of $G$, and is denoted $X^*(G)$.
+Since $X^*(G)$ is abelian, we write its operation additively:
+$$(\chi_1+\chi_2)(g) := \chi_1(g)\chi_2(g)$$
+for all $\chi_1, \chi_2 \in X^*(G)$ and $g \in G$.
+The identity character (denoted 0), maps all elements to 1.
+
+We now compute the character group of a torus, following \cite[Example 3.1.4]{Geck13}.
+
+\begin{example}
+Example \ref{example:algebraicgroupmorphisms} shows $X^*(\GG_m)=\Hom(\GG_m,\GG_m)\cong\ZZ$.
+If $T = \GG_m^n$ is the $n$-dimensional torus, then $X^*(T) \cong \ZZ^n$.
+This follows from the fact that if $G_1$ and $G_2$ are any algebraic groups, then the map $X^*(G_1)\times X^*(G_2) \to X^*(G_1\times G_2)$ given by $(\chi_1, \chi_2) \mapsto ((g_1, g_2) \mapsto \chi_1(g_1)\chi_2(g_2))$ is an isomorphism.
+We call $X^*(T)$ the \emph{character lattice} of $T$ since it is a finitely generated free abelian group.
+We can explicitly give an isomorphism $\ZZ^n \to X^*(T)$.
+Let $\chi_i$ be the character of $T$ defined by $\chi_i(t_1, \ldots, t_n) := t_i$.
+The map $\ZZ^n \to X^*(T)$ given by $e_i \mapsto \chi_i$ is an isomorphism of abelian groups;
+in particular, $\{\chi_1, \ldots, \chi_n\}$ is a basis of $X^*(T)$.
+\end{example}
 
 %\begin{example}\label{gitexamples}
 %Add an example that will give a singular GIT quotient.
@@ -3394,7 +3433,10 @@ We conclude $\Hom(\GG_m, \GG_m) = \{t \mapsto t^n : n \in \ZZ\}.$
 %\end{enumerate}
 %\end{example}
 
-\newpage
+
+
+
+
 \subsection{The affine GIT quotient}\label{section:gitquotient}
 In this section, we define affine GIT quotients and explain some of their properties.
 We first explain the problem of constructing quotient varieties.
@@ -3485,50 +3527,20 @@ We conclude by giving examples of GIT quotients and their quotient maps.
 
 
 
-%Let $G$ be an affine algebraic group over $\CC$ and $X = \Spec(A)$ a complex affine variety with coordinate ring $A$.
-%Suppose that $G$ acts on $X$.
-%Recall that the $G$-invariant functions on $X$ are
-%$$A^G := \{f \in A : f(g \cdot P) = f(P) \text{ for all } g \in G \text{ and } P \in X\}.$$
-%
-%\begin{definition}
-%The GIT quotient is defined as
-%$$X \git G := \Spec(A^G).$$
-%\end{definition}
-%
-%Note that points in $X \git G$ are not necessarily in bijection with the orbits $X / G$, but the GIT quotient defines a quotient variety even when $X / G$ does not have the structure of an affine variety.
-%Let us see some examples of GIT quotients:
 
 
-
-
-
-
-
-
-
-
-
-
-
-\newpage
 \subsection{Invariants of a linear torus action}\label{section:invariantsoftorus}
-Suppose that $V$ is an $n$-dimensional rational representation of a torus $T$.
-We can fix a basis for $V$, and identify vectors with their coordinates.
-Then $V$ is identified with $\AA^n$, and we can think of the representation as an algebraic group action of $T$ on the variety $\AA^n$.
+Let $V$ be a rational representation of $T$.
 The goal of the next two sections is to prove that the GIT quotient $V \git T$ is an affine toric variety.
+To understand $V \git T$, in this section, we compute the ring of invariants $k[V]^T$.
+In particular, we show $k[V]^T$ is isomorphic to a semigroup algebra $k[\calM]$.
+In the next section, we use this to show $V \git T$ is a toric variety.
 
-With this goal in mind, in this section we compute the ring of invariants $k[V]^T$ for the action.
-In particular, we will show that there is a semigroup $\calM$ so that $k[V]^T$ is isomorphic to the semigroup algebra $k[\calM]$.
-In the next section, we can use this to show $V \git T$ is a toric variety by finding a vector space $N_\RR$ and a cone $\sigma$ such that $\calM \cong S_\sigma$.
-This implies
-$$V \git T = \Spec(k[\calM]) = \Spec(k[S_\sigma]) = U_\sigma,$$
-showing the quotient is a toric variety.
-
-To compute $k[V]^T$, we first choose a basis to identify $V$ with $\AA^n$.
-Rational representations of tori are well-understood; the following lemma describes $V$ as a direct sum of one-dimensional representations, and will provide a natural choice of basis for $V$.
+We first find a basis to identify $V$ with $\AA^n$.
+Rational representations of tori are well-understood; the following lemma says $V$ is a direct sum of one-dimensional representations, providing a natural choice of basis for $V$:
 
 \begin{lemma}
-The representation $V$ is a direct sum of one-dimensional rational representations.
+The representation $V$ is a direct sum of one-dimensional representations.
 In each one-dimensional subspace, $t \in T$ acts by multiplication by $\chi(t)$, where $\chi$ is some character of $T$.
 \end{lemma}
 \begin{proof}
@@ -3541,51 +3553,43 @@ is non-zero, we call $\chi$ a weight of the representation $V$ (c.f.\ \cite[7.1.
 If $\chi$ is weight of $V$, then the subspace $V_\chi$ is called a weight space.
 Note weight spaces may have dimension greater than one; the dimension of $V_\chi$ is called the multiplicity of the weight $\chi$.
 
-Suppose $\chi_1, \ldots, \chi_n$ are the weights of $V$, counted with multiplicity.
-Combining bases of each weight space gives a basis for $V$.
-This means there exists a basis $\{v_1, \ldots, v_n\}$ for $V$ such that each $v_i$ lies in $V_{\chi_i}$, i.e.,
-$$t \cdot v_i = \chi_i(t) v_i$$
-for all $t \in T$.
-Any element of $V$ can then be written uniquely as $v = \sum_{i=1}^n z_i v_i$, for some $z_i \in k$.
-Since the action of $T$ is linear, we see
-$$t \cdot v = \sum_{i=1}^n  z_i \chi_i(t) v_i.$$
-We identify $V$ with the affine variety $\AA^n$ by the map 
+Let $\chi_1, \ldots, \chi_n$ be the weights of $V$, counted with multiplicity. 
+By combining bases for each weight space, we obtain a basis $\{v_1, \ldots, v_n\}$ for $V$ where each $v_i$ lies in $V_{\chi_i}$.
+Every $v \in V$ is uniquely written $v = \sum_{i=1}^n z_i v_i$ for some $z_i \in k$, and since the action of $T$ is linear, 
+$$t \cdot v = \sum_{i=1}^n \chi_i(t) z_i v_i.$$
+We identify $V$ with the affine variety $\AA^n$ by the map
 $$\sum_{i=1}^n z_i v_i \mapsto (z_1, \ldots, z_n).$$
-Then the action of $T$ on $\AA^n$ is an algebraic group action.
 
 To compute $k[V]^T$, we establish notation for polynomials in $k[V]$.
 Suppose $v = \sum_{i=1}^n z_i v_i$ is an element of $V$.
-For each $i=1, \ldots, n$, we define a function $Z_i : V \to k$ by
+For each $i=1, \ldots, n$, we define the dual basis vectors $Z_i : V \to k$ by
 $$Z_i(v) = z_i.$$
-In other words, $\{Z_1, \ldots, Z_n\}$ is the dual basis to $\{v_1, \ldots, v_n\}$.
-Then the coordinate ring of $V$ under its identification with $\AA^n$ is $k[V] = k[Z_1, \ldots, Z_n]$.
-Monomials in $k[V]$ are defined by tuples of non-negative integers.
-Specifically, if $\mu = (\mu_1, \ldots, \mu_n) \in \ZZ_{\ge 0}^n$, then we define
-$$Z^\mu := \prod_{i=1}^n Z_i^{\mu_i}.$$
-We write a polynomial $f \in k[V]$ as
-$$f = \sum_\mu f_\mu Z^\mu,$$
-with the understanding that the sum is over all $\mu \in \ZZ_{\ge 0}^n$, and all but finitely many coefficients $f_\mu \in k$ are zero.
+Then the coordinate ring of $V$ is $k[V] = k[Z_1, \ldots, Z_n]$.
+We write polynomials in $k[V]$ in the following way.
+Given $\mu = (\mu_1, \ldots, \mu_n) \in \ZZ_{\ge 0}^n$, define the monomial
+$$Z^\mu := \prod_{i=1}^n Z_i^{\mu_i},$$
+so that we may write a polynomial $f \in k[V]$ as
+$$f = \sum_\mu f_\mu Z^\mu, \qquad \text{for some } f_\mu \in k.$$
+Here, the sum is over all $\mu \in \ZZ_{\ge 0}^n$, and all but finitely many coefficients $f_\mu \in k$ are zero.
 
 We are now ready to compute the invariant ring $k[V]^T$.
 Recall that the action of $T$ on $V$ induces an action of $T$ on $k[V]$, given by
 $$(t \cdot f)(v) := f(t^{-1} \cdot v)$$
 for $t \in T$, $f \in k[V]$ and $v \in V$.
-If $v$ equals $\sum_{i=1}^n z_i v_i$ and $\mu \in \ZZ_{\ge 0}^n$ defines the monomial $Z^\mu$, then for any $t \in T$ we have
+We use this to determine the $T$-invariant polynomials.
+Write $v =\sum_{i=1}^n z_i v_i$, so that given any $\mu \in \ZZ_{\ge 0}^n$ and $t \in T$, we have
 \begin{align*}
 	(t \cdot Z^\mu)(v) = Z^\mu \left( \sum_{i=1}^n \chi_i(t^{-1}) z_i v_i\right) 
 	%= \prod_{i=1}^n Z_i^{\eta_i}\left( \sum_{i=1}^n \chi_i(t^{-1}) z_i v_i\right) 
-	&= \prod_{i=1}^n \left(- \chi_i(t)\right)^{\mu_i} z_i^{\mu_i} %\\
+	&= \prod_{i=1}^n \left(\chi_i(t^{-1})\right)^{\mu_i} z_i^{\mu_i} %\\
 	= \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu(v).
 \end{align*}
-In other words,
-$$t \cdot Z^\mu = \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu.$$
-The sum $-\sum_{i=1}^n \eta_i \chi_i$ is computed in the character lattice.
-We see that $f \in k[V]$ is invariant for the action of $T$ (meaning $t\cdot f =f$ for all $t \in T$) if and only if for all $t \in T$ we have
-$$\sum_\mu f_\mu Z^\mu = \sum_\mu f_\mu \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu.$$
-Since the monomials $Z^\mu$ and $Z^\eta$ are linearly independent for distinct $\mu$ and $\eta$, the above equality holds if and only if, for all $\mu$ such that $f_\mu \ne 0$, we have
-$$Z^\mu = \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu$$
-for all $t \in T$.
-Equivalently, $f$ lies in $k[V]^T$ if and only if 
+%In other words,
+%$$t \cdot Z^\mu = \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu.$$
+Here, the sum $-\sum_{i=1}^n \eta_i \chi_i$ occurs in the character lattice.
+If $f = \sum_{\mu} f_\mu Z^\mu \in k[V]$, then for all $t \in T$,
+$$t \cdot f = \sum_\mu f_\mu \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu.$$
+Since the monomials $Z^\mu$ and $Z^\eta$ are linearly independent (for $\mu \ne \eta$), we see $f$ lies in $k[V]^T$ if and only if
 $$\sum_{i=1}^n \mu_i \chi_i = 0$$
 for all $\mu$ such that $f_\mu \ne 0$.
 The following lemma summarises our discussion:
@@ -3593,45 +3597,46 @@ The following lemma summarises our discussion:
 \begin{lemma}\label{lemma:invariantring}
 We have that
 $$k[V]^T = k \left[Z^\mu : \mu \in \ZZ_{\ge 0}^n \text{ and } \sum_{i=1}^n \mu_i \chi_i = 0 \right].$$
-In particular, the set
-$$\left\{Z^\mu : \mu \in \ZZ_{\ge 0}^n \text{ and } \sum_{i=1}^n \mu_i \chi_i = 0 \right\}$$
-is a basis for $k[V]^T$.
 \end{lemma}
 
-This lemma can be restated to show $k[V]^T$ is a semigroup algebra.
+Moreover, we conclude $k[V]^T$ is a semigroup algebra:
 
 \begin{corollary}\label{lemma:invariantringcorollary}
 Let $\calM$ be the semigroup
 $$\calM := \left\{\mu \in \ZZ_{\ge 0}^n : \sum_{i=1}^n \mu_i \chi_i = 0 \right\},$$
 and $k[\calM]$ the corresponding semigroup algebra.
-The algebra homomorphism determined by $Z^\mu \mapsto \mu$ is an isomorphism:
-$$k[V]^T \cong k[\calM].$$
+The map $k[V]^T \to k[\calM]$ defined by $Z^\mu \mapsto \mu$ is an algebra isomorphism.
 \end{corollary}
 
-\newpage
+
+
+
+
+
 \subsection{Torus quotients as toric varieties}\label{section:torusquotientsastoricvarieties}
-Let $V$ be an $n$-dimensional rational representation of a torus $T$.
-Let $\chi_1, \ldots, \chi_n$ be the weights of $V$ listed with multiplicity.
-Then we have a basis for $V$ of weight vectors $\{v_1, \ldots, v_n\}$, so that for each $i=1, \ldots, n$,
-$$t \cdot v_i = \chi_i(t) v_i$$
-for all $t \in T$.
-We maintain the notation for polynomials from the previous section.
-Our goal in this section is to prove the quotient $V \git T$ is a toric variety by computing its cone.
+Recall $V$ is a rational representation of a torus $T$.
+Our goal in this section is to prove the quotient $V \git T$ is a toric variety.
+We saw in Lemma \ref{lemma:invariantringcorollary} that $k[V]^T \cong k[\calM]$, so our strategy is to find a cone $\sigma$ such that $k[S_\sigma] \cong k[\calM]$.
 
-We assume the existence of certain invariants in $k[V]^T$, which we will use in the proof of Theorem \ref{theorem:torusquotientsastoricvarieties} to show the cone corresponding to $V \git T$ is strongly convex.
-By Lemma \ref{lemma:invariantring}, the ring of invariants is
+We now explain an assumption we must make about the invariant ring.
+Lemma \ref{lemma:invariantring} says 
 $$k[V]^T = k \left[Z^\eta : \eta \in \ZZ_{\ge 0}^n \text{ and } \sum_{i=1}^n \eta_i \chi_i = 0 \right].$$
-For the rest of this section, we assume that for each $i=1, \ldots, n$, there exists an invariant monomial $Z^\mu = Z_1^{\mu_1} \cdot \ldots \cdot Z_n^{\mu_n} \in k[V]^T$ such that $\mu_i \ne 0$.
+Without loss of generality, we will assume that for each $\ell = 1, \ldots, n$, there exists an invariant monomial $Z^\mu = \prod_{i=1}^n Z_i^{\mu_i} \in k[V]^T$ with $\mu_\ell > 0$.
 In other words, each coordinate function appears with a positive power in some invariant monomial.
-If this assumption fails, we can modify the representation $V$ so it does hold.
-Specifically, if the monomial $Z_i$ does not appear in any invariant monomial, then we define a new representation
-$$\tilde V := \Span_{k}\{v_1, \ldots, \hat v_i, \ldots, v_n\},$$
-where the hat denotes exclusion.
-We let $T$ act on $\tilde V$ by $t \cdot v_j = \chi_j(t) v_j$ for each $j \ne i$.
-Then $k[V]^T$ and $k[\tilde V]^T$ are isomorphic, but $k[\tilde V]^T$ satisfies our assumption.
-In \S \ref{section:examples}, we give an example where the assumption fails then modify the representation to ensure it does.
+We will use this assumption in the proof of Theorem \ref{theorem:torusquotientsastoricvarieties} to show the cone corresponding to $V \git T$ is strongly convex.
 
-Recall that associated with a toric variety $U_\sigma$ is the following ``data" and ``dual data":
+We now explain why generality is not lost.
+If the assumption fails, we consider a modified representation $\tilde V$ such that $k[V]^T \cong k[\tilde V]^T$.
+Specifically, if the coordinate function $Z_\ell$ does not appear in any invariant, then define the new representation
+$$\tilde V := \Span_{k}\{v_1, \ldots, \hat v_\ell, \ldots, v_n\},$$
+where the hat denotes exclusion.
+Let $T$ act on $\tilde V$ by $t \cdot v_i := \chi_i(t) v_i$ for each $i \ne \ell$.
+Then $k[V]^T$ and $k[\tilde V]^T$ are isomorphic.
+After removing all redundant coordinate functions, we have a representation $W$ where our assumption holds, and $V \git T \cong W \git T$.
+There may be no non-constant invariants, in which case $V \git T$ is a point, but we consider this to be the toric variety corresponding to $\sigma = \{0\}$ in $N_\RR = \RR^0 =\{0\}$.
+In \S \ref{section:examples}, we give an example where our assumption fails then modify the representation to ensure it does.
+
+Associated to a toric variety $U_\sigma$ is the following data and dual data:
 \begin{center}
 \begin{tabular}{c | c}
 	Data & Dual data \\
@@ -3642,33 +3647,29 @@ Recall that associated with a toric variety $U_\sigma$ is the following ``data" 
 \end{tabular}
 \end{center}
 \noindent
-%Specifying the data of a toric variety is equivalent to specifying the dual data (we know $\sigma^\vee$ determines $\sigma$ because of Corollary \ref{corollary:doubledual}).
-%To find the cone of $V \git T$, we first find the dual data.
-%Using this, we can check that $k[\sigma^\vee \cap M] \cong k[V]^T$.
-%In view of the fact that the dual data determines the data of a toric variety, this is almost sufficient to show $V \git T$ is a toric variety.
-%The caveat is that we need to check technical details like whether $\sigma$ is polyhedral, strongly convex and rational.
-%To do this, it is most convenient to find $\sigma$ and check these conditions.
-The strategy to prove $V \git T$ is a toric variety is to define the dual data and data independently, then check the data dualises to give the dual data we have defined.
-We define the data and dual data separately as it will be straightforward to check $V \git T \cong U_\sigma$ using the dual data, and straightfoward to check $\sigma$ is polyhedral, rational and strongly convex using the data.
+The strategy to prove $V \git T$ is a toric variety is to define the data and dual data independently.
+This is because it will be straightforward to check $V \git T \cong U_\sigma$ using the dual data, and straightfoward to check $\sigma$ is polyhedral, rational and strongly convex using the data.
 
-To begin, we define the dual vector space $M_\RR$ as
-$$M_\RR = \left\{(a_1, \ldots, a_n) \in \RR^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}.$$
-We compute $\sum_{i=1}^n a_i \chi_i$ in the real vector space $X^*(T) \otimes_\ZZ \RR$, or more explicitly, we may identify $X^*(T)$ with $\ZZ^n$ then compute the sum in $\RR^n$.
-Now, define 
+To begin, recall $\chi_1, \ldots, \chi_n$ are the weights of $V$ listed with multiplicity.
+We define the dual vector space
+$$M_\RR := \left\{(a_1, \ldots, a_n) \in \RR^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}.$$
+Here, the sum $\sum_{i=1}^n a_i \chi_i$ occurs in the real vector space $X^*(T) \otimes_\ZZ \RR$.
+Now, define the algebraic dual
 $$N_\RR := (M_\RR)^*.$$
-For a more concrete understanding of $N_\RR$, we explain how to realise it as a quotient vector space.
-We view $\RR^n$ as its own dual using the pairing given by the usual inner product $(\cdot,\cdot)$.
-Since $M_\RR$ is a subspace of $\RR^n$, it has an orthogonal complement
+To understand $N_\RR$, we realise it as a quotient of $\RR^n$ using some well-known linear algebra.
+We view $\RR^n$ as its own dual via the usual inner product $(\cdot,\cdot)$.
+Then $M_\RR$ has orthogonal complement
 $$M_\RR^\perp := \{v \in \RR^n : (u, v) = 0 \text{ for all }u \in M_\RR\}.$$
 We claim $\RR^n / M_\RR^\perp$ is the dual vector space to $M_\RR$.
 To see this, we define the pairing
 $$\langle \cdot, \cdot \rangle : M_\RR \times \RR^n / M_\RR^\perp \to \RR, \qquad \langle u, v + M_\RR^\perp \rangle := (u, v).$$
 Then $\langle u, v + M_\RR^\perp \rangle$ does not depend on the coset representative, and it is straightforward to see this pairing identifies $(M_\RR)^*$ and $\RR^n / M_\RR^\perp$.
 
-We now define the rest of the dual data and data, redefining $M_\RR$ and $N_\RR$ for completeness:
+Given our constructions of $N_\RR$ and $M_\RR$, we are now ready to define the lattices $N$ and $M$, and the cones $\sigma$ and $\sigma^\vee$.
+We define:
 \begin{align*}
-	M_\RR &:= \left\{(a_1, \ldots, a_n) \in \RR^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}, & N_\RR &:= \RR^n / M_\RR^\perp, \\
-	M &:= \left\{(a_1, \ldots, a_n) \in \ZZ^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}, & N &:= \ZZ^n / M_\RR^\perp, \\
+	%M_\RR &:= \left\{(a_1, \ldots, a_n) \in \RR^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}, & N_\RR &:= \RR^n / M_\RR^\perp, \\
+	M &:= \left\{(a_1, \ldots, a_n) \in \ZZ^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}, & N &:= \ZZ^n / M_\RR^\perp \subseteq \RR^n/M_\RR^\perp, \\
 	\sigma^\vee &:= \RR_{\ge 0}^n \cap M_\RR, & \sigma &:= \Span_{\RR_{\ge 0}}\{\bar e_1, \ldots, \bar e_n\}.
 \end{align*}
 Here, $\bar e_i := e_i + M_\RR^\perp$ is the image of the standard basis vector $e_i$ in $N_\RR = \RR^n / M_\RR^\perp$.
@@ -3679,100 +3680,72 @@ We can now state the theorem:
 The quotient $V \git T$ is isomorphic to the toric variety $U_\sigma$.
 \end{theorem}
 
+Before proving the theorem, we must check the data and dual data is well-defined, and that $\sigma$ is polyhedral, rational, and strongly convex.
+The required facts are proved in the following proposition:
+
+\begin{proposition}
+\begin{enumerate}
+\item $M$ is a lattice in $M_\RR$.
+\item $N$ is the dual lattice to $M$.
+\item $\sigma^\vee$ is the dual cone to $\sigma$.
+\item $\sigma$ is polyhedral, rational, and strongly convex.
+\end{enumerate}
+\end{proposition}
 \begin{proof}
-We show $M$ is a lattice in $M_\RR$.
+\begin{enumerate}
+\item
 It suffices to show $M$ is a discrete subgroup of $M_\RR$ with $\Span_\RR M = M_\RR$ \cite[\S 2.2]{Serre73}.
 Since $\ZZ^n$ is discrete in $\RR^n$, $M$ is discrete in $M_\RR$.
-The condition $\sum_{i=1}^n a_i \chi_i = 0$ defining $M_\RR$ and $M$ can be viewed as a finite set of linear equations with integer coefficients, by identify $X^*(T)$ and $\ZZ^n$.
+By identifying $X^*(T)$ and $\ZZ^n$, the condition $\sum_{i=1}^n a_i \chi_i = 0$ defining $M_\RR$ can be viewed as a finite set of linear equations with integer coefficients.
 The reduced row echelon form of these equations has rational coefficients and can be used to find a basis for $M_\RR$ of rational coordinate vectors.
-By clearing denominators, the basis can be taken from $M$, showing $M$ spans $M_\RR$.
+By clearing denominators, the basis can be taken from $M$, meaning $M$ spans $M_\RR$.
 
-Next, we show $N$ is the dual lattice to $M$.
+\item
 We have an injective map $\psi : N=\ZZ^n/M_\RR^\perp \to M^\vee$ given by $v + M_\RR^\perp \mapsto (u \mapsto \langle u, v\rangle).$
-To show $\psi$ is surjective, note that since $M$ is the intersection of $\ZZ^n$ with a subspace of $\RR^n$, any basis $\{c_1, \ldots, c_r\}$ for $M$ can be extended to a basis $\{c_1, \ldots, c_n\}$ for $\ZZ^n$ \cite[I.2, Corollary 3]{Cassels97}.
+We need to show $\psi$ is surjective.
+Note $M$ is the intersection of $\ZZ^n$ with a subspace of $\RR^n$, so any basis $\{u_1, \ldots, u_r\}$ for $M$ can be extended to a basis $\{u_1, \ldots, u_n\}$ for $\ZZ^n$ \cite[I.2, Corollary 3]{Cassels97}.
 The dual lattice to $\ZZ^n$ is itself, with pairing given by the restriction of the standard inner product. 
-Then there is a basis $\{d_1, \ldots, d_n\}$ for $\ZZ^n$ which is dual to $\{c_1, \ldots, c_n\}$.
-If $g$ lies in the dual lattice $M^\vee$, we extend $g$ to a map $\tilde g$ in $\Hom(\ZZ^n, \ZZ)$ by setting $\tilde g(c_i) = g(c_i)$ for $i = 1, \ldots, r$ and $\tilde g(c_i) = 0$ for $i=r+1,\ldots, n$.
-The dual basis identifies $\tilde g$ with an element of $\ZZ^n$ and $\psi(\tilde g +M_\RR^\perp) = g$.
+Then there is a basis $\{v_1, \ldots, v_n\}$ for $\ZZ^n$ which is dual to $\{u_1, \ldots, u_n\}$.
+If $g$ lies in the dual lattice $M^\vee = \Hom(M, \ZZ)$, we extend $g$ to a map $\tilde g$ in $\Hom(\ZZ^n, \ZZ)$ by setting $\tilde g(c_i) := g(c_i)$ for $i \le r$ and $\tilde g(c_i) := 0$ for $i > r$.
+The dual basis identifies $\tilde g$ with an element of $\ZZ^n$ and we have $\psi(\tilde g +M_\RR^\perp) = g$, meaning $\psi$ is surjective.
 
-We check $\sigma^\vee$ is dual to $\sigma$.
-The dual cone to $\sigma$ is
+\item
+By definition, the dual cone to $\sigma$ is
 \begin{align*}
 	&\quad \, \left\{(a_1, \ldots, a_n) \in M_\RR : \langle (a_1, \ldots, a_n), v \rangle \ge 0 \text{ for all } v \in \sigma\right\} \\
 	&= \left\{(a_1, \ldots, a_n) \in M_\RR : \langle (a_1, \ldots, a_n), \bar e_i \rangle \ge 0 \text{ for all } i=1, \ldots, n \right\} \\
 	&= \left\{(a_1, \ldots, a_n) \in M_\RR : a_i \ge 0 \text{ for all } i=1, \ldots, n \right\} \\
-%	&= \RR_{\ge 0}^n \cap M_\RR \\
 	&= \sigma^\vee.
 \end{align*}
 
-We can now show $U_\sigma \cong V \git T$.
-The cone defines the semigroup
-$$S_\sigma = \sigma^\vee \cap M = \left\{(a_1, \ldots, a_n) \in \ZZ_{\ge 0}^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}.$$
-Then $S_\sigma$ equals the semigroup $\calM$ in Corollary \ref{lemma:invariantringcorollary}, so $k[S_\sigma] = k[\calM]$.
-The corollary tells us $k[V]^T \cong k[\calM]$, and thus
-$$V \git T = \Spec(k[V]^T) \cong \Spec(k[S_\sigma]) = U_\sigma.$$
-
-Finally, we check $\sigma$ is polyhedral, rational and strongly convex.
+\item
 By definition, $\sigma$ is generated by a finite number of elements of $N$, so it is polyhedral and rational.
-To see $\sigma$ is strongly convex, we show $\sigma^\vee$ spans $M_\RR$ (c.f.\ Proposition \ref{stronglyconvexprop});
-we must find a basis for $M_\RR$ where each vector has non-negative coordinates.
-Recall we assume that for each $i=1, \ldots, n$, there exists an invariant monomial $Z^\mu = Z_1^{\mu_1} \cdot \ldots \cdot Z_n^{\mu_n} \in k[V]^T$ such that $\mu_i \ne 0$.
-Then $\mu$ is identified with a point $(a_1, \ldots, a_n)$ in $\sigma^\vee \cap M$, so for each $i=1, \ldots, n$, there exists a vector $(a_1, \ldots, a_n)$ in $M$ with $a_j \ge 0$ for all $j=1, \ldots, n$ and $a_i > 0$.
-Summing these, there exists $(b_1, \ldots, b_n)$ lying in $\sigma^\vee \cap M$ with $b_i > 0$ for all $i=1, \ldots, n$.
+To see $\sigma$ is strongly convex, it suffices to show $\sigma^\vee$ spans $M_\RR$ (c.f.\ Proposition \ref{stronglyconvexprop}).
+We must find a basis for $M_\RR$ where each vector has non-negative coordinates.
+Recall that at the start of the section, we assumed that for each $\ell =1, \ldots, n$, there exists an invariant monomial $Z^\mu = \prod_{i=1}^n Z_i^{\mu_i} \in k[V]^T$ with $\mu_\ell > 0$.
+Then $\mu$ is identified with a point $(a_1, \ldots, a_n)$ in $\sigma^\vee \cap M$, so for each $\ell = 1, \ldots, n$, there exists a vector $(a_1, \ldots, a_n)$ in $M$ with $a_i \ge 0$ for all $i$ and $a_\ell > 0$.
+Summing these, there exists $(b_1, \ldots, b_n)$ lying in $\sigma^\vee \cap M$ with $b_i > 0$ for all $i$.
 Denote the vector $(b_1, \ldots, b_n)$ by $w$.
 We extend $w$ to an $\RR$-basis $\{w, u_2, \ldots, u_r\}$ for $M_\RR$.
-Notice $\{w, u_2 + k_2 w, \ldots, u_r + k_r w\}$ is also a basis for any constants $k_2, \ldots, k_r$.
-By taking each $k_j$ to be large enough, each vector $u_j + k_j w$ will have positive coordinates, since $w$ has strictly positive coordinates.
+Notice $\{w, u_2 + \lambda_2 w, \ldots, u_r + \lambda_r w\}$ is also a basis for any constants $\lambda_2, \ldots, \lambda_r \in \RR$.
+By taking each $\lambda_j$ large enough, each vector $u_j + \lambda_j w$ will have positive coordinates, since $w$ has strictly positive coordinates.
+\end{enumerate}
 \end{proof}
-%We begin by defining the dual data of $V \git T$.
-%Define the vector space $M_\RR$ by
-%$$M_\RR := \left\{(a_1, \ldots, a_n) \in \RR^n : \sum_{i=1}^n a_i \chi_i = 0\right\}.$$
-%Here, we compute $\sum_{i=1}^n a_i \chi_i$ in the real vector space $X^*(T) \otimes_\ZZ \RR$.
-%More concretely, we may identify $X^*(T)$ with $\ZZ^n$ then compute the sum in $\RR^n$.
-%The lattice $M$ is defined by
-%$$M := \left\{(a_1, \ldots, a_n) \in \ZZ^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}.$$
-%Later, we check $M$ is indeed a lattice in $M_\RR$ (c.f.\ Lemma \ref{}).
-%The dual cone $\sigma^\vee$ is defined as the points in $M_\RR$ with non-negative coordinates, i.e.,
-%$$\sigma^\vee := \RR_{\ge 0}^n \cap M_\RR = \left\{(a_1, \ldots, a_n) \in \RR_{\ge 0}^n : \sum_{i=1}^n a_i \chi_i = 0\right\}.$$
-%It is clear $\sigma^\vee$ is a convex cone, but not whether it is polyhedral.
-%
-%Let us check that $V \git T$ is isomorphic to the toric variety defined by the dual cone $\sigma^\vee$.
-%The semigroup defined by $\sigma^\vee$ is
-%$$\sigma^\vee \cap M = \left\{(a_1, \ldots, a_n) \in \ZZ_{\ge 0}^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}.$$
-%Then $\sigma^\vee \cap M$ equals the semigroup $\calM$ defined in Corollary \ref{}.
-%The corollary tells us $k[V]^T \cong k[\calM]$, and thus
-%$$V \git T = \Spec(k[V]^T) \cong \Spec(k[\calM]) = \Spec(k[\sigma^\vee \cap M]) = U_\sigma.$$
-%
-%We can now define $N_\RR$ and $\sigma$.
-%We will check that the definitions we make dualise to give the dual data we have already defined.
-%Then, we will check the technical assumptions we need $\sigma$ to satisfy, namely that it is polyhedral, strongly convex and rational.
-%
-%The vector space $N_\RR$ is defined to be the dual of $M_\RR$, namely
-%$$N_\RR := \RR^n / M_{\RR}^\perp,$$
-%where
-%$$M_\RR^\perp = \{v \in \RR^n : \langle u, v \rangle = 0\}.$$
-%Here we consider $\RR^n$ to be its own dual, and use the standard inner product for the dual pairing.
-%Then the dual of $M_\RR$, which is a subspace of $\RR^n$, will be the quotient defined above (c.f.\ Lemma \ref{}).
-%The cone in $N_\RR$ is defined by
-%$$\sigma := \Span_{\RR_{\ge 0}}\{\bar e_1, \ldots, \bar e_n\}.$$
-%Here $\bar e_i$ is the image of the standard basis vector $e_i$ in the quotient $N_\RR = \RR^n / M_\RR^\perp$, i.e., $\bar e_i = e_i + M_\RR^\perp.$
-%
-%Let us check that the cones $\sigma$ and $\sigma^\vee$ which we have defined are indeed dual.
-%The dual cone to $\sigma$ is
-%\begin{align*}
-%	&\left\{(a_1, \ldots, a_n) \in M_\RR : \langle (a_1, \ldots, a_n), v \rangle \ge 0 \text{ for all } v \in \sigma\right\} \\
-%	&= \left\{(a_1, \ldots, a_n) \in M_\RR : \langle (a_1, \ldots, a_n), \bar e_i \rangle \ge 0 \text{ for all } i=1, \ldots, n \right\} \\
-%	&= \left\{(a_1, \ldots, a_n) \in M_\RR : a_i \ge 0 \text{ for all } i=1, \ldots, n \right\} \\
-%	&= \RR_{\ge 0}^n \cap M_\RR \\
-%	&= \sigma^\vee.
-%\end{align*}
-%Thus, $\sigma$ and $\sigma^\vee$ are dual, as desired.
-%
-%It is clear that $\sigma$ is polyhedral by its definition.
-%Moreover, the generators $\bar e_i$ take integer values on the lattice $M = \ZZ^n \cap M_\RR$, so $\sigma$ is rational.
-%It remains to check $\sigma$ is strongly convex.
 
-\newpage
+We can now prove Theorem \ref{theorem:torusquotientsastoricvarieties}:
+
+\begin{proof}[Proof of Theorem \ref{theorem:torusquotientsastoricvarieties}]
+The cone $\sigma$ defines the semigroup
+$$S_\sigma = \sigma^\vee \cap M = \left\{(a_1, \ldots, a_n) \in \ZZ_{\ge 0}^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}.$$
+Then $S_\sigma$ equals the semigroup $\calM$ in Corollary \ref{lemma:invariantringcorollary}.
+The corollary tells us $k[V]^T \cong k[\calM]$, so we conclude
+$$V \git T = \Spec(k[V]^T) \cong \Spec(k[S_\sigma]) = U_\sigma.$$
+\end{proof}
+
+
+
+
+
 \subsection{Examples}\label{section:examples}
 To conclude this thesis, we give examples of computing the cone described in \S \ref{section:torusquotientsastoricvarieties} for different torus quotients $V \git T$. \\
 
@@ -3795,7 +3768,8 @@ $$\bar e_1 = \bar e_2 = v_1 \in N_\RR.$$
 Therefore, the cone is $\sigma = \Span_{\RR_{\ge 0}}\{v_1\}$ in $N_\RR = \Span_{\RR}\{v_1\}$.
 This is a ray in a one dimensional vector space, so the variety $U_\sigma = V \git T$ is the affine line $\AA^1$. \\
 
-(2) Consider $T = (k^\times)^2$ acting on $V$ by the weights $\chi_1 = \varepsilon_1, \chi_2 = - \varepsilon_1,$ and $\chi_3 = \varepsilon_2$, where $\{\varepsilon_1, \varepsilon_2\}$ is a basis for $X^*(T)$. 
+(2) 
+Consider $T = (k^\times)^2$ acting on $V$ by the weights $\chi_1 = \varepsilon_1, \chi_2 = - \varepsilon_1,$ and $\chi_3 = \varepsilon_2$, where $\{\varepsilon_1, \varepsilon_2\}$ is a basis for $X^*(T)$. 
 Lemma \ref{lemma:invariantring} tells us that invariant monomials $Z^\mu$ correspond to tuples $\mu \in \ZZ_{\ge 0}^2$ such that 
 $$\sum_{i=1}^3 \mu_i \chi_i = (\mu_1 - \mu_2) \varepsilon_1 + \mu_3 \varepsilon_2 = 0.$$
 We see $\mu_1 = \mu_2$ and $\mu_3 = 0$.
@@ -3805,8 +3779,7 @@ If we instead consider the representation $\tilde V$ with weights $\chi_1, \chi_
 There holds
 $$k[V]^T = k[Z_1 Z_2] \cong k[\tilde V]^T,$$
 and the quotients $V \git T$ and $\tilde V \git T$ are isomorphic.
-We have $\tilde V \git T \cong \AA^1$, and the computation of the cone for $\tilde V \git T$ is essentially the same as the first example above.
-\\
+We have $\tilde V \git T \cong \AA^1$, and the computation of the cone for $\tilde V \git T$ is essentially the same as the first example above. \\
 
 (3)
 Consider the subgroup of diagonal matrices $T \cong (k^\times)^3$ in $\GL_3(k)$.

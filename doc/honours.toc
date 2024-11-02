@@ -43,6 +43,6 @@
 \contentsline {subsection}{\tocsubsection {}{5.1}{Algebraic groups and their actions}}{44}{subsection.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.2}{The affine GIT quotient}}{45}{subsection.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.3}{Invariants of a linear torus action}}{47}{subsection.5.3}%
-\contentsline {subsection}{\tocsubsection {}{5.4}{Torus quotients as toric varieties}}{50}{subsection.5.4}%
-\contentsline {subsection}{\tocsubsection {}{5.5}{Examples}}{53}{subsection.5.5}%
-\contentsline {section}{\tocsection {}{}{References}}{55}{section*.21}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{Torus quotients as toric varieties}}{49}{subsection.5.4}%
+\contentsline {subsection}{\tocsubsection {}{5.5}{Examples}}{51}{subsection.5.5}%
+\contentsline {section}{\tocsection {}{}{References}}{54}{section*.21}%

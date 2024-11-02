@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  1 NOV 2024 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  2 NOV 2024 21:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -858,30 +858,30 @@ LaTeX Warning: Label `sub@fig:B' multiply defined.
 )
 \openout1 = `honours.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 278.
-LaTeX Font Info:    ... okay on input line 278.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 278
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 279.
+LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 279
 .
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 278
+LaTeX Font Info:    Trying to load font information for U+msb on input line 279
 .
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -909,25 +909,25 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 278.
+Package hyperref Info: Link coloring OFF on input line 279.
 
 (./honours.out) (./honours.out)
 \@outlinefile=\write4
 \openout4 = `honours.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 278.
-Package microtype Info: Applying patch `item' on input line 278.
-Package microtype Info: Applying patch `toc' on input line 278.
-Package microtype Info: Applying patch `eqnum' on input line 278.
-Package microtype Info: Applying patch `footnote' on input line 278.
-Package microtype Info: Applying patch `verbatim' on input line 278.
+LaTeX Info: Redefining \microtypecontext on input line 279.
+Package microtype Info: Applying patch `item' on input line 279.
+Package microtype Info: Applying patch `toc' on input line 279.
+Package microtype Info: Applying patch `eqnum' on input line 279.
+Package microtype Info: Applying patch `footnote' on input line 279.
+Package microtype Info: Applying patch `verbatim' on input line 279.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 278.
+LaTeX Info: Redefining \showhyphens on input line 279.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -945,7 +945,7 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 <../images/UQLogo.jpg, id=191, 1185.42876pt x 473.77pt>
 File: ../images/UQLogo.jpg Graphic file (type jpg)
 <use ../images/UQLogo.jpg>
-Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 284.
+Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 285.
 (pdftex.def)             Requested size: 284.52756pt x 113.71434pt.
 
 
@@ -975,14 +975,14 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <../images/orange_sphere.pdf, id=278, 260.975pt x 283.0575pt>
 File: ../images/orange_sphere.pdf Graphic file (type pdf)
 <use ../images/orange_sphere.pdf>
-Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 451.
+Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 452.
 (pdftex.def)             Requested size: 108.04164pt x 117.18591pt.
 <../images/orange_cone.pdf, id=279, 260.975pt x 260.975pt>
 File: ../images/orange_cone.pdf Graphic file (type pdf)
 <use ../images/orange_cone.pdf>
-Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 472.
+Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 473.
 (pdftex.def)             Requested size: 86.43364pt x 86.43262pt.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 507
+LaTeX Font Info:    Trying to load font information for U+euf on input line 508
 .
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1010,33 +1010,33 @@ Underfull \vbox (badness 1014) has occurred while \output is active []
 [6]
 
 Package amsrefs Warning: The form \cite{...}*{...} is recommended
-(amsrefs)                instead of \cite[...]{...} on input line 792.
+(amsrefs)                instead of \cite[...]{...} on input line 793.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 827.
+(hyperref)                removing `math shift' on input line 828.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 827.
+(hyperref)                removing `math shift' on input line 828.
 
 
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 879.
+(hyperref)                removing `math shift' on input line 880.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 879.
+(hyperref)                removing `math shift' on input line 880.
 
 
 
 [8]
 
 LaTeX Warning: Reference `The Nullstellensatz' on page 9 undefined on input lin
-e 921.
+e 922.
 
 
 
@@ -1050,7 +1050,7 @@ e 921.
 
 [13]
 
-LaTeX Warning: Citation `AM' on page 14 undefined on input line 1316.
+LaTeX Warning: Citation `AM' on page 14 undefined on input line 1317.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
@@ -1067,10 +1067,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 [17]
 
 LaTeX Warning: Reference `chapter:algebraicsubsets' on page 18 undefined on inp
-ut line 1555.
+ut line 1556.
 
 
-Overfull \hbox (1.13847pt too wide) in paragraph at lines 1570--1574
+Overfull \hbox (1.13847pt too wide) in paragraph at lines 1571--1575
 []\OT1/cmr/m/n/12 (-20) First, choose gen-er-a-tors $\OML/cmm/m/it/12 a[]; [] ;
  a[]$ \OT1/cmr/m/n/12 (-20) for $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 (-20) . The
  $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 (-20) -algebra ho-mo-mor-phism $\OML/cmm/m
@@ -1099,7 +1099,7 @@ cmm/m/it/12 X[]; [] ; X[]\OT1/cmr/m/n/12 (-20) ] \OMS/cmsy/m/n/12 !
 [26]
 
 LaTeX Warning: Reference `affinetoricvarieties' on page 27 undefined on input l
-ine 2064.
+ine 2065.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1121,7 +1121,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
-652.
+653.
 (pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
 
 
@@ -1129,7 +1129,7 @@ Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
 <../images/fultons_cones.png, id=719, 782.925pt x 206.27063pt>
 File: ../images/fultons_cones.png Graphic file (type png)
 <use ../images/fultons_cones.png>
-Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2674.
+Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2675.
 (pdftex.def)             Requested size: 375.80544pt x 99.01192pt.
 
 
@@ -1145,10 +1145,10 @@ Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2674.
 
 [39]
 
-LaTeX Warning: Reference `' on page 40 undefined on input line 3037.
-
-
 LaTeX Warning: Reference `' on page 40 undefined on input line 3038.
+
+
+LaTeX Warning: Reference `' on page 40 undefined on input line 3039.
 
 
 
@@ -1162,6 +1162,10 @@ LaTeX Warning: Reference `' on page 40 undefined on input line 3038.
 
 [44]
 
+LaTeX Warning: Reference `' on page 45 undefined on input line 3300.
+
+
+
 [45]
 
 [46]
@@ -1173,36 +1177,34 @@ LaTeX Warning: Reference `' on page 40 undefined on input line 3038.
 [49]
 
 [50]
+Underfull \hbox (badness 10000) in paragraph at lines 3750--3751
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3767--3770
+
+ []
+
+
 
 [51]
+Underfull \hbox (badness 10000) in paragraph at lines 3780--3783
+
+ []
+
+
 
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 3777--3778
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3794--3797
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3806--3810
-
- []
-
-
 
 [53]
-
-[54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[55]
+[54]
 
-[56] (./honours.aux)
+[55] (./honours.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
@@ -1218,13 +1220,13 @@ Package rerunfilecheck Info: File `honours.out' has not changed.
 (rerunfilecheck)             Checksum: 9077C8C7DE2110A61D02941125663AD8;8795.
  ) 
 Here is how much of TeX's memory you used:
- 39750 strings out of 473579
- 889824 string characters out of 5732263
- 1403935 words of memory out of 5000000
- 61160 multiletter control sequences out of 15000+600000
- 589088 words of font info for 293 fonts, out of 8000000 for 9000
+ 39732 strings out of 473579
+ 889628 string characters out of 5732263
+ 1403940 words of memory out of 5000000
+ 61156 multiletter control sequences out of 15000+600000
+ 586861 words of font info for 278 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 84i,21n,111p,1004b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,21n,111p,1004b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{cite.AM} has been referenced but does not exist, re
 placed by a fixed one
@@ -1255,12 +1257,11 @@ texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texliv
 e/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/20
 24/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/
-fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type
-1/public/cm-super/sfti1200.pfb>
-Output written on honours.pdf (62 pages, 1206837 bytes).
+fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on honours.pdf (61 pages, 1206378 bytes).
 PDF statistics:
- 1206 PDF objects out of 1440 (max. 8388607)
- 1040 compressed objects within 11 object streams
- 350 named destinations out of 1000 (max. 500000)
- 58774 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1223 PDF objects out of 1440 (max. 8388607)
+ 1060 compressed objects within 11 object streams
+ 363 named destinations out of 1000 (max. 500000)
+ 54678 words of extra memory for PDF output out of 61914 (max. 10000000)
 

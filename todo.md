@@ -2,23 +2,14 @@
 [ ] Write prerequisites section in GIT chapter
 [ ] Edit Chapter 1
 
-
 0. Introduction (4--5 pages)
 [ ] Try to expand descarte/fermat section
 [ ] Decide when to first mention "affine" varieties. Make a disclaimer about only affine varieties considered.
+[ ] Mention our result implies k[V]^T is f.g. without using Hilberts result
 
 1. Algebraic sets (12 pages)
-1.1.
-1.2.
-1.3. The Zariski topology
-[ ] Expand this section 
-1.4.
-1.5.
-1.6.
-1.7.
-1.8.
-1.9.
-1.10
+[ ] Reorganise sections
+[ ] Expand the Zariski topology section 
 
 2. Affine varieties (10--12 pages)
 [ ] Fix proof that homs A to B are the same as morphisms Spec(B) to Spec(A)
@@ -49,9 +40,8 @@
 [ ] Consider which examples to add, and write these up
 5.3. Invariants of a torus acting on a vector space
 5.4. A^n//T as a toric variety
-[ ] Make sure assumption is clear; in particular, that it doesn't change the quotient
+[x] Make sure assumption is clear; in particular, that it doesn't change the quotient
 5.5. Examples
-[x] Finish writing these up
 
 Aesthetic/etc. things to do later:
 [ ] Put examples in non-italics
