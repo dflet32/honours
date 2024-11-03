@@ -314,17 +314,16 @@
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \section*{Acknowledgements}
 %Masoud, Yang, Bailey, Stefano, honours students, parents.
-I would like to thank my supervisor Masoud Kamgarpour for sharing his time and wisdom with me throughout this year.
-His guidance was invaluable, and I learnt how to be a better mathematician from him.
+I would like to thank my supervisor, Masoud Kamgarpour, for his invaluable guidance and support throughout this project.
+I am grateful for the time we spent discussing mathematics, and for the wisdom he shared with me.
 
-I would also like to thank my co-supervisor Yang Zhang for his help during this project.
-Our discussions were always insightful.
+I would also like to thank my co-supervisor, Yang Zhang, for his help during this project.
+He shared his time generously, and our discussions were always insightful.
 
-I must thank my friends Bailey Whitbread and Stefano Giannini for their technical and editorial help.
-Bailey, in particular, spent many hours editing this thesis with me.
-Bailey taught me a lot about how to communicate mathematics, and his help greatly improved the quality of this thesis.
+I am grateful to my friends, Bailey Whitbread and Stefano Giannini, for their good company, as well as their technical and editorial assistance.
+Bailey, in particular, spent many hours editing this thesis, and his feedback taught me how to communicate mathematics effectively.
 
-Finally, I must thank my parents for their unending love and support.
+Finally, I want to thank my parents for their endless love.
 Their support of my education has shaped me into the person I am today.
 
 \newpage
@@ -832,11 +831,6 @@ The curve $\bV(Y^2 - X^3)$ is algebraic, and it is an example of a so-called cus
 \end{enumerate}
 \end{example}
 
-
-
-
-
-\subsection{The map $\bV$}
 Our discussion above tells us that to study zero sets of polynomials, it suffices to study zero sets of ideals in $A$.
 The map
 $$\bV : \{\text{ideals } I \subseteq A\} \to \{\text{algebraic subsets } V \subseteq \AA^n\}, \qquad I \mapsto \bV(I),$$
@@ -865,11 +859,6 @@ Conversely, for each $\alpha$, part (1) tells us $\bV(I_\alpha) \supseteq \bV\le
 $\bigcap_{\alpha\in\calA} \bV(I_\alpha) \supseteq \bV\left(\sum_{\alpha\in\calA} I_\alpha\right).$
 \end{proof}
 
-
-
-
-
-\subsection{The Zariski topology}
 Proposition \ref{vproperties} tells us arbitrary intersections and finite unions of algebraic sets are algebraic.
 In Example \ref{algsetex}, we saw $\emptyset$ and $\AA^n$ are algebraic.
 Together, these imply algebraic subsets of $\AA^n$ form the closed sets for a topology on $\AA^n$; this topology is called the Zariski topology.
@@ -888,7 +877,7 @@ Nonetheless, the Zariski topology plays an important role in studying algebraic 
 
 
 
-\subsection{The map $\bI$}
+\subsection{The ideal of an algebraic set}
 The map $\bV$ gave us a map from ideals to algebraic subsets; this is our first link between algebra and geometry.
 There is another map $\bI$, taking subsets of $\AA^n$ to ideals, defined as
 $$\bI: \{\text{subsets } V \subseteq \AA^n\} \to \{\text{ideals } I \subseteq A\}, \quad V\mapsto \bI(V) := \{f \in A : f(P) = 0 \text{ for all } P \in V\}.$$
@@ -1078,7 +1067,7 @@ $$
 
 
 
-\subsection{Coordinate rings and regular functions}
+\subsection{Coordinate rings and polynomial maps}
 Let $V \subseteq \AA^n$ be an algebraic set.
 The coordinate ring of $V$ is defined as
 $$k[V] := k[X_1, \ldots, X_n] / \bI(V).$$
@@ -1155,17 +1144,6 @@ so in view of Proposition \ref{reducedradical}, $\bI(W)$ is radical if and only 
 This establishes the first bijection, and the other two are analogous.
 \end{proof}
 
-
-
-
-
-\subsection{Products of algebraic sets}
-
-
-
-
-
-\subsection{Polynomial maps between algebraic sets}\label{section:polynomialmaps}
 Throughout this section, let $V \subseteq \AA^n$ and $W \subseteq \AA^m$ be algebraic sets.
 We write $X_1, \ldots, X_n$ for the coordinates on $\AA^n$ and $Y_1, \ldots, Y_m$ for the coordinates on $\AA^m$.
 
@@ -1283,6 +1261,8 @@ This set is not algebraic, so the image of a polynomial map is not necessarily a
 \end{example}
 
 
+\subsection{Products of algebraic sets}
+
 
 
 
@@ -1390,11 +1370,6 @@ Then, the coordinate ring of $(k^\times)^n$ is
 $$k[X_1, \ldots, X_n]_{X_1 \cdots X_n} = k[X_1, X_1^{-1}, \ldots, X_n, X_n^{-1}],$$
 the ring of Laurent polynomials.
 
-
-
-
-
-\subsection{Regular functions}
 Let $V$ be an algebraic subset of $\AA^n$.
 When studying some class of objects, we need an appropriate idea of the structure-preserving maps between them.
 One such kind of a map for algebraic sets are the polynomial maps, which we saw in \S \ref{section:polynomialmaps}.
@@ -1467,7 +1442,6 @@ To see $f \in \calO_V(U)$, note that if $P \in U$, then $P\in U_i$ for some $i$,
 
 
 \newpage
-%\addtocontents{toc}{\vskip 1em}
 \section{Affine varieties}\label{chapter:affinevarieties}
 In this chapter, we define and study affine varieties---these are spaces which `look like' algebraic sets, but defined without needing to be embedded in an affine space.
 This definition is necessary because we usually want to study spaces without an ambient space.

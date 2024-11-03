@@ -10,15 +10,11 @@
 \setcounter {tocdepth}{2}
 \contentsline {section}{\tocsection {}{1}{Algebraic sets}}{7}{section.1}%
 \contentsline {subsection}{\tocsubsection {}{1.1}{Affine space and algebraic sets}}{7}{subsection.1.1}%
-\contentsline {subsection}{\tocsubsection {}{1.2}{The map $\mathbf {V}$}}{7}{subsection.1.2}%
-\contentsline {subsection}{\tocsubsection {}{1.3}{The Zariski topology}}{8}{subsection.1.3}%
-\contentsline {subsection}{\tocsubsection {}{1.4}{The map $\mathbf {I}$}}{8}{subsection.1.4}%
-\contentsline {subsection}{\tocsubsection {}{1.5}{The Nullstellensatz}}{9}{subsection.1.5}%
-\contentsline {subsection}{\tocsubsection {}{1.6}{Coordinate rings and regular functions}}{11}{subsection.1.6}%
-\contentsline {subsection}{\tocsubsection {}{1.7}{Products of algebraic sets}}{12}{subsection.1.7}%
-\contentsline {subsection}{\tocsubsection {}{1.8}{Polynomial maps between algebraic sets}}{12}{subsection.1.8}%
-\contentsline {subsection}{\tocsubsection {}{1.9}{Open subsets of algebraic sets}}{14}{subsection.1.9}%
-\contentsline {subsection}{\tocsubsection {}{1.10}{Regular functions}}{16}{subsection.1.10}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{The ideal of an algebraic set}}{8}{subsection.1.2}%
+\contentsline {subsection}{\tocsubsection {}{1.3}{The Nullstellensatz}}{9}{subsection.1.3}%
+\contentsline {subsection}{\tocsubsection {}{1.4}{Coordinate rings and polynomial maps}}{11}{subsection.1.4}%
+\contentsline {subsection}{\tocsubsection {}{1.5}{Products of algebraic sets}}{13}{subsection.1.5}%
+\contentsline {subsection}{\tocsubsection {}{1.6}{Open subsets of algebraic sets}}{14}{subsection.1.6}%
 \contentsline {section}{\tocsection {}{2}{Affine varieties}}{17}{section.2}%
 \contentsline {subsection}{\tocsubsection {}{2.1}{Sheaves and their morphisms}}{17}{subsection.2.1}%
 \contentsline {subsection}{\tocsubsection {}{2.2}{The definition of varieties}}{18}{subsection.2.2}%

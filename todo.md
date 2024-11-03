@@ -1,5 +1,5 @@
 # TO DO
-[ ] Write prerequisites section in GIT chapter
+[X] Write prerequisites section in GIT chapter
 [ ] Edit Chapter 1
 
 0. Introduction (4--5 pages)
@@ -32,23 +32,15 @@
 [ ] Make sure reference makes sense ("Recall that to evaluate the regular function ... we compute ")
 4.6. Singularities
 
-5. Affine GIT quotients as affine toric varieties (10 pages)
-5.1. Algebraic groups and their actions
-[ ] Find references for claims made about reductive etc
-[ ] Write up examples of computing invariant rings
-5.2. The affine GIT quotient
-[ ] Add examples of GIT quotients with their quotient maps
-5.3. Invariants of a torus acting on a vector space
-5.4. A^n//T as a toric variety
-5.5. Examples
+5. Affine GIT quotients as affine toric varieties (11 pages)
+[ ] Get Stef to read intro, 5.1 and quotient maps sections
 
 Aesthetic/etc. things to do later:
-[ ] Fix table of contents
-[ ] Acknowledgements
+[x] Fix table of contents
+[x] Acknowledgements
 [ ] Fix \emph usage
 [ ] Fix James Milne Reference (Lie algebras vs alg geo)
 [ ] Fix reference list
-[ ] Fix hyperlink style
 [ ] Put examples in non-italics/make sure all environments look right
 [ ] Big plot of a singular example.
 [ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).
