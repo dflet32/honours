@@ -39,10 +39,10 @@
 \contentsline {subsection}{\tocsubsection {}{4.4}{Faces and open affine subsets}}{40}{subsection.4.4}%
 \contentsline {subsection}{\tocsubsection {}{4.5}{The torus action}}{41}{subsection.4.5}%
 \contentsline {subsection}{\tocsubsection {}{4.6}{Singularities}}{42}{subsection.4.6}%
-\contentsline {section}{\tocsection {}{5}{GIT quotients as toric varieties}}{44}{section.5}%
+\contentsline {section}{\tocsection {}{5}{Torus quotients as toric varieties}}{44}{section.5}%
 \contentsline {subsection}{\tocsubsection {}{5.1}{Algebraic groups and their actions}}{44}{subsection.5.1}%
-\contentsline {subsection}{\tocsubsection {}{5.2}{The affine GIT quotient}}{45}{subsection.5.2}%
-\contentsline {subsection}{\tocsubsection {}{5.3}{Invariants of a linear torus action}}{47}{subsection.5.3}%
-\contentsline {subsection}{\tocsubsection {}{5.4}{Torus quotients as toric varieties}}{49}{subsection.5.4}%
-\contentsline {subsection}{\tocsubsection {}{5.5}{Examples}}{51}{subsection.5.5}%
-\contentsline {section}{\tocsection {}{}{References}}{54}{section*.21}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{The affine GIT quotient}}{47}{subsection.5.2}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{Invariants of a linear torus action}}{49}{subsection.5.3}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{The cone of a torus quotient}}{50}{subsection.5.4}%
+\contentsline {subsection}{\tocsubsection {}{5.5}{Examples}}{53}{subsection.5.5}%
+\contentsline {section}{\tocsection {}{}{References}}{55}{section*.21}%

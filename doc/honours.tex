@@ -313,7 +313,19 @@
 \newpage
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \section*{Acknowledgements}
-Masoud, Yang, Bailey, Stefano, honours students, parents.
+%Masoud, Yang, Bailey, Stefano, honours students, parents.
+I would like to thank my supervisor Masoud Kamgarpour for sharing his time and wisdom with me throughout this year.
+His guidance was invaluable, and I learnt how to be a better mathematician from him.
+
+I would also like to thank my co-supervisor Yang Zhang for his help during this project.
+Our discussions were always insightful.
+
+I must thank my friends Bailey Whitbread and Stefano Giannini for their technical and editorial help.
+Bailey, in particular, spent many hours editing this thesis with me.
+Bailey taught me a lot about how to communicate mathematics, and his help greatly improved the quality of this thesis.
+
+Finally, I must thank my parents for their unending love and support.
+Their support of my education has shaped me into the person I am today.
 
 \newpage
 \hfill
@@ -3232,9 +3244,17 @@ Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\
 
 
 \newpage
-\section{GIT quotients as toric varieties}\label{chapter:gitquotientsastoricvarieties}
+\section{Torus quotients as toric varieties}\label{chapter:gitquotientsastoricvarieties}
+In this chapter, we prove the main theorem of this thesis.
+We show that when $V$ is a rational representation of a torus $T$, the GIT quotient $V \git T$ is a toric variety.
+To prepare for the proof, we define algebraic groups, and their actions and representations in \S \ref{section:algebraicgroups}.
+Next, we define the GIT quotient in \S \ref{section:gitquotient}.
+In \S \ref{section:invariantsoftorus}, we compute the invariant ring for the action of $T$ on $V$.
+Following this, we can prove the theorem in \S \ref{section:torusquotientsastoricvarieties}.
+To conclude the thesis, in \S \ref{section:examples}, we compute examples of the cone corresponding to the toric variety $V \git T$.
 
-\subsection{Algebraic groups and their actions}
+
+\subsection{Algebraic groups and their actions}\label{section:algebraicgroups}
 In this section, we introduce the theory of algebraic groups necessary for defining the GIT quotient in \S \ref{section:gitquotient}.
 We first define algebraic groups, their actions, and representations.
 Following this, we discuss classic invariant theory and the problem of finite generation of invariants.
@@ -3322,81 +3342,69 @@ The map $\ZZ^n \to X^*(T)$ given by $e_i \mapsto \chi_i$ is an isomorphism of ab
 in particular, $\{\chi_1, \ldots, \chi_n\}$ is a basis of $X^*(T)$.
 \end{example}
 
-%\begin{example}\label{gitexamples}
-%Add an example that will give a singular GIT quotient.
-%\begin{enumerate}
+We now turn to classical invariant theory.
+We will discuss rings of invariants, and in particular, when these are finitely generated.
+For further details, see \cite{FSR17} or \cite{Mukai03}.
+
+Suppose that $G$ is an algebraic group acting on an affine variety $V = \Spec(A)$, where $A$ is a finitely generated reduced $k$-algebra.
+There is an induced action on $A$, given by
+$$(g \cdot f)(P) := f(g^{-1} \cdot P).$$
+The \emph{ring of invariants} is
+$$A^G := \{f \in A : g \cdot f = f \text{ for all } g \in G\}.$$
+
+In the late nineteenth century, classical invariant theorists studied $A^G$ in the case when $V$ is a vector space (in which case, $A$ is the ring of polynomial functions on $V$) \cite{DC70}.
+An important problem in classical invariant theory is to determine when $A^G$ is finitely generated.
+For example, in 1868, Gordan computed a finite set of generators when $\SL_2(\CC)$ acts on the vector space of two variable homogeneous polynomials.
+In 1890, Hilbert showed that if $V$ is a finite-dimensional representation of $G = \SL_n(\CC)$, then $A^G$ is finitely generated.
+
+In fact, Hilbert's 1890 proof shows that the invariants of any representation of a \emph{reductive} group are finitely generated \cite[\S 3.1]{DC70}.
+A group is reductive if it is connected and has trivial \emph{unipotent radical} (c.f.\ \cite[\S 19.5]{Humphreys75}).
+Examples of reductive groups include $\GL_n(k)$, $\SL_n(k)$, and tori.
+
+When Mumford developed the theory of GIT in the 1960s, he was interested in when $A^G$ is finitely generated when $V$ is an arbitrary algebraic variety.
+He conjectured $A^G$ is always finitely generated for reductive groups \cite{Mumford65}.
+Nagata proved that $A^G$ is finitely generated for so-called \emph{geometrically reductive} groups.
+Later, Haboush proved that the notions of reductivity and geometric reductivity are equivalent for groups defined over a field of characteristic zero, thereby proving Mumford's conjecture in the characteristic zero case \cite[\S 12.1]{FSR17}.
+The upshot is that when $G$ is reductive, $A^G$ is the coordinate ring of an affine variety---this will be important in \S \ref{section:gitquotient}.
+
+To conclude this section, we provide examples of rings of invariants.
+
+\begin{example}\label{example:invariantrings}
+\begin{enumerate}
+\item
+Consider the group $G = k^\times$ acting on $V = \AA^2$ by 
+$$t \cdot (x, y) = (tx, t^{-1}y),$$
+for $t \in k^\times$ and $(x, y) \in \AA^2$.
+We can write a polynomial $p \in k[X,Y]$ as $p = \sum_{i, j} p_{ij} X^i Y^j$, where the sum is over all positive integers $i$ and $j$ and all but finitely many coefficients $p_{ij}$ are zero.
+Then $p$ is $k^\times$ invariant if and only if for all $t \in k^\times$,
+$$\sum_{i, j} p_{ij} X^i Y^j = \sum_{i, j} p_{ij} t^{i-j} X^i Y^j.$$
+This is equivalent to having $p_{ij} \ne 0$ if and only if $i = j$.
+Thus, we have that
+$$k[X, Y]^{k^\times} = \CC[XY].$$
+
+\item
+Consider $G = \GL_2(k)$ acting on its Lie algebra $V = \frakg = \frakg\frakl_2(k)$ by conjugation.
+We know from linear algebra that the trace and determinant of a matrix are invariant under conjugation, so $\tr, \det \in k[\frakg]^G$.
+In fact, $\tr$ and $\det$ generate the invariant ring and are algebraically independent \cite[Example 44]{Kamgarpour21}.
+We conclude that the invariant ring is the free polynomial ring
+$$k[\frakg]^G = k[\tr, \det].$$
+
+\item
+Consider $G = S_2 = \{1, \sigma\}$ acting on $V = \AA^2$ by
+$$\sigma \cdot (x, y) = (-x, -y),$$
+for $(x, y) \in \AA^2$.
+Then $p = \sum_{i, j} p_{ij} X^i Y^j \in k[X, Y]$ is invariant if and only if
+$$\sum_{i, j} p_{ij} X^i Y^j = \sum_{i, j} p_{ij} (-1)^{i+j} X^i Y^j.$$
+The above equality holds if and only if $i + j$ is even whenever $p_{ij}\ne 0$.
+Any monomial $X^iY^j$ such that $i+j$ is even is a product of the monomials $X^2, XY$ and $Y^2$.
+Thus,
+$$k[X, Y]^{S_2} = k[X^2, XY, Y^2] \cong k[A, B, C]/(B^2 - AC).$$
+
 %\item
-%Consider the group $\CC^\times$ acting on the affine space $\CC^2$ by 
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%t \cdot (x, y) = (tx, t^{-1}y), \qquad t \in \CC^\times, (x, y) \in \CC^2.
-%$$
-%Suppose a polynomial $p$ has coefficients $a_{ij} \in \CC$ such that
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%p(X, Y) = \sum_{i, j} a_{ij} X^i Y^j.
-%$$
-%Then $p$ is $\CC^\times$ invariant if and only if for all $t \in \CC^\times$,
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\sum_{i,j} a_{ij} X^i Y^j = \sum_{i,j} a_{ij} t^{i-j} X^i Y^j.
-%$$
-%This is equivalent to having $a_{ij} \ne 0$ if and only if $i = j$.
-%Thus, we have that
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\CC[X, Y]^{\CC^\times} = \CC[XY], \qquad \text{and} \qquad \CC^2 \git \CC^\times = \Spec(\CC[XY]) \cong \CC.
-%$$
-%
-%%\item
-%%Let $G$ be $\GL_2(\CC)$ and $T$ the maximal torus of invertible diagonal matrices in $G$.
-%%The action of $G$ on its Lie algbera $\frakg = \frakg \frakl_2(\CC)$ by conjugation induces an action of $T$ on $\frakg$.
-%%Specifically, if $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \in T$ and $\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in \frakg$, 
-%%$$\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \cdot \begin{pmatrix} x & y \\ z & w \end{pmatrix} 
-%%= \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} \begin{pmatrix} x & y \\ z & w \end{pmatrix} \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}^{-1}
-%%= \begin{pmatrix} x & a b^{-1} y \\ a^{-1} b z & w \end{pmatrix}.$$
-%%Let $X \in \CC[\frakg]$ be the coordinate function defined by $X \left(\begin{pmatrix} x & y \\ z & w \end{pmatrix}  \right) := x$, and define $Y, W, Z \in \CC[\frakg]$ analogously.
-%%Then $\CC[\frakg] = \CC[X, Y, Z, W]$.
-%%Since $T$ acts trivially on the diagonal entries of an element in $\frakg$, $X, W \in \CC[\frakg]^T$.
-%%The action on the off-diagonal entries is analogous to the action in part (1);
-%%by the same argument that we used in part (1), a polynomial $p$ is invariant if and only if for each monomial in $p$, the exponent of $Y$ is equal to the exponent of $Z$.
-%%Therefore,
-%%$$\CC[\frakg]^T = \CC[X, W, YZ], \qquad \text{and} \qquad \frakg \git T = \Spec(\CC[X, W, YZ]) \cong \CC^3.$$
-%
-%\item
-%Let $S_2 = \langle \sigma \, | \, \sigma^2 = 1 \rangle$ act on $\CC^2$ by
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\sigma \cdot (x, y) = (y, x).
-%$$
-%Polynomials which are invariant under the induced action on $\CC[X, Y]$ are called symmetric polynomials.
-%We compute $\CC[X, Y]^{S_2}$, i.e., the ring of symmetric polynomials in two variables;
-%this computation is a special case of the fundamental theorem of symmetric polynomials, which characterises $\CC[X_1, \ldots, X_n]^{S_n}$ when $S_n$ acts on $\CC^n$ by permuting coordinates (see \cite[Chapter IV, \S 6]{Lang02} for a proof of the general theorem).
-%
-%We claim that $\CC[X,Y]^{S_2} = \CC[XY, X+Y]$.
-%It is clear that $XY$ and $X+Y$ are symmetric, so we just need to show any symmetric polynomial lies in $\CC[XY, X+Y]$.
-%A polynomial can be written uniquely as a sum of homogeneous polynomials, and the polynomial is symmetric if and only if each homogeneous part is.
-%In turn, each homogeneous part is symmetric if and only if it is a $\CC$-linear combination of terms of the form $X^i Y^j + X^j Y^i$ for some $i, j \in \ZZ_{\ge 0}$.
-%If $i = j$, then clearly $X^i Y^j + X^j Y^i = 2 (XY)^i \in \CC[XY, X+Y]$.
-%Otherwise, we can assume without loss of generality $i < j$.
-%Then $X^i Y^j + X^j Y^i = (XY)^{i} (Y^{j-i} + X^{j-i})$, and it suffices to show $X^n + Y^n \in \CC[XY, X+Y]$ for all $n \ge 1$ to prove our claim.
-%We proceed by induction on $n$; clearly $X+Y$ and $X^2 + Y^2 = (X+Y)^2 - 2 XY$ lie in $\CC[XY, X+Y],$ so the $n=1$ and $n=2$ cases hold.
-%Then for $n \ge 3$,
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%X^n + Y^n = (X^{n-1} + Y^{n-1})(X+Y) - XY (X^{n-2} + Y^{n-2}) \in \CC[XY, X+Y],
-%$$
-%which completes the induction.
-%It can be shown that $XY$ and $X+Y$ are algebraically independent \cite[Chapter IV, \S 6]{Lang02}.
-%We then have that
-%$$\CC^2 \git S_2= \Spec(\CC[XY, X+Y]) \cong \CC^2.$$
-%
-%\item
-%This is example is studied in \cite{Kamgarpour21}.
-%Consider the group $G = \GL_2(\CC)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(\CC)$ by conjugation.
-%We use the same notation as part (2) for coordinate functions so that $\CC[\frakg] = \CC[X, Y, Z, W]$.
+%This is example is studied in \cite[Example 44]{Kamgarpour21}.
+%Consider the group $G = \GL_2(k)$ acting on its Lie algebra $V = \frakg\frakl_2(k)$ by conjugation.
 %A polynomial is invariant if and only if it is constant on the orbits of the action.
-%Then $f \in \CC[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form, we can take to be
+%Then $f \in k[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form\footnote{Since $k$ is algebraically closed and has characteristic zero.}, we can take to be
 %$$
 %\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
 %\begin{pmatrix}
@@ -3410,9 +3418,9 @@ in particular, $\{\chi_1, \ldots, \chi_n\}$ is a basis of $X^*(T)$.
 %\begin{pmatrix}
 %	\lambda & 1 \\
 %	0 & \lambda 
-%\end{pmatrix}, \qquad \lambda, \mu \in \CC.
+%\end{pmatrix}, \qquad \lambda, \mu \in k.
 %$$
-%We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in \CC[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
+%We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in k[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
 %\begin{align*}
 %\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
 %f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) 
@@ -3430,8 +3438,8 @@ in particular, $\{\chi_1, \ldots, \chi_n\}$ is a basis of $X^*(T)$.
 %Thus we have an isomorphism $\CC[\frakg]^G \cong \CC[X, W]^{S_2}$.
 %Therefore,
 %$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2.$$
-%\end{enumerate}
-%\end{example}
+\end{enumerate}
+\end{example}
 
 
 
@@ -3514,10 +3522,24 @@ Each closure-equivalence class contains exactly one closed orbit, so points in $
 See \cite[\S 5.1]{Mukai03}, in particular, Theorem 5.9 and Corollary 5.5.
 \end{proof}
 
-We conclude by giving examples of GIT quotients and their quotient maps.
+We conclude by giving examples of the GIT quotients for the group actions studied in Example \ref{example:invariantrings}.
 
 \begin{example}
+\begin{enumerate}
+\item 
+Consider $G = \GL_2(k)$ acting on its Lie algebra $V = \frakg = \frakg\frakl_2(k)$ by conjugation.
+We saw that $k[\frakg]^G = k[\tr, \det]$, and $\tr$ and $\det$ are algebraically independent.
+Then, we have
+$$\frakg \git G = \Spec(k[\tr, \det]) = k^2.$$
+The affine quotient map $\pi : \frakg \to k^2$ is given by $A \mapsto (\tr A, \det A).$
 
+\item
+Consider $G = S_2 = \{1, \sigma\}$ acting on $V = \AA^2$ by $\sigma \cdot (x, y) = (-x, -y)$.
+We saw that $k[X, Y]^{S_2} = k[X^2, XY, Y^2] \cong k[A, B, C]/(B^2 - AC).$
+Then, we have
+$$\AA^2 \git S_2 = \Spec(k[X^2, XY, Y^2]) \cong \bV(B^2 - AC).$$
+The affine quotient map $\pi : \AA^2 \to \bV(B^2 - AC)$ is given by $(x, y) \mapsto (x^2, xy, y^2).$
+\end{enumerate}
 \end{example}
 
 
@@ -3613,7 +3635,7 @@ The map $k[V]^T \to k[\calM]$ defined by $Z^\mu \mapsto \mu$ is an algebra isomo
 
 
 
-\subsection{Torus quotients as toric varieties}\label{section:torusquotientsastoricvarieties}
+\subsection{The cone of a torus quotient}\label{section:torusquotientsastoricvarieties}
 Recall $V$ is a rational representation of a torus $T$.
 Our goal in this section is to prove the quotient $V \git T$ is a toric variety.
 We saw in Lemma \ref{lemma:invariantringcorollary} that $k[V]^T \cong k[\calM]$, so our strategy is to find a cone $\sigma$ such that $k[S_\sigma] \cong k[\calM]$.
@@ -3932,6 +3954,19 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    review={\MR{3024570}},
 }
 
+\bib{DC70}{article}{
+   author={Dieudonn\'e, Jean A.},
+   author={Carrell, James B.},
+   title={Invariant theory, old and new},
+   journal={Advances in Math.},
+   volume={4},
+   date={1970},
+   pages={1--80 (1970)},
+   issn={0001-8708},
+   review={\MR{0255525}},
+   doi={10.1016/0001-8708(70)90015-0},
+}
+
 \bib{Dolgachev03}{book}{
    author={Dolgachev, Igor},
    title={Lectures on invariant theory},
@@ -3943,6 +3978,20 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    isbn={0-521-52548-9},
    review={\MR{2004511}},
    doi={10.1017/CBO9780511615436},
+}
+
+\bib{FSR17}{book}{
+   author={Ferrer Santos, Walter Ricardo},
+   author={Rittatore, Alvaro},
+   title={Actions and invariants of algebraic groups},
+   series={Monographs and Research Notes in Mathematics},
+   edition={2},
+   publisher={CRC Press, Boca Raton, FL},
+   date={2017},
+   pages={xx+459},
+   isbn={978-1-4822-3915-7},
+   review={\MR{3617213}},
+   doi={10.1201/9781315118482},
 }
 
 \bib{Fulton93}{book}{

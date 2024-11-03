@@ -34,20 +34,21 @@
 
 5. Affine GIT quotients as affine toric varieties (10 pages)
 5.1. Algebraic groups and their actions
-[ ] Write
-[ ] Mention all reductive stuff
+[ ] Find references for claims made about reductive etc
+[ ] Write up examples of computing invariant rings
 5.2. The affine GIT quotient
-[ ] Consider which examples to add, and write these up
+[ ] Add examples of GIT quotients with their quotient maps
 5.3. Invariants of a torus acting on a vector space
 5.4. A^n//T as a toric variety
-[x] Make sure assumption is clear; in particular, that it doesn't change the quotient
 5.5. Examples
 
 Aesthetic/etc. things to do later:
-[ ] Put examples in non-italics
 [ ] Fix table of contents
 [ ] Acknowledgements
 [ ] Fix \emph usage
 [ ] Fix James Milne Reference (Lie algebras vs alg geo)
+[ ] Fix reference list
+[ ] Fix hyperlink style
+[ ] Put examples in non-italics/make sure all environments look right
 [ ] Big plot of a singular example.
 [ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).

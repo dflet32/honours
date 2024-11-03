@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  2 NOV 2024 21:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  3 NOV 2024 13:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,14 +975,14 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <../images/orange_sphere.pdf, id=278, 260.975pt x 283.0575pt>
 File: ../images/orange_sphere.pdf Graphic file (type pdf)
 <use ../images/orange_sphere.pdf>
-Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 452.
+Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 464.
 (pdftex.def)             Requested size: 108.04164pt x 117.18591pt.
 <../images/orange_cone.pdf, id=279, 260.975pt x 260.975pt>
 File: ../images/orange_cone.pdf Graphic file (type pdf)
 <use ../images/orange_cone.pdf>
-Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 473.
+Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 485.
 (pdftex.def)             Requested size: 86.43364pt x 86.43262pt.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 508
+LaTeX Font Info:    Trying to load font information for U+euf on input line 520
 .
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1010,33 +1010,33 @@ Underfull \vbox (badness 1014) has occurred while \output is active []
 [6]
 
 Package amsrefs Warning: The form \cite{...}*{...} is recommended
-(amsrefs)                instead of \cite[...]{...} on input line 793.
+(amsrefs)                instead of \cite[...]{...} on input line 805.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 828.
+(hyperref)                removing `math shift' on input line 840.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 828.
+(hyperref)                removing `math shift' on input line 840.
 
 
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 880.
+(hyperref)                removing `math shift' on input line 892.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 880.
+(hyperref)                removing `math shift' on input line 892.
 
 
 
 [8]
 
 LaTeX Warning: Reference `The Nullstellensatz' on page 9 undefined on input lin
-e 922.
+e 934.
 
 
 
@@ -1050,7 +1050,7 @@ e 922.
 
 [13]
 
-LaTeX Warning: Citation `AM' on page 14 undefined on input line 1317.
+LaTeX Warning: Citation `AM' on page 14 undefined on input line 1329.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
@@ -1067,10 +1067,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 [17]
 
 LaTeX Warning: Reference `chapter:algebraicsubsets' on page 18 undefined on inp
-ut line 1556.
+ut line 1568.
 
 
-Overfull \hbox (1.13847pt too wide) in paragraph at lines 1571--1575
+Overfull \hbox (1.13847pt too wide) in paragraph at lines 1583--1587
 []\OT1/cmr/m/n/12 (-20) First, choose gen-er-a-tors $\OML/cmm/m/it/12 a[]; [] ;
  a[]$ \OT1/cmr/m/n/12 (-20) for $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 (-20) . The
  $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 (-20) -algebra ho-mo-mor-phism $\OML/cmm/m
@@ -1099,7 +1099,7 @@ cmm/m/it/12 X[]; [] ; X[]\OT1/cmr/m/n/12 (-20) ] \OMS/cmsy/m/n/12 !
 [26]
 
 LaTeX Warning: Reference `affinetoricvarieties' on page 27 undefined on input l
-ine 2065.
+ine 2077.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1121,7 +1121,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
-653.
+665.
 (pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
 
 
@@ -1129,7 +1129,7 @@ Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
 <../images/fultons_cones.png, id=719, 782.925pt x 206.27063pt>
 File: ../images/fultons_cones.png Graphic file (type png)
 <use ../images/fultons_cones.png>
-Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2675.
+Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2687.
 (pdftex.def)             Requested size: 375.80544pt x 99.01192pt.
 
 
@@ -1145,10 +1145,10 @@ Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2675.
 
 [39]
 
-LaTeX Warning: Reference `' on page 40 undefined on input line 3038.
+LaTeX Warning: Reference `' on page 40 undefined on input line 3050.
 
 
-LaTeX Warning: Reference `' on page 40 undefined on input line 3039.
+LaTeX Warning: Reference `' on page 40 undefined on input line 3051.
 
 
 
@@ -1162,7 +1162,7 @@ LaTeX Warning: Reference `' on page 40 undefined on input line 3039.
 
 [44]
 
-LaTeX Warning: Reference `' on page 45 undefined on input line 3300.
+LaTeX Warning: Reference `' on page 45 undefined on input line 3320.
 
 
 
@@ -1177,34 +1177,36 @@ LaTeX Warning: Reference `' on page 45 undefined on input line 3300.
 [49]
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 3750--3751
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3767--3770
-
- []
-
-
 
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 3780--3783
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 3772--3773
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3789--3792
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3802--3805
 
  []
 
 
 
-[52]
-
 [53]
+
+[54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[54]
+[55]
 
-[55] (./honours.aux)
+[56] (./honours.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
@@ -1217,14 +1219,14 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `honours.out' has not changed.
-(rerunfilecheck)             Checksum: 9077C8C7DE2110A61D02941125663AD8;8795.
+(rerunfilecheck)             Checksum: 4E05B14F33C7352965223310991CCF8C;8778.
  ) 
 Here is how much of TeX's memory you used:
- 39732 strings out of 473579
- 889628 string characters out of 5732263
+ 39761 strings out of 473579
+ 889935 string characters out of 5732263
  1403940 words of memory out of 5000000
- 61156 multiletter control sequences out of 15000+600000
- 586861 words of font info for 278 fonts, out of 8000000 for 9000
+ 61164 multiletter control sequences out of 15000+600000
+ 587233 words of font info for 283 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,21n,111p,1004b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1258,10 +1260,10 @@ e/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/20
 24/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/
 fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on honours.pdf (61 pages, 1206378 bytes).
+Output written on honours.pdf (62 pages, 1216175 bytes).
 PDF statistics:
- 1223 PDF objects out of 1440 (max. 8388607)
- 1060 compressed objects within 11 object streams
- 363 named destinations out of 1000 (max. 500000)
+ 1254 PDF objects out of 1440 (max. 8388607)
+ 1090 compressed objects within 11 object streams
+ 374 named destinations out of 1000 (max. 500000)
  54678 words of extra memory for PDF output out of 61914 (max. 10000000)
 
