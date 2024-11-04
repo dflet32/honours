@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  3 NOV 2024 14:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  4 NOV 2024 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -644,34 +644,147 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2024/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks48
+\t@pgfplots@tokb=\toks49
+\t@pgfplots@tokc=\toks50
+\pgfplots@tmpa=\dimen270
+\c@pgfplots@coordindex=\count322
+\c@pgfplots@scanlineindex=\count323
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
+x))
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_loader.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks51
+\t@pgf@tokb=\toks52
+\t@pgf@tokc=\toks53
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_pgfutil-common-lists.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+cture.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+ctureext.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
+de.tex
+\c@pgfplotsarray@tmp=\count324
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
+ode.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
+ode.tex
+\c@pgfplotstable@counta=\count325
+\t@pgfplotstable@a=\toks54
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
+de.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.
+tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.te
+x)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
+ading.code.tex
+\c@pgfplotslibrarysurf@no=\count326
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
+ding.pgfsys-pdftex.def)))
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.t
+ex
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex
+))) (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.t
+ex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
+ex
+\pgfdecoratedcompleteddistance=\dimen271
+\pgfdecoratedremainingdistance=\dimen272
+\pgfdecoratedinputsegmentcompleteddistance=\dimen273
+\pgfdecoratedinputsegmentremainingdistance=\dimen274
+\pgf@decorate@distancetomove=\dimen275
+\pgf@decorate@repeatstate=\count327
+\pgfdecorationsegmentamplitude=\dimen276
+\pgfdecorationsegmentlength=\dimen277
+)
+\tikz@lib@dec@box=\box69
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathmorphing.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathmorphing.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathreplacing.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathreplacing.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.conto
+urlua.code.tex)
+\pgfplots@numplots=\count328
+\pgfplots@xmin@reg=\dimen278
+\pgfplots@xmax@reg=\dimen279
+\pgfplots@ymin@reg=\dimen280
+\pgfplots@ymax@reg=\dimen281
+\pgfplots@zmin@reg=\dimen282
+\pgfplots@zmax@reg=\dimen283
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.
+tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count322
-\float@exts=\toks48
-\float@box=\box69
-\@float@everytoks=\toks49
-\@floatcapt=\box70
-) (c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+\c@float@type=\count329
+\float@exts=\toks55
+\float@box=\box70
+\@float@everytoks=\toks56
+\@floatcapt=\box71
+)
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen270
-\captionmargin=\dimen271
-\caption@leftmargin=\dimen272
-\caption@rightmargin=\dimen273
-\caption@width=\dimen274
-\caption@indent=\dimen275
-\caption@parindent=\dimen276
-\caption@hangindent=\dimen277
+\caption@tempdima=\dimen284
+\captionmargin=\dimen285
+\caption@leftmargin=\dimen286
+\caption@rightmargin=\dimen287
+\caption@width=\dimen288
+\caption@indent=\dimen289
+\caption@parindent=\dimen290
+\caption@hangindent=\dimen291
 Package caption Info: AMS or SMF document class detected.
 
 (c:/texlive/2024/texmf-dist/tex/latex/caption/caption-ams-smf.sto
 File: caption-ams-smf.sto 2020/08/22 v2.0 Adaption of the caption package to th
 e AMS and SMF document classes (AR)
 ))
-\c@caption@flags=\count323
-\c@continuedfloat=\count324
+\c@caption@flags=\count330
+\c@continuedfloat=\count331
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
@@ -693,136 +806,25 @@ File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.cod
 e.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen278
-\pgfarrowlength=\dimen279
-\pgfarrowwidth=\dimen280
-\pgfarrowlinewidth=\dimen281
+\pgfarrowinset=\dimen292
+\pgfarrowlength=\dimen293
+\pgfarrowwidth=\dimen294
+\pgfarrowlinewidth=\dimen295
 )))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarydecorations.pathmorphing.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarydecorations.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
-ex
-\pgfdecoratedcompleteddistance=\dimen282
-\pgfdecoratedremainingdistance=\dimen283
-\pgfdecoratedinputsegmentcompleteddistance=\dimen284
-\pgfdecoratedinputsegmentremainingdistance=\dimen285
-\pgf@decorate@distancetomove=\dimen286
-\pgf@decorate@repeatstate=\count325
-\pgfdecorationsegmentamplitude=\dimen287
-\pgfdecorationsegmentlength=\dimen288
-)
-\tikz@lib@dec@box=\box71
-)
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
-orations.pathmorphing.code.tex)))
-\c@theorem=\count326
+))
+\c@theorem=\count332
 
 (c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count327
+\c@subfigure=\count333
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count328
+\c@subtable=\count334
 )
-(c:/texlive/2024/texmf-dist/tex/latex/pgfplots/pgfplots.sty
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
-
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks50
-\t@pgfplots@tokb=\toks51
-\t@pgfplots@tokc=\toks52
-\pgfplots@tmpa=\dimen289
-\c@pgfplots@coordindex=\count329
-\c@pgfplots@scanlineindex=\count330
-
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
-x))
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
-
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
-upp_loader.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks53
-\t@pgf@tokb=\toks54
-\t@pgf@tokc=\toks55
-
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
-upp_pgfutil-common-lists.tex))
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
-cture.code.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
-ctureext.code.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
-de.tex
-\c@pgfplotsarray@tmp=\count331
-)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
-ode.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
-ode.tex
-\c@pgfplotstable@counta=\count332
-\t@pgfplotstable@a=\toks56
-)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
-de.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.
-tex))
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.te
-x)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
-ading.code.tex
-\c@pgfplotslibrarysurf@no=\count333
-
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
-ding.pgfsys-pdftex.def)))
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.t
-ex
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex
-))) (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
-
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.t
-ex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarydecorations.pathreplacing.code.tex
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
-orations.pathreplacing.code.tex))
-(c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.conto
-urlua.code.tex)
-\pgfplots@numplots=\count334
-\pgfplots@xmin@reg=\dimen290
-\pgfplots@xmax@reg=\dimen291
-\pgfplots@ymin@reg=\dimen292
-\pgfplots@ymax@reg=\dimen293
-\pgfplots@zmin@reg=\dimen294
-\pgfplots@zmax@reg=\dimen295
-)
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-braryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.
-tex
-File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (c:/texlive/2024/texmf-dist/tex/latex/tikz-3dplot/tikz-3dplot.sty
+(c:/texlive/2024/texmf-dist/tex/latex/tikz-3dplot/tikz-3dplot.sty
 (c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
@@ -858,30 +860,30 @@ LaTeX Warning: Label `sub@fig:B' multiply defined.
 )
 \openout1 = `honours.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 279
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 281.
+LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 281
 .
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 279
+LaTeX Font Info:    Trying to load font information for U+msb on input line 281
 .
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -909,25 +911,25 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 279.
+Package hyperref Info: Link coloring OFF on input line 281.
 
 (./honours.out) (./honours.out)
 \@outlinefile=\write4
 \openout4 = `honours.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 279.
-Package microtype Info: Applying patch `item' on input line 279.
-Package microtype Info: Applying patch `toc' on input line 279.
-Package microtype Info: Applying patch `eqnum' on input line 279.
-Package microtype Info: Applying patch `footnote' on input line 279.
-Package microtype Info: Applying patch `verbatim' on input line 279.
+LaTeX Info: Redefining \microtypecontext on input line 281.
+Package microtype Info: Applying patch `item' on input line 281.
+Package microtype Info: Applying patch `toc' on input line 281.
+Package microtype Info: Applying patch `eqnum' on input line 281.
+Package microtype Info: Applying patch `footnote' on input line 281.
+Package microtype Info: Applying patch `verbatim' on input line 281.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 279.
+LaTeX Info: Redefining \showhyphens on input line 281.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -936,16 +938,15 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 <../images/UQLogo.jpg, id=175, 1185.42876pt x 473.77pt>
 File: ../images/UQLogo.jpg Graphic file (type jpg)
 <use ../images/UQLogo.jpg>
-Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 285.
+Package pdftex.def Info: ../images/UQLogo.jpg  used on input line 287.
 (pdftex.def)             Requested size: 284.52756pt x 113.71434pt.
 
 
@@ -964,27 +965,37 @@ ogo.jpg>]
 
 [5]
 
-[6] (c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
+[6]
+
+Package amsrefs Warning: The form \cite{...}*{...} is recommended
+(amsrefs)                instead of \cite[...]{...} on input line 339.
+
+(c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 
-[1]
-<../images/orange_sphere.pdf, id=258, 260.975pt x 283.0575pt>
+[1{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+Package amsrefs Warning: Use of \cites is recommended instead of \cite 
+(amsrefs)                for multiple cites 'Reid88, Milne23' on input line 450
+.
+
+<../images/orange_sphere.pdf, id=268, 260.975pt x 283.0575pt>
 File: ../images/orange_sphere.pdf Graphic file (type pdf)
 <use ../images/orange_sphere.pdf>
-Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 463.
+Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 473.
 (pdftex.def)             Requested size: 108.04164pt x 117.18591pt.
-<../images/orange_cone.pdf, id=259, 260.975pt x 260.975pt>
+<../images/orange_cone.pdf, id=269, 260.975pt x 260.975pt>
 File: ../images/orange_cone.pdf Graphic file (type pdf)
 <use ../images/orange_cone.pdf>
-Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 484.
+Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 494.
 (pdftex.def)             Requested size: 86.43364pt x 86.43262pt.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 519
+LaTeX Font Info:    Trying to load font information for U+euf on input line 528
 .
- (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 (c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-euf.cfg
@@ -1000,28 +1011,23 @@ ultiple pdfs with page group included in a single page
 
 [3]
 
-[4{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \vbox (badness 1014) has occurred while \output is active []
-
-
+[4]
 
 [5]
 
+LaTeX Warning: Citation `Proudfoot' on page 6 undefined on input line 743.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
 [6]
-
-Package amsrefs Warning: The form \cite{...}*{...} is recommended
-(amsrefs)                instead of \cite[...]{...} on input line 804.
-
-
 
 [7]
 
 [8]
-
-LaTeX Warning: Reference `The Nullstellensatz' on page 9 undefined on input lin
-e 923.
-
-
 
 [9]
 
@@ -1033,18 +1039,9 @@ e 923.
 
 [13]
 
-LaTeX Warning: Citation `AM' on page 14 undefined on input line 1309.
-
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-
 [14]
 
-LaTeX Warning: Reference `section:polynomialmaps' on page 15 undefined on input
- line 1375.
+LaTeX Warning: Citation `AM' on page 15 undefined on input line 1354.
 
 
 
@@ -1054,11 +1051,10 @@ LaTeX Warning: Reference `section:polynomialmaps' on page 15 undefined on input
 
 [17]
 
-LaTeX Warning: Reference `chapter:algebraicsubsets' on page 18 undefined on inp
-ut line 1542.
+[18]
 
-
-Overfull \hbox (1.13847pt too wide) in paragraph at lines 1557--1561
+[19]
+Overfull \hbox (1.13847pt too wide) in paragraph at lines 1609--1613
 []\OT1/cmr/m/n/12 (-20) First, choose gen-er-a-tors $\OML/cmm/m/it/12 a[]; [] ;
  a[]$ \OT1/cmr/m/n/12 (-20) for $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 (-20) . The
  $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 (-20) -algebra ho-mo-mor-phism $\OML/cmm/m
@@ -1068,16 +1064,7 @@ cmm/m/it/12 X[]; [] ; X[]\OT1/cmr/m/n/12 (-20) ] \OMS/cmsy/m/n/12 !
 
 
 
-[18]
-
-[19]
-
 [20]
-
-LaTeX Warning: Reference `section:polynomialmaps' on page 21 undefined on input
- line 1677.
-
-
 
 [21]
 
@@ -1085,23 +1072,23 @@ LaTeX Warning: Reference `section:polynomialmaps' on page 21 undefined on input
 
 [23]
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
 [24]
 
 [25]
 
 [26]
 
-LaTeX Warning: Reference `affinetoricvarieties' on page 27 undefined on input l
-ine 2051.
+[27]
 
+[28]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-
-[27]
-
-[28]
 
 [29]
 
@@ -1110,40 +1097,33 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [31]
 
 [32]
-<../images/cox cone example 2.png, id=685, 158.09062pt x 264.23718pt>
+
+[33]
+
+[34]
+<../images/cox cone example 2.png, id=737, 158.09062pt x 264.23718pt>
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
-639.
+601.
 (pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
 
 
-[33 <../images/cox cone example 2.png>]
-<../images/fultons_cones.png, id=697, 782.925pt x 206.27063pt>
+[35 <../images/cox cone example 2.png>]
+<../images/fultons_cones.png, id=749, 782.925pt x 206.27063pt>
 File: ../images/fultons_cones.png Graphic file (type png)
 <use ../images/fultons_cones.png>
-Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2661.
+Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2623.
 (pdftex.def)             Requested size: 375.80544pt x 99.01192pt.
 
 
-[34 <../images/fultons_cones.png>]
-
-[35]
-
-[36]
+[36 <../images/fultons_cones.png>]
 
 [37]
 
 [38]
 
 [39]
-
-LaTeX Warning: Reference `' on page 40 undefined on input line 3024.
-
-
-LaTeX Warning: Reference `' on page 40 undefined on input line 3025.
-
-
 
 [40]
 
@@ -1154,10 +1134,6 @@ LaTeX Warning: Reference `' on page 40 undefined on input line 3025.
 [43]
 
 [44]
-
-LaTeX Warning: Reference `' on page 45 undefined on input line 3294.
-
-
 
 [45]
 
@@ -1174,32 +1150,36 @@ LaTeX Warning: Reference `' on page 45 undefined on input line 3294.
 [51]
 
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 3746--3747
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3763--3766
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3776--3779
-
- []
-
-
 
 [53]
 
 [54]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 3705--3706
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3722--3725
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3735--3738
+
+ []
 
 
 
 [55]
 
-[56] (./honours.aux)
+[56]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[57]
+
+[58] (./honours.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
@@ -1212,19 +1192,23 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `honours.out' has not changed.
-(rerunfilecheck)             Checksum: 855C741DCA3102CE6C4C44DFCCEB2AF4;8080.
+(rerunfilecheck)             Checksum: 9AC6EFC95D0A5B2F17C5293056E74DCB;8080.
  ) 
 Here is how much of TeX's memory you used:
- 39749 strings out of 473579
- 889780 string characters out of 5732263
- 1403940 words of memory out of 5000000
- 61160 multiletter control sequences out of 15000+600000
- 587050 words of font info for 281 fonts, out of 8000000 for 9000
+ 40313 strings out of 473579
+ 902302 string characters out of 5732263
+ 1397997 words of memory out of 5000000
+ 61708 multiletter control sequences out of 15000+600000
+ 587279 words of font info for 286 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,21n,111p,1004b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{cite.AM} has been referenced but does not exist, re
 placed by a fixed one
+
+
+pdfTeX warning (dest): name{cite.Proudfoot} has been referenced but does not ex
+ist, replaced by a fixed one
 
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texli
 ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/t
@@ -1253,10 +1237,10 @@ e/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/20
 24/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/
 fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on honours.pdf (62 pages, 1214548 bytes).
+Output written on honours.pdf (64 pages, 1228122 bytes).
 PDF statistics:
- 1231 PDF objects out of 1440 (max. 8388607)
- 1067 compressed objects within 11 object streams
- 370 named destinations out of 1000 (max. 500000)
- 54646 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1281 PDF objects out of 1440 (max. 8388607)
+ 1113 compressed objects within 12 object streams
+ 374 named destinations out of 1000 (max. 500000)
+ 52598 words of extra memory for PDF output out of 61914 (max. 10000000)
 

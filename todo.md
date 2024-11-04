@@ -1,21 +1,21 @@
 # TO DO
-[X] Write prerequisites section in GIT chapter
 [ ] Edit Chapter 1
+[ ] Edit Chapter 2
 
 0. Introduction (4--5 pages)
-[ ] Try to expand descarte/fermat section
-[ ] Decide when to first mention "affine" varieties. Make a disclaimer about only affine varieties considered.
-[ ] Mention our result implies k[V]^T is f.g. without using Hilberts result
+[x] Try to expand descarte/fermat section
+[x] Decide when to first mention "affine" varieties. Make a disclaimer about only affine varieties considered.
+[x] Mention our result implies k[V]^T is f.g. without using Hilberts result
 
 1. Algebraic sets (12 pages)
-[ ] Reorganise sections
+[x] Reorganise sections
 [ ] Expand the Zariski topology section 
 
 2. Affine varieties (10--12 pages)
-[ ] Fix proof that homs A to B are the same as morphisms Spec(B) to Spec(A)
-[ ] Explain how points in Spec(A) are homs A to k (example in morphisms section). Explain how to evaluate regular functions at homomorphisms.
+[X] Fix proof that homs A to B are the same as morphisms Spec(B) to Spec(A)
+[X] Fix proof that the localisation homomorphism corresponds to the principal open subset X_f
 [ ] Add 29/09 Explicit description of morphisms of affine varieties section to document
-[ ] Fix proof that the localisation homomorphism corresponds to the principal open subset X_f
+[ ] Explain how points in Spec(A) are homs A to k (example in morphisms section). Explain how to evaluate regular functions at homomorphisms.
 
 3. Convex geometry (8 pages)
 
@@ -33,14 +33,13 @@
 4.6. Singularities
 
 5. Affine GIT quotients as affine toric varieties (11 pages)
-[ ] Get Stef to read intro, 5.1 and quotient maps sections
+[x] Get Stef to read intro to chapter, 5.1 and quotient maps sections, as well as tensor prod of coordinate rings section
 
 Aesthetic/etc. things to do later:
-[x] Fix table of contents
-[x] Acknowledgements
-[ ] Fix \emph usage
+[ ] Make \emph usage is consistent
 [ ] Fix James Milne Reference (Lie algebras vs alg geo)
 [ ] Fix reference list
-[ ] Put examples in non-italics/make sure all environments look right
+[ ] Fix c.f. usage
+[ ] Put examples in non-italics/make sure all environments look right. Remove all remark environments.
 [ ] Big plot of a singular example.
 [ ] See if the 3D cone diagram in the convex cones section can be improved to make it clear it extends (i.e. add vectors pointing out).
