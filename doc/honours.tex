@@ -335,10 +335,10 @@ Their support of my education has shaped me into the person I am today.
 \section*{Introduction}\label{chapter:introduction}
 \subsection*{Revolutions in geometry}
 Mathematicians have studied geometry since ancient times.
-Around 300 BC, the Greek mathematician Euclid wrote his textbook The Elements.
-Euclid's axiomatisation of geometry in The Elements established a rigorous foundation for mathematical proof \cite[Chapter 2]{Stillwell20}.
+Around 300 BC, the Greek mathematician Euclid wrote his textbook the \emph{Elements}.
+Euclid's axiomatisation of geometry in the \emph{Elements} established a rigorous foundation for mathematical proof \cite[Chapter 2]{Stillwell20}.
 Euclid often used straight-edge and compass arguments to construct geometric shapes.
-In these arguments, one can draw circles of fixed radii with a compass, and straight lines using the straight-edge, but distances and angles cannot be measured.
+In these arguments, one can draw circles of fixed radii with a compass, and straight lines using a straight-edge, but distances and angles cannot be measured.
 To illustrate this approach, we show the steps in a straight-edge and compass proof demonstrating the existence of equilateral triangles below:
 \begin{figure}[H]
 \begin{center}
@@ -394,9 +394,9 @@ To illustrate this approach, we show the steps in a straight-edge and compass pr
 \caption{Constructing an equilateral triangle by straight-edge and compass.}
 \end{figure}
 \noindent
-The Elements set the foundations for the study of geometry and remained the most important text on the subject for around 2000 years.
+The \emph{Elements} set the foundations for the study of geometry and remained the most important text on the subject for around 2000 years.
 
-In the $17^\text{th}$ century, French mathematicians Ren\'{e} Descartes and Pierre de Fermat independently discovered coordinate geometry \cite[Chapter 7]{Stillwell20}.
+In the $17^\text{th}$ century, French mathematicians Ren\'{e} Descartes and Pierre de Fermat independently discovered \emph{coordinate geometry} \cite[Chapter 7]{Stillwell20}.
 They realised that geometric points could be represented by $(x, y)$ coordinates.
 Further, they described geometric shapes like lines and curves using algebraic equations.
 This breakthrough meant that instead of relying on Euclid's constructive arguments, Descartes and Fermat could solve geometric problems using algebraic manipulation.
@@ -407,7 +407,7 @@ An example of a curve that Descartes studied is the \emph{folium} $X^3 + Y^3 = 3
     \draw[samples=200,domain=124:-35]plot(\x:{2*sin(\x)*cos(\x)/(sin(\x)^3+cos(\x)^3)})
          %(-2,0)--(2,0)(0,-2)--(0,2);
 }
-\caption{The folium of Descartes, $X^3+Y^3+3XY$ \cite[p.\ 113]{Stillwell20}}
+\caption{The folium of Descartes, $X^3+Y^3+3XY$ \cite[p.\ 113]{Stillwell20}.}
 \end{figure}
 
 
@@ -430,11 +430,11 @@ The idea is that given a geometric space, one can associate a ring of functions 
 \end{align*}
 Thus, geometry determines algebra.
 The algebraic properties of $\Fun(V, \CC)$ encode geometric properties of the space $V$.
-More remarkably, given a suitable ring $R$, one can determine a space $V_R$ that has $R$ as its ring of functions:
+More remarkably, given a suitable ring $R$, one can determine a space $\Spec(R)$ that has $R$ as its ring of functions:
 \begin{align*}
 \begin{array}{c}
 	\text{Geometric spaces} \\
-	 V_R
+	 \Spec(R)
 \end{array}
 \scalebox{-1}[1]{$\rightsquigarrow$}
 \begin{array}{c}
@@ -443,11 +443,11 @@ More remarkably, given a suitable ring $R$, one can determine a space $V_R$ that
 \end{array}
 \end{align*}
 Thus, algebra determines geometry.
-Hilbert's great insight, formalised by his famous theorem the Nullstellensatz, was that studying geometry and algebra are equivalent.
-The study of geometry using techniques of abstract algebra is called \emph{algebraic geometry}.
+Hilbert's great insight, formalised by his famous theorem the \emph{Nullstellensatz}, was that studying geometry and algebra are equivalent.
+The field that studies geometry using abstract algebra is called \emph{algebraic geometry}.
 
 \subsection*{Algebraic geometry}
-Algebraic geometry studies spaces called algebraic varieties \cite{Reid88, Milne23}.
+Algebraic geometry studies spaces called \emph{algebraic varieties} \cite{Reid88, Milne23, Hartshorne77}.
 These are sets of solutions $(a_1, \ldots, a_n)$ in $\CC^n$ to polynomial equations
 $$f_1(a_1, \ldots, a_n) = 0, \qquad \ldots, \qquad f_s(a_1, \ldots, a_n) = 0,$$
 where $f_1, \ldots, f_s$ are  $n$-variable polynomials in $\CC[X_1, \ldots, X_n]$.
@@ -499,14 +499,14 @@ Cubic curves and cones provide other examples.
 	\label{figure:fourvarieties}
 \end{figure}
 
-The third and fourth examples in Figure \ref{figure:fourvarieties} demonstrate that varieties may have singularities: these are points where a variety is ``pinched".
+The third and fourth examples in Figure \ref{figure:fourvarieties} demonstrate that varieties may have \emph{singularities}: these are points where a variety is ``pinched".
 The presence of singularities in varieties is one of the key differences between algebraic geometry and differential geometry.
 In differential geometry, one studies smooth manifolds which have no singularities by definition.
 %Singularities are related to tangent spaces of varieties, and singularities arise when the dimension of the tangent space is ``too large."
 
 Algebraic varieties are studied using polynomial functions in $\CC[X_1, \ldots, X_n]$.
 Associated with a variety $V$ is the ideal of functions vanishing on $V$, which is denoted $\bI(V)$.
-Using this, we define the coordinate ring of $V$, 
+Using this, we define the \emph{coordinate ring} of $V$, which is the quotient ring
 $$\CC[V] := \CC[X_1, \ldots, X_n] / \bI(V).$$
 The ring $\CC[V]$ can be thought of as the ring of polynomial functions on $V$.
 Thus, we have associated an algebraic object with the variety $V$.
@@ -514,9 +514,10 @@ The relationship between algebra and geometry is very close:
 the ring $\CC[V]$ determines the variety $V$ up to isomorphism.
 In this sense, the coordinate ring $\CC[V]$ is not just an algebraic shadow of $V$, but in fact, an equivalent object.
 
-The equivalence between geometry and algebra means geometric properties correspond to algebraic properties.
-We will examine this correspondence in Chapters \ref{chapter:algebraicsets} and \ref{chapter:affinevarieties}.
-Below are key examples we will explore from the geometry--algebra dictionary:
+The equivalence between geometry and algebra means geometric properties have algebraic counterparts.
+Below, we list key correspondences in the geometry--algebra dictionary.
+These will be examined in Chapters \ref{chapter:algebraicsets} and \ref{chapter:affinevarieties}.
+
 \begin{center}
 \begin{tabular}{c | c}
 	Geometry & Algebra \\
@@ -524,30 +525,32 @@ Below are key examples we will explore from the geometry--algebra dictionary:
 	Points in $V$ & Maximal ideals of $\CC[V]$ \\
 	Maps $V \to W$ & Homomorphisms $\CC[W] \to \CC[V]$ \\
 	Irreducible varieties $V$ & Integral domains $\CC[V]$ \\
-	Open subsets of $V$ & Localization of $\CC[V]$ \\
-	Tangent spaces $T_PV$ &  Zariski tangent space $(\frakm_P / \frakm_P^2)^*$
+	Open subsets of $V$ & Localizations of $\CC[V]$ \\
+	Tangent spaces $T_PV$ &  Zariski tangent spaces $(\frakm_P / \frakm_P^2)^*$
 \end{tabular}
 \end{center}
 
+\hfill
+
 Our discussion above introduces \emph{affine} algebraic varieties.
-More general algebraic varieties can be constructed by \emph{glueing} together affine varieties \cite[\S 5.0]{Reid88}, but we will not address these here.
+More general algebraic varieties can be constructed by glueing together affine varieties \cite[\S 5.0]{Reid88}, but we will not address these here.
 In this thesis, all varieties are assumed to be affine.
 
 \subsection*{Toric varieties}
 In the $20^\text{th}$ century, algebraic geometers developed powerful tools for studying algebraic varieties, such as cohomology and homological algebra.
 While these tools are abstract, they led to remarkable advances in the field.
-Nevertheless, concrete examples of varieties, where computations can be done explicitly, remain essential to understand the subject \cite[p.\ ix]{Fulton93}.
+Nevertheless, concrete examples of varieties remain essential to understand the subject \cite[p.\ ix]{Fulton93}.
 
 \emph{Toric varieties} are a special class of varieties defined using elementary convex geometry, specifically using objects called \emph{convex cones}.
-The cone defining a variety determines many properties its properties but can also often be computed with explicitly.
-The explicit calculations possible with toric varieties make them particularly valuable as examples in algebraic geometry \cite[p.\ ix]{Fulton93}.
+The cone defining a toric variety determines many of its properties, and can also often be used for explicit computations.
+The explicit computations possible with toric varieties make them particularly valuable as examples in algebraic geometry \cite[p.\ ix]{Fulton93}.
 
 In light of their computation tractability, toric varieties serve as important testing grounds for theories and conjectures in algebraic geometry.
 For example, the Hodge conjecture---one of the million-dollar Millennium Prize Problems---has been proven for toric varieties, but is unresolved in general \cite{BM21}.
 
 Toric varieties are named after the \emph{algebraic torus} $(\CC^\times)^n$.
 This is an example an \emph{algebraic group}: a variety which is also a group.
-Toric varieties contain an algebraic torus as a dense open subset and admit an action of this torus (c.f.\ \S \ref{section:thetorusaction}), so toric varieties can be viewed as generalisations of algebraic tori.
+Toric varieties contain an algebraic torus as a dense open subset and admit an action of this torus (cf.\ \S \ref{section:thetorusaction}), so toric varieties can be viewed as generalisations of algebraic tori.
 
 %Properties of the cone defining a toric variety have interesting interpretations for the variety.
 %For example, there are important subsets of cones called faces, which are themselves cones and thus define their own toric variety.
@@ -562,10 +565,10 @@ where $\{e_1, e_2\}$ is the standard basis for $\RR^2$.
 Using $\sigma$, we compute the \emph{dual cone}
 $$\sigma^\vee = \Span_{\RR_{\ge 0}}\{e_2, 2e_1+ e_2\}.$$
 To define a variety using $\sigma$ and $\sigma^\vee$, we construct a ring using these cones.
-We first assign monomials $r^i s^j$ to integer coordinate points $(i, j)$ in the vector space containing $\sigma^\vee$:
+We first assign monomials $R^i S^j$ to integer-coordinate points $(i, j)$ in the vector space containing $\sigma^\vee$:
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[scale=1.2]
+    \begin{tikzpicture}[scale=1.43]
         % Left diagram
         \begin{scope}[shift={(-2,0)}]
             % Shaded area
@@ -613,20 +616,20 @@ We first assign monomials $r^i s^j$ to integer coordinate points $(i, j)$ in the
 			  %\node[anchor=south ] at (-1, 0.5) { \scriptsize \alert{$r^{-2} s$}};
 			  %\node[anchor=south ] at (-1, 1) { \scriptsize \alert{$r^{-2} s^2$}};
   
-			  \node[anchor=south ] at (-0.5, 0) {\scriptsize {$r^{-1}$}};
-			  \node[anchor=south ] at (-0.5, 0.5) { \scriptsize {$r^{-1} s$}};
-			  \node[anchor=south ] at (-0.5, 1) {\scriptsize {$r^{-1} s^2$}};
+			  \node[anchor=south ] at (-0.5, 0) {\tiny {$R^{-1}$}};
+			  \node[anchor=south ] at (-0.5, 0.5) { \tiny {$R^{-1} S$}};
+			  \node[anchor=south ] at (-0.5, 1) {\tiny {$R^{-1} S^2$}};
 
-			  \node[anchor=south west] at (0, 0.5) {\!\!\! \scriptsize {$s$}};
-			  \node[anchor=south west] at (0, 1) {\!\!\! \scriptsize {$s^2$}};
+			  \node[anchor=south west] at (0, 0.5) {\!\!\! \tiny {$S$}};
+			  \node[anchor=south west] at (0, 1) {\!\!\! \tiny {$S^2$}};
 			  %\node[anchor=south] at (0, 1.5) {\tiny \alert{$Y^3$}};
-			  \node[anchor=south west] at (0.5, 0) {\!\!\!\! \scriptsize {$r$}};
-			  \node[anchor=south west] at (0.5, 0.5) {\!\!\!\! \scriptsize {$r s$}};
-			  \node[anchor=south west] at (0.5, 1) {\!\!\!\!  \scriptsize {$r s^2$}};
+			  \node[anchor=south] at (0.5, 0) {\tiny {$R$}};
+			  \node[anchor=south] at (0.5, 0.5) {\tiny {$R S$}};
+			  \node[anchor=south] at (0.5, 1) {\, \tiny {$R S^2$}};
 			  %\node[anchor=south] at (0.5, 1.5) {\tiny \alert{$X Y^3$}};
-			  \node[anchor=south west] at (1, 0) {\!\!\!\! \scriptsize {$r^2$}};
-			  \node[anchor=south west] at (1, 0.5) {\!\!\!\! \scriptsize {$r^2 s$}};
-			  \node[anchor=south west] at (1, 1) {\!\!\!\! \scriptsize {$r^2 s^2$}};
+			  \node[anchor=south] at (1, 0) { \tiny {$R^2$}};
+			  \node[anchor=south] at (1, 0.5) { \tiny {$R^2 S$}};
+			  \node[anchor=south] at (1, 1) {\,\, \tiny {$R^2 S^2$}};
 			  %\node[anchor=south] at (1, 1.5) {\tiny \alert{$X^2 Y^3$}};
 
             % Vectors
@@ -638,7 +641,7 @@ We first assign monomials $r^i s^j$ to integer coordinate points $(i, j)$ in the
 \end{figure}
 \noindent
 We create a ring $\CC[S_\sigma]$ using the monomials lying in the dual cone:
-$$\CC[S_\sigma] = \CC[1, s, rs, r^2s, s^2,  rs^2, r^2s^2, \ldots] = \CC[s, r^2s, rs] \cong \CC[X, Y, Z]/(XY - Z^2).$$
+$$\CC[S_\sigma] = \CC[1, S, RS, R^2S, S^2,  RS^2, R^2S^2, \ldots] = \CC[S, R^2S, RS] \cong \CC[X, Y, Z]/(XY - Z^2).$$
 Then $U_\sigma$, the toric variety determined by the cone $\sigma$, is defined to be the zero set of the polynomial relation in the ring:
 $$XY = Z^2.$$
 
@@ -650,7 +653,7 @@ In this thesis, we will study varieties arising as quotients of vector spaces by
 %The resulting quotient $\RR/\ZZ$ is homeomorphic to the circle.
 In general, it is a difficult problem to construct quotient spaces in geometry and topology with nice properties.
 For example, consider $\GL_2(\CC)$ acting on $\CC^2$ by matrix multiplication.
-There are two orbits for this action: the origin $\{0\}$ and $\CC^2\setminus\{0\}$.
+There are two orbits for this action: $\{0\}$ and $\CC^2\setminus\{0\}$.
 Using the quotient topology, the set of orbits is not Hausdorff, even though $\CC^2$ is.
 
 Geometric invariant theory (henceforth abbreviated GIT) studies the problem of constructing quotients in algebraic geometry.
@@ -667,26 +670,26 @@ Moreover, the invariant ring $\CC[V]^G$ is finitely generated for a large class 
 However, the invariant ring is not always finitely generated; in 1958, Masayoshi Nagata found an example where $\CC[V]^G$ fails to be finitely generated \cite[Chapter 12]{FSR17}.
 
 Mumford reformulated invariant theory in a geometric way.
-He considered the case where a group $G$ acts on any variety $V$.
+He considered a group $G$ acting on any variety $V$.
 If $\CC[V]$ is the coordinate ring of $V$, then the invariant ring $\CC[V]^G$ is defined as before.
-Because invariant functions are constant on the orbits of the group action, we can think of $\CC[V]^G$ as the ring of polynomial functions on the set of $G$-orbits.
+Because invariant functions are constant on the orbits of the group action, we can think of $\CC[V]^G$ as the ring of polynomial functions on the space of orbits.
 Mumford defined the affine GIT quotient $V \git G$ as the variety with $\CC[V]^G$ as its coordinate ring:
 $$V \git G := \Spec(\CC[V]^G).$$
 The question of when $\CC[V]^G$ is finitely generated remains important for GIT.
-Mumford conjectured the $\CC[V]^G$ is finitely generated for \emph{geometrically reductive} groups, and this was proven by Nagata \cite[Chapter 13]{FSR17}.
-If $\CC[V]^G$ is finitely generated by $m$ polynomials $f_1, \ldots, f_m$, then the GIT quotient $V \git G$ can be embedded in $\CC^m$.
+Mumford conjectured that $\CC[V]^G$ is finitely generated for \emph{geometrically reductive} groups, and this was proven by Nagata \cite[Chapter 13]{FSR17}.
+If $\CC[V]^G$ is finitely generated by $m$ polynomials, then the GIT quotient $V \git G$ can be embedded in $\CC^m$.
 When the ring is not finitely generated, however, the quotient $V \git G$ is not well-defined as a variety, as it would be ``infinite-dimensional".\footnote{Note $\Spec(\CC[V]^G)$ can still be studied as a scheme when $\CC[V]^G$ is not finitely generated, though we will not consider that case in this thesis. See \S \ref{section:themaximalspectrum} for the assumptions we make about coordinate rings of varieties.}
 
 GIT is an important tool for constructing quotients in algebraic geometry.
 However, this approach is not without drawbacks.
 Firstly, the invariant ring $\CC[V]^G$ cannot always be computed explicitly.
-Furthermore, points in $V \git G$ are not always in bijection with the orbits $V / G$, rather, points in the GIT quotient correspond to closed orbits (c.f.\ Theorem \ref{theorem:gittheorem}).
-Another drawback is that the GIT quotient $V \git G$ may be singular, even when $V$ is non-singular (c.f.\ Example \ref{example:gitquotients}).
+Furthermore, points in $V \git G$ are not always in bijection with the orbits $V / G$, rather, points in the GIT quotient correspond to closed orbits (cf.\ Theorem \ref{theorem:gittheorem}).
+Another drawback is that the GIT quotient $V \git G$ may be singular, even when $V$ is non-singular (cf.\ Example \ref{example:gitquotients}).
 
 \subsection*{Goals and structure of this thesis}
 In this thesis, we establish a connection between toric varieties and GIT quotients.
 Specifically, the main goal of this thesis is to prove that when $V$ is a rational representation of a torus $T$, the GIT quotient $V \git T$ is an affine toric variety.
-Our proof shows that the invariant ring $\CC[V]^T$ is finitely generated without appealing to general theorems about finite generation of invariants.
+Our proof shows that the invariant ring $\CC[V]^T$ is finitely generated without appealing to general theorems about the finite generation of invariants.
 
 To achieve our goal, we build up the preqrequisite theory of affine varieties and toric varieties.
 We first explore the basic theory of algebraic sets and affine varieties in Chapter \ref{chapter:algebraicsets} and Chapter \ref{chapter:affinevarieties}, respectively.
@@ -710,12 +713,12 @@ We now detail the contents of each chapter.
 In Chapter \ref{chapter:algebraicsets}, we introduce algebraic sets and develop the relationship between algebra and geometry.
 We see how to associate ideals with algebraic sets, and conversely how to associate algebraic sets with ideals.
 The relationship between ideals and algebraic sets becomes a bijection when we prove the Nullstellensatz.
-We then consider maps on and functions between algebraic sets, and see how these correspond to ring homomorphisms.
-We relate products of algebraic sets to the algebraic operation of taking tensor products of coordinate rings.
+We then consider maps on and functions between algebraic sets.
+We relate direct products of algebraic sets to the algebraic operation of taking tensor products.
 We conclude the chapter by considering open subsets of algebraic sets, and regular functions defined on these.
 
-In Chapter \ref{chapter:affinevarieties}, we abstract our study of algebraic sets by defining affine varieties---these are algebraic sets without a preferred embedding in affine space.
-Generalising our study of polynomial maps between algebraic sets and open subsets of algebraic sets, we consider morphisms and open affine subsets of affine varieties.
+In Chapter \ref{chapter:affinevarieties}, we abstract our study of algebraic sets by defining affine varieties: these are algebraic sets without a preferred embedding in affine space.
+Generalising our study of polynomial maps between algebraic sets, we investigate morphisms of affine varieties.
 We also define tangent spaces and singular points of varieties, and characterise tangent spaces using ideals.
 
 In Chapter \ref{chapter:convexgeometry}, we study the convex geometry we need to investigate toric varieties.
@@ -726,7 +729,7 @@ After defining these properties of convex geometry, we see how they have consequ
 In Chapter \ref{chapter:affinetoricvarieties}, we develop the basic theory of toric varieties.
 We define the semigroup algebra of a cone, then take the maximal spectrum to define a toric variety.
 We investigate the different ways of viewing points in toric varieties from an algebraic perspective.
-We prove that toric varieties arising from cones admit an action of a torus which is a dense open subset---this gives an alternative way to define toric varieties.
+We prove that toric varieties admit an action of a torus which is a dense open subset.
 We also see some ways how the convex geometry of the cone affects the geometry of the toric variety.
 For example, there is a correspondence between faces of cones and certain subsets of varieties. 
 Also, the cone determines whether the corresponding variety is singular.
@@ -740,18 +743,20 @@ To conclude the thesis, we compute examples of the cones corresponding to $V \gi
 \subsection*{Future directions}
 This thesis only considers the affine theory of toric varieties and GIT quotients.
 The theories of toric varieties and GIT can be studied in the general framework of algebraic varieties \cite{Fulton93, Mumford65}.
-The result of this thesis, that $V \git T$ is a toric variety, is also true in the general case (c.f.\ \cite{Proudfoot05} or \cite[Chapter 12]{Dolgachev03}).
-Further, under the correct assumptions the converse is also true, i.e., any toric variety can be understood as a quotient variety \cite[]{CLS11}.
-These results provide interesting future directions for study.
+The main result of this thesis, that $V \git T$ is a toric variety, is also true in the general case (cf.\ \cite{Proudfoot05} or \cite[Chapter 12]{Dolgachev03}).
+Further, under the correct assumptions the converse is also true, i.e., any toric variety can be understood as a quotient variety \cite[Chapter 5]{CLS11}.
+These results provide interesting directions for future study.
 
 This project originally set out to understand a particular torus quotient, namely, $\frakg \git T$.
-Here, $T$ is the maximal torus in a connected complex reductive group $G$ with Lie algebra $\frakg$, and $T$ acts on $\frakg$ by the adjoint action.
+Here, $T$ is a maximal torus in a connected complex reductive group $G$ with Lie algebra $\frakg$, and $T$ acts on $\frakg$ by the adjoint action.
 In the course of investigating this quotient, we discovered the connection with toric varieties.
 The last example of this thesis computes the cone of $\frakg \git T$ when $G = \GL_3(\CC)$.
 A natural direction for future study is to investigate how the theory of toric varieties can help to understand $\frakg \git T$ in the general case.
 
-
-
+\subsection*{Conventions}
+In this thesis, $k$ is an algebraically closed field of characteristic zero, except in \S \ref{section:afffinespacealgsets} and \S \ref{section:ideal} where $k$ is an arbitrary field.
+Coordinates of points are denoted using lowercase letters, for example, $(x, y) \in \AA^2$ or $(a_1, \ldots, a_n) \in \AA^n$.
+Variables in rings are denoted using uppercase letters, for example, $X, Y, Z \in k[X, Y, Z]$ or $X_1, \ldots, X_n \in k[X_1, \ldots, X_n]$.
 
 
 
@@ -769,7 +774,7 @@ We detail this connection, and explain how algebraic properties of rings and ide
 
 
 
-\subsection{Affine space and algebraic sets}
+\subsection{Affine space and algebraic sets}\label{section:afffinespacealgsets}
 Let $k$ be a field.
 Affine $n$-space over $k$, denoted $\AA^n_k$ or $\AA^n$, is the set 
 $$\AA^n := \{(a_1, \ldots, a_n) : a_i \in k\}.$$
@@ -860,7 +865,7 @@ Nonetheless, the Zariski topology plays an important role in studying algebraic 
 
 
 
-\subsection{The ideal of an algebraic set}
+\subsection{The ideal of an algebraic set}\label{section:ideal}
 The map $\bV$ gave us a map from ideals to algebraic subsets; this is our first link between algebra and geometry.
 There is another map $\bI$, taking subsets of $\AA^n$ to ideals, defined as
 $$\bI: \{\text{subsets } V \subseteq \AA^n\} \to \{\text{ideals } I \subseteq A\}, \quad V\mapsto \bI(V) := \{f \in A : f(P) = 0 \text{ for all } P \in V\}.$$
@@ -955,6 +960,7 @@ Algebraically, we can see the reducibility of $V$ since $\bI(V) = (XY)$ is not p
 
 
 \subsection{The Nullstellensatz}\label{section:thenullstellensatz}
+In this section and all sections henceforth, the field $k$ is assumed to be algebraically closed with characteristic zero.
 Our goal in this section is to upgrade the maps $\bV$ and $\bI$ to a bijection between algebraic sets and a particular class of ideals.
 This is achieved by Hilbert's Nullstellensatz (Theorem \ref{null}).
 To state and prove the theorem, we need the following definition:
@@ -1434,7 +1440,7 @@ A function $f : U \to k$ is called regular at $P \in U$ if there exist $g, h \in
 A function $f:U\to k$ is called regular if it is regular at every $P \in U$.
 \end{definition}
 
-It can be shown when $U = V$, the only regular functions on $U$ are the polynomial functions on $V$ (c.f.\ \cite[Proposition 3.11]{Milne23}).
+It can be shown when $U = V$, the only regular functions on $U$ are the polynomial functions on $V$ (cf.\ \cite[Proposition 3.11]{Milne23}).
 
 We now consider an example of a regular function.
 
@@ -1511,7 +1517,7 @@ For the rest of the chapter, we study morphisms and tangent spaces of varieties.
 
 \subsection{Sheaves and their morphisms}\label{varietiessection}
 Proposition \ref{sheafprop} alludes to an important object appearing in many areas of mathematics, called a sheaf.
-We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (c.f.\ {\cite[Chapter II, \S 1]{Hartshorne77}}).
+We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (cf.\ {\cite[Chapter II, \S 1]{Hartshorne77}}).
 
 \begin{definition}[{\cite[Chapter 3, a]{Milne23}}]\label{sheafdef}
 Let $V$ be a topological space and $k$ a field.
@@ -1627,7 +1633,7 @@ To illustrate the theory, we will investigate the case $A=k[X]$ as an example th
 
 \emph{$\Spec(A)$ as a set:}
 the set $\Spec(A)$ is defined to be the set of maximal ideals of $A$.
-This is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (c.f.\ Corollary \ref{corollary:coordinateringbijections}).
+This is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (cf.\ Corollary \ref{corollary:coordinateringbijections}).
 
 \begin{example}
 The maximal ideals in $k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for each $a\in k$.
@@ -1805,7 +1811,7 @@ We then have $\alpha(f) \mapsto \alpha(f) + \ker(\alpha)$, and $\alpha(f) + \ker
 \end{example}
 
 We now show the morphism corresponding to the localization map $A \to A_h$ embeds $\Spec(A_h)$ as a principal open subset of $\Spec(A)$.
-This result will be important when we study toric varieties, as it is used to show there is an open subset of a toric variety isomorphic to an algebraic torus (c.f. Proposition \ref{proposition:facesopensubsets}).
+This result will be important when we study toric varieties, as it is used to show there is an open subset of a toric variety isomorphic to an algebraic torus (cf. Proposition \ref{proposition:facesopensubsets}).
 
 \begin{proposition}[{\cite[Proposition 3.32]{Milne23}}]\label{proposition:localizationembedding}
 Let $V = \Spec(A)$ be an affine variety and $h$ a non-zero element of $A$.
@@ -2115,7 +2121,7 @@ We begin by defining convex cones and providing examples.
 Analogous to how vector spaces have dual spaces, cones have dual cones.
 One of the main results we prove in this chapter is that dualising a convex cone twice yields the same cone---this is a fundamental fact, but the proof is non-trivial.
 Studying cones is more subtle than studying vector spaces because cones are not linear objects.
-For example, a cone may have different dimension to its dual (c.f.\ Example \ref{example:conesandduals}), unlike finite-dimensional vector spaces, where the dimension of the dual is the same.
+For example, a cone may have different dimension to its dual (cf.\ Example \ref{example:conesandduals}), unlike finite-dimensional vector spaces, where the dimension of the dual is the same.
 
 In the context of toric varieties, the cones we are interested in have certain properties like being polyhedral, strongly convex, and rational.
 An important part of this chapter is clearly defining these properties.
@@ -2298,7 +2304,7 @@ In view of Figure \ref{figureconeanddual}, we see  $\sigma^\vee = \Span_{\RR_{\g
 \end{figure}
 
 The following theorem relates a cone to its dual and has many important consequences.
-For example, it is not obvious that dualising a cone twice yields the original cone, but the theorem establishes this fact (c.f.\ Corollary \ref{corollary:doubledual}).
+For example, it is not obvious that dualising a cone twice yields the original cone, but the theorem establishes this fact (cf.\ Corollary \ref{corollary:doubledual}).
 To state the theorem, we need to define a topology on $N_\RR$.
 Choose any norm on $N_\RR$ and define the topology to be the one induced by that norm.
 All norms on a finite-dimensional real vector space induce the same topology, so the topology is independent of the choice of norm.
@@ -2729,7 +2735,7 @@ This definition is straightforward to state, but makes no reference to a cone in
 In this chapter, we use the convex geometry from the previous chapter to define affine toric varieties using cones.
 Afterwards, we prove some fundamental properties, such as the existence of a dense torus which acts on the variety, and computing singularities.
 
-Throughout this chapter, $N$ is a lattice in the vector space $N_\RR$ and $M$ is the dual lattice in $M_\RR = N_\RR^*$ (c.f.\ \S \ref{section:rationalcones}).
+Throughout this chapter, $N$ is a lattice in the vector space $N_\RR$ and $M$ is the dual lattice in $M_\RR = N_\RR^*$ (cf.\ \S \ref{section:rationalcones}).
 A cone $\sigma$ is always assumed to be polyhedral, strongly convex and rational.
 
 %To define an affine toric variety, we first associate a semigroup and semigroup algebra with a cone.
@@ -2763,7 +2769,7 @@ The following result tells us when $S_\sigma$ is finitely generated:
 If $\sigma$ is a rational convex polyhedral cone, then $S_\sigma$ is a finitely generated semigroup.
 \end{theorem}
 \begin{proof}
-We know $\sigma^\vee$ is polyhedral and rational because $\sigma$ is (c.f.\ Theorem \ref{theorem:farkas} and \S \ref{section:rationalcones}).
+We know $\sigma^\vee$ is polyhedral and rational because $\sigma$ is (cf.\ Theorem \ref{theorem:farkas} and \S \ref{section:rationalcones}).
 Then let $u_1, \ldots, u_s \in \sigma^\vee \cap M$ generate $\sigma^\vee$ as a cone.
 Define
 $$K = \left\{\sum_{i=1}^s t_i u_i : 0 \le t_i \le 1\right\} \subseteq M_\RR.$$
@@ -2814,7 +2820,7 @@ The affine toric variety corresponding to $\sigma$ is
 $$U_\sigma := \Spec(k[S_\sigma]).$$
 \end{definition}
 
-As $k[S_\sigma]$ is a finitely generated reduced $k$-algebra, $U_\sigma$ is an affine variety (c.f.\ \S \ref{section:themaximalspectrum}).
+As $k[S_\sigma]$ is a finitely generated reduced $k$-algebra, $U_\sigma$ is an affine variety (cf.\ \S \ref{section:themaximalspectrum}).
 Furthermore, since $k[S_\sigma]$ is an integral domain, $U_\sigma$ is irreducible.
 For example, if $\sigma = \{0\}$, then $S_{\{0\}}= M$, and
 $$U_{\{0\}} = \Spec(k[X_1^\pm, \ldots, X_n^\pm]) = (k^\times)^n$$
@@ -2918,7 +2924,7 @@ $$U_\sigma = \Spec(k[X, Y, Z, W] / (XY - ZW) ) = \bV(XY-ZW).$$
 
 
 \subsection{Points of toric varieties}\label{section:points}
-We have seen how points in affine varieties correspond to maximal ideals in the coordinate ring (c.f.\ \S \ref{section:thenullstellensatz} and \S \ref{section:themaximalspectrum}).
+We have seen how points in affine varieties correspond to maximal ideals in the coordinate ring (cf.\ \S \ref{section:thenullstellensatz} and \S \ref{section:themaximalspectrum}).
 Our goal in this section is to explain the different ways of viewing points in affine toric varieties.
 The fact that the coordinate ring of an affine toric variety arises as a semigroup algebra affords us another perspective of points, namely as semigroup homomorphisms.
 Later, in \S\ref{section:thetorusaction}, we will use the semigroup homomorphism point of view to define a torus action on an affine toric variety.
@@ -2953,8 +2959,8 @@ We now detail the sets named in Proposition \ref{proposition:pointbijections}.
 \begin{enumerate}
 \item The set of points of $U_\sigma = (k^\times)^n$ is $\{(a_1, \ldots, a_n) : a_i \ne 0\}$ (when considering $(k^\times)^n$ embedded in $\AA^n$).
 \item For brevity, let $A$ denote the polynomial ring $k[X_1, \ldots, X_n]$ and $h$ the element $X_1 \cdots X_n$.
-We know $k[S_\sigma]$ is the localization $A_h$ (c.f.\ \S\ref{section:opensubsetsofalgebraicsets}).
-Maximal ideals in $A_h$ are all of the form $\frakm A_h$, where $\frakm$ is a maximal ideal of $A$ not containing $h$ (c.f.\ Proposition \ref{proposition:localizationideals}).
+We know $k[S_\sigma]$ is the localization $A_h$ (cf.\ \S\ref{section:opensubsetsofalgebraicsets}).
+Maximal ideals in $A_h$ are all of the form $\frakm A_h$, where $\frakm$ is a maximal ideal of $A$ not containing $h$ (cf.\ Proposition \ref{proposition:localizationideals}).
 The Nullstellensatz tells us every maximal ideal of $A$ is of the form $\frakm_a = (X_1 - a_1, \ldots, X_n - a_n)$ for some $a = (a_1, \ldots, a_n) \in \AA^n$.
 One readily checks $\frakm_a$ does not contain $h$ if and only if each $a_i$ is non-zero.
 Then the set of maximal ideals in $k[S_\sigma]$ is $$\{\frakm_a A_h : a = (a_1, \ldots, a_n) \in (k^\times)^n\}.$$
@@ -2980,7 +2986,7 @@ In this section, we show how faces of a cone correspond to open affine subsets i
 In particular, we will see that every affine toric variety contains a torus as a dense open subset.
 
 If $\tau$ is a face of $\sigma$, then $\tau^\vee \supseteq \sigma^\vee$ and $S_\tau \supseteq S_\sigma$, since dualising reverses inclusion.
-The inclusion of semigroups $S_\sigma \hookrightarrow S_\tau$ induces the inclusion of $k$-algebras $k[S_\sigma] \hookrightarrow k[S_\tau]$, and hence a morphism $U_\tau \to U_\sigma$ (c.f.\ \S \ref{section:morphisms}).
+The inclusion of semigroups $S_\sigma \hookrightarrow S_\tau$ induces the inclusion of $k$-algebras $k[S_\sigma] \hookrightarrow k[S_\tau]$, and hence a morphism $U_\tau \to U_\sigma$ (cf.\ \S \ref{section:morphisms}).
 The main result of this section is to show this morphism embeds $U_\tau$ as a principal open subset of $U_\sigma$.
 
 \begin{proposition}\label{proposition:facesopensubsets}
@@ -2999,8 +3005,8 @@ Before proving Proposition \ref{proposition:facesopensubsets}, we consider some 
 
 %Recall that $\sigma$ is strongly convex so $\{0\}$ is a face.
 %The proposition then says that $U_\sigma$ has the torus $U_{\{0\}} = (k^\times)^n$ as a principal open subset.
-%In particular, since $U_\sigma$ is irreducible, $(k^\times)^n$ is dense in $U_\sigma$ (c.f.\ \ref{}).
-%As a consequence, we see $\dim U_\sigma= \dim (k^\times)^n = n$, since the dimension of a principal open subset equals the dimension of the variety (c.f.\ \ref{}).
+%In particular, since $U_\sigma$ is irreducible, $(k^\times)^n$ is dense in $U_\sigma$ (cf.\ \ref{}).
+%As a consequence, we see $\dim U_\sigma= \dim (k^\times)^n = n$, since the dimension of a principal open subset equals the dimension of the variety (cf.\ \ref{}).
 %The strongly convex assumption on our cones is then useful for two reasons: it ensures the variety has a torus as a dense open subset, and it means the dimension of the variety agrees with the dimension of the lattice.
 
 For the rest of this thesis, we use $T_N$ to denote the torus $U_{\{0\}}$, which is embedded in every affine toric variety associated with a cone in $N$.
@@ -3074,7 +3080,7 @@ $$\varphi^*(\chi^u)(t, x) = \chi^u(t\cdot x) = (tx)(u) = (\chi^u \otimes \chi^u)
 Then $\varphi^* : k[S_\sigma] \to k[M] \otimes k[S_\sigma]$ is given by $\chi^u \mapsto \chi^u \otimes \chi^u$, which is clearly a homomorphism.
 
 The semigroup homomorphism corresponding to the identity in $T_N$ is the trivial homomorphism $1_{T_N} : M \to k^\times$.
-Using this, and the fact that the product in $T_N$ is given by the product of semigroup homomorphisms (c.f.\ \S \ref{section:points}), it is straightforward to check $1 \cdot x = x$ and $t_1\cdot(t_2\cdot x) = (t_1t_2)\cdot x$.
+Using this, and the fact that the product in $T_N$ is given by the product of semigroup homomorphisms (cf.\ \S \ref{section:points}), it is straightforward to check $1 \cdot x = x$ and $t_1\cdot(t_2\cdot x) = (t_1t_2)\cdot x$.
 Then $\varphi$ is a group action.
 
 We also need to check this action extends the natural action of $T_N$ on itself by left multiplication.
@@ -3128,7 +3134,7 @@ $$U_\sigma \cong k^r \times (k^\times)^{n-r},$$
 where $r = \dim(\sigma)$.
 \end{theorem}
 
-We have already seen that $U_\sigma$ is isomorphic to $k^r \times (k^\times)^{n-r}$ when $\sigma$ is generated by $r$ basis vectors of $N$ (c.f.\ Example \ref{example:affinetoricvarieties}).
+We have already seen that $U_\sigma$ is isomorphic to $k^r \times (k^\times)^{n-r}$ when $\sigma$ is generated by $r$ basis vectors of $N$ (cf.\ Example \ref{example:affinetoricvarieties}).
 Therefore, it remains to prove the converse.
 To do so, we need to consider the so-called distinguished point $x_\sigma$ in $U_\sigma$.
 This point is given by the map of semigroups
@@ -3226,7 +3232,7 @@ We now detail examples of algebraic groups and closed subgroups.
 \item The multiplicative group $\GG_m$ is the algebraic group with underlying variety $k^\times$, multiplication map $\mu(x, y) = xy$, and inversion map $\iota(x) = x^{-1}$.
 \item Recall the general linear group $\GL_n(k)$ is the group of $n \times n$ invertible matrices with entries in $k$.
 When $\AA^{n \times n}$ is identified with the set of all $n \times n$ matrices, $\GL_n(k)$ is the principal open subset where $\det \ne 0$.
-Thus, $\GL_n(k)$ is an affine variety (c.f.\ Proposition \ref{proposition:localizationembedding}).
+Thus, $\GL_n(k)$ is an affine variety (cf.\ Proposition \ref{proposition:localizationembedding}).
 Its coordinate ring is the localization $k[\AA^{n \times n}]_{\det}$.
 If $A, B \in \GL_n(k)$, then the entries of $AB$ are polynomials in the entries of $A$ and $B$, so $\mu$ is a morphism. 
 The inversion map $\iota$ is a morphism by Cramer's rule, as entries of $A^{-1}$ are polynomials in the entries of $A$ and $\frac{1}{\det(A)}$.
@@ -3234,7 +3240,7 @@ The inversion map $\iota$ is a morphism by Cramer's rule, as entries of $A^{-1}$
 This is isomorphic to the closed subgroup of diagonal matrices in $\GL_n(k)$, which is denoted $D_n(k)$.
 If $X_{ij}$ denote the coordinate functions on $\GL_n(k)$, then $D_n(k)$ is the closed subset defined by the equations $X_{ij} = 0$ for all $i \ne j$.
 The map $T \to D_n(k)$ given by $(t_1, \ldots, t_n) \mapsto \diag(t_1, \ldots, t_n)$ is an isomorphism of algebraic groups.
-\item Important algebraic groups arising as closed subgroups of $\GL_n(k)$ include the special linear group $\SL_n(k)$, the special orthogonal group $\SO_n(k)$ and the symplectic group $\Sp_{2n}(k)$ (c.f.\ \cite[\S 1.3]{Geck13}).
+\item Important algebraic groups arising as closed subgroups of $\GL_n(k)$ include the special linear group $\SL_n(k)$, the special orthogonal group $\SO_n(k)$ and the symplectic group $\Sp_{2n}(k)$ (cf.\ \cite[\S 1.3]{Geck13}).
 \end{enumerate}
 \end{example}
 
@@ -3245,7 +3251,7 @@ We now detail examples of morphisms of algebraic groups.
 \item The determinant map $\det : \GL_n(k) \to \GG_m$ is a morphism of algebraic groups:
 it is a morphism since $\det(A)$ is a polynomial in the entries of $A$, and a homomorphism since $\det(AB)=\det(A)\det(B)$.
 \item We now classify algebraic group morphisms $\varphi : \GG_m \to \GG_m$.
-These correspond to algebra endomorphisms $\varphi^* : k[T, T^{-1}] \to k[T, T^{-1}]$ (c.f.\ Proposition \ref{proposition:morphismsandhomomorphism}).
+These correspond to algebra endomorphisms $\varphi^* : k[T, T^{-1}] \to k[T, T^{-1}]$ (cf.\ Proposition \ref{proposition:morphismsandhomomorphism}).
 It can be shown that the units in $k[T,T^{-1}]$ are $\{u T^n : u \in k^\times, n \in \ZZ\}$, so since $\varphi^*(T)\varphi^*(T^{-1}) = 1$, we must have $\varphi^*(T) = u T^n$ for some $u \in k^\times$ and $n \in \ZZ$.
 The endomorphism $\varphi^*(T) = u T^n$ corresponds to the morphism $\varphi(t) = u t^n$.
 Since $\varphi$ is a group homomorphism, we must have $u =1$.
@@ -3267,7 +3273,7 @@ After choosing a basis for $V$, the map $\rho$ can be viewed as a homomorphism $
 We say $\rho$ is a \emph{rational representation} of $G$ if the entries of $\rho(g) \in \GL_n(k)$ lie in the coordinate ring $k[G]$.
 Different bases differ by linear transformations, so the definition is independent of the choice of basis.
 
-Examples of algebraic group actions will follow our discussion of invariant theory (c.f.\ Example \ref{example:invariantrings}).
+Examples of algebraic group actions will follow our discussion of invariant theory (cf.\ Example \ref{example:invariantrings}).
 
 We now define the characters of an algebraic group $G$.
 These can be viewed as the one-dimensional rational representations, and play an important role in \S \ref{section:invariantsoftorus} and \S \ref{section:torusquotientsastoricvarieties}.
@@ -3308,7 +3314,7 @@ For example, in 1868, Gordan computed a finite set of generators when $\SL_2(\CC
 In 1890, Hilbert showed that if $V$ is a finite-dimensional representation of $G = \SL_n(\CC)$, then $A^G$ is finitely generated.
 
 In fact, Hilbert's 1890 proof shows that the invariants of any representation of a \emph{reductive} group are finitely generated \cite[\S 3.1]{DC70}.
-A group is reductive if it is connected and has trivial \emph{unipotent radical} (c.f.\ \cite[\S 19.5]{Humphreys75}).
+A group is reductive if it is connected and has trivial \emph{unipotent radical} (cf.\ \cite[\S 19.5]{Humphreys75}).
 Examples of reductive groups include $\GL_n(k)$, $\SL_n(k)$, and tori.
 
 When Mumford developed the theory of GIT in the 1960s, he was interested in the conditions under which $A^G$ is finitely generated for an arbitrary algebraic variety $V$.
@@ -3412,7 +3418,7 @@ if $f_1, \ldots, f_m$ are invariant functions in $k[V]^G$, then the map $\pi : V
 $$x \mapsto (f_1(x), \ldots, f_m(x))$$
 is $G$-invariant.
 We can choose $f_1, \ldots, f_m$ to be generators for $k[V]^G$ and define $W$ to be the image $\pi(V)$.
-There are two potential problems to keep in mind: it is not clear distinct orbits in $V$ map to distinct points in $W$, and the image $\pi(V)$ is not necessarily a variety since the image of a morphism need not be a variety (c.f.\ Example \ref{example:polynomialmaps}).
+There are two potential problems to keep in mind: it is not clear distinct orbits in $V$ map to distinct points in $W$, and the image $\pi(V)$ is not necessarily a variety since the image of a morphism need not be a variety (cf.\ Example \ref{example:polynomialmaps}).
 
 We now detail an example of constructing a quotient using the method described above.
 Let $G = \GG_m $ act on $V = \AA^2$ by
@@ -3470,14 +3476,14 @@ Each closure-equivalence class contains exactly one closed orbit, so points in $
 See \cite[\S 5.1]{Mukai03}, in particular, Theorem 5.9 and Corollary 5.5.
 \end{proof}
 
-We conclude by giving examples of the GIT quotients for the group actions studied in Example \ref{example:invariantrings}.
+We now examples of the GIT quotients of the group actions studied in Example \ref{example:invariantrings}.
 
 \begin{example}\label{example:gitquotients}
 \begin{enumerate}
 \item 
 Consider $G = \GL_2(k)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(k)$ by conjugation.
-We saw that $k[\frakg]^G = k[\tr, \det]$, and $\tr$ and $\det$ are algebraically independent.
-Then, we have
+We saw $k[\frakg]^G = k[\tr, \det]$, and $\tr$ and $\det$ are algebraically independent.
+Then, %we have
 $$\frakg \git G = \Spec(k[\tr, \det]) = k^2.$$
 The affine quotient map $\pi : \frakg \to k^2$ is given by $A \mapsto (\tr A, \det A).$
 
@@ -3486,6 +3492,7 @@ Consider $G = S_2 = \{1, \sigma\}$ acting on $V = \AA^2$ by $\sigma \cdot (x, y)
 We saw that $k[X, Y]^{S_2} = k[X^2, XY, Y^2] \cong k[A, B, C]/(B^2 - AC).$
 Then, we have
 $$\AA^2 \git S_2 = \Spec(k[X^2, XY, Y^2]) \cong \bV(B^2 - AC).$$
+Note $\AA^2 \git S_2$ is singular, because all partial derivatives of $B^2 - AC$ vanish at the origin.
 The affine quotient map $\pi : \AA^2 \to \bV(B^2 - AC)$ is given by $(x, y) \mapsto (x^2, xy, y^2).$
 \end{enumerate}
 \end{example}
@@ -3519,7 +3526,7 @@ See \cite[3.2.3]{Springer98}.
 
 If the subspace
 $$V_\chi = \{v \in V : t \cdot v = \chi(t) v \text{ for all } t \in T\}$$
-is non-zero, we call $\chi$ a weight of the representation $V$ (c.f.\ \cite[7.1.1]{Springer98}).
+is non-zero, we call $\chi$ a weight of the representation $V$ (cf.\ \cite[7.1.1]{Springer98}).
 If $\chi$ is weight of $V$, then the subspace $V_\chi$ is called a weight space.
 Note weight spaces may have dimension greater than one; the dimension of $V_\chi$ is called the multiplicity of the weight $\chi$.
 
@@ -3690,7 +3697,7 @@ By definition, the dual cone to $\sigma$ is
 
 \item
 By definition, $\sigma$ is generated by a finite number of elements of $N$, so it is polyhedral and rational.
-To see $\sigma$ is strongly convex, it suffices to show $\sigma^\vee$ spans $M_\RR$ (c.f.\ Proposition \ref{stronglyconvexprop}).
+To see $\sigma$ is strongly convex, it suffices to show $\sigma^\vee$ spans $M_\RR$ (cf.\ Proposition \ref{stronglyconvexprop}).
 We must find a basis for $M_\RR$ where each vector has non-negative coordinates.
 Recall that at the start of the section, we assumed that for each $\ell =1, \ldots, n$, there exists an invariant monomial $Z^\mu = \prod_{i=1}^n Z_i^{\mu_i} \in k[V]^T$ with $\mu_\ell > 0$.
 Then $\mu$ is identified with a point $(a_1, \ldots, a_n)$ in $\sigma^\vee \cap M$, so for each $\ell = 1, \ldots, n$, there exists a vector $(a_1, \ldots, a_n)$ in $M$ with $a_i \ge 0$ for all $i$ and $a_\ell > 0$.

@@ -7,6 +7,7 @@
 \contentsline {subsection}{\tocsubsection {}{}{Geometric invariant theory}}{4}{section*.11}%
 \contentsline {subsection}{\tocsubsection {}{}{Goals and structure of this thesis}}{5}{section*.12}%
 \contentsline {subsection}{\tocsubsection {}{}{Future directions}}{6}{section*.13}%
+\contentsline {subsection}{\tocsubsection {}{}{Conventions}}{6}{section*.14}%
 \setcounter {tocdepth}{2}
 \contentsline {section}{\tocsection {}{1}{Algebraic sets}}{7}{section.1}%
 \contentsline {subsection}{\tocsubsection {}{1.1}{Affine space and algebraic sets}}{7}{subsection.1.1}%
@@ -40,4 +41,4 @@
 \contentsline {subsection}{\tocsubsection {}{5.3}{Invariants of a linear torus action}}{51}{subsection.5.3}%
 \contentsline {subsection}{\tocsubsection {}{5.4}{The cone of a torus quotient}}{52}{subsection.5.4}%
 \contentsline {subsection}{\tocsubsection {}{5.5}{Examples}}{55}{subsection.5.5}%
-\contentsline {section}{\tocsection {}{}{References}}{57}{section*.22}%
+\contentsline {section}{\tocsection {}{}{References}}{57}{section*.23}%

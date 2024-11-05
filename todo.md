@@ -1,23 +1,15 @@
 # TO DO
 [ ] Edit Chapter 1
-[X] Edit Chapter 2
 
 0. Introduction (6 pages)
-[ ] Fix handwritten feedback
+[x] Fix handwritten feedback
 
 1. Algebraic sets (12 pages)
-[x] Reorganise sections
 [ ] Expand the Zariski topology section 
 
 2. Affine varieties (10 pages)
-[X] Fix proof that homs A to B are the same as morphisms Spec(B) to Spec(A)
-[X] Fix proof that the localisation homomorphism corresponds to the principal open subset X_f
-[X] Add 29/09 Explicit description of morphisms of affine varieties section to document
-[X] Explain how points in Spec(A) are homs A to k (example in morphisms section). Explain how to evaluate regular functions at homomorphisms.
-
 2.3. 
-[ ] Make sure it is clear k is alg closed
-
+[x] Make sure it is clear k is alg closed
 
 3. Convex geometry (9 pages)
 
@@ -38,7 +30,7 @@
 
 Aesthetic/etc. things to do later:
 [ ] Make \emph usage is consistent
-[ ] Fix James Milne Reference (Lie algebras vs alg geo)
+[x] Fix James Milne Reference (Lie algebras vs alg geo)
 [ ] Fix reference list
 [ ] Fix c.f. usage
 [ ] Put examples in non-italics/make sure all environments look right. Remove all remark environments.
