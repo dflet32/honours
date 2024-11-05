@@ -20,8 +20,7 @@
 \contentsline {subsection}{\tocsubsection {}{2.2}{The definition of varieties}}{20}{subsection.2.2}%
 \contentsline {subsection}{\tocsubsection {}{2.3}{The maximal spectrum}}{21}{subsection.2.3}%
 \contentsline {subsection}{\tocsubsection {}{2.4}{Morphisms}}{22}{subsection.2.4}%
-\contentsline {subsection}{\tocsubsection {}{2.5}{Open affine subsets}}{24}{subsection.2.5}%
-\contentsline {subsection}{\tocsubsection {}{2.6}{Tangent spaces}}{24}{subsection.2.6}%
+\contentsline {subsection}{\tocsubsection {}{2.5}{Tangent spaces}}{25}{subsection.2.5}%
 \contentsline {section}{\tocsection {}{3}{Convex geometry}}{29}{section.3}%
 \contentsline {subsection}{\tocsubsection {}{3.1}{Convex cones}}{29}{subsection.3.1}%
 \contentsline {subsection}{\tocsubsection {}{3.2}{Polyhedral cones}}{32}{subsection.3.2}%

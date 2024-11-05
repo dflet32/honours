@@ -524,7 +524,7 @@ Below are key examples we will explore from the geometry--algebra dictionary:
 	Points in $V$ & Maximal ideals of $\CC[V]$ \\
 	Maps $V \to W$ & Homomorphisms $\CC[W] \to \CC[V]$ \\
 	Irreducible varieties $V$ & Integral domains $\CC[V]$ \\
-	Open subsets of $V$ & Localisation of $\CC[V]$ \\
+	Open subsets of $V$ & Localization of $\CC[V]$ \\
 	Tangent spaces $T_PV$ &  Zariski tangent space $(\frakm_P / \frakm_P^2)^*$
 \end{tabular}
 \end{center}
@@ -740,7 +740,7 @@ To conclude the thesis, we compute examples of the cones corresponding to $V \gi
 \subsection*{Future directions}
 This thesis only considers the affine theory of toric varieties and GIT quotients.
 The theories of toric varieties and GIT can be studied in the general framework of algebraic varieties \cite{Fulton93, Mumford65}.
-The result of this thesis, that $V \git T$ is a toric variety, is also true in the general case (c.f.\ \cite{Proudfoot} or \cite[Chapter 12]{Dolgachev03}).
+The result of this thesis, that $V \git T$ is a toric variety, is also true in the general case (c.f.\ \cite{Proudfoot05} or \cite[Chapter 12]{Dolgachev03}).
 Further, under the correct assumptions the converse is also true, i.e., any toric variety can be understood as a quotient variety \cite[]{CLS11}.
 These results provide interesting future directions for study.
 
@@ -1285,7 +1285,7 @@ there exists a unique $k$-algebra homomorphism $\tilde \alpha$ making the follow
 \noindent
 This universal property of $k[V_1 \times V_2]$ implies it is isomorphic to the tensor product of $k$-algebras $k[V_1] \otimes_k k[V_2]$.
 
-We now explain how $k[V_1] \otimes_k k[V_2]$ is defined, following \cite[Chapter 1, e.]{Milne23}.
+We now explain how $k[V_1] \otimes_k k[V_2]$ is defined, following \cite[Chapter 1, e]{Milne23}.
 The underlying vector space of $k[V_1] \otimes_k k[V_2]$ is the tensor product of the vector spaces $k[V_1]$ and $k[V_2]$.
 The multiplication is given on pure tensors by
 $$(f \otimes g)(f' \otimes g') := (f f') \otimes (g g').$$
@@ -1351,7 +1351,7 @@ Let us formally define it now.
 Let $A$ be any ring.
 Let $S$ be a multiplicatively closed subset of $A$, meaning a subset containing the identity of $A$ which is closed under multiplication.
 We define a relation on $A \times S$ by declaring $(a, s) \sim (b, t)$ if there exists $u \in S$ such that $u(at - bs)=0$.
-It is clear that $\sim$ is reflexive and symmetric, and it is straightforward to show it is transitive (see \cite[\S 3]{AM}).
+It is clear that $\sim$ is reflexive and symmetric, and it is straightforward to show it is transitive \cite[\S 3]{AM16}.
 The equivalence class of $(a,s)$ is denoted $\frac{a}{s}$, and the set of equivalence classes is denoted $S^{-1}A$.
 Addition and multiplication in $S^{-1}A$ is defined in the usual way for fractions:
 $$\frac{a}{s}+\frac{b}{t} = \frac{at+bs}{st}, \qquad \frac{a}{s}\cdot\frac{b}{t} = \frac{ab}{st}.$$
@@ -1382,7 +1382,7 @@ If $A$ is an integral domain and $h \ne 0$, the previous example tells us $A_h$ 
 
 The following lemma realises $A_h$ as a quotient ring:
 
-\begin{lemma}[{\cite[Lemma 1.13]{Milne23}}]\label{lemma:localisationisomorphism}
+\begin{lemma}[{\cite[Lemma 1.13]{Milne23}}]\label{lemma:localizationisomorphism}
 For every ring $A$ and $h \in A$,
 $$A[Y]/(hY-1) \cong A_h.$$
 \end{lemma}
@@ -1406,7 +1406,7 @@ In this case, $k[V]$ is an integral domain.
 We write $k(V)$ for the fraction field $k(V):=\Frac(k[V])$, and call $k(V)$ the field of rational functions on $V$.
 For any $f \in k[V]$, consider the subring
 $$k[V]_f := \left\{\frac{g}{f^r} : g \in k[V], \, r \ge 0\right\} \subseteq k(V).$$
-The ring $k[V]_f$ is called the localisation of $k[V]$ at $f$.\footnote{We emphasise that $V$ is irreducible. This assumption is not necessary but it simplifies the discussion.}
+The ring $k[V]_f$ is called the localization of $k[V]$ at $f$.\footnote{We emphasise that $V$ is irreducible. This assumption is not necessary but it simplifies the discussion.}
 One can prove 
 $$k[V]_f \cong (k[V])[Y] / (f Y -1),$$
 so that $k[V]_f \cong k[V]/(fY-1)$ \cite[Lemma 1.13]{Milne23}).
@@ -1502,7 +1502,7 @@ This is easily achieved in the context of affine varieties by the taking the max
 
 We start by defining sheaves, which is an assignment of a set of functions to open sets in a topological space---this is an abstraction of looking at the regular functions defined on an open subset of an algebraic set.
 Affine varieties can then be defined as a topological space with a sheaf that looks like an algebraic set.
-For the remainder of the chapter, we define the tangent space of a variety, and also look at certain properties of morphisms between affine varieties.
+For the rest of the chapter, we study morphisms and tangent spaces of varieties.
 
 
 
@@ -1513,34 +1513,35 @@ For the remainder of the chapter, we define the tangent space of a variety, and 
 Proposition \ref{sheafprop} alludes to an important object appearing in many areas of mathematics, called a sheaf.
 We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (c.f.\ {\cite[Chapter II, \S 1]{Hartshorne77}}).
 
-\begin{definition}[{\cite[Chapter 3, a.]{Milne23}}]\label{sheafdef}
+\begin{definition}[{\cite[Chapter 3, a]{Milne23}}]\label{sheafdef}
 Let $V$ be a topological space and $k$ a field.
 Suppose that for every open subset $U \subseteq V$, we have a set $\calO_V(U)$ of functions $U \to k$.
 We say the assignment $U \mapsto \calO_V(U)$ is a sheaf of $k$-algebras if the following hold for every open subset $U \subseteq V$:
 \begin{enumerate}
 \item
-$\calO_V(U)$ is a $k$-subalgebra of all $k$-valued functions on $U$, i.e., $\calO_V(U)$ contains the constant functions and is closed under addition and multiplication;
+$\calO_V(U)$ is a $k$-subalgebra of $\Fun(U, k)$, the $k$-algebra of all $k$-valued functions on $U$;
 \item
 if $f \in \calO_V(U)$ and $U'\subseteq U$ is an open subset, then $\left. f \right|_{U'} \in \calO_V(U')$; and,
 \item
-if $\{U_i\}$ is an open cover of $U$ and $f_i \in \calO_V(U_i)$ satisfy $\left. f_i \right|_{U_i \cap U_j} = \left. f_j \right|_{U_i \cap U_j}$ for all $i$ and $j$, then there exists a unique $f \in \calO_V(U)$ such that $\left. f\right|_{U_i} = f_i$ for each $i$.
+if $\{U_i\}$ is an open cover of $U$ and $f_i \in \calO_V(U_i)$ satisfy $\left. f_i \right|_{U_i \cap U_j} = \left. f_j \right|_{U_i \cap U_j}$ for all $i$ and $j$, then the unique function $f : U \to k$ such that $\left. f \right|_{U_i} = f_i$ lies in $\calO_V(U)$.
 \end{enumerate}
 A pair $(V, \calO_V)$ consisting of a topological space $V$ and a sheaf of $k$-algebras on $V$ is called a $k$-ringed space, or a ringed space when $k$ is understood.
 The $k$-algebra $\calO_V(U)$ is sometimes denoted $\Gamma(U, \calO_V)$, and its elements are called the sections of $\calO_V$ over $U$.
 \end{definition}
 
-Proposition \ref{sheafprop} says that for an algebraic set $V$, the assignment of an open subset $U \subseteq V$ to its ring of regular functions $\calO_V(U)$ is a sheaf of $k$-algebras.
-This sheaf is called the structure sheaf of $V$.
+Proposition \ref{sheafprop} says that for an algebraic set $V$, the assignment sending an open subset $U \subseteq V$ to its ring of regular functions $\calO_V(U)$ is a sheaf of $k$-algebras.
+This sheaf is called the \emph{structure sheaf} of $V$.
 As we will see, structure sheaves are one of the main tools we use to define and study varieties.
-To further illustrate the definition of a sheaf, we give further examples as well as a counter-example:
+To further illustrate the definition of a sheaf, we give further examples as well as a non-example:
 
 \begin{example}
 \begin{enumerate}
 \item Let $V$ be any topological space.
 For any open set $U$, let $\calO_V(U)$ be the set of continuous functions $U \to \RR$.
-It is clear $\calO_V$ satisfies condition (1) in Definition \ref{sheafdef}, and conditions (2) and (3) hold since continuity is a local property. Thus $\calO_V$ is a sheaf of $\RR$-algebras.
+It is clear $\calO_V$ satisfies condition (1) in Definition \ref{sheafdef}.
+Conditions (2) and (3) hold since continuity is a \emph{local property}, i.e., $f : U \to \RR$ is continuous if and only if for all open covers $\{U_i\}$ of $U$, $\left. f \right|_{U_i}$ is continuous for all $i$. Thus $\calO_V$ is a sheaf of $\RR$-algebras.
 \item Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of differentiable functions $U \to \RR$.
-Since differentiability is a local property, $\calO_V$ is a sheaf of $\RR$-algebras.
+Differentiability is a local property, so $\calO_V$ is a sheaf of $\RR$-algebras.
 \item If $(V, \calO_V)$ is a ringed space and $U$ is an open subset of $V$, then $\left. \calO_V \right|_U$, the restriction of $\calO_V$ to open subsets of $U$, is a sheaf on $U$.
 \item Consider $V = \RR$ with the standard topology, and let $\calO_V(U)$ be the set of bounded functions $U \to \RR$.
 This does not define a sheaf since condition (3) of Definition \ref{sheafdef} does not hold;
@@ -1549,8 +1550,11 @@ This fails to be a sheaf because boundedness is not a local property.
 \end{enumerate}
 \end{example}
 
-Having defined sheaves and ringed spaces, we need to define the structure-preserving maps between ringed spaces;
-such a map is called a morphism of ringed spaces:
+Having defined sheaves and ringed spaces, we need to define the structure-preserving maps between them; these are called morphisms of ringed spaces.
+Given a map $\varphi : V \to W$ between topological spaces, any function $f : W \to k$ on $W$ defines a function $\varphi^* f := f \circ \varphi : V \to k$ on $V$.
+We call $\varphi^* f$ the \emph{pullback} of $f$ by $\varphi$.
+Morphisms of ringed spaces are continuous maps that ensure the pullback of any function in the sheaf on $W$ lies in the sheaf on $V$.
+The precise definition is as follows:
 
 \begin{definition}\label{definition:morphismringedspace}
 Let $(V, \calO_V)$ and $(W, \calO_W)$ be ringed spaces.
@@ -1559,30 +1563,25 @@ A morphism of ringed spaces $\varphi : V \to W$ is a map such that
 \item 
 $\varphi$ is continuous, and
 \item
-for all open subsets $U \subseteq W$, if $f \in \calO_W(U)$, then $f\circ\varphi \in \calO_V(\varphi^{-1}(U))$.
+for all open subsets $U \subseteq W$, if $f \in \calO_W(U)$, then $\varphi^* f = f\circ\varphi \in \calO_V(\varphi^{-1}(U))$.
 \end{enumerate}
 \end{definition}
 
-It is natural that morphisms should be continuous maps, to preserve topological structure.
-The motivation for the second condition is less clear.
-Observe that if we have open subsets $U \subseteq V$ and $U' \subseteq W$ such that $\varphi(U)\subseteq U'$, then the map
-$$\calO_W(U') \to \calO_V(U), \qquad f \mapsto f\circ\varphi$$
-is a homomorphism of $k$-algebras;
-we denote $f \circ \varphi$ by $\varphi^*(f)$ and call this function the pullback of $f$ by $\varphi$.
-Then the second condition in the definition says that $\varphi$ allows us to convert a function in $\calO_W(U')$ to a function in $\calO_V(U)$.
+Observe that if $\varphi : V \to W$ is a morphism, then the map $\varphi^* : \calO_W(W) \to \calO_V(V)$ defined by $f \mapsto \varphi^* f$ is a homomorphism of $k$-algebras.
+Thus, morphisms respect the algebraic structure of the $k$-algebras $\calO_W(W)$ and $\calO_V(V)$.
 
 \begin{example}
 \begin{enumerate}
 \item
 Consider any topological spaces $V$ and $W$ with their sheaves of continuous real-valued functions.
-Any continuous map $V \to W$ is a morphism. The second condition in Definition \ref{definition:morphismringedspace} holds as composition preserves continuity.
+Any continuous map $V \to W$ is a morphism. The second condition in Definition \ref{definition:morphismringedspace} holds because composition preserves continuity.
 
 \item
 If $(V, \calO_V)$ is a ringed space and $U$ is an open subset of $V$, the inclusion $U \hookrightarrow V$ is a morphism between the ringed spaces $(U, \left. \calO_V\right|_U)$ and $(V, \calO_V)$.
 \end{enumerate}
 \end{example}
 
-We say that a morphism of ringed spaces is an isomorphism if it is bijective and its inverse is also a morphism.
+We say that a morphism of ringed spaces is an \emph{isomorphism} if it is bijective and its inverse is also a morphism.
 Then isomorphisms are in particular homeomorphisms.
 
 
@@ -1622,7 +1621,7 @@ This is achieved using the maximal spectrum.
 
 \subsection{The maximal spectrum}\label{section:themaximalspectrum}
 Let $A$ be a reduced finitely generated $k$-algebra, i.e., a $k$-algebra arising as the coordinate ring of some algebraic set.
-In this section, we will define the maximal spectrum $\Spec(A)$ and show that it is an affine variety.
+In this section, we will define the maximal spectrum $\Spec(A)$ and show that it is an affine variety, following \cite[Chapter 3, e]{Milne23}.
 To do this, we need to define $\Spec(A)$ as a set, as a topological space and as a ringed space.
 To illustrate the theory, we will investigate the case $A=k[X]$ as an example throughout.
 
@@ -1631,7 +1630,7 @@ the set $\Spec(A)$ is defined to be the set of maximal ideals of $A$.
 This is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (c.f.\ Corollary \ref{corollary:coordinateringbijections}).
 
 \begin{example}
-The maximal ideals in $k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for some $a\in k$.
+The maximal ideals in $k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for each $a\in k$.
 Then $\Spec(k[X]) = \{\frakm_a : a \in k\}.$
 \end{example}
 
@@ -1648,22 +1647,22 @@ Since $k$ is algebraically closed, the inclusion $k \overset{\varphi}{\hookright
 We can now view elements of $A$ as functions $\Spec(A) \to k \cong A/\frakm$ by evaluating $f\in A$ at $\frakm\in\Spec(A)$ as $f(\frakm):=f \mod \frakm$.
 
 \begin{example}
-For $\frakm \in \Spec(k[X])$, the identification of $k$ with $k[X]/\frakm$ is the quotient map
+For $\frakm \in \Spec(k[X])$, the isomorphism $k \cong k[X]/\frakm$ is given by the map
 $$k \hookrightarrow k[X] \to k[X]/\frakm, \qquad 1 \mapsto 1 \mapsto 1+\frakm.$$
 Consider $f = X^2 +3X +2 \in k[X]$.
 To evaluate $f$ at the maximal ideal $\frakm = (X-1)$, we reduce modulo $\frakm$, i.e.,
 $$f(\frakm) = X^2 + 3X +2 = 1^2 + 3\cdot 1 +2 = 6.$$
-Here we have used our identification of $k[X]/\frakm$ with $k$ to suppress that we are working in the quotient $k[X]/\frakm$.
+Here, we have used our identification of $k[X]/\frakm$ with $k$ to suppress that we are working in the quotient $k[X]/\frakm$.
 More generally, if $\frakm_a = (X-a)$ is any element of $\Spec(k[X])$ and $f \in k[X]$, we evaluate $f(\frakm_a) = f(a)$.
 \end{example}
 
 \emph{$\Spec(A)$ as a topological space:}
 To define the topology on $\Spec(A)$, we define a topological basis, and endow $\Spec(A)$ with the generated topology.
-We recall the definition of a topological basis for the reader's convenience now.
+We recall the definition of a topological basis for the convenience of the reader.
 If $X$ is a set and $\calB$ is a collection of subsets of $X$, then $\calB$ is a topological basis if
 \begin{enumerate}
 \item $\calB$ covers $X$, i.e., $X = \bigcup_{B \in \calB} B$, and
-\item if $B_1$ and $B_2$ are sets in $\calB$ and $x \in B_1 \cap B_2$, then there exists a basis set $B_3$ such that $x \in B_3 \subseteq B_1 \cap B_2$.
+\item if $B_1$ and $B_2$ are sets in $\calB$ and $x \in B_1 \cap B_2$, then there exists a basis set $B_3 \in \calB$ such that $x \in B_3 \subseteq B_1 \cap B_2$.
 \end{enumerate}
 Such a $\calB$ induces a topology on $X$ by declaring a subset open if it is a union of elements of $\calB$.
 
@@ -1717,8 +1716,8 @@ The rest of this chapter is dedicated to studying some important features of the
 
 \subsection{Morphisms}\label{section:morphisms}
 In \S \ref{section:coordinateringsandpolynomialmaps}, we proved that polynomial maps $V \to W$ between algebraic sets are in bijection with $k$-algebra homomorphisms $k[W] \to k[V]$.
-The main result of this section is the analogous fact for affine varieties; 
-namely, that $k$-algebra homomorphisms $A \to B$ are in bijection with morphisms of affine varieties $\Spec(B) \to \Spec(A)$.
+The main result of this section is the analogous fact for affine varieties: morphisms of affine varieties $\Spec(B) \to \Spec(A)$ are in bijection with $k$-algebra homomorphisms $A \to B$.
+As applications, we show that points of $\Spec(A)$ correspond to homomorphisms $A \to k$, and that the morphism corresponding to the localization map $A \to A_h$ embeds $\Spec(A_h)$ as a principal open subset of $\Spec(A)$.
 
 \begin{proposition}\label{proposition:morphismsandhomomorphism}
 For all finitely generated reduced $k$-algebras $A$ and $B$, there is a bijection
@@ -1761,7 +1760,6 @@ Recall that $(f\circ\varphi)(\frakn) = f(\frakm)$ is the image of $f$ in $A/\fra
 On the other hand, $\alpha(f)$ lies in $B$, so $\alpha(f)(\frakn)$ lies in $B/\frakn$.
 To prove $f \circ \varphi = \alpha(f)$, we identify $A/\frakm$ and $B/\frakn$ via the isomorphism we found above, which is given explicitly by $f + \frakm \mapsto \alpha(f) + \frakn.$
 We then have the commutative diagram
-
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkEvXFxtYXRoZnJha3ttfSJdLFsxLDEsIkIvXFxtYXRoZnJha3tufSJdLFswLDJdLFsxLDNdLFsyLDMsIlxcc2ltZXEiXSxbMCwxLCJcXGFscGhhIl1d
 \[\begin{tikzcd}
 	A & B \\
@@ -1778,29 +1776,40 @@ Therefore the preimage of an open set is open, and $\varphi$ is continuous.
 Let $h \in A$.
 We show that regular functions on $D(h)$ pull back to regular functions on $\varphi^{-1}(D(h)) = D(\alpha(h))$.
 Take the regular function $f : D(h) \to k$ defined by $f = \frac{g}{h^m}$ for some $g \in A$ and $m \in \ZZ_{\ge 0}$.
-Since $\alpha(h)$ is invertible in $B_{\alpha(h)}$, the map $A \to B \to B_{\alpha(h)}$ extends to a homomorphism
+Since $\alpha(h)$ is invertible in $B_{\alpha(h)}$, the map $A \overset{\alpha}{\to} B \to B_{\alpha(h)}$ extends to a homomorphism
 $$A_h \to B_{\alpha(h)}, \qquad \frac{g}{h^m} \mapsto \frac{\alpha(g)}{\alpha(h)^m}.$$
 Then $f \circ \varphi : D(\alpha(h)) \to k$ is equal to $\alpha(f) = \frac{\alpha(g)}{\alpha(h)^m}$, which is regular on $D(\alpha(h))$.
 Thus, $\varphi$ is a morphism.
 
 We have already seen that a morphism $\varphi : \Spec(B) \to \Spec(A)$ determines a homomorphism $\varphi^* : A \to B$ given by $f \mapsto f \circ \varphi$.
-The maps in the proposition are mutually inverse \cite[Chapter 3, f.]{Milne23}, so the proof is complete.
+The maps in the proposition are mutually inverse \cite[Chapter 3, f]{Milne23}, so the proof is complete.
 \end{proof}
 
+It is natural to consider how the definition of a morphism of varieties is related to the definition of a polynomial map between algebraic sets.
+In fact, these are equivalent, in the sense that if $V \subseteq \AA^n$ and $W \subseteq \AA^m$ are algebraic sets, then a map $\varphi : V \to W$ is polynomial if and only if $\varphi$ is a morphism of the ringed spaces $(V, \calO_V)$ and $(W, \calO_W)$ \cite[Proposition 3.26]{Milne23}.
 
+We now use Proposition \ref{proposition:morphismsandhomomorphism} to relate points in $\Spec(A)$ to homomorphisms $A \to k$.
 
+\begin{example}[{\cite[Example 3.28]{Milne23}}]
+The variety $\AA^0 = \Spec(k)$ is a single point since $(0)$ is the unique maximal ideal in $k$.
+For any variety $V = \Spec(A)$, all maps $\AA^0 \to V$ are morphisms, and these maps are in bijection with points of $V$.
+Therefore, we have the isomorphism of sets $\mathrm{Mor}(\AA^0, V) \cong V.$
+In view of Proposition \ref{proposition:morphismsandhomomorphism}, there is a bijection
+$$\Hom_{k\text{-alg}}(A, k) \cong V.$$
+The homomorphism $\alpha : A \to k$ is identified with the maximal ideal $\ker(\alpha) \in V = \Spec(A)$.
 
+We claim that the function $f \in A$ evaluated at the $k$-algebra homomorphism $\alpha : A \to k$ (thought of as a point in $\Spec(A)$) is given by $\alpha(f) \in k$.
+By definition, $f$ evaluated at $\alpha$ is $f(\ker(\alpha)) = f + \ker(\alpha) \in A/\ker(\alpha)$.
+The identification $k \cong A/\ker(\alpha)$ is given by $1 \mapsto 1 + \ker(\alpha)$.
+We then have $\alpha(f) \mapsto \alpha(f) + \ker(\alpha)$, and $\alpha(f) + \ker(\alpha) = f + \ker(\alpha)$.
+\end{example}
 
+We now show the morphism corresponding to the localization map $A \to A_h$ embeds $\Spec(A_h)$ as a principal open subset of $\Spec(A)$.
+This result will be important when we study toric varieties, as it is used to show there is an open subset of a toric variety isomorphic to an algebraic torus (c.f. Proposition \ref{proposition:facesopensubsets}).
 
-
-\subsection{Open affine subsets}\label{section:openaffinesubsets}
-In this section, we study open affine subsets of affine varieties.
-These are the analogues of principal oen subsets of an algebraic set.
-Our discussion here will be important when we study toric varieties, as it will allow us to identify the open subset isomorphic to an algebraic torus.
-
-\begin{proposition}[{\cite[Proposition 3.32]{Milne23}}]\label{proposition:localisationembedding}
+\begin{proposition}[{\cite[Proposition 3.32]{Milne23}}]\label{proposition:localizationembedding}
 Let $V = \Spec(A)$ be an affine variety and $h$ a non-zero element of $A$.
-Then the homomorphism $\iota : A \to A_h$ defined by $a \mapsto \frac{a}{1}$ defines the isomorphism of ringed spaces
+Then the homomorphism $\iota : A \to A_h$ defined by $a \mapsto \frac{a}{1}$ gives the isomorphism of ringed spaces
 $$(D(h), \left. \calO_V \right|_{D(h)}) \cong \Spec(A_h),$$
 where $D(h) = \{\frakm \in \Spec(A) : h(\frakm) \ne 0\}$. In particular, $D(h)$ is an affine variety.
 \end{proposition}
@@ -1829,7 +1838,7 @@ Then $\varphi(A_h \frakm) = \frakm$, and we see that $\varphi$ is the inverse ma
 In particular, $\varphi$ is a bijection, with image
 $$\varphi(\Spec(A_h)) = \{\frakm : h \notin \frakm\} = D(h).$$
 To complete the proof, we must check $\varphi^{-1}$ is a morphism;
-this follows from Lemma \ref{lemma:localisationisomorphism}.
+this follows from Lemma \ref{lemma:localizationisomorphism}.
 \end{proof}
 
 
@@ -1837,24 +1846,24 @@ this follows from Lemma \ref{lemma:localisationisomorphism}.
 
 
 \subsection{Tangent spaces}
-In differential geometry, a key tool used to study surfaces in $\RR^3$ is the tangent space.
+In differential geometry, tangent spaces are a key tool for studying manifolds.
 Tangent spaces are also studied in algebraic geometry, but without using calculus.
 We will use the dimensions of tangent spaces to define the dimension of an affine variety.
-We use tangent spaces to define the singular and non-singular points of a variety, concepts which are not present in differential geometry.
-For instance, singular points are those which have a tangent space which is `too large.'
-We make these ideas precise now.
+We also use tangent spaces to define the singular and non-singular points of a variety, concepts which are not present in differential geometry.
+To start, we define tangent spaces for algebraic sets embedded in affine space.
+At the end of the section, we give an intrinsic definition in terms of ideals in coordinate rings.
 
-We first define the tangent space for a hypersurface in $\AA^n$, i.e., an algebraic set of the form $V=\bV(f)\subseteq \AA^n$ for some non-constant irreducible $f \in k[X_1,\ldots,X_n]$.
+We first define tangent spaces for a hypersurface in $\AA^n$, i.e., an algebraic set of the form $V=\bV(f)\subseteq \AA^n$ for some non-constant irreducible $f \in k[X_1,\ldots,X_n]$.
 Let $P=(a_1,\ldots,a_n)$ be a point in $V$.
 In what follows, let $\frac{\partial f}{\partial X_i}$ denote the formal partial derivative of the polynomial $f$.
 For example, $\frac{\partial}{\partial X_i} X_j$ is $1$ if $i=j$ and $0$ otherwise, and the partial derivative of an arbitrary polynomial is computed using the Leibniz rule and linearity.
-Define the first-order part of $f$ at $P$ by
+Define the \emph{first-order part} of $f$ at $P$ by
 \begin{equation}\label{equationtangent}
 f_P^{(1)} := \sum_{i=1}^n \frac{\partial f}{\partial X_i} (P) (X_i-a_i).
 \end{equation}
-Then the tangent space of $V$ at $P$ is
+Then the \emph{tangent space} of $V$ at $P$ is
 $$T_PV := \bV(f_P^{(1)}).$$
-This is an affine subspace of $\AA^n$ containg $P$ and to $f$, matching the idea of tangent spaces in differential geometry.
+This is an affine subspace of $\AA^n$ containing $P$ and tangent to $f$, matching the idea of tangent spaces in differential geometry.
 We give an example in Figure \ref{figure:tangentspace}.
 
 \begin{figure}[h]
@@ -1880,13 +1889,13 @@ We give an example in Figure \ref{figure:tangentspace}.
   \node[blue] at (2, 1.4) {$V$};
   \node[red] at (-2, -1) {$T_PV$};
 \end{tikzpicture}
-\caption{The tangent space of $V = \bV(y^2 - x^3 + x - 1)$ at $P=(-1, 1)$.}
+\caption{The tangent space of $V = \bV(Y^2 - X^3 + X - 1)$ and $P=(-1, 1)$, which is given by $T_PV = \bV(-2(X+1)+2(Y-1))$.}
 \label{figure:tangentspace}
 \end{figure}
 
 Now let $V\subseteq\AA^n$ be any algebraic set.
 Given $f\in\bI(V)$, we compute $f_P^{(1)}$ using Equation \ref{equationtangent}.
-The tangent space of $V$ at $P$ is
+The \emph{tangent space} of $V$ at $P$ is
 $$T_PV := \bigcap_{f\in\bI(V)} \bV(f_P^{(1)}).$$
 In other words, $T_PV$ is the intersection of all affine subspaces tangent at $P$ to some $f$ in the ideal $\bI(V)$ defining $V$.
 
@@ -1905,12 +1914,12 @@ $$T_PV=\bigcap_{j=1}^m \bV(f_{j,P}^{(1)}).$$
 We now explain why $T_PV$ is a vector space over $k$ and therefore has a dimension.
 It is clear that that zero vector is the point $P$.
 The addition and scalar multiplication is defined as follows: if $Q_1, Q_2 \in \AA^n$ lying in $T_PV$ are written $Q_i = \tilde Q_i + P$, then
-$$Q_1 + Q_2 = (\tilde Q_1 + \tilde Q_2) + P, \qquad\qquad \lambda \cdot Q_i = \lambda \tilde Q_i + P, \,\,\, \lambda \in k.$$
-This is the usual vector space structure on $k^n$ if the origin is translated to $P$.
+$$Q_1 + Q_2 := (\tilde Q_1 + \tilde Q_2) + P, \qquad\qquad \lambda \cdot Q_i := \lambda \tilde Q_i + P, \,\,\, \lambda \in k.$$
+This is the usual vector space structure on $k^n = \AA^n$ if the origin is translated to $P$.
 
-We now define the dimension of the algebraic set $V$ by
+We now define the \emph{dimension} of an irreducible algebraic set $V$ by
 $$\dim V := \min\{\dim T_PV : P \in V\}.$$
-A point $P \in V$ is called non-singular if $\dim T_PV = \dim V$ and singular if $\dim T_P V > \dim V$.
+A point $P \in V$ is called \emph{non-singular} if $\dim T_PV = \dim V$ and \emph{singular} if $\dim T_P V > \dim V$.
 We denote the set of non-singular and singular points by $V_{\text{non-sing}}$ and $V_{\text{sing}}$, respectively;
 $V$ is called non-singular if it is non-singular at every point.
 
@@ -1920,7 +1929,7 @@ We now give examples computing tangent spaces and dimensions of algebraic sets.
 \begin{enumerate}
 \item
 Consider the trivial example $V = \AA^n$.
-The ideal $\bI(V)$ is generated by $f = 1$, which for any $P$ has first-order part $f_P^{(1)} = 0$.
+The ideal $\bI(V)$ is generated by $f = 0$, which for any $P$ has first-order part $f_P^{(1)} = 0$.
 Then $T_PV = \bV(f_P^{(1)}) = \AA^n$, i.e., $T_PV$ is the vector space $k^n$ with the origin translated to $P$.
 As expected, $\dim V = n$, and $\AA^n$ is non-singular.
 
@@ -1928,9 +1937,9 @@ As expected, $\dim V = n$, and $\AA^n$ is non-singular.
 Consider $V = \bV(f) \subseteq \AA^2$, where $f = Y^2 - X^3 - 2X^2$.
 For $P = (a, b)$, one computes
 $$f_P^{(1)} = \frac{\partial f}{\partial X}(P)(X-a) + \frac{\partial f}{\partial Y}(P)(Y-b) = a(-3a-4)(X - a) + 2b(Y-b).$$ 
-The tangent space $\bV(f_P^{(1)})$ is a line if at least one of the coefficients $a(-3a-4)$ and $2b$ does not vanish, and all of $\AA^2$ otherwise.
-Of the points $(0, 0)$ and $(-\frac{4}{3}, 0)$ which make the coefficients vanish, only $(0, 0)$ lies in $V$.
-Then $T_PV$ is a line for all points in $V\setminus\{(0, 0)\}$, and $T_{(0,0)}V = \AA^2$.
+The tangent space $\bV(f_P^{(1)})$ is a line if at least one of the coefficients $a(-3a-4)$ and $2b$ is non-zero, and all of $\AA^2$ otherwise.
+Of the points $(0, 0)$ and $(-\frac{4}{3}, 0)$ that make both coefficients vanish, only $(0, 0)$ lies in $V$.
+Therefore, $T_PV$ is a line for all points in $V\setminus\{(0, 0)\}$, and $T_{(0,0)}V = \AA^2$.
 Thus, $\dim V = 1$ and $P = (0, 0)$ is a singular point of $V$.
 \end{enumerate}
 \end{example}
@@ -1997,29 +2006,29 @@ Thus, $\dim V = 1$ and $P = (0, 0)$ is a singular point of $V$.
 \end{figure}
 
 In the singular example above, $V_{\text{non-sing}}$ is the complement of a single point, in particular, it is an open subset of $V$.
-This gives an example of the general fact that the set of non-singular points is an open subset of $V$.
-To prove this fact, for an integer $r$ such that $0 \le r \le n$, define the subset
-$$S(r) := \{P \in V : \dim T_P V \ge r\}\subseteq V.$$
-If $d := \dim V$, then $V = S(d)$ and $V_{\text{sing}} = S(d+1)$.
-Thus,
-$$V_{\text{non-sing}} = V \setminus V_{\text{sing}} = V \setminus S(d+1).$$
-To see $V_{\text{non-sing}}$ is open, it remains to show $S(d+1)$ is closed; this is the content of the following proposition:
-
-\begin{proposition}[{\cite[\S 6.5]{Reid88}}]
-The subset $S(r)$ is closed for all $r=0, \ldots, n$.
-\end{proposition}
-\begin{proof}
-Let $f_1, \ldots, f_m$ generate $\bI(V)$.
-From our previous discussion , we know $T_PV$ is the set of $(x_1, \ldots, x_n) \in \AA^n$ solving
-$$\sum_{i=1}^n \frac{\partial f_j}{\partial X_i} (x_i - a_i) = 0$$
-for all $j = 1, \ldots, m.$
-Then $T_PV$ is identified with the kernel of the matrix 
-$$J(P) := \left(\frac{\partial f_i}{\partial X_j}(P)\right)_{\substack{1 \le i \le m \\ 1 \le j \le n}}.$$
-Checking $P$ lies in $S(r)$ is equivalent to checking $\rank (J(P)) \le n-r$.
-In turn, this is equivalent to ensuring every $(n-r+1)\times(n-r+1)$ minor of $J(P)$ vanishes.
-The entries of $J(P)$ are polynomials in $P=(a_1, \ldots, a_n)$.
-Then each minor of $J(P)$ is also a polynomial, and so $S(r)$ is an algebraic set.
-\end{proof}
+This gives an example of the general fact that the set of non-singular points is an open subset of $V$ \cite[Proposition 6.3]{Reid88}.
+%To prove this fact, for an integer $r$ such that $0 \le r \le n$, define the subset
+%$$S(r) := \{P \in V : \dim T_P V \ge r\}\subseteq V.$$
+%If $d := \dim V$, then $V = S(d)$ and $V_{\text{sing}} = S(d+1)$.
+%Thus,
+%$$V_{\text{non-sing}} = V \setminus V_{\text{sing}} = V \setminus S(d+1).$$
+%To see $V_{\text{non-sing}}$ is open, it remains to show $S(d+1)$ is closed; this is the content of the following proposition:
+%
+%\begin{proposition}[{\cite[\S 6.5]{Reid88}}]
+%The subset $S(r)$ is closed for all $r=0, \ldots, n$.
+%\end{proposition}
+%\begin{proof}
+%Let $f_1, \ldots, f_m$ generate $\bI(V)$.
+%From our previous discussion , we know $T_PV$ is the set of $(x_1, \ldots, x_n) \in \AA^n$ solving
+%$$\sum_{i=1}^n \frac{\partial f_j}{\partial X_i} (x_i - a_i) = 0$$
+%for all $j = 1, \ldots, m.$
+%Then $T_PV$ is identified with the kernel of the matrix 
+%$$J(P) := \left(\frac{\partial f_i}{\partial X_j}(P)\right)_{\substack{1 \le i \le m \\ 1 \le j \le n}}.$$
+%Checking $P$ lies in $S(r)$ is equivalent to checking $\rank (J(P)) \le n-r$.
+%In turn, this is equivalent to ensuring every $(n-r+1)\times(n-r+1)$ minor of $J(P)$ vanishes.
+%The entries of $J(P)$ are polynomials in $P=(a_1, \ldots, a_n)$.
+%Then each minor of $J(P)$ is also a polynomial, and so $S(r)$ is an algebraic set.
+%\end{proof}
 
 Although the description we have given for $T_PV$ in terms of first-order parts of polynomials is geometrically intuitive, it depends on the embedding of $V$ into affine space.
 We now prove a theorem which gives an intrinsic description of $T_PV$ in terms of ideals in the coordinate ring of $V$.
@@ -2031,7 +2040,7 @@ Write $\frakm_P\subseteq k[V]$ for the maximal ideal of regular functions vanish
 Note that we have $\frakm_P=M_P/\bI(V)$.
 We are now ready to prove the theorem.
 
-\begin{theorem}
+\begin{theorem}[{\cite[\S 6.8]{Reid88}}]
 There is a natural isomorphism of vector spaces
 $$(T_PV)^* \cong \frakm_P/\frakm_P^2,$$
 where $(T_PV)^*$ is the algebraic dual vector space of $T_PV$.
@@ -2044,7 +2053,7 @@ $$f_P^{(1)}=\sum_{i=1}^n \frac{\partial f}{\partial X_i}(P) X_i$$
 is a linear form on $k^n$.
 This gives rise to the map $d : M_P\to(k^n)^*$ defined by $f \mapsto f_P^{(1)}$.
 It suffices to show $d$ is surjective with kernel $M_P^2$.
-Note $d$ is surjective since the images of $X_i$ form to a basis for $(k^n)^*$.
+Note $d$ is surjective since the images of the $X_i$ form a basis for $(k^n)^*$.
 Next, a general $f \in M_P$ can be written
 $$f=\sum_{i=1}^n c_i X_i + \text{higher order terms},$$
 for some $c_i \in k$.
@@ -2080,9 +2089,15 @@ Also,
 $$\ker \varphi = \{h \in M_P : h + \bI(V) \in \frakm_P^2\}=\{h \in M_P:h+\bI(V)\in M_P^2/\bI(V)\}=M_P^2+\bI(V).$$
 \end{proof}
 
+The above theorem motivates the following definition:
 
+\begin{definition}
+Let $V = \Spec(A)$ be an affine variety and $P$ a point in $V$ corresponding to the maximal ideal $\frakm$.
+The Zariski tangent space of $V$ at $P$ is
+$$T_PV := (\frakm / \frakm^2)^*.$$
+\end{definition}
 
-
+We will use this characterisation of $T_PV$ in Theorem \ref{theorem:singularities} to determine when a toric variety is non-singular.
 
 
 
@@ -2938,7 +2953,7 @@ We now detail the sets named in Proposition \ref{proposition:pointbijections}.
 \begin{enumerate}
 \item The set of points of $U_\sigma = (k^\times)^n$ is $\{(a_1, \ldots, a_n) : a_i \ne 0\}$ (when considering $(k^\times)^n$ embedded in $\AA^n$).
 \item For brevity, let $A$ denote the polynomial ring $k[X_1, \ldots, X_n]$ and $h$ the element $X_1 \cdots X_n$.
-We know $k[S_\sigma]$ is the localisation $A_h$ (c.f.\ \S\ref{section:opensubsetsofalgebraicsets}).
+We know $k[S_\sigma]$ is the localization $A_h$ (c.f.\ \S\ref{section:opensubsetsofalgebraicsets}).
 Maximal ideals in $A_h$ are all of the form $\frakm A_h$, where $\frakm$ is a maximal ideal of $A$ not containing $h$ (c.f.\ Proposition \ref{proposition:localizationideals}).
 The Nullstellensatz tells us every maximal ideal of $A$ is of the form $\frakm_a = (X_1 - a_1, \ldots, X_n - a_n)$ for some $a = (a_1, \ldots, a_n) \in \AA^n$.
 One readily checks $\frakm_a$ does not contain $h$ if and only if each $a_i$ is non-zero.
@@ -2978,7 +2993,7 @@ In other words, using the dual gives an inclusion-preserving correspondence betw
 Before proving Proposition \ref{proposition:facesopensubsets}, we consider some of its consequences:
 \begin{enumerate}
 \item The torus $U_{\{0\}} = (k^\times)^n$ is a dense open subset of $U_\sigma$. The cone $\sigma$ is strongly convex so $\{0\}$ is a face. Then the proposition says $U_{\{0\}}$ is a principal open subset of $U_\sigma$, and open subsets of an irreducible affine variety are dense \cite[\S 4.2]{Reid88}.
-\item The dimension of $U_\sigma$ is $\dim N_\RR = n$. We have $\dim U_\sigma = \dim (k^\times)^n = n$, because the dimension of an open subset of an irreducible variety equals the dimension of the variety \cite[Chapter 5, j.]{Milne23}.
+\item The dimension of $U_\sigma$ is $\dim N_\RR = n$. We have $\dim U_\sigma = \dim (k^\times)^n = n$, because the dimension of an open subset of an irreducible variety equals the dimension of the variety \cite[Chapter 5, j]{Milne23}.
 \end{enumerate}
 \noindent These important consequences rely on $\sigma$ being strongly convex, justifying why we make this assumption about our cones.
 
@@ -3025,8 +3040,8 @@ We are now ready to prove Proposition \ref{proposition:facesopensubsets}.
 \begin{proof}[{Proof of Proposition \ref{proposition:facesopensubsets}}]
 The lemma yields $u$ in $S_\sigma$ such that $\tau = \sigma \cap u^\perp$ and $S_\tau = S_\sigma + \ZZ_{\ge 0} \cdot (-u)$.
 Then any basis element of $k[S_\tau]$ can be written $\chi^{w - pu} = \frac{\chi^w}{\chi^{pu}}$ for some $w \in S_\sigma$ and $p \in \ZZ_{\ge 0}$.
-It follows that $k[S_\tau]$ is the localisation $k[S_\sigma]_{\chi^u}$, and the inclusion $k[S_\sigma] \hookrightarrow k[S_\tau] = k[S_\sigma]_{\chi^u}$ is the localisation homomorphism.
-Proposition \ref{proposition:localisationembedding} tells us that the corresponding morphism $U_\tau \to U_\sigma$ embeds $U_\tau$ as a principal open subset of $U_\sigma$.
+It follows that $k[S_\tau]$ is the localization $k[S_\sigma]_{\chi^u}$, and the inclusion $k[S_\sigma] \hookrightarrow k[S_\tau] = k[S_\sigma]_{\chi^u}$ is the localization homomorphism.
+Proposition \ref{proposition:localizationembedding} tells us that the corresponding morphism $U_\tau \to U_\sigma$ embeds $U_\tau$ as a principal open subset of $U_\sigma$.
 \end{proof}
 
 \subsection{The torus action}\label{section:thetorusaction}
@@ -3211,8 +3226,8 @@ We now detail examples of algebraic groups and closed subgroups.
 \item The multiplicative group $\GG_m$ is the algebraic group with underlying variety $k^\times$, multiplication map $\mu(x, y) = xy$, and inversion map $\iota(x) = x^{-1}$.
 \item Recall the general linear group $\GL_n(k)$ is the group of $n \times n$ invertible matrices with entries in $k$.
 When $\AA^{n \times n}$ is identified with the set of all $n \times n$ matrices, $\GL_n(k)$ is the principal open subset where $\det \ne 0$.
-Thus, $\GL_n(k)$ is an affine variety (c.f.\ Proposition \ref{proposition:localisationembedding}).
-Its coordinate ring is the localisation $k[\AA^{n \times n}]_{\det}$.
+Thus, $\GL_n(k)$ is an affine variety (c.f.\ Proposition \ref{proposition:localizationembedding}).
+Its coordinate ring is the localization $k[\AA^{n \times n}]_{\det}$.
 If $A, B \in \GL_n(k)$, then the entries of $AB$ are polynomials in the entries of $A$ and $B$, so $\mu$ is a morphism. 
 The inversion map $\iota$ is a morphism by Cramer's rule, as entries of $A^{-1}$ are polynomials in the entries of $A$ and $\frac{1}{\det(A)}$.
 \item An algebraic group we saw in Chapter \ref{chapter:affinetoricvarieties} is the $n$-dimensional algebraic torus $T = (k^\times)^n$.
@@ -3816,6 +3831,22 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
 %\addtocontents{toc}{\vskip -1em}
 \begin{bibdiv}
 \begin{biblist}
+\bib{AM16}{book}{
+   author={Atiyah, M. F.},
+   author={Macdonald, I. G.},
+   title={Introduction to commutative algebra},
+   series={Addison-Wesley Series in Mathematics},
+   edition={economy edition},
+   note={For the 1969 original see [MR0242802]},
+   publisher={Westview Press, Boulder, CO},
+   date={2016},
+   pages={ix+128},
+   isbn={978-0-8133-5018-9},
+   isbn={0-201-00361-9},
+   isbn={0-201-40751-5},
+   review={\MR{3525784}},
+}
+
 \bib{BV04}{book}{
    author={Boyd, Stephen},
    author={Vandenberghe, Lieven},
@@ -4101,6 +4132,13 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    pages={viii+212},
    isbn={3-540-17600-4},
    review={\MR{0922894}},
+}
+
+\bib{Proudfoot05}{article}{
+author={Proudfoot, Nicholas J.},
+title={Geometric invariant theory and projective toric varieties},
+year={2005},
+note={Preprint, \href{https://arxiv.org/abs/math/0502366}{arXiv:math/0502366}}
 }
 
 \bib{Reid88}{book}{
