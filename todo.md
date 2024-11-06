@@ -1,7 +1,4 @@
 # TO DO
-[x] ChatGPT check each section
-[x] Spelling check
-
 0. Introduction (6 pages)
 
 1. Algebraic sets (12 pages)
@@ -13,9 +10,6 @@
 4. Affine toric varieties (8 pages)
 
 5. Affine GIT quotients as affine toric varieties (11 pages)
-
-Aesthetic/etc. things to do later:
-[ ] Final read: consider \emph usage, whether references need to be added, c.f. usage, spelling/grammar and that all environments/spacing look good.
 
 SPELL CHECKER STATS:
 Statistic
