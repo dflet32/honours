@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  5 NOV 2024 17:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  6 NOV 2024 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1042,7 +1042,7 @@ ultiple pdfs with page group included in a single page
 [18]
 
 [19]
-Overfull \hbox (1.13847pt too wide) in paragraph at lines 1614--1618
+Overfull \hbox (1.13847pt too wide) in paragraph at lines 1647--1651
 []\OT1/cmr/m/n/12 (-20) First, choose gen-er-a-tors $\OML/cmm/m/it/12 a[]; [] ;
  a[]$ \OT1/cmr/m/n/12 (-20) for $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 (-20) . The
  $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 (-20) -algebra ho-mo-mor-phism $\OML/cmm/m
@@ -1085,19 +1085,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [33]
 
 [34]
-<../images/cox cone example 2.png, id=748, 158.09062pt x 264.23718pt>
+<../images/cox cone example 2.png, id=762, 158.09062pt x 264.23718pt>
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
-622.
+655.
 (pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
 
 
 [35 <../images/cox cone example 2.png>]
-<../images/fultons_cones.png, id=760, 782.925pt x 206.27063pt>
+<../images/fultons_cones.png, id=774, 782.925pt x 206.27063pt>
 File: ../images/fultons_cones.png Graphic file (type png)
 <use ../images/fultons_cones.png>
-Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2644.
+Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2677.
 (pdftex.def)             Requested size: 375.80544pt x 99.01192pt.
 
 
@@ -1138,25 +1138,27 @@ Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2644.
 [53]
 
 [54]
-Underfull \hbox (badness 10000) in paragraph at lines 3727--3728
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3744--3747
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3757--3760
-
- []
-
-
 
 [55]
+Underfull \hbox (badness 10000) in paragraph at lines 3754--3755
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3771--3774
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3784--3787
+
+ []
+
+
 
 [56]
+
+[57]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1166,9 +1168,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[57]
+[58]
 
-[58] (./honours.aux)
+[59] (./honours.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
@@ -1181,11 +1183,11 @@ Package rerunfilecheck Info: File `honours.out' has not changed.
 (rerunfilecheck)             Checksum: 93F00BF07F22C3E320F6E016CB66EEED;8004.
  ) 
 Here is how much of TeX's memory you used:
- 40323 strings out of 473579
- 902404 string characters out of 5732263
- 1398788 words of memory out of 5000000
- 61710 multiletter control sequences out of 15000+600000
- 587439 words of font info for 288 fonts, out of 8000000 for 9000
+ 40332 strings out of 473579
+ 902516 string characters out of 5732263
+ 1398917 words of memory out of 5000000
+ 61712 multiletter control sequences out of 15000+600000
+ 587631 words of font info for 290 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,21n,111p,1004b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
@@ -1213,10 +1215,10 @@ eufm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on honours.pdf (64 pages, 1218508 bytes).
+Output written on honours.pdf (65 pages, 1221364 bytes).
 PDF statistics:
- 1285 PDF objects out of 1440 (max. 8388607)
- 1121 compressed objects within 12 object streams
- 377 named destinations out of 1000 (max. 500000)
+ 1310 PDF objects out of 1440 (max. 8388607)
+ 1145 compressed objects within 12 object streams
+ 380 named destinations out of 1000 (max. 500000)
  52086 words of extra memory for PDF output out of 61914 (max. 10000000)
 
