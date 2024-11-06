@@ -337,9 +337,9 @@ Their support of my education has shaped me into the person I am today.
 Mathematicians have studied geometry since ancient times.
 Around 300 BC, the Greek mathematician Euclid wrote his textbook the \emph{Elements}.
 Euclid's axiomatisation of geometry in the \emph{Elements} established a rigorous foundation for mathematical proof \cite[Chapter 2]{Stillwell20}.
-Euclid often used straight-edge and compass arguments to construct geometric shapes.
-In these arguments, one can draw circles of fixed radii with a compass, and straight lines using a straight-edge, but distances and angles cannot be measured.
-To illustrate this approach, we show the steps in a straight-edge and compass proof demonstrating the existence of equilateral triangles below:
+Euclid often used straightedge and compass arguments to construct geometric shapes.
+In these arguments, one can draw circles of fixed radii with a compass, and straight lines using a straightedge, but distances and angles cannot be measured.
+To illustrate this approach, we show the steps in a straightedge and compass proof demonstrating the existence of equilateral triangles below:
 \begin{figure}[H]
 \begin{center}
 \begin{minipage}{0.22\textwidth} % First diagram
@@ -377,7 +377,7 @@ To illustrate this approach, we show the steps in a straight-edge and compass pr
     \end{tikzpicture}
 \end{minipage}
 \end{center}
-\caption{Constructing an equilateral triangle by straight-edge and compass.}
+\caption{Constructing an equilateral triangle by straightedge and compass.}
 \end{figure}
 \noindent
 The \emph{Elements} set the foundations for the study of geometry and remained the most important text on the subject for around 2000 years.
@@ -392,7 +392,7 @@ An example of a curve that Descartes studied is the \emph{folium} $X^3 + Y^3 = 3
 \tikz{
     \draw[samples=200,domain=124:-35]plot(\x:{2*sin(\x)*cos(\x)/(sin(\x)^3+cos(\x)^3)})
 }
-\caption{The folium of Descartes, $X^3+Y^3+3XY$ \cite[p.\ 113]{Stillwell20}.}
+\caption{The folium of Descartes, $X^3+Y^3=3XY$ \cite[p.\ 113]{Stillwell20}.}
 \end{figure}
 
 
@@ -655,7 +655,7 @@ In this thesis, we establish a connection between toric varieties and GIT quotie
 Specifically, the main goal of this thesis is to prove that when $V$ is a rational representation of a torus $T$, the GIT quotient $V \git T$ is an affine toric variety.
 Our proof shows that the invariant ring $\CC[V]^T$ is finitely generated without appealing to general theorems about the finite generation of invariants.
 
-To achieve our goal, we build up the preqrequisite theory of affine varieties and toric varieties.
+To achieve our goal, we build up the prerequisite theory of affine varieties and toric varieties.
 We first explore the basic theory of algebraic sets and affine varieties in Chapter \ref{chapter:algebraicsets} and Chapter \ref{chapter:affinevarieties}, respectively.
 Next, we delve into the convex geometry of cones in Chapter \ref{chapter:convexgeometry}.
 Our understanding of varieties and convex geometry is applied in Chapter \ref{chapter:affinetoricvarieties} to study toric varieties.
@@ -829,7 +829,7 @@ In Example \ref{algsetex}, we saw $\emptyset$ and $\AA^n$ are algebraic.
 Together, these facts imply algebraic subsets of $\AA^n$ form the closed sets of a topology.
 This topology is called the \emph{Zariski topology} on $\AA^n$.
 We also endow algebraic sets $V$ with the subspace topology.
-This is called the Zariski topology on $V$, and closed subsets of $V$ are refered to as algebraic subsets of $V$.
+This is called the Zariski topology on $V$, and closed subsets of $V$ are referred to as algebraic subsets of $V$.
 
 \begin{example}[The Zariski topology on $\AA^1$]\label{zariskia1}
 Any non-constant polynomial in one variable has finitely many roots.
@@ -838,7 +838,7 @@ In other words, any closed set is either finite or $\AA^1$, so the Zariski topol
 When $k$ is an infinite field, this topology is not Hausdorff; any two non-empty open sets have finite complements, so they necessarily intersect.
 \end{example}
 
-Example \ref{zariskia1} shows us that the Zariski topology is a very coarse toplogy, in the sense that open sets are large.
+Example \ref{zariskia1} shows us that the Zariski topology is a very coarse topology, in the sense that open sets are large.
 Nonetheless, the Zariski topology plays an important role in studying algebraic sets.
 
 
@@ -873,7 +873,7 @@ Then $\bV(\bI(V)) \subseteq \bV(I) = V$ and $V = \bV(\bI(V))$.
 \end{proof}
 
 Proposition \ref{iproperties} begs a question: do $\bV$ and $\bI$ give a bijection between algebraic sets and ideals?
-Unfortunately, the inclusion $I \subseteq \bI(\bV(I))$ may be strict, so $\bV$ are not $\bI$ are not always inverses of each other.
+Unfortunately, the inclusion $I \subseteq \bI(\bV(I))$ may be strict, so $\bV$ and $\bI$ are not always inverses of each other.
 We give two examples of when this is the case:
 
 \begin{example}\label{inclfails}
@@ -979,7 +979,7 @@ Let $k$ be an algebraically closed field.
 Denote $K := k[X_1, \ldots, X_n] / \frakm$, and let $\varphi$ be the composition of the natural inclusion and quotient maps
 $$\varphi \colon k \overset{\iota}{\hookrightarrow} k[X_1, \ldots, X_n] \overset{\pi}{\twoheadrightarrow} K.$$
 Since $K$ is a field and finitely generated by $\pi(X_1), \ldots, \pi(X_n)$ as a $k$-algebra, Theorem \ref{hardfact} implies $K$ is algebraic over $k$.
-Then $K $ is an algebraic field extension of $k$ and $\varphi$ is the inclusion of $k$ into $K$.
+Then $K$ is an algebraic field extension of $k$ and $\varphi$ is the inclusion of $k$ into $K$.
 Since $k$ is algebraically closed, $\varphi$ is an isomorphism.
 For each $i$, let $a_i := (\varphi^{-1}\circ\pi)(X_i)$, and set $P = (a_1, \ldots, a_n)$.
 Then $\pi(X_i - a_i) = 0$ and $\frakm_P := (X_1 - a_1, \ldots, X_n - a_n) \subseteq \ker \pi = \frakm$.
@@ -989,7 +989,7 @@ Therefore $\frakm_P$ is maximal and $\frakm_P = \frakm$.
 (2) Proper ideals are contained in some maximal ideal, so $I \subseteq \frakm_P$ for some $P \in \AA^n$.
 Then $\bV(I) \supseteq \bV(\frakm_P) = \{P\}$ and $\bV(I) \ne \emptyset$.
 
-(3) Let $I$ be any ideal in $A = k[X_1, \ldots, X_n]$ and let $f \in A$ be arbitary.
+(3) Let $I$ be any ideal in $A = k[X_1, \ldots, X_n]$ and let $f \in A$ be arbitrary.
 We introduce a new variable $Y$ and define the ideal
 $$\tilde I := (I, f Y - 1) \subseteq k[X_1, \ldots, X_n, Y].$$
 Intuitively, $\bV(\tilde I) \subseteq \AA^{n+1}$ is the set of points $P \in \bV(I)$ with $f(P) \ne 0$.
@@ -1248,7 +1248,7 @@ In this section, we show how the direct product $V_1 \times V_2$ has the structu
 Specifically, we show the coordinate ring of $V_1 \times V_2$ is isomorphic to the tensor product of $k$-algebras $k[V_1] \otimes_k k[V_2]$ (by Corollary \ref{isoofalgsetscoro}, to understand an algebraic set, it suffices to determine its coordinate ring).
 Our approach using universal properties follows \cite[\S 1.0]{CLS11}, while \cite[\S 1.3.7]{Geck13} provides an alternative approach by computing the ideal of $V_1 \times V_2$.
 
-We begin by describing the properties that the algebraic set $V_1 \times V_2$ should satisfying.
+We begin by describing the properties that the algebraic set $V_1 \times V_2$ should satisfy.
 First, we want (polynomial) projection maps
 $$\pi_1 : V_1 \times V_2 \to V_1, \qquad \text{and} \qquad \pi_2 : V_1 \times V_2 \to V_2.$$
 Further, if $W$ is another algebraic set, specifying a polynomial map $W \to V_1 \times V_2$ should be equivalent to specifying two polynomial maps
@@ -1479,10 +1479,10 @@ To see $f \in \calO_V(U)$, note that if $P \in U$, then $P\in U_i$ for some $i$,
 
 \newpage
 \section{Affine varieties}\label{chapter:affinevarieties}
-In this chapter, we define and study affine varieties---these are spaces which `look like' algebraic sets, but defined without needing to be embedded in an affine space.
+In this chapter, we define and study affine varieties---these are spaces which ``look like" algebraic sets, but defined without needing to be embedded in an affine space.
 This definition is necessary because we usually want to study spaces without an ambient space.
 In particular, when we study toric varieties and GIT quotients in later chapters, we will need to define a space by prescribing its coordinate ring.
-This is easily achieved in the context of affine varieties by the taking the maximal spectrum of the desired coordinate ring.
+This is easily achieved in the context of affine varieties by taking the maximal spectrum of the desired coordinate ring.
 
 We start by defining sheaves, which is an assignment of a set of functions to open sets in a topological space---this is an abstraction of looking at the regular functions defined on an open subset of an algebraic set.
 Affine varieties can then be defined as a topological space with a sheaf that looks like an algebraic set.
@@ -1495,7 +1495,7 @@ For the rest of the chapter, we study morphisms and tangent spaces of varieties.
 
 \subsection{Sheaves and their morphisms}\label{varietiessection}
 Proposition \ref{sheafprop} alludes to an important object appearing in many areas of mathematics, called a sheaf.
-We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literatue (cf.\ {\cite[Chapter II, \S 1]{Hartshorne77}}).
+We will use the notion of a sheaf of $k$-algebras to define affine varieties, opting to avoid the most general definition of sheaves appearing in the literature (cf.\ {\cite[Chapter II, \S 1]{Hartshorne77}}).
 
 \begin{definition}[{\cite[Chapter 3, a]{Milne23}}]\label{sheafdef}
 Let $V$ be a topological space and $k$ a field.
@@ -1516,7 +1516,7 @@ The $k$-algebra $\calO_V(U)$ is sometimes denoted $\Gamma(U, \calO_V)$, and its 
 Proposition \ref{sheafprop} says that for an algebraic set $V$, the assignment sending an open subset $U \subseteq V$ to its ring of regular functions $\calO_V(U)$ is a sheaf of $k$-algebras.
 This sheaf is called the \emph{structure sheaf} of $V$.
 As we will see, structure sheaves are one of the main tools we use to define and study varieties.
-To further illustrate the definition of a sheaf, we give further examples as well as a non-example:
+To illustrate the definition of a sheaf, we give further examples as well as a non-example:
 
 \begin{example}
 \begin{enumerate}
@@ -1611,7 +1611,7 @@ To illustrate the theory, we will investigate the case $A=k[X]$ as an example th
 
 \emph{$\Spec(A)$ as a set:}
 the set $\Spec(A)$ is defined to be the set of maximal ideals of $A$.
-This is well-motivated by the fact that points in an algebraic set are in bijection with the maximals ideals its coordinate ring (cf.\ Corollary \ref{corollary:coordinateringbijections}).
+This is well-motivated by the fact that points in an algebraic set are in bijection with the maximal ideals of its coordinate ring (cf.\ Corollary \ref{corollary:coordinateringbijections}).
 
 \begin{example}
 The maximal ideals in $k[X]$ are the principal ideals $\frakm_a:=(X-a)$ for each $a\in k$.
@@ -1623,7 +1623,7 @@ To do this, we first identify $A/\frakm$ with $k$ for any $\frakm \in \Spec(A)$.
 If $\iota$ is the inclusion of $k$ into $A$ and $\pi$ is the projection $A \to A/\frakm$, we have the composition
 $$\varphi \colon k \overset{\iota}{\hookrightarrow} A \overset{\pi}{\twoheadrightarrow} A/\frakm.$$
 We claim that $\varphi$ is an isomorphism, providing our desired identification $k \cong A/\frakm$.
-The kernel of $\varphi$ are the elements of $k$ lying in $\frakm$, which is only $0$ since $\frakm$ does not contain units.
+The kernel of $\varphi$ is the elements of $k$ lying in $\frakm$, which is only $0$ since $\frakm$ does not contain units.
 To see $\varphi$ is surjective, note $A/\frakm$ is finitely generated over $k$ since $A$ is.
 By applying Theorem \ref{hardfact}, we then see that $A/\frakm$ is an algebraic field extension of $k$.
 Since $k$ is algebraically closed, the inclusion $k \overset{\varphi}{\hookrightarrow} A/\frakm$ is surjective.
@@ -1896,7 +1896,7 @@ The opposite inclusion is clear, and therefore
 $$T_PV=\bigcap_{j=1}^m \bV(f_{j,P}^{(1)}).$$
 
 We now explain why $T_PV$ is a vector space over $k$ and therefore has a dimension.
-It is clear that that zero vector is the point $P$.
+It is clear that the zero vector is the point $P$.
 The addition and scalar multiplication is defined as follows: if $Q_1, Q_2 \in \AA^n$ lying in $T_PV$ are written $Q_i = \tilde Q_i + P$, then
 $$Q_1 + Q_2 := (\tilde Q_1 + \tilde Q_2) + P, \qquad\qquad \lambda \cdot Q_i := \lambda \tilde Q_i + P, \,\,\, \lambda \in k.$$
 This is the usual vector space structure on $k^n = \AA^n$ if the origin is translated to $P$.
@@ -2173,7 +2173,7 @@ See Figure \ref{figure:cones} for plots of these cones.
 \end{figure}
 
 In linear algebra, dualising is an important operation which helps us to study a vector space.
-In convex geometry, there is an similar notion for a cone, called the dual cone.
+In convex geometry, there is a similar notion for a cone, called the dual cone.
 We will explore the relationship between a cone and its dual throughout this chapter.
 We now give the definition:
 
@@ -2498,7 +2498,7 @@ The proof relies on giving a dual description of a polyhedral cone as an interse
 To prepare for this, we discuss some basic topology of polyhedral cones.
 
 Recall the interior of a subset $S$ of a topological space is the set of points admitting an open neighbourhood contained in $S$.
-The boundary of $S$ is the set of points in the closure of $S$ which do not lie in the interior.
+The boundary of $S$ is the set of points in the closure of $S$ that do not lie in the interior.
 The following proposition characterises the boundary of a non-degenerate polyhedral cone:
 
 \begin{proposition}\label{proposition:boundary}
@@ -2586,8 +2586,8 @@ This involves a lemma providing a bijection between the faces of a cone and the 
 
 We say a convex polyhedral cone is strongly convex if the origin of $N_\RR$ is a face.
 Most of the cones we have seen in this chapter have been strongly convex.
-An example of a polyhedral cone which is not strongly convex is the upper half-plane $\sigma = \Span_{\RR_{\ge 0}}\{e_1, -e_1, e_2\}$ in $N_\RR=\RR^2$.
-The dual cone $\sigma^\vee$ is generated by $e_2^*$ and the only proper face is the $x$-axis.
+An example of a polyhedral cone that is not strongly convex is the upper half-plane $\sigma = \Span_{\RR_{\ge 0}}\{e_1, -e_1, e_2\}$ in $N_\RR=\RR^2$.
+The dual cone $\sigma^\vee$ is generated by $e_2^*$, and the only proper face is the $x$-axis.
 Figure \ref{figure:strongconvexity} contains diagrams of two more cones: one which is strongly convex, and one which is not.
 
 \begin{figure}[h]
@@ -2642,9 +2642,9 @@ Defining rational cones requires us to consider lattices in the vector spaces $N
 Recall $N_\RR$ and $M_\RR$ are dual vector spaces with dual pairing $\langle \cdot , \cdot \rangle : M_\RR \times N_\RR \to \RR$.
 Now, let $N$ be a lattice in $N_\RR$.
 This means $N$ is a free abelian subgroup of $N_\RR$ with rank $n = \dim N_\RR$ such that $\Span_\RR N = N_\RR$.
-Concretely, $N$ is a lattice in $N_\RR$ if and only if there exists an $\RR$-basis for $N_\RR$ which is also a $\ZZ$-basis for $N$ \cite[\S 2.2]{Serre73}.
+Concretely, $N$ is a lattice in $N_\RR$ if and only if there exists an $\RR$-basis for $N_\RR$ that is also a $\ZZ$-basis for $N$ \cite[\S 2.2]{Serre73}.
 The relationship between $N$ and $N_\RR$ generalises the relationship between $\ZZ^n$ and $\RR^n$, and most of our examples will have $N = \ZZ^n$ and $N_\RR = \RR^n$ for simplicity.
-We also let $M$ denote the dual lattice $\mathrm{Hom}_{\ZZ\text{-linear}}(N, \ZZ)$, which are the elements of $M_\RR = N_\RR^*$ taking integer values on $N$.
+We also let $M$ denote the dual lattice $\mathrm{Hom}_{\ZZ\text{-linear}}(N, \ZZ)$, which is the elements of $M_\RR = N_\RR^*$ taking integer values on $N$.
 
 We say a polyhedral cone $\sigma$ is rational if its generators can be chosen from the lattice $N$.
 All the examples of polyhedral cones we have seen are rational if our lattice is chosen to be $\ZZ^n$.
@@ -2677,7 +2677,7 @@ In particular, when the generators of $\sigma$ lie in $N$, the algorithm can be 
 
 \newpage
 \section{Affine toric varieties}\label{chapter:affinetoricvarieties}
-Affine toric varieties are a class of algebraic varieties which are determined by a cone in a vector space.
+Affine toric varieties are a class of algebraic varieties that are determined by a cone in a vector space.
 There is a rich interplay between the algebraic geometry of the variety and the convex geometry of the cone.
 Moreover, computations with the cone can often be done explicitly, which means toric varieties are useful to study as examples.
 
@@ -2685,7 +2685,7 @@ A toric variety $V$ is a normal\footnote{An affine variety is normal if its coor
 This definition is straightforward to state, but makes no reference to a cone in a vector space, so the relationship with convex geometry is unclear.
 
 In this chapter, we use the convex geometry from the previous chapter to define affine toric varieties using cones.
-Afterwards, we establish some fundamental properties, such as the existence of a dense torus which acts on the variety, and computing singularities.
+Afterwards, we establish some fundamental properties, such as the existence of a dense torus that acts on the variety, and computing singularities.
 
 Throughout this chapter, $N$ is a lattice in the vector space $N_\RR$ and $M$ is the dual lattice in $M_\RR = N_\RR^*$.
 A cone $\sigma$ is always assumed to be polyhedral, strongly convex and rational.
@@ -2704,7 +2704,7 @@ All the semigroups we consider are commutative, so we will write the operation a
 If $S$ is a semigroup and $T$ is a finite subset of $S$, we say $T$ generates $S$ if every element in $S$ can be written as a sum of elements of $T$.
 A map between semigroups with identity $\varphi : S \to T$ is a homomorphism if it preserves the identity and $\varphi(x + y) = \varphi(x) + \varphi(y)$ for all $x$ and $y$ in $S$.
 
-Let $\sigma$ be cone in $N_\RR$.
+Let $\sigma$ be a cone in $N_\RR$.
 The semigroup of $\sigma$ is defined as
 $$S_\sigma := \sigma^\vee \cap M.$$
 In other words, $S_\sigma$ is the set of lattice points in the dual cone of $\sigma$.
@@ -2722,7 +2722,6 @@ Define
 $$K = \left\{\sum_{i=1}^s t_i u_i : 0 \le t_i \le 1\right\} \subseteq M_\RR.$$
 Since $K$ is compact and $M$ is discrete, the intersection $K \cap M$ is finite.
 We claim $K \cap M$ generates $S_\sigma$.
-%Note that $u_1, \ldots, u_s \in K \cap M$.
 Suppose that $u \in S_\sigma$.
 Then $u =\sum_{i=1}^s r_i u_i$ for some $r_i \in \RR_{\ge 0}$ since $u_1, \ldots, u_s$ generate $\sigma^\vee$.
 Write each $r_i$ as $m_i + t_i$ for $m_i \in \ZZ_{\ge 0}$ and $0 \le t_i < 1$, so $u = \sum_{i=1}^s m_i u_i + \sum_{i=1}^s t_i u_i$.
@@ -2762,7 +2761,7 @@ With the semigroup algebra defined, we are ready to define the affine toric vari
 After giving the definition, we provide some examples.
 
 \begin{definition}
-Let $\sigma$ be a rational cone in $N$.
+Let $\sigma$ be a rational cone in $N_\RR$.
 The affine toric variety corresponding to $\sigma$ is
 $$U_\sigma := \Spec(k[S_\sigma]).$$
 \end{definition}
@@ -2770,7 +2769,7 @@ $$U_\sigma := \Spec(k[S_\sigma]).$$
 As $k[S_\sigma]$ is a finitely generated reduced $k$-algebra, $U_\sigma$ is an affine variety (cf.\ \S \ref{section:themaximalspectrum}).
 Furthermore, since $k[S_\sigma]$ is an integral domain, $U_\sigma$ is irreducible.
 
-For example, if $\sigma = \{0\}$, then $S_{\{0\}}= M$, and
+For example, if $\sigma = \{0\}$, then $S_{\{0\}} = M$, and
 $$U_{\{0\}} = \Spec(k[X_1^\pm, \ldots, X_n^\pm]) = (k^\times)^n$$
 is an algebraic torus.
 This torus plays an important role in the theory (cf.\ \S \ref{section:facesandopenaffinesubsets} and \S \ref{section:thetorusaction}), and is denoted $T_N$:
@@ -2848,7 +2847,7 @@ Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, - e_1 + 2 e_2\}$ and $\sigma^\vee 
 \noindent
 While $\{2 e_1^* + e_2^*, e_2^*\}$ generates $\sigma^\vee$ as a cone, it does not generate $S_\sigma$ as a semigroup, since not every element in $S_\sigma$ lies in $\Span_{\ZZ_{\ge 0}} \{2 e_1^* + e_2^*,  e_2^*\}$.
 For example, $e_1^* + e_2^* \in S_\sigma$, but $e_1^* + e_2^* \notin \Span_{\ZZ_{\ge 0}} \{2 e_1^* + e_2^*,  e_2^*\}.$
-However, $\{e_2^*, 2 e_1^* + e_2^*,  e_1^* + e_2^*\}$ generates $S_\sigma$.
+However, $\{e_2^*, 2 e_1^* + e_2^*,  e_1^* + e_2^*\}$ generates $S_\sigma$ as a semigroup.
 Then,
 \begin{align*}
 	\qquad k[S_\sigma] = k[\chi^{e_2^*}, \chi^{2 e_1^* + e_2^*}, \chi^{e_1^* + e_2^*}] &= k[X_2, X_1^2 X_2, X_1 X_2] \cong k[X, Y, Z] / (X Y - Z^2),
@@ -2880,7 +2879,7 @@ The fact that the coordinate ring of an affine toric variety arises as a semigro
 Later, in \S\ref{section:thetorusaction}, we will use the semigroup homomorphism point of view to define a torus action on an affine toric variety.
 
 \begin{proposition}[{\cite[Proposition 1.3.1]{CLS11}}]\label{proposition:pointbijections}
-Let $\sigma$ be a cone in $N$ and $U_\sigma = \Spec(k[S_\sigma])$ the associated affine toric variety.
+Let $\sigma$ be a cone in $N_\RR$ and $U_\sigma = \Spec(k[S_\sigma])$ the associated affine toric variety.
 The following sets are in bijection:
 \begin{enumerate}
 \item The set of points of $U_\sigma$.
@@ -2995,7 +2994,7 @@ Proposition \ref{proposition:localizationembedding} tells us that the correspond
 In this section, we define an action of the dense torus on an affine toric variety.
 This means the affine toric varieties we have defined in terms of cones are toric varieties in the sense mentioned in the introduction to this chapter.
 The torus action is defined using the semigroup homomorphism perspective of points.
-Afterwards, we check this defines a group action which extends the natural action of a torus on itself.
+Afterwards, we check this defines a group action that extends the natural action of a torus on itself.
 We conclude the section with examples.
 
 Let $\sigma$ be a cone in $N$.
@@ -3048,7 +3047,7 @@ The torus action is given by $t\cdot x : S_\sigma \to k$, where $e_i^* \mapsto a
 \item Consider $\sigma = \Span_{\RR_{\ge 0}} \{e_1, -e_1 + 2 e_2\}$ and $S_\sigma = \Span_{\ZZ_{\ge 0}}\{e_2^*, 2e_1^*+e_2^*, e_1^*+e_2^*\}$.
 Any point in $U_\sigma = \bV(XY- Z^2)$ is a map $p : S_\sigma \to k$, given on the generators by
 $$e_2^* \mapsto x, \qquad 2e_1^*+e_2^* \mapsto y, \qquad e_1^*+e_2^* \mapsto z,$$
-subject to the restraint $xy=z^2$ so that the map is a homomorphism.
+subject to the relation $xy=z^2$ so that the map is a homomorphism.
 A point in the torus $T_N = (k^\times)^2$ is a map $t : M \to k^\times$ given by
 $$e_1^* \mapsto a, \qquad e_2^* \mapsto b.$$
 The restriction $\left. t \right|_{S_\sigma}$ gives the embedding $T_N \hookrightarrow U_\sigma$.
@@ -3153,7 +3152,7 @@ We first define algebraic groups, their actions, and representations.
 Following this, we discuss classic invariant theory and the problem of finite generation of invariants.
 Useful references for this material include \cite{Humphreys75}, \cite{Geck13}, \cite{Springer98}, and \cite{Mukai03}.
 
-Let $G$ be an (affine) variety which is also a group.
+Let $G$ be an (affine) variety that is also a group.
 Consider the multiplication map $\mu : G \times G \to G$ defined by $(x, y) \mapsto xy$, and the inversion map $\iota : G \to G$ defined by $x \mapsto x^{-1}$.
 If $\mu$ and $\iota$ are morphisms of varieties, we say $G$ is an \emph{(affine) algebraic group}.
 A map between algebraic groups $\varphi : G \to G'$ is called a \emph{homomorphism of algebraic groups} if it is a group homomorphism and a morphism of varieties.
@@ -3374,7 +3373,7 @@ Each closure-equivalence class contains exactly one closed orbit, so points in $
 See \cite[\S 5.1]{Mukai03}, in particular, Theorem 5.9 and Corollary 5.5.
 \end{proof}
 
-We now examples of the GIT quotients of the group actions studied in Example \ref{example:invariantrings}.
+We now give examples of the GIT quotients for the group actions studied in Example \ref{example:invariantrings}.
 
 \begin{example}\label{example:gitquotients}
 \begin{enumerate}
@@ -3425,7 +3424,7 @@ See \cite[3.2.3]{Springer98}.
 If the subspace
 $$V_\chi = \{v \in V : t \cdot v = \chi(t) v \text{ for all } t \in T\}$$
 is non-zero, we call $\chi$ a weight of the representation $V$ \cite[7.1.1]{Springer98}.
-If $\chi$ is weight of $V$, then the subspace $V_\chi$ is called a weight space.
+If $\chi$ is a weight of $V$, then the subspace $V_\chi$ is called a weight space.
 Note weight spaces may have dimension greater than one; the dimension of $V_\chi$ is called the multiplicity of the weight $\chi$.
 
 Let $\chi_1, \ldots, \chi_n$ be the weights of $V$, counted with multiplicity. 
@@ -3504,7 +3503,7 @@ $$\tilde V := \Span_{k}\{v_1, \ldots, \hat v_\ell, \ldots, v_n\},$$
 where the hat denotes exclusion.
 Let $T$ act on $\tilde V$ by $t \cdot v_i := \chi_i(t) v_i$ for each $i \ne \ell$.
 Then $k[V]^T$ and $k[\tilde V]^T$ are isomorphic.
-After removing all redundant coordinate functions, we have a representation $W$ where our assumption holds, and $V \git T \cong W \git T$.
+After removing all redundant coordinate functions, we have a representation $W$ for which our assumption holds, and $V \git T \cong W \git T$.
 There may be no non-constant invariants, in which case $V \git T$ is a point, but we consider this to be the toric variety corresponding to $\sigma = \{0\}$ in $N_\RR = \RR^0 =\{0\}$.
 In \S \ref{section:examples}, we give an example where our assumption fails then modify the representation to ensure it does.
 
@@ -3520,7 +3519,7 @@ Associated to a toric variety $U_\sigma$ is the following data and dual data:
 \end{center}
 \noindent
 The strategy to prove $V \git T$ is a toric variety is to define the data and dual data independently.
-This is because it will be straightforward to check $V \git T \cong U_\sigma$ using the dual data, and straightfoward to check $\sigma$ is polyhedral, rational and strongly convex using the data.
+This is because it will be straightforward to check $V \git T \cong U_\sigma$ using the dual data, and straightforward to check $\sigma$ is polyhedral, rational and strongly convex using the data.
 
 To begin, recall $\chi_1, \ldots, \chi_n$ are the weights of $V$ listed with multiplicity.
 We define the dual vector space
@@ -3578,7 +3577,7 @@ Note $M$ is the intersection of $\ZZ^n$ with a subspace of $\RR^n$, so any basis
 The dual lattice to $\ZZ^n$ is itself, with pairing given by the restriction of the standard inner product. 
 Then there is a basis $\{v_1, \ldots, v_n\}$ for $\ZZ^n$ which is dual to $\{u_1, \ldots, u_n\}$.
 If $g$ lies in the dual lattice $M^\vee = \Hom(M, \ZZ)$, we extend $g$ to a map $\tilde g$ in $\Hom(\ZZ^n, \ZZ)$ by setting $\tilde g(c_i) := g(c_i)$ for $i \le r$ and $\tilde g(c_i) := 0$ for $i > r$.
-The dual basis identifies $\tilde g$ with an element of $\ZZ^n$ and we have $\psi(\tilde g +M_\RR^\perp) = g$, meaning $\psi$ is surjective.
+The dual basis identifies $\tilde g$ with an element of $\ZZ^n$, and we have $\psi(\tilde g +M_\RR^\perp) = g$, meaning $\psi$ is surjective.
 
 \item
 By definition, the dual cone to $\sigma$ is
@@ -3631,7 +3630,7 @@ Observe $\frac{1}{2}(e_1+e_2)$ spans $M_\RR$ and $\frac{1}{2}(e_1-e_2)$ spans $M
 We have
 $$\RR^2 = M_\RR \oplus M_\RR^\perp = \Span_\RR \{v_1\} \oplus \Span_\RR\{v_2\},$$
 so we identify $N_\RR = \RR^2 / M_\RR^\perp$ with $\Span_\RR\{v_1\}$.
-The image of an element in $N_\RR$ is identifed with its projection onto $\Span_\RR\{v_1\}$ under the above decomposition of $\RR^2$.
+The image of an element in $N_\RR$ is identified with its projection onto $\Span_\RR\{v_1\}$ under the above decomposition of $\RR^2$.
 Since
 $$e_1 = v_1 + v_2 \qquad\text{and}\qquad e_2 = v_1 - v_2,$$
 we have
@@ -3709,7 +3708,7 @@ One can check:
 	e_3 &= -3v_1-3v_2+2v_3+4v_4-v_5+2v_6,  & e_4 &= 3v_1-v_3+v_4-v_5-v_6, \\
 	e_5 &= 3v_2-v_3+v_4+2v_5-v_6, & e_6 &= -3v_1-3v_2+4v_3+2v_4+v_5-2v_6.
 \end{align*}
-The image of an element in $N_\RR$ is identifed with its projection onto $\Span_\RR\{v_1, v_2, v_3, v_4\}$ under the above decomposition of $\RR^6$.
+The image of an element in $N_\RR$ is identified with its projection onto $\Span_\RR\{v_1, v_2, v_3, v_4\}$ under the above decomposition of $\RR^6$.
 Thus, the cone $\sigma$ is
 \begin{align*}
 	\sigma &= \Span_{\RR_{\ge 0}}\{ \bar e_1, \bar e_2, \bar e_3, \bar e_4, \bar e_5, \bar e_6 \} \\

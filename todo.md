@@ -1,6 +1,6 @@
 # TO DO
-[ ] ChatGPT check each section
-[ ] Spelling check
+[x] ChatGPT check each section
+[x] Spelling check
 
 0. Introduction (6 pages)
 
@@ -17,8 +17,15 @@
 Aesthetic/etc. things to do later:
 [ ] Final read: consider \emph usage, whether references need to be added, c.f. usage, spelling/grammar and that all environments/spacing look good.
 
-[ ] Make \emph usage is consistent
-[x] Fix reference list
-[x] Fix c.f. usage
-[x] Put examples in non-italics/make sure all environments look right. Remove all remark environments.
-[x] Make sure chapters have even length
+SPELL CHECKER STATS:
+Statistic
+Starting Rate:79%
+Rate:83%
+Characters:204179
+Char. w/o Space:171325
+Words:29076
+Lines:3759
+Errors (Red):4840
+Unknown (Orange):196
+Auto Corrected (Green):1202
+User Corrected (Blue):0
