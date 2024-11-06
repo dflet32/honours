@@ -296,7 +296,7 @@
 {\textsc{Co-Supervisor: \href{https://sites.google.com/site/yangzhang139/home}{Yang Zhang}}} \\
 \vspace{1cm}
 {\textsc{ Bachelor of Mathematics (Honours)}} \\
-\vspace{0.1cm}
+%\vspace{0.1cm}
 {\textsc{November 2024}} \\
 \vspace{1cm}
 {\textsc{\href{https://www.uq.edu.au/}{The University of Queensland}}} \\
@@ -667,7 +667,7 @@ $$\CC[V]^G := \{f \in \CC[V] : f(g \cdot v) = f(v) \text{ for all } v \in V \tex
 Hilbert was interested in determining when the ring $\CC[V]^G$ is finitely generated \cite[Chapter 12]{FSR17}.
 He proved that when $G$ is $\SL_n(\CC)$ acting on $V$ by a representation, $\CC[V]^G$ is finitely generated \cite{Hilbert90}.
 Moreover, the invariant ring $\CC[V]^G$ is finitely generated for a large class of groups called \emph{reductive} groups---examples include $\GL_n(\CC)$, $\SL_n(\CC)$ and tori.
-However, the invariant ring is not always finitely generated; in 1958, Masayoshi Nagata found an example where $\CC[V]^G$ fails to be finitely generated \cite[Chapter 12]{FSR17}.
+However, the invariant ring is not always finitely generated; in 1960, Masayoshi Nagata found an example where $\CC[V]^G$ fails to be finitely generated \cite{Nagata60}.
 
 Mumford reformulated invariant theory in a geometric way.
 He considered a group $G$ acting on any variety $V$.
@@ -1475,7 +1475,7 @@ A function $f : U \to k$ is called regular at $P \in U$ if there exist $g, h \in
 A function $f:U\to k$ is called regular if it is regular at every $P \in U$.
 \end{definition}
 
-It can be shown when $U = V$, the only regular functions on $U$ are the polynomial functions on $V$ (cf.\ \cite[Proposition 3.11]{Milne23}).
+It can be shown when $U = V$, the only regular functions on $U$ are the polynomial functions on $V$ \cite[Proposition 3.11]{Milne23}.
 
 We now consider an example of a regular function.
 
@@ -1844,7 +1844,7 @@ We then have $\alpha(f) \mapsto \alpha(f) + \ker(\alpha)$, and $\alpha(f) + \ker
 \end{example}
 
 We now show the morphism corresponding to the localization map $A \to A_h$ embeds $\Spec(A_h)$ as a principal open subset of $\Spec(A)$.
-This result will be important when we study toric varieties, as it is used to show there is an open subset of a toric variety isomorphic to an algebraic torus (cf. Proposition \ref{proposition:facesopensubsets}).
+This result will be important when we study toric varieties, as it is used to show there is an open subset of a toric variety isomorphic to an algebraic torus (cf.\ Proposition \ref{proposition:facesopensubsets}).
 
 \begin{proposition}[{\cite[Proposition 3.32]{Milne23}}]\label{proposition:localizationembedding}
 Let $V = \Spec(A)$ be an affine variety and $h$ a non-zero element of $A$.
@@ -2745,7 +2745,8 @@ This fact can be proven using the algorithm we presented in \S \ref{section:dual
 In particular, when the generators of $\sigma$ lie in $N$, the algorithm can be used to find generators for $\sigma^\vee$ in $M$. 
 \end{enumerate}
 
-
+\newpage
+\hfill
 
 
 
@@ -2762,7 +2763,7 @@ Affine toric varieties are a class of algebraic varieties which are determined b
 There is a rich interplay between the algebraic geometry of the variety and the convex geometry of the cone.
 Moreover, computations with the cone can often be done explicitly, which means toric varieties are useful to study as examples.
 
-A toric variety $V$ is a normal\footnote{An affine variety is normal if its coordinate ring is integrally closed (cf.\ \cite[p.\ 29]{Fulton93}).} variety containing an algebraic torus $T$ as a dense open subset, such that $T$ acts on $V$ by an action which extends the natural action of $T$ on itself \cite[\S 1.1]{Fulton93}.
+A toric variety $V$ is a normal\footnote{An affine variety is normal if its coordinate ring is integrally closed \cite[p.\ 29]{Fulton93}.} variety containing an algebraic torus $T$ as a dense open subset, such that $T$ acts on $V$ by an action which extends the natural action of $T$ on itself \cite[\S 1.1]{Fulton93}.
 This definition is straightforward to state, but makes no reference to a cone in a vector space, so the relationship with convex geometry is unclear.
 
 In this chapter, we use the convex geometry from the previous chapter to define affine toric varieties using cones.
@@ -3203,12 +3204,10 @@ We revisit the singular affine toric varieties we saw in Example \ref{example:af
 
 \begin{example}
 \begin{enumerate}
-\item If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, e_2, e_1+e_3, e_2+e_3\}$, then
-$$U_\sigma = \bV(XY - ZW).$$
+\item If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, e_2, e_1+e_3, e_2+e_3\}$, then $U_\sigma = \bV(XY - ZW).$
 Note $U_\sigma$ is singular since all partial derivatives of $XY-ZW$ vanish at the origin.
 The generating set $\{e_1, e_2, e_1+e_3, e_2+e_3\}$ is not a basis for $\ZZ^3$ as it contains four vectors.
-\item If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, -e_1+2e_2\}$, then
-$$U_\sigma = \bV(XY - Z^2).$$
+\item If $\sigma = \Span_{\RR_{\ge 0}}\{e_1, -e_1+2e_2\}$, then $U_\sigma = \bV(XY - Z^2).$
 Again, $U_\sigma$ is singular since all partial derivatives of $XY-Z^2$ vanish at the origin.
 Notice that any point in the $\ZZ$-span of the generating set $\{e_1, -e_1+2e_2\}$ has even $y$-component; thus, the generating set is not a basis for $\ZZ^2$.
 \end{enumerate}
@@ -3267,7 +3266,7 @@ The inversion map $\iota$ is a morphism by Cramer's rule, as entries of $A^{-1}$
 This is isomorphic to the closed subgroup of diagonal matrices in $\GL_n(k)$, which is denoted $D_n(k)$.
 If $X_{ij}$ denote the coordinate functions on $\GL_n(k)$, then $D_n(k)$ is the closed subset defined by the equations $X_{ij} = 0$ for all $i \ne j$.
 The map $T \to D_n(k)$ given by $(t_1, \ldots, t_n) \mapsto \diag(t_1, \ldots, t_n)$ is an isomorphism of algebraic groups.
-\item Important algebraic groups arising as closed subgroups of $\GL_n(k)$ include the special linear group $\SL_n(k)$, the special orthogonal group $\SO_n(k)$ and the symplectic group $\Sp_{2n}(k)$ (cf.\ \cite[\S 1.3]{Geck13}).
+\item Important algebraic groups arising as closed subgroups of $\GL_n(k)$ include the special linear group $\SL_n(k)$, the special orthogonal group $\SO_n(k)$ and the symplectic group $\Sp_{2n}(k)$ \cite[\S 1.3]{Geck13}.
 \end{enumerate}
 \end{example}
 
@@ -3341,7 +3340,7 @@ For example, in 1868, Gordan computed a finite set of generators when $\SL_2(\CC
 In 1890, Hilbert showed that if $V$ is a finite-dimensional representation of $G = \SL_n(\CC)$, then $A^G$ is finitely generated.
 
 In fact, Hilbert's 1890 proof shows that the invariants of any representation of a \emph{reductive} group are finitely generated \cite[\S 3.1]{DC70}.
-A group is reductive if it is connected and has trivial \emph{unipotent radical} (cf.\ \cite[\S 19.5]{Humphreys75}).
+A group is reductive if it is connected and has trivial \emph{unipotent radical} \cite[\S 19.5]{Humphreys75}.
 Examples of reductive groups include $\GL_n(k)$, $\SL_n(k)$, and tori.
 
 When Mumford developed the theory of GIT in the 1960s, he was interested in the conditions under which $A^G$ is finitely generated for an arbitrary algebraic variety $V$.
@@ -3553,7 +3552,7 @@ See \cite[3.2.3]{Springer98}.
 
 If the subspace
 $$V_\chi = \{v \in V : t \cdot v = \chi(t) v \text{ for all } t \in T\}$$
-is non-zero, we call $\chi$ a weight of the representation $V$ (cf.\ \cite[7.1.1]{Springer98}).
+is non-zero, we call $\chi$ a weight of the representation $V$ \cite[7.1.1]{Springer98}.
 If $\chi$ is weight of $V$, then the subspace $V_\chi$ is called a weight space.
 Note weight spaces may have dimension greater than one; the dimension of $V_\chi$ is called the multiplicity of the weight $\chi$.
 
@@ -3852,7 +3851,8 @@ Thus, the cone $\sigma$ is
 in the vector space
 $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
 
-
+\newpage
+\hfill
 
 
 
@@ -4045,16 +4045,16 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    doi={10.1007/BF01208503},
 }
 
-\bib{Humphreys72}{book}{
-   author={Humphreys, James E.},
-   title={Introduction to Lie algebras and representation theory},
-   series={Graduate Texts in Mathematics},
-   volume={Vol. 9},
-   publisher={Springer-Verlag, New York-Berlin},
-   date={1972},
-   pages={xii+169},
-   review={\MR{0323842}},
-}
+%\bib{Humphreys72}{book}{
+%   author={Humphreys, James E.},
+%   title={Introduction to Lie algebras and representation theory},
+%   series={Graduate Texts in Mathematics},
+%   volume={Vol. 9},
+%   publisher={Springer-Verlag, New York-Berlin},
+%   date={1972},
+%   pages={xii+169},
+%   review={\MR{0323842}},
+%}
 
 \bib{Humphreys75}{book}{
    author={Humphreys, James E.},
@@ -4067,18 +4067,18 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    review={\MR{0396773}},
 }
 
-\bib{Humphreys90}{book}{
-   author={Humphreys, James E.},
-   title={Reflection groups and Coxeter groups},
-   series={Cambridge Studies in Advanced Mathematics},
-   volume={29},
-   publisher={Cambridge University Press, Cambridge},
-   date={1990},
-   pages={xii+204},
-   isbn={0-521-37510-X},
-   review={\MR{1066460}},
-   doi={10.1017/CBO9780511623646},
-}
+%\bib{Humphreys90}{book}{
+%   author={Humphreys, James E.},
+%   title={Reflection groups and Coxeter groups},
+%   series={Cambridge Studies in Advanced Mathematics},
+%   volume={29},
+%   publisher={Cambridge University Press, Cambridge},
+%   date={1990},
+%   pages={xii+204},
+%   isbn={0-521-37510-X},
+%   review={\MR{1066460}},
+%   doi={10.1017/CBO9780511623646},
+%}
 
 \bib{Kamgarpour21}{webpage}{
    author={Kamgarpour, Masoud},
@@ -4087,19 +4087,19 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    note={Available at \url{https://baileywhitbread.com/files/21_character_varieties.pdf}}
 }
 
-\bib{Lang02}{book}{
-   author={Lang, Serge},
-   title={Algebra},
-   series={Graduate Texts in Mathematics},
-   volume={211},
-   edition={3},
-   publisher={Springer-Verlag, New York},
-   date={2002},
-   pages={xvi+914},
-   isbn={0-387-95385-X},
-   review={\MR{1878556}},
-   doi={10.1007/978-1-4613-0041-0},
-}
+%\bib{Lang02}{book}{
+%   author={Lang, Serge},
+%   title={Algebra},
+%   series={Graduate Texts in Mathematics},
+%   volume={211},
+%   edition={3},
+%   publisher={Springer-Verlag, New York},
+%   date={2002},
+%   pages={xvi+914},
+%   isbn={0-387-95385-X},
+%   review={\MR{1878556}},
+%   doi={10.1007/978-1-4613-0041-0},
+%}
 
 %\bib{Milne13}{webpage}{
 %   author={Milne, James S.},

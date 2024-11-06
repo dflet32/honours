@@ -28,17 +28,17 @@
 \contentsline {subsection}{\tocsubsection {}{3.3}{Dual description of cones}}{34}{subsection.3.3}%
 \contentsline {subsection}{\tocsubsection {}{3.4}{Strongly convex cones}}{35}{subsection.3.4}%
 \contentsline {subsection}{\tocsubsection {}{3.5}{Rational cones}}{36}{subsection.3.5}%
-\contentsline {section}{\tocsection {}{4}{Affine toric varieties}}{38}{section.4}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{Semigroups and semigroup algebras}}{38}{subsection.4.1}%
-\contentsline {subsection}{\tocsubsection {}{4.2}{The definition of toric varieties}}{39}{subsection.4.2}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{Points of toric varieties}}{41}{subsection.4.3}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{Faces and open affine subsets}}{42}{subsection.4.4}%
-\contentsline {subsection}{\tocsubsection {}{4.5}{The torus action}}{43}{subsection.4.5}%
-\contentsline {subsection}{\tocsubsection {}{4.6}{Singularities}}{44}{subsection.4.6}%
+\contentsline {section}{\tocsection {}{4}{Affine toric varieties}}{39}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{Semigroups and semigroup algebras}}{39}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{The definition of toric varieties}}{40}{subsection.4.2}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{Points of toric varieties}}{42}{subsection.4.3}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Faces and open affine subsets}}{43}{subsection.4.4}%
+\contentsline {subsection}{\tocsubsection {}{4.5}{The torus action}}{44}{subsection.4.5}%
+\contentsline {subsection}{\tocsubsection {}{4.6}{Singularities}}{45}{subsection.4.6}%
 \contentsline {section}{\tocsection {}{5}{Torus quotients as toric varieties}}{47}{section.5}%
 \contentsline {subsection}{\tocsubsection {}{5.1}{Algebraic groups and their actions}}{47}{subsection.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.2}{The affine GIT quotient}}{50}{subsection.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.3}{Invariants of a linear torus action}}{52}{subsection.5.3}%
 \contentsline {subsection}{\tocsubsection {}{5.4}{The cone of a torus quotient}}{53}{subsection.5.4}%
 \contentsline {subsection}{\tocsubsection {}{5.5}{Examples}}{56}{subsection.5.5}%
-\contentsline {section}{\tocsection {}{}{References}}{58}{section*.23}%
+\contentsline {section}{\tocsection {}{}{References}}{59}{section*.23}%
