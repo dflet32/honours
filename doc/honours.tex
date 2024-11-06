@@ -346,46 +346,32 @@ To illustrate this approach, we show the steps in a straight-edge and compass pr
     \begin{tikzpicture}[scale=0.9]
     \pgfmathsetmacro{\sqrttree}{sqrt(3)}
     \draw (-2,0) -- (2,0);
-    %\draw (-0.5,0) circle (1);
-    %\draw (0.5,0) circle (1);
-    %\draw (1.19282, -1.2) -- (-0.19282, 1.2);
-    %\draw (-1.19282, -1.2) -- (0.19282, 1.2);
     \end{tikzpicture}
-\end{minipage}%
+\end{minipage}
 \hfill % Adds space between the diagrams
 \begin{minipage}{0.22\textwidth} % Second diagram
     \begin{tikzpicture}[scale=0.9]
     \pgfmathsetmacro{\sqrttree}{sqrt(3)}
     \draw (-2,0) -- (2,0);
     \draw (-0.5,0) circle (1);
-%    \fill (-0.5,0) circle (1.5pt);
-    %\draw (0.5,0) circle (1);
-    %\draw (1.19282, -1.2) -- (-0.19282, 1.2);
-    %\draw (-1.19282, -1.2) -- (0.19282, 1.2);
     \end{tikzpicture}
-\end{minipage}%
+\end{minipage}
 \hfill
 \begin{minipage}{0.22\textwidth} % Third diagram
     \begin{tikzpicture}[scale=0.9]
     \pgfmathsetmacro{\sqrttree}{sqrt(3)}
     \draw (-2,0) -- (2,0);
     \draw (-0.5,0) circle (1);
-%    \fill (-0.5,0) circle (1.5pt);
     \draw (0.5,0) circle (1);
-%    \fill (0.5,0) circle (1.5pt);
-    %\draw (1.19282, -1.2) -- (-0.19282, 1.2);
-    %\draw (-1.19282, -1.2) -- (0.19282, 1.2);
     \end{tikzpicture}
-\end{minipage}%
+\end{minipage}
 \hfill
 \begin{minipage}{0.22\textwidth} % Fourth diagram
     \begin{tikzpicture}[scale=0.9]
     \pgfmathsetmacro{\sqrttree}{sqrt(3)}
     \draw (-2,0) -- (2,0);
     \draw (-0.5,0) circle (1);
-%    \fill (-0.5,0) circle (1.5pt);
     \draw (0.5,0) circle (1);
-%    \fill (0.5,0) circle (1.5pt);
     \draw (1.19282, -1.2) -- (-0.19282, 1.2);
     \draw (-1.19282, -1.2) -- (0.19282, 1.2);
     \end{tikzpicture}
@@ -405,7 +391,6 @@ An example of a curve that Descartes studied is the \emph{folium} $X^3 + Y^3 = 3
 \begin{figure}[H]
 \tikz{
     \draw[samples=200,domain=124:-35]plot(\x:{2*sin(\x)*cos(\x)/(sin(\x)^3+cos(\x)^3)})
-         %(-2,0)--(2,0)(0,-2)--(0,2);
 }
 \caption{The folium of Descartes, $X^3+Y^3+3XY$ \cite[p.\ 113]{Stillwell20}.}
 \end{figure}
@@ -502,7 +487,6 @@ Cubic curves and cones provide other examples.
 The third and fourth examples in Figure \ref{figure:fourvarieties} demonstrate that varieties may have \emph{singularities}: these are points where a variety is ``pinched".
 The presence of singularities in varieties is one of the key differences between algebraic geometry and differential geometry.
 In differential geometry, one studies smooth manifolds which have no singularities by definition.
-%Singularities are related to tangent spaces of varieties, and singularities arise when the dimension of the tangent space is ``too large."
 
 Algebraic varieties are studied using polynomial functions in $\CC[X_1, \ldots, X_n]$.
 Associated with a variety $V$ is the ideal of functions vanishing on $V$, which is denoted $\bI(V)$.
@@ -551,11 +535,6 @@ For example, the Hodge conjecture---one of the million-dollar Millennium Prize P
 Toric varieties are named after the \emph{algebraic torus} $(\CC^\times)^n$.
 This is an example of an \emph{algebraic group}: a variety which is also a group.
 Toric varieties contain an algebraic torus as a dense open subset and admit an action of this torus (cf.\ \S \ref{section:thetorusaction}), so toric varieties can be viewed as generalisations of algebraic tori.
-
-%Properties of the cone defining a toric variety have interesting interpretations for the variety.
-%For example, there are important subsets of cones called faces, which are themselves cones and thus define their own toric variety.
-%When $\tau$ is a face of $\sigma$, the toric variety defined by $\tau$ embeds into the toric variety defined by $\sigma$.
-%An interesting result which we will prove is that whether a toric variety is singular is completely determined by its cone.
 
 To illustrate the link between convex geometry and algebraic geometry in the theory of toric varieties, we present a simplified construction of a toric variety from a cone.
 (Precise definitions will be given in Chapters \ref{chapter:convexgeometry} and \ref{chapter:affinetoricvarieties}.)
@@ -606,15 +585,6 @@ We first assign monomials $R^i S^j$ to integer-coordinate points $(i, j)$ in the
                 
 			  % Labels
 			  \node[anchor=south west] at (0, 0) {\!\!\! \scriptsize {$1$}};
-			  
-			  %\node[anchor=south] at (-0.5, 0) {\tiny \alert{$X^{-1}$}};
-			  %\node[anchor=south] at (-0.5, 0.5) {\tiny \alert{$X^{-1} Y$}};
-			  %\node[anchor=south] at (-0.5, 1) {\tiny \alert{$X^{-1} Y^2$}};
-			  %\node[anchor=south] at (-0.5, 1.5) {\tiny \alert{$X^{-1} Y^3$}};
-			
-			  %\node[anchor=south ] at (-1, 0) {\, \scriptsize \alert{$r^{-2}$}};
-			  %\node[anchor=south ] at (-1, 0.5) { \scriptsize \alert{$r^{-2} s$}};
-			  %\node[anchor=south ] at (-1, 1) { \scriptsize \alert{$r^{-2} s^2$}};
   
 			  \node[anchor=south ] at (-0.5, 0) {\tiny {$R^{-1}$}};
 			  \node[anchor=south ] at (-0.5, 0.5) { \tiny {$R^{-1} S$}};
@@ -622,19 +592,16 @@ We first assign monomials $R^i S^j$ to integer-coordinate points $(i, j)$ in the
 
 			  \node[anchor=south west] at (0, 0.5) {\!\!\! \tiny {$S$}};
 			  \node[anchor=south west] at (0, 1) {\!\!\! \tiny {$S^2$}};
-			  %\node[anchor=south] at (0, 1.5) {\tiny \alert{$Y^3$}};
+
 			  \node[anchor=south] at (0.5, 0) {\tiny {$R$}};
 			  \node[anchor=south] at (0.5, 0.5) {\tiny {$R S$}};
 			  \node[anchor=south] at (0.5, 1) {\, \tiny {$R S^2$}};
-			  %\node[anchor=south] at (0.5, 1.5) {\tiny \alert{$X Y^3$}};
+
 			  \node[anchor=south] at (1, 0) { \tiny {$R^2$}};
 			  \node[anchor=south] at (1, 0.5) { \tiny {$R^2 S$}};
 			  \node[anchor=south] at (1, 1) {\,\, \tiny {$R^2 S^2$}};
-			  %\node[anchor=south] at (1, 1.5) {\tiny \alert{$X^2 Y^3$}};
 
             % Vectors
-            %\draw[->, ultra thick] (0,0) -- (0,0.5);
-            %\draw[->, ultra thick] (0,0) -- (1,0.5);
             \node at (1.75, 1.75) {\small{$\sigma^\vee$}};
         \end{scope}
     \end{tikzpicture}
@@ -648,9 +615,6 @@ $$XY = Z^2.$$
 \subsection*{Geometric invariant theory}
 Quotients are a key idea in all areas of mathematics.
 In this thesis, we will study varieties arising as quotients of vector spaces by algebraic tori.
-%In group theory, we can identify integers differing by a multiple of $n$ in the group $\ZZ$, to get quotient group $\ZZ/n \ZZ$.
-%In topology, we can identify points in $\RR$ that differ by integers and use the quotient topology.
-%The resulting quotient $\RR/\ZZ$ is homeomorphic to the circle.
 In general, it is a difficult problem to construct quotient spaces in geometry and topology with nice properties.
 For example, consider $\GL_2(\CC)$ acting on $\CC^2$ by matrix multiplication.
 There are two orbits for this action: $\{0\}$ and $\CC^2\setminus\{0\}$.
@@ -1447,25 +1411,6 @@ is a bijection between the set of prime ideals of $A$ disjoint from $S$, and the
 
 Note that the map $\frakp \mapsto (S^{-1}A) \frakp$ preserves inclusion, so it is a bijection between maximal ideals of $A$ disjoint from $S$ and maximal ideals of $S^{-1}A$.
 
-%In this case, $k[V]$ is an integral domain.
-%We write $k(V)$ for the fraction field $k(V):=\Frac(k[V])$, and call $k(V)$ the field of rational functions on $V$.
-%For any $f \in k[V]$, consider the subring
-%$$k[V]_f := \left\{\frac{g}{f^r} : g \in k[V], \, r \ge 0\right\} \subseteq k(V).$$
-%The ring $k[V]_f$ is called the localization of $k[V]$ at $f$.\footnote{We emphasise that $V$ is irreducible. This assumption is not necessary but it simplifies the discussion.}
-%One can prove 
-%$$k[V]_f \cong (k[V])[Y] / (f Y -1),$$
-%so that $k[V]_f \cong k[V]/(fY-1)$ \cite[Lemma 1.13]{Milne23}).
-%Therefore, $k[V]_f$ is the coordinate ring of $V_f$.
-
-%Let $V$ be an algebraic subset of $\AA^n$.
-%When studying some class of objects, we need an appropriate idea of the structure-preserving maps between them.
-%One such kind of a map for algebraic sets are the polynomial maps, which we saw in \S \ref{section:coordinateringsandpolynomialmaps}.
-%A function $V \to k$ being polynomial is a global property, as the function must be defined by a single polynomial for all points of $V$.
-%This global property is often too restrictive, so we must develop a local structure-preserving property.
-%For example, in real analysis, differentiability is a local property: a function is differentiable if it is differentiable at each point, and this can be checked on an arbitrary neighbourhood of a point.
-%In this section, we define the notion of a regular function on $V$, which is a local property.
-%This gives us a less restrictive concept of a structure-preserving map for algebraic sets.
-
 We now define regular functions on open subsets of algebraic sets.
 These are functions we use to study algebraic sets which are a broader class than polynomial functions.
 
@@ -2046,28 +1991,6 @@ Thus, $\dim V = 1$ and $P = (0, 0)$ is a singular point of $V$.
 
 In the singular example above, $V_{\text{non-sing}}$ is the complement of a single point, in particular, it is an open subset of $V$.
 This gives an example of the general fact that the set of non-singular points is an open subset of $V$ \cite[Proposition 6.3]{Reid88}.
-%To prove this fact, for an integer $r$ such that $0 \le r \le n$, define the subset
-%$$S(r) := \{P \in V : \dim T_P V \ge r\}\subseteq V.$$
-%If $d := \dim V$, then $V = S(d)$ and $V_{\text{sing}} = S(d+1)$.
-%Thus,
-%$$V_{\text{non-sing}} = V \setminus V_{\text{sing}} = V \setminus S(d+1).$$
-%To see $V_{\text{non-sing}}$ is open, it remains to show $S(d+1)$ is closed; this is the content of the following proposition:
-%
-%\begin{proposition}[{\cite[\S 6.5]{Reid88}}]
-%The subset $S(r)$ is closed for all $r=0, \ldots, n$.
-%\end{proposition}
-%\begin{proof}
-%Let $f_1, \ldots, f_m$ generate $\bI(V)$.
-%From our previous discussion , we know $T_PV$ is the set of $(x_1, \ldots, x_n) \in \AA^n$ solving
-%$$\sum_{i=1}^n \frac{\partial f_j}{\partial X_i} (x_i - a_i) = 0$$
-%for all $j = 1, \ldots, m.$
-%Then $T_PV$ is identified with the kernel of the matrix 
-%$$J(P) := \left(\frac{\partial f_i}{\partial X_j}(P)\right)_{\substack{1 \le i \le m \\ 1 \le j \le n}}.$$
-%Checking $P$ lies in $S(r)$ is equivalent to checking $\rank (J(P)) \le n-r$.
-%In turn, this is equivalent to ensuring every $(n-r+1)\times(n-r+1)$ minor of $J(P)$ vanishes.
-%The entries of $J(P)$ are polynomials in $P=(a_1, \ldots, a_n)$.
-%Then each minor of $J(P)$ is also a polynomial, and so $S(r)$ is an algebraic set.
-%\end{proof}
 
 Although the description we have given for $T_PV$ in terms of first-order parts of polynomials is geometrically intuitive, it depends on the embedding of $V$ into affine space.
 We now prove a theorem which gives an intrinsic description of $T_PV$ in terms of ideals in the coordinate ring of $V$.
@@ -2160,9 +2083,6 @@ In the context of toric varieties, the cones we are interested in have certain p
 An important part of this chapter is clearly defining these properties.
 In Chapter \ref{chapter:affinetoricvarieties}, we will see how these properties have consequences for toric varieties.
 
-%Since we are interested in applying convex geometry to the study of toric varieties, the reader is invited to skim this chapter on their first reading.
-%Subsequent chapters should be readable with just a basic understanding of the definitions in this chapter.
-%The reader can return to this chapter for the results herein as they are needed.
 
 
 
@@ -2440,8 +2360,6 @@ for a finite set of generators $v_1, \ldots, v_r \in N_\RR$.
 
 It follows from the definition that convex polyhedral cones are indeed convex cones in the sense defined in \S \ref{section:convexcones}.
 Every example of convex cones we have seen so far has been polyhedral, except for $\sigma_3 = \{(x, r) \in \RR^2 \times \RR : \|x\| \le r\}$ in Example \ref{example:cones}.
-%Recall that the dual cone $\sigma^\vee$ is the set of functionals which are non-negative on $\sigma$.
-%When $\sigma$ is polyhedral, a functional lies in $\sigma^\vee$ if and only if it is non-negative on the generators of $\sigma$.
 
 One definition of a convex polyhedron is a finite intersection of closed half-spaces in $\RR^3$.
 The name polyhedral is justified by the following result:
@@ -2772,10 +2690,6 @@ Afterwards, we establish some fundamental properties, such as the existence of a
 Throughout this chapter, $N$ is a lattice in the vector space $N_\RR$ and $M$ is the dual lattice in $M_\RR = N_\RR^*$.
 A cone $\sigma$ is always assumed to be polyhedral, strongly convex and rational.
 
-%To define an affine toric variety, we first associate a semigroup and semigroup algebra with a cone.
-%An affine toric variety can then be defined as the spectrum of the semigroup algebra.
-%The connections between a cone, its semigroup algebra, and the spectrum of the semigroup algebra give rise to the interplay between the geometries of the variety and the cone.
-
 
 
 
@@ -2790,7 +2704,6 @@ All the semigroups we consider are commutative, so we will write the operation a
 If $S$ is a semigroup and $T$ is a finite subset of $S$, we say $T$ generates $S$ if every element in $S$ can be written as a sum of elements of $T$.
 A map between semigroups with identity $\varphi : S \to T$ is a homomorphism if it preserves the identity and $\varphi(x + y) = \varphi(x) + \varphi(y)$ for all $x$ and $y$ in $S$.
 
-%Now let $N$ be a lattice in $N_\RR$, with dual lattice $M$ in $M_\RR = N_\RR^*$.
 Let $\sigma$ be cone in $N_\RR$.
 The semigroup of $\sigma$ is defined as
 $$S_\sigma := \sigma^\vee \cap M.$$
@@ -3118,7 +3031,6 @@ Since the action is defined using semigroup homomorphisms, we need to understand
 If $t : M \to k^\times$ is a point in $T_N$, then $\left. t \right|_{S_\sigma} : S_\sigma \to k$ is a point in $U_\sigma$.
 This is a natural guess for how $\iota$ is evaluated on semigroup homomorphisms.
 Evaluating this restriction map at $t : M \to k^\times$, then applying a regular function $\chi^u \in k[S_\sigma]$, gives
-% This restriction of semigroup homomorphism map composed with a regular function $\chi^u \in k[S_\sigma]$, evaluated at $t : M \to k^\times$, is
 $$\chi^u(\left. t \right|_{S_\sigma}) = \left. t \right|_{S_\sigma}(u) = t(u) = \chi^u(t).$$
 This agrees with $\iota^*(\chi^u)(t)$, so our guess is correct.
 Then $t_1 \cdot \iota(t_2)$ and $\iota(t_1 t_2)$ both equal $\left. t_1 t_2 \right|_{S_\sigma}$.
@@ -3189,7 +3101,6 @@ Any edge (i.e., a one-dimensional face) of $\sigma^\vee$ can be generated by a s
 If $p u$ lies in $S_\sigma$ for some $p \in \ZZ_{> 0}$ and $u \in M$, then $u$ lies in $S_\sigma$, since $S_\sigma$ is the intersection of $M$ with a cone.
 Then for any edge, there exists a unique $u \in S_\sigma$ generating the edge which is not the sum of two non-zero elements in the edge.
 Such a $u$ is called a minimal edge generator.
-%It follows that an edge of $\sigma$ is generated by a unique $u$ lying in $S_\sigma$ which is not the sum of two non-zero elements lying in the edge---we call such a $u$ an edge generator.
 The minimal edge generators lie in $(S_\sigma)_{\text{irred}}$ \cite[Proposition 1.2.23]{CLS11} and generate the cone \cite[Lemma 1.2.15]{CLS11}.
 Since $\sigma$ is strongly convex, $\sigma^\vee$ spans $M_\RR$ and there must be $n$ minimal edge generators.
 We conclude $(S_\sigma)_{\text{irred}}$ is the set of minimal edge generators.
@@ -3379,45 +3290,6 @@ The above equality holds if and only if $i + j$ is even whenever $p_{ij}\ne 0$.
 Any monomial $X^iY^j$ such that $i+j$ is even is a product of the monomials $X^2, XY$ and $Y^2$.
 Thus,
 $$k[X, Y]^{S_2} = k[X^2, XY, Y^2] \cong k[A, B, C]/(B^2 - AC).$$
-
-%\item
-%This is example is studied in \cite[Example 44]{Kamgarpour21}.
-%Consider the group $G = \GL_2(k)$ acting on its Lie algebra $V = \frakg\frakl_2(k)$ by conjugation.
-%A polynomial is invariant if and only if it is constant on the orbits of the action.
-%Then $f \in k[\frakg]^G$ is determined by its values on the orbit representatives which, by Jordan normal form\footnote{Since $k$ is algebraically closed and has characteristic zero.}, we can take to be
-%$$
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%\begin{pmatrix}
-%	\lambda & 0 \\
-%	0 & \lambda 
-%\end{pmatrix},
-%\begin{pmatrix}
-%	\lambda & 0 \\
-%	0 & \mu 
-%\end{pmatrix},
-%\begin{pmatrix}
-%	\lambda & 1 \\
-%	0 & \lambda 
-%\end{pmatrix}, \qquad \lambda, \mu \in k.
-%$$
-%We claim that \( f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) = f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) \) for $f \in k[\frakg]^G$. Indeed, since $f$ is continuous and invariant,
-%\begin{align*}
-%\hspace{\labelwidth} \hspace{\labelsep} \hspace{\leftmargin}
-%f\left( \begin{pmatrix} \lambda & 0 \\ 0 & \lambda \end{pmatrix} \right) 
-%&= f\left( \lim_{t \to 0} \begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \right) 
-%= \lim_{t \to 0} f\left(\begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix} \lambda & t \\ 0 & \lambda \end{pmatrix} \begin{pmatrix} t^{-1} & 0 \\ 0 & 1\end{pmatrix}^{-1} \right) \\
-%&= \lim_{t \to 0} f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right) 
-%= f\left( \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} \right).
-%\end{align*}
-%Then $f \in \CC[\frakg]^G$ is in fact determined by its restriction $\left. f \right|_{\frakh}$, where $\frakh$ is the Cartan subalgebra of diagonal matrices in $\frakg$.
-%Note that since $\diag(\lambda, \mu)$ and $\diag(\mu, \lambda)$ are in the same orbit, $\left. f \right|_\frakh$ is a symmetric polynomial in the variables $X$ and $W$.
-%We then have an inclusion
-%$$\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2} = \CC[XW, X+W], \qquad f \mapsto \left. f \right|_\frakh.$$
-%We know from linear algebra that $\mathrm{tr}, \mathrm{det} \in \CC[\frakg]^G$.
-%Noting $\left. \mathrm{det} \right|_\frakh = XW$ and $\left. \mathrm{tr} \right|_\frakh = X+W$, we see the inclusion $\CC[\frakg]^G \hookrightarrow \CC[X, W]^{S_2}$ is surjective.
-%Thus we have an isomorphism $\CC[\frakg]^G \cong \CC[X, W]^{S_2}$.
-%Therefore,
-%$$\frakg \git G = \Spec(\CC[\frakg]^G) \cong \Spec(\CC[X, W]^{S_2}]) \cong \CC^2.$$
 \end{enumerate}
 \end{example}
 
@@ -3509,7 +3381,7 @@ We now examples of the GIT quotients of the group actions studied in Example \re
 \item 
 Consider $G = \GL_2(k)$ acting on its Lie algebra $\frakg = \frakg\frakl_2(k)$ by conjugation.
 We saw $k[\frakg]^G = k[\tr, \det]$, and $\tr$ and $\det$ are algebraically independent.
-Then, %we have
+Then, 
 $$\frakg \git G = \Spec(k[\tr, \det]) = k^2.$$
 The affine quotient map $\pi : \frakg \to k^2$ is given by $A \mapsto (\tr A, \det A).$
 
@@ -3583,12 +3455,9 @@ We use this to determine the $T$-invariant polynomials.
 Write $v =\sum_{i=1}^n z_i v_i$, so that given any $\mu \in \ZZ_{\ge 0}^n$ and $t \in T$, we have
 \begin{align*}
 	(t \cdot Z^\mu)(v) = Z^\mu \left( \sum_{i=1}^n \chi_i(t^{-1}) z_i v_i\right) 
-	%= \prod_{i=1}^n Z_i^{\eta_i}\left( \sum_{i=1}^n \chi_i(t^{-1}) z_i v_i\right) 
 	&= \prod_{i=1}^n \left(\chi_i(t^{-1})\right)^{\mu_i} z_i^{\mu_i} %\\
 	= \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu(v).
 \end{align*}
-%In other words,
-%$$t \cdot Z^\mu = \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu.$$
 Here, the sum $-\sum_{i=1}^n \eta_i \chi_i$ occurs in the character lattice.
 If $f = \sum_{\mu} f_\mu Z^\mu \in k[V]$, then for all $t \in T$,
 $$t \cdot f = \sum_\mu f_\mu \left(-\sum_{i=1}^n \mu_i \chi_i \right)(t) Z^\mu.$$
@@ -3671,7 +3540,6 @@ Then $\langle u, v + M_\RR^\perp \rangle$ does not depend on the coset represent
 Given our constructions of $N_\RR$ and $M_\RR$, we are now ready to define the lattices $N$ and $M$, and the cones $\sigma$ and $\sigma^\vee$.
 We define:
 \begin{align*}
-	%M_\RR &:= \left\{(a_1, \ldots, a_n) \in \RR^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}, & N_\RR &:= \RR^n / M_\RR^\perp, \\
 	M &:= \left\{(a_1, \ldots, a_n) \in \ZZ^n : \sum_{i=1}^n a_i \chi_i = 0 \right\}, & N &:= \ZZ^n / M_\RR^\perp \subseteq \RR^n/M_\RR^\perp, \\
 	\sigma^\vee &:= \RR_{\ge 0}^n \cap M_\RR, & \sigma &:= \Span_{\RR_{\ge 0}}\{\bar e_1, \ldots, \bar e_n\}.
 \end{align*}
@@ -3862,7 +3730,6 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
 
 
 \newpage
-%\addtocontents{toc}{\vskip -1em}
 \begin{bibdiv}
 \begin{biblist}
 \bib{AM16}{book}{
@@ -4045,17 +3912,6 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    doi={10.1007/BF01208503},
 }
 
-%\bib{Humphreys72}{book}{
-%   author={Humphreys, James E.},
-%   title={Introduction to Lie algebras and representation theory},
-%   series={Graduate Texts in Mathematics},
-%   volume={Vol. 9},
-%   publisher={Springer-Verlag, New York-Berlin},
-%   date={1972},
-%   pages={xii+169},
-%   review={\MR{0323842}},
-%}
-
 \bib{Humphreys75}{book}{
    author={Humphreys, James E.},
    title={Linear algebraic groups},
@@ -4067,46 +3923,12 @@ $$N_\RR = \Span_\RR\{v_1, v_2, v_3 , v_4\}.$$
    review={\MR{0396773}},
 }
 
-%\bib{Humphreys90}{book}{
-%   author={Humphreys, James E.},
-%   title={Reflection groups and Coxeter groups},
-%   series={Cambridge Studies in Advanced Mathematics},
-%   volume={29},
-%   publisher={Cambridge University Press, Cambridge},
-%   date={1990},
-%   pages={xii+204},
-%   isbn={0-521-37510-X},
-%   review={\MR{1066460}},
-%   doi={10.1017/CBO9780511623646},
-%}
-
 \bib{Kamgarpour21}{webpage}{
    author={Kamgarpour, Masoud},
    title={UQ Maths Stradbroke Island Workshop on Character Varieties},
    date={2021},
    note={Available at \url{https://baileywhitbread.com/files/21_character_varieties.pdf}}
 }
-
-%\bib{Lang02}{book}{
-%   author={Lang, Serge},
-%   title={Algebra},
-%   series={Graduate Texts in Mathematics},
-%   volume={211},
-%   edition={3},
-%   publisher={Springer-Verlag, New York},
-%   date={2002},
-%   pages={xvi+914},
-%   isbn={0-387-95385-X},
-%   review={\MR{1878556}},
-%   doi={10.1007/978-1-4613-0041-0},
-%}
-
-%\bib{Milne13}{webpage}{
-%   author={Milne, James S.},
-%   title={Lie Algebras, Algebraic Groups, and Lie Groups},
-%   date={2013},
-%   note={Available at \url{www.jmilne.org/math/}}
-%}
 
 \bib{Milne23}{webpage}{
    author={Milne, James S.},

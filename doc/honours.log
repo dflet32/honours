@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  6 NOV 2024 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.27)  6 NOV 2024 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -981,19 +981,19 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 Package amsrefs Warning: Use of \cites is recommended instead of \cite 
 (amsrefs)                for multiple cites 'Reid88, Milne23, Hartshorne77' on 
-input line 450.
+input line 435.
 
 <../images/orange_sphere.pdf, id=268, 260.975pt x 283.0575pt>
 File: ../images/orange_sphere.pdf Graphic file (type pdf)
 <use ../images/orange_sphere.pdf>
-Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 473.
+Package pdftex.def Info: ../images/orange_sphere.pdf  used on input line 458.
 (pdftex.def)             Requested size: 108.04164pt x 117.18591pt.
 <../images/orange_cone.pdf, id=269, 260.975pt x 260.975pt>
 File: ../images/orange_cone.pdf Graphic file (type pdf)
 <use ../images/orange_cone.pdf>
-Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 494.
+Package pdftex.def Info: ../images/orange_cone.pdf  used on input line 479.
 (pdftex.def)             Requested size: 86.43364pt x 86.43262pt.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 529
+LaTeX Font Info:    Trying to load font information for U+euf on input line 513
 .
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1042,7 +1042,7 @@ ultiple pdfs with page group included in a single page
 [18]
 
 [19]
-Overfull \hbox (1.13847pt too wide) in paragraph at lines 1647--1651
+Overfull \hbox (1.13847pt too wide) in paragraph at lines 1592--1596
 []\OT1/cmr/m/n/12 (-20) First, choose gen-er-a-tors $\OML/cmm/m/it/12 a[]; [] ;
  a[]$ \OT1/cmr/m/n/12 (-20) for $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 (-20) . The
  $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 (-20) -algebra ho-mo-mor-phism $\OML/cmm/m
@@ -1089,7 +1089,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ../images/cox cone example 2.png Graphic file (type png)
 <use ../images/cox cone example 2.png>
 Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
-655.
+573.
 (pdftex.def)             Requested size: 93.94957pt x 157.03154pt.
 
 
@@ -1097,7 +1097,7 @@ Package pdftex.def Info: ../images/cox cone example 2.png  used on input line 2
 <../images/fultons_cones.png, id=775, 782.925pt x 206.27063pt>
 File: ../images/fultons_cones.png Graphic file (type png)
 <use ../images/fultons_cones.png>
-Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2677.
+Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2595.
 (pdftex.def)             Requested size: 375.80544pt x 99.01192pt.
 
 
@@ -1140,17 +1140,17 @@ Package pdftex.def Info: ../images/fultons_cones.png  used on input line 2677.
 [54]
 
 [55]
-Underfull \hbox (badness 10000) in paragraph at lines 3753--3754
+Underfull \hbox (badness 10000) in paragraph at lines 3621--3622
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3770--3773
+Underfull \hbox (badness 10000) in paragraph at lines 3638--3641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3783--3786
+Underfull \hbox (badness 10000) in paragraph at lines 3651--3654
 
  []
 
@@ -1187,7 +1187,7 @@ Package rerunfilecheck Info: File `honours.out' has not changed.
 Here is how much of TeX's memory you used:
  40310 strings out of 473579
  902249 string characters out of 5732263
- 1397869 words of memory out of 5000000
+ 1398869 words of memory out of 5000000
  61703 multiletter control sequences out of 15000+600000
  587313 words of font info for 286 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
